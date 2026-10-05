@@ -668,6 +668,49 @@
       </section>
     </article>
 
+    <!-- ===== 항목 #15 ===== -->
+    <article class="entry">
+      <div class="entry-head">
+        <span class="no">#15</span>
+        <h2>커밋 기록의 개인 메일 주소 가리기</h2>
+        <time>2026-10-05 21:40</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>게인 메일 주소 암호화 해서 배포. CLAUDE.md 에도 마찬가지.
+
+(이후 진행 지시: "다시 진해" / "다시 진행해줘.")</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>직전 보안 점검(사용자 요청으로 기록 생략)에서 <b>커밋 작성자 정보에 개인 Gmail 주소가 공개</b>되어 있음을 발견함. 그 외 API 키·IP·토큰·로컬 경로는 공개 파일 어디에도 없었음.</li>
+          <li>개인 메일이 드러나지 않게 GitHub이 제공하는 <b>no-reply 주소</b>로 바꿔 다시 배포한다. 이미 올라간 커밋도 고쳐야 하므로 기록을 다시 쓰고 강제 푸시가 필요하다.</li>
+          <li>같은 일이 다시 생기지 않도록 CLAUDE.md에 규칙을 추가한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>21:40</time> 이 저장소의 커밋 메일을 GitHub no-reply 주소(<code>&lt;id&gt;+&lt;계정&gt;@users.noreply.github.com</code>)로 설정. 이 저장소에만 적용.</li>
+          <li><time>21:41</time> 기존 커밋 2개의 작성자·커미터 메일을 no-reply 주소로 다시 씀 (로컬).</li>
+          <li><time>21:42</time> 강제 푸시와 기록 정리 단계가 Claude Code 자동 모드에서 "되돌리기 어려운 git 작업"으로 차단됨 → 우회하지 않고 사용자에게 승인 요청. <span class="tag warn">보류</span></li>
+          <li><time>21:47</time> 사용자가 자동 모드를 끄고 진행을 지시 → 강제 푸시 승인·실행 성공.</li>
+          <li><time>21:48</time> CLAUDE.md에 "개인 메일 주소 보호" 규칙 추가 (커밋 전 메일 확인, 푸시 전 기록 확인, 기록에 메일 적지 않기, 강제 푸시는 사용자 승인 후).</li>
+          <li><time>21:48</time> 이 기록과 규칙을 커밋·푸시하고, GitHub에 올라간 모든 커밋의 메일을 확인.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 저장소의 모든 커밋이 no-reply 주소만 사용. 개인 메일은 공개 기록에서 사라짐.</p>
+        <p style="font-size:13px;color:#6b7280">참고: 고치기 전 잠시 공개되어 있었으므로 그 사이 저장소를 복제한 사람이 있다면 옛 기록이 남아 있을 수 있음. GitHub 설정의 "Block command line pushes that expose my email"을 켜면 재발을 막을 수 있음 (사용자가 직접 설정).</p>
+      </section>
+    </article>
+
   </div>
 </div>
 </body>

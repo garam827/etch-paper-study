@@ -82,3 +82,11 @@ codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_
 - 절대 커밋 금지: `.env`(API 키). `.gitignore`로 막혀 있지만, 커밋 전에 올라갈 파일에 키·IP·계정정보가 없는지 매번 검사한다.
 - 원본 리서치(`research/*_raw.md`)와 실행 로그(`research/*_log.txt`)는 공개하지 않는다 (로컬 보관).
 - 사이트 주소에는 GitHub 계정명이 들어가므로, history에는 `<계정>.github.io/etch-paper-study/`처럼 가려서 적는다.
+
+### 개인 메일 주소 보호 (필수)
+
+- 이 저장소의 커밋 메일은 **GitHub no-reply 주소**(`<id>+<계정>@users.noreply.github.com`)만 쓴다. 저장소 로컬 설정(`git config --local user.email`)에 지정되어 있다.
+- 커밋 전에 `git config user.email`이 no-reply 주소인지 확인한다. 개인 메일(Gmail 등)이 커밋 작성자·커미터로 들어가면 안 된다.
+- 푸시 전에 `git log --format='%ae %ce'`로 개인 메일이 없는지 확인한다.
+- history.html, CLAUDE.md, 산출물, 스크린샷, 명령 출력 기록 어디에도 개인 메일 주소를 적지 않는다. 언급이 필요하면 `rkf***@gmail.com`처럼 앞 3글자만 남기고 가린다.
+- 이미 올라간 기록을 고치는 강제 푸시는 반드시 사용자 승인을 받은 뒤 진행한다.
