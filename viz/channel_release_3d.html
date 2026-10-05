@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>채널 릴리스 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  /* 레이아웃: 제목 → [3D 뷰 | 단계 설명] → 실패 실험 → 왜 어려운가 (내부 스페이서 3D 페이지와 같은 구성) */
+  :root {
+    --bg:#f7f8fb; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb;
+    --si:#60a5fa; --sige:#f59e0b; --spacer:#a78bfa; --inner:#7c3aed; --gate:#94a3b8; --epi:#22c55e; --etch:#dc2626;
+    --ild:#cbd5e1; --hk:#facc15; --metal:#64748b;
+    --ok:#166534; --ok-bg:#dcfce7; --bad:#991b1b; --bad-bg:#fee2e2; --mid:#92400e; --mid-bg:#fef3c7;
+    --font:"Noto Sans KR","Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;
+    --mono:"JetBrains Mono",Consolas,monospace;
+  }
+  * { box-sizing:border-box; }
+  html { color-scheme: light; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.7 var(--font); }
+  .wrap { max-width:1240px; margin:0 auto; padding-block:28px 72px; padding-inline:16px; }
+  a { color:var(--accent); }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  h1 { font-size:26px; line-height:1.3; margin:0 0 4px; text-wrap:balance; }
+  h2 { font-size:20px; margin:40px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  .sub { color:var(--muted); margin:0; }
+  .main { display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:14px; margin-top:16px; }
+  .view { position:relative; background:linear-gradient(#ffffff,#eef2f7); border:1px solid var(--line); border-radius:14px; overflow:hidden; height:600px; }
+  #c { width:100%; height:100%; display:block; }
+  .hud { position:absolute; left:12px; top:12px; display:flex; flex-wrap:wrap; gap:6px; max-width:calc(100% - 24px); }
+  .hud button, .seg button { font:inherit; font-size:13px; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:8px; padding:5px 10px; cursor:pointer; }
+  .hud button[aria-pressed="true"], .seg button[aria-pressed="true"] { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .legend { position:absolute; left:12px; bottom:12px; display:flex; flex-wrap:wrap; gap:6px 12px; font-size:12.5px; background:rgba(255,255,255,.9); border:1px solid var(--line); border-radius:8px; padding:6px 10px; max-width:calc(100% - 24px); }
+  .legend i { display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:-1px; margin-right:4px; }
+  .hint { position:absolute; right:12px; top:12px; font-size:12px; color:var(--muted); background:rgba(255,255,255,.85); border-radius:6px; padding:3px 8px; }
+  .fallback { display:none; position:absolute; inset:0; place-items:center; padding:24px; text-align:center; color:var(--bad); }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; display:flex; flex-direction:column; gap:10px; }
+  .steps { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; }
+  .steps button { font:inherit; font-weight:700; font-size:14px; border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px 0; cursor:pointer; color:var(--ink); }
+  .steps button[aria-current="step"] { background:var(--inner); color:#fff; border-color:var(--inner); }
+  .steps button.etch { border-color:#fecaca; }
+  .nav { display:flex; gap:8px; }
+  .nav button { flex:1; font:inherit; font-size:14px; border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px; cursor:pointer; }
+  .panel h3 { margin:4px 0 0; font-size:18px; line-height:1.4; }
+  .kind { font-size:12px; font-weight:700; display:inline-block; padding:1px 9px; border-radius:999px; background:#f3f4f6; color:#374151; }
+  .kind.etch { background:var(--bad-bg); color:var(--etch); }
+  .panel p { margin:0; }
+  .panel dl { margin:0; display:grid; grid-template-columns:72px 1fr; gap:4px 10px; font-size:14px; }
+  .panel dt { color:var(--muted); }
+  .panel dd { margin:0; }
+  .lab { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px 24px; }
+  .lab label { font-weight:700; font-size:14px; display:block; margin-bottom:4px; }
+  .lab input[type=range] { width:100%; accent-color:var(--inner); }
+  .row { display:flex; justify-content:space-between; font-size:12.5px; color:var(--muted); font-family:var(--mono); }
+  .seg { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+  .verdict { grid-column:1 / -1; border-radius:10px; padding:12px 14px; font-size:14.5px; }
+  .verdict strong { display:block; font-size:15px; }
+  .v-ok { background:var(--ok-bg); color:var(--ok); } .v-bad { background:var(--bad-bg); color:var(--bad); } .v-mid { background:var(--mid-bg); color:var(--mid); }
+  .why { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+  .why div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:14.5px; }
+  .why b { display:block; margin-bottom:2px; }
+  .note { color:var(--muted); font-size:13px; }
+  .num { font-family:var(--mono); font-variant-numeric:tabular-nums; }
+  @media (max-width:900px) { .main { grid-template-columns:1fr; } .view { height:440px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="sub"><a href="../index.html">← 목차</a> · <a href="inner_spacer_3d.html">← 앞 공정: 내부 스페이서 3D</a> · <a href="../research/tsmc_n2_a20_etch_report.html">A20 식각 보고서 (E7·E8)</a> · <a href="../research/a20_etch_knowledge_graph.html#s_release">지식 그래프에서 보기</a></p>
+    <h1>채널 릴리스 — SiGe 희생층 제거를 3D로 보기</h1>
+    <p class="sub">더미 게이트를 걷어낸 자리에서 SiGe를 모두 녹여 Si 시트를 공중에 띄우는 단계. GAA를 GAA로 만드는 식각이다. 단계를 넘기며 보고, 아래에서 식각 진행도와 선택비를 바꿔 실패 양상을 확인해보세요.</p>
+  </header>
+
+  <div class="main">
+    <div class="view">
+      <canvas id="c" aria-label="채널 릴리스 공정의 3D 모델"></canvas>
+      <div class="hud">
+        <button id="bSecZ" aria-pressed="false">단면: 채널 방향</button>
+        <button id="bSecX" aria-pressed="false">단면: 폭 방향</button>
+        <button id="bIld" aria-pressed="true">ILD·S/D 표시</button>
+        <button id="bReset">시점 초기화</button>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--si)"></i>Si 채널</span>
+        <span><i style="background:var(--sige)"></i>SiGe 희생층</span>
+        <span><i style="background:var(--inner)"></i>내부 스페이서</span>
+        <span><i style="background:var(--spacer)"></i>외부 스페이서</span>
+        <span><i style="background:var(--gate)"></i>더미 게이트</span>
+        <span><i style="background:var(--epi)"></i>S/D 에피</span>
+        <span><i style="background:var(--ild)"></i>ILD</span>
+        <span><i style="background:var(--hk)"></i>high-k</span>
+        <span><i style="background:var(--metal)"></i>금속 게이트</span>
+      </div>
+      <div class="hint">드래그: 회전 · 휠: 확대</div>
+      <div class="fallback" id="fallback">3D를 표시할 수 없습니다. 브라우저의 WebGL이 꺼져 있거나 라이브러리를 불러오지 못했습니다 (인터넷 연결 필요).</div>
+    </div>
+
+    <aside class="panel" aria-live="polite">
+      <div class="steps" id="steps"></div>
+      <div class="nav"><button id="prev">← 이전</button><button id="next">다음 →</button></div>
+      <div><span class="kind" id="kind"></span></div>
+      <h3 id="title"></h3>
+      <p id="desc"></p>
+      <dl id="facts"></dl>
+    </aside>
+  </div>
+
+  <h2>직접 바꿔보기 — 실패 양상</h2>
+  <div class="lab">
+    <div>
+      <label for="prog">식각 진행도</label>
+      <input id="prog" type="range" min="0" max="140" step="5" value="100">
+      <div class="row"><span>0%</span><span id="progVal">100%</span><span>과식각 140%</span></div>
+      <p class="note" style="margin:6px 0 0">100% = SiGe가 딱 다 없어지는 시간. 넘으면 과식각.</p>
+    </div>
+    <div>
+      <label>SiGe : Si 선택비</label>
+      <div class="seg" id="sel">
+        <button data-v="0" aria-pressed="true">높음 (Si 거의 안 깎임)</button>
+        <button data-v="1" aria-pressed="false">낮음 (Si도 깎임)</button>
+      </div>
+      <label>Ge 잔류</label>
+      <div class="seg" id="ge">
+        <button data-v="0" aria-pressed="true">없음</button>
+        <button data-v="1" aria-pressed="false">있음 (Si 표면에 남음)</button>
+      </div>
+    </div>
+    <div>
+      <label>건조 중 시트 달라붙음</label>
+      <div class="seg" id="sti">
+        <button data-v="0" aria-pressed="true">없음 (건식·기상 식각)</button>
+        <button data-v="1" aria-pressed="false">있음 (습식 후 건조)</button>
+      </div>
+      <p class="note" style="margin:0">값을 바꾸면 3D가 ③ 채널 릴리스 이후 상태로 바뀝니다.</p>
+    </div>
+    <div class="verdict" id="verdict"></div>
+  </div>
+  <p class="note">치수는 이해를 돕기 위한 예시 값입니다 (Si 시트 5nm, SiGe 9nm, 게이트 길이 14nm, 시트 폭 28nm). A20/N2의 실제 치수·레시피는 공개되지 않았습니다.</p>
+
+  <h2>왜 어려운가</h2>
+  <div class="why">
+    <div><b>보이지 않는 곳까지 완전히</b>식각 가스는 시트 옆면에서 들어가 폭 방향으로 파고든다. 가운데 마지막 SiGe까지 남김없이 없애야 하지만, 좁은 틈 안이라 반응물 공급과 부산물 배출이 느리다.</div>
+    <div><b>Si는 한 층도 잃지 않게</b>Si 채널은 수 nm 두께라 1nm만 깎여도 큰 변화다. 시트 전체 면이 식각 가스에 오래 노출되므로 SiGe : Si 선택비가 매우 높아야 한다.</div>
+    <div><b>멈출 곳이 없다</b>등방성 식각이라 바닥에서 멈추는 정지막이 없다. 시간으로 끝내야 하는데, 늦으면 내부 스페이서·S/D까지 공격하고 이르면 SiGe가 남는다.</div>
+    <div><b>띄운 뒤가 더 위험</b>공중에 뜬 얇은 시트는 습식 공정의 건조 단계에서 표면장력 때문에 서로 붙거나 휘기 쉽다. 그래서 건식·기상 식각이 선호된다.</div>
+  </div>
+  <p class="note" style="margin-top:16px">근거: imec·TEL 선택 등방성 식각 자료와 일반 GAA 공정 흐름 (자세한 출처는 <a href="../research/tsmc_n2_a20_etch_report.html">A20 식각 보고서</a>). 3D 모델은 Claude Code가 Three.js로 작성.</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const STEPS = [
+  { kind:"출발 구조", etch:false, title:"S/D 에피까지 끝난 상태",
+    desc:"앞 공정(내부 스페이서 3D)의 마지막 모습. 스택 위에 더미 게이트가 있고, 양옆에 S/D 에피가 자라 있다.",
+    facts:[["Si 시트","3장, 각 5nm (예시)"],["SiGe","게이트 아래 4층, 각 9nm"],["내부 스페이서","SiGe 양끝을 막고 있음"]] },
+  { kind:"증착 · 평탄화", etch:false, title:"① ILD 충진 · CMP",
+    desc:"S/D 위를 절연막(ILD)으로 덮고 CMP로 평탄화해 더미 게이트 윗면만 드러나게 한다.",
+    facts:[["방식","절연막 증착 + CMP"],["역할","이후 식각에서 S/D 보호"]] },
+  { kind:"식각 · 선택 제거", etch:true, title:"② 더미 게이트 제거",
+    desc:"폴리 Si 더미 게이트를 걷어내 게이트 자리(트렌치)를 연다. 트렌치 안에 Si/SiGe 스택의 옆면이 드러난다.",
+    facts:[["방식","선택적 습식/건식 Si 제거"],["과제","더미도 Si, 채널도 Si → 보호막·노출 순서가 관건"]] },
+  { kind:"식각 · 고선택비 등방성", etch:true, title:"③ 채널 릴리스 (SiGe 제거)",
+    desc:"드러난 옆면으로 식각 가스가 들어가 SiGe를 폭 방향으로 녹여낸다. 다 끝나면 Si 시트가 S/D에 양끝만 붙은 채 공중에 뜬다. '단면: 폭 방향'으로 보면 식각 앞면이 가운데로 모이는 모습이 보인다.",
+    facts:[["방식","SiGe:Si 고선택비 등방성 식각 (건식/기상 또는 습식)"],["지켜야 할 것","Si 두께, 내부 스페이서, S/D"],["위험","SiGe·Ge 잔류, 과식각, 시트 달라붙음"]] },
+  { kind:"세정", etch:false, title:"④ 세정 · 표면 처리",
+    desc:"잔여물과 Ge를 정리하고 시트 표면을 게이트 절연막을 올릴 수 있는 상태로 만든다. 공중에 뜬 시트가 붙지 않아야 한다.",
+    facts:[["과제","잔여물 제거, 시트 변형 방지"],["다음","계면층 · high-k 증착"]] },
+  { kind:"증착 (HKMG)", etch:false, title:"⑤ high-k · 금속 게이트 채움",
+    desc:"ALD로 시트 사방에 high-k 절연막과 일함수 금속을 입히고 금속으로 채운다. 게이트가 채널을 완전히 감싸는 Gate-All-Around 완성.",
+    facts:[["방식","ALD + 금속 충진 + CMP"],["다음 식각","게이트 금속 선택 제거·리세스 (E9)"]] },
+];
+
+// 치수 (nm, 예시) — 내부 스페이서 페이지와 동일
+const LG2 = 7, WS = 13, ZW = 14, XOUT = 34, GZ = 24, TOP = 42, GTOP = 60, SUBR = 4;
+const LAYERS = [["sige",0,9],["si",9,14],["sige",14,23],["si",23,28],["sige",28,37],["si",37,42]];
+const NSEG = 10; // 시트를 x 방향으로 나눠 휘어짐 표현
+
+const state = { step:0, prog:100, sel:0, ge:0, stick:0, sec:"", ild:true };
+const anim = { ild:0, dummy:1, rel:0, over:0, hkmg:0, siLoss:0, ge:0, stick:0 };
+const C = { si:0x60a5fa, sige:0xf59e0b, sub:0x93c5fd, gate:0x94a3b8, spacer:0xa78bfa, inner:0x7c3aed, epi:0x22c55e, sti:0xd1d5db, ild:0xcbd5e1, hk:0xfacc15, metal:0x64748b };
+
+let renderer, scene, camera, controls;
+const P = {};
+
+function box(color, opts = {}) {
+  const m = new THREE.MeshStandardMaterial({ color, roughness:.55, metalness:opts.metal ? .4 : .05,
+    transparent:opts.opacity !== undefined, opacity:opts.opacity ?? 1, depthWrite:opts.opacity === undefined || opts.opacity > .8,
+    polygonOffset:true, polygonOffsetFactor:1, polygonOffsetUnits:1 });
+  const mesh = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), m);
+  mesh.userData.pad = opts.pad || 0;
+  if (!opts.noEdge) mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1,1,1)),
+    new THREE.LineBasicMaterial({ color:0x1f2937, transparent:true, opacity:opts.opacity !== undefined ? .08 : .22 })));
+  scene.add(mesh); return mesh;
+}
+function place(mesh, x0,x1,y0,y1,z0,z1) {
+  const pad = mesh.userData.pad; // 겹치는 단면끼리 깜빡이지 않게 살짝 물림
+  if (state.sec === "z") z1 = Math.min(z1, -pad);
+  if (state.sec === "x") x1 = Math.min(x1, -pad);
+  const sx = x1-x0, sy = y1-y0, sz = z1-z0;
+  mesh.visible = sx > 0.01 && sy > 0.01 && sz > 0.01;
+  if (!mesh.visible) return;
+  mesh.scale.set(sx, sy, sz); mesh.position.set((x0+x1)/2, (y0+y1)/2, (z0+z1)/2);
+}
+const hide = (...ms) => ms.forEach(m => m.visible = false);
+
+function init() {
+  const canvas = document.getElementById("c");
+  renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true, preserveDrawingBuffer:true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(32, 1, 1, 2000);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xb8c2d0, .85));
+  const d1 = new THREE.DirectionalLight(0xffffff, .75); d1.position.set(60,120,90); scene.add(d1);
+  const d2 = new THREE.DirectionalLight(0xffffff, .3); d2.position.set(-80,40,-60); scene.add(d2);
+
+  P.sti = box(C.sti, { opacity:.55 });
+  P.subC = box(C.sub); P.subL = box(C.sub); P.subR = box(C.sub);
+  P.epi = [box(C.epi), box(C.epi)];
+  P.ild = [box(C.ild, { opacity:.45, pad:.4 }), box(C.ild, { opacity:.45, pad:.4 })];
+  P.sp = [0,1].map(() => ({ top:box(C.spacer), a:box(C.spacer), b:box(C.spacer) }));
+  P.dg = { top:box(C.gate), a:box(C.gate), b:box(C.gate) };
+  P.metal = { core:box(C.metal, { opacity:.42, metal:true, pad:.4 }), top:box(C.metal, { opacity:.42, metal:true, pad:.4 }) };
+  P.layers = LAYERS.map(([k]) => k === "sige"
+    ? { k, gate:[box(C.sige), box(C.sige)], il:box(C.inner), ir:box(C.inner) }
+    : { k, seg:Array.from({ length:NSEG }, () => box(C.si, { noEdge:true })), endL:box(C.si), endR:box(C.si),
+        hk:Array.from({ length:NSEG }, () => box(C.hk, { opacity:.6, noEdge:true, pad:.2 })), ge:[box(C.sige, { opacity:.9 }), box(C.sige, { opacity:.9 })] });
+
+  controls = new THREE.OrbitControls(camera, canvas);
+  controls.enableDamping = true;
+  resetView();
+  new ResizeObserver(resize).observe(canvas.parentElement); resize();
+}
+function resetView() {
+  if (state.sec === "x") camera.position.set(170, 60, 40); else camera.position.set(118, 78, 150);
+  controls.target.set(0, 20, 0); controls.update();
+}
+function resize() {
+  const el = renderer.domElement.parentElement, w = el.clientWidth, h = el.clientHeight;
+  renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+
+function targets() {
+  const s = state.step, after = s >= 3;
+  const p = after ? state.prog / 100 : 0;
+  return {
+    ild: s >= 1 ? 1 : 0, dummy: s >= 2 ? 0 : 1,
+    rel: Math.min(p, 1), over: Math.max(0, p - 1) / 0.4,
+    hkmg: s >= 5 ? 1 : 0,
+    siLoss: after && state.sel ? Math.min(p, 1.4) / 1.4 : 0,
+    ge: after && state.ge && s < 5 ? 1 : (after && state.ge ? 1 : 0),
+    stick: s >= 4 && state.stick && p >= 1 ? 1 : 0,
+  };
+}
+
+function layout() {
+  const subTop = -SUBR;
+  place(P.sti, -XOUT, XOUT, -14, -6, -GZ-6, GZ+6);
+  place(P.subC, -WS, WS, -12, 0, -ZW, ZW);
+  place(P.subL, -XOUT, -WS, -12, subTop, -ZW, ZW); place(P.subR, WS, XOUT, -12, subTop, -ZW, ZW);
+  P.epi.forEach((m, i) => { const sg = i ? 1 : -1; place(m, sg > 0 ? WS : -XOUT + 2, sg > 0 ? XOUT - 2 : -WS, subTop, TOP + 4, -ZW - 2, ZW + 2); });
+  // ILD (S/D 위)
+  P.ild.forEach((m, i) => {
+    const sg = i ? 1 : -1, h = (GTOP + 6) * anim.ild;
+    if (!state.ild || anim.ild < .02) { m.visible = false; return; }
+    m.material.opacity = .45 * anim.ild;
+    place(m, sg > 0 ? WS : -XOUT, sg > 0 ? XOUT : -WS, -6, -6 + h, -GZ - 4, GZ + 4);
+  });
+  if (!state.ild) P.epi.forEach(m => m.visible = false);
+  // 외부 스페이서
+  P.sp.forEach((s, i) => {
+    const sg = i ? 1 : -1, x0 = Math.min(sg*LG2, sg*WS), x1 = Math.max(sg*LG2, sg*WS);
+    place(s.top, x0, x1, TOP, GTOP, -GZ, GZ); place(s.a, x0, x1, -6, TOP, -GZ, -ZW); place(s.b, x0, x1, -6, TOP, ZW, GZ);
+  });
+  // 더미 게이트 (위에서부터 사라짐)
+  const dh = anim.dummy;
+  if (dh < .02) hide(P.dg.top, P.dg.a, P.dg.b);
+  else {
+    const yTopCut = -6 + (GTOP + 6) * dh;
+    place(P.dg.top, -LG2, LG2, TOP, Math.min(GTOP, yTopCut), -GZ, GZ);
+    place(P.dg.a, -LG2, LG2, -6, Math.min(TOP, yTopCut), -GZ, -ZW); place(P.dg.b, -LG2, LG2, -6, Math.min(TOP, yTopCut), ZW, GZ);
+  }
+  // 층
+  const over = anim.over, rel = anim.rel;
+  let siIndex = 0;
+  LAYERS.forEach(([k, y0, y1], i) => {
+    const L = P.layers[i];
+    if (k === "sige") {
+      // 게이트 영역 SiGe: 폭 방향 양옆(z=±ZW)에서 가운데로 식각 앞면 진행
+      const zr = ZW * (1 - rel);
+      if (zr < .05) hide(...L.gate);
+      else { place(L.gate[0], -LG2, LG2, y0, y1, -zr, 0); place(L.gate[1], -LG2, LG2, y0, y1, 0, zr); }
+      // 내부 스페이서: 과식각 시 게이트 쪽부터 침식
+      const er = 2.5 * over;
+      place(L.il, -WS, -LG2 - er, y0, y1, -ZW, ZW); place(L.ir, LG2 + er, WS, y0, y1, -ZW, ZW);
+    } else {
+      const mid = (y0 + y1) / 2, th0 = y1 - y0;
+      const th = th0 * (1 - 0.32 * anim.siLoss);
+      const wz = ZW - 1.2 * anim.siLoss;
+      // 달라붙음: 가운데 시트가 아래로, 위 시트도 아래로 휘어 붙음 (맨 아래 시트는 기판 쪽으로)
+      const sag = anim.stick * [4.2, 4.6, 4.6][siIndex] * (siIndex === 0 ? 0.9 : 1);
+      for (let j = 0; j < NSEG; j++) {
+        const xa = -LG2 + (2 * LG2) * j / NSEG, xb = -LG2 + (2 * LG2) * (j + 1) / NSEG, xc = (xa + xb) / 2;
+        const prof = 1 - Math.pow(xc / LG2, 2), dy = -sag * prof;
+        place(L.seg[j], xa, xb, mid - th/2 + dy, mid + th/2 + dy, -wz, wz);
+        // high-k: 시트를 감싸는 얇은 껍질
+        if (anim.hkmg > .02) { L.hk[j].material.opacity = .6 * anim.hkmg; const t = 0.9 * anim.hkmg; place(L.hk[j], xa, xb, mid - th/2 - t + dy, mid + th/2 + t + dy, -wz - t, wz + t); }
+        else L.hk[j].visible = false;
+      }
+      place(L.endL, -WS, -LG2, y0, y1, -ZW, ZW); place(L.endR, LG2, WS, y0, y1, -ZW, ZW);
+      // Ge 잔류: 시트 윗면·아랫면의 얇은 막
+      if (anim.ge > .02 && rel > .5) {
+        const t = 0.7;
+        place(L.ge[0], -LG2, LG2, mid + th/2, mid + th/2 + t, -wz, wz);
+        place(L.ge[1], -LG2, LG2, mid - th/2 - t, mid - th/2, -wz, wz);
+      } else hide(...L.ge);
+      siIndex++;
+    }
+  });
+  // 금속 게이트
+  if (anim.hkmg > .02) {
+    P.metal.core.material.opacity = P.metal.top.material.opacity = .42 * anim.hkmg;
+    place(P.metal.core, -LG2, LG2, -6, TOP, -GZ, GZ);
+    place(P.metal.top, -LG2, LG2, TOP, GTOP, -GZ, GZ);
+  } else hide(P.metal.core, P.metal.top);
+}
+
+let last = performance.now();
+function tick(now) {
+  const dt = Math.min(.05, (now - last) / 1000); last = now;
+  const t = targets(), k = 1 - Math.pow(.003, dt);
+  for (const key in anim) anim[key] += (t[key] - anim[key]) * k;
+  layout(); controls.update(); renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+}
+
+// ---------- UI ----------
+const $ = id => document.getElementById(id);
+const stepBox = $("steps");
+STEPS.forEach((s, i) => {
+  const b = document.createElement("button"); b.textContent = i;
+  b.title = s.title; b.setAttribute("aria-label", s.title); if (s.etch) b.classList.add("etch");
+  b.onclick = () => go(i); stepBox.appendChild(b);
+});
+function go(i) {
+  state.step = Math.max(0, Math.min(STEPS.length - 1, i));
+  const s = STEPS[state.step];
+  [...stepBox.children].forEach((b, j) => j === state.step ? b.setAttribute("aria-current", "step") : b.removeAttribute("aria-current"));
+  $("kind").textContent = s.kind; $("kind").className = "kind" + (s.etch ? " etch" : "");
+  $("title").textContent = s.title; $("desc").textContent = s.desc;
+  $("facts").innerHTML = s.facts.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
+  $("prev").disabled = state.step === 0; $("next").disabled = state.step === STEPS.length - 1;
+  verdict();
+}
+$("prev").onclick = () => go(state.step - 1);
+$("next").onclick = () => go(state.step + 1);
+document.addEventListener("keydown", e => { if (e.target.tagName === "INPUT") return; if (e.key === "ArrowRight") go(state.step + 1); if (e.key === "ArrowLeft") go(state.step - 1); });
+
+function seg(id, key) {
+  $(id).querySelectorAll("button").forEach(b => b.onclick = () => {
+    state[key] = +b.dataset.v;
+    $(id).querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    if (state.step < 3) go(key === "stick" ? 4 : 3); else verdict();
+  });
+}
+seg("sel", "sel"); seg("ge", "ge"); seg("sti", "stick");
+$("prog").oninput = e => { state.prog = +e.target.value; $("progVal").textContent = state.prog + "%"; if (state.step < 3) go(3); else verdict(); };
+
+function verdict() {
+  const v = $("verdict"), p = state.prog, msgs = [];
+  let level = "ok";
+  if (p < 100) { level = "bad"; msgs.push(`<strong>SiGe 잔류 (진행도 ${p}%)</strong>시트 사이 가운데에 SiGe가 남았다. 그 자리에는 게이트가 들어가지 못해 <b>게이트가 채널을 다 감싸지 못하고</b>, 시트마다 특성이 달라진다.`); }
+  else if (p > 100) { level = "bad"; msgs.push(`<strong>과식각 (진행도 ${p}%)</strong>SiGe가 다 없어진 뒤에도 식각이 계속돼 <b>내부 스페이서가 게이트 쪽부터 깎였다</b>. 게이트와 S/D 사이 절연이 얇아져 기생 커패시턴스와 누설이 늘고, 심하면 단락된다.`); }
+  else msgs.push(`<strong>적정 (진행도 100%)</strong>SiGe가 남김없이 제거되고 내부 스페이서는 그대로다. Si 시트가 S/D에 양끝만 붙은 채 공중에 떠 있다.`);
+  if (state.sel) { level = level === "ok" ? "mid" : level; msgs.push(`<strong>선택비 부족</strong>시트 전체 면이 식각 가스에 노출되는 동안 <b>Si 시트가 얇아지고 폭도 줄었다</b>. 채널 두께가 줄면 구동 전류가 떨어지고 문턱전압이 바뀐다.`); }
+  if (state.ge) { level = level === "ok" ? "mid" : level; msgs.push(`<strong>Ge 잔류</strong>Si 표면에 Ge가 얇게 남았다. 그 위에 올라갈 게이트 절연막과의 계면 품질이 나빠져 <b>계면 결함·누설·신뢰성 저하</b>로 이어진다.`); }
+  if (state.stick) { level = "bad"; msgs.push(`<strong>시트 달라붙음 (stiction)</strong>습식 식각 후 건조할 때 시트 사이 액체의 표면장력이 시트를 끌어당겨 <b>서로 붙거나 휘었다</b>. 붙은 틈에는 게이트가 들어가지 못한다. 그래서 건식·기상 식각이나 특수 건조가 쓰인다.`); }
+  v.className = "verdict " + (level === "ok" ? "v-ok" : level === "mid" ? "v-mid" : "v-bad");
+  v.innerHTML = msgs.join("<br><br>");
+}
+
+function setSec(which) {
+  state.sec = state.sec === which ? "" : which;
+  $("bSecZ").setAttribute("aria-pressed", state.sec === "z"); $("bSecX").setAttribute("aria-pressed", state.sec === "x");
+  resetView();
+}
+$("bSecZ").onclick = () => setSec("z");
+$("bSecX").onclick = () => setSec("x");
+$("bIld").onclick = e => { state.ild = !state.ild; e.target.setAttribute("aria-pressed", state.ild); };
+$("bReset").onclick = resetView;
+
+// 주소로 상태 지정 (예: #step=3&p=60&sec=x&sel=1&ge=1&stick=1&ild=0&instant=1)
+function fromHash() {
+  const q = new URLSearchParams(location.hash.slice(1));
+  if (q.has("p")) { state.prog = +q.get("p"); $("prog").value = state.prog; $("progVal").textContent = state.prog + "%"; }
+  for (const [k, id, key] of [["sel","sel","sel"],["ge","ge","ge"],["stick","sti","stick"]]) if (q.has(k)) {
+    state[key] = +q.get(k); $(id).querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", +b.dataset.v === state[key])); }
+  if (q.has("sec")) { state.sec = q.get("sec"); $("bSecZ").setAttribute("aria-pressed", state.sec === "z"); $("bSecX").setAttribute("aria-pressed", state.sec === "x"); }
+  if (q.get("ild") === "0") { state.ild = false; $("bIld").setAttribute("aria-pressed", "false"); }
+  go(q.has("step") ? +q.get("step") : 0);
+  if (controls) resetView();
+  if (q.get("instant") === "1") Object.assign(anim, targets());
+}
+
+try {
+  if (!window.THREE || !THREE.OrbitControls) throw new Error("lib");
+  init(); fromHash(); requestAnimationFrame(tick);
+} catch (e) { $("fallback").style.display = "grid"; fromHash(); }
+window.addEventListener("hashchange", fromHash);
+</script>
+</body>
+</html>

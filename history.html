@@ -809,6 +809,61 @@
       </section>
     </article>
 
+    <!-- ===== 항목 #18 ===== -->
+    <article class="entry">
+      <div class="entry-head">
+        <span class="no">#18</span>
+        <h2>채널 릴리스 3D 페이지</h2>
+        <time>2026-10-05 22:08</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>채널 릴리스도 3D 페이지로 추가해줘.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>보고서의 E7·E8 단계(더미 게이트 제거 → SiGe 희생층 완전 제거)를 내부 스페이서 3D 페이지에 이어지는 두 번째 3D 페이지로 만든다.</li>
+          <li>앞 페이지의 마지막 상태(S/D 에피 완료)에서 시작해 HKMG 채움까지 보여주고, 실패 양상을 직접 바꿔볼 수 있게 한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>22:08</time> jev 자문 시도 → Claude Code 권한 검사 서버가 일시적으로 응답하지 않아 호출 실패. 기다리는 대신 기존 페이지와 같은 구성으로 먼저 작성하고, 나중에 다시 묻기로 함.</li>
+          <li><time>22:09</time> <code>viz/channel_release_3d.html</code> 작성: 6단계(출발 → ILD 충진 → 더미 게이트 제거 → 채널 릴리스 → 세정 → HKMG), 채널 방향·폭 방향 두 가지 단면, 실패 실험 5가지(식각 진행도 0~140%, 선택비, Ge 잔류, 시트 달라붙음).</li>
+          <li><time>22:09</time> <b>jev 재자문</b>: 폭 방향 단면 → 0.71 (포함), 실패 항목 → 다섯 가지 모두 (0.92), 기존 페이지와 같은 구성 → 0.48 (경계). 같은 구성은 연작 페이지라 조작 방법이 같은 편이 낫다고 Claude가 판단해 유지.</li>
+          <li><time>22:10</time> 렌더링 확인 → 문제 3가지 수정: 시트를 여러 조각으로 그린 경계선이 줄무늬처럼 보임, 단면에서 ILD와 S/D 면이 겹쳐 깜빡임, 범례가 안내 문구와 겹침.</li>
+          <li><time>22:11</time> 내부 스페이서 3D 페이지에 "다음 공정 →" 링크, 목차에 항목 추가.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 채널 릴리스 3D 페이지 완성. 두 3D 페이지가 공정 순서대로 이어짐.</p>
+        <p><a href="viz/channel_release_3d.html">3D 페이지 열기 → viz/channel_release_3d.html</a></p>
+        <figure>
+          <img src="history_img/20261005_221100_cr_etch_front_width_section.png" alt="폭 방향 단면 식각 진행 60%">
+          <figcaption>history_img/20261005_221100_cr_etch_front_width_section.png — ③ 진행도 60%, 폭 방향 단면: SiGe(주황)가 가운데에만 남음</figcaption>
+        </figure>
+        <figure>
+          <img src="history_img/20261005_221100_cr_released_sheets.png" alt="채널 릴리스 완료">
+          <figcaption>history_img/20261005_221100_cr_released_sheets.png — ③ 완료: Si 시트가 내부 스페이서 사이에 떠 있음</figcaption>
+        </figure>
+        <figure>
+          <img src="history_img/20261005_221100_cr_hkmg.png" alt="HKMG 채움">
+          <figcaption>history_img/20261005_221100_cr_hkmg.png — ⑤ high-k(노랑)와 금속 게이트가 시트를 감쌈</figcaption>
+        </figure>
+        <figure>
+          <img src="history_img/20261005_221100_cr_failure_modes.png" alt="실패 양상">
+          <figcaption>history_img/20261005_221100_cr_failure_modes.png — 실패 실험: 과식각 130% + 선택비 부족 + Ge 잔류 + 시트 달라붙음</figcaption>
+        </figure>
+      </section>
+    </article>
+
   </div>
 </div>
 </body>
