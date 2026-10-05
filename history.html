@@ -711,6 +711,104 @@
       </section>
     </article>
 
+    <!-- ===== 항목 #16 ===== -->
+    <article class="entry">
+      <div class="entry-head">
+        <span class="no">#16</span>
+        <h2>Claude · Codex · jev 에이전트 구조·사용법 페이지</h2>
+        <time>2026-10-05 21:53</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>본 프로젝트에서 하고 있는 Cladue - Codex - Jev 연동하는 에이전트의 아키텍쳐에 대해 분석하고 사용하는 법 안내하는 페이지 추가</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>이 프로젝트의 자문 체계(Claude Code가 지휘, Codex CLI로 gpt-6-astra, Python 도우미로 jev 호출, 기록·공개)를 구조도로 분석한다.</li>
+          <li>동료가 따라 할 수 있도록 설치·설정·호출 방법을 안내하는 페이지를 사이트에 추가한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>21:54</time> <b>jev 자문</b>: 무게중심 → 사용법 위주 (0.58, 균형 0.40으로 신뢰도 낮음 → 분석은 간결하게, 사용법은 자세하게), 겪은 문제 포함 → 0.66, 실제 흐름 예시 포함 → 0.79. 모두 반영.</li>
+          <li><time>21:55</time> <code>guide/agent_architecture.html</code> 작성: 한 장 요약(4가지 역할), 구조도(SVG), 누구에게 물을지 정하는 규칙 표, A20 조사의 실제 흐름(시간순), 따라 하기 7단계, 겪은 문제 5가지와 해결, 구조 분석(장단점)과 개선 제안 4가지.</li>
+          <li><time>21:56</time> 처음 쓴 링크에 GitHub 계정명이 들어가 있어 상대 경로로 바꿈.</li>
+          <li><time>22:01</time> 스크린샷 확인 → 구조도의 라벨 하나가 화살표와 겹쳐 위치 조정.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 가이드 페이지 완성, 목차에 추가.</p>
+        <p><a href="guide/agent_architecture.html">가이드 열기 → guide/agent_architecture.html</a></p>
+        <figure>
+          <img src="history_img/20261005_220105_agent_architecture.png" alt="에이전트 구조 가이드 페이지">
+          <figcaption>history_img/20261005_220105_agent_architecture.png — 한 장 요약과 구조도</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <!-- ===== 항목 #17 ===== -->
+    <article class="entry">
+      <div class="entry-head">
+        <span class="no">#17</span>
+        <h2>SiGe 측면 리세스 · 내부 스페이서 에치백 3D 페이지</h2>
+        <time>2026-10-05 21:56</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>최고난도인 "SiGe 측면 리세스 · 내부 스페이서 에치백"에 대해 Three.js를 이용해 3D 렌더링한 소개 페이지 추가</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>보고서의 E5 단계(GAA 최고 난도 식각)를 Three.js 3D 모델로 보여주는 페이지를 만든다.</li>
+          <li>공정 단계를 순서대로 따라가며 구조가 어떻게 바뀌는지, 그리고 무엇이 잘못될 수 있는지 보이게 한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>21:57</time> <b>jev 자문</b>: 단계 버튼과 부드러운 전환 → 1.00, 실패 양상을 직접 바꿔보기 → 0.80, 단면 보기 → 0.80. 모두 반영.</li>
+          <li><time>21:58</time> <code>viz/inner_spacer_3d.html</code> 작성 (Three.js r128 + 마우스 회전·확대):
+            <ul>
+              <li>6단계: 출발 구조 → S/D 리세스 → SiGe 측면 리세스 → 절연막 증착 → 에치백 → S/D 에피</li>
+              <li>단면 보기, 게이트·스페이서 숨기기, 시점 초기화</li>
+              <li>실패 실험: 리세스 깊이 슬라이더(2~11nm, 기준 6nm), 시트별 불균일(아래가 덜 파임), Si 손실. 바꿀 때마다 결과 해설(적정/얕음/깊음 등)이 바뀜</li>
+              <li>"왜 가장 어려운가" 4가지 설명</li>
+            </ul></li>
+          <li><time>21:59</time> 첫 렌더링 확인 → 문제 3가지: 카메라가 너무 가까움, 단면 보기에서 면이 뚫려 안쪽이 이상하게 보임, 게이트가 스택을 가림. → 단면을 "잘린 닫힌 상자"로 그리는 방식으로 바꾸고, 카메라를 뒤로, 게이트 높이를 낮춤.</li>
+          <li><time>22:01</time> 다시 확인 → 단면에서 내부 스페이서(보라)가 SiGe(주황) 양옆을 막는 모습이 깨끗하게 보임. 실패 해설의 굵은 글씨가 줄바꿈되는 문제 수정.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 3D 페이지 완성, 목차에 추가. 주소 끝에 <code>#step=4&amp;section=1</code>처럼 붙이면 그 상태로 바로 열림.</p>
+        <p><a href="viz/inner_spacer_3d.html">3D 페이지 열기 → viz/inner_spacer_3d.html</a></p>
+        <figure>
+          <img src="history_img/20261005_220105_3d_step2_lateral_recess.png" alt="3D 2단계 SiGe 측면 리세스">
+          <figcaption>history_img/20261005_220105_3d_step2_lateral_recess.png — ② SiGe 측면 리세스: Si 시트 끝이 처마처럼 튀어나옴</figcaption>
+        </figure>
+        <figure>
+          <img src="history_img/20261005_220105_3d_step4_section.png" alt="3D 4단계 에치백 단면">
+          <figcaption>history_img/20261005_220105_3d_step4_section.png — ④ 에치백 후 단면: 내부 스페이서(보라)가 SiGe(주황) 양옆에 남음</figcaption>
+        </figure>
+        <figure>
+          <img src="history_img/20261005_220105_3d_failure_mode.png" alt="3D 실패 양상">
+          <figcaption>history_img/20261005_220105_3d_failure_mode.png — 실패 실험: 얕은 리세스(3nm) + 시트별 불균일 + Si 손실</figcaption>
+        </figure>
+      </section>
+    </article>
+
   </div>
 </div>
 </body>
