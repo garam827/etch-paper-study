@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>작업 기록 5단계 · 기록 체계 개선</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>5단계 · 기록 체계 개선</h1>
+    <p class="phase-desc">항목 #21–#21 · 2026-10-05 22:17 ~ 22:17 · 길어진 기록을 프로젝트 단계별 페이지로 나눴다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-4.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><span class="cur" aria-current="page">5. 기록 체계 개선</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #21 ===== -->
+    <article class="entry" id="e21">
+      <div class="entry-head">
+        <span class="no">#21</span>
+        <h2>history를 프로젝트 단계별 페이지로 나누기</h2>
+        <time>2026-10-05 22:17</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>history.html이 너무 길어진다. Pagination 필요하고, 이 프로젝트의 단계별로 항목을 나눠줘.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>항목 21개, 스크린샷 30여 장이 한 페이지에 있어 너무 길다. 프로젝트 단계별로 나눠 한 번에 한 단계만 보이게 한다.</li>
+          <li>나누는 방식과 단계 구분은 판단이 필요해 jev에게 묻는다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>22:17</time> <b>jev 자문</b>: 방식 → <b>단계마다 별도 파일 + history.html은 단계 목록 첫 화면</b> (0.78, 한 파일 탭 방식 0.22), 단계 구분 → <b>5단계</b> (0.86). 그대로 반영.</li>
+          <li><time>22:18</time> 기존 항목 #1~#21을 다섯 단계로 나눠 <code>history/phase-1.html</code> ~ <code>phase-5.html</code> 생성. 각 페이지 위아래에 단계 번호와 이전/다음 이동. 이미지·링크 경로를 새 위치에 맞게 수정.</li>
+          <li><time>22:19</time> <code>history.html</code>을 첫 화면으로 바꿈: 단계 카드 5개(기간, 항목 범위, 요약), 최근 항목 바로가기.</li>
+          <li><time>22:19</time> CLAUDE.md의 기록 규칙을 새 구조에 맞게 수정 (새 항목은 현재 단계 파일에, 한 페이지 최대 10개, 새 단계는 새 파일).</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 단계별 기록 페이지로 분리 완료.</p>
+        <figure>
+          <img src="../history_img/20261005_221905_history_overview.png" alt="history 첫 화면">
+          <figcaption>history_img/20261005_221905_history_overview.png — 새 history 첫 화면 (단계 카드)</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261005_221905_history_phase_page.png" alt="단계 페이지">
+          <figcaption>history_img/20261005_221905_history_phase_page.png — 단계 페이지 상단의 단계 이동</figcaption>
+        </figure>
+      </section>
+    </article>
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-4.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><span class="cur" aria-current="page">5. 기록 체계 개선</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>

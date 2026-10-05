@@ -60,7 +60,7 @@
   .v-ok { background:var(--ok-bg); color:var(--ok); } .v-bad { background:var(--bad-bg); color:var(--bad); } .v-mid { background:var(--mid-bg); color:var(--mid); }
   .why { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
   .why div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:14.5px; }
-  .why b { display:block; margin-bottom:2px; }
+  .why strong { display:block; margin-bottom:2px; }
   .note { color:var(--muted); font-size:13px; }
   .num { font-family:var(--mono); font-variant-numeric:tabular-nums; }
   @media (max-width:900px) { .main { grid-template-columns:1fr; } .view { height:440px; } }
@@ -142,10 +142,10 @@
 
   <h2>왜 어려운가</h2>
   <div class="why">
-    <div><b>보이지 않는 곳까지 완전히</b>식각 가스는 시트 옆면에서 들어가 폭 방향으로 파고든다. 가운데 마지막 SiGe까지 남김없이 없애야 하지만, 좁은 틈 안이라 반응물 공급과 부산물 배출이 느리다.</div>
-    <div><b>Si는 한 층도 잃지 않게</b>Si 채널은 수 nm 두께라 1nm만 깎여도 큰 변화다. 시트 전체 면이 식각 가스에 오래 노출되므로 SiGe : Si 선택비가 매우 높아야 한다.</div>
-    <div><b>멈출 곳이 없다</b>등방성 식각이라 바닥에서 멈추는 정지막이 없다. 시간으로 끝내야 하는데, 늦으면 내부 스페이서·S/D까지 공격하고 이르면 SiGe가 남는다.</div>
-    <div><b>띄운 뒤가 더 위험</b>공중에 뜬 얇은 시트는 습식 공정의 건조 단계에서 표면장력 때문에 서로 붙거나 휘기 쉽다. 그래서 건식·기상 식각이 선호된다.</div>
+    <div><strong>보이지 않는 곳까지 완전히</strong>식각 가스는 시트 옆면에서 들어가 폭 방향으로 파고든다. 가운데 마지막 SiGe까지 남김없이 없애야 하지만, 좁은 틈 안이라 반응물 공급과 부산물 배출이 느리다.</div>
+    <div><strong>Si는 한 층도 잃지 않게</strong>Si 채널은 수 nm 두께라 1nm만 깎여도 큰 변화다. 시트 전체 면이 식각 가스에 오래 노출되므로 SiGe : Si 선택비가 매우 높아야 한다.</div>
+    <div><strong>멈출 곳이 없다</strong>등방성 식각이라 바닥에서 멈추는 정지막이 없다. 시간으로 끝내야 하는데, 늦으면 내부 스페이서·S/D까지 공격하고 이르면 SiGe가 남는다.</div>
+    <div><strong>띄운 뒤가 더 위험</strong>공중에 뜬 얇은 시트는 습식 공정의 건조 단계에서 표면장력 때문에 서로 붙거나 휘기 쉽다. 그래서 건식·기상 식각이 선호된다.</div>
   </div>
   <p class="note" style="margin-top:16px">근거: imec·TEL 선택 등방성 식각 자료와 일반 GAA 공정 흐름 (자세한 출처는 <a href="../research/tsmc_n2_a20_etch_report.html">A20 식각 보고서</a>). 3D 모델은 Claude Code가 Three.js로 작성.</p>
 </div>

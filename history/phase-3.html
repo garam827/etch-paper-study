@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>작업 기록 3단계 · 공유·배포·보안</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>3단계 · 공유·배포·보안</h1>
+    <p class="phase-desc">항목 #13–#15 · 2026-10-05 21:21 ~ 21:40 · Claude Artifact로 먼저 게시한 뒤 GitHub Pages로 옮겼다. 보안 점검에서 커밋에 드러난 개인 메일을 no-reply 주소로 바꿨다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-2.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><span class="cur" aria-current="page">3. 공유·배포·보안</span><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><span class="sep">|</span><a href="phase-4.html">다음 단계 →</a></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #13 ===== -->
+    <article class="entry" id="e13">
+      <div class="entry-head">
+        <span class="no">#13</span>
+        <h2>보고서 · 지식 그래프를 Artifact 공유 페이지로 게시</h2>
+        <time>2026-10-05 21:21</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>Artifact로 공유 페이지 만들어줘</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>A20 식각 보고서와 용어집·지식 그래프를 claude.ai Artifact로 게시해 링크로 공유할 수 있게 한다.</li>
+          <li>보고서를 첫 화면으로, 지식 그래프를 같은 Artifact 안의 두 번째 페이지로 넣고, 두 페이지가 서로 링크되게 한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>21:21</time> 게시용 사본을 임시 폴더에 준비 (프로젝트 원본은 그대로 둠).
+            <ul>
+              <li>보고서: Artifact가 바깥 페이지 틀을 자동으로 씌우므로 html/head/body 태그 제거</li>
+              <li>어떤 기기에서도 같은 글꼴로 보이게 한국어 웹폰트(Noto Sans KR) 추가, 좌우 여백 16px 확보</li>
+              <li>지식 그래프 → 보고서로 가는 링크를 Artifact 안의 주소로 수정</li>
+            </ul></li>
+          <li><time>21:22</time> 민감정보 검사 → 검출 없음. 게시 실행 → 성공 (아이콘: chip, 버전 1).</li>
+          <li><time>21:23</time> 휴대폰 폭(400px) 화면 확인 → 오른쪽이 잘려 보임. 원인을 확인해보니 데스크톱 Chrome은 창을 약 570px보다 좁게 못 만들어서 <b>캡처만 잘린 것</b>이었음. 실제 측정값: 화면 폭 572px, 내용 폭 557px → 가로 넘침 없음. 잘못 보이는 스크린샷은 지우고 데스크톱 화면으로 다시 촬영.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> Artifact 게시 완료: <a href="https://claude.ai/artifact/Wxva4J7E5ZwAHA7aTBXRtd">claude.ai/artifact/Wxva4J7E5ZwAHA7aTBXRtd</a> (첫 화면 = 보고서, "주요 용어집 · 식각 지식 그래프 열기" 링크 = 지식 그래프).</p>
+        <p class="note" style="color:#6b7280;font-size:13px">처음에는 비공개 링크다. 다른 사람이 보려면 페이지의 Share 메뉴에서 공유해야 한다.</p>
+        <figure>
+          <img src="../history_img/20261005_212414_artifact_publish.png" alt="게시한 페이지 화면">
+          <figcaption>history_img/20261005_212414_artifact_publish.png — 게시한 보고서 페이지 (Artifact 틀을 씌운 사본을 로컬에서 렌더링)</figcaption>
+        </figure>
+      </section>
+    </article>
+    <!-- ===== 항목 #14 ===== -->
+    <article class="entry" id="e14">
+      <div class="entry-head">
+        <span class="no">#14</span>
+        <h2>GitHub Pages로 공유 사이트 게시</h2>
+        <time>2026-10-05 21:26</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>claude artifact 보다는 github pages 기능 활용이 좋겠다.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>공유 수단을 GitHub Pages로 바꾼다: 프로젝트를 GitHub 저장소로 올리고, Pages 사이트로 게시한다.</li>
+          <li>공개 게시라 되돌리기 어려우므로 공개 여부·저장소 이름·올릴 범위를 사용자에게 먼저 확인한다. 올릴 범위는 jev에게 자문.</li>
+          <li><code>.env</code>(API 키)는 어떤 경우에도 올리지 않는다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>21:26</time> GitHub CLI 설치·로그인 상태 확인 → 사용 가능.</li>
+          <li><time>21:27</time> <b>jev 자문</b> (올릴 범위):
+            <ul>
+              <li>history.html·스크린샷 포함 → 0.70 (포함)</li>
+              <li>원본 리서치 마크다운·실행 로그 포함 → 0.48 (경계 → 제외)</li>
+              <li>도우미 스크립트·CLAUDE.md 포함 → 0.61 (포함)</li>
+              <li>첫 화면 → <b>목차 페이지 새로 만들기</b> (0.90)</li>
+            </ul></li>
+          <li><time>21:28</time> 사용자 확인: <b>공개 저장소</b>, 이름 <code>etch-paper-study</code>, jev 의견대로 범위.</li>
+          <li><time>21:29</time> 목차 첫 화면 <code>index.html</code> 작성. 보고서·지식 그래프·history에 "← 목차" 링크 추가.</li>
+          <li><time>21:30</time> <code>.gitignore</code> 작성 (<code>.env</code>, 원본 리서치·로그 제외). 올릴 파일 17개에서 개인 경로·계정명 검색 → 없음. 올릴 파일 안에 API 키 값이 들어있는지 검사 (값은 출력하지 않음) → 없음.</li>
+          <li><time>21:30</time> 커밋 → 공개 저장소 생성·푸시 → Pages 켜기 (main 브랜치 루트).</li>
+          <li><time>21:31</time> 사이트 빌드 완료 확인 (status: built).</li>
+          <li><time>21:32</time> 실제 사이트 점검: 목차·보고서·지식 그래프·history·이미지 모두 200 (정상). <code>.env</code>, 원본 리서치는 404 (올라가지 않음 확인). 지식 그래프도 실제 사이트에서 정상 동작.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> GitHub Pages 사이트 게시 완료: <code>https://&lt;계정&gt;.github.io/etch-paper-study/</code> (계정명은 기록 규칙에 따라 가림).</p>
+        <figure>
+          <img src="../history_img/20261005_213228_github_pages_home.png" alt="GitHub Pages 목차 첫 화면">
+          <figcaption>history_img/20261005_213228_github_pages_home.png — 실제 사이트의 목차 첫 화면</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261005_213228_github_pages_graph.png" alt="GitHub Pages 지식 그래프 화면">
+          <figcaption>history_img/20261005_213228_github_pages_graph.png — 실제 사이트에서 연 지식 그래프 ("SiGe 측면 리세스" 포커스)</figcaption>
+        </figure>
+      </section>
+    </article>
+    <!-- ===== 항목 #15 ===== -->
+    <article class="entry" id="e15">
+      <div class="entry-head">
+        <span class="no">#15</span>
+        <h2>커밋 기록의 개인 메일 주소 가리기</h2>
+        <time>2026-10-05 21:40</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>게인 메일 주소 암호화 해서 배포. CLAUDE.md 에도 마찬가지.
+
+(이후 진행 지시: "다시 진해" / "다시 진행해줘.")</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>직전 보안 점검(사용자 요청으로 기록 생략)에서 <b>커밋 작성자 정보에 개인 Gmail 주소가 공개</b>되어 있음을 발견함. 그 외 API 키·IP·토큰·로컬 경로는 공개 파일 어디에도 없었음.</li>
+          <li>개인 메일이 드러나지 않게 GitHub이 제공하는 <b>no-reply 주소</b>로 바꿔 다시 배포한다. 이미 올라간 커밋도 고쳐야 하므로 기록을 다시 쓰고 강제 푸시가 필요하다.</li>
+          <li>같은 일이 다시 생기지 않도록 CLAUDE.md에 규칙을 추가한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>21:40</time> 이 저장소의 커밋 메일을 GitHub no-reply 주소(<code>&lt;id&gt;+&lt;계정&gt;@users.noreply.github.com</code>)로 설정. 이 저장소에만 적용.</li>
+          <li><time>21:41</time> 기존 커밋 2개의 작성자·커미터 메일을 no-reply 주소로 다시 씀 (로컬).</li>
+          <li><time>21:42</time> 강제 푸시와 기록 정리 단계가 Claude Code 자동 모드에서 "되돌리기 어려운 git 작업"으로 차단됨 → 우회하지 않고 사용자에게 승인 요청. <span class="tag warn">보류</span></li>
+          <li><time>21:47</time> 사용자가 자동 모드를 끄고 진행을 지시 → 강제 푸시 승인·실행 성공.</li>
+          <li><time>21:48</time> CLAUDE.md에 "개인 메일 주소 보호" 규칙 추가 (커밋 전 메일 확인, 푸시 전 기록 확인, 기록에 메일 적지 않기, 강제 푸시는 사용자 승인 후).</li>
+          <li><time>21:48</time> 이 기록과 규칙을 커밋·푸시하고, GitHub에 올라간 모든 커밋의 메일을 확인.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 저장소의 모든 커밋이 no-reply 주소만 사용. 개인 메일은 공개 기록에서 사라짐.</p>
+        <p style="font-size:13px;color:#6b7280">참고: 고치기 전 잠시 공개되어 있었으므로 그 사이 저장소를 복제한 사람이 있다면 옛 기록이 남아 있을 수 있음. GitHub 설정의 "Block command line pushes that expose my email"을 켜면 재발을 막을 수 있음 (사용자가 직접 설정).</p>
+      </section>
+    </article>
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-2.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><span class="cur" aria-current="page">3. 공유·배포·보안</span><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><span class="sep">|</span><a href="phase-4.html">다음 단계 →</a></nav>
+</div>
+</body>
+</html>

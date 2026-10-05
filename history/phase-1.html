@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>작업 기록 1단계 · 기록·자문 체계 구축</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>1단계 · 기록·자문 체계 구축</h1>
+    <p class="phase-desc">항목 #1–#8 · 2026-10-05 18:28 ~ 20:44 · history.html·CLAUDE.md 규칙을 만들고, 브라우저 스크린샷 기록을 시험하고, 자문 도구(gpt-6-astra, jev)를 연결했다. 계정에서 못 쓰는 sol은 astra high로 대체.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><span class="dis">← 이전 단계</span><span class="sep">|</span><span class="cur" aria-current="page">1. 기록·자문 체계 구축</span><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><span class="sep">|</span><a href="phase-2.html">다음 단계 →</a></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #1 ===== -->
+    <article class="entry" id="e1">
+      <div class="entry-head">
+        <span class="no">#1</span>
+        <h2>작업 기록 체계(history.html · CLAUDE.md) 구축</h2>
+        <time>2026-10-05 18:28</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>이 프로젝트에서는 수행하는 과정을 잘 기록해서, 공유하는 용도로도 사용할거야. 그래서 내가 하는 모든 지시는 지금부터 원문 그대로, 니가 내말을 듣고 정리한 내용, 니가한 작업의 과정을 모두 history.html을 만들어서 기록해줘. 이때 history.html은 밝은 톤으로 해주고, 시간의 흐름대로 정리해주고, 지시, 분석, 과정을 시간과 함께 기록 정리해줘. 특히 성공한 증거는 스크린샷으로 파일명에 날짜와 시간을 넣어서 history_img라는 폴더에 이미지를 저장하고, history.html에도 해당 이미지가 보이도록 해야해. 이렇게 항상 이 프로젝트에서는 작업을 하도록, CLAUDE.md에 정리해줘. 단, IP 주소나 토큰 같은 민감한 정보가 history에 저장되어서는 절대 안된다. 그리고 모든 일은 astra 및 jev의 자문을 받으면서 하자.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>앞으로 모든 지시마다 <b>원문 / 정리한 내용 / 작업 과정</b>을 <code>history.html</code>에 시간과 함께 기록한다.</li>
+          <li>history.html은 <b>밝은 톤</b>, <b>시간순 타임라인</b> 형태로 만든다.</li>
+          <li>성공 증거는 스크린샷으로 <code>history_img/</code>에 저장하고, 파일명에 날짜·시간을 넣고, history.html에서 이미지가 보이게 한다.</li>
+          <li>이 규칙을 <code>CLAUDE.md</code>에 정리해 매 세션 자동 적용되게 한다.</li>
+          <li>IP 주소·토큰 등 민감정보는 기록에 절대 남기지 않는다 (필요 시 마스킹).</li>
+          <li>모든 작업은 <b>astra</b>와 <b>jev</b>의 자문을 받으며 진행한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>18:28</time> 프로젝트 폴더 확인 — 빈 폴더, 기존 CLAUDE.md 없음.</li>
+          <li><time>18:28</time> astra / jev 확인 — 로컬 에이전트 정의(<code>.claude/agents</code>)와 실행 중인 다른 세션을 조회했으나 해당 이름의 자문자를 찾지 못함. <span class="tag warn">사용자 확인 필요</span></li>
+          <li><time>18:28</time> <code>CLAUDE.md</code> 작성 — 기록 규칙, 스크린샷 규칙, 민감정보 금지, astra/jev 자문 규칙 명시.</li>
+          <li><time>18:29</time> <code>history.html</code> 작성 — 밝은 톤 타임라인, 항목별 지시/분석/과정/결과 블록 구조.</li>
+          <li><time>18:29</time> <code>history_img/</code> 폴더 생성. (스크린샷은 #2 항목의 브라우저 테스트에서 촬영)</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> CLAUDE.md, history.html, history_img/ 구성 완료. astra/jev의 정체는 사용자 확인 대기 중.</p>
+        <figure>
+          <img src="../history_img/20261005_182922_history_browser_test.png" alt="history.html 첫 렌더링 스크린샷">
+          <figcaption>history_img/20261005_182922_history_browser_test.png — 생성 직후 history.html 렌더링 화면</figcaption>
+        </figure>
+      </section>
+    </article>
+    <!-- ===== 항목 #2 ===== -->
+    <article class="entry" id="e2">
+      <div class="entry-head">
+        <span class="no">#2</span>
+        <h2>history.html 브라우저 열기 · 스크린샷 테스트</h2>
+        <time>2026-10-05 18:29</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>좋아. 이제 테스트삼아 history.html을 웹브라우저로 열어서, 스크린샷을 찍어봐.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>방금 만든 history.html이 실제 웹브라우저에서 제대로 보이는지 확인한다.</li>
+          <li>그 화면을 스크린샷으로 찍어 <code>history_img/</code>에 날짜·시간 파일명으로 저장하고, 기록에 넣어 스크린샷 흐름 자체를 검증한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>18:29</time> 설치된 브라우저 확인 — Chrome, Edge 모두 있음 → Chrome 사용.</li>
+          <li><time>18:29</time> Chrome 헤드리스 모드로 history.html을 열어 1000×1700 화면 스크린샷 저장 → <code>20261005_182922_history_browser_test.png</code>.</li>
+          <li><time>18:30</time> 스크린샷 확인 — 페이지는 정상 렌더링됨. 문제 2가지 발견:
+            <ul>
+              <li>#1 항목 이미지가 깨짐 (실제로 없는 임시 파일명을 가리키고 있었음) → 실제 스크린샷 파일로 수정.</li>
+              <li>블록 왼쪽 색 띠가 모두 검은색으로 보임 (CSS 우선순위 문제) → 선택자 수정.</li>
+            </ul>
+          </li>
+          <li><time>18:29</time> 수정 후 다시 스크린샷 촬영 (아래 이미지). 촬영 순간에는 이 이미지 파일이 아직 없어서 화면 속 #2의 이미지는 빈칸으로 찍힘(정상).</li>
+          <li><time>18:31</time> 민감정보 검사 — history.html을 IP·토큰·이메일 패턴으로 검색 → 검출 없음.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 브라우저에서 열기, 스크린샷 저장, history.html에 이미지 넣기까지 전체 흐름 동작 확인.</p>
+        <figure>
+          <img src="../history_img/20261005_182959_history_browser_retest.png" alt="수정 후 history.html 브라우저 스크린샷">
+          <figcaption>history_img/20261005_182959_history_browser_retest.png — 수정 후 history.html을 브라우저에서 연 화면</figcaption>
+        </figure>
+      </section>
+    </article>
+    <!-- ===== 항목 #3 ===== -->
+    <article class="entry" id="e3">
+      <div class="entry-head">
+        <span class="no">#3</span>
+        <h2>판단 및 리서치 규칙 추가 (astra · jev · sol)</h2>
+        <time>2026-10-05 19:14</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>## 판단 및 리서치 규칙
+1. 리서치가 필요할 때에는 비동기호출로 gpt-6.1-sol high 불러다 할 것.
+2. 판단이 필요할 땐 jev에게 물어보고 의견을 구하고, 아주 중요한 판단은 gpt-6-astra xhigh를 호출해서 자문을 받아라.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li><b>리서치</b> → <code>gpt-6.1-sol</code>(reasoning effort high)를 백그라운드로 호출하고, 기다리는 동안 다른 작업을 진행한다.</li>
+          <li><b>일반 판단</b> → <b>jev</b>에게 의견을 구한다.</li>
+          <li><b>아주 중요한 판단</b> → <code>gpt-6-astra</code>(reasoning effort xhigh)에게 자문을 받는다.</li>
+          <li>이 규칙을 CLAUDE.md에 넣고, 실제로 호출이 되는지 먼저 확인한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>19:14</time> 호출 수단 확인 — Codex CLI가 설치되어 있고 로그인되어 있음. 이를 통해 GPT 모델을 호출하기로 함.</li>
+          <li><time>19:15</time> jev 확인 — 명령어, 에이전트 정의, 스킬, 다른 프로젝트 문서 어디에서도 jev를 찾지 못함. <span class="tag warn">사용자 확인 필요</span></li>
+          <li><time>19:16</time> 짧은 테스트 호출 ("PONG"이라고만 답하라는 요청):
+            <ul>
+              <li><code>gpt-6-astra</code> xhigh → <b>성공</b> (응답: PONG)</li>
+              <li><code>gpt-6.1-sol</code> high → <b>실패</b>: 현재 ChatGPT 계정으로는 Codex에서 이 모델을 지원하지 않는다는 오류</li>
+            </ul>
+          </li>
+          <li><time>19:16</time> CLAUDE.md에 "4. 판단 및 리서치 규칙" 작성 — 규칙 3가지, Codex 호출 명령, 현재 상태(astra 동작 / sol 사용 불가 / jev 미정) 정리.</li>
+          <li><time>19:17</time> 테스트 결과를 정리해 스크린샷으로 저장. 출력에 있던 session id 같은 식별자는 제외.</li>
+          <li><time>19:17</time> 민감정보 검사 — IP·토큰·이메일 패턴으로 검색 → 검출 없음.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">일부 성공</span> 규칙을 CLAUDE.md에 반영함. astra 호출은 정상 동작. <span class="tag warn">사용자 확인 대기</span> sol은 현재 계정에서 쓸 수 없고, jev는 아직 무엇인지 알 수 없음.</p>
+        <figure>
+          <img src="../history_img/20261005_191658_codex_model_test.png" alt="Codex 자문 모델 호출 테스트 결과">
+          <figcaption>history_img/20261005_191658_codex_model_test.png — astra 성공, sol 실패 결과</figcaption>
+        </figure>
+      </section>
+    </article>
+    <!-- ===== 항목 #4 ===== -->
+    <article class="entry" id="e4">
+      <div class="entry-head">
+        <span class="no">#4</span>
+        <h2>jev 사용법 파악 · 연결 시도</h2>
+        <time>2026-10-05 19:20</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>jev 사용법은 다음 링크 참고 : https://grow-up-by-coding.tistory.com/entry/Jev-API-%EC%A7%81%EC%A0%91-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0-%EA%B0%80%EA%B2%A9</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>링크 글을 읽고 jev가 무엇이고 어떻게 호출하는지 파악한다.</li>
+          <li>호출 방법을 CLAUDE.md에 정리하고, 실제로 판단 요청이 되는지 테스트한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>19:20</time> 링크 글 확인 — jev는 TypeSafe의 판단 전용 AI. 긴 글 대신 정해진 형태로 답함: <code>noul</code>(예/아니오 확률), <code>choice</code>(선택지 고르기), <code>score</code>(척도 평가). 모델명 <code>jev-latest</code>, API 키 방식.</li>
+          <li><time>19:21</time> API 키 위치 확인 — 프로젝트 폴더에 <code>.env</code> 파일이 있음을 확인. 키 값은 보지도, 기록하지도 않음.</li>
+          <li><time>19:22</time> 호출 도우미(<code>tools/ask_jev.py</code>) 작성과 테스트 호출 시도 → <b>Claude Code 권한 설정에서 차단됨</b>. <code>.env</code>의 API 키를 외부 서버로 보내는 동작이라, 사용자 허용 없이는 실행하지 않는 것이 맞다고 판단해 중단.</li>
+          <li><time>19:23</time> CLAUDE.md에 jev 사용법(주소, 요청 형식, 질문 유형)과 현재 상태(호출 보류) 기록.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag warn">보류</span> jev 사용법은 정리 완료. 실제 호출은 사용자가 권한을 허용하면 진행 (성공 증거가 없어 스크린샷 없음).</p>
+      </section>
+    </article>
+    <!-- ===== 항목 #5 ===== -->
+    <article class="entry" id="e5">
+      <div class="entry-head">
+        <span class="no">#5</span>
+        <h2>jev 호출 권한 허용 → 재시도</h2>
+        <time>2026-10-05 19:25</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>권한 허용 한다.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>사용자가 <code>.env</code>의 API 키로 jev(TypeSafe)를 호출하는 것을 허용함 → 호출 도우미를 만들고 테스트 호출을 다시 시도한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>19:25</time> <code>tools/ask_jev.py</code> 작성 재시도 → <b>다시 차단됨</b>. 채팅에서 허용한다고 말하는 것만으로는 Claude Code 자동 모드의 보안 검사가 풀리지 않음.</li>
+          <li><time>19:25</time> 권한 설정을 Claude가 직접 바꿔서 검사를 통과하는 것은 보안 검사를 우회하는 일이라 하지 않음. 사용자가 직접 허용 설정을 하도록 안내.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag warn">보류</span> 사용자가 Claude Code 설정에서 직접 허용해야 진행 가능.</p>
+      </section>
+    </article>
+    <!-- ===== 항목 #6 ===== -->
+    <article class="entry" id="e6">
+      <div class="entry-head">
+        <span class="no">#6</span>
+        <h2>jev 연결 재시도 — 인증 실패 원인 파악</h2>
+        <time>2026-10-05 20:41</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>다시 진행</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>자동 모드를 끄고 승인 방식으로 바꿨으니, 중단했던 jev 연결(도우미 작성 → 테스트 호출)을 다시 진행한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>20:40</time> <code>tools/ask_jev.py</code> 작성 완료. <code>.env</code>에서 키를 읽고, 키 값은 출력하지 않음.</li>
+          <li><time>20:41</time> 테스트 질문 전송 (noul: "이 자문 체계는 합리적인가?", choice: "다음으로 가장 먼저 할 일은?") → TypeSafe 서버에서 <b>401 인증 실패</b>: "Cannot authenticate with the server. Please check your API key".</li>
+          <li><time>20:42</time> 원인 점검 — 키 값은 보지 않고 형식만 확인 (따옴표, 공백, 줄바꿈 문자, BOM, 첫 글자 종류). 따옴표·공백·줄바꿈 문제는 없음. <b>값이 <code>=</code>로 시작함</b> → <code>TYPESAFE_API_KEY==...</code>처럼 <code>=</code>가 두 번 들어간 오타로 보임.</li>
+          <li><time>20:42</time> <code>.env</code>는 비밀 파일이라 직접 고치지 않고 사용자에게 확인 요청.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag warn">보류</span> 연결 경로는 정상 (서버까지 요청이 도달). 키 값 형식 수정 후 재시도 필요.</p>
+      </section>
+    </article>
+    <!-- ===== 항목 #7 ===== -->
+    <article class="entry" id="e7">
+      <div class="entry-head">
+        <span class="no">#7</span>
+        <h2>jev 연결 성공</h2>
+        <time>2026-10-05 20:43</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>다시 검토해줘</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>사용자가 <code>.env</code>를 고친 것으로 보고, 키 형식을 다시 점검한 뒤 jev 테스트 호출을 다시 한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>20:43</time> <code>.env</code> 형식 재점검 (값은 보지 않음) — 앞쪽의 잘못된 <code>=</code>가 사라짐, 따옴표·공백 문제 없음.</li>
+          <li><time>20:43</time> 같은 테스트 질문으로 jev 호출 → <b>성공</b>. 실제 응답 모델은 <code>jev-1.13.0</code>.
+            <ul>
+              <li>"이 자문 체계는 합리적인가?" (noul) → <b>0.61</b> (합리적일 가능성이 다소 높음)</li>
+              <li>"다음으로 가장 먼저 할 일은?" (choice) → <b>collect: 논문 목록 수집</b> (확률 0.73, 신뢰도 0.59). 계획 수립 0.20, 도구 정비 0.07.</li>
+            </ul>
+          </li>
+          <li><time>20:43</time> 질문과 응답을 정리해 스크린샷으로 저장. CLAUDE.md의 jev 상태를 "호출 성공"으로 수정하고 도우미 사용법 추가.</li>
+          <li><time>20:44</time> 민감정보 검사 — IP·토큰·이메일 패턴으로 검색 → 검출 없음.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> jev 판단 API 연결 완료. 자문 체계 현황: astra 동작 ✔, jev 동작 ✔, sol 대체 수단 미정.</p>
+        <figure>
+          <img src="../history_img/20261005_204335_jev_api_test.png" alt="jev 판단 API 테스트 결과">
+          <figcaption>history_img/20261005_204335_jev_api_test.png — jev 테스트 질문과 응답</figcaption>
+        </figure>
+      </section>
+    </article>
+    <!-- ===== 항목 #8 ===== -->
+    <article class="entry" id="e8">
+      <div class="entry-head">
+        <span class="no">#8</span>
+        <h2>리서치 담당을 gpt-6-astra (high)로 대체</h2>
+        <time>2026-10-05 20:44</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>리서치는 gpt-6-astra high로 대체해서 진행해</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>계정에서 쓸 수 없는 <code>gpt-6.1-sol</code> 대신, 리서치는 <code>gpt-6-astra</code>를 reasoning effort <b>high</b>로 비동기 호출한다.</li>
+          <li>아주 중요한 판단은 그대로 astra <b>xhigh</b>, 일반 판단은 jev.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>20:44</time> CLAUDE.md 규칙 1번과 리서치 호출 명령을 astra high로 변경. 리서치용으로 웹 검색 옵션 추가.</li>
+          <li><time>20:45</time> 테스트 호출 → Codex가 입력을 기다리며 멈추고 응답이 없었음. <span class="tag warn">실패</span></li>
+          <li><time>20:50</time> 입력을 닫는 <code>&lt;/dev/null</code>을 붙여 다시 호출 → <b>성공</b> (응답 PONG, 종료 코드 0).</li>
+          <li><time>20:50</time> CLAUDE.md의 모든 Codex 명령에 <code>&lt;/dev/null</code>을 붙이고, 그 이유를 주의사항으로 추가.</li>
+          <li><time>20:51</time> 결과 스크린샷 저장, 민감정보 검사 → 검출 없음.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 자문 체계 완성: 리서치 = astra high ✔, 일반 판단 = jev ✔, 중요 판단 = astra xhigh ✔.</p>
+        <figure>
+          <img src="../history_img/20261005_205036_astra_research_test.png" alt="리서치용 astra high 호출 테스트">
+          <figcaption>history_img/20261005_205036_astra_research_test.png — astra high(웹 검색 포함) 호출 성공</figcaption>
+        </figure>
+      </section>
+    </article>
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><span class="dis">← 이전 단계</span><span class="sep">|</span><span class="cur" aria-current="page">1. 기록·자문 체계 구축</span><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><span class="sep">|</span><a href="phase-2.html">다음 단계 →</a></nav>
+</div>
+</body>
+</html>

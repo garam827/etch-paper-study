@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>작업 기록 2단계 · A20 식각 리서치</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>2단계 · A20 식각 리서치</h1>
+    <p class="phase-desc">항목 #9–#12 · 2026-10-05 20:58 ~ 21:15 · TSMC 2nm · Apple A20의 Wafer IN부터 출하까지를 astra가 조사하고, 식각 중심 보고서와 용어집·지식 그래프를 만들었다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-1.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><span class="cur" aria-current="page">2. A20 식각 리서치</span><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><span class="sep">|</span><a href="phase-3.html">다음 단계 →</a></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #9 ===== -->
+    <article class="entry" id="e9">
+      <div class="entry-head">
+        <span class="no">#9</span>
+        <h2>TSMC 2nm · A20 공정 리서치 시작</h2>
+        <time>2026-10-05 20:58</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>TSMC 2nm A20 공정 관련 정보를 알고 싶다. Wafer IN 부터 Wafer OUT 까지. 전/후공정 모두 포함.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>리서치 요청 → 규칙에 따라 <code>gpt-6-astra</code> high를 웹 검색과 함께 <b>백그라운드</b>로 호출.</li>
+          <li>'A20'은 TSMC 노드 이름이 아니므로 뜻을 판단해야 함 → jev에게 자문.</li>
+          <li>범위: 웨이퍼 입고 → FEOL → MOL → BEOL → 웨이퍼 테스트 → 범핑·다이싱·패키징 → 최종 테스트·출하.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>20:58</time> astra(high, 웹 검색)에게 리서치 요청을 백그라운드로 보냄. 요청: 용어 정리, N2 사양·팹·양산 시점, 전공정 단계별 흐름과 <b>단계별 식각 과제</b>, 웨이퍼 테스트·수율, 후공정·패키징, 요약표, 확인/추정/루머 구분, 출처.</li>
+          <li><time>20:58</time> <b>jev 자문</b> (리서치를 기다리는 동안):<ul><li>'A20'의 뜻 → <b>Apple A20 칩</b> (확률 0.99)</li><li>보고서 무게중심 → <b>식각 위주</b> (0.93)</li><li>시작 전에 사용자 확인이 필요한가 → <b>0.91 (필요)</b></li></ul></li>
+          <li><time>20:59</time> jev 의견 반영: 리서치에 용어 정리가 이미 들어 있어 진행은 계속하고, 사용자에게 A20의 뜻을 확인하기로 함.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">진행</span> 리서치는 백그라운드에서 진행 중. 결과는 #11 항목 참고.</p>
+      </section>
+    </article>
+    <!-- ===== 항목 #10 ===== -->
+    <article class="entry" id="e10">
+      <div class="entry-head">
+        <span class="no">#10</span>
+        <h2>A20 = Apple A20 칩, 식각 위주로 확정</h2>
+        <time>2026-10-05 20:59</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>Apple A20 칩 맞아. 식각 위주로 정리해줘.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>jev의 판단(Apple A20 칩, 식각 위주)을 사용자가 그대로 확인함.</li>
+          <li>보고서는 전체 흐름을 다루되 식각 공정을 자세히 쓴다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>20:59</time> 리서치 진행 상황 확인 — astra가 웹 검색 중.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">확정</span> 보고서 방향 확정.</p>
+      </section>
+    </article>
+    <!-- ===== 항목 #11 ===== -->
+    <article class="entry" id="e11">
+      <div class="entry-head">
+        <span class="no">#11</span>
+        <h2>A20 식각 중심 보고서 완성</h2>
+        <time>2026-10-05 21:01</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>결과 나오면 보고서랑 history 정리해줘</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>리서치 결과가 나오면 식각 중심의 보고서를 만들고, history.html에 이 과정을 정리한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>21:08</time> astra 리서치 완료 (약 10분, 웹 검색 44회, 출처 32개). 원문 저장: <code>research/tsmc_n2_a20_raw.md</code>.</li>
+          <li><time>21:09</time> 내용 검토 — 확인/추정/루머/미공개 표시가 잘 되어 있음. 핵심 주장 하나를 Claude가 직접 대조: Apple 발표 원문에서 "2-nanometer process"와 "die side by side with the memory" 문장 확인 → 일치.</li>
+          <li><time>21:10</time> 식각 중심 보고서 작성: <code>research/tsmc_n2_a20_etch_report.html</code>.<ul><li>전체 흐름 지도에 식각 단계 강조</li><li>GAA 핵심 식각 3장면 단면 그림 (S/D 리세스 → 내부 스페이서 → 채널 릴리스)</li><li>전공정 식각 12단계(E1~E12), 후공정 식각 3단계(B1~B3) 상세</li><li>요약표, 확인 수준 정리, 출처 32개</li><li>식각 논문 스터디로 이어갈 주제 7가지 (Claude 제안)</li></ul></li>
+          <li><time>21:12</time> 보고서를 브라우저로 열어 스크린샷 저장.</li>
+          <li><time>21:12</time> 민감정보 검사 → 검출 없음.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 보고서 완성. GAA에서 가장 어려운 식각은 ① SiGe 측면 리세스(내부 스페이서), ② 채널 릴리스, ③ 시트 사이 게이트 금속 선택 제거.</p>
+        <p><a href="../research/tsmc_n2_a20_etch_report.html">보고서 열기 → research/tsmc_n2_a20_etch_report.html</a></p>
+        <figure>
+          <img src="../history_img/20261005_211211_a20_etch_report.png" alt="A20 식각 보고서 화면">
+          <figcaption>history_img/20261005_211211_a20_etch_report.png — 식각 중심 보고서 앞부분</figcaption>
+        </figure>
+      </section>
+    </article>
+    <!-- ===== 항목 #12 ===== -->
+    <article class="entry" id="e12">
+      <div class="entry-head">
+        <span class="no">#12</span>
+        <h2>주요 용어집 · 식각 지식 그래프 제작</h2>
+        <time>2026-10-05 21:15</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>주요 용어 함께 정리하고 관련 지식을 Graph Knowledge로 표현 하고 싶어.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>A20 식각 보고서에 나온 주요 용어를 정리한다.</li>
+          <li>용어끼리의 관계(공정 순서, 어떤 식각을 쓰는지, 무엇을 제거·보존하는지, 어떤 결함이 생기는지)를 <b>지식 그래프</b>로 보여준다.</li>
+          <li>형태·배치는 판단이 필요한 부분이라 jev에게 자문한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>21:15</time> <b>jev 자문</b>:
+            <ul>
+              <li>배치 → <b>별도 페이지</b>로 만들고 보고서와 서로 링크 (확률 0.78)</li>
+              <li>형태 → <b>인터랙티브 그래프</b> (클릭하면 설명, 확대·이동·필터) (1.00)</li>
+              <li>구조 → <b>식각 중심</b>: 공정 단계·식각 기술·재료·구조·결함을 노드로, "사용/제거/위험" 같은 관계를 연결선으로 (0.99)</li>
+            </ul>
+            → 세 가지 모두 그대로 반영.</li>
+          <li><time>21:16</time> 지식 그래프 페이지 작성: <code>research/a20_etch_knowledge_graph.html</code>
+            <ul>
+              <li>용어 64개를 8가지로 분류: 제품·노드, 구조, 재료, 공정 단계, 식각 기술, 기타 공정·장비, 결함·과제, 테스트·패키징</li>
+              <li>관계 109개: 다음 단계, 사용, 제거, 형성, 보존해야 함, 위험, 검출, 구성 등</li>
+              <li>노드를 클릭하면 설명, 식각 관점, 들어오고 나가는 관계가 표시됨. 분류 필터, 검색, "식각 경로만 강조" 기능 포함</li>
+              <li>아래쪽 용어집 표(영문 표기, 설명, 식각과의 관계)는 그래프와 같은 데이터를 씀. 용어를 클릭하면 그래프의 해당 노드로 이동</li>
+            </ul></li>
+          <li><time>21:17</time> 데이터 검증 — 모든 관계가 실제 있는 용어를 가리키는지, 연결이 없는 용어는 없는지 확인 → 문제 없음.</li>
+          <li><time>21:17</time> 기존 보고서 상단에 지식 그래프 링크 추가. 주소 끝에 <code>#용어id</code>를 붙이면 그 용어에 바로 포커스되는 기능 추가 (예: <code>#s_release</code>).</li>
+          <li><time>21:18</time> 첫 스크린샷에서 그래프 가운데가 너무 빽빽함 → 노드 간격을 넓혀 다시 촬영.</li>
+          <li><time>21:19</time> 민감정보 검사 → 검출 없음.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 용어집과 인터랙티브 식각 지식 그래프 완성.</p>
+        <p><a href="../research/a20_etch_knowledge_graph.html">지식 그래프 열기 → research/a20_etch_knowledge_graph.html</a></p>
+        <figure>
+          <img src="../history_img/20261005_211850_knowledge_graph.png" alt="식각 지식 그래프 전체 화면">
+          <figcaption>history_img/20261005_211850_knowledge_graph.png — 전체 그래프 (색 = 용어 분류)</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261005_211825_knowledge_graph_focus_release.png" alt="채널 릴리스 노드 포커스 화면">
+          <figcaption>history_img/20261005_211825_knowledge_graph_focus_release.png — "채널 릴리스"를 클릭한 화면: 제거 대상(SiGe), 보존 대상(나노시트, 내부 스페이서), 위험(Si 손실, Ge 잔류, 시트 달라붙음)</figcaption>
+        </figure>
+      </section>
+    </article>
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-1.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><span class="cur" aria-current="page">2. A20 식각 리서치</span><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><span class="sep">|</span><a href="phase-3.html">다음 단계 →</a></nav>
+</div>
+</body>
+</html>
