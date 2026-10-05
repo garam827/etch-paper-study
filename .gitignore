@@ -1,0 +1,12 @@
+# 비밀 정보 — 절대 커밋 금지
+.env
+.env.*
+
+# 원본 리서치·실행 로그 (공개 범위에서 제외)
+research/*_raw.md
+research/*_log.txt
+
+# 로컬 설정·캐시
+.claude/settings.local.json
+__pycache__/
+*.pyc

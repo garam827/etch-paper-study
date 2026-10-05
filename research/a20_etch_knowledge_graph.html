@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A20 식각 지식 그래프</title>
+<style>
+  :root {
+    --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb;
+    --c-product:#7c3aed; --c-structure:#0891b2; --c-material:#ca8a04; --c-step:#2563eb;
+    --c-etch:#dc2626; --c-tool:#4b5563; --c-issue:#ea580c; --c-test:#16a34a;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.65 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; }
+  .wrap { max-width:1200px; margin:0 auto; padding:32px 20px 80px; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  h2 { font-size:20px; margin:40px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  .sub { color:var(--muted); margin:0; }
+  .sub a { color:var(--accent); }
+  .toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:18px 0 10px; }
+  .chip { border:1px solid var(--line); background:#fff; border-radius:999px; padding:4px 12px 4px 8px; font-size:13px;
+    cursor:pointer; display:inline-flex; align-items:center; gap:6px; user-select:none; color:var(--ink); font-family:inherit; }
+  .chip i { width:11px; height:11px; border-radius:50%; display:inline-block; }
+  .chip.off { opacity:.35; }
+  .toolbar input { border:1px solid var(--line); border-radius:8px; padding:6px 10px; font:inherit; font-size:14px; min-width:200px; flex:1; max-width:320px; }
+  .toolbar button.act { border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px 12px; font:inherit; font-size:13px; cursor:pointer; }
+  .main { display:grid; grid-template-columns: 1fr 340px; gap:14px; }
+  #cy { height:680px; background:#fff; border:1px solid var(--line); border-radius:12px; }
+  .panel { background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; height:680px; overflow:auto; }
+  .panel h3 { margin:0 0 2px; font-size:19px; }
+  .panel .en { color:var(--muted); font-size:13px; margin-bottom:8px; }
+  .panel .type { display:inline-block; font-size:12px; font-weight:700; color:#fff; border-radius:999px; padding:1px 9px; }
+  .panel .def { margin:10px 0; }
+  .panel ul { padding-left:18px; margin:4px 0; font-size:14px; }
+  .panel li a { color:var(--accent); cursor:pointer; text-decoration:none; }
+  .panel .rel { color:var(--muted); font-size:12px; }
+  .panel .hint { color:var(--muted); font-size:14px; }
+  .legend-edges { font-size:13px; color:var(--muted); margin-top:8px; }
+  table { border-collapse:collapse; width:100%; font-size:14px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top; }
+  th { background:#f3f6fb; position:sticky; top:0; }
+  td.term { font-weight:700; white-space:nowrap; cursor:pointer; color:var(--accent); }
+  td.term small { display:block; font-weight:400; color:var(--muted); }
+  .tbl { overflow-x:auto; border-radius:10px; max-height:none; }
+  .badge { display:inline-block; font-size:12px; font-weight:700; color:#fff; border-radius:999px; padding:0 8px; white-space:nowrap; }
+  .note { color:var(--muted); font-size:13px; }
+  .err { display:none; padding:14px; color:#991b1b; }
+  @media (max-width:860px) { .main { grid-template-columns:1fr; } #cy { height:520px; } .panel { height:auto; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Apple A20 (TSMC 2nm) 식각 지식 그래프 · 용어집</h1>
+    <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-05 · 근거: <a href="tsmc_n2_a20_etch_report.html">A20 식각 중심 보고서</a> · 노드를 클릭하면 설명과 연결 관계가 오른쪽에 나옵니다.</p>
+  </header>
+
+  <div class="toolbar" id="filters"></div>
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="용어 검색 (예: 채널 릴리스, SiGe, ALE)">
+    <button class="act" id="btnFit">전체 보기</button>
+    <button class="act" id="btnEtch">식각 경로만 강조</button>
+    <button class="act" id="btnReset">초기화</button>
+  </div>
+
+  <div class="main">
+    <div id="cy"><div class="err" id="err">그래프 라이브러리를 불러오지 못했습니다 (인터넷 연결 필요). 아래 용어집은 그대로 볼 수 있습니다.</div></div>
+    <aside class="panel" id="panel"><p class="hint">노드를 클릭하세요.<br><br>• 색 = 용어 분류<br>• 화살표 = 관계 방향 (예: 채널 릴리스 → <i>제거한다</i> → SiGe)<br>• 마우스 휠로 확대, 드래그로 이동</p></aside>
+  </div>
+  <p class="legend-edges">관계 종류: <b>다음 단계</b> (공정 순서) · <b>사용</b> (기술/장비) · <b>제거</b> (식각 대상) · <b>형성</b> (만들어지는 구조) · <b>보존해야 함</b> (선택비 대상) · <b>위험</b> (결함/과제) · <b>검출</b> (테스트) · <b>구성</b> (구조의 재료/일부)</p>
+
+  <h2>주요 용어집</h2>
+  <p class="note">용어를 클릭하면 그래프에서 해당 노드로 이동합니다. 분류 필터와 검색이 용어집에도 함께 적용됩니다.</p>
+  <div class="tbl"><table id="gloss"><thead><tr><th>용어</th><th>분류</th><th>설명</th><th>식각과의 관계</th></tr></thead><tbody></tbody></table></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.2/cytoscape.min.js"></script>
+<script>
+const TYPES = {
+  product:  {label:"제품·노드",   color:"#7c3aed"},
+  structure:{label:"구조",        color:"#0891b2"},
+  material: {label:"재료",        color:"#ca8a04"},
+  step:     {label:"공정 단계",   color:"#2563eb"},
+  etch:     {label:"식각 기술",   color:"#dc2626"},
+  tool:     {label:"기타 공정·장비", color:"#4b5563"},
+  issue:    {label:"결함·과제",   color:"#ea580c"},
+  test:     {label:"테스트·패키징", color:"#16a34a"},
+};
+
+// [id, 이름, 영문, 분류, 설명, 식각과의 관계]
+const NODES = [
+  ["a20","Apple A20 Pro","Apple A20 Pro SoC","product","Apple이 설계한 iPhone 18 Pro/Pro Max·iPhone Duo용 SoC. 2nm 공정으로 제조 (Apple 공식).","전 공정의 식각 품질이 최종 성능·수율을 좌우하는 대상 제품."],
+  ["n2","TSMC N2","TSMC 2nm-class process","product","TSMC의 2nm급 공정. TSMC 최초의 GAA 나노시트 노드. 2025년 4분기 양산.","FinFET에서 GAA로 바뀌며 SiGe 선택 식각 등 새 식각 모듈이 필수가 됨."],
+  ["n2p","N2P","TSMC N2P","product","N2 개선판. 설계 규칙 유지, 성능 약 5% 향상. 2026년 하반기 양산 예정.","공정 흐름은 N2와 같은 계열."],
+  ["a16","TSMC A16","TSMC A16 (16Å-class)","product","후면 전력 공급(Super Power Rail)을 넣은 차세대 노드. Apple A16 Bionic과 별개.","후면 전력망 형성에 웨이퍼 후면 식각·연결 공정이 추가됨. A20 흐름에는 포함하지 않음."],
+  ["gaa","GAA 나노시트 트랜지스터","Gate-All-Around nanosheet","structure","얇은 Si 판(나노시트)을 수직으로 여러 장 쌓고 게이트가 사방을 감싸는 트랜지스터. FinFET의 후속.","SiGe 희생층을 옆으로 걷어내는 고선택비 등방성 식각이 구조의 핵심."],
+  ["finfet","FinFET","Fin Field-Effect Transistor","structure","핀 모양 채널의 3면을 게이트가 감싸는 이전 세대 트랜지스터 (N3까지).","GAA와 달리 채널 아래 희생층 제거가 없음 → 비교 기준."],
+  ["superlattice","Si/SiGe 초격자","Si/SiGe superlattice stack","structure","Si와 SiGe를 번갈아 에피 성장시킨 다층막. Si는 채널, SiGe는 나중에 제거할 희생층.","층 두께·계면 품질·Ge 조성이 이후 선택 식각의 균일도를 결정."],
+  ["nanosheet","나노시트 채널","Nanosheet channel","structure","전류가 흐르는 얇은 Si 판. 채널 릴리스 후 공중에 뜬 상태가 됨.","모든 선택 식각에서 '보존해야 할' 대상. 두께 손실이 곧 특성 변화."],
+  ["sti","STI (얕은 트렌치 소자분리)","Shallow Trench Isolation","structure","소자 사이를 절연막으로 채워 전기적으로 분리하는 구조.","스택 패터닝 후 절연막 충진 → CMP → 산화막 리세스 식각으로 형성."],
+  ["dummygate","더미 게이트","Dummy (sacrificial) gate","structure","실제 금속 게이트 자리를 미리 잡아두는 희생 폴리 Si 게이트. 나중에 제거됨.","패터닝 식각으로 만들고, 더미 게이트 제거 식각으로 없앰."],
+  ["outerspacer","외부 스페이서","Outer (gate) spacer","structure","게이트 측벽의 절연막. 게이트와 S/D를 분리.","에치백으로 형성. 이후 여러 식각에서 보존해야 함."],
+  ["innerspacer","내부 스페이서","Inner spacer","structure","SiGe가 있던 자리의 끝단(게이트–S/D 사이)에 채운 절연막. GAA에만 있는 구조.","SiGe 측면 리세스 → 절연막 충진 → 에치백으로 형성. 채널 릴리스 때 침식되면 안 됨."],
+  ["sd","소스/드레인 에피","Source/Drain epitaxy","structure","채널 양끝에 선택 성장시킨 도핑 반도체 (일반적으로 n형 Si, p형 SiGe).","S/D 리세스 식각으로 자리를 만들고, 에피 전처리 식각으로 표면을 준비."],
+  ["hkmg","HKMG 게이트","High-k / Metal Gate","structure","high-k 절연막 + 일함수 금속 + 충진 금속으로 된 실제 게이트. 대체 게이트(RMG) 방식으로 형성.","시트 사이 좁은 틈에서 금속 선택 제거·리세스 식각이 필요."],
+  ["contact","자기정렬 컨택","Self-Aligned Contact (SAC)","structure","게이트 캡·스페이서를 기준으로 스스로 정렬되는 S/D·게이트 컨택. MOL 구조.","게이트 캡 대비 고선택비 컨택 식각으로 형성."],
+  ["beol","BEOL 배선","BEOL interconnect","structure","트랜지스터 위 다층 금속 배선·비아. Cu 다마신 방식이 대표적.","low-k 절연막에 비아·트렌치를 식각한 뒤 금속을 채움."],
+  ["mim","SHPMIM","Super High-Performance MIM capacitor","structure","배선층 안에 넣는 고성능 금속-절연막-금속 커패시터. 전원 안정용 (N2 공식 기술).","금속·유전체 식각으로 패터닝. 가장자리 누설·단락이 과제."],
+  ["rdl","RDL (재배선층)","Redistribution Layer","structure","칩 패드를 패키지 접속 위치로 다시 배선하는 층.","도금 후 시드층 식각 제거가 필요. 언더컷 위험."],
+  ["bump","범프 / UBM","Bump / Under-Bump Metallization","structure","칩을 패키지와 연결하는 금속 돌기와 그 아래 금속층.","시드 식각으로 범프 사이 단락 방지."],
+  ["si","Si","Silicon","material","채널 재료. 기판과 나노시트.","SiGe 선택 식각에서 식각되지 않아야 할 재료 (선택비의 분모)."],
+  ["sige","SiGe","Silicon-Germanium","material","GAA에서 희생층으로 쓰이는 재료. Ge 함량이 높을수록 Si보다 빨리 식각됨.","측면 리세스와 채널 릴리스의 식각 대상."],
+  ["highk","high-k 절연막","High-k dielectric","material","유전율이 높은 게이트 절연막 (예: Hf 계열).","게이트 금속 식각 시 손상되지 않아야 함."],
+  ["wfm","일함수 금속","Work-function metal","material","nFET/pFET의 문턱전압을 정하는 게이트 금속층.","nFET/pFET 구분을 위해 일부 영역에서 선택적으로 식각 제거."],
+  ["lowk","low-k 절연막","Low-k dielectric","material","유전율이 낮은 배선 절연막. 배선 간 기생 커패시턴스를 줄임.","플라즈마 식각에 약해 손상(탄소 손실·흡습)이 핵심 과제."],
+  ["cu","Cu (구리)","Copper","material","BEOL 주 배선 금속. 다마신 방식으로 채움.","Cu는 직접 식각하지 않고, 절연막을 식각한 뒤 채움."],
+  ["ru","Ru (루테늄)","Ruthenium","material","차세대 배선 후보 금속. 직접 식각(subtractive)이 가능.","Ru 직접 식각·semi-damascene은 imec 연구 단계. N2 채택 근거 없음."],
+  ["s_clean","웨이퍼 세정·전처리","Wafer clean / pre-treatment","step","자연산화막·오염 제거로 에피 성장 표면을 준비.","Si 손실 없이 산화막만 제거."],
+  ["s_stack","스택 패터닝","Nanosheet stack patterning","step","초격자를 좁고 긴 기둥으로 깎는 단계 (E2).","Si·SiGe를 한 번에 수직 관통하는 이방성 식각."],
+  ["s_sdrecess","S/D 리세스","Source/Drain recess","step","게이트 양옆 스택을 깎아 S/D 자리를 만드는 단계 (E4).","모든 시트 끝단을 드러내는 이방성 식각."],
+  ["s_lateral","SiGe 측면 리세스","SiGe lateral (cavity) recess","step","SiGe 끝만 옆으로 수 nm 파내는 단계 (E5). GAA 최고 난도 식각 중 하나.","시트마다 같은 깊이로, Si는 보존하며."],
+  ["s_dgremove","더미 게이트 제거","Dummy gate removal","step","폴리 Si 더미 게이트를 걷어내 게이트 자리를 여는 단계 (E7).","더미도 Si, 채널도 Si → 보호막과 노출 순서가 관건."],
+  ["s_release","채널 릴리스","Channel release (SiGe removal)","step","게이트 영역의 SiGe를 전부 제거해 Si 시트를 띄우는 단계 (E8). GAA 최고 난도 식각.","Si 손실·Ge 잔류·내부 스페이서 침식·시트 달라붙음을 동시에 억제."],
+  ["s_gaterecess","게이트 금속 선택 제거·리세스","Gate metal patterning / recess","step","일함수 금속을 영역별로 제거하고 게이트 금속 높이를 낮추는 단계 (E9).","수 nm 틈에서 금속만 균일하게 제거."],
+  ["s_contact","컨택 식각","Contact etch","step","S/D·게이트까지 컨택 홀을 뚫는 MOL 단계 (E10).","고종횡비, 게이트 캡 대비 고선택비."],
+  ["s_via","비아·트렌치 식각","Via / trench etch","step","low-k 절연막에 배선·비아 모양을 식각하는 BEOL 단계 (E11). 층마다 반복.","low-k 손상 억제, 비아 바닥 완전 개방."],
+  ["s_pad","패드 개구","Pad opening","step","최상단 보호막에서 패드 부분만 여는 단계 (E12).","잔사·과식각 관리."],
+  ["s_seed","시드층 제거","Seed layer etch","step","범핑·RDL 도금 후 남은 시드 금속을 걷어내는 후공정 단계 (B1).","단락 방지와 언더컷 억제의 균형."],
+  ["s_dicing","박막화·다이싱","Thinning & dicing","step","웨이퍼 후면을 갈아 얇게 하고 개별 다이로 자르는 단계 (B2).","손상층 제거 식각, 플라즈마 다이싱 선택 가능."],
+  ["e_aniso","이방성 플라즈마 식각","Anisotropic plasma etch (RIE/ICP)","etch","이온을 수직으로 가속해 아래 방향으로만 깎는 건식 식각.","패터닝·리세스·컨택·비아 식각의 기본."],
+  ["e_iso","고선택비 등방성 식각","Highly selective isotropic etch","etch","모든 방향으로 고르게 깎되 특정 재료만 골라 깎는 식각 (건식/기상/습식).","GAA의 SiGe 측면 리세스·채널 릴리스에 필수."],
+  ["e_ale","ALE (원자층 식각)","Atomic Layer Etching","etch","표면 개질 → 제거를 반복해 원자층 단위로 깎는 식각.","게이트 리세스·컨택 등 정밀 제어 후보. 모든 식각에 쓰인다고 단정할 수 없음."],
+  ["e_wet","습식 식각","Wet etch","etch","약액으로 녹여내는 식각. 등방성.","세정, 더미 게이트 제거, 시드 제거 등. 건조 시 시트 달라붙음 위험."],
+  ["e_etchback","에치백","Etch-back","etch","전면에 입힌 막을 일정 두께만큼 깎아 원하는 곳에만 남기는 식각.","외부·내부 스페이서 형성."],
+  ["e_plasmadice","플라즈마 다이싱","Plasma dicing","etch","깊은 실리콘 식각으로 다이를 분리하는 방식.","A20의 실제 다이싱 방식은 미공개."],
+  ["selectivity","선택비","Etch selectivity","etch","식각 대상과 보존 대상의 식각 속도 비율.","GAA 식각 성패를 가르는 핵심 지표 (예: SiGe:Si)."],
+  ["euv","EUV 리소그래피","Extreme Ultraviolet lithography","tool","13.5nm 파장 빛으로 미세 패턴을 찍는 노광. N2에 사용 (층수 미공개).","식각할 패턴의 원본. 패턴 CD가 곧 식각 출발점."],
+  ["ald","ALD (원자층 증착)","Atomic Layer Deposition","tool","원자층 단위로 막을 입히는 증착. 좁은 틈도 고르게 덮음.","내부 스페이서·high-k·금속 게이트 형성. 식각과 짝을 이룸."],
+  ["cmp","CMP (화학기계연마)","Chemical Mechanical Polishing","tool","표면을 화학·기계적으로 평탄화.","식각 전후의 평탄화 (STI, ILD, 배선)."],
+  ["epi","에피 성장","Epitaxial growth","tool","결정 방향을 맞춰 반도체 막을 키우는 공정.","초격자·S/D 형성. 식각 후 표면 상태에 민감."],
+  ["i_siloss","Si 손실·거칠기","Si loss / roughness","issue","선택 식각 중 채널 Si가 얇아지거나 거칠어지는 문제.","채널 두께·이동도 저하 → 성능 산포."],
+  ["i_geres","Ge 잔류","Residual Ge","issue","SiGe가 덜 제거되어 채널 표면에 Ge가 남는 문제.","게이트 계면 품질 저하."],
+  ["i_stiction","시트 달라붙음","Sheet stiction / collapse","issue","공중에 뜬 시트들이 서로 또는 바닥에 달라붙는 문제. 습식 건조 표면장력이 원인.","건식/기상 식각을 선호하는 이유 중 하나."],
+  ["i_recessvar","리세스 깊이 불균일","Recess depth variation","issue","위아래 시트별로 측면 리세스 깊이가 달라지는 문제.","기생 커패시턴스·실효 게이트 길이 산포."],
+  ["i_parasitic","기생 커패시턴스","Parasitic capacitance","issue","게이트–S/D 등 원치 않는 정전용량. 속도·전력 손실.","내부 스페이서 리세스가 부족할 때 증가."],
+  ["i_notch","노칭·테이퍼","Notching / taper","issue","이종 적층 식각 시 재료별 식각 속도 차로 측벽이 패이거나 기울어지는 문제.","스택 패터닝의 핵심 과제."],
+  ["i_loading","로딩 효과","Loading effect","issue","패턴 밀도에 따라 식각 속도·형상이 달라지는 현상.","밀집/고립 패턴 간 CD 차이."],
+  ["i_lowkdmg","low-k 플라즈마 손상","Low-k plasma damage","issue","식각 플라즈마로 low-k의 탄소가 빠지고 수분을 흡수해 유전율이 오르는 문제.","배선 RC 지연 증가."],
+  ["i_short","단락","Short (gate–contact 등)","issue","컨택 식각이 게이트 캡을 뚫거나 금속 잔사가 남아 전기가 통해버리는 불량.","SAC 선택비 부족, 시드 잔류가 원인."],
+  ["i_residue","잔사","Etch residue","issue","식각 후 남는 폴리머·금속 찌꺼기.","저항 증가·단락·에피 결함."],
+  ["i_undercut","언더컷","Undercut","issue","시드 식각이 범프·RDL 아래로 파고드는 문제.","접착력 저하, 범프 들뜸."],
+  ["wat","WAT / PCM","Wafer Acceptance Test","test","공정 모니터 구조의 전기 특성(문턱전압·누설·저항)을 재는 웨이퍼 검사.","채널 손실·컨택 잔사·비아 불량 등 식각 결함을 전기적으로 검출."],
+  ["cp","CP (웨이퍼 소트)","Chip Probing / wafer sort","test","다이별 기능·성능을 검사해 양품 다이(KGD)를 고르는 검사.","식각 결함의 최종 영향이 수율로 드러남."],
+  ["info","InFO-PoP","Integrated Fan-Out Package-on-Package","test","TSMC의 기존 모바일 패키지. AP 위에 DRAM 패키지를 쌓음 (A19까지).","RDL 시드 제거 등 후공정 식각 포함."],
+  ["wmcm","새 패키징 (WMCM 루머)","Side-by-side die + memory (WMCM rumor)","test","A20 Pro: 로직 다이와 메모리를 옆으로 배치 (Apple 공식). WMCM이라는 이름은 공급망 루머.","접속면 세정·RDL 시드 제거·비아 개구. 세부 방식 미공개."],
+];
+
+// [from, to, 관계]
+const EDGES = [
+  ["a20","n2","제조 공정 (업계 추정)"],["n2","n2p","개선판"],["n2p","a16","다음 세대"],
+  ["n2","gaa","트랜지스터 구조"],["finfet","gaa","후속 구조"],["a20","wmcm","패키징"],["info","wmcm","이전 방식"],
+  ["gaa","superlattice","출발 구조"],["superlattice","si","구성"],["superlattice","sige","구성"],
+  ["gaa","nanosheet","구성"],["gaa","innerspacer","구성"],["gaa","hkmg","구성"],["gaa","sd","구성"],["nanosheet","si","구성"],
+  // process order
+  ["s_clean","s_stack","다음 단계"],["s_stack","s_sdrecess","다음 단계"],["s_sdrecess","s_lateral","다음 단계"],
+  ["s_lateral","s_dgremove","다음 단계"],["s_dgremove","s_release","다음 단계"],["s_release","s_gaterecess","다음 단계"],
+  ["s_gaterecess","s_contact","다음 단계"],["s_contact","s_via","다음 단계"],["s_via","s_pad","다음 단계"],
+  ["s_pad","wat","다음 단계"],["wat","cp","다음 단계"],["cp","s_seed","다음 단계"],["s_seed","s_dicing","다음 단계"],["s_dicing","wmcm","다음 단계"],
+  // clean
+  ["s_clean","e_wet","사용"],["s_clean","si","보존해야 함"],["epi","superlattice","형성"],["s_clean","epi","표면 준비"],
+  // stack
+  ["s_stack","euv","사용"],["s_stack","e_aniso","사용"],["s_stack","superlattice","제거"],["s_stack","sti","형성"],
+  ["s_stack","i_notch","위험"],["s_stack","i_loading","위험"],["sti","cmp","사용"],
+  // dummy gate & spacer
+  ["dummygate","e_aniso","패터닝"],["outerspacer","e_etchback","형성 방법"],["dummygate","outerspacer","측벽"],
+  // S/D recess
+  ["s_sdrecess","e_aniso","사용"],["s_sdrecess","superlattice","제거"],["s_sdrecess","sd","자리 형성"],["sd","epi","형성 방법"],
+  // lateral recess
+  ["s_lateral","e_iso","사용"],["s_lateral","sige","제거"],["s_lateral","si","보존해야 함"],["s_lateral","innerspacer","형성"],
+  ["innerspacer","ald","형성 방법"],["innerspacer","e_etchback","형성 방법"],["s_lateral","i_recessvar","위험"],["i_recessvar","i_parasitic","유발"],["innerspacer","i_parasitic","억제"],
+  // dummy gate removal
+  ["s_dgremove","dummygate","제거"],["s_dgremove","e_wet","사용"],["s_dgremove","nanosheet","보존해야 함"],
+  // release
+  ["s_release","e_iso","사용"],["s_release","sige","제거"],["s_release","nanosheet","보존해야 함"],["s_release","innerspacer","보존해야 함"],
+  ["s_release","i_siloss","위험"],["s_release","i_geres","위험"],["s_release","i_stiction","위험"],["e_wet","i_stiction","유발 가능"],
+  ["e_iso","selectivity","핵심 지표"],["selectivity","sige","식각 대상"],["selectivity","si","보존 대상"],
+  // HKMG
+  ["s_gaterecess","hkmg","형성"],["hkmg","highk","구성"],["hkmg","wfm","구성"],["hkmg","ald","형성 방법"],
+  ["s_gaterecess","wfm","제거"],["s_gaterecess","highk","보존해야 함"],["s_gaterecess","e_ale","후보 기술"],["s_gaterecess","i_residue","위험"],
+  // contact
+  ["s_contact","contact","형성"],["s_contact","e_aniso","사용"],["s_contact","e_ale","후보 기술"],["s_contact","i_short","위험"],["s_contact","i_residue","위험"],["s_contact","sd","보존해야 함"],
+  // BEOL
+  ["s_via","beol","형성"],["s_via","lowk","제거"],["s_via","e_aniso","사용"],["s_via","euv","사용"],["s_via","i_lowkdmg","위험"],
+  ["beol","cu","구성"],["beol","lowk","구성"],["beol","cmp","사용"],["ru","beol","차세대 후보"],["beol","mim","포함"],
+  // pad
+  ["s_pad","mim","주변 공정"],["s_pad","i_residue","위험"],
+  // back-end
+  ["s_seed","rdl","형성"],["s_seed","bump","형성"],["s_seed","e_wet","사용"],["s_seed","i_undercut","위험"],["s_seed","i_short","잔류 시 유발"],
+  ["s_dicing","e_plasmadice","선택 가능"],["s_dicing","cmp","손상층 제거"],["wmcm","rdl","사용"],["info","rdl","사용"],
+  // test
+  ["wat","i_siloss","검출"],["wat","i_residue","검출"],["wat","i_lowkdmg","검출"],["cp","a20","양품 선별"],
+];
+
+const typeOf = Object.fromEntries(NODES.map(n => [n[0], n[3]]));
+const nameOf = Object.fromEntries(NODES.map(n => [n[0], n[1]]));
+const active = new Set(Object.keys(TYPES));
+
+// filters
+const fbox = document.getElementById("filters");
+for (const [k, t] of Object.entries(TYPES)) {
+  const b = document.createElement("button");
+  b.className = "chip"; b.dataset.type = k;
+  b.innerHTML = `<i style="background:${t.color}"></i>${t.label} <span style="color:#9ca3af">${NODES.filter(n=>n[3]===k).length}</span>`;
+  b.onclick = () => { active.has(k) ? active.delete(k) : active.add(k); b.classList.toggle("off"); applyFilter(); };
+  fbox.appendChild(b);
+}
+
+// glossary
+const tbody = document.querySelector("#gloss tbody");
+function renderGloss() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  tbody.innerHTML = "";
+  NODES.filter(n => active.has(n[3]) && (!q || (n[1]+n[2]+n[4]+n[5]).toLowerCase().includes(q)))
+    .forEach(n => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td class="term">${n[1]}<small>${n[2]}</small></td><td><span class="badge" style="background:${TYPES[n[3]].color}">${TYPES[n[3]].label}</span></td><td>${n[4]}</td><td>${n[5]}</td>`;
+      tr.querySelector(".term").onclick = () => { focusNode(n[0]); document.getElementById("cy").scrollIntoView({behavior:"smooth", block:"center"}); };
+      tbody.appendChild(tr);
+    });
+}
+
+let cy = null;
+const panel = document.getElementById("panel");
+function showPanel(id) {
+  const n = NODES.find(x => x[0] === id); if (!n) return;
+  const out = EDGES.filter(e => e[0] === id), inn = EDGES.filter(e => e[1] === id);
+  const li = (arr, other, dir) => arr.map(e => `<li><span class="rel">${dir === "out" ? "→ " + e[2] : e[2] + " ←"}</span> <a data-id="${e[other]}">${nameOf[e[other]]}</a></li>`).join("");
+  panel.innerHTML = `<span class="type" style="background:${TYPES[n[3]].color}">${TYPES[n[3]].label}</span>
+    <h3 style="margin-top:8px">${n[1]}</h3><div class="en">${n[2]}</div>
+    <div class="def">${n[4]}</div>
+    <div class="def"><b>식각 관점:</b> ${n[5]}</div>
+    ${out.length ? `<b style="font-size:14px">이 용어에서 나가는 관계</b><ul>${li(out,1,"out")}</ul>` : ""}
+    ${inn.length ? `<b style="font-size:14px">이 용어로 들어오는 관계</b><ul>${li(inn,0,"in")}</ul>` : ""}`;
+  panel.querySelectorAll("a[data-id]").forEach(a => a.onclick = () => focusNode(a.dataset.id));
+}
+function focusNode(id) {
+  showPanel(id);
+  if (!cy) return;
+  const node = cy.getElementById(id);
+  cy.elements().removeClass("faded hl");
+  const nb = node.closedNeighborhood();
+  cy.elements().not(nb).addClass("faded"); nb.addClass("hl");
+  cy.animate({ center: { eles: node }, zoom: Math.max(cy.zoom(), 1.1) }, { duration: 350 });
+}
+function applyFilter() {
+  renderGloss();
+  if (!cy) return;
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  cy.nodes().forEach(n => {
+    const d = NODES.find(x => x[0] === n.id());
+    const show = active.has(d[3]);
+    n.style("display", show ? "element" : "none");
+    n.toggleClass("match", !!q && (d[1]+d[2]).toLowerCase().includes(q));
+  });
+}
+document.getElementById("q").addEventListener("input", applyFilter);
+
+try {
+  cy = cytoscape({
+    container: document.getElementById("cy"),
+    elements: [
+      ...NODES.map(n => ({ data: { id: n[0], label: n[1], color: TYPES[n[3]].color, big: ["s_lateral","s_release","s_gaterecess","gaa","e_iso"].includes(n[0]) ? 1 : 0 } })),
+      ...EDGES.map((e, i) => ({ data: { id: "e" + i, source: e[0], target: e[1], label: e[2], seq: e[2] === "다음 단계" ? 1 : 0 } })),
+    ],
+    style: [
+      { selector: "node", style: { "background-color": "data(color)", label: "data(label)", "font-size": 11, "font-family": "Malgun Gothic, system-ui, sans-serif",
+        color: "#1f2937", "text-valign": "bottom", "text-margin-y": 4, width: 22, height: 22, "text-wrap": "wrap", "text-max-width": 90,
+        "text-background-color": "#ffffff", "text-background-opacity": .85, "text-background-padding": 1, "border-width": 2, "border-color": "#fff" } },
+      { selector: "node[big = 1]", style: { width: 34, height: 34, "font-weight": "bold", "font-size": 12, "border-color": "#fecaca", "border-width": 4 } },
+      { selector: "edge", style: { width: 1.3, "line-color": "#cbd5e1", "target-arrow-color": "#cbd5e1", "target-arrow-shape": "triangle", "arrow-scale": .8, "curve-style": "bezier" } },
+      { selector: "edge[seq = 1]", style: { width: 3, "line-color": "#93c5fd", "target-arrow-color": "#60a5fa" } },
+      { selector: "edge.hl", style: { label: "data(label)", "font-size": 10, color: "#374151", "text-background-color": "#fff", "text-background-opacity": 1, "line-color": "#64748b", "target-arrow-color": "#64748b", width: 2 } },
+      { selector: ".faded", style: { opacity: .12 } },
+      { selector: "node.match", style: { "border-color": "#facc15", "border-width": 5 } },
+      { selector: ".etchpath", style: { "line-color": "#dc2626", "target-arrow-color": "#dc2626", width: 3 } },
+    ],
+    layout: { name: "cose", animate: false, randomize: false, idealEdgeLength: 100, nodeRepulsion: 22000, gravity: .2, nodeOverlap: 20, componentSpacing: 60, numIter: 2500, padding: 20 },
+    wheelSensitivity: 0.25,
+  });
+  cy.on("tap", "node", e => focusNode(e.target.id()));
+  cy.on("tap", e => { if (e.target === cy) cy.elements().removeClass("faded hl etchpath"); });
+} catch (err) {
+  document.getElementById("err").style.display = "block";
+}
+
+document.getElementById("btnFit").onclick = () => cy && cy.fit(undefined, 20);
+document.getElementById("btnReset").onclick = () => {
+  document.getElementById("q").value = ""; active.clear(); Object.keys(TYPES).forEach(k => active.add(k));
+  fbox.querySelectorAll(".chip").forEach(c => c.classList.remove("off"));
+  applyFilter(); if (cy) { cy.elements().removeClass("faded hl etchpath match"); cy.fit(undefined, 20); }
+  panel.innerHTML = '<p class="hint">노드를 클릭하세요.</p>';
+};
+document.getElementById("btnEtch").onclick = () => {
+  if (!cy) return;
+  cy.elements().removeClass("faded hl etchpath");
+  const keep = cy.nodes().filter(n => ["step","etch","issue"].includes(typeOf[n.id()]) || ["sige","si","nanosheet","innerspacer","lowk"].includes(n.id()));
+  const edges = keep.edgesWith(keep);
+  cy.elements().not(keep.union(edges)).addClass("faded");
+  edges.filter(e => ["사용","제거","위험","보존해야 함"].includes(e.data("label"))).addClass("etchpath hl");
+};
+
+renderGloss();
+// 주소 끝에 #노드id 를 붙이면 그 용어에 포커스 (예: #s_release)
+if (cy) {
+  const h = decodeURIComponent(location.hash.slice(1));
+  cy.ready(() => { cy.fit(undefined, 20); if (h && cy.getElementById(h).length) focusNode(h); });
+}
+</script>
+</body>
+</html>

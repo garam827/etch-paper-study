@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apple A20 · TSMC N2 식각 공정 보고서</title>
+<style>
+  :root {
+    --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb;
+    --accent:#2563eb; --etch:#dc2626; --etch-bg:#fef2f2;
+    --ok:#166534; --ok-bg:#dcfce7; --est:#1e40af; --est-bg:#dbeafe;
+    --rum:#92400e; --rum-bg:#fef3c7; --na:#4b5563; --na-bg:#f3f4f6;
+    --si:#93c5fd; --sige:#fcd34d; --ox:#d1d5db; --sp:#a78bfa; --metal:#6b7280;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.7 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; }
+  .wrap { max-width:980px; margin:0 auto; padding:40px 20px 80px; }
+  h1 { font-size:28px; margin:0 0 6px; line-height:1.3; }
+  h2 { font-size:21px; margin:44px 0 14px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  h3 { font-size:17px; margin:0 0 6px; }
+  .sub { color:var(--muted); margin:0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:12px 0; }
+  .lead { font-size:16px; }
+  .tag { display:inline-block; font-size:12px; font-weight:600; padding:1px 8px; border-radius:999px; margin-right:4px; white-space:nowrap; }
+  .t-ok { background:var(--ok-bg); color:var(--ok); }
+  .t-est { background:var(--est-bg); color:var(--est); }
+  .t-rum { background:var(--rum-bg); color:var(--rum); }
+  .t-na { background:var(--na-bg); color:var(--na); }
+  .t-etch { background:var(--etch-bg); color:var(--etch); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+  .kpi { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .kpi b { display:block; font-size:20px; color:var(--accent); }
+  .kpi span { color:var(--muted); font-size:13px; }
+  /* flow strip */
+  .flow { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .flow .st { background:#fff; border:1px solid var(--line); border-radius:8px; padding:6px 10px; font-size:13px; }
+  .flow .st.e { border-color:var(--etch); background:var(--etch-bg); color:#991b1b; font-weight:600; }
+  .flow .st.e.hot { box-shadow:0 0 0 2px var(--etch) inset; }
+  .flow .ar { color:var(--muted); }
+  .flow .grp { width:100%; font-size:12px; font-weight:700; color:var(--muted); margin-top:8px; letter-spacing:.04em; }
+  /* etch step cards */
+  .step { border-left:4px solid var(--etch); }
+  .step .hd { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; margin-bottom:8px; }
+  .step .no { font-weight:800; color:var(--etch); }
+  .step dl { display:grid; grid-template-columns:110px 1fr; gap:4px 12px; margin:0; }
+  .step dt { color:var(--muted); font-size:13px; padding-top:2px; }
+  .step dd { margin:0; }
+  .star { color:var(--etch); }
+  table { border-collapse:collapse; width:100%; font-size:14px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#f3f6fb; }
+  .tbl { overflow-x:auto; border-radius:10px; }
+  .diagram { overflow-x:auto; }
+  .diagram svg { display:block; min-width:760px; width:100%; height:auto; }
+  .legend { display:flex; flex-wrap:wrap; gap:12px; font-size:13px; color:var(--muted); margin-top:8px; }
+  .legend i { display:inline-block; width:14px; height:14px; border-radius:3px; vertical-align:-2px; margin-right:4px; border:1px solid #9ca3af; }
+  .note { font-size:13px; color:var(--muted); }
+  ol.src { font-size:13px; padding-left:22px; word-break:break-all; }
+  ol.src li { margin-bottom:2px; }
+  .warn { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:12px 16px; }
+  @media (max-width:560px){ .step dl { grid-template-columns:1fr; } .step dt { padding-top:6px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Apple A20 (TSMC 2nm) — Wafer IN에서 출하까지, 식각 중심 정리</h1>
+  <p class="sub">반도체 식각 논문 스터디 · 조사 기준일 2026-10-05 · 리서치: gpt-6-astra (high, 웹 검색) · 판단 자문: jev · 정리: Claude</p>
+  <p class="sub" style="margin-top:6px"><a href="../index.html" style="color:var(--accent)">← 목차</a> · <a href="a20_etch_knowledge_graph.html" style="color:var(--accent);font-weight:600">주요 용어집 · 식각 지식 그래프 열기</a></p>
+</header>
+
+<div class="warn" style="margin-top:20px">
+  <b>읽기 전에.</b> TSMC는 N2 공정 레시피를 공개하지 않는다. 아래 공정 순서와 식각 과제는 <b>공개된 일반 GAA 나노시트 공정 흐름을 N2/A20에 적용해 재구성한 것</b>이다. 각 항목에 확인 수준을 표시했다:
+  <span class="tag t-ok">확인</span> 제조사 공식 자료
+  <span class="tag t-est">추정</span> 일반 공정 기반 재구성
+  <span class="tag t-rum">루머</span> 공급망·분석가 주장
+  <span class="tag t-na">미공개</span> 검증 가능한 수치 없음
+</div>
+
+<!-- ============ 1 ============ -->
+<h2>1. 한눈에 보기</h2>
+<div class="grid">
+  <div class="kpi"><b>GAA 나노시트</b><span>TSMC 첫 GAA 노드 (N2) <span class="tag t-ok">확인</span></span></div>
+  <div class="kpi"><b>2025년 4분기</b><span>N2 양산 개시 <span class="tag t-ok">확인</span></span></div>
+  <div class="kpi"><b>Fab 20 · Fab 22</b><span>신주 Baoshan · 가오슝 Nanzi <span class="tag t-ok">확인</span></span></div>
+  <div class="kpi"><b>2026-09-09</b><span>A20 Pro 발표 (iPhone 18 Pro/Pro Max) <span class="tag t-ok">확인</span></span></div>
+</div>
+<div class="card lead">
+  <p style="margin-top:0"><b>A20이 무엇인가.</b> Apple의 SoC 이름이다. TSMC 노드 이름(N2, N2P, A16, A14)과는 별개다. Apple은 A20 Pro가 <b>"최신 2nm 공정"</b>으로 만들어지고, <b>로직 다이와 메모리를 옆으로 나란히 놓는 새 패키징</b>을 쓴다고 공식 발표했다 <span class="tag t-ok">확인</span>. 정확히 N2인지 N2P인지는 Apple이 밝히지 않았다 <span class="tag t-est">업계 추정: N2</span>.</p>
+  <p style="margin-bottom:0"><b>식각 관점의 핵심.</b> FinFET에서 GAA로 넘어오며 새로 생긴 가장 어려운 식각은 세 가지다. ① 내부 스페이서를 위한 <b>SiGe 측면 부분 리세스</b>, ② 채널을 띄우는 <b>SiGe 희생층 완전 제거(채널 릴리스)</b>, ③ 좁은 시트 사이의 <b>게이트 금속 선택 제거</b>. 셋 모두 "Si는 거의 건드리지 않고 SiGe나 금속만 옆 방향으로 정밀하게 걷어내는" 등방성·고선택비 식각이다.</p>
+</div>
+
+<!-- ============ 2 ============ -->
+<h2>2. 전체 흐름 지도 — 식각이 들어가는 곳</h2>
+<div class="card">
+  <div class="flow">
+    <div class="grp">전공정 · FEOL (트랜지스터)</div>
+    <span class="st">웨이퍼 입고·세정</span><span class="ar">→</span>
+    <span class="st">웰 형성</span><span class="ar">→</span>
+    <span class="st">Si/SiGe 초격자 에피</span><span class="ar">→</span>
+    <span class="st e">스택 패터닝 · STI</span><span class="ar">→</span>
+    <span class="st e">더미 게이트 · 스페이서</span><span class="ar">→</span>
+    <span class="st e">S/D 리세스</span><span class="ar">→</span>
+    <span class="st e hot">SiGe 측면 리세스 · 내부 스페이서</span><span class="ar">→</span>
+    <span class="st">S/D 에피</span><span class="ar">→</span>
+    <span class="st e">더미 게이트 제거</span><span class="ar">→</span>
+    <span class="st e hot">채널 릴리스</span><span class="ar">→</span>
+    <span class="st e hot">HKMG 대체 게이트</span>
+    <div class="grp">전공정 · MOL / BEOL (배선)</div>
+    <span class="st e">자기정렬 컨택</span><span class="ar">→</span>
+    <span class="st e">BEOL 비아·트렌치 (low-k)</span><span class="ar">→</span>
+    <span class="st e">SHPMIM · 패드 개구</span><span class="ar">→</span>
+    <span class="st">WAT · CP 테스트</span><span class="ar">→</span>
+    <span class="st">Wafer OUT</span>
+    <div class="grp">후공정 (조립·테스트)</div>
+    <span class="st e">범핑 · RDL 시드 제거</span><span class="ar">→</span>
+    <span class="st e">박막화 · 다이싱</span><span class="ar">→</span>
+    <span class="st e">패키징 (로직+메모리 병렬)</span><span class="ar">→</span>
+    <span class="st">최종 테스트 · 출하</span>
+  </div>
+  <div class="legend">
+    <span><i style="background:var(--etch-bg);border-color:var(--etch)"></i>식각이 핵심인 단계</span>
+    <span><i style="background:var(--etch-bg);border:2px solid var(--etch)"></i>GAA에서 새로 생긴 고난도 식각</span>
+    <span><i style="background:#fff"></i>식각이 주가 아닌 단계</span>
+  </div>
+  <p class="note" style="margin-bottom:0">순서는 일반 GAA 통합 흐름 기준 <span class="tag t-est">추정</span>. 특히 웰·STI·에피의 순서는 통합 방식에 따라 달라진다.</p>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2>3. GAA의 핵심 식각 3장면</h2>
+<div class="card diagram">
+  <svg viewBox="0 0 900 330" xmlns="http://www.w3.org/2000/svg" font-family="Malgun Gothic, system-ui, sans-serif" role="img" aria-label="나노시트 GAA의 S/D 리세스, 내부 스페이서, 채널 릴리스 단면도">
+    <!-- panel titles -->
+    <g font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">
+      <text x="150" y="24">① S/D 리세스 후</text>
+      <text x="450" y="24">② SiGe 측면 리세스 → 내부 스페이서</text>
+      <text x="750" y="24">③ 채널 릴리스 (SiGe 제거)</text>
+    </g>
+    <!-- common drawing per panel: substrate, layers under dummy gate -->
+    <!-- Panel 1 -->
+    <g transform="translate(40,50)">
+      <rect x="0" y="210" width="220" height="30" fill="#e5e7eb"/>
+      <!-- stack under gate: x 70..150 -->
+      <rect x="70" y="40" width="80" height="30" fill="#9ca3af"/>
+      <text x="110" y="60" font-size="11" text-anchor="middle" fill="#fff">더미 게이트</text>
+      <rect x="60" y="40" width="10" height="170" fill="#c4b5fd"/><rect x="150" y="40" width="10" height="170" fill="#c4b5fd"/>
+      <rect x="70" y="70" width="80" height="20" fill="#fcd34d"/>
+      <rect x="70" y="90" width="80" height="20" fill="#93c5fd"/>
+      <rect x="70" y="110" width="80" height="20" fill="#fcd34d"/>
+      <rect x="70" y="130" width="80" height="20" fill="#93c5fd"/>
+      <rect x="70" y="150" width="80" height="20" fill="#fcd34d"/>
+      <rect x="70" y="170" width="80" height="20" fill="#93c5fd"/>
+      <rect x="70" y="190" width="80" height="20" fill="#fcd34d"/>
+      <!-- recess cavities -->
+      <rect x="10" y="70" width="50" height="140" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="160" y="70" width="50" height="140" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="35" y="145" font-size="11" text-anchor="middle" fill="#dc2626">식각</text>
+      <text x="185" y="145" font-size="11" text-anchor="middle" fill="#dc2626">식각</text>
+      <text x="110" y="262" font-size="12" text-anchor="middle" fill="#374151">이방성 식각으로 S/D 자리 파기</text>
+    </g>
+    <!-- Panel 2 -->
+    <g transform="translate(340,50)">
+      <rect x="0" y="210" width="220" height="30" fill="#e5e7eb"/>
+      <rect x="70" y="40" width="80" height="30" fill="#9ca3af"/>
+      <text x="110" y="60" font-size="11" text-anchor="middle" fill="#fff">더미 게이트</text>
+      <rect x="60" y="40" width="10" height="30" fill="#c4b5fd"/><rect x="150" y="40" width="10" height="30" fill="#c4b5fd"/>
+      <!-- SiGe recessed by 10 each side, filled with inner spacer -->
+      <g>
+        <rect x="80" y="70" width="60" height="20" fill="#fcd34d"/><rect x="70" y="70" width="10" height="20" fill="#a78bfa"/><rect x="140" y="70" width="10" height="20" fill="#a78bfa"/>
+        <rect x="70" y="90" width="80" height="20" fill="#93c5fd"/>
+        <rect x="80" y="110" width="60" height="20" fill="#fcd34d"/><rect x="70" y="110" width="10" height="20" fill="#a78bfa"/><rect x="140" y="110" width="10" height="20" fill="#a78bfa"/>
+        <rect x="70" y="130" width="80" height="20" fill="#93c5fd"/>
+        <rect x="80" y="150" width="60" height="20" fill="#fcd34d"/><rect x="70" y="150" width="10" height="20" fill="#a78bfa"/><rect x="140" y="150" width="10" height="20" fill="#a78bfa"/>
+        <rect x="70" y="170" width="80" height="20" fill="#93c5fd"/>
+        <rect x="80" y="190" width="60" height="20" fill="#fcd34d"/><rect x="70" y="190" width="10" height="20" fill="#a78bfa"/><rect x="140" y="190" width="10" height="20" fill="#a78bfa"/>
+      </g>
+      <!-- S/D epi -->
+      <rect x="10" y="70" width="60" height="140" fill="#86efac"/><rect x="150" y="70" width="60" height="140" fill="#86efac"/>
+      <text x="40" y="145" font-size="11" text-anchor="middle" fill="#14532d">S/D 에피</text>
+      <text x="180" y="145" font-size="11" text-anchor="middle" fill="#14532d">S/D 에피</text>
+      <path d="M150 80 h22" stroke="#dc2626" stroke-width="2" marker-end="url(#ah)"/>
+      <text x="110" y="262" font-size="12" text-anchor="middle" fill="#374151">SiGe 끝만 옆으로 살짝 식각 → 절연막 채움</text>
+    </g>
+    <!-- Panel 3 -->
+    <g transform="translate(640,50)">
+      <rect x="0" y="210" width="220" height="30" fill="#e5e7eb"/>
+      <rect x="10" y="70" width="60" height="140" fill="#86efac"/><rect x="150" y="70" width="60" height="140" fill="#86efac"/>
+      <!-- released Si sheets, SiGe gaps empty (dashed red) -->
+      <rect x="80" y="70" width="60" height="20" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="4 3"/>
+      <rect x="70" y="90" width="80" height="20" fill="#93c5fd"/>
+      <rect x="80" y="110" width="60" height="20" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="4 3"/>
+      <rect x="70" y="130" width="80" height="20" fill="#93c5fd"/>
+      <rect x="80" y="150" width="60" height="20" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="4 3"/>
+      <rect x="70" y="170" width="80" height="20" fill="#93c5fd"/>
+      <rect x="80" y="190" width="60" height="20" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="4 3"/>
+      <rect x="70" y="70" width="10" height="20" fill="#a78bfa"/><rect x="140" y="70" width="10" height="20" fill="#a78bfa"/>
+      <rect x="70" y="110" width="10" height="20" fill="#a78bfa"/><rect x="140" y="110" width="10" height="20" fill="#a78bfa"/>
+      <rect x="70" y="150" width="10" height="20" fill="#a78bfa"/><rect x="140" y="150" width="10" height="20" fill="#a78bfa"/>
+      <rect x="70" y="190" width="10" height="20" fill="#a78bfa"/><rect x="140" y="190" width="10" height="20" fill="#a78bfa"/>
+      <rect x="60" y="40" width="10" height="30" fill="#c4b5fd"/><rect x="150" y="40" width="10" height="30" fill="#c4b5fd"/>
+      <text x="110" y="60" font-size="11" text-anchor="middle" fill="#6b7280">(더미 게이트 제거됨)</text>
+      <text x="110" y="262" font-size="12" text-anchor="middle" fill="#374151">빈 공간에 high-k + 금속 게이트가 채워짐</text>
+    </g>
+    <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#dc2626"/></marker></defs>
+  </svg>
+  <div class="legend">
+    <span><i style="background:var(--si)"></i>Si (채널이 됨)</span>
+    <span><i style="background:var(--sige)"></i>SiGe (희생층, 제거됨)</span>
+    <span><i style="background:var(--sp)"></i>내부 스페이서</span>
+    <span><i style="background:#c4b5fd"></i>외부 스페이서</span>
+    <span><i style="background:#86efac"></i>S/D 에피</span>
+    <span><i style="background:#fff;border:2px dashed var(--etch)"></i>식각으로 제거되는 부분</span>
+  </div>
+  <p class="note" style="margin-bottom:0">게이트 방향 단면의 개념도. 시트 수·두께는 예시이며 A20의 실제 치수는 <span class="tag t-na">미공개</span>.</p>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2>4. 전공정 식각 단계별 상세</h2>
+<p class="note"><span class="star">★</span> = FinFET 대비 GAA에서 새로 생겼거나 훨씬 어려워진 식각</p>
+
+<div class="card step">
+  <div class="hd"><span class="no">E1</span><h3>웨이퍼 세정 · 전처리</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>자연산화막·오염물 제거, 에피 성장에 맞는 표면 준비</dd>
+    <dt>식각 종류</dt><dd>습식 세정, 건식 전처리 (산화막 제거)</dd>
+    <dt>핵심 과제</dt><dd>산화막은 지우되 Si 손실·표면 거칠기는 최소화. 과하면 이후 Si/SiGe 계면 품질이 나빠짐</dd>
+  </dl>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E2</span><h3>나노시트 스택 패터닝 · STI 리세스</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>Si/SiGe 교대 적층막을 좁고 긴 기둥(스택)으로 깎고, 사이를 절연막으로 채운 뒤 절연막을 다시 낮춤</dd>
+    <dt>식각 종류</dt><dd>EUV/DUV 패턴 → 하드마스크 → ICP/RIE 이방성 식각, 이후 산화막 리세스</dd>
+    <dt>핵심 과제</dt><dd>Si와 SiGe를 <b>한 번에 수직으로</b> 관통 (두 재료의 식각 속도가 달라 노칭·테이퍼 위험), 폭 편차·측벽 거칠기, 패턴 밀도에 따른 로딩 효과. STI 리세스 때 스택 보호</dd>
+    <dt>영향</dt><dd>스택 폭 = 채널 폭. 편차가 그대로 트랜지스터 특성 산포가 됨</dd>
+  </dl>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E3</span><h3>더미 게이트 · 외부 스페이서 식각</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>희생 폴리 게이트를 패터닝하고, 측벽에 스페이서만 남김</dd>
+    <dt>식각 종류</dt><dd>이방성 플라즈마 식각, 스페이서 에치백</dd>
+    <dt>핵심 과제</dt><dd>게이트 CD·수직 프로파일, 스페이서 두께 균일성. 스택 3차원 구조의 측벽에 스페이서 잔류물이 남지 않게 (FinFET보다 높은 종횡비)</dd>
+  </dl>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E4</span><h3>S/D 리세스</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>게이트 양옆 스택을 깎아 소스·드레인이 들어갈 자리를 만듦 (위 그림 ①)</dd>
+    <dt>식각 종류</dt><dd>이방성 플라즈마 식각</dd>
+    <dt>핵심 과제</dt><dd>모든 시트의 끝단이 깨끗하게 드러나도록 깊이·측벽 각도 제어. 스페이서 아래로 파고들지 않게</dd>
+  </dl>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E5 <span class="star">★</span></span><h3>SiGe 측면 리세스 · 내부 스페이서 에치백</h3><span class="tag t-est">추정</span><span class="tag t-etch">최고 난도</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>드러난 SiGe 층의 끝만 <b>옆 방향으로 몇 nm</b> 파낸 뒤 절연막을 채우고, 바깥쪽 잉여 절연막을 걷어냄 (위 그림 ②)</dd>
+    <dt>식각 종류</dt><dd>SiGe : Si 고선택비 <b>등방성</b> 식각 (건식/기상), 이후 절연막 에치백</dd>
+    <dt>핵심 과제</dt><dd><b>위아래 모든 시트에서 같은 깊이</b>로 리세스. Si는 거의 손상 없이. 리세스 끝 모양(평평 vs 둥근 형태). 에치백 때 Si·SiGe·외부 스페이서와의 선택비</dd>
+    <dt>영향</dt><dd>덜 파면 게이트–S/D 기생 커패시턴스↑, 너무 파면 실효 게이트 길이·접합 특성이 무너짐</dd>
+  </dl>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E6</span><h3>S/D 에피 전처리</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>에피 직전 채널 끝단의 자연산화막 제거</dd>
+    <dt>식각 종류</dt><dd>건식 전처리 (저손상)</dd>
+    <dt>핵심 과제</dt><dd>얇은 채널 끝과 방금 만든 내부 스페이서를 보존. 표면 손상은 에피 결함·높은 접촉 저항으로 이어짐</dd>
+  </dl>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E7</span><h3>더미 게이트 제거</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>ILD 충진·CMP 후 폴리 더미 게이트와 희생 산화막을 걷어내 게이트 자리를 엶</dd>
+    <dt>식각 종류</dt><dd>선택적 습식/건식 Si 제거</dd>
+    <dt>핵심 과제</dt><dd>더미 게이트도 Si, 채널도 Si. <b>보호막이 언제 어디를 덮고 있는지(노출 순서)</b>가 채널 보호를 결정</dd>
+  </dl>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E8 <span class="star">★</span></span><h3>채널 릴리스 — SiGe 희생층 완전 제거</h3><span class="tag t-est">추정</span><span class="tag t-etch">최고 난도</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>게이트 영역의 SiGe를 전부 제거해 Si 나노시트를 공중에 띄움 (위 그림 ③)</dd>
+    <dt>식각 종류</dt><dd>고선택비 등방성 건식·기상 식각 또는 습식</dd>
+    <dt>핵심 과제</dt><dd>동시에 지켜야 할 것: <b>Si 손실·거칠기 최소</b>, <b>Ge 잔류 없음</b>, <b>내부 스페이서 침식 없음</b>, S/D 손상 없음, <b>시트끼리 달라붙지 않음</b>(습식 건조 시 표면장력 문제)</dd>
+    <dt>공개 정도</dt><dd>TSMC의 가스·온도·압력·선택비·종말점 검출 방식 <span class="tag t-na">미공개</span></dd>
+  </dl>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E9 <span class="star">★</span></span><h3>HKMG — 게이트 금속 선택 제거 · 리세스</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>ALD로 시트 둘레에 high-k·일함수 금속을 입힌 뒤, nFET/pFET 별로 일부 금속을 선택 제거하고, 게이트 금속 리세스·캡 형성</dd>
+    <dt>식각 종류</dt><dd>금속 선택 습식/건식 식각, 금속 리세스. 원자층 수준 제어가 필요한 곳은 ALE 후보</dd>
+    <dt>핵심 과제</dt><dd>시트 사이 수 nm 틈에서 금속만 균일하게 제거하고 high-k·채널 계면은 보존. 잔사·두께 편차 → 문턱전압 산포·누설</dd>
+  </dl>
+  <p class="note" style="margin:8px 0 0">ALE(원자층 식각): 표면 개질과 제거를 분리해 한 층씩 깎는 기술. 정밀 식각의 후보이지만 N2의 모든 식각에 ALE가 쓰인다고 단정할 수는 없다.</p>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E10</span><h3>MOL — 자기정렬 컨택(SAC) 식각</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>게이트·S/D까지 좁은 컨택 홀을 뚫음</dd>
+    <dt>식각 종류</dt><dd>고종횡비 유전체 식각, 게이트 캡 대비 고선택비</dd>
+    <dt>핵심 과제</dt><dd>홀은 끝까지 열되 게이트 캡·스페이서는 뚫지 않기(뚫리면 게이트–컨택 단락). 바닥 잔사, S/D 손상</dd>
+    <dt>공개 정도</dt><dd>컨택 금속(W·Co·Ru 등) 구성 <span class="tag t-na">미공개</span></dd>
+  </dl>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E11</span><h3>BEOL — 비아·트렌치 식각 (Cu 다마신, low-k)</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>low-k 절연막에 배선·비아 모양을 식각하고 Cu를 채운 뒤 CMP. 층마다 반복</dd>
+    <dt>식각 종류</dt><dd>유전체 플라즈마 식각 (EUV/DUV 패턴)</dd>
+    <dt>핵심 과제</dt><dd><b>low-k 플라즈마 손상</b>(탄소 손실·흡습 → 유전율 상승), 비아 바닥 완전 개방, 하부 금속 손상 방지, 비아–배선 정렬</dd>
+    <dt>주의</dt><dd>Cu 다마신은 Cu를 직접 깎지 않고 <b>절연막을 깎아 Cu를 채운다</b>. Ru 직접 식각(semi-damascene)은 imec 연구 단계로, N2 양산 채택 근거 없음 <span class="tag t-na">미공개</span>. EUV 사용 <span class="tag t-ok">확인</span>, 층수 <span class="tag t-na">미공개</span></dd>
+  </dl>
+</div>
+
+<div class="card step">
+  <div class="hd"><span class="no">E12</span><h3>SHPMIM · 패시베이션 · 패드 개구</h3><span class="tag t-ok">기술 존재 확인</span><span class="tag t-est">순서 추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>배선 스택 안에 고성능 MIM 커패시터(전원 안정용)를 만들고, 최상단 보호막을 덮은 뒤 패드만 엶</dd>
+    <dt>식각 종류</dt><dd>금속·유전체 식각, 패드 개구 식각</dd>
+    <dt>핵심 과제</dt><dd>MIM 가장자리 누설·단락, 얇은 절연막 손상, 패드 잔사·과식각</dd>
+  </dl>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2>5. 웨이퍼 테스트와 수율 — 식각 결함이 드러나는 곳</h2>
+<div class="tbl"><table>
+  <tr><th>검사</th><th>무엇을 보나</th><th>식각 결함과의 연결</th></tr>
+  <tr><td><b>WAT / PCM</b></td><td>테스트 구조의 문턱전압·누설·저항·정전용량</td><td>채널 손실(E8), 컨택 잔사(E10), 비아 미개방·low-k 손상(E11)이 전기 이상으로 나타남</td></tr>
+  <tr><td><b>CP (Wafer sort)</b></td><td>제품 다이별 기능·성능 등급, 양품 맵</td><td>식각을 하는 단계는 아니며, 결함을 걸러냄</td></tr>
+</table></div>
+<div class="card">
+  <ul style="margin:0">
+    <li>TSMC IEDM 2024: 256Mb SRAM 시험 칩 <b>수율 약 90% 이상</b>, 1,000시간 HTOL 통과 <span class="tag t-ok">확인</span> — 시험 구조 수치이며 A20 제품 수율이 아님</li>
+    <li>2025년 연차보고서: N2 "양호한 수율" (정성적) <span class="tag t-ok">확인</span></li>
+    <li>A20 다이 수율·패키징 수율 <span class="tag t-na">미공개</span></li>
+  </ul>
+</div>
+
+<!-- ============ 6 ============ -->
+<h2>6. 후공정의 식각</h2>
+<div class="card step">
+  <div class="hd"><span class="no">B1</span><h3>범핑 · RDL — 시드층 제거</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>시드 금속 → 레지스트 패턴 → 도금 → 레지스트 제거 → <b>노출된 시드 식각</b></dd>
+    <dt>핵심 과제</dt><dd>시드를 남김없이 지워 단락을 막되, 범프·RDL 밑을 파고드는 <b>언더컷</b> 억제</dd>
+  </dl>
+</div>
+<div class="card step">
+  <div class="hd"><span class="no">B2</span><h3>박막화 · 다이싱</h3><span class="tag t-est">추정</span></div>
+  <dl>
+    <dt>무엇을</dt><dd>후면 연삭 → 손상층 제거(CMP·건식 식각) → 다이 분리 (블레이드/레이저/플라즈마)</dd>
+    <dt>핵심 과제</dt><dd>손상층 제거 시 두께 균일성. 플라즈마 다이싱을 쓴다면 측벽 손상·마스크 선택비</dd>
+    <dt>공개 정도</dt><dd>A20의 다이싱 방식·최종 두께 <span class="tag t-na">미공개</span></dd>
+  </dl>
+</div>
+<div class="card step">
+  <div class="hd"><span class="no">B3</span><h3>패키징 — 로직과 메모리를 나란히</h3><span class="tag t-ok">구조 확인</span><span class="tag t-rum">WMCM 명칭 루머</span></div>
+  <dl>
+    <dt>확인</dt><dd>Apple: "실리콘 다이와 메모리를 옆으로 나란히 배치해 메모리를 열 경로에서 빼고, 칩이 차세대 vapor chamber에 직접 붙게 함" (기존 InFO-PoP는 DRAM을 위에 쌓음)</dd>
+    <dt>루머</dt><dd>공급망 분석가: InFO → <b>WMCM</b>(Wafer-level Multi-Chip Module) 전환, MUF(몰디드 언더필) 사용 주장. TSMC/Apple 공식 명칭은 아님</dd>
+    <dt>식각 관여</dt><dd>접속면 세정, RDL 시드 제거, 비아 개구·잔사 제거. Chip-first / RDL-first 중 어떤 방식인지 <span class="tag t-na">미공개</span></dd>
+  </dl>
+</div>
+
+<!-- ============ 7 ============ -->
+<h2>7. 전체 흐름 요약표</h2>
+<div class="tbl"><table>
+  <tr><th>단계</th><th>핵심 공정</th><th>주요 기술/장비</th><th>식각 포인트</th></tr>
+  <tr><td>Wafer IN</td><td>입고·검사·세정</td><td>결함 검사, 습식·건식 전처리</td><td>산화막 제거 vs Si 손실</td></tr>
+  <tr><td>기판·웰</td><td>도핑·활성화</td><td>이온 주입, 열처리</td><td>마스크 제거 시 잔사</td></tr>
+  <tr><td>초격자</td><td>Si/SiGe 교대 성장</td><td>에피 CVD</td><td>계면 품질이 후속 선택 식각을 좌우</td></tr>
+  <tr><td>스택·STI</td><td>스택 패터닝·격리</td><td>EUV/DUV, RIE, CVD, CMP</td><td>이종 적층 수직 관통, 거칠기</td></tr>
+  <tr><td>더미 게이트</td><td>희생 게이트·스페이서</td><td>CVD/ALD, 이방성 식각</td><td>게이트 CD, 스페이서 잔류</td></tr>
+  <tr><td>S/D 리세스</td><td>스택 일부 제거</td><td>플라즈마 식각</td><td>깊이·측벽 각도</td></tr>
+  <tr><td><b>내부 스페이서 ★</b></td><td>SiGe 측면 리세스·충진</td><td>등방성 선택 식각, ALD, 에치백</td><td><b>시트별 균일 리세스, Si 보존</b></td></tr>
+  <tr><td>S/D 에피</td><td>선택 성장·도핑</td><td>선택 에피, 전처리</td><td>채널 끝·스페이서 보호</td></tr>
+  <tr><td>RMG 준비</td><td>ILD·CMP·더미 제거</td><td>CVD, CMP, 선택 제거</td><td>더미 Si vs 채널 Si 구분</td></tr>
+  <tr><td><b>채널 릴리스 ★</b></td><td>SiGe 희생층 제거</td><td>고선택비 등방성 식각</td><td><b>Si 손실·Ge 잔류·시트 붙음</b></td></tr>
+  <tr><td><b>HKMG ★</b></td><td>high-k·금속 게이트</td><td>ALD, 금속 충진, CMP</td><td><b>시트 사이 금속 선택 제거</b></td></tr>
+  <tr><td>MOL</td><td>게이트·S/D 컨택</td><td>SAC 식각, 금속 증착</td><td>캡 관통·단락 방지</td></tr>
+  <tr><td>BEOL</td><td>다층 배선·비아</td><td>low-k, EUV/DUV, 도금, CMP</td><td>low-k 손상, 비아 개방</td></tr>
+  <tr><td>SHPMIM·보호막</td><td>커패시터·패드 개구</td><td>박막·식각</td><td>MIM 누설, 패드 잔사</td></tr>
+  <tr><td>WAT·CP</td><td>공정 판정·양품 선별</td><td>프로버, ATE</td><td>식각 결함 전기적 검출</td></tr>
+  <tr><td>범핑·RDL</td><td>UBM·도금</td><td>PVD, 도금, 리플로</td><td>시드 잔류·언더컷</td></tr>
+  <tr><td>박막화·절단</td><td>후면 연삭·분리</td><td>그라인더, 레이저/블레이드</td><td>손상층 제거, 플라즈마 다이싱</td></tr>
+  <tr><td>패키징</td><td>로직+메모리 병렬 조립</td><td>본더, 몰딩</td><td>접속면 세정, 시드 제거</td></tr>
+  <tr><td>최종 출하</td><td>패키지 시험·포장</td><td>ATE, 핸들러</td><td>앞선 결함 최종 선별</td></tr>
+</table></div>
+
+<!-- ============ 8 ============ -->
+<h2>8. 식각 논문 스터디로 이어갈 주제</h2>
+<div class="card">
+  <p style="margin-top:0" class="note">Claude가 위 내용에서 뽑은 논문 검색용 주제 (스터디 방향 제안)</p>
+  <ol style="margin-bottom:0">
+    <li><b>SiGe : Si 고선택비 등방성 식각</b> — 채널 릴리스·내부 스페이서 리세스 (검색어: <i>selective SiGe etch nanosheet, channel release, cavity etch</i>)</li>
+    <li><b>내부 스페이서 형성과 리세스 형상 제어</b> (<i>inner spacer formation GAA, lateral recess uniformity</i>)</li>
+    <li><b>Si/SiGe 다층 스택의 이방성 식각</b> (<i>superlattice fin etch, notching, loading effect</i>)</li>
+    <li><b>원자층 식각(ALE)의 로직 적용</b> (<i>atomic layer etching gate recess, SAC</i>)</li>
+    <li><b>low-k 플라즈마 손상</b> (<i>low-k plasma damage, carbon depletion</i>)</li>
+    <li><b>Ru 직접 식각·semi-damascene</b> — 차세대 배선 (<i>Ru subtractive etch, semi-damascene</i>)</li>
+    <li><b>플라즈마 다이싱</b> (<i>plasma dicing, Bosch process</i>)</li>
+  </ol>
+</div>
+
+<!-- ============ 9 ============ -->
+<h2>9. 확인 수준 정리</h2>
+<div class="tbl"><table>
+  <tr><th><span class="tag t-ok">확인</span></th><th><span class="tag t-est">추정</span></th><th><span class="tag t-rum">루머</span> / <span class="tag t-na">미공개</span></th></tr>
+  <tr><td>N2의 GAA·NanoFlex·SHPMIM</td><td>N2/A20의 구체적 공정 순서</td><td>실제 가스·약액·온도·압력·시간</td></tr>
+  <tr><td>N2 2025년 4분기 양산</td><td>Si/SiGe 선택 식각 적용 방식</td><td>A20 시트 치수·재료·장비 배치</td></tr>
+  <tr><td>Fab 20 · Fab 22</td><td>A20이 N2 (N2P 아님)</td><td>팹별 물량, 제품 수율</td></tr>
+  <tr><td>시험 칩 수율·신뢰성</td><td>범핑·박막화·검사 흐름</td><td>EUV 층수, BEOL 금속 구성</td></tr>
+  <tr><td>A20 Pro 2nm, 로직·메모리 병렬 배치</td><td>새 패키지의 조립 순서</td><td>WMCM 명칭, MUF, 칩렛 분할 여부</td></tr>
+</table></div>
+
+<!-- ============ 10 ============ -->
+<h2>10. 출처</h2>
+<div class="card">
+  <p class="note" style="margin-top:0">리서치(gpt-6-astra)가 수집한 출처. Apple 발표[8]는 Claude가 원문을 직접 열어 "2nm 공정"과 "다이·메모리 병렬 배치" 문장을 대조 확인함. 나머지는 리서치 결과를 그대로 옮김.</p>
+  <ol class="src">
+    <li>TSMC — 2nm Technology: https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_2nm</li>
+    <li>TSMC — 2022 Annual Report: https://investor.tsmc.com/static/annualReports/2022/english/index.html</li>
+    <li>TSMC Research — IEDM 2024 N2: https://research.tsmc.com/page/transistor-structure/59.html</li>
+    <li>TSMC — 2024 Technology Symposium (PDF): https://pr.tsmc.com/system/files/newspdf/attachment/34a0127e5c396217a02a97ee58c481b168437a1a/2024%20Tech%20Symposium%20%28E%29_final_wmn.pdf</li>
+    <li>TSMC — HPC Advanced Technologies: https://www.cld.tsmc.com/english/dedicatedFoundry/technology/platform_HPC_tech_advancedTech</li>
+    <li>TSMC — 2025 Annual Report: https://investor.tsmc.com/static/annualReports/2025/english/index.html</li>
+    <li>TSMC — Fabs: https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs</li>
+    <li>Apple — iPhone 18 Pro / Pro Max 발표 (2026-09-09): https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/</li>
+    <li>Apple — iPhone Duo 발표: https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/</li>
+    <li>9to5Mac — A20 WMCM 분석가 발언 인용 (루머 근거): https://9to5mac.com/2025/08/12/next-years-iphones-could-get-bigger-than-usual-upgrades-with-a20-chip/</li>
+    <li>imec — Entering the nanosheet transistor era: https://www.imec-int.com/en/articles/entering-nanosheet-transistor-era-0</li>
+    <li>TEL–imec — Selective isotropic etching of Group-IV semiconductors (PDF): https://www.linx-consulting.com/wp-content/uploads/2018/04/01-06-S_Kal-TEL-imec_Selective_isotropic_etching_of_Group-IV_semiconductors.pdf</li>
+    <li>Lam Research — Selective Etch Product Family: https://www.lamresearch.com/product/selective-etch-product-family/</li>
+    <li>Applied Materials — Endura Trillium ALD: https://www.appliedmaterials.com/us/en/product-library/endura-trillium-ald.html</li>
+    <li>Lam Research — Tech Brief: All About ALE: https://newsroom.lamresearch.com/Tech-Brief-All-About-ALE</li>
+    <li>ASML — EUV lithography systems: https://www.asml.com/en/products/euv-lithography-systems</li>
+    <li>Applied Materials — Frontside wiring for 2nm: https://www.appliedmaterials.com/us/en/newsroom/blogs/beyond-backside-power-scaling-chips-to-2nm-and-beyond-also-requi.html</li>
+    <li>imec — 16nm-pitch Ru semi-damascene: https://www.imec-int.com/en/press/imec-demonstrates-16nm-pitch-ru-lines-record-low-resistance-obtained-using-semi-damascene</li>
+    <li>FormFactor — Parametric Test / WAT: https://www.formfactor.com/applications/high-volume-test-on-wafer/parametric-test/</li>
+    <li>Advantest — Automated Test Equipment: https://www.advantest.com/en/semiconductor-basics/automated-test-equipment/</li>
+    <li>DISCO — Corporate Report 2020 (PDF): https://disco.co.jp/eg/ir/library/doc/dar/dar2020.pdf</li>
+    <li>TSMC — InFO / InFO-PoP: https://3dfabric.tsmc.com/schinese/dedicatedFoundry/technology/InFO.htm</li>
+    <li>Brewer Science — Chip-first / RDL-first fan-out: https://www.brewerscience.com/sacrificial-laser-release-materials-for-rdl-first-fan-out-packaging/</li>
+    <li>Amkor — Wafer Bumping: https://amkor.com/services/wafer-bumping/</li>
+    <li>Amkor — S-SWIFT, RDL 시드 언더컷: https://amkor.com/blog/revolutionizing-ic-packaging-with-s-swift-technology/</li>
+    <li>TSMC — 2024 Annual Report (PDF): https://investor.tsmc.com/sites/ir/annual-report/2024/2024%20Annual%20Report_E.pdf</li>
+    <li>TSMC — 1Q26 실적 설명 (PDF): https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-04/3cef85204275f94fd111485cfdf4adb3c0263c45/TSMC%201Q26%20Transcript.pdf</li>
+    <li>Applied Materials — Advanced Logic: https://www.appliedmaterials.com/us/en/semiconductor/markets-and-inflections/advanced-logic.html</li>
+    <li>Applied Materials — New Ways to Shrink 2022 (PDF): https://ir.appliedmaterials.com/static-files/f2fbf48d-a761-4c4f-ab4c-73f312ab1ebc</li>
+    <li>TSMC 공개 특허 US20220157941A1 (일반 예시): https://patents.google.com/patent/US20220157941A1/en</li>
+    <li>Applied Materials — Interconnect: https://www.appliedmaterials.com/us/en/semiconductor/markets-and-inflections/advanced-logic/interconnect.html</li>
+    <li>Keysight — Parametric Test: https://www.keysight.com/gq/en/products/semiconductors/parametric-test-solutions.html</li>
+  </ol>
+</div>
+
+</div>
+</body>
+</html>
