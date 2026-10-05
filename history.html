@@ -864,6 +864,43 @@
       </section>
     </article>
 
+    <!-- ===== 항목 #19 ===== -->
+    <article class="entry">
+      <div class="entry-head">
+        <span class="no">#19</span>
+        <h2>질문: SiGe 측면을 굳이 리세스하는 이유</h2>
+        <time>2026-10-05 22:15</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>SiGe 측면을 굳이 Recess 하는 이유는 뭐지?</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>개념 질문. 판단이 아닌 설명이라 자문 없이 Claude가 답함.</li>
+          <li>핵심: 리세스는 <b>내부 스페이서를 넣을 자리</b>를 만들기 위한 것. 측면이 평평하면 시트 사이에 절연막을 넣을 수 없다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정 (답변 요약)</h3>
+        <ol class="steps">
+          <li><time>22:15</time> <b>게이트–S/D 절연</b>: 채널 릴리스 후 SiGe 자리에 게이트 금속이 들어온다. 외부 스페이서는 스택 위의 게이트만 막으므로, 내부 스페이서가 없으면 시트 사이 게이트 금속이 S/D 에피와 high-k 몇 nm만 사이에 두고 맞닿는다 → 기생 커패시턴스 급증, 누설·단락 위험.</li>
+          <li><time>22:15</time> <b>채널 릴리스 때 S/D 보호</b>: pFET의 S/D 에피는 보통 SiGe라 SiGe 제거 식각에 같이 공격받는다. 내부 스페이서가 SiGe 끝을 막는 장벽 역할.</li>
+          <li><time>22:15</time> <b>게이트 길이 고정</b>: 내부 스페이서 끝이 시트 사이 게이트의 시작점. 리세스 깊이 = 외부 스페이서 두께일 때 위쪽 게이트와 시트 사이 게이트의 길이가 같아진다.</li>
+          <li><time>22:15</time> <b>왜 SiGe만</b>: SiGe만 선택 식각하면 SiGe 높이에만 저절로 틈이 생긴다(자기정렬, 추가 패터닝 없음). SiGe는 어차피 나중에 제거되고, Si 시트는 S/D까지 이어져야 전류가 흐른다.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">답변 완료</span> 3D 페이지에서 리세스 깊이를 2nm로 놓고 ④단계 단면을 보면 "너무 얕은" 경우를 확인할 수 있다고 안내. (설명 답변이라 별도 스크린샷 없음)</p>
+      </section>
+    </article>
+
   </div>
 </div>
 </body>
