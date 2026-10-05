@@ -612,6 +612,62 @@
       </section>
     </article>
 
+    <!-- ===== 항목 #14 ===== -->
+    <article class="entry">
+      <div class="entry-head">
+        <span class="no">#14</span>
+        <h2>GitHub Pages로 공유 사이트 게시</h2>
+        <time>2026-10-05 21:26</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>claude artifact 보다는 github pages 기능 활용이 좋겠다.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>공유 수단을 GitHub Pages로 바꾼다: 프로젝트를 GitHub 저장소로 올리고, Pages 사이트로 게시한다.</li>
+          <li>공개 게시라 되돌리기 어려우므로 공개 여부·저장소 이름·올릴 범위를 사용자에게 먼저 확인한다. 올릴 범위는 jev에게 자문.</li>
+          <li><code>.env</code>(API 키)는 어떤 경우에도 올리지 않는다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>21:26</time> GitHub CLI 설치·로그인 상태 확인 → 사용 가능.</li>
+          <li><time>21:27</time> <b>jev 자문</b> (올릴 범위):
+            <ul>
+              <li>history.html·스크린샷 포함 → 0.70 (포함)</li>
+              <li>원본 리서치 마크다운·실행 로그 포함 → 0.48 (경계 → 제외)</li>
+              <li>도우미 스크립트·CLAUDE.md 포함 → 0.61 (포함)</li>
+              <li>첫 화면 → <b>목차 페이지 새로 만들기</b> (0.90)</li>
+            </ul></li>
+          <li><time>21:28</time> 사용자 확인: <b>공개 저장소</b>, 이름 <code>etch-paper-study</code>, jev 의견대로 범위.</li>
+          <li><time>21:29</time> 목차 첫 화면 <code>index.html</code> 작성. 보고서·지식 그래프·history에 "← 목차" 링크 추가.</li>
+          <li><time>21:30</time> <code>.gitignore</code> 작성 (<code>.env</code>, 원본 리서치·로그 제외). 올릴 파일 17개에서 개인 경로·계정명 검색 → 없음. 올릴 파일 안에 API 키 값이 들어있는지 검사 (값은 출력하지 않음) → 없음.</li>
+          <li><time>21:30</time> 커밋 → 공개 저장소 생성·푸시 → Pages 켜기 (main 브랜치 루트).</li>
+          <li><time>21:31</time> 사이트 빌드 완료 확인 (status: built).</li>
+          <li><time>21:32</time> 실제 사이트 점검: 목차·보고서·지식 그래프·history·이미지 모두 200 (정상). <code>.env</code>, 원본 리서치는 404 (올라가지 않음 확인). 지식 그래프도 실제 사이트에서 정상 동작.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> GitHub Pages 사이트 게시 완료: <code>https://&lt;계정&gt;.github.io/etch-paper-study/</code> (계정명은 기록 규칙에 따라 가림).</p>
+        <figure>
+          <img src="history_img/20261005_213228_github_pages_home.png" alt="GitHub Pages 목차 첫 화면">
+          <figcaption>history_img/20261005_213228_github_pages_home.png — 실제 사이트의 목차 첫 화면</figcaption>
+        </figure>
+        <figure>
+          <img src="history_img/20261005_213228_github_pages_graph.png" alt="GitHub Pages 지식 그래프 화면">
+          <figcaption>history_img/20261005_213228_github_pages_graph.png — 실제 사이트에서 연 지식 그래프 ("SiGe 측면 리세스" 포커스)</figcaption>
+        </figure>
+      </section>
+    </article>
+
   </div>
 </div>
 </body>

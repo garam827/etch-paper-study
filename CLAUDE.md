@@ -73,3 +73,12 @@ codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_
 - 응답: 판단값, 신뢰도, 선택지별 확률, 토큰 사용량.
 - 판단을 구할 땐 질문과 jev의 답(판단값·신뢰도)을 history.html "과정"에 기록한다.
 - 참고: https://grow-up-by-coding.tistory.com/entry/Jev-API-%EC%A7%81%EC%A0%91-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0-%EA%B0%80%EA%B2%A9
+
+## 5. 공유 사이트 (GitHub Pages)
+
+- 공유는 GitHub Pages로 한다. 저장소: `etch-paper-study` (공개), main 브랜치 루트가 그대로 사이트가 된다.
+- 첫 화면은 `index.html`(목차). 새 결과물을 만들면 목차에 항목을 추가하고, 결과물 페이지에는 `← 목차` 링크를 넣는다.
+- 작업이 끝나면 history.html 갱신 → 커밋 → `git push`로 사이트를 업데이트한다. 푸시 후 Pages 빌드 완료와 실제 페이지(200)를 확인한다.
+- 절대 커밋 금지: `.env`(API 키). `.gitignore`로 막혀 있지만, 커밋 전에 올라갈 파일에 키·IP·계정정보가 없는지 매번 검사한다.
+- 원본 리서치(`research/*_raw.md`)와 실행 로그(`research/*_log.txt`)는 공개하지 않는다 (로컬 보관).
+- 사이트 주소에는 GitHub 계정명이 들어가므로, history에는 `<계정>.github.io/etch-paper-study/`처럼 가려서 적는다.
