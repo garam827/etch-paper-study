@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>작업 기록 6단계 · 용어·개념 학습</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>6단계 · 용어·개념 학습</h1>
+    <p class="phase-desc">항목 #22– · 2026-10-06 20:03 ~ · 공정 약어와 개념에 대한 질의응답. 리서치는 astra, 핵심 주장은 원문 확인.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-5.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><span class="cur" aria-current="page">6. 용어·개념 학습</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #22 ===== -->
+    <article class="entry" id="e22">
+      <div class="entry-head">
+        <span class="no">#22</span>
+        <h2>용어 설명: PSPI Etch · BDI · VV/LB · Al/Cu RDL · eSD/eSiGe</h2>
+        <time>2026-10-06 20:03</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>PSPI Etch
+BDI
+VV, LB
+Al RDL, Cu RDL
+eSD / eSiGe
+
+위 용어들에 대한 설명</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>약어 다섯 묶음의 뜻과 공정 위치, 식각과의 관계를 설명한다.</li>
+          <li>약어는 뜻이 여러 개일 수 있어(특히 VV, LB) 리서치가 필요 → 규칙대로 astra(high, 웹 검색)에 비동기로 맡긴다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>20:04</time> astra(high, 웹 검색)에 리서치 요청을 백그라운드로 보냄: 가능한 해석을 모두 나열하고 가장 유력한 해석을 근거와 함께, 식각 포인트, 확실도 표시.</li>
+          <li><time>20:04</time> <b>jev 자문</b> (기다리는 동안): 기록 위치 → <b>새 6단계 "용어·개념 학습"</b> (0.58, 5단계 0.42로 신뢰도 낮음 — "새 성격의 작업은 새 단계" 규칙과 맞아 채택), 용어집·지식 그래프 추가 제안 → 0.76 (제안하기).</li>
+          <li><time>20:08</time> astra 완료 (약 4분 30초, 웹 검색 46회, 출처 23개). 원본은 로컬에만 보관.</li>
+          <li><time>20:09</time> 가장 불확실한 VV/LB 해석을 Claude가 원문 특허(US9947645B2)에서 직접 확인: "via pad level → 'VV' level, pad level → 'LB' level", 그 위 폴리이미드 보호막은 "PV" level. 글자별 풀네임은 특허에도 없음.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거 (답변 요약)</h3>
+        <div class="tbl" style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:14px;background:#fff">
+          <tr><th style="border:1px solid #e5e7eb;padding:6px 8px;background:#f3f6fb;text-align:left">용어</th><th style="border:1px solid #e5e7eb;padding:6px 8px;background:#f3f6fb;text-align:left">뜻</th><th style="border:1px solid #e5e7eb;padding:6px 8px;background:#f3f6fb;text-align:left">공정 위치</th><th style="border:1px solid #e5e7eb;padding:6px 8px;background:#f3f6fb;text-align:left">식각 포인트</th></tr>
+          <tr><td style="border:1px solid #e5e7eb;padding:6px 8px">PSPI Etch</td><td style="border:1px solid #e5e7eb;padding:6px 8px">감광성 폴리이미드(Photosensitive PI) 관련 식각</td><td style="border:1px solid #e5e7eb;padding:6px 8px">최상부 보호막 · RDL 절연막</td><td style="border:1px solid #e5e7eb;padding:6px 8px">PI 자체 식각, 현상 후 descum, 또는 PSPI를 마스크로 아래 SiO₂/SiN 식각 (O₂ 계열 플라즈마)</td></tr>
+          <tr><td style="border:1px solid #e5e7eb;padding:6px 8px">BDI</td><td style="border:1px solid #e5e7eb;padding:6px 8px">Bottom Dielectric Isolation (하부 유전체 절연)</td><td style="border:1px solid #e5e7eb;padding:6px 8px">GAA FEOL, 나노시트 아래</td><td style="border:1px solid #e5e7eb;padding:6px 8px">맨 아래 희생 SiGe를 선택 제거해 절연막 자리를 만듦. 채널 Si와 S/D SiGe 보호</td></tr>
+          <tr><td style="border:1px solid #e5e7eb;padding:6px 8px">VV, LB</td><td style="border:1px solid #e5e7eb;padding:6px 8px">VV = 패드 비아 레벨, LB = 패드(본드 패드) 레벨 (레이어 코드)</td><td style="border:1px solid #e5e7eb;padding:6px 8px">BEOL 최상부 → 외부 접속</td><td style="border:1px solid #e5e7eb;padding:6px 8px">VV: 절연막 비아 개구(불소계). LB: 패드 금속 패터닝, VV를 못 덮으면 식각 관통</td></tr>
+          <tr><td style="border:1px solid #e5e7eb;padding:6px 8px">Al RDL / Cu RDL</td><td style="border:1px solid #e5e7eb;padding:6px 8px">알루미늄 / 구리 재배선층</td><td style="border:1px solid #e5e7eb;padding:6px 8px">칩 최상부 · 웨이퍼 레벨 패키징</td><td style="border:1px solid #e5e7eb;padding:6px 8px">Al: 전면 증착 후 Cl₂/BCl₃ 금속 식각, 염소 잔류 부식. Cu: 도금 후 얇은 시드층 습식 제거, 단락·언더컷</td></tr>
+          <tr><td style="border:1px solid #e5e7eb;padding:6px 8px">eSD / eSiGe</td><td style="border:1px solid #e5e7eb;padding:6px 8px">Embedded Source/Drain / Embedded SiGe</td><td style="border:1px solid #e5e7eb;padding:6px 8px">FEOL S/D (eSiGe는 주로 pMOS)</td><td style="border:1px solid #e5e7eb;padding:6px 8px">S/D 리세스 식각(HBr·Cl₂ 등) → 세정 → 선택 에피. eSD는 Epitaxial·Elevated S/D, ESD(정전기 방전)와 혼동 주의</td></tr>
+        </table></div>
+        <p style="margin-top:10px"><span class="tag">답변 완료</span> VV·LB·PV(폴리이미드)와 PSPI, Al RDL은 모두 <b>칩 최상부 패드 스택</b>에 함께 나오는 용어라 같은 자료에서 나왔을 가능성이 높다고 안내. 원문의 레이어 범례가 있으면 확정 가능. (설명 답변이라 별도 스크린샷 없음)</p>
+      </section>
+    </article>
+
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-5.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><span class="cur" aria-current="page">6. 용어·개념 학습</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>
