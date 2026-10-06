@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BDI 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  /* 레이아웃: 제목 → [3D 뷰 | 단계 설명] → 실패 실험 → 왜 필요한가 → 왜 어려운가 (3D 연작 공통 구성) */
+  :root {
+    --bg:#f7f8fb; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb;
+    --si:#60a5fa; --sige:#f59e0b; --hige:#c2410c; --bdi:#14b8a6; --spacer:#a78bfa; --inner:#7c3aed; --gate:#94a3b8; --epi:#22c55e; --etch:#dc2626;
+    --hk:#facc15; --metal:#64748b; --leak:#ef4444;
+    --ok:#166534; --ok-bg:#dcfce7; --bad:#991b1b; --bad-bg:#fee2e2; --mid:#92400e; --mid-bg:#fef3c7;
+    --font:"Noto Sans KR","Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;
+    --mono:"JetBrains Mono",Consolas,monospace;
+  }
+  * { box-sizing:border-box; }
+  html { color-scheme: light; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.7 var(--font); }
+  .wrap { max-width:1240px; margin:0 auto; padding-block:28px 72px; padding-inline:16px; }
+  a { color:var(--accent); }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  h1 { font-size:26px; line-height:1.3; margin:0 0 4px; text-wrap:balance; }
+  h2 { font-size:20px; margin:40px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  .sub { color:var(--muted); margin:0; }
+  .main { display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:14px; margin-top:16px; }
+  .view { position:relative; background:linear-gradient(#ffffff,#eef2f7); border:1px solid var(--line); border-radius:14px; overflow:hidden; height:600px; }
+  #c { width:100%; height:100%; display:block; }
+  .hud { position:absolute; left:12px; top:12px; display:flex; flex-wrap:wrap; gap:6px; max-width:calc(100% - 200px); }
+  .hud button, .seg button { font:inherit; font-size:13px; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:8px; padding:5px 10px; cursor:pointer; }
+  .hud button[aria-pressed="true"], .seg button[aria-pressed="true"] { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .hud button.cmp[aria-pressed="true"] { background:var(--leak); border-color:var(--leak); }
+  .legend { position:absolute; left:12px; bottom:12px; display:flex; flex-wrap:wrap; gap:6px 12px; font-size:12.5px; background:rgba(255,255,255,.9); border:1px solid var(--line); border-radius:8px; padding:6px 10px; max-width:calc(100% - 24px); }
+  .legend i { display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:-1px; margin-right:4px; }
+  .hint { position:absolute; right:12px; top:12px; font-size:12px; color:var(--muted); background:rgba(255,255,255,.85); border-radius:6px; padding:3px 8px; }
+  .badge { position:absolute; right:12px; top:44px; font-size:13px; font-weight:700; border-radius:8px; padding:4px 10px; background:var(--bad-bg); color:var(--bad); display:none; }
+  .fallback { display:none; position:absolute; inset:0; place-items:center; padding:24px; text-align:center; color:var(--bad); }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; display:flex; flex-direction:column; gap:10px; }
+  .steps { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; }
+  .steps button { font:inherit; font-weight:700; font-size:14px; border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px 0; cursor:pointer; color:var(--ink); }
+  .steps button[aria-current="step"] { background:var(--bdi); color:#fff; border-color:var(--bdi); }
+  .steps button.etch { border-color:#fecaca; }
+  .nav { display:flex; gap:8px; }
+  .nav button { flex:1; font:inherit; font-size:14px; border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px; cursor:pointer; }
+  .panel h3 { margin:4px 0 0; font-size:18px; line-height:1.4; }
+  .kind { font-size:12px; font-weight:700; display:inline-block; padding:1px 9px; border-radius:999px; background:#f3f4f6; color:#374151; }
+  .kind.etch { background:var(--bad-bg); color:var(--etch); }
+  .panel p { margin:0; }
+  .panel dl { margin:0; display:grid; grid-template-columns:72px 1fr; gap:4px 10px; font-size:14px; }
+  .panel dt { color:var(--muted); }
+  .panel dd { margin:0; }
+  .lab { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px 24px; }
+  .lab label { font-weight:700; font-size:14px; display:block; margin-bottom:4px; }
+  .lab input[type=range] { width:100%; accent-color:var(--bdi); }
+  .row { display:flex; justify-content:space-between; font-size:12.5px; color:var(--muted); font-family:var(--mono); }
+  .seg { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+  .verdict { grid-column:1 / -1; border-radius:10px; padding:12px 14px; font-size:14.5px; }
+  .verdict strong { display:block; font-size:15px; }
+  .v-ok { background:var(--ok-bg); color:var(--ok); } .v-bad { background:var(--bad-bg); color:var(--bad); } .v-mid { background:var(--mid-bg); color:var(--mid); }
+  .why { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+  .why div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:14.5px; }
+  .why strong { display:block; margin-bottom:2px; }
+  .note { color:var(--muted); font-size:13px; }
+  @media (max-width:900px) { .main { grid-template-columns:1fr; } .view { height:440px; } .hud { max-width:calc(100% - 24px); } .hint { display:none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="sub"><a href="../index.html">← 목차</a> · <a href="inner_spacer_3d.html">내부 스페이서 3D</a> · <a href="channel_release_3d.html">채널 릴리스 3D</a> · <a href="../research/a20_etch_knowledge_graph.html#s_bdi">지식 그래프에서 보기</a></p>
+    <h1>BDI (하부 유전체 절연) — 3D로 보기</h1>
+    <p class="sub">나노시트 아래에 절연막을 깔아 기판으로 새는 전류를 막는 구조. 맨 아래 희생층을 골라 녹이고 그 자리를 절연막으로 채운다. 채널 릴리스와 같은 원리의 선택 식각이 한 번 더 들어간다.</p>
+  </header>
+
+  <div class="main">
+    <div class="view">
+      <canvas id="c" aria-label="BDI 형성 공정의 3D 모델"></canvas>
+      <div class="hud">
+        <button id="bSecZ" aria-pressed="false">단면: 채널 방향</button>
+        <button id="bSecX" aria-pressed="false">단면: 폭 방향</button>
+        <button id="bGate" aria-pressed="true">게이트·스페이서 표시</button>
+        <button id="bNoBdi" class="cmp" aria-pressed="false">BDI 없이 보기</button>
+        <button id="bReset">시점 초기화</button>
+      </div>
+      <div class="hint">드래그: 회전 · 휠: 확대</div>
+      <div class="badge" id="badge">BDI 없음 — 빨강: 누설 경로</div>
+      <div class="legend">
+        <span><i style="background:var(--si)"></i>Si 채널·기판</span>
+        <span><i style="background:var(--sige)"></i>SiGe 희생층</span>
+        <span><i style="background:var(--hige)"></i>고-Ge SiGe (BDI용)</span>
+        <span><i style="background:var(--bdi)"></i>BDI 절연막</span>
+        <span><i style="background:var(--inner)"></i>내부 스페이서</span>
+        <span><i style="background:var(--spacer)"></i>외부 스페이서</span>
+        <span><i style="background:var(--gate)"></i>더미 게이트</span>
+        <span><i style="background:var(--epi)"></i>S/D 에피</span>
+        <span><i style="background:var(--metal)"></i>금속 게이트</span>
+      </div>
+      <div class="fallback" id="fallback">3D를 표시할 수 없습니다. 브라우저의 WebGL이 꺼져 있거나 라이브러리를 불러오지 못했습니다 (인터넷 연결 필요).</div>
+    </div>
+
+    <aside class="panel" aria-live="polite">
+      <div class="steps" id="steps"></div>
+      <div class="nav"><button id="prev">← 이전</button><button id="next">다음 →</button></div>
+      <div><span class="kind" id="kind"></span></div>
+      <h3 id="title"></h3>
+      <p id="desc"></p>
+      <dl id="facts"></dl>
+    </aside>
+  </div>
+
+  <h2>직접 바꿔보기 — 실패 양상</h2>
+  <div class="lab">
+    <div>
+      <label for="prog">고-Ge SiGe 제거 진행도</label>
+      <input id="prog" type="range" min="0" max="100" step="5" value="100">
+      <div class="row"><span>0%</span><span id="progVal">100%</span><span>100%</span></div>
+      <p class="note" style="margin:6px 0 0">게이트 밖은 옆면에서, 게이트 아래는 게이트 양쪽에서 파고든다.</p>
+    </div>
+    <div>
+      <label>고-Ge : 저-Ge SiGe 선택비</label>
+      <div class="seg" id="sel">
+        <button data-v="0" aria-pressed="true">높음</button>
+        <button data-v="1" aria-pressed="false">낮음 (위 희생층도 패임)</button>
+      </div>
+      <label>절연막 채움</label>
+      <div class="seg" id="void">
+        <button data-v="0" aria-pressed="true">빈틈없음</button>
+        <button data-v="1" aria-pressed="false">기공(void) 생김</button>
+      </div>
+    </div>
+    <div>
+      <p class="note" style="margin:0">값을 바꾸면 3D가 ① 고-Ge SiGe 제거 이후 상태로 바뀝니다. "BDI 없이 보기"는 ④·⑤단계에서 기판 쪽 누설 경로를 빨간색으로 보여줍니다.</p>
+    </div>
+    <div class="verdict" id="verdict"></div>
+  </div>
+  <p class="note">BDI를 만드는 방법은 여러 가지가 연구되고 있으며, 이 페이지는 공개 연구(IBM full BDI 등)에 기반한 대표적인 흐름의 개념도입니다. TSMC N2가 BDI를 쓰는지, 어떤 방식인지는 확인되지 않았습니다. 치수는 예시 값입니다.</p>
+
+  <h2>왜 필요한가</h2>
+  <div class="why">
+    <div><strong>맨 아래에 숨은 트랜지스터</strong>게이트는 맨 아래 시트 밑에서 기판 위에 바로 앉는다. 그러면 기판 표면도 게이트의 영향을 받아 <b>원치 않는 채널(기생 채널)</b>이 된다. 시트처럼 얇지 않아 꺼지지 않고 새는 전류가 크다.</div>
+    <div><strong>S/D 아래로 새는 길</strong>S/D 에피가 기판에 붙어 있으면 소스에서 기판을 지나 드레인으로 가는 <b>누설 경로</b>가 생긴다. 보통은 기판 도핑으로 막지만, 게이트 길이가 짧아질수록 막기 어렵다.</div>
+    <div><strong>BDI가 하는 일</strong>시트 아래와 S/D 아래를 절연막으로 끊어, <b>전류가 시트로만 흐르게</b> 한다. 기판 도핑 부담이 줄고, 소자 간 특성 차이도 줄어든다. 위의 "BDI 없이 보기"로 비교해보세요.</div>
+  </div>
+
+  <h2>왜 어려운가</h2>
+  <div class="why">
+    <div><strong>SiGe 중에서 골라 녹이기</strong>스택 안에는 이미 SiGe 희생층이 여러 장 있다. 맨 아래만 Ge를 더 많이 넣어 <b>Ge 함량 차이로만</b> 구분해 녹여야 한다. 선택비가 모자라면 위 희생층 옆까지 패인다.</div>
+    <div><strong>공중에 뜬 스택</strong>맨 아래층이 사라지는 동안 스택 전체는 <b>더미 게이트가 붙잡고</b> 있다. 게이트 사이가 길거나 응력이 크면 스택이 처지거나 무너질 수 있다.</div>
+    <div><strong>좁은 틈을 빈틈없이</strong>수 nm 높이의 긴 틈을 옆에서 절연막으로 채워야 한다. 입구가 먼저 막히면 가운데에 <b>기공</b>이 남는다.</div>
+    <div><strong>남겨야 할 SiGe</strong>pFET의 S/D(eSiGe)는 남겨야 하는 SiGe다. BDI를 S/D 형성 뒤에 만드는 방식(BDI-last)에서는 이것까지 보호해야 해서 더 까다롭다.</div>
+  </div>
+  <p class="note" style="margin-top:16px">근거: IBM Full BDI(IEDM 2019), GAA Full BDI-last 연구(Micromachines), 하부 절연용 SiGe 선택 식각 연구(ECS). 자세한 내용은 <a href="../history/phase-6.html#e22">용어 설명 기록 #22</a>. 3D 모델은 Claude Code가 Three.js로 작성.</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const STEPS = [
+  { kind:"출발 구조", etch:false, title:"고-Ge SiGe를 깐 스택 + 더미 게이트",
+    desc:"평소 스택 맨 아래에 Ge가 더 많은 SiGe 층을 하나 더 깔았다. 이 층이 나중에 BDI 절연막 자리가 된다. 더미 게이트가 스택을 위와 양옆에서 감싸고 있다.",
+    facts:[["맨 아래","고-Ge SiGe (예: Ge 50% 이상)"],["그 위","Si / 저-Ge SiGe 스택 (채널·희생층)"],["더미 게이트","나중에 스택을 붙잡는 역할"]] },
+  { kind:"식각 · 고선택비 등방성", etch:true, title:"① 고-Ge SiGe 선택 제거",
+    desc:"맨 아래 고-Ge SiGe만 골라 녹인다. 게이트 밖은 핀 옆면에서, 게이트 아래는 게이트 양쪽에서 파고든다. 끝나면 스택은 더미 게이트에 매달린 채 기판에서 떠 있다. 아래 진행도를 줄이고 '단면: 채널 방향'으로 보면 게이트 아래로 파고드는 모습이 보인다.",
+    facts:[["방식","Ge 함량 차이를 이용한 SiGe 선택 식각 (기상·습식 등)"],["지켜야 할 것","Si 채널, 위쪽 저-Ge SiGe"],["위험","잔류, 위 희생층 패임, 스택 처짐"]] },
+  { kind:"증착", etch:false, title:"② 절연막으로 틈 채우기",
+    desc:"외부 스페이서 막을 입히는 단계에서 같은 절연막이 스택 아래 틈을 함께 채운다. 이것이 BDI. 핀 전체 길이에 걸쳐 스택과 기판이 절연막으로 끊긴다.",
+    facts:[["방식","ALD 절연막 (스페이서와 함께)"],["과제","좁고 긴 틈을 기공 없이 채우기"]] },
+  { kind:"식각 · 이방성", etch:true, title:"③ S/D 리세스 — BDI에서 멈춤",
+    desc:"게이트·스페이서 바깥의 스택을 깎는다. BDI 절연막이 식각 정지막이 되어 리세스 깊이가 저절로 맞춰진다. 기판까지 파고들지 않는다.",
+    facts:[["방식","이방성 플라즈마 식각"],["BDI 효과","식각 정지 → 리세스 깊이 균일"]] },
+  { kind:"식각 + 에피", etch:true, title:"④ 내부 스페이서 · S/D 에피",
+    desc:"앞 페이지와 같은 방법으로 내부 스페이서를 만들고 S/D를 키운다. S/D 에피는 시트 끝에서만 자라고, 아래는 BDI 위에 놓인다. 기판과 전기적으로 끊어진다.",
+    facts:[["내부 스페이서","→ 내부 스페이서 3D 페이지"],["S/D","시트 끝에서 성장, 기판과 분리"]] },
+  { kind:"식각 + 증착", etch:true, title:"⑤ 채널 릴리스 · HKMG",
+    desc:"저-Ge SiGe를 제거하고 게이트를 채운다. 맨 아래 게이트는 기판이 아니라 BDI 위에 앉으므로 기판에 기생 채널이 생기지 않는다.",
+    facts:[["채널 릴리스","→ 채널 릴리스 3D 페이지"],["결과","전류는 Si 시트로만 흐름"]] },
+];
+
+const LG2 = 7, WS = 13, ZW = 14, XOUT = 34, GZ = 24;
+const BDI0 = 0, BDI1 = 8;          // 고-Ge SiGe / BDI 층 높이
+const LAYERS = [["sige",8,17],["si",17,22],["sige",22,31],["si",31,36],["sige",36,45],["si",45,50]];
+const TOP = 50, GTOP = 68;
+
+const state = { step:0, prog:100, sel:0, voidOn:0, sec:"", gate:true, noBdi:false };
+const anim = { rmOut:0, rmGate:0, fill:0, sdr:0, inner:0, epi:0, rel:0, hkmg:0, notch:0, voidA:0, leak:0, nob:0 };
+const C = { si:0x60a5fa, sige:0xf59e0b, hige:0xc2410c, bdi:0x14b8a6, sub:0x93c5fd, gate:0x94a3b8, spacer:0xa78bfa, inner:0x7c3aed, epi:0x22c55e, sti:0xd1d5db, hk:0xfacc15, metal:0x64748b, leak:0xef4444, void:0x111827 };
+
+let renderer, scene, camera, controls;
+const P = {};
+function box(color, o = {}) {
+  const m = new THREE.MeshStandardMaterial({ color, roughness:.55, metalness:o.metal ? .4 : .05,
+    transparent:o.opacity !== undefined, opacity:o.opacity ?? 1, depthWrite:o.opacity === undefined || o.opacity > .8,
+    emissive:o.glow ? color : 0x000000, emissiveIntensity:o.glow ? .5 : 0,
+    polygonOffset:true, polygonOffsetFactor:1, polygonOffsetUnits:1 });
+  if (o.onTop) { m.depthTest = false; m.transparent = true; }
+  const mesh = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), m);
+  if (o.onTop) mesh.renderOrder = 10; // 누설 경로는 기판 속에 있어도 항상 보이게
+  mesh.userData.pad = o.pad || 0;
+  if (!o.noEdge) mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1,1,1)),
+    new THREE.LineBasicMaterial({ color:0x1f2937, transparent:true, opacity:o.opacity !== undefined ? .08 : .22 })));
+  scene.add(mesh); return mesh;
+}
+function place(mesh, x0,x1,y0,y1,z0,z1) {
+  const pad = mesh.userData.pad;
+  if (state.sec === "z") z1 = Math.min(z1, -pad);
+  if (state.sec === "x") x1 = Math.min(x1, -pad);
+  const sx = x1-x0, sy = y1-y0, sz = z1-z0;
+  mesh.visible = sx > 0.01 && sy > 0.01 && sz > 0.01;
+  if (!mesh.visible) return;
+  mesh.scale.set(sx, sy, sz); mesh.position.set((x0+x1)/2, (y0+y1)/2, (z0+z1)/2);
+}
+const hide = (...ms) => ms.forEach(m => m.visible = false);
+
+function init() {
+  const canvas = document.getElementById("c");
+  renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true, preserveDrawingBuffer:true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(32, 1, 1, 2000);
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xb8c2d0, .85));
+  const d1 = new THREE.DirectionalLight(0xffffff, .75); d1.position.set(60,120,90); scene.add(d1);
+  const d2 = new THREE.DirectionalLight(0xffffff, .3); d2.position.set(-80,40,-60); scene.add(d2);
+
+  P.sti = box(C.sti, { opacity:.55 });
+  P.sub = box(C.sub); P.subTopL = box(C.sub); P.subTopR = box(C.sub); P.subTopC = box(C.sub);
+  // 고-Ge 층: 게이트 밖 (좌/우) 각 z 앞뒤 2조각 + 게이트 아래 x 좌우 2조각
+  P.hgOut = [0,1].map(() => [box(C.hige), box(C.hige)]);
+  P.hgGate = [box(C.hige), box(C.hige)];
+  P.bdi = { L:box(C.bdi), C:box(C.bdi), R:box(C.bdi) };
+  P.resid = [box(C.hige, { pad:-.15 }), box(C.hige, { pad:-.15 }), box(C.hige, { pad:-.15 })];   // 단면에서 BDI보다 살짝 앞에 그려 깜빡임 방지
+  P.voids = [box(C.void, { noEdge:true, pad:-.25 }), box(C.void, { noEdge:true, pad:-.25 }), box(C.void, { noEdge:true, pad:-.25 })];
+  P.layers = LAYERS.map(([k]) => ({ k, c:box(k === "si" ? C.si : C.sige), l:box(k === "si" ? C.si : C.sige), r:box(k === "si" ? C.si : C.sige),
+    il: k === "sige" ? box(C.inner) : null, ir: k === "sige" ? box(C.inner) : null,
+    nf: k === "sige" ? [box(C.bdi, { noEdge:true }), box(C.bdi, { noEdge:true })] : null,
+    hk: k === "si" ? box(C.hk, { opacity:.6, noEdge:true, pad:.2 }) : null }));
+  P.dg = { top:box(C.gate), a:box(C.gate), b:box(C.gate) };
+  P.sp = [0,1].map(() => ({ top:box(C.spacer), a:box(C.spacer), b:box(C.spacer) }));
+  P.epi = [box(C.epi), box(C.epi)];
+  P.metal = { core:box(C.metal, { opacity:.42, metal:true, pad:.4 }), top:box(C.metal, { opacity:.42, metal:true, pad:.4 }) };
+  const lk = { opacity:.75, glow:true, noEdge:true, onTop:true };
+  P.leakCh = box(C.leak, lk);
+  P.leakSd = [box(C.leak, lk), box(C.leak, lk)];
+  P.leakSub = box(C.leak, lk);
+
+  controls = new THREE.OrbitControls(camera, canvas);
+  controls.enableDamping = true;
+  resetView();
+  new ResizeObserver(resize).observe(canvas.parentElement); resize();
+}
+function resetView() {
+  if (state.sec === "x") camera.position.set(170, 60, 40); else camera.position.set(118, 78, 150);
+  controls.target.set(0, 22, 0); controls.update();
+}
+function resize() {
+  const el = renderer.domElement.parentElement, w = el.clientWidth, h = el.clientHeight;
+  renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+
+function targets() {
+  const s = state.step, p = s >= 1 ? state.prog / 100 : 0;
+  return {
+    rmOut: Math.min(1, p * 2), rmGate: Math.max(0, Math.min(1, p * 2 - 1)),
+    fill: s >= 2 ? 1 : 0, sdr: s >= 3 ? 1 : 0, inner: s >= 4 ? 1 : 0, epi: s >= 4 ? 1 : 0,
+    rel: s >= 5 ? 1 : 0, hkmg: s >= 5 ? 1 : 0,
+    notch: s >= 1 && state.sel ? 1 : 0, voidA: s >= 2 && state.voidOn ? 1 : 0,
+    leak: state.noBdi && s >= 4 ? 1 : 0, nob: state.noBdi ? 1 : 0,
+  };
+}
+
+function layout() {
+  const nb = state.noBdi;
+  place(P.sti, -XOUT, XOUT, -14, -6, -GZ-6, GZ+6);
+  place(P.sub, -XOUT, XOUT, -12, BDI0, -ZW, ZW);
+  const sdr = anim.sdr, xEnd = WS + (XOUT - WS) * (1 - sdr);
+  // ---- 맨 아래층 ----
+  if (nb) {
+    // BDI 없음: 그 자리가 그냥 Si 기판. S/D 리세스는 기판 표면까지
+    hide(...P.hgOut.flat(), ...P.hgGate, P.bdi.L, P.bdi.C, P.bdi.R, ...P.resid, ...P.voids);
+    place(P.subTopC, -WS, WS, BDI0, BDI1, -ZW, ZW);
+    place(P.subTopL, -XOUT, -WS, BDI0, BDI1 - (BDI1 - BDI0) * sdr, -ZW, ZW);
+    place(P.subTopR, WS, XOUT, BDI0, BDI1 - (BDI1 - BDI0) * sdr, -ZW, ZW);
+  } else {
+    hide(P.subTopC, P.subTopL, P.subTopR);
+    const zr = ZW * (1 - anim.rmOut);           // 게이트 밖: 옆면(z)에서 가운데로
+    const xr = LG2 * (1 - anim.rmGate);          // 게이트 아래: 게이트 양쪽(x)에서 가운데로
+    const fill = anim.fill;
+    // 게이트 밖 고-Ge 잔량 (S/D 리세스 전에는 바깥 끝까지)
+    [-1, 1].forEach((sg, i) => {
+      const xa = sg > 0 ? LG2 : -xEnd, xb = sg > 0 ? xEnd : -LG2;
+      if (fill > .5 && zr > .05) { hide(...P.hgOut[i]); }     // 채움 뒤엔 잔류 표시로 대체
+      else if (zr < .05) hide(...P.hgOut[i]);
+      else { place(P.hgOut[i][0], xa, xb, BDI0, BDI1, -zr, 0); place(P.hgOut[i][1], xa, xb, BDI0, BDI1, 0, zr); }
+    });
+    if (xr < .05 || fill > .5) hide(...P.hgGate);
+    else { place(P.hgGate[0], -xr, 0, BDI0, BDI1, -ZW, ZW); place(P.hgGate[1], 0, xr, BDI0, BDI1, -ZW, ZW); }
+    // BDI 절연막 (채움). 잔류가 있으면 그 부분은 고-Ge로 남음
+    if (fill > .02) {
+      [P.bdi.L, P.bdi.C, P.bdi.R].forEach(m => { m.material.opacity = 1; });
+      place(P.bdi.L, -XOUT, -LG2, BDI0, BDI0 + (BDI1 - BDI0) * fill, -ZW, ZW);
+      place(P.bdi.C, -LG2, LG2, BDI0, BDI0 + (BDI1 - BDI0) * fill, -ZW, ZW);
+      place(P.bdi.R, LG2, XOUT, BDI0, BDI0 + (BDI1 - BDI0) * fill, -ZW, ZW);
+      // 잔류: 게이트 밖은 가운데 z 띠, 게이트 아래는 가운데 x 띠
+      if (zr > .05) { place(P.resid[0], -XOUT, -LG2, BDI0, BDI1 + .05, -zr, zr); place(P.resid[2], LG2, XOUT, BDI0, BDI1 + .05, -zr, zr); }
+      else hide(P.resid[0], P.resid[2]);
+      if (xr > .05) place(P.resid[1], -xr, xr, BDI0, BDI1 + .05, -ZW, ZW); else hide(P.resid[1]);
+      // 기공: 가운데에 어두운 공간 (z 방향 가운데, 전 길이)
+      if (anim.voidA > .02) {
+        const vh = 2.2 * anim.voidA, vz = 3.2 * anim.voidA, ym = (BDI0 + BDI1) / 2;
+        place(P.voids[0], -XOUT + 2, -LG2 - .5, ym - vh/2, ym + vh/2, -vz, vz);
+        place(P.voids[1], -LG2 + .5, LG2 - .5, ym - vh/2, ym + vh/2, -vz, vz);
+        place(P.voids[2], LG2 + .5, XOUT - 2, ym - vh/2, ym + vh/2, -vz, vz);
+      } else hide(...P.voids);
+    } else hide(P.bdi.L, P.bdi.C, P.bdi.R, ...P.resid, ...P.voids);
+  }
+  // ---- 스택 ----
+  LAYERS.forEach(([k, y0, y1], i) => {
+    const L = P.layers[i];
+    if (k === "sige") {
+      const relz = ZW * (1 - anim.rel);
+      const notch = nb ? 0 : 2.6 * anim.notch * (i === 0 ? 1 : i === 2 ? .45 : .2); // 아래 희생층일수록 더 패임
+      const wz = Math.min(relz, ZW - notch);
+      const ind = 6 * anim.inner;                  // 내부 스페이서 자리 (리세스 6nm)
+      if (wz < .05) hide(L.c); else place(L.c, -WS + ind, WS - ind, y0, y1, -wz, wz);
+      place(L.l, -xEnd, -WS, y0, y1, -ZW + notch, ZW - notch); place(L.r, WS, xEnd, y0, y1, -ZW + notch, ZW - notch);
+      if (anim.inner > .02) { place(L.il, -WS, -WS + ind, y0, y1, -ZW, ZW); place(L.ir, WS - ind, WS, y0, y1, -ZW, ZW); }
+      else hide(L.il, L.ir);
+      // 선택비 부족으로 패인 옆면 → 채움 때 절연막이 들어감
+      if (notch > .05 && anim.fill > .02 && anim.rel < .5) {
+        place(L.nf[0], -WS, WS, y0, y1, -ZW, -ZW + notch); place(L.nf[1], -WS, WS, y0, y1, ZW - notch, ZW);
+      } else hide(...L.nf);
+    } else {
+      place(L.c, -WS, WS, y0, y1, -ZW, ZW);
+      place(L.l, -xEnd, -WS, y0, y1, -ZW, ZW); place(L.r, WS, xEnd, y0, y1, -ZW, ZW);
+      if (anim.hkmg > .02) { L.hk.material.opacity = .6 * anim.hkmg; const t = .9 * anim.hkmg; place(L.hk, -LG2, LG2, y0 - t, y1 + t, -ZW - t, ZW + t); }
+      else hide(L.hk);
+    }
+  });
+  // ---- 게이트·스페이서 ----
+  const g = state.gate;
+  const dummy = 1 - anim.rel;
+  if (!g || dummy < .02) hide(P.dg.top, P.dg.a, P.dg.b);
+  else { place(P.dg.top, -LG2, LG2, TOP, GTOP, -GZ, GZ); place(P.dg.a, -LG2, LG2, -6, TOP, -GZ, -ZW); place(P.dg.b, -LG2, LG2, -6, TOP, ZW, GZ); }
+  P.sp.forEach((s, i) => {
+    const sg = i ? 1 : -1, x0 = Math.min(sg*LG2, sg*WS), x1 = Math.max(sg*LG2, sg*WS);
+    if (!g || anim.fill < .02) { hide(s.top, s.a, s.b); return; }
+    place(s.top, x0, x1, TOP, GTOP, -GZ, GZ); place(s.a, x0, x1, -6, TOP, -GZ, -ZW); place(s.b, x0, x1, -6, TOP, ZW, GZ);
+  });
+  // ---- S/D 에피 ----
+  const epiBot = nb ? BDI0 : BDI1;
+  P.epi.forEach((m, i) => {
+    const sg = i ? 1 : -1, h = (TOP + 4 - epiBot) * anim.epi;
+    if (anim.epi < .02) { m.visible = false; return; }
+    place(m, sg > 0 ? WS : -XOUT + 2, sg > 0 ? XOUT - 2 : -WS, epiBot, epiBot + h, -ZW - 2, ZW + 2);
+  });
+  // ---- 금속 게이트 ----
+  if (anim.hkmg > .02 && g) {
+    place(P.metal.core, -LG2, LG2, nb ? BDI1 : BDI1, TOP, -GZ, GZ); place(P.metal.top, -LG2, LG2, TOP, GTOP, -GZ, GZ);
+    P.metal.core.material.opacity = P.metal.top.material.opacity = .42 * anim.hkmg;
+  } else hide(P.metal.core, P.metal.top);
+  // ---- 누설 경로 (BDI 없음) ----
+  if (anim.leak > .02 && nb) {
+    [P.leakCh, P.leakSub, ...P.leakSd].forEach(m => m.material.opacity = .7 * anim.leak);
+    place(P.leakCh, -WS, WS, BDI1 - 1.4, BDI1 + .05, -ZW + .5, ZW - .5);         // 게이트 아래 기판 표면 기생 채널
+    place(P.leakSub, -XOUT + 5, XOUT - 5, -5, -3.4, -4, 4);                      // 기판 속 S/D 간 경로
+    place(P.leakSd[0], -XOUT + 5, -XOUT + 6.6, -5, epiBot + .3, -4, 4);
+    place(P.leakSd[1], XOUT - 6.6, XOUT - 5, -5, epiBot + .3, -4, 4);
+  } else hide(P.leakCh, P.leakSub, ...P.leakSd);
+}
+
+let last = performance.now();
+function tick(now) {
+  const dt = Math.min(.05, (now - last) / 1000); last = now;
+  const t = targets(), k = 1 - Math.pow(.003, dt);
+  for (const key in anim) anim[key] += (t[key] - anim[key]) * k;
+  layout(); controls.update(); renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+}
+
+// ---------- UI ----------
+const $ = id => document.getElementById(id);
+const stepBox = $("steps");
+STEPS.forEach((s, i) => {
+  const b = document.createElement("button"); b.textContent = i;
+  b.title = s.title; b.setAttribute("aria-label", s.title); if (s.etch) b.classList.add("etch");
+  b.onclick = () => go(i); stepBox.appendChild(b);
+});
+function go(i) {
+  state.step = Math.max(0, Math.min(STEPS.length - 1, i));
+  const s = STEPS[state.step];
+  [...stepBox.children].forEach((b, j) => j === state.step ? b.setAttribute("aria-current", "step") : b.removeAttribute("aria-current"));
+  $("kind").textContent = s.kind; $("kind").className = "kind" + (s.etch ? " etch" : "");
+  $("title").textContent = s.title; $("desc").textContent = s.desc;
+  $("facts").innerHTML = s.facts.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("");
+  $("prev").disabled = state.step === 0; $("next").disabled = state.step === STEPS.length - 1;
+  verdict();
+}
+$("prev").onclick = () => go(state.step - 1);
+$("next").onclick = () => go(state.step + 1);
+document.addEventListener("keydown", e => { if (e.target.tagName === "INPUT") return; if (e.key === "ArrowRight") go(state.step + 1); if (e.key === "ArrowLeft") go(state.step - 1); });
+
+function seg(id, key) {
+  $(id).querySelectorAll("button").forEach(b => b.onclick = () => {
+    state[key] = +b.dataset.v;
+    $(id).querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    if (state.noBdi) setNoBdi(false);
+    if (state.step < 1 || (key === "voidOn" && state.step < 2)) go(key === "voidOn" ? 2 : 1); else verdict();
+  });
+}
+seg("sel", "sel"); seg("void", "voidOn");
+$("prog").oninput = e => { state.prog = +e.target.value; $("progVal").textContent = state.prog + "%"; if (state.noBdi) setNoBdi(false); if (state.step < 1) go(1); else verdict(); };
+
+function verdict() {
+  const v = $("verdict"), p = state.prog, msgs = [];
+  let level = "ok";
+  if (state.noBdi) {
+    level = "bad";
+    msgs.push(`<strong>BDI 없음 (비교 모드)</strong>맨 아래 게이트가 기판 위에 바로 앉아 <b>기판 표면이 기생 채널</b>이 된다. S/D 에피도 기판에 붙어 <b>기판을 지나는 누설 경로</b>가 생긴다 (3D의 빨간 부분, ④·⑤단계에서 표시).`);
+  } else {
+    if (p < 100) { level = "bad"; msgs.push(`<strong>고-Ge SiGe 잔류 (진행도 ${p}%)</strong>가운데에 반도체가 남은 채 절연막이 채워졌다. 남은 SiGe가 <b>스택과 기판을 이어</b> BDI에 구멍이 난 셈이다. 그 자리로 누설이 흐르고 위치마다 특성이 달라진다.`); }
+    else msgs.push(`<strong>적정 (진행도 100%)</strong>고-Ge SiGe가 모두 사라지고 그 자리를 절연막이 채운다. 스택과 기판이 핀 전체 길이에서 끊어진다.`);
+    if (state.sel) { level = level === "ok" ? "mid" : level; msgs.push(`<strong>선택비 부족</strong>고-Ge층을 녹이는 동안 바로 위 <b>저-Ge 희생층 옆면도 패였다</b> (아래층일수록 더). 채움 때 그 홈에도 절연막이 들어가, 나중에 채널 릴리스에서 SiGe가 덜 빠지거나 게이트 모양이 시트마다 달라진다.`); }
+    if (state.voidOn) { level = level === "ok" ? "mid" : level; msgs.push(`<strong>기공 (void)</strong>틈 입구가 먼저 막혀 가운데에 빈 공간이 남았다. 이후 열·식각 공정에서 기공이 터지거나 약품이 스며들어 <b>절연 불량·신뢰성 저하</b>로 이어진다.`); }
+  }
+  v.className = "verdict " + (level === "ok" ? "v-ok" : level === "mid" ? "v-mid" : "v-bad");
+  v.innerHTML = msgs.join("<br><br>");
+}
+
+function setSec(which) {
+  state.sec = state.sec === which ? "" : which;
+  $("bSecZ").setAttribute("aria-pressed", state.sec === "z"); $("bSecX").setAttribute("aria-pressed", state.sec === "x");
+  resetView();
+}
+function setNoBdi(on) {
+  state.noBdi = on; $("bNoBdi").setAttribute("aria-pressed", on); $("badge").style.display = on ? "block" : "none";
+  if (on && state.step < 4) go(5); else verdict();
+}
+$("bSecZ").onclick = () => setSec("z");
+$("bSecX").onclick = () => setSec("x");
+$("bGate").onclick = e => { state.gate = !state.gate; e.target.setAttribute("aria-pressed", state.gate); };
+$("bNoBdi").onclick = () => setNoBdi(!state.noBdi);
+$("bReset").onclick = resetView;
+
+// 주소로 상태 지정 (예: #step=1&p=60&sec=x&sel=1&void=1&nobdi=1&gate=0&instant=1)
+function fromHash() {
+  const q = new URLSearchParams(location.hash.slice(1));
+  if (q.has("p")) { state.prog = +q.get("p"); $("prog").value = state.prog; $("progVal").textContent = state.prog + "%"; }
+  for (const [k, id, key] of [["sel","sel","sel"],["void","void","voidOn"]]) if (q.has(k)) {
+    state[key] = +q.get(k); $(id).querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", +b.dataset.v === state[key])); }
+  if (q.has("sec")) { state.sec = q.get("sec"); $("bSecZ").setAttribute("aria-pressed", state.sec === "z"); $("bSecX").setAttribute("aria-pressed", state.sec === "x"); }
+  if (q.get("gate") === "0") { state.gate = false; $("bGate").setAttribute("aria-pressed", "false"); }
+  state.noBdi = q.get("nobdi") === "1"; $("bNoBdi").setAttribute("aria-pressed", state.noBdi); $("badge").style.display = state.noBdi ? "block" : "none";
+  go(q.has("step") ? +q.get("step") : 0);
+  if (controls) resetView();
+  if (q.get("instant") === "1") Object.assign(anim, targets());
+}
+
+try {
+  if (!window.THREE || !THREE.OrbitControls) throw new Error("lib");
+  init(); fromHash(); requestAnimationFrame(tick);
+} catch (e) { $("fallback").style.display = "grid"; fromHash(); }
+window.addEventListener("hashchange", fromHash);
+</script>
+</body>
+</html>
