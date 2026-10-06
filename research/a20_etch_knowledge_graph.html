@@ -53,7 +53,7 @@
 <div class="wrap">
   <header>
     <h1>Apple A20 (TSMC 2nm) 식각 지식 그래프 · 용어집</h1>
-    <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-05 · 근거: <a href="tsmc_n2_a20_etch_report.html">A20 식각 중심 보고서</a> · 노드를 클릭하면 설명과 연결 관계가 오른쪽에 나옵니다.</p>
+    <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-05 (10-06 용어 18개 추가) · 근거: <a href="tsmc_n2_a20_etch_report.html">A20 식각 중심 보고서</a> · 노드를 클릭하면 설명과 연결 관계가 오른쪽에 나옵니다.</p>
   </header>
 
   <div class="toolbar" id="filters"></div>
@@ -154,6 +154,25 @@ const NODES = [
   ["cp","CP (웨이퍼 소트)","Chip Probing / wafer sort","test","다이별 기능·성능을 검사해 양품 다이(KGD)를 고르는 검사.","식각 결함의 최종 영향이 수율로 드러남."],
   ["info","InFO-PoP","Integrated Fan-Out Package-on-Package","test","TSMC의 기존 모바일 패키지. AP 위에 DRAM 패키지를 쌓음 (A19까지).","RDL 시드 제거 등 후공정 식각 포함."],
   ["wmcm","새 패키징 (WMCM 루머)","Side-by-side die + memory (WMCM rumor)","test","A20 Pro: 로직 다이와 메모리를 옆으로 배치 (Apple 공식). WMCM이라는 이름은 공급망 루머.","접속면 세정·RDL 시드 제거·비아 개구. 세부 방식 미공개."],
+  // --- 2026-10-06 추가: 최상부 패드·RDL, BDI, eSD/eSiGe ---
+  ["pspi","PSPI (감광성 폴리이미드)","Photosensitive Polyimide","material","노광·현상으로 바로 패턴을 만들 수 있는 폴리이미드 절연막. 칩 최상부 보호막(PV)과 RDL 층간 절연막으로 쓰임.","직접 현상되므로 늘 식각하는 것은 아님. 현상 후 descum, 또는 아래 SiO₂/SiN 식각의 마스크로 쓰임."],
+  ["s_pspi","PSPI 식각","PSPI etch","step","PSPI와 관련된 식각. PI 자체 식각, 현상 후 잔사 제거(descum), PSPI를 마스크로 한 하부 보호막 식각 중 하나를 가리킴.","비아 바닥 잔사·접촉저항, 개구 치수·측벽, 하부 금속 산화가 과제."],
+  ["e_descum","Descum (O₂ 플라즈마)","Descum / O₂ plasma ashing","etch","현상 뒤 남은 얇은 유기물 찌꺼기를 O₂ 계열 플라즈마로 걷어내는 가벼운 식각.","PSPI·포토레지스트 공정 뒤 접촉면을 깨끗이 만듦. 과하면 PI가 깎이고 표면이 변질됨."],
+  ["pv","PV (보호막 레벨)","Passivation level (PV)","structure","칩 맨 위를 덮는 보호막 레벨. 폴리이미드(PSPI 등)를 쓰며 패드 부분만 열어 둠.","패드 개구 식각으로 LB 패드를 드러냄."],
+  ["vv","VV (패드 비아 레벨)","Via pad level (VV)","structure","마지막 배선층과 패드를 잇는 비아 레벨의 레이어 코드 (IBM·Renesas 특허 US9947645B2에서 확인). 글자별 풀네임은 공개되지 않음.","절연막에 비아를 여는 식각 (불소계 플라즈마 예). 바닥 잔사·하부 금속 손상 관리."],
+  ["lb","LB (패드 레벨)","Pad / bond-pad level (LB)","structure","외부 접속용 본드 패드 금속 레벨의 레이어 코드. 그 위에 PV 보호막이 올라감.","패드 금속 패터닝. LB가 VV를 다 덮지 못하면 식각이 아래로 관통될 수 있음."],
+  ["al","Al (알루미늄)","Aluminum","material","최상부 패드·Al RDL에 쓰이는 금속. Cu와 달리 염소계 플라즈마로 직접 식각할 수 있음.","Cl₂/BCl₃ 금속 식각. 염소 잔류에 의한 부식이 대표 과제."],
+  ["al_rdl","Al RDL","Aluminum Redistribution Layer","structure","알루미늄 재배선층. 전면에 Al을 입힌 뒤 필요 없는 부분을 식각해 패턴을 만듦(감산형).","Al 금속 식각으로 형성. 선폭·측벽 제어, 하부 절연막 선택비, 부식."],
+  ["cu_rdl","Cu RDL","Copper Redistribution Layer","structure","구리 재배선층. 고밀도 패키징·팬아웃에 쓰이며 보통 반가산 공정(SAP)으로 만듦.","Cu를 직접 깎지 않고, 도금 후 남은 얇은 시드층만 습식으로 제거."],
+  ["s_almetal","Al 금속 식각","Aluminum metal etch","step","전면에 증착한 Al 막을 패턴대로 깎는 건식 식각 (Al RDL·Al 패드).","Cl₂/BCl₃ 플라즈마. 식각 후 염소 잔류를 빨리 제거해야 부식을 막음."],
+  ["sap","SAP (반가산 공정)","Semi-Additive Process","tool","시드층 → 포토레지스트 몰드 → Cu 도금 → 레지스트 제거 → 노출된 시드 식각 순으로 배선을 만드는 방법.","식각은 마지막 시드 제거 한 번. 덜 지우면 단락, 더 지우면 언더컷."],
+  ["bdi","BDI (하부 유전체 절연)","Bottom Dielectric Isolation","structure","GAA 나노시트 아래에 넣는 절연층. 기판을 통한 기생 채널·누설을 막음. S/D 아래까지 넣으면 full BDI. Buried Dielectric Isolation으로도 씀.","맨 아래 희생 SiGe를 선택 제거해 절연막 자리를 만드는 방식이 대표적. N2 채택 여부는 미확인."],
+  ["s_bdi","BDI 희생층 제거","BDI sacrificial SiGe removal","step","BDI를 만들기 위해 스택 맨 아래의 (보통 Ge가 더 많은) 희생 SiGe만 골라 제거하는 단계.","Si 채널, 다른 조성의 SiGe, 남겨야 할 S/D SiGe까지 보호해야 함. 채널 릴리스와 같은 원리."],
+  ["i_subleak","기판 누설","Substrate leakage / parasitic channel","issue","나노시트 아래 기판 쪽으로 원치 않는 전류가 흐르는 문제.","BDI가 이를 막기 위한 구조."],
+  ["esd","eSD (매립형 S/D)","Embedded Source/Drain","structure","S/D 자리를 파낸 뒤 에피 반도체로 채운 소스/드레인. Epitaxial·Elevated S/D 또는 ESD(정전기 방전)와 혼동 주의.","S/D 리세스 식각 → 세정 → 선택 에피 순서."],
+  ["esige","eSiGe (매립형 SiGe)","Embedded SiGe","structure","pMOS S/D에 SiGe를 채워 채널에 압축 응력을 주는 기술. eSD의 대표적인 예.","GAA에서는 '남겨야 할 S/D SiGe'. 희생 SiGe를 없애는 채널 릴리스·BDI 식각에서 보호해야 함."],
+  ["i_corrosion","부식 (염소 잔류)","Post-etch corrosion","issue","Al 식각 뒤 남은 염소가 수분과 만나 금속을 부식시키는 문제.","Al RDL·Al 패드 식각의 대표 과제."],
+  ["i_punch","식각 관통","Etch punch-through","issue","위층 패턴이 아래 구조를 충분히 덮지 못해 식각이 아래층까지 뚫고 들어가는 문제.","LB가 VV를 다 덮지 못할 때 특허에서 언급된 위험."],
 ];
 
 // [from, to, 관계]
@@ -200,6 +219,15 @@ const EDGES = [
   ["s_dicing","e_plasmadice","선택 가능"],["s_dicing","cmp","손상층 제거"],["wmcm","rdl","사용"],["info","rdl","사용"],
   // test
   ["wat","i_siloss","검출"],["wat","i_residue","검출"],["wat","i_lowkdmg","검출"],["cp","a20","양품 선별"],
+  // --- 2026-10-06 추가 ---
+  ["beol","vv","다음 층"],["vv","lb","다음 층"],["lb","pv","다음 층"],["pv","pspi","재료"],["s_pad","pv","개구"],["s_pad","lb","드러냄"],
+  ["vv","e_aniso","형성 방법"],["lb","al","흔한 재료"],["lb","i_punch","위험"],["vv","i_residue","위험"],
+  ["s_pspi","pspi","대상"],["s_pspi","e_descum","사용"],["s_pspi","i_residue","위험"],["s_pspi","s_pad","마스크로 사용"],["pspi","rdl","층간 절연막"],
+  ["rdl","al_rdl","종류"],["rdl","cu_rdl","종류"],["al_rdl","al","구성"],["cu_rdl","cu","구성"],
+  ["s_almetal","al_rdl","형성"],["s_almetal","e_aniso","사용"],["s_almetal","i_corrosion","위험"],
+  ["cu_rdl","sap","형성 방법"],["sap","s_seed","포함"],
+  ["gaa","bdi","선택 구조"],["s_bdi","bdi","형성"],["s_bdi","sige","제거"],["s_bdi","e_iso","사용"],["s_bdi","nanosheet","보존해야 함"],["s_bdi","esige","보존해야 함"],["bdi","i_subleak","억제"],
+  ["esige","esd","대표 예"],["esige","sige","구성"],["s_sdrecess","esd","자리 형성"],["esd","epi","형성 방법"],["sd","esd","같은 개념"],["s_release","esige","보존해야 함"],
 ];
 
 const typeOf = Object.fromEntries(NODES.map(n => [n[0], n[3]]));

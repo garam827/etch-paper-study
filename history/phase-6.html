@@ -116,6 +116,53 @@ eSD / eSiGe
       </section>
     </article>
 
+    <!-- ===== 항목 #23 ===== -->
+    <article class="entry" id="e23">
+      <div class="entry-head">
+        <span class="no">#23</span>
+        <h2>새 용어를 용어집·지식 그래프에 추가</h2>
+        <time>2026-10-06 20:16</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>해당 내용을 용어집에 추가.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>#22에서 설명한 용어(PSPI Etch, BDI, VV/LB, Al/Cu RDL, eSD/eSiGe)를 기존 용어집에 넣는다.</li>
+          <li>용어집과 지식 그래프는 같은 데이터를 쓰므로, 용어와 함께 기존 용어와의 관계도 추가해 그래프에서 연결되게 한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>20:16</time> 용어 18개 추가: PSPI, PSPI 식각, Descum, PV, VV, LB, Al, Al RDL, Cu RDL, Al 금속 식각, SAP, BDI, BDI 희생층 제거, 기판 누설, eSD, eSiGe, 부식(염소 잔류), 식각 관통.</li>
+          <li><time>20:17</time> 관계 37개 추가: 패드 스택 순서(BEOL → VV → LB → PV), PV의 재료 = PSPI, RDL의 종류(Al/Cu), BDI 희생층 제거가 지켜야 할 것(나노시트, eSiGe), 채널 릴리스가 eSiGe를 보존해야 함 등.</li>
+          <li><time>20:17</time> 데이터 검증 → 용어 82개, 관계 146개, 끊긴 연결·외톨이 용어 없음. 목차의 개수 문구 수정.</li>
+          <li><time>20:18</time> 그래프에서 새 용어(BDI 희생층 제거, LB)를 열어 스크린샷.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 용어집 64개 → 82개, 관계 109개 → 146개.</p>
+        <p><a href="../research/a20_etch_knowledge_graph.html#lb">지식 그래프에서 LB 보기 →</a></p>
+        <figure>
+          <img src="../history_img/20261006_201804_graph_new_terms_lb.png" alt="LB 노드 포커스">
+          <figcaption>history_img/20261006_201804_graph_new_terms_lb.png — LB: VV에서 이어지고 PV로 덮이며, 패드 개구가 드러내고, 식각 관통 위험</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261006_201804_graph_new_terms_bdi.png" alt="BDI 희생층 제거 노드 포커스">
+          <figcaption>history_img/20261006_201804_graph_new_terms_bdi.png — BDI 희생층 제거: SiGe 제거, 나노시트·eSiGe 보존, 고선택비 등방성 식각 사용</figcaption>
+        </figure>
+      </section>
+    </article>
+
+
   </div>
 
   <nav class="pager" aria-label="단계 이동"><a href="phase-5.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><span class="cur" aria-current="page">6. 용어·개념 학습</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
