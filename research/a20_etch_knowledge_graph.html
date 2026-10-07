@@ -45,6 +45,11 @@
   .tbl { overflow-x:auto; border-radius:10px; max-height:none; }
   .badge { display:inline-block; font-size:12px; font-weight:700; color:#fff; border-radius:999px; padding:0 8px; white-space:nowrap; }
   .note { color:var(--muted); font-size:13px; }
+  details.src { margin-top:6px; font-size:13px; }
+  details.src summary { cursor:pointer; color:var(--accent); font-weight:600; }
+  details.src ul, .panel ul.srcl { margin:4px 0 0; padding-left:18px; }
+  details.src a, .panel ul.srcl a { color:var(--accent); word-break:break-word; }
+  .panel ul.srcl { font-size:13px; margin-bottom:8px; }
   .err { display:none; padding:14px; color:#991b1b; }
   @media (max-width:860px) { .main { grid-template-columns:1fr; } #cy { height:520px; } .panel { height:auto; } }
 </style>
@@ -53,12 +58,12 @@
 <div class="wrap">
   <header>
     <h1>Apple A20 (TSMC 2nm) 식각 지식 그래프 · 용어집</h1>
-    <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-05 (10-06 용어 18개 추가) · 근거: <a href="tsmc_n2_a20_etch_report.html">A20 식각 중심 보고서</a> · 노드를 클릭하면 설명과 연결 관계가 오른쪽에 나옵니다.</p>
+    <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-05 (10-06 용어 18개 추가, 10-07 DPT·QPT 용어 44개와 용어별 논문·출처 추가) · 근거: <a href="tsmc_n2_a20_etch_report.html">A20 식각 중심 보고서</a> · <a href="dpt_qpt_report.html">DPT·QPT 보고서</a> · 노드를 클릭하면 설명과 연결 관계가 오른쪽에 나옵니다.</p>
   </header>
 
   <div class="toolbar" id="filters"></div>
   <div class="toolbar">
-    <input id="q" type="search" placeholder="용어 검색 (예: 채널 릴리스, SiGe, ALE)">
+    <input id="q" type="search" placeholder="용어·출처 검색 (예: 채널 릴리스, SAQP, IEDM)">
     <button class="act" id="btnFit">전체 보기</button>
     <button class="act" id="btnEtch">식각 경로만 강조</button>
     <button class="act" id="btnReset">초기화</button>
@@ -71,8 +76,8 @@
   <p class="legend-edges">관계 종류: <b>다음 단계</b> (공정 순서) · <b>사용</b> (기술/장비) · <b>제거</b> (식각 대상) · <b>형성</b> (만들어지는 구조) · <b>보존해야 함</b> (선택비 대상) · <b>위험</b> (결함/과제) · <b>검출</b> (테스트) · <b>구성</b> (구조의 재료/일부)</p>
 
   <h2>주요 용어집</h2>
-  <p class="note">용어를 클릭하면 그래프에서 해당 노드로 이동합니다. 분류 필터와 검색이 용어집에도 함께 적용됩니다.</p>
-  <div class="tbl"><table id="gloss"><thead><tr><th>용어</th><th>분류</th><th>설명</th><th>식각과의 관계</th></tr></thead><tbody></tbody></table></div>
+  <p class="note">용어를 클릭하면 그래프에서 해당 노드로 이동합니다. 분류 필터와 검색이 용어집에도 함께 적용됩니다. "논문·출처"를 펼치면 그 용어의 근거 자료가 나옵니다 — 세 리서치(A20 보고서, PSPI·BDI 용어, DPT·QPT 보고서)에서 해당 주제에 실제로 인용된 것만 연결했고, 근거가 없는 용어는 비워 두었습니다.</p>
+  <div class="tbl"><table id="gloss"><thead><tr><th>용어</th><th>분류</th><th>설명 · 논문·출처</th><th>식각과의 관계</th></tr></thead><tbody></tbody></table></div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.2/cytoscape.min.js"></script>
@@ -86,6 +91,7 @@ const TYPES = {
   tool:     {label:"기타 공정·장비", color:"#4b5563"},
   issue:    {label:"결함·과제",   color:"#ea580c"},
   test:     {label:"테스트·패키징", color:"#16a34a"},
+  pattern:  {label:"패터닝 기법", color:"#db2777"},
 };
 
 // [id, 이름, 영문, 분류, 설명, 식각과의 관계]
@@ -173,6 +179,51 @@ const NODES = [
   ["esige","eSiGe (매립형 SiGe)","Embedded SiGe","structure","pMOS S/D에 SiGe를 채워 채널에 압축 응력을 주는 기술. eSD의 대표적인 예.","GAA에서는 '남겨야 할 S/D SiGe'. 희생 SiGe를 없애는 채널 릴리스·BDI 식각에서 보호해야 함."],
   ["i_corrosion","부식 (염소 잔류)","Post-etch corrosion","issue","Al 식각 뒤 남은 염소가 수분과 만나 금속을 부식시키는 문제.","Al RDL·Al 패드 식각의 대표 과제."],
   ["i_punch","식각 관통","Etch punch-through","issue","위층 패턴이 아래 구조를 충분히 덮지 못해 식각이 아래층까지 뚫고 들어가는 문제.","LB가 VV를 다 덮지 못할 때 특허에서 언급된 위험."],
+  // --- 2026-10-07 추가: DPT·QPT 멀티패터닝 (근거: DPT·QPT 보고서) ---
+  ["multipat","멀티패터닝","Multiple patterning","pattern","노광 장비가 한 번에 그릴 수 없는 촘촘한 패턴을, 나눠서 여러 번 그리거나 측벽 스페이서로 선을 복제해 만드는 기술의 총칭.","레지스트 대신 증착 두께·식각 바이어스·선택비가 최종 선폭과 간격을 정하게 됨."],
+  ["dpt","DPT (이중 패터닝)","Double Patterning Technology","pattern","선 밀도를 두 배로 만드는 멀티패터닝. LELE·LFLE(나눠 노광)과 SADP(스페이서 복제)가 대표.","LE 계열은 두 집단의 CD·식각 바이어스 일치, SADP는 에치백·맨드릴 제거가 핵심."],
+  ["qpt","QPT (4중 패터닝)","Quadruple Patterning Technology","pattern","선 밀도를 네 배로 만드는 멀티패터닝. 대표 구현은 SAQP. 네 번 노광한다는 뜻이 아님 (한 번 노광 + 스페이서 두 번).","스페이서 공정을 두 번 거치며 오차가 복제·누적됨."],
+  ["rayleigh","해상도 한계 (Rayleigh, k₁)","Rayleigh resolution limit","issue","CD = k₁·λ/NA. ArF 이머전(193 nm, NA 1.35)은 조밀 격자 half-pitch 약 38–40 nm(pitch 76–80 nm)가 실용 한계.","이 한계 아래 pitch를 만들기 위해 멀티패터닝이 등장."],
+  ["arfi","ArF 이머전 리소그래피","ArF immersion lithography (193i)","tool","193 nm ArF 레이저와 렌즈–웨이퍼 사이 물을 이용해 NA를 1.35까지 높인 노광. EUV 이전 최첨단.","DUV 멀티패터닝(SADP·SAQP)의 출발 패턴을 그림."],
+  ["lele","LELE","Litho-Etch-Litho-Etch","pattern","패턴을 A/B 두 색으로 나눠 노광·식각을 두 번 반복하는 이중 패터닝.","두 번째 노광의 overlay 오차가 그대로 간격(CD) 오차가 됨. 두 식각의 바이어스를 맞춰야 함."],
+  ["lfle","LFLE","Litho-Freeze-Litho-Etch","pattern","첫 레지스트 패턴을 열·화학적으로 굳힌 뒤 두 번째 노광을 하고 한 번에 식각하는 방식.","중간 식각이 줄지만, 이력이 다른 두 레지스트를 함께 전사해야 함."],
+  ["le3","LE3 (LELELE)","Triple litho-etch","pattern","패턴을 세 색으로 나눠 노광·식각을 세 번. 2색으로 안 풀리는 배치를 처리. Samsung 10nm가 triple patterning 사용.","세 집단의 overlay·CD·전사 차이 관리."],
+  ["sadp","SADP","Self-Aligned Double Patterning","pattern","맨드릴 양 측벽에 스페이서를 만들고 맨드릴을 제거해, 스페이서를 마스크로 피치를 절반으로 만드는 방식.","스페이서 에치백·맨드릴 제거·전사 식각이 최종 치수를 결정."],
+  ["saqp","SAQP","Self-Aligned Quadruple Patterning","pattern","SADP를 두 번 반복해 피치를 4분의 1로. Intel 10nm(fin 34 nm, metal 36 nm), DRAM 등에 양산 적용.","두 세대의 프로파일·선택비·CD 오차를 관리해야 함. 공간이 α·β·γ 세 집단."],
+  ["saop","SAOP","Self-Aligned Octuple Patterning","pattern","스페이서 복제를 세 번 해 피치를 8분의 1로. 연구 단계.","누적 오차, 매우 긴 공정 흐름, 비용."],
+  ["salele","SALELE","Self-Aligned Litho-Etch Litho-Etch","pattern","두 노광 집단 + 스페이서 측벽으로 위치를 일부 고정. 필요한 선만 그려 dummy metal을 줄임 (imec 예: 라인 2 + 블록 2 마스크).","측벽 보호, 선택적 개구·전사."],
+  ["sos","Spacer-on-spacer","Spacer-on-spacer SAQP","pattern","첫 스페이서를 두 번째 스페이서의 직접 지지대로 써서 SAQP의 중간 전사·희생층을 줄이는 방법.","첫 스페이서 제거 시 두 번째 스페이서·바닥을 지켜야 해 선택비 요구가 까다로움."],
+  ["sidsim","SID / SIM","Spacer-Is-Dielectric / Spacer-Is-Metal","pattern","스페이서 자리가 최종적으로 절연 간격이 되는가(SID), 금속 선이 되는가(SIM)의 구분. 재료 이름이 아님.","SIM 예: 산화물 스페이서를 마스크로 Ru를 직접 식각 (imec, 18 nm pitch)."],
+  ["cutblock","컷 / 블록 마스크","Cut / block mask","pattern","스페이서로 만든 연속 격자를 끊거나(cut) 전사를 막아(block) 실제 회로로 만드는 추가 패터닝.","선 끝 위치와 끝-끝 간격은 컷·블록이 정함."],
+  ["sablock","Self-aligned block","Self-aligned block","pattern","재료 경계·선택비를 이용해 블록 경계의 일부를 자동으로 고정하는 방식.","선택비가 유한하면 경계가 움직임 → 최종 전사 후 단절 상태가 진짜 지표."],
+  ["mandrel","맨드릴 (코어)","Mandrel / core","structure","스페이서를 세우기 위한 희생 기둥. 맨드릴 CD가 코어 공간을 결정.","맨드릴 식각 프로파일(기울기·footing)이 스페이서 위치·폭으로 그대로 옮겨감."],
+  ["pspacer","패터닝 스페이서","Patterning spacer","structure","맨드릴 측벽에 등각 증착(ALD 등)해 남긴 막. 그 두께가 최종 선폭(또는 간격)이 됨.","에치백으로 형성, 맨드릴 제거 때 보존, 전사 때 마스크."],
+  ["hardmask","하드마스크","Hard mask","material","레지스트 대신 패턴을 아래층에 옮기는 단단한 무기·탄소 막. 멀티패터닝은 여러 층을 쌓음.","층이 늘수록 선택비 설계는 쉬워지지만 응력·단차·결함·전사 횟수 증가."],
+  ["s_mandrel","맨드릴 식각","Mandrel etch","step","맨드릴 층을 패턴대로 깎아 기둥을 세우는 단계. 필요하면 CD trim.","수직 측벽, footing·undercut·바닥 gouging 억제."],
+  ["s_speb","스페이서 에치백","Spacer etch-back","step","등각 스페이서 막의 바닥·윗면만 이방성으로 제거해 측벽에만 남기는 단계.","잔류 바닥막(bridge), necking·top loss(line break) 위험."],
+  ["s_pull","맨드릴 제거 (pull)","Mandrel pull","step","스페이서는 남기고 맨드릴만 선택적으로 제거하는 단계.","맨드릴/스페이서/바닥 선택비. 잔류 core·스페이서 thinning·붕괴 위험."],
+  ["s_transfer","패턴 전사","Pattern transfer","step","스페이서 패턴을 하드마스크·대상층으로 옮기는 식각. SAQP는 중간 전사도 있음.","faceting·LER 전파·CD bias. 앞 세대의 오차가 다음 세대로 재복제."],
+  ["s_cut","컷 식각","Cut etch","step","컷 마스크로 연속 선의 일부를 제거해 끊는 식각.","미절단·이웃선 오절단·stringer 잔류 → short/open."],
+  ["i_pitchwalk","피치 워킹","Pitch walking","issue","코어 공간과 갭 공간이 달라 피치가 홀짝으로 번갈아 변하는 현상. 평균 피치는 그대로라 평균 계측에 안 잡힘.","맨드릴 CD·스페이서 두께·에치백/pull의 비대칭 침식이 원인. P₀ = C + G + 2t."],
+  ["i_overlay","Overlay 오차","Overlay error","issue","패턴 집단 사이의 상대 정렬 오차. LELE는 이것이 그대로 간격 오차가 됨.","SADP/SAQP도 하부층·컷·via 정렬은 여전히 필요 ('overlay 0'은 틀린 말)."],
+  ["i_epe","EPE","Edge Placement Error","issue","최종 에지가 목표 위치에서 벗어난 정도. overlay + CD + LER + 마스크 + 식각 바이어스를 모두 포함.","식각 바이어스도 EPE 예산의 일부."],
+  ["i_coloring","컬러링 충돌 (odd cycle)","Decomposition / coloring conflict","issue","LELE 분할 그래프에 홀수 사이클이 있으면 2색으로 나눌 수 없음 → 배치 수정, stitch, 추가 마스크.","색깔별(core/gap 유래) 식각 이력이 달라 CD·RC 차이."],
+  ["i_ler","LER · LWR","Line edge / width roughness","issue","선 가장자리(LER)와 선폭(LWR)의 거칠기. 등각 스페이서는 맨드릴의 굴곡을 그대로 따라감.","식각이 고주파 거칠기는 완화하지만 저주파 위치 흔들림은 못 지움."],
+  ["i_mprofile","맨드릴 프로파일 불량","Mandrel profile (taper, footing, bowing)","issue","맨드릴 기울기·바닥 footing·부풂(bowing)이 스페이서의 위치·폭을 높이별로 바꾸는 문제.","top/middle/bottom CD와 측벽각을 함께 봐야 함."],
+  ["i_collapse","패턴 붕괴","Pattern collapse / leaning","issue","맨드릴을 뺀 뒤 홀로 선 가늘고 높은 스페이서가 쓰러지거나 기우는 문제. 모세관력·응력·접착력.","높이를 낮추면 붕괴는 줄지만 식각 내성(mask budget)이 줄어듦."],
+  ["i_tip","선 끝 · tip-to-tip","Line-end / tip-to-tip","issue","컷으로 만든 선 끝 위치와 끝-끝 간격. 컷 간격이 좁으면 컷 마스크 자체가 다시 멀티패터닝이 됨.","line-end 후퇴·둥글어짐, 이웃선 손상."],
+  ["i_metro","계측 한계","Metrology limits","issue","OCD는 주기 대칭성 때문에 α·β·γ 공간을 분리하기 어렵고, CD-SEM은 충전·수축·묻힌 형상 한계.","평균만 맞추면 집단별 식각 편차가 가려짐."],
+  ["i_cost","비용 · 사이클 타임","Cost / cycle time","issue","SAQP는 노광은 적어도 증착·식각·세정·계측 단계가 많음. 'QPT라서 비용 4배'는 성립하지 않음.","식각 단계 수·챔버 매칭·queue time이 비용에 직결."],
+  ["highna","High-NA EUV","High-NA (0.55 NA) EUV","tool","NA 0.55 EUV. 해상 치수 약 0.6배, 초점심도 약 0.36배. Intel이 2026년 Panther Lake 일부 레이어에 양산 사용.","일부 멀티패터닝을 대체하지만, 얇은 레지스트 때문에 하드마스크 선택비·전사 부담은 커짐."],
+  ["euvsadp","EUV + SADP","EUV + SADP","pattern","느슨한 EUV 패턴을 SADP로 배밀화. 2024년 0.33NA EUV + SADP로 metal pitch 16 nm 목표 연구.","맨드릴·스페이서·pull·피치 워킹 과제를 그대로 가짐."],
+  ["dsa","DSA (유도 자기조립)","Directed Self-Assembly","tool","블록 공중합체가 가이드 패턴을 따라 스스로 정렬해 미세 패턴을 만듦. EUV 거칠기 보정 연구.","한 성분을 선택 제거 후 하드마스크로 전사. 결함(dislocation·bridge)이 과제."],
+  ["asd","ASD (영역 선택 증착)","Area-Selective Deposition","tool","원하는 표면에만 막을 증착. self-aligned via/block에 활용.","기생 핵생성을 선택 식각으로 정리 — 식각을 없애기보다 역할을 바꿈."],
+  ["sculpta","Sculpta (패턴 셰이핑)","Applied Materials Sculpta","tool","방향성 반응 리본 빔으로 이미 만든 패턴을 한 방향으로 늘이고 다듬는 장비 (2023).","특정 line-end 간격에서 추가 EUV 노광을 줄임. 범용 SAQP 대체는 아님."],
+  ["e_pulsed","펄스 플라즈마","Pulsed plasma etch","etch","플라즈마·바이어스를 시간에 따라 켜고 꺼서 이온·라디칼 분포를 제어하는 식각 (예: Lam Akara TEMPO).","선택비·microloading·charging 개선. 펄스 플라즈마가 곧 ALE는 아님."],
+  ["ocd","OCD · CD-SEM","Optical CD / CD-SEM metrology","test","OCD는 빛 산란으로 평균 CD·높이·측벽각을 빠르게 추정, CD-SEM은 전자빔으로 국부 패턴을 직접 측정.","피치 워킹 같은 집단별 편차 검출에 특수 타깃·복합 계측이 필요."],
+  ["smic","SMIC N+2 / N+3","SMIC 7nm-class (DUV)","product","EUV 없이 DUV 멀티패터닝으로 만든 SMIC 공정. N+2(Kirin 9000S, 2023), N+3(Kirin 9030 Pro, 2026 분석: 상용 5 nm보다 덜 축소).","선을 늘린 이후의 컷·via·누적 EPE·결함·사이클 타임이 병목."],
+  ["intel10nm","Intel 10nm (Intel 7)","Intel 10nm-class","product","SAQP를 양산에 쓴 대표 공정 (IEDM 2017): fin pitch 34 nm, 최소 metal pitch 36 nm.","SAQP의 fin·배선 패터닝 기준 문헌."],
+  ["dram","DRAM 1x–1γ","DRAM (1x to 1γ)","product","Samsung 10nm급 DRAM부터 QPT. EUV는 2021년 이후 일부 레이어(Samsung 14nm 5개 층, Micron 1γ 첫 EUV).","EUV를 넣어도 SAQP 존속. 두 방향 피치 워킹이 홀 면적·위치 편차로 변환."],
 ];
 
 // [from, to, 관계]
@@ -228,7 +279,231 @@ const EDGES = [
   ["cu_rdl","sap","형성 방법"],["sap","s_seed","포함"],
   ["gaa","bdi","선택 구조"],["s_bdi","bdi","형성"],["s_bdi","sige","제거"],["s_bdi","e_iso","사용"],["s_bdi","nanosheet","보존해야 함"],["s_bdi","esige","보존해야 함"],["bdi","i_subleak","억제"],
   ["esige","esd","대표 예"],["esige","sige","구성"],["s_sdrecess","esd","자리 형성"],["esd","epi","형성 방법"],["sd","esd","같은 개념"],["s_release","esige","보존해야 함"],
+  // --- 2026-10-07 추가: DPT·QPT ---
+  ["rayleigh","multipat","등장 배경"],["arfi","rayleigh","한계"],["multipat","dpt","종류"],["multipat","qpt","종류"],["multipat","le3","종류"],["dpt","lele","구현"],["dpt","lfle","구현"],["dpt","sadp","구현"],["qpt","saqp","구현"],["sadp","saqp","두 번 반복"],["saqp","saop","확장"],["salele","lele","결합"],["salele","pspacer","사용"],["sos","saqp","단계 축소"],["sidsim","sadp","구현 방식"],["sidsim","ru","예: 직접 식각"],["arfi","sadp","출발 패턴"],["euv","euvsadp","사용"],["euvsadp","sadp","결합"],["euv","multipat","일부 대체"],["highna","multipat","일부 대체"],["euv","highna","다음 세대"],["sadp","mandrel","사용"],["sadp","pspacer","사용"],["sadp","s_mandrel","포함"],["s_mandrel","s_speb","다음 단계"],["s_speb","s_pull","다음 단계"],["s_pull","s_transfer","다음 단계"],["s_transfer","s_cut","다음 단계"],["s_mandrel","mandrel","형성"],["s_mandrel","e_aniso","사용"],["s_mandrel","i_mprofile","위험"],["pspacer","ald","형성 방법"],["s_speb","pspacer","형성"],["s_speb","e_etchback","사용"],["s_speb","e_aniso","사용"],["s_pull","mandrel","제거"],["s_pull","pspacer","보존해야 함"],["s_pull","selectivity","핵심 지표"],["s_pull","i_collapse","위험"],["s_transfer","hardmask","사용"],["s_transfer","e_aniso","사용"],["s_transfer","i_loading","위험"],["s_transfer","i_ler","위험"],["cutblock","s_cut","사용"],["cutblock","sablock","개선"],["s_cut","i_tip","위험"],["s_cut","i_epe","위험"],["sadp","i_pitchwalk","위험"],["saqp","i_pitchwalk","위험"],["i_mprofile","i_pitchwalk","유발"],["lele","i_overlay","위험"],["lele","i_coloring","위험"],["i_overlay","i_epe","구성"],["i_ler","i_epe","구성"],["saqp","i_cost","위험"],["saqp","cutblock","필요"],["ocd","i_pitchwalk","검출"],["ocd","i_metro","한계"],["i_metro","i_pitchwalk","가림"],["dsa","multipat","보완"],["asd","sablock","보완"],["sculpta","i_tip","line-end 조정"],["sculpta","euv","노광 횟수 축소"],["e_pulsed","i_loading","억제"],["e_pulsed","selectivity","개선"],["e_ale","s_mandrel","정밀 trim 후보"],["smic","saqp","DUV 멀티패터닝"],["intel10nm","saqp","양산 적용"],["dram","saqp","사용"],["dram","euv","일부 레이어"],["saqp","s_stack","핀 패터닝 (Intel 10nm)"],["multipat","s_via","미세 배선"],["highna","i_tip","개선 시연"],
 ];
+
+// 용어별 논문·출처: 세 리서치 원본(A20 보고서, PSPI·BDI 용어, DPT·QPT 보고서)에서 해당 주제에 실제로 인용된 것만 연결
+const SRC = {
+  akara: ["Lam Research (2025) — Akara 도체 식각 (TEMPO 펄싱)","https://investor.lamresearch.com/2025-02-19-Lam-Research-Unveils-Industrys-Most-Advanced-Conductor-Etch-Technology-to-Date"],
+  asd24: ["Int. J. Machine Tools (2024) — Area selective deposition","https://doi.org/10.1016/j.ijmachtools.2024.104173"],
+  asd25: ["Liu·Bent — Area selective deposition review (Materials Horizons 2025)","https://doi.org/10.1039/D4MH01472C"],
+  asmlhna: ["ASML — 5 things about High-NA EUV","https://www.asml.com/en/company/stories/2024/5-things-high-na-euv"],
+  asmlray: ["ASML — Rayleigh criterion","https://www.asml.com/en/technology/lithography-principles/rayleigh-criterion"],
+  bdilast: ["Micromachines (2023) — GAA Full BDI-last 연구","https://pmc.ncbi.nlm.nih.gov/articles/PMC10302010/"],
+  bencher: ["Bencher 외 — 22nm half-pitch by CVD spacer SADP (SPIE 2008)","https://doi.org/10.1117/12.772953"],
+  decomp: ["arXiv 1404.0321 — 멀티패터닝 레이아웃 분할","https://arxiv.org/abs/1404.0321"],
+  decoster19: ["Decoster 외 — EUV 기반 SAMP 옵션 (SPIE 2019)","https://doi.org/10.1117/12.2515173"],
+  donnelly: ["Donnelly·Kornblit — Plasma etching: yesterday, today, tomorrow (JVST A 2013)","https://doi.org/10.1116/1.4819316"],
+  dsa25: ["MRS Communications (2025) — DSA·EUV 연구 검토","https://doi.org/10.1557/s43579-025-00841-7"],
+  dualcarbon: ["J. Photopolymer Sci. Tech. (2017) — Dual-carbon SAQP의 Si 침투","https://www.jstage.jst.go.jp/article/photopolymer/30/3/30_361/_pdf"],
+  ecsbr2: ["ECS — 하부 절연용 Br₂ 선택 SiGe 식각","https://ecs.confex.com/ecs/242/webprogram/Paper164686.html"],
+  ecscu: ["ECS — Copper Seed Layer Wet Etching for 3D Integration (CEA-Leti·ST)","https://ecs.confex.com/ecs/224/webprogram/Abstract/Paper24100/E7-2068.pdf"],
+  ep4580342: ["특허 EP4580342A1 — Epitaxial Source/Drain 용례","https://data.epo.org/publication-server/rest/v1.2/publication-dates/2025-07-02/patents/EP4580342NWA1/document.pdf"],
+  esalele: ["imec — eSALELE의 EPE 기반 결함 검출","https://imec-publications.be/server/api/core/bitstreams/1c7be17c-f2d5-436e-a306-fb46acc0315e/content"],
+  fang: ["Fang 외 — SAQP pitch walk metrology (SPIE 2017)","https://doi.org/10.1117/12.2261620"],
+  hdm: ["HD MicroSystems — 감광성 PI의 RDL 적용","https://www.hdmicrosystems.com/products/hd7204?hsLang=en"],
+  hermans: ["Hermans 외 — 0.33NA EUV MP16 SADP semi-damascene (SPIE 2024)","https://doi.org/10.1117/12.3034200"],
+  ibmbdi: ["IBM (IEDM 2019) — Full Bottom Dielectric Isolation","https://research.ibm.com/publications/full-bottom-dielectric-isolation-to-enable-stacked-nanosheet-transistor-for-low-power-and-high-performance-applications"],
+  imaps: ["IMAPS (2018) — 미세 Cu RDL의 시드 식각","https://meridian.allenpress.com/ism/article/2018/1/000207/9546/Enabling-a-Robust-Copper-Seed-Etch-Process-for"],
+  imec2019: ["imec (2019) — EUV lithography: weighing the options","https://www.imec-int.com/en/imec-magazine/imec-magazine-june-2019/euv-lithography-weighing-the-options-for-future-logic-and-memory-applications"],
+  imechna24: ["imec (2024) — High-NA로 로직·DRAM 구조 시연","https://www.imec-int.com/en/press/imec-demonstrates-logic-and-dram-structures-using-high-na-euv-lithography"],
+  imechna25: ["imec (2025) — High-NA 단일 노광: 20nm pitch, Ru 직접 식각","https://www.imec-int.com/en/press/imec-achieves-new-milestones-single-patterning-high-na-euv-lithography-both-damascene-and"],
+  imecn5: ["imec — N5-equivalent 배선: DUV SAQP + EUV block","https://www.imec-int.com/en/articles/imec-presents-patterning-solutions-for-n5-equivalent-metal-layers"],
+  imecru18: ["Decoster 외 (imec) — Ru 18nm pitch 패터닝 (SPIE 원고)","https://imec-publications.be/bitstream/handle/20.500.12860/40370.2/SPIE%20proceedings%20-%20Decoster%20-%20Patterning%20of%20Ru%20metal%20lines%20at%2018%20nm%20pitch%20-%20online.pdf?isAllowed=y&sequence=1"],
+  imecsaqp: ["imec (2017) — N5 BEOL용 SAQP 공정 설명","https://www.imec-int.com/en/imec-magazine/imec-magazine-march-2017/first-euv-lithography-high-volume-manufacturing-solution-for-n5-beol"],
+  intel10: ["Auth 외 — Intel 10nm, Self-Aligned Quad Patterning (IEDM 2017)","https://doi.org/10.1109/IEDM.2017.8268472"],
+  intel14: ["Natarajan 외 — Intel 14nm, SADP (IEDM 2014)","https://doi.org/10.1109/IEDM.2014.7046976"],
+  intelhna: ["Intel·ASML (2026-09-07) — High-NA EUV 양산 레이어 적용","https://www.intel.com/content/www/us/en/newsroom/news/intel-foundry/intel-foundry-asml-accelerate-industry-readiness-for-high-na-euv.html"],
+  irds: ["IEEE IRDS 2023 — Lithography","https://irds.ieee.org/images/files/pdf/2023/2023IRDS_Litho.pdf"],
+  kanarik: ["Kanarik 외 — Overview of atomic layer etching (JVST A 2015)","https://doi.org/10.1116/1.4913379"],
+  lam101: ["Lam Research — How advanced patterning enables smaller chips","https://newsroom.lamresearch.com/how-advanced-patterning-enables-smarter-smaller-chips-semi-101"],
+  lamcu: ["Lam Research — Cu 다마신 20주년","https://newsroom.lamresearch.com/Celebrating-the-Copper-Revolutions-20th-Anniversary"],
+  lazzarino: ["Lazzarino 외 — Self-aligned block technology (SPIE 2017)","https://doi.org/10.1117/12.2258028"],
+  lfle: ["Pieczulewski·Rosslee — LFLE double patterning (SPIE 2009)","https://doi.org/10.1117/12.837221"],
+  lorusso: ["Lorusso 외 — SAQP 전사 중 LWR 분석 (SPIE 2016)","https://doi.org/10.1117/12.2218863"],
+  micron1g: ["Micron (2025) — 1γ DRAM 출하 (첫 EUV)","https://micron.gcs-web.com/news-releases/news-release-details/micron-announces-shipment-1g-1-gamma-dram-pioneering-memory"],
+  micronpat: ["Micron — 투자자 자료: 1β까지 멀티패터닝, EUV 조합 전략","https://investors.micron.com/static-files/875ad906-90ad-4fff-aad9-dc18d04042a4"],
+  p10586738: ["특허 US10586738 — Embedded Source/Drain","https://patents.justia.com/patent/10586738"],
+  p12199054: ["특허 US12199054 — Al RDL과 증착·식각","https://patents.justia.com/patent/12199054"],
+  p20120064686: ["특허 US20120064686 — eSiGe용 Si 리세스 식각","https://patents.justia.com/patent/20120064686"],
+  p20140367751: ["특허 US20140367751 — eSiGe용 FinFET 식각","https://patents.google.com/patent/US20140367751"],
+  p20250359147: ["특허 US20250359147A1 — Bottom/Buried Dielectric Isolation","https://patents.google.com/patent/US20250359147A1/en"],
+  p4412885: ["특허 US4412885A — Al·Al 합금의 염소계 식각","https://patents.google.com/patent/US4412885A/en"],
+  p6127721: ["특허 US6127721A — PSPI 패터닝과 식각 마스크 사용","https://patents.google.com/patent/US6127721A/en"],
+  p9947645: ["특허 US9947645B2 — VV·LB 레이어 정의와 식각 관통","https://patents.google.com/patent/US9947645B2/en"],
+  pietch: ["Microelectronic Engineering (1986) — O₂/CF₄ 폴리이미드 식각","https://www.sciencedirect.com/science/article/pii/0167931786900663"],
+  raley: ["Raley 외 — SAQP spacer-on-spacer (SPIE 2016)","https://doi.org/10.1117/12.2219321"],
+  s1: ["TSMC — 2nm Technology (공식)","https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_2nm"],
+  s10: ["9to5Mac — A20 WMCM 공급망 분석가 발언 인용 (루머, 2025-08-12)","https://9to5mac.com/2025/08/12/next-years-iphones-could-get-bigger-than-usual-upgrades-with-a20-chip/"],
+  s11: ["imec — Entering the nanosheet transistor era","https://www.imec-int.com/en/articles/entering-nanosheet-transistor-era-0"],
+  s12: ["TEL–imec — Selective isotropic etching of Group-IV semiconductors (발표 자료, PDF)","https://www.linx-consulting.com/wp-content/uploads/2018/04/01-06-S_Kal-TEL-imec_Selective_isotropic_etching_of_Group-IV_semiconductors.pdf"],
+  s13: ["Lam Research — Selective Etch Product Family","https://www.lamresearch.com/product/selective-etch-product-family/"],
+  s14: ["Applied Materials — Endura Trillium ALD","https://www.appliedmaterials.com/us/en/product-library/endura-trillium-ald.html"],
+  s15: ["Lam Research — Tech Brief: All About ALE","https://newsroom.lamresearch.com/Tech-Brief-All-About-ALE"],
+  s16: ["ASML — EUV lithography systems","https://www.asml.com/en/products/euv-lithography-systems"],
+  s17: ["Applied Materials — Frontside wiring for 2nm and beyond","https://www.appliedmaterials.com/us/en/newsroom/blogs/beyond-backside-power-scaling-chips-to-2nm-and-beyond-also-requi.html"],
+  s18: ["imec — 16nm-pitch Ru semi-damascene (2025)","https://www.imec-int.com/en/press/imec-demonstrates-16nm-pitch-ru-lines-record-low-resistance-obtained-using-semi-damascene"],
+  s19: ["FormFactor — Parametric Test / WAT","https://www.formfactor.com/applications/high-volume-test-on-wafer/parametric-test/"],
+  s20: ["Advantest — Automated Test Equipment","https://www.advantest.com/en/semiconductor-basics/automated-test-equipment/"],
+  s21: ["DISCO — Corporate Report 2020 (박막화·절단, PDF)","https://disco.co.jp/eg/ir/library/doc/dar/dar2020.pdf"],
+  s22: ["TSMC — InFO / InFO-PoP","https://3dfabric.tsmc.com/schinese/dedicatedFoundry/technology/InFO.htm"],
+  s24: ["Amkor — Wafer Bumping Services","https://amkor.com/services/wafer-bumping/"],
+  s25: ["Amkor — S-SWIFT와 RDL 시드 언더컷","https://amkor.com/blog/revolutionizing-ic-packaging-with-s-swift-technology/"],
+  s26: ["TSMC — 2024 Annual Report (리소그래피 개발, PDF)","https://investor.tsmc.com/sites/ir/annual-report/2024/2024%20Annual%20Report_E.pdf"],
+  s28: ["Applied Materials — Advanced Logic 공정 모듈","https://www.appliedmaterials.com/us/en/semiconductor/markets-and-inflections/advanced-logic.html"],
+  s29: ["Applied Materials — New Ways to Shrink 2022: GAA 에피·선택 제거 (PDF)","https://ir.appliedmaterials.com/static-files/f2fbf48d-a761-4c4f-ab4c-73f312ab1ebc"],
+  s3: ["TSMC Research — IEDM 2024 N2 논문 공개 초록","https://research.tsmc.com/page/transistor-structure/59.html"],
+  s30: ["특허 US20220157941A1 — Semiconductor Gate-All-Around Device (TSMC)","https://patents.google.com/patent/US20220157941A1/en"],
+  s31: ["Applied Materials — Interconnect: Cu와 Ru계 라이너","https://www.appliedmaterials.com/us/en/semiconductor/markets-and-inflections/advanced-logic/interconnect.html"],
+  s32: ["Keysight — Parametric Test Solutions","https://www.keysight.com/gq/en/products/semiconductors/parametric-test-solutions.html"],
+  s4: ["TSMC — 2024 Technology Symposium (NanoFlex·A16, PDF)","https://pr.tsmc.com/system/files/newspdf/attachment/34a0127e5c396217a02a97ee58c481b168437a1a/2024%20Tech%20Symposium%20%28E%29_final_wmn.pdf"],
+  s5: ["TSMC — HPC Advanced Technologies (N2P·A16·MIM)","https://www.cld.tsmc.com/english/dedicatedFoundry/technology/platform_HPC_tech_advancedTech"],
+  s6: ["TSMC — 2025 Annual Report (N2 양산·수율)","https://investor.tsmc.com/static/annualReports/2025/english/index.html"],
+  s7: ["TSMC — Fabs (12인치 팹)","https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs"],
+  s8: ["Apple — iPhone 18 Pro / Pro Max 발표 (2026-09-09)","https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/"],
+  s9: ["Apple — iPhone Duo 발표","https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/"],
+  salele: ["EDN — Multi-patterning strategies sub-5nm, part 2 (SALELE)","https://www.edn.com/multi-patterning-strategies-for-navigating-the-sub-5-nm-frontier-part-2/"],
+  sam10: ["Samsung (2016) — 10nm 양산: triple patterning·양방향 배선","https://news.samsung.com/global/samsung-starts-industrys-first-mass-production-of-system-on-chip-with-10-nanometer-finfet-technology"],
+  sam14euv: ["Samsung (2021) — 14nm DRAM, EUV 5개 레이어","https://news.samsung.com/global/samsung-starts-mass-production-of-most-advanced-14nm-euv-ddr5-dram"],
+  samco: ["Samco — SiO₂·SiN 식각 기술 자료 (PDF)","https://www.samcointl.com/tech_notes/pdf/Technical%20Report%2077.pdf"],
+  samdram10: ["Samsung — 10nm급 DRAM의 QPT (한 번 노광 후 네 패턴)","https://news.samsung.com/global/exploring-the-key-samsung-technologies-that-enabled-10nm-class-dram"],
+  samnand: ["Samsung (2007) — 30나노 64Gb NAND 개발, SaDPT 적용","https://news.samsung.com/kr/삼성전자-세계-최초-30나노-64기가-낸드-개발-성공"],
+  saop: ["Yu 외 — Critical challenges of SAOP (SPIE 2014)","https://doi.org/10.1117/12.2046094"],
+  saqpocd: ["SPIE (2016) — SAQP scatterometry 공정 제어","https://doi.org/10.1117/12.2220287"],
+  sculpta: ["Applied Materials (2023) — Sculpta 패턴 셰이핑 발표","https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-innovative-pattern-shaping-technology-reduces/"],
+  shaping: ["Applied Materials — Pattern shaping 원리","https://www.appliedmaterials.com/eu/en/semiconductor/semiconductor-technologies/pattern-shaping.html"],
+  sidsim: ["IEEE TCAD (2015) — SID/SIM SADP routing","https://doi.org/10.1109/TCAD.2015.2404878"],
+  sub10: ["SPIE (2016) — Patterning challenges in the sub-10 nm era","https://doi.org/10.1117/12.2222256"],
+  ti9000s: ["TechInsights (2023) — Kirin 9000S, SMIC 7nm N+2","https://www.techinsights.com/ja/node/54046"],
+  tin3: ["TechInsights (2026-08-27) — Kirin 9030 Pro, SMIC N+3","https://www.techinsights.com/blog/smic-n3-kirin-9030-pro-process-flow-analysis"],
+  tsmc2013: ["TSMC — 2013 연차보고서 기술개발 (PDF)","https://investor.tsmc.com/static/annualReports/2013/english/pdf/c_11_1.pdf"],
+  tsmcdpt: ["TSMC (2012) — DPT 설계 reference flow 발표","https://pr.tsmc.com/schinese/news/1745"],
+};
+const SOURCES = {
+  a20: ["s8","s9"],
+  n2: ["s1","s3","s6"],
+  n2p: ["s1","s5"],
+  a16: ["s4","s5"],
+  gaa: ["s11","s3"],
+  superlattice: ["s11","s29"],
+  nanosheet: ["s11"],
+  sti: ["s11"],
+  dummygate: ["s12","s13"],
+  outerspacer: ["s12"],
+  innerspacer: ["s12","s29"],
+  sd: ["s29","s30"],
+  hkmg: ["s14"],
+  contact: ["s15","s28"],
+  beol: ["s17","s31"],
+  mim: ["s1","s5"],
+  rdl: ["s24","s25","imaps"],
+  bump: ["s24"],
+  si: ["s12","s29"],
+  sige: ["s12","s29"],
+  highk: ["s14"],
+  wfm: ["s14"],
+  lowk: ["s17"],
+  cu: ["s31","lamcu"],
+  ru: ["s18","imecru18","imechna25"],
+  s_clean: ["s7","s13"],
+  s_stack: ["s11"],
+  s_sdrecess: ["s29"],
+  s_lateral: ["s12","s29"],
+  s_dgremove: ["s12","s13"],
+  s_release: ["s11","s13"],
+  s_gaterecess: ["s14","s15"],
+  s_contact: ["s15","s28"],
+  s_via: ["s17"],
+  s_pad: ["s1","s3"],
+  s_seed: ["s24","s25"],
+  s_dicing: ["s21"],
+  e_aniso: ["donnelly"],
+  e_iso: ["s12","s13"],
+  e_ale: ["s15","kanarik"],
+  e_wet: ["ecscu"],
+  e_etchback: ["s12","bencher"],
+  e_plasmadice: ["s21"],
+  selectivity: ["s12","donnelly"],
+  euv: ["s16","s26","irds"],
+  ald: ["s14"],
+  epi: ["s29"],
+  i_siloss: ["s12"],
+  i_geres: ["s11"],
+  i_stiction: ["s11"],
+  i_recessvar: ["s12"],
+  i_parasitic: ["s12"],
+  i_notch: ["s11"],
+  i_loading: ["donnelly"],
+  i_lowkdmg: ["s17"],
+  i_undercut: ["s25"],
+  wat: ["s19","s32"],
+  cp: ["s20"],
+  info: ["s22"],
+  wmcm: ["s8","s10"],
+  pspi: ["hdm","p6127721"],
+  s_pspi: ["p6127721","pietch"],
+  e_descum: ["pietch"],
+  pv: ["p9947645"],
+  vv: ["p9947645","samco"],
+  lb: ["p9947645"],
+  al: ["p4412885"],
+  al_rdl: ["p12199054","p4412885"],
+  cu_rdl: ["imaps","ecscu"],
+  s_almetal: ["p4412885"],
+  sap: ["imaps"],
+  bdi: ["ibmbdi","bdilast","p20250359147"],
+  s_bdi: ["ecsbr2","bdilast"],
+  i_subleak: ["ibmbdi"],
+  esd: ["p10586738","ep4580342"],
+  esige: ["p20120064686","p20140367751"],
+  i_corrosion: ["p4412885"],
+  i_punch: ["p9947645"],
+  multipat: ["irds","imec2019","lam101"],
+  dpt: ["bencher","tsmcdpt","samnand"],
+  qpt: ["samdram10","intel10"],
+  rayleigh: ["asmlray","tsmc2013"],
+  arfi: ["asmlray"],
+  lele: ["imec2019","tsmcdpt"],
+  lfle: ["lfle"],
+  le3: ["sam10"],
+  sadp: ["bencher","intel14","sub10"],
+  saqp: ["intel10","imecsaqp","raley"],
+  saop: ["saop"],
+  salele: ["salele","decoster19"],
+  sos: ["raley"],
+  sidsim: ["imecru18","sidsim"],
+  cutblock: ["imecn5","lazzarino"],
+  sablock: ["lazzarino"],
+  mandrel: ["bencher","dualcarbon"],
+  pspacer: ["bencher","raley"],
+  hardmask: ["sub10","dualcarbon"],
+  s_mandrel: ["bencher","donnelly"],
+  s_speb: ["bencher","raley"],
+  s_pull: ["raley","dualcarbon"],
+  s_transfer: ["lorusso","donnelly"],
+  s_cut: ["lazzarino","imecn5"],
+  i_pitchwalk: ["fang","saqpocd"],
+  i_overlay: ["esalele","irds"],
+  i_epe: ["esalele"],
+  i_coloring: ["decomp","sidsim"],
+  i_ler: ["lorusso"],
+  i_mprofile: ["raley","dualcarbon"],
+  i_tip: ["lazzarino","imechna25"],
+  i_metro: ["fang","saqpocd"],
+  i_cost: ["saop"],
+  highna: ["asmlhna","imechna24","imechna25","intelhna"],
+  dsa: ["dsa25"],
+  asd: ["asd24","asd25"],
+  sculpta: ["sculpta","shaping"],
+  e_pulsed: ["akara"],
+  ocd: ["fang","saqpocd"],
+  smic: ["ti9000s","tin3"],
+  intel10nm: ["intel10"],
+  dram: ["samdram10","sam14euv","micronpat","micron1g"],
+  euvsadp: ["hermans","decoster19"],
+};
+const srcList = id => (SOURCES[id] || []).map(k => `<li><a href="${SRC[k][1]}" target="_blank" rel="noopener">${SRC[k][0]}</a></li>`).join("");
 
 const typeOf = Object.fromEntries(NODES.map(n => [n[0], n[3]]));
 const nameOf = Object.fromEntries(NODES.map(n => [n[0], n[1]]));
@@ -249,10 +524,10 @@ const tbody = document.querySelector("#gloss tbody");
 function renderGloss() {
   const q = document.getElementById("q").value.trim().toLowerCase();
   tbody.innerHTML = "";
-  NODES.filter(n => active.has(n[3]) && (!q || (n[1]+n[2]+n[4]+n[5]).toLowerCase().includes(q)))
+  NODES.filter(n => active.has(n[3]) && (!q || (n[1]+n[2]+n[4]+n[5]+(SOURCES[n[0]]||[]).map(k=>SRC[k][0]).join(" ")).toLowerCase().includes(q)))
     .forEach(n => {
       const tr = document.createElement("tr");
-      tr.innerHTML = `<td class="term">${n[1]}<small>${n[2]}</small></td><td><span class="badge" style="background:${TYPES[n[3]].color}">${TYPES[n[3]].label}</span></td><td>${n[4]}</td><td>${n[5]}</td>`;
+      tr.innerHTML = `<td class="term">${n[1]}<small>${n[2]}</small></td><td><span class="badge" style="background:${TYPES[n[3]].color}">${TYPES[n[3]].label}</span></td><td>${n[4]}${SOURCES[n[0]] ? `<details class="src"><summary>논문·출처 ${SOURCES[n[0]].length}개</summary><ul>${srcList(n[0])}</ul></details>` : ""}</td><td>${n[5]}</td>`;
       tr.querySelector(".term").onclick = () => { focusNode(n[0]); document.getElementById("cy").scrollIntoView({behavior:"smooth", block:"center"}); };
       tbody.appendChild(tr);
     });
@@ -268,6 +543,7 @@ function showPanel(id) {
     <h3 style="margin-top:8px">${n[1]}</h3><div class="en">${n[2]}</div>
     <div class="def">${n[4]}</div>
     <div class="def"><b>식각 관점:</b> ${n[5]}</div>
+    ${SOURCES[id] ? `<b style="font-size:14px">논문·출처</b><ul class="srcl">${srcList(id)}</ul>` : ""}
     ${out.length ? `<b style="font-size:14px">이 용어에서 나가는 관계</b><ul>${li(out,1,"out")}</ul>` : ""}
     ${inn.length ? `<b style="font-size:14px">이 용어로 들어오는 관계</b><ul>${li(inn,0,"in")}</ul>` : ""}`;
   panel.querySelectorAll("a[data-id]").forEach(a => a.onclick = () => focusNode(a.dataset.id));
@@ -298,7 +574,7 @@ try {
   cy = cytoscape({
     container: document.getElementById("cy"),
     elements: [
-      ...NODES.map(n => ({ data: { id: n[0], label: n[1], color: TYPES[n[3]].color, big: ["s_lateral","s_release","s_gaterecess","gaa","e_iso"].includes(n[0]) ? 1 : 0 } })),
+      ...NODES.map(n => ({ data: { id: n[0], label: n[1], color: TYPES[n[3]].color, big: ["s_lateral","s_release","s_gaterecess","gaa","e_iso","sadp","saqp"].includes(n[0]) ? 1 : 0 } })),
       ...EDGES.map((e, i) => ({ data: { id: "e" + i, source: e[0], target: e[1], label: e[2], seq: e[2] === "다음 단계" ? 1 : 0 } })),
     ],
     style: [
