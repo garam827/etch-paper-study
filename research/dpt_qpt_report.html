@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DPT · QPT 멀티패터닝 보고서</title>
+<style>
+  :root {
+    --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb;
+    --accent:#2563eb; --etch:#dc2626; --etch-bg:#fef2f2;
+    --ok:#166534; --ok-bg:#dcfce7; --est:#1e40af; --est-bg:#dbeafe;
+    --rum:#92400e; --rum-bg:#fef3c7; --na:#4b5563; --na-bg:#f3f4f6;
+  }
+  * { box-sizing:border-box; }
+  html { color-scheme: light; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.7 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; }
+  .wrap { max-width:980px; margin:0 auto; padding:40px 16px 80px; }
+  h1 { font-size:28px; margin:0 0 6px; line-height:1.3; text-wrap:balance; }
+  h2 { font-size:21px; margin:48px 0 14px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  h3 { font-size:17px; margin:0 0 6px; }
+  h4 { font-size:15px; margin:14px 0 4px; }
+  p { max-width:78ch; }
+  a { color:var(--accent); }
+  .sub { color:var(--muted); margin:0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:12px 0; }
+  .card > :first-child { margin-top:0; } .card > :last-child { margin-bottom:0; }
+  .tag { display:inline-block; font-size:12px; font-weight:600; padding:1px 8px; border-radius:999px; margin-right:4px; white-space:nowrap; }
+  .t-ok { background:var(--ok-bg); color:var(--ok); }
+  .t-est { background:var(--est-bg); color:var(--est); }
+  .t-rum { background:var(--rum-bg); color:var(--rum); }
+  .t-na { background:var(--na-bg); color:var(--na); }
+  .t-etch { background:var(--etch-bg); color:var(--etch); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+  .kpi { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .kpi b { display:block; font-size:20px; color:var(--accent); font-variant-numeric:tabular-nums; }
+  .kpi span { color:var(--muted); font-size:13px; }
+  table { border-collapse:collapse; width:100%; font-size:14px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#f3f6fb; white-space:nowrap; }
+  td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .tbl { overflow-x:auto; border-radius:10px; }
+  .diagram { overflow-x:auto; }
+  .diagram svg { display:block; min-width:720px; width:100%; height:auto; font-family:"Malgun Gothic",system-ui,sans-serif; }
+  .diagram svg .pt { font-size:12px; font-weight:700; fill:#1f2937; }
+  .diagram svg .pn { font-size:10.5px; fill:#6b7280; }
+  .diagram svg .pv { font-size:10px; font-weight:700; }
+  .diagram svg .ar { font-size:22px; fill:#9ca3af; }
+  .legend { display:flex; flex-wrap:wrap; gap:12px; font-size:13px; color:var(--muted); margin-top:8px; }
+  .legend i { display:inline-block; width:14px; height:14px; border-radius:3px; vertical-align:-2px; margin-right:4px; border:1px solid #64748b; }
+  .note { font-size:13px; color:var(--muted); }
+  .warn { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:12px 16px; }
+  .ch { border-left:4px solid var(--etch); }
+  .ch .hd { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; margin-bottom:6px; }
+  .ch .no { font-weight:800; color:var(--etch); font-variant-numeric:tabular-nums; }
+  .ch dl { display:grid; grid-template-columns:96px 1fr; gap:4px 12px; margin:0; }
+  .ch dt { color:var(--muted); font-size:13px; padding-top:2px; }
+  .ch dd { margin:0; }
+  .cat { font-size:13px; font-weight:700; letter-spacing:.04em; color:var(--muted); margin:26px 0 4px; }
+  .toc { columns:2 260px; column-gap:28px; margin:0; padding-left:20px; }
+  ol.src { font-size:13px; padding-left:22px; word-break:break-all; }
+  ol.src li { margin-bottom:3px; }
+  .tl { list-style:none; padding:0; margin:0; border-left:2px solid var(--line); }
+  .tl li { position:relative; padding:0 0 12px 18px; }
+  .tl li::before { content:""; position:absolute; left:-6px; top:8px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+  .tl b.y { font-variant-numeric:tabular-nums; margin-right:6px; }
+  @media (max-width:560px){ .ch dl { grid-template-columns:1fr; } .ch dt { padding-top:6px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>DPT · QPT — 멀티패터닝의 등장 배경, 최근 동향, 그리고 난제</h1>
+  <p class="sub">반도체 식각 논문 스터디 · 조사 기준일 2026-10-07 · 리서치: gpt-6-astra (high, 웹 검색) · 판단 자문: jev · 정리: Claude</p>
+  <p class="sub" style="margin-top:6px"><a href="../index.html">← 목차</a> · <a href="a20_etch_knowledge_graph.html">식각 지식 그래프</a></p>
+</header>
+
+<div class="warn" style="margin-top:20px">
+  <b>읽기 전에.</b> 칩 제조사는 레이어별 패터닝 방식을 거의 공개하지 않는다. 아래 내용은 학회 논문, 제조사 발표, 역설계(teardown) 분석을 모아 정리한 것이며 각 주장에 확인 수준을 붙였다:
+  <span class="tag t-ok">확인</span> 제조사·학회 공식 자료
+  <span class="tag t-est">추정</span> 역설계·업계 분석 기반
+  <span class="tag t-rum">루머</span> 공급망·언론 주장
+  <span class="tag t-na">미공개</span> 검증 가능한 수치 없음
+</div>
+
+<nav class="card" aria-label="목차">
+  <ol class="toc">
+    <li><a href="#s1">한눈에 보기</a></li>
+    <li><a href="#s2">등장 배경 — 왜 한 번 노광으로 안 되나</a></li>
+    <li><a href="#s3">도입 연표</a></li>
+    <li><a href="#s4">방식 분류 — LELE부터 SAQP까지</a></li>
+    <li><a href="#s5">공정 흐름 단면도</a></li>
+    <li><a href="#s6">난제 총정리</a></li>
+    <li><a href="#s7">최근 기술 동향 (2023–2026)</a></li>
+    <li><a href="#s8">식각 엔지니어 관점 정리</a></li>
+    <li><a href="#s9">핵심 논문 · 출처</a></li>
+  </ol>
+</nav>
+
+<!-- ============ 1 ============ -->
+<h2 id="s1">1. 한눈에 보기</h2>
+<div class="grid">
+  <div class="kpi"><b>≈ 76–80 nm</b><span>ArF 이머전(193 nm, NA 1.35) 단일 노광의 조밀 격자 <b style="display:inline;font-size:inherit;color:inherit">pitch</b> 실용 한계 (half-pitch 38–40 nm)</span></div>
+  <div class="kpi"><b>× 2 · × 4</b><span>SADP는 피치 ½, SAQP는 ¼. 기본 격자 노광은 둘 다 <b style="display:inline;font-size:inherit;color:inherit">한 번</b></span></div>
+  <div class="kpi"><b>34 · 36 nm</b><span>Intel 10nm (IEDM 2017) SAQP — fin pitch · 최소 metal pitch <span class="tag t-ok">확인</span></span></div>
+  <div class="kpi"><b>2026-09</b><span>Intel, Panther Lake 일부 레이어에 High-NA EUV 양산 사용 발표 <span class="tag t-ok">확인</span></span></div>
+</div>
+<div class="card">
+  <p><b>DPT(Double Patterning Technology)·QPT(Quadruple Patterning Technology)</b>는 노광 장비가 한 번에 그릴 수 없는 촘촘한 패턴을, 패턴을 나누어 여러 번 그리거나(LELE 계열) 측벽 스페이서로 선을 복제해서(SADP·SAQP 계열) 만드는 기술이다.</p>
+  <p><b>식각 관점의 핵심.</b> 레지스트가 최종 선폭을 직접 정하던 구조에서, 레지스트는 대략적인 위치와 초기 주기만 정하고 <b>증착 두께·식각 바이어스·선택비가 최종 선폭과 간격을 정하는 구조</b>로 바뀌었다. 그래서 SADP·SAQP에서는 식각이 "모양을 옮기는" 공정이 아니라 <b>치수를 결정하는</b> 공정이 된다.</p>
+  <p class="note">용어 정정: 지시에 적힌 "SAPD"는 SADP(Self-Aligned Double Patterning)로, ArF 이머전의 "~38–40 nm"는 pitch가 아니라 half-pitch로 정리했다. 또 QPT는 네 번 노광한다는 뜻이 아니다 — SAQP는 한 번 노광하고 스페이서 공정을 두 번 반복한다 (Samsung의 10nm급 DRAM 설명도 같다).</p>
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="s2">2. 등장 배경 — 왜 한 번 노광으로 안 되나</h2>
+<div class="card">
+  <p>해상도는 Rayleigh 식으로 정해진다: <b>CD = k₁ · λ / NA</b>. 조밀한 1:1 선·공간에서 CD를 half-pitch로 보면, ArF 이머전(λ = 193 nm, NA = 1.35)은 다음과 같다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>k₁</th><th>Half-pitch</th><th>Pitch</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td class="num">0.28</td><td class="num">40.0 nm</td><td class="num">80 nm</td><td>실용 해상도를 말할 때 자주 쓰는 수준</td></tr>
+      <tr><td class="num">0.266</td><td class="num">38.0 nm</td><td class="num">76 nm</td><td>"약 38 nm 해상도"</td></tr>
+      <tr><td class="num">0.25</td><td class="num">35.7 nm</td><td class="num">71.5 nm</td><td>단일 노광 조밀 격자의 이론적 한계</td></tr>
+      <tr><td class="num">≈ 0.14</td><td class="num">20 nm</td><td class="num">40 nm</td><td>단일 노광으로는 불가능 → SADP 필요</td></tr>
+    </tbody>
+  </table></div>
+  <p>λ를 줄이는 정공법은 EUV(13.5 nm)였지만, 광원 출력·가동률·마스크 결함·레지스트·검사 인프라가 오랫동안 양산 수준에 못 미쳤다. TSMC는 2013년 보고서에서 20/16 nm용 이중 패터닝만으로는 10 nm 요구를 맞추기 어렵고 EUV 광원 출력이 주요 우려라고 적었다 <span class="tag t-ok">확인</span>. 이 10년가량의 공백을 LELE·SADP·SAQP가 메웠다.</p>
+  <p style="margin-bottom:0"><b>메모리가 먼저였다.</b> 규칙적인 1D 배열(NAND 워드라인, DRAM 활성 영역)은 스페이서 복제에 꼭 맞는 형상이라, 로직보다 먼저 들어갔다. Samsung은 2007년 30 nm급 NAND 개발에 SaDPT 적용을 발표했다 <span class="tag t-ok">확인</span>.</p>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="s3">3. 도입 연표</h2>
+<p class="note">노드 이름보다 "어느 레이어에 어떤 방식이 들어갔나"로 읽어야 정확하다. 노드명은 실제 pitch와 다르다 (Intel 7 = 옛 Intel 10nm 계열).</p>
+<div class="card">
+  <ul class="tl">
+    <li><b class="y">2007</b> Samsung, 30 nm급 64Gb NAND 개발에 SaDPT 적용 발표 — 스페이서 패터닝의 첫 주력 무대는 메모리 <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2008</b> Bencher 외(AMAT), CVD 스페이서 SADP로 22 nm half-pitch 시연 — 맨드릴·스페이서·pull·전사 구조의 기본 문헌</li>
+    <li><b class="y">2012</b> Intel 22 nm SoC 플랫폼 논문에 M1 이중 패터닝 명시. TSMC, 20 nm용 DPT 설계 reference flow 발표 <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2014</b> TSMC 20 nm 양산 확대 (LELE 컬러링이 설계 문제로 부상). Intel 14 nm, 중요층 SADP, 최소 metal pitch 52 nm (IEDM). Samsung 20 nm DRAM에 modified DPT <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2015</b> Samsung 14 nm FinFET 양산 <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2016</b> Samsung 10 nm 로직 양산 — <b>triple patterning + 양방향 배선</b> ("10 nm = SAQP·단방향"의 반례). Samsung 10 nm급 DRAM에 QPT <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2017</b> Intel 10 nm, SAQP · fin pitch 34 nm · metal pitch 36 nm (IEDM) <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2018</b> TSMC N7 양산 — DUV 멀티패터닝만으로 7 nm급 (EUV는 N7+부터). Samsung 7LPP, EUV 첫 도입 <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2021</b> SK hynix 1a DRAM에 EUV, Samsung 14 nm DRAM에 EUV 5개 레이어. Micron 1α는 EUV 없이 출하 <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2022</b> Micron 1β — 여전히 DUV 멀티패터닝 <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2023</b> TechInsights, Kirin 9000S에서 SMIC 7 nm N+2(비EUV) 확인. AMAT Sculpta 공개. ASML, 첫 High-NA 모듈 Intel에 출하(12월) <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2024</b> imec, High-NA 단일 노광 19 nm pitch 랜덤 로직 시연. 0.33NA EUV + SADP로 metal pitch 16 nm 목표 연구 <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2025</b> Micron 1γ, 첫 EUV DRAM. Lam Akara 공개. imec, High-NA 20 nm pitch · 13 nm tip-to-tip · Ru 직접 식각 전기 시험 <span class="tag t-ok">확인</span></li>
+    <li><b class="y">2026</b> TechInsights, Kirin 9030 Pro의 SMIC N+3 분석(8월): 7 nm급의 축소 발전, 상용 5 nm보다 덜 축소. Intel·ASML, Panther Lake 일부 레이어 High-NA 양산 사용 발표(9월) <span class="tag t-ok">확인</span></li>
+  </ul>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="s4">4. 방식 분류 — LELE부터 SAQP까지</h2>
+<p>가장 중요한 구분 기준은 <b>"서로 다른 노광 패턴을 합치는가(LE 계열), 측벽을 복제하는가(SA 계열)"</b>다.</p>
+<div class="tbl"><table>
+  <thead><tr><th>방식</th><th>원리</th><th>격자 노광</th><th>식각이 떠안는 부담</th></tr></thead>
+  <tbody>
+    <tr><td><b>LELE</b></td><td>패턴을 A/B로 나눠 노광·식각을 두 번</td><td class="num">2</td><td>두 집단의 CD·식각 바이어스 일치</td></tr>
+    <tr><td><b>LFLE</b></td><td>첫 레지스트를 열·화학적으로 굳힌(freeze) 뒤 두 번째 노광, 한 번에 식각</td><td class="num">2</td><td>이력이 다른 두 레지스트를 함께 전사</td></tr>
+    <tr><td><b>LE3 (LELELE)</b></td><td>세 패턴으로 분할 — 2색으로 안 풀리는 배치 처리</td><td class="num">3</td><td>세 집단의 overlay·CD·전사 차이</td></tr>
+    <tr><td><b>SADP</b></td><td>맨드릴 양 측벽 스페이서가 최종 패턴</td><td class="num">1</td><td>스페이서 에치백, 맨드릴 제거, 전사</td></tr>
+    <tr><td><b>SAQP</b></td><td>스페이서 복제를 두 번</td><td class="num">1</td><td>두 세대의 프로파일·선택비·CD 오차</td></tr>
+    <tr><td><b>SAOP</b></td><td>스페이서 복제를 세 번 (피치 ⅛) — 연구 단계</td><td class="num">1</td><td>누적 오차, 매우 긴 공정</td></tr>
+    <tr><td><b>SALELE</b></td><td>두 노광 집단 + 스페이서로 위치를 일부 고정</td><td class="num">2</td><td>측벽 보호, 선택적 개구·전사</td></tr>
+    <tr><td><b>Cut / Block</b></td><td>연속 격자를 끊거나 전사를 막아 회로로 만듦</td><td class="num">추가</td><td>line-end EPE, 잔류물, 오절단</td></tr>
+    <tr><td><b>Self-aligned block</b></td><td>재료 경계·선택비로 블록 경계 일부를 고정</td><td class="num">추가</td><td>재료 선택성, 경계 보존</td></tr>
+  </tbody>
+</table></div>
+<p class="note">노광 수는 기본 격자만 센 값이다. 실제 마스크 수에는 cut·block·trim·keep·via가 더해진다. "QPT라서 비용이 정확히 네 배"는 성립하지 않는다.</p>
+
+<div class="card">
+  <h3>SID와 SIM — 스페이서가 최종적으로 무엇이 되나</h3>
+  <p>스페이서 재료의 이름이 아니라 <b>최종 배선과의 대응 관계</b>다.</p>
+  <ul>
+    <li><b>SID (Spacer-Is-Dielectric)</b>: 스페이서 자리 = 금속 사이 절연. 절연 간격이 스페이서 두께로 정해지고, 금속 폭은 core/gap 유래로 두 종류가 된다.</li>
+    <li><b>SIM (Spacer-Is-Metal)</b>: 스페이서 자리 = 금속 선. 금속 선폭이 스페이서 두께로 정해지고, 금속 간격이 교대로 달라진다. 예: 산화물 스페이서를 마스크로 아래 Ru를 직접 식각(imec, 18 nm pitch).</li>
+  </ul>
+</div>
+<div class="card">
+  <h3>SALELE와 spacer-on-spacer</h3>
+  <p><b>SALELE</b>는 LELE의 설계 유연성(트랙마다 원하는 선만)과 스페이서 자기정렬을 합친 방식이다. 첫 라인 집단 식각 → ALD 측벽 → 블록 → 두 번째 라인 집단이 기존 측벽 경계에 맞춰 자리 잡는다. 2019년 imec·Mentor 예시는 라인 2 + 블록 2, 총 4개 마스크였다. 쓸모없는 dummy metal은 줄지만 overlay·LER 문제가 완전히 사라지지는 않는다.</p>
+  <p style="margin-bottom:0"><b>Spacer-on-spacer</b>는 첫 스페이서를 두 번째 스페이서의 직접 지지대로 써서 SAQP의 중간 전사·희생층을 줄인다 (Raley 외, TEL, 2016). 대신 첫 스페이서를 지울 때 두 번째 스페이서와 바닥을 지켜야 하므로 <b>선택비 요구가 더 까다롭다</b>.</p>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="s5">5. 공정 흐름 단면도</h2>
+<p class="note">개념도다. 숫자는 그림 단위(초기 피치 80 기준)이며 실제 공정 치수가 아니다. 좁은 화면에서는 그림을 옆으로 밀어서 본다.</p>
+<div class="legend">
+  <span><i style="background:#86efac"></i>레지스트</span>
+  <span><i style="background:#fdba74"></i>맨드릴 1</span>
+  <span><i style="background:#fcd34d"></i>맨드릴 2</span>
+  <span><i style="background:#a78bfa"></i>스페이서 1</span>
+  <span><i style="background:#f472b6"></i>스페이서 2</span>
+  <span><i style="background:#94a3b8"></i>하드마스크</span>
+  <span><i style="background:#93c5fd"></i>대상막</span>
+  <span><i style="background:#cbd5e1"></i>기판</span>
+</div>
+<div class="card diagram"><h3>LELE (트렌치 분할)</h3><svg viewBox="0 0 934 164" role="img" aria-label="LELE 공정 단면: 노광-식각을 두 번 반복해 트렌치 피치를 절반으로" xmlns="http://www.w3.org/2000/svg">
+<text x="95.0" y="16" text-anchor="middle" class="pt">1. 노광 1</text>
+<text x="95.0" y="32" text-anchor="middle" class="pn">레지스트에 A 트렌치</text>
+<rect x="10.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="10.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="10.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="10.0" y="60.0" width="20.0" height="24.0" fill="#86efac" stroke="#334155" stroke-width=".6" />
+<rect x="50.0" y="60.0" width="60.0" height="24.0" fill="#86efac" stroke="#334155" stroke-width=".6" />
+<rect x="130.0" y="60.0" width="50.0" height="24.0" fill="#86efac" stroke="#334155" stroke-width=".6" />
+<text x="281.0" y="16" text-anchor="middle" class="pt">2. 식각 1</text>
+<text x="281.0" y="32" text-anchor="middle" class="pn">HM에 A 전사 · 스트립</text>
+<rect x="196.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="196.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="196.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="236.0" y="84.0" width="60.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="316.0" y="84.0" width="50.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<text x="188.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="467.0" y="16" text-anchor="middle" class="pt">3. 노광 2</text>
+<text x="467.0" y="32" text-anchor="middle" class="pn">B 트렌치 (오버레이 δ)</text>
+<rect x="382.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="382.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="382.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="422.0" y="84.0" width="60.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="502.0" y="84.0" width="50.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="382.0" y="60.0" width="64.0" height="24.0" fill="#86efac" stroke="#334155" stroke-width=".6" />
+<rect x="466.0" y="60.0" width="60.0" height="24.0" fill="#86efac" stroke="#334155" stroke-width=".6" />
+<rect x="546.0" y="60.0" width="6.0" height="24.0" fill="#86efac" stroke="#334155" stroke-width=".6" />
+<rect x="442.0" y="56.0" width="20.0" height="28.0" fill="none" stroke="#334155" stroke-width=".6" stroke="#dc2626" stroke-dasharray="3 2" stroke-width="1"/>
+<rect x="522.0" y="56.0" width="20.0" height="28.0" fill="none" stroke="#334155" stroke-width=".6" stroke="#dc2626" stroke-dasharray="3 2" stroke-width="1"/>
+<text x="374.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="653.0" y="16" text-anchor="middle" class="pt">4. 식각 2</text>
+<text x="653.0" y="32" text-anchor="middle" class="pn">HM에 A+B</text>
+<rect x="568.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="568.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="568.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="608.0" y="84.0" width="24.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="652.0" y="84.0" width="16.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="688.0" y="84.0" width="24.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="732.0" y="84.0" width="6.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<text x="560.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="839.0" y="16" text-anchor="middle" class="pt">5. 전사</text>
+<text x="839.0" y="32" text-anchor="middle" class="pn">대상막 피치 80 → 40</text>
+<rect x="754.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="754.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="794.0" y="92.0" width="24.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="838.0" y="92.0" width="16.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="874.0" y="92.0" width="24.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="918.0" y="92.0" width="6.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="754.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="794.0" y="84.0" width="24.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="838.0" y="84.0" width="16.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="874.0" y="84.0" width="24.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="918.0" y="84.0" width="6.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<text x="746.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="10" y="156" class="pn">빨간 점선 = B의 원래 자리. 두 번째 노광이 δ만큼 어긋나면 A–B 간격이 그대로 CD 오차가 된다 (오버레이 → CD).</text>
+</svg></div>
+<div class="card diagram"><h3>SADP</h3><svg viewBox="0 0 1120 142" role="img" aria-label="SADP 공정 단면: 맨드릴 측벽 스페이서로 피치를 절반으로" xmlns="http://www.w3.org/2000/svg">
+<text x="95.0" y="16" text-anchor="middle" class="pt">1. 맨드릴 노광</text>
+<text x="95.0" y="32" text-anchor="middle" class="pn">피치 80</text>
+<rect x="10.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="10.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="10.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="10.0" y="64.0" width="170.0" height="20.0" fill="#fdba74" stroke="#334155" stroke-width=".6" opacity=".55"/>
+<rect x="40.0" y="50.0" width="20.0" height="14.0" fill="#86efac" stroke="#334155" stroke-width=".6" />
+<rect x="120.0" y="50.0" width="20.0" height="14.0" fill="#86efac" stroke="#334155" stroke-width=".6" />
+<text x="281.0" y="16" text-anchor="middle" class="pt">2. 맨드릴 식각</text>
+<text x="281.0" y="32" text-anchor="middle" class="pn">코어 CD가 공간을 결정</text>
+<rect x="196.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="196.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="196.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="226.0" y="50.0" width="20.0" height="34.0" fill="#fdba74" stroke="#334155" stroke-width=".6" />
+<rect x="306.0" y="50.0" width="20.0" height="34.0" fill="#fdba74" stroke="#334155" stroke-width=".6" />
+<text x="188.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="467.0" y="16" text-anchor="middle" class="pt">3. 스페이서 ALD</text>
+<text x="467.0" y="32" text-anchor="middle" class="pn">등각 증착 (두께 = 최종 선폭)</text>
+<rect x="382.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="382.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="382.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="382.0" y="78.0" width="170.0" height="6.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="392.0" y="44.0" width="60.0" height="40.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="472.0" y="44.0" width="60.0" height="40.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="412.0" y="50.0" width="20.0" height="34.0" fill="#fdba74" stroke="#334155" stroke-width=".6" />
+<rect x="492.0" y="50.0" width="20.0" height="34.0" fill="#fdba74" stroke="#334155" stroke-width=".6" />
+<text x="374.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="653.0" y="16" text-anchor="middle" class="pt">4. 스페이서 에치백</text>
+<text x="653.0" y="32" text-anchor="middle" class="pn">이방성 · 바닥/윗면 제거</text>
+<rect x="568.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="568.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="568.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="578.0" y="50.0" width="20.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="618.0" y="50.0" width="20.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="658.0" y="50.0" width="20.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="698.0" y="50.0" width="20.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="598.0" y="50.0" width="20.0" height="34.0" fill="#fdba74" stroke="#334155" stroke-width=".6" />
+<rect x="678.0" y="50.0" width="20.0" height="34.0" fill="#fdba74" stroke="#334155" stroke-width=".6" />
+<text x="560.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="839.0" y="16" text-anchor="middle" class="pt">5. 맨드릴 제거</text>
+<text x="839.0" y="32" text-anchor="middle" class="pn">선택 식각 (pull)</text>
+<rect x="754.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="754.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="754.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="764.0" y="50.0" width="20.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="804.0" y="50.0" width="20.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="844.0" y="50.0" width="20.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="884.0" y="50.0" width="20.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<text x="746.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="1025.0" y="16" text-anchor="middle" class="pt">6. 전사</text>
+<text x="1025.0" y="32" text-anchor="middle" class="pn">대상막 피치 40</text>
+<rect x="940.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="950.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="990.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="1030.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="1070.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="950.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="990.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="1030.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="1070.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<text x="932.0" y="84" text-anchor="middle" class="ar">›</text>
+</svg>
+  <p class="note">4단계(스페이서 에치백)와 5단계(맨드릴 제거)가 SADP의 핵심 식각이다. 최종 선폭 = 스페이서 두께, 공간 = 맨드릴 CD(코어)와 나머지(갭).</p></div>
+<div class="card diagram"><h3>SAQP</h3><svg viewBox="0 0 1120 142" role="img" aria-label="SAQP 공정 단면: 스페이서 공정을 두 번 반복해 피치를 4분의 1로" xmlns="http://www.w3.org/2000/svg">
+<text x="95.0" y="16" text-anchor="middle" class="pt">1. 맨드릴 1</text>
+<text x="95.0" y="32" text-anchor="middle" class="pn">피치 80</text>
+<rect x="10.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="10.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="10.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="35.0" y="50.0" width="30.0" height="34.0" fill="#fdba74" stroke="#334155" stroke-width=".6" />
+<rect x="115.0" y="50.0" width="30.0" height="34.0" fill="#fdba74" stroke="#334155" stroke-width=".6" />
+<text x="281.0" y="16" text-anchor="middle" class="pt">2. 스페이서 1</text>
+<text x="281.0" y="32" text-anchor="middle" class="pn">ALD + 에치백</text>
+<rect x="196.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="196.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="196.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="211.0" y="50.0" width="10.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="251.0" y="50.0" width="10.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="291.0" y="50.0" width="10.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="331.0" y="50.0" width="10.0" height="34.0" fill="#a78bfa" stroke="#334155" stroke-width=".6" />
+<rect x="221.0" y="50.0" width="30.0" height="34.0" fill="#fdba74" stroke="#334155" stroke-width=".6" />
+<rect x="301.0" y="50.0" width="30.0" height="34.0" fill="#fdba74" stroke="#334155" stroke-width=".6" />
+<text x="188.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="467.0" y="16" text-anchor="middle" class="pt">3. 맨드릴 1 제거</text>
+<text x="467.0" y="32" text-anchor="middle" class="pn">스페이서 1 → 맨드릴 2로 전사</text>
+<rect x="382.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="382.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="382.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="397.0" y="50.0" width="10.0" height="34.0" fill="#fcd34d" stroke="#334155" stroke-width=".6" />
+<rect x="437.0" y="50.0" width="10.0" height="34.0" fill="#fcd34d" stroke="#334155" stroke-width=".6" />
+<rect x="477.0" y="50.0" width="10.0" height="34.0" fill="#fcd34d" stroke="#334155" stroke-width=".6" />
+<rect x="517.0" y="50.0" width="10.0" height="34.0" fill="#fcd34d" stroke="#334155" stroke-width=".6" />
+<text x="374.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="653.0" y="16" text-anchor="middle" class="pt">4. 스페이서 2</text>
+<text x="653.0" y="32" text-anchor="middle" class="pn">ALD + 에치백</text>
+<rect x="568.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="568.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="568.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="573.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="593.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="613.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="633.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="653.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="673.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="693.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="713.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="583.0" y="50.0" width="10.0" height="34.0" fill="#fcd34d" stroke="#334155" stroke-width=".6" />
+<rect x="623.0" y="50.0" width="10.0" height="34.0" fill="#fcd34d" stroke="#334155" stroke-width=".6" />
+<rect x="663.0" y="50.0" width="10.0" height="34.0" fill="#fcd34d" stroke="#334155" stroke-width=".6" />
+<rect x="703.0" y="50.0" width="10.0" height="34.0" fill="#fcd34d" stroke="#334155" stroke-width=".6" />
+<text x="560.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="839.0" y="16" text-anchor="middle" class="pt">5. 맨드릴 2 제거</text>
+<text x="839.0" y="32" text-anchor="middle" class="pn">피치 20</text>
+<rect x="754.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="754.0" y="92.0" width="170.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="754.0" y="84.0" width="170.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="759.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="779.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="799.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="819.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="839.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="859.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="879.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<rect x="899.0" y="50.0" width="10.0" height="34.0" fill="#f472b6" stroke="#334155" stroke-width=".6" />
+<text x="746.0" y="84" text-anchor="middle" class="ar">›</text>
+<text x="1025.0" y="16" text-anchor="middle" class="pt">6. 전사</text>
+<text x="1025.0" y="32" text-anchor="middle" class="pn">대상막 피치 80 → 20</text>
+<rect x="940.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="945.0" y="92.0" width="10.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="965.0" y="92.0" width="10.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="985.0" y="92.0" width="10.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="1005.0" y="92.0" width="10.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="1025.0" y="92.0" width="10.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="1045.0" y="92.0" width="10.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="1065.0" y="92.0" width="10.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="1085.0" y="92.0" width="10.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="945.0" y="84.0" width="10.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="965.0" y="84.0" width="10.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="985.0" y="84.0" width="10.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="1005.0" y="84.0" width="10.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="1025.0" y="84.0" width="10.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="1045.0" y="84.0" width="10.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="1065.0" y="84.0" width="10.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="1085.0" y="84.0" width="10.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<text x="932.0" y="84" text-anchor="middle" class="ar">›</text>
+</svg>
+  <p class="note">스페이서 1이 맨드릴 2가 되므로 첫 세대의 오차가 두 번째 세대에서 <b>복제</b>된다. 최종 공간은 세 집단(α·β·γ)으로 나뉜다.</p></div>
+
+<!-- ============ 6 ============ -->
+<h2 id="s6">6. 난제 총정리</h2>
+<p>공통 원인은 하나다: <b>평균 CD가 맞아도 개별 패턴 집단은 틀릴 수 있다.</b> 아래는 분야별로 묶은 난제 목록이다. <span class="tag t-etch">식각</span>은 식각 공정이 직접 원인이거나 해결 수단인 항목.</p>
+
+<p class="cat">A. 치수 · 위치</p>
+<div class="card ch">
+  <div class="hd"><span class="no">01</span><h3>피치 워킹 (pitch walking)</h3><span class="tag t-etch">식각</span></div>
+  <dl>
+    <dt>현상</dt><dd>맨드릴 제거 후 공간이 코어(C)·갭(G)으로 번갈아 생기는데, 둘이 다르면 피치가 홀짝으로 교대한다. 평균 피치는 그대로라 평균 계측에 안 잡힌다.</dd>
+    <dt>모델</dt><dd>P₀ = C + G + 2t, 피치 p₁ = C + t, p₂ = G + t. 균일 조건 C = G = P₀/2 − t. 예: P₀ 80, t 20일 때 맨드릴이 22가 되면 피치가 42/38로 교대.</dd>
+    <dt>원인</dt><dd>맨드릴 CD·trim, 스페이서 두께, 에치백·pull의 비대칭 침식. SAQP는 공간이 α(core)·β(gap)·γ(첫 스페이서) 세 집단.</dd>
+    <dt>영향</dt><dd>홀짝 선의 저항·용량(RC) 차이, DRAM에서는 두 방향이 겹쳐 홀 면적·위치 편차로 변환.</dd>
+  </dl>
+  <div class="diagram" style="margin-top:10px"><svg style="min-width:520px;max-width:760px" viewBox="0 0 562 164" role="img" aria-label="SADP 피치 워킹: 맨드릴 CD와 스페이서 두께 오차가 공간 두 종류를 서로 다르게 만든다" xmlns="http://www.w3.org/2000/svg">
+<text x="95.0" y="16" text-anchor="middle" class="pt">1. 이상적</text>
+<text x="95.0" y="32" text-anchor="middle" class="pn">코어 20 = 갭 20</text>
+<rect x="10.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="20.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="60.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="100.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="140.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="20.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="60.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="100.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="140.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<line x1="40" y1="86" x2="60" y2="86" stroke="#b45309" stroke-width="1.6"/>
+<text x="50.0" y="82" text-anchor="middle" class="pv" fill="#b45309">20</text>
+<line x1="80" y1="86" x2="100" y2="86" stroke="#1d4ed8" stroke-width="1.6"/>
+<text x="90.0" y="82" text-anchor="middle" class="pv" fill="#1d4ed8">20</text>
+<line x1="120" y1="86" x2="140" y2="86" stroke="#b45309" stroke-width="1.6"/>
+<text x="130.0" y="82" text-anchor="middle" class="pv" fill="#b45309">20</text>
+<text x="281.0" y="16" text-anchor="middle" class="pt">2. 맨드릴 CD −6</text>
+<text x="281.0" y="32" text-anchor="middle" class="pn">코어 14 · 갭 26</text>
+<rect x="196.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="209.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="243.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="289.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="323.0" y="92.0" width="20.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="209.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="243.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="289.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="323.0" y="84.0" width="20.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<line x1="229" y1="86" x2="243" y2="86" stroke="#b45309" stroke-width="1.6"/>
+<text x="236.0" y="82" text-anchor="middle" class="pv" fill="#b45309">14</text>
+<line x1="263" y1="86" x2="289" y2="86" stroke="#1d4ed8" stroke-width="1.6"/>
+<text x="276.0" y="82" text-anchor="middle" class="pv" fill="#1d4ed8">26</text>
+<line x1="309" y1="86" x2="323" y2="86" stroke="#b45309" stroke-width="1.6"/>
+<text x="316.0" y="82" text-anchor="middle" class="pv" fill="#b45309">14</text>
+<text x="467.0" y="16" text-anchor="middle" class="pt">3. 스페이서 +4</text>
+<text x="467.0" y="32" text-anchor="middle" class="pn">선폭 24 · 갭 12</text>
+<rect x="382.0" y="114.0" width="170.0" height="16.0" fill="#cbd5e1" stroke="#334155" stroke-width=".6" />
+<rect x="388.0" y="92.0" width="24.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="432.0" y="92.0" width="24.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="468.0" y="92.0" width="24.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="512.0" y="92.0" width="24.0" height="22.0" fill="#93c5fd" stroke="#334155" stroke-width=".6" />
+<rect x="388.0" y="84.0" width="24.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="432.0" y="84.0" width="24.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="468.0" y="84.0" width="24.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<rect x="512.0" y="84.0" width="24.0" height="8.0" fill="#94a3b8" stroke="#334155" stroke-width=".6" />
+<line x1="412" y1="86" x2="432" y2="86" stroke="#b45309" stroke-width="1.6"/>
+<text x="422.0" y="82" text-anchor="middle" class="pv" fill="#b45309">20</text>
+<line x1="456" y1="86" x2="468" y2="86" stroke="#1d4ed8" stroke-width="1.6"/>
+<text x="462.0" y="82" text-anchor="middle" class="pv" fill="#1d4ed8">12</text>
+<line x1="492" y1="86" x2="512" y2="86" stroke="#b45309" stroke-width="1.6"/>
+<text x="502.0" y="82" text-anchor="middle" class="pv" fill="#b45309">20</text>
+<text x="10" y="156" class="pn">주황 = 코어 공간(맨드릴 자리), 파랑 = 갭 공간(스페이서 사이). 둘이 달라지면 피치가 홀짝으로 번갈아 변한다.</text>
+</svg></div>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">02</span><h3>Overlay · EPE 예산</h3></div>
+  <dl>
+    <dt>현상</dt><dd>LELE는 A/B 정렬 오차가 그대로 간격 오차가 된다. SADP/SAQP도 하부층·cut·via·block 정렬은 여전히 필요 — "SAQP는 overlay 0"은 틀린 말.</dd>
+    <dt>구분</dt><dd>Overlay = 패턴 집단 사이 상대 정렬 오차. EPE = 최종 에지가 목표에서 벗어난 정도로 overlay + CD + LER + 마스크 + 식각 바이어스까지 포함. σ²<sub>EPE</sub> ≈ σ²<sub>OVL</sub> + σ²<sub>CD</sub> + σ²<sub>LER</sub> + σ²<sub>etch</sub> (독립 가정, 실제로는 상관항 존재).</dd>
+    <dt>영향</dt><dd>같은 2 nm 오차라도 40 nm pitch의 긴 선과 10 nm급 line-end 간격에 미치는 영향이 다르다. 노드별 고정 예산값을 말하기 어렵다.</dd>
+  </dl>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">03</span><h3>CDU · LER · LWR · 위치 거칠기</h3><span class="tag t-etch">식각</span></div>
+  <dl>
+    <dt>현상</dt><dd>등각 스페이서는 맨드릴의 굴곡을 그대로 따라간다. 스페이서 폭(LWR)은 균일해도 선 중심이 흔들릴 수 있다(line placement roughness).</dd>
+    <dt>식각</dt><dd>식각이 고주파 거칠기는 다소 완화하지만, 저주파 위치 흔들림이나 비대칭 CD 바이어스는 지우지 못한다. 단계별 거칠기와 공간 주파수를 함께 봐야 한다.</dd>
+  </dl>
+</div>
+
+<p class="cat">B. 스페이서 · 맨드릴 식각</p>
+<div class="card ch">
+  <div class="hd"><span class="no">04</span><h3>맨드릴 프로파일 — taper, footing, 부풂</h3><span class="tag t-etch">식각</span></div>
+  <dl>
+    <dt>현상</dt><dd>맨드릴이 기울면 ALD가 등각이어도 높이별로 스페이서 폭·위치가 변한다. 바닥 footing은 전사 폭을 넓히고, 상부 모서리 침식·necking은 스페이서를 약하게 만든다.</dd>
+    <dt>"풍선"</dt><dd>표준 용어라기보다 bowing·bulging·swelling을 가리킨다. 어느 높이가 부풀었는지, 증착 중인지 식각·열처리 후인지로 나눠 봐야 한다.</dd>
+    <dt>계측 포인트</dt><dd>top-down CD 하나가 아니라 top/middle/bottom CD, 측벽각, 높이, 바닥 잔류막.</dd>
+  </dl>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">05</span><h3>스페이서 균일도 (ALD)</h3></div>
+  <dl>
+    <dt>현상</dt><dd>자기제한 반응이 완벽한 균일도를 보장하지 않는다. 핵생성 지연, 표면 종결기, 온도, 퍼지, 플라즈마 노출, 패턴 밀도, 수소·불순물 함량이 영향.</dd>
+    <dt>식각 연결</dt><dd>두께가 같아도 밀도·조성이 다르면 에치백 속도와 맨드릴 제거 내성이 달라진다. ALD 평가는 식각 후 잔존 폭, 밀도, 응력, wet/dry etch rate까지 연결해야 한다.</dd>
+  </dl>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">06</span><h3>단계별 실패 사슬</h3><span class="tag t-etch">식각</span></div>
+  <div class="tbl"><table>
+    <thead><tr><th>단계</th><th>대표 실패</th><th>후속 영향</th></tr></thead>
+    <tbody>
+      <tr><td>맨드릴 노광·trim</td><td>CD 편차, taper, 비대칭</td><td>교대 간격 오차의 출발점</td></tr>
+      <tr><td>맨드릴 식각</td><td>footing, undercut, 바닥 gouging</td><td>스페이서 바닥 위치·폭 변화</td></tr>
+      <tr><td>스페이서 증착</td><td>두께 편차, seam, 국부 결함</td><td>선폭·기계적 안정성·식각률 편차</td></tr>
+      <tr><td>스페이서 에치백</td><td>잔류 바닥막, necking, top loss</td><td>bridge 또는 line break</td></tr>
+      <tr><td>맨드릴 제거(pull)</td><td>잔류 core, 스페이서 thinning, 바닥 손상</td><td>CD 이동, collapse, 전사 결함</td></tr>
+      <tr><td>중간 전사</td><td>faceting, LER 전파, CD bias</td><td>다음 세대에서 오차 재복제</td></tr>
+      <tr><td>Cut / block</td><td>미절단, 이웃선 오절단, stringer</td><td>short/open, tip-to-tip 불량</td></tr>
+      <tr><td>최종 전사</td><td>bowing, taper, microtrench, etch stop</td><td>소자·배선 성능과 신뢰성 저하</td></tr>
+    </tbody>
+  </table></div>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">07</span><h3>선택비 행렬과 하드마스크 스택</h3><span class="tag t-etch">식각</span></div>
+  <dl>
+    <dt>현상</dt><dd>SAQP는 선택비 하나가 아니라 <b>행렬</b>이 필요하다: 맨드릴↔스페이서, 스페이서1↔스페이서2, 스페이서↔바닥 stop, 하드마스크↔대상층, cut 재료↔이웃 구조.</dd>
+    <dt>숫자 감각</dt><dd>대상층 100 nm를 10:1로 식각하면 마스크 10 nm 소모 — 여기에 overetch, 국부 비균일, 모서리 침식, 세정 손실이 더해진다.</dd>
+    <dt>트레이드오프</dt><dd>하드마스크를 늘리면 선택비 설계는 쉬워지지만 응력·단차·세정·결함·전사 횟수가 늘어난다. 같은 탄소계 맨드릴 둘 사이의 선택비를 위해 한쪽에 Si를 침투시킨 사례(dual-carbon SAQP)도 있다.</dd>
+  </dl>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">08</span><h3>Loading · microloading · ARDE · charging</h3><span class="tag t-etch">식각</span></div>
+  <dl>
+    <dt>현상</dt><dd>넓은 영역의 노출 면적(loading), 국부 dense/iso 차이(microloading), 종횡비(ARDE), 절연 구조 전하(charging), 바닥 모서리 국부 식각(microtrenching)이 동시에 나타난다.</dd>
+    <dt>SAQP 특유</dt><dd>평균 CD가 맞아도 α·β·γ 개구의 폭과 주변 환경이 달라 집단별 식각률이 다르다. dummy fill은 밀도를 완화하지만 기생 용량과 설계 제약을 늘린다.</dd>
+  </dl>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">09</span><h3>패턴 붕괴 (pattern collapse)</h3><span class="tag t-etch">식각</span></div>
+  <dl>
+    <dt>현상</dt><dd>맨드릴을 빼면 가늘고 높은 스페이서가 홀로 선다. 모세관력, 잔류 응력, 접착력 부족, 높이, 플라즈마 침식 → 쓰러짐·기울어짐·wiggling.</dd>
+    <dt>딜레마</dt><dd>높이를 낮추면 붕괴는 줄지만 최종 식각 내성(mask budget)이 줄어든다. 둘을 동시에 최적화해야 한다.</dd>
+  </dl>
+</div>
+
+<p class="cat">C. 컷 · 블록</p>
+<div class="card ch">
+  <div class="hd"><span class="no">10</span><h3>컷 마스크 EPE · tip-to-tip</h3><span class="tag t-etch">식각</span></div>
+  <dl>
+    <dt>현상</dt><dd>선 피치는 자기정렬돼도 <b>선 끝 위치와 끝-끝 간격은 컷·블록이 정한다</b>. 컷이 비껴나면 이웃 선을 갉거나 덜 끊긴다. 컷 간격이 좁으면 컷 마스크 자체가 다시 멀티패터닝이 된다.</dd>
+    <dt>확인 항목</dt><dd>충분히 끊었나(잔류 stringer·금속 잔사), 이웃선 손상, 목표 tip-to-tip, line-end 후퇴·둥글어짐, 컷 영역의 로딩 차이, 블록 기둥의 기울어짐·침식.</dd>
+    <dt>해법 동향</dt><dd>DUV SAQP + EUV block(imec, 32 nm pitch), self-aligned block(재료 선택성으로 경계 고정). 단, 선택비가 유한하면 경계가 움직이므로 최종 전사 후 단절 상태가 진짜 지표.</dd>
+  </dl>
+  <div class="diagram" style="margin-top:10px"><svg style="min-width:520px;max-width:760px" viewBox="0 0 560 190" role="img" aria-label="컷 마스크 평면도: 1D 격자에 컷을 넣어 끊긴 배선을 만든다" xmlns="http://www.w3.org/2000/svg">
+<text x="130" y="16" text-anchor="middle" class="pt">① SADP/SAQP 격자 + 컷 마스크</text>
+<rect x="10" y="30" width="240" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="10" y="50" width="240" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="10" y="70" width="240" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="10" y="90" width="240" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="10" y="110" width="240" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="10" y="130" width="240" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="10" y="150" width="240" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="70" y="46" width="16" height="18" fill="#dc2626" fill-opacity=".18" stroke="#dc2626" stroke-dasharray="3 2"/>
+<rect x="160" y="66" width="16" height="18" fill="#dc2626" fill-opacity=".18" stroke="#dc2626" stroke-dasharray="3 2"/>
+<rect x="100" y="106" width="16" height="18" fill="#dc2626" fill-opacity=".18" stroke="#dc2626" stroke-dasharray="3 2"/>
+<rect x="40" y="126" width="16" height="18" fill="#dc2626" fill-opacity=".18" stroke="#dc2626" stroke-dasharray="3 2"/>
+<rect x="200" y="126" width="16" height="18" fill="#dc2626" fill-opacity=".18" stroke="#dc2626" stroke-dasharray="3 2"/>
+<text x="420" y="16" text-anchor="middle" class="pt">② 컷 후: 끝-끝(tip-to-tip) 형성</text>
+<rect x="300" y="30" width="240" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="300" y="50" width="60" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="376" y="50" width="164" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="300" y="70" width="150" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="466" y="70" width="74" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="300" y="90" width="240" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="300" y="110" width="90" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="406" y="110" width="134" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="300" y="130" width="30" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="346" y="130" width="144" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="506" y="130" width="34" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<rect x="300" y="150" width="240" height="10" rx="1" fill="#93c5fd" stroke="#334155" stroke-width=".6"/>
+<text x="10" y="184" class="pn">컷이 선 사이로 비껴나면(EPE) 이웃 선을 갉아먹거나 덜 끊긴다.</text>
+</svg></div>
+</div>
+
+<p class="cat">D. 설계 · 계측 · 수율 · 비용</p>
+<div class="card ch">
+  <div class="hd"><span class="no">11</span><h3>디컴포지션 · 컬러링</h3></div>
+  <dl>
+    <dt>현상</dt><dd>LELE는 가까운 패턴끼리 충돌 간선을 둔 그래프를 두 색으로 칠한다. <b>홀수 사이클(odd cycle)</b>이 있으면 2색 분할이 불가능 → 배치 수정, stitch, 추가 마스크, 다른 방식.</dd>
+    <dt>SA 계열</dt><dd>맨드릴 후보, 스페이서 루프, 컷 접근성, 허용 선폭, 연결 topology 제약이 추가된다. 같은 모양이라도 core 유래와 gap 유래 패턴은 식각 이력이 달라 색깔별 CD·RC 차이가 생긴다.</dd>
+  </dl>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">12</span><h3>설계 제약 — 1D 단방향 레이아웃</h3></div>
+  <dl>
+    <dt>현상</dt><dd>스페이서 공정은 규칙적인 1D 격자에 유리하다. 자유로운 2D 배선, 여러 선폭, jog, 짧은 line-end는 컷·블록·추가 노광을 요구한다.</dd>
+    <dt>대응</dt><dd>DFM·DTCO로 routing track, 허용 선폭, via landing, cut spacing, 셀 경계를 함께 설계. 실제 선택은 업체·층별로 다르다(Samsung 10 nm: LE3 + 양방향).</dd>
+  </dl>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">13</span><h3>계측 (metrology)</h3></div>
+  <div class="tbl"><table>
+    <thead><tr><th>계측</th><th>강점</th><th>한계</th></tr></thead>
+    <tbody>
+      <tr><td>CD-SEM</td><td>국부 패턴, line-end, 결함</td><td>충전, 전자빔 손상·레지스트 수축, 에지 판정 기준, 묻힌 프로파일</td></tr>
+      <tr><td>OCD (scatterometry)</td><td>빠른 평균 CD·높이·측벽각</td><td>모델 의존, 파라미터 상관 — 주기 대칭성 때문에 α·β·γ 분리가 어려움</td></tr>
+      <tr><td>단면 SEM/TEM</td><td>footing·잔류막·경계</td><td>파괴적, 느림, 샘플 적음</td></tr>
+      <tr><td>E-beam 검사</td><td>작은 bridge/open</td><td>면적·시간·신호대잡음</td></tr>
+      <tr><td>전기 구조</td><td>최종 open/short·저항</td><td>원인 공정 위치 특정이 어려움</td></tr>
+    </tbody>
+  </table></div>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">14</span><h3>수율 · 결함 · 공정 윈도우</h3></div>
+  <dl>
+    <dt>현상</dt><dd>입자, bridge, line break, missing spacer, 불완전 core 제거, 컷 잔사, 전사 손상이 누적된다. 앞단 결함 하나가 배밀화에서 여러 에지로 <b>복제</b>될 수 있다.</dd>
+    <dt>윈도우</dt><dd>통합 윈도우 = 노광 ∩ 증착 ∩ 에치백 ∩ pull ∩ 컷 ∩ 전사. 한 단계에서 LER을 좋게 했는데 스페이서 높이를 너무 썼다면 최종 전사 윈도우가 좁아진다.</dd>
+  </dl>
+</div>
+<div class="card ch">
+  <div class="hd"><span class="no">15</span><h3>비용 · 사이클 타임</h3></div>
+  <dl>
+    <dt>현상</dt><dd>SAQP는 노광은 적어도 증착·식각·세정·계측 횟수가 많다. LE3는 노광 부담이 크지만 일부 레이아웃을 더 유연하게 처리한다.</dd>
+    <dt>평가식</dt><dd>양품당 비용 ≈ (웨이퍼 공정비 + 마스크 상각 + 검사·재작업) ÷ (웨이퍼당 다이 × 수율). ALD 사이클·퍼지, 장비 간 이동, queue time, 챔버 매칭까지 포함해야 한다.</dd>
+  </dl>
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="s7">7. 최근 기술 동향 (2023–2026)</h2>
+<div class="card">
+  <h3>① EUV와 자기정렬 패터닝은 "대체"가 아니라 레이어별 "공존"</h3>
+  <p>IRDS 2023은 EUV가 멀티패터닝을 전면 대체하지 않고, 레이어별 요구·수율·비용에 따라 함께 쓴다고 정리했다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>선택지</th><th>장점</th><th>남는 식각·통합 부담</th></tr></thead>
+    <tbody>
+      <tr><td>0.33NA EUV 단일 노광</td><td>분할 노광·중간 공정 감소</td><td>확률적(stochastic) 결함, 얇은 레지스트 전사, line-end 보정</td></tr>
+      <tr><td>EUV LELE</td><td>더 작은 pitch, 복잡한 패턴</td><td>두 노광의 overlay·CD 일치</td></tr>
+      <tr><td>EUV + SADP</td><td>느슨한 EUV 패턴을 배밀화 (2024년 MP16 연구)</td><td>맨드릴·스페이서·pull·피치 워킹</td></tr>
+      <tr><td>DUV SAQP + EUV cut/block</td><td>규칙 선은 스페이서, 단절은 EUV</td><td>두 체계의 EPE·재료 통합</td></tr>
+      <tr><td>High-NA EUV 단일 노광</td><td>일부 EUV 멀티패터닝 대체</td><td>얕은 초점심도, 얇은 막, 마스크 3D 효과, half-field stitching</td></tr>
+    </tbody>
+  </table></div>
+</div>
+<div class="card">
+  <h3>② High-NA EUV — 연구에서 일부 양산으로</h3>
+  <p>NA 0.33 → 0.55: 같은 k₁에서 해상 치수 약 0.6배, 그러나 초점심도(∝ λ/NA²)는 약 0.36배. <b>레지스트가 얇아질수록 하드마스크 선택비·전사의 짐은 더 무거워진다</b> — High-NA는 일부 멀티패터닝을 덜어도 식각의 중요성은 줄이지 않는다.</p>
+  <ul>
+    <li>2023-12 ASML, 첫 High-NA 모듈 Intel에 출하 <span class="tag t-ok">확인</span></li>
+    <li>2024-08 imec, 단일 노광 19 nm pitch 랜덤 로직 · 30 nm 중심 간격 via 시연 <span class="tag t-ok">확인</span></li>
+    <li>2025-09 imec, 20 nm pitch · 13 nm tip-to-tip · Ru 직접 식각 전기 시험 <span class="tag t-ok">확인</span></li>
+    <li>2026-09-07 Intel·ASML, Panther Lake 일부 제품의 <b>선택된 레이어</b>에 High-NA 양산 사용 발표. "100만 장 이상"은 장비 인증·시험·R&amp;D·양산을 합친 값 <span class="tag t-ok">확인 (원문 대조)</span></li>
+  </ul>
+</div>
+<div class="card">
+  <h3>③ 중국 SMIC — EUV 없이 DUV 멀티패터닝으로</h3>
+  <p>2023년 Kirin 9000S에서 SMIC 7 nm N+2(비EUV)가 확인됐다. 2026-08-27 TechInsights의 Kirin 9030 Pro 분석은 N+3를 "7 nm급 공정의 축소 발전"으로, <b>상용 5 nm보다 여전히 상당히 덜 축소됐다</b>고 정리했다 <span class="tag t-ok">확인 (원문 대조)</span>.</p>
+  <p style="margin-bottom:0">SAQP가 DUV로 좁은 fin·metal pitch를 만드는 경로인 것은 맞지만, 공개 자료만으로 모든 레이어를 SAQP로 단정하거나 컷 마스크 수·수율을 말할 수는 없다 <span class="tag t-na">미공개</span>. 병목은 선을 네 배로 만든 <b>이후</b> — 복잡한 컷·via, 선택비, 누적 EPE, 결함 밀도, 사이클 타임에 있다.</p>
+</div>
+<div class="card">
+  <h3>④ DRAM — EUV를 넣어도 SAQP는 남는다</h3>
+  <p>Micron은 1β까지 DUV 멀티패터닝, 1γ(2025)에서 첫 EUV, 이후에도 EUV와 193 nm 멀티패터닝을 조합하는 전략을 공식 제시했다. Samsung 14 nm DRAM의 EUV 5개 레이어는 확인값이지만 이후 세대·타사에 그대로 적용할 수 없고, 최신 제품별 EUV/SAQP 레이어 목록은 공개되지 않았다 <span class="tag t-na">미공개</span>.</p>
+  <p style="margin-bottom:0">두 방향 격자를 겹쳐 홀·필러 배열을 만들면 각 방향의 피치 워킹이 <b>홀 면적·위치 편차</b>로 바뀐다. EUV 레이어 수만으로 식각 부담을 판단하기 어려운 이유다.</p>
+</div>
+<div class="card">
+  <h3>⑤ 3D NAND — 과제의 중심은 수직으로</h3>
+  <p style="margin-bottom:0">수직 적층은 수평 pitch 축소 부담을 덜고, 식각의 중심을 깊은 채널홀·슬릿·계단으로 옮겼다(마스크 erosion, bowing, hole twisting, 깊이 불균일). 여러 deck을 반복하는 것이나 계단용 반복 trim은 SAQP와 다른 문제다. 장비 동향: Lam Cryo 3.0(2024), TEL 극저온 식각(400단 이상 대응).</p>
+</div>
+<div class="card">
+  <h3>⑥ 패터닝 부담을 줄이는 보조 기술</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>기술</th><th>역할</th><th>식각과의 연결</th><th>남는 한계</th></tr></thead>
+    <tbody>
+      <tr><td>DSA</td><td>블록 공중합체 자기 정렬로 미세화·거칠기 보정</td><td>한 성분 선택 제거 후 전사</td><td>dislocation·bridge 결함, 형상 제한</td></tr>
+      <tr><td>ASD</td><td>원하는 표면에만 증착 (self-aligned via/block)</td><td>기생 핵생성을 선택 식각으로 정리</td><td>선택성 붕괴, 측방 성장</td></tr>
+      <tr><td>Spacer-on-spacer</td><td>SAQP 중간 단계 축소</td><td>두 스페이서 사이 선택 제거</td><td>재료 선택성, 형상 보존</td></tr>
+      <tr><td>Pulsed plasma</td><td>시간에 따라 플라즈마·바이어스 제어</td><td>charging, 선택비, microloading</td><td>과도응답, 챔버 상태, 처리량</td></tr>
+      <tr><td>ALE</td><td>개질과 제거를 분리한 원자층 제거</td><td>정밀 trim·recess·에지 보정</td><td>재료별 반응창, 생산성</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-bottom:0">펄스 플라즈마가 곧 ALE는 아니다 — 자기제한성·반응 분리를 확인해야 한다. ASD는 식각을 없애기보다 식각의 역할을 바꾸는 경우가 많다.</p>
+</div>
+<div class="card">
+  <h3>⑦ 장비 업체 — "어떤 오류를 줄이는가"로 비교</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>업체 · 기술</th><th>방향</th><th>DPT·QPT와의 연결</th></tr></thead>
+    <tbody>
+      <tr><td>Applied Materials <b>Sculpta</b> (2023)</td><td>방향성 반응 리본 빔으로 이미 만든 패턴의 형상을 늘이고 다듬음</td><td>특정 line-end 간격에서 추가 EUV 노광 하나를 줄임. <b>범용 SAQP 대체가 아님</b></td></tr>
+      <tr><td>Lam <b>Akara</b> (2025)</td><td>빠른 플라즈마 응답, TEMPO 펄싱, SNAP 이온 에너지 제어</td><td>선택비·microloading·EUV 전사 결함·프로파일</td></tr>
+      <tr><td>Lam <b>Aether</b></td><td>EUV 건식 레지스트 증착·현상</td><td>초기 마스크 안정성과 전사성</td></tr>
+      <tr><td>Lam Flex/Vantex · Cryo 3.0</td><td>고종횡비 유전체 식각</td><td>NAND·DRAM 구조 전사</td></tr>
+      <tr><td>TEL</td><td>스페이서 통합(spacer-on-spacer 연구), 다중 챔버 식각, 극저온 식각</td><td>선택비, 전사 단계 축소, 고종횡비</td></tr>
+    </tbody>
+  </table></div>
+</div>
+<div class="card">
+  <h3>⑧ Curvilinear · 후면 전원(backside)</h3>
+  <p style="margin-bottom:0">Curvilinear OPC/ILT는 마스크 형상을 자유롭게 해 공정 윈도우를 넓히지만, 웨이퍼 배선이 곡선이 되거나 스페이서 topology 제약이 사라지는 것은 아니다. 후면 전원 공급은 전면 배선 혼잡을 덜어 일부 pitch 제약을 완화하지만, 후면 via의 정렬·선택비·고종횡비 식각이라는 새 자기정렬 과제를 만든다.</p>
+</div>
+
+<!-- ============ 8 ============ -->
+<h2 id="s8">8. 식각 엔지니어 관점 정리</h2>
+<div class="card">
+  <h3>논문을 읽을 때 던질 7가지 질문</h3>
+  <ol style="margin-bottom:0">
+    <li>CD는 <b>어느 단계·어느 높이</b>에서 쟀는가?</li>
+    <li>Core/gap/spacer <b>집단을 나눴는가</b>, 평균만 냈는가?</li>
+    <li>선택비의 <b>분모 재료</b>는 무엇이며 overetch를 포함했는가?</li>
+    <li>LER이 좋아지는 동안 <b>높이·CD·위치</b>는 얼마나 변했는가?</li>
+    <li>조밀 격자 시연인가, <b>cut/via까지 통합</b>했는가?</li>
+    <li>최종 전사 후 <b>전기적 open/short·저항·수율</b>을 확인했는가?</li>
+    <li>소수 샘플의 성공인가, <b>웨이퍼·lot·챔버 간 재현성</b>을 보였는가?</li>
+  </ol>
+</div>
+<div class="card">
+  <h3>추천 읽기 순서</h3>
+  <p style="margin-bottom:0">SADP 기본 구조(Bencher 2008) → SAQP 통합(Raley 2016, Auth 2017) → 피치 워킹·계측(Fang 2017, Lorusso 2016) → 컷·블록(Lazzarino 2017) → EUV 결합(Decoster 2019, Hermans 2024) → 식각 기초(Donnelly·Kornblit 2013, Kanarik 2015).</p>
+</div>
+
+<!-- ============ 9 ============ -->
+<h2 id="s9">9. 핵심 논문 · 출처</h2>
+<div class="card">
+  <p class="note">astra 리서치가 인용한 출처 71개. 2026년 항목(Intel High-NA 발표, TechInsights N+3 분석)은 Claude가 원문을 다시 열어 날짜와 문구를 대조했다. 유료 논문은 공개 초록·서지 범위에서 확인한 것이다.</p>
+  <ol class="src">
+    <li>ASML Rayleigh 설명 — <a href="https://www.asml.com/en/technology/lithography-principles/rayleigh-criterion">https://www.asml.com/en/technology/lithography-principles/rayleigh-criterion</a></li>
+    <li>Intel IEDM 2017 — <a href="https://doi.org/10.1109/IEDM.2017.8268472">https://doi.org/10.1109/IEDM.2017.8268472</a></li>
+    <li>TSMC 2013 기술개발 보고 — <a href="https://investor.tsmc.com/static/annualReports/2013/english/pdf/c_11_1.pdf">https://investor.tsmc.com/static/annualReports/2013/english/pdf/c_11_1.pdf</a></li>
+    <li>SPIE, *Patterning challenges in the sub-10 nm era* — <a href="https://doi.org/10.1117/12.2222256">https://doi.org/10.1117/12.2222256</a></li>
+    <li>Intel IITC 2009 — <a href="https://doi.org/10.1109/IITC.2009.5090400">https://doi.org/10.1109/IITC.2009.5090400</a></li>
+    <li>Samsung 발표 — <a href="https://news.samsung.com/kr/삼성전자-세계-최초-30나노-64기가-낸드-개발-성공">https://news.samsung.com/kr/삼성전자-세계-최초-30나노-64기가-낸드-개발-성공</a></li>
+    <li>Intel 22nm 논문 원고 — <a href="https://people.eecs.berkeley.edu/~pister/147fa14/Resources/Intel22nm.pdf">https://people.eecs.berkeley.edu/~pister/147fa14/Resources/Intel22nm.pdf</a></li>
+    <li>TSMC DPT flow — <a href="https://pr.tsmc.com/schinese/news/1745">https://pr.tsmc.com/schinese/news/1745</a></li>
+    <li>2014 연차보고서 — <a href="https://investor.tsmc.com/static/annualReports/2014/english/annual2014e.pdf">https://investor.tsmc.com/static/annualReports/2014/english/annual2014e.pdf</a></li>
+    <li>Intel IEDM 2014 — <a href="https://doi.org/10.1109/IEDM.2014.7046976">https://doi.org/10.1109/IEDM.2014.7046976</a></li>
+    <li>Samsung 14nm — <a href="https://news.samsung.com/global/samsung-announces-mass-production-of-industrys-first-14nm-finfet-mobile-application-processor">https://news.samsung.com/global/samsung-announces-mass-production-of-industrys-first-14nm-finfet-mobile-application-processor</a></li>
+    <li>Samsung 10nm 발표 — <a href="https://news.samsung.com/global/samsung-starts-industrys-first-mass-production-of-system-on-chip-with-10-nanometer-finfet-technology">https://news.samsung.com/global/samsung-starts-industrys-first-mass-production-of-system-on-chip-with-10-nanometer-finfet-technology</a></li>
+    <li>TSMC 7nm — <a href="https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_7nm">https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_7nm</a></li>
+    <li>2018 보고서 — <a href="https://investor.tsmc.com/static/annualReports/2018/english/index.html">https://investor.tsmc.com/static/annualReports/2018/english/index.html</a></li>
+    <li>Samsung 7LPP — <a href="https://news.samsung.com/us/samsung-electronics-starts-production-euv-based-7nm-lpp-process/">https://news.samsung.com/us/samsung-electronics-starts-production-euv-based-7nm-lpp-process/</a></li>
+    <li>Samsung — <a href="https://news.samsung.com/global/samsung-now-mass-producing-industrys-most-advanced-4gb-ddr3-using-20-nanometer-process-technology">https://news.samsung.com/global/samsung-now-mass-producing-industrys-most-advanced-4gb-ddr3-using-20-nanometer-process-technology</a></li>
+    <li>Micron — <a href="https://investors.micron.com/static-files/439630d1-5e3a-41b5-b4ea-7fac644c7a49">https://investors.micron.com/static-files/439630d1-5e3a-41b5-b4ea-7fac644c7a49</a></li>
+    <li>Samsung — <a href="https://news.samsung.com/global/exploring-the-key-samsung-technologies-that-enabled-10nm-class-dram">https://news.samsung.com/global/exploring-the-key-samsung-technologies-that-enabled-10nm-class-dram</a></li>
+    <li>Micron — <a href="https://investors.micron.com/static-files/3aed7b21-5b2f-4694-9167-10bdb77de4c1">https://investors.micron.com/static-files/3aed7b21-5b2f-4694-9167-10bdb77de4c1</a></li>
+    <li>Micron 1α — <a href="https://www.micron.com/products/memory/1alpha-dram-technology">https://www.micron.com/products/memory/1alpha-dram-technology</a></li>
+    <li>SK hynix 1a — <a href="https://news.skhynix.com/en/sk-hynix-starts-mass-production-of-1anm-dram-using-euv-equipment-2/">https://news.skhynix.com/en/sk-hynix-starts-mass-production-of-1anm-dram-using-euv-equipment-2/</a></li>
+    <li>Samsung 5-layer EUV — <a href="https://news.samsung.com/global/samsung-starts-mass-production-of-most-advanced-14nm-euv-ddr5-dram">https://news.samsung.com/global/samsung-starts-mass-production-of-most-advanced-14nm-euv-ddr5-dram</a></li>
+    <li>Micron 1β — <a href="https://sg.micron.com/about/blog/memory/dram/first-with-alpha-first-with-beta-shipping-the-worlds-first-1-beta-dram">https://sg.micron.com/about/blog/memory/dram/first-with-alpha-first-with-beta-shipping-the-worlds-first-1-beta-dram</a></li>
+    <li>Micron 1γ — <a href="https://micron.gcs-web.com/news-releases/news-release-details/micron-announces-shipment-1g-1-gamma-dram-pioneering-memory">https://micron.gcs-web.com/news-releases/news-release-details/micron-announces-shipment-1g-1-gamma-dram-pioneering-memory</a></li>
+    <li>SK hynix 1c — <a href="https://news.skhynix.com/en/sk-hynix-develops-industry-first-1c-ddr5/">https://news.skhynix.com/en/sk-hynix-develops-industry-first-1c-ddr5/</a></li>
+    <li>Samsung — <a href="https://news.samsung.com/global/samsung-electronics-starts-mass-production-of-industry-first-3-bit-3d-v-nand-flash-memory">https://news.samsung.com/global/samsung-electronics-starts-mass-production-of-industry-first-3-bit-3d-v-nand-flash-memory</a></li>
+    <li>SK hynix — <a href="https://news.skhynix.com/en/nand-development-history/">https://news.skhynix.com/en/nand-development-history/</a></li>
+    <li>Intel·Micron — <a href="https://investors.micron.com/static-files/42d458b4-0e01-4189-9504-e221679cebb4">https://investors.micron.com/static-files/42d458b4-0e01-4189-9504-e221679cebb4</a></li>
+    <li>Lam 패터닝 설명 — <a href="https://newsroom.lamresearch.com/how-advanced-patterning-enables-smarter-smaller-chips-semi-101">https://newsroom.lamresearch.com/how-advanced-patterning-enables-smarter-smaller-chips-semi-101</a></li>
+    <li>imec 멀티패터닝 비교 — <a href="https://www.imec-int.com/en/imec-magazine/imec-magazine-june-2019/euv-lithography-weighing-the-options-for-future-logic-and-memory-applications">https://www.imec-int.com/en/imec-magazine/imec-magazine-june-2019/euv-lithography-weighing-the-options-for-future-logic-and-memory-applications</a></li>
+    <li>LFLE 공정 논문 — <a href="https://doi.org/10.1117/12.837221">https://doi.org/10.1117/12.837221</a></li>
+    <li>Bencher 외, SPIE 2008 — <a href="https://doi.org/10.1117/12.772953">https://doi.org/10.1117/12.772953</a></li>
+    <li>imec, Ru 18nm pitch 패터닝 원고 — <a href="https://imec-publications.be/bitstream/handle/20.500.12860/40370.2/SPIE%20proceedings%20-%20Decoster%20-%20Patterning%20of%20Ru%20metal%20lines%20at%2018%20nm%20pitch%20-%20online.pdf?isAllowed=y&amp;sequence=1">https://imec-publications.be/bitstream/handle/20.500.12860/40370.2/SPIE%20proceedings%20-%20Decoster%20-%20Patterning%20of%20Ru%20metal%20lines%20at%2018%20nm%20pitch%20-%20online.pdf?isAllowed=y&amp;sequence=1</a></li>
+    <li>imec SAQP 공정 설명 — <a href="https://www.imec-int.com/en/imec-magazine/imec-magazine-march-2017/first-euv-lithography-high-volume-manufacturing-solution-for-n5-beol">https://www.imec-int.com/en/imec-magazine/imec-magazine-march-2017/first-euv-lithography-high-volume-manufacturing-solution-for-n5-beol</a></li>
+    <li>Raley 외, SPIE 2016 — <a href="https://doi.org/10.1117/12.2219321">https://doi.org/10.1117/12.2219321</a></li>
+    <li>Yu 외, SAOP 연구 — <a href="https://doi.org/10.1117/12.2046094">https://doi.org/10.1117/12.2046094</a></li>
+    <li>imec N5-equivalent 패터닝 — <a href="https://www.imec-int.com/en/articles/imec-presents-patterning-solutions-for-n5-equivalent-metal-layers">https://www.imec-int.com/en/articles/imec-presents-patterning-solutions-for-n5-equivalent-metal-layers</a></li>
+    <li>Lazzarino 외, SPIE 2017 — <a href="https://doi.org/10.1117/12.2258028">https://doi.org/10.1117/12.2258028</a></li>
+    <li>개발자들의 SALELE 공정 설명 — <a href="https://www.edn.com/multi-patterning-strategies-for-navigating-the-sub-5-nm-frontier-part-2/">https://www.edn.com/multi-patterning-strategies-for-navigating-the-sub-5-nm-frontier-part-2/</a></li>
+    <li>Fang 외, SAQP pitch-walk 계측 — <a href="https://doi.org/10.1117/12.2261620">https://doi.org/10.1117/12.2261620</a></li>
+    <li>Donnelly·Kornblit 식각 리뷰 — <a href="https://doi.org/10.1116/1.4819316">https://doi.org/10.1116/1.4819316</a></li>
+    <li>Dual-carbon SAQP 연구 — <a href="https://www.jstage.jst.go.jp/article/photopolymer/30/3/30_361/_pdf">https://www.jstage.jst.go.jp/article/photopolymer/30/3/30_361/_pdf</a></li>
+    <li>eSALELE의 EPE 기반 결함 검출 연구 — <a href="https://imec-publications.be/server/api/core/bitstreams/1c7be17c-f2d5-436e-a306-fb46acc0315e/content">https://imec-publications.be/server/api/core/bitstreams/1c7be17c-f2d5-436e-a306-fb46acc0315e/content</a></li>
+    <li>멀티패터닝 분할 연구 — <a href="https://arxiv.org/abs/1404.0321">https://arxiv.org/abs/1404.0321</a></li>
+    <li>SID/SIM routing 연구 — <a href="https://doi.org/10.1109/TCAD.2015.2404878">https://doi.org/10.1109/TCAD.2015.2404878</a></li>
+    <li>SAQP 전사 중 LWR 분석 — <a href="https://doi.org/10.1117/12.2218863">https://doi.org/10.1117/12.2218863</a></li>
+    <li>SAQP scatterometry 공정 제어 — <a href="https://doi.org/10.1117/12.2220287">https://doi.org/10.1117/12.2220287</a></li>
+    <li>IRDS 2023 Lithography — <a href="https://irds.ieee.org/images/files/pdf/2023/2023IRDS_Litho.pdf">https://irds.ieee.org/images/files/pdf/2023/2023IRDS_Litho.pdf</a></li>
+    <li>Hermans 외, 2024 — <a href="https://doi.org/10.1117/12.3034200">https://doi.org/10.1117/12.3034200</a></li>
+    <li>ASML — <a href="https://www.asml.com/en/company/stories/2024/5-things-high-na-euv">https://www.asml.com/en/company/stories/2024/5-things-high-na-euv</a></li>
+    <li>imec 연구 시연 — <a href="https://www.imec-int.com/en/press/imec-demonstrates-logic-and-dram-structures-using-high-na-euv-lithography">https://www.imec-int.com/en/press/imec-demonstrates-logic-and-dram-structures-using-high-na-euv-lithography</a></li>
+    <li>imec 후속 결과 — <a href="https://www.imec-int.com/en/press/imec-achieves-new-milestones-single-patterning-high-na-euv-lithography-both-damascene-and">https://www.imec-int.com/en/press/imec-achieves-new-milestones-single-patterning-high-na-euv-lithography-both-damascene-and</a></li>
+    <li>Intel·ASML 2026 발표 — <a href="https://www.intel.com/content/www/us/en/newsroom/news/intel-foundry/intel-foundry-asml-accelerate-industry-readiness-for-high-na-euv.html">https://www.intel.com/content/www/us/en/newsroom/news/intel-foundry/intel-foundry-asml-accelerate-industry-readiness-for-high-na-euv.html</a></li>
+    <li>imec High-NA 기술 검토 — <a href="https://www.imec-int.com/en/articles/case-high-na-euv-unlocking-next-era-chip-manufacturing">https://www.imec-int.com/en/articles/case-high-na-euv-unlocking-next-era-chip-manufacturing</a></li>
+    <li>Kirin 9000S 공정 분석 — <a href="https://www.techinsights.com/ja/node/54046">https://www.techinsights.com/ja/node/54046</a></li>
+    <li>TechInsights N+3 분석 — <a href="https://www.techinsights.com/blog/smic-n3-kirin-9030-pro-process-flow-analysis">https://www.techinsights.com/blog/smic-n3-kirin-9030-pro-process-flow-analysis</a></li>
+    <li>Micron 패터닝 전략 — <a href="https://investors.micron.com/static-files/875ad906-90ad-4fff-aad9-dc18d04042a4">https://investors.micron.com/static-files/875ad906-90ad-4fff-aad9-dc18d04042a4</a></li>
+    <li>Samsung 12nm — <a href="https://news.samsung.com/global/samsung-electronics-announces-most-advanced-12nm-class-ddr5-dram-has-started-mass-production">https://news.samsung.com/global/samsung-electronics-announces-most-advanced-12nm-class-ddr5-dram-has-started-mass-production</a></li>
+    <li>Lam Cryo 3.0 — <a href="https://newsroom.lamresearch.com/2024-07-31-Lam-Research-Introduces-Lam-Cryo-TM-3-0-Cryogenic-Etch-Technology-to-Accelerate-Scaling-of-3D-NAND-for-the-AI-Era">https://newsroom.lamresearch.com/2024-07-31-Lam-Research-Introduces-Lam-Cryo-TM-3-0-Cryogenic-Etch-Technology-to-Accelerate-Scaling-of-3D-NAND-for-the-AI-Era</a></li>
+    <li>TEL cryogenic etch — <a href="https://www.tel.com/blog/all/20241021_001.html">https://www.tel.com/blog/all/20241021_001.html</a></li>
+    <li>2025 DSA·EUV 연구 검토 — <a href="https://doi.org/10.1557/s43579-025-00841-7">https://doi.org/10.1557/s43579-025-00841-7</a></li>
+    <li>2024 ASD 논문 — <a href="https://doi.org/10.1016/j.ijmachtools.2024.104173">https://doi.org/10.1016/j.ijmachtools.2024.104173</a></li>
+    <li>2025 ASD 리뷰 — <a href="https://doi.org/10.1039/D4MH01472C">https://doi.org/10.1039/D4MH01472C</a></li>
+    <li>Kanarik 외, JVST A — <a href="https://doi.org/10.1116/1.4913379">https://doi.org/10.1116/1.4913379</a></li>
+    <li>Applied Materials Sculpta 발표 — <a href="https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-innovative-pattern-shaping-technology-reduces/">https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-innovative-pattern-shaping-technology-reduces/</a></li>
+    <li>Pattern shaping 원리 — <a href="https://www.appliedmaterials.com/eu/en/semiconductor/semiconductor-technologies/pattern-shaping.html">https://www.appliedmaterials.com/eu/en/semiconductor/semiconductor-technologies/pattern-shaping.html</a></li>
+    <li>Lam Akara 발표 — <a href="https://investor.lamresearch.com/2025-02-19-Lam-Research-Unveils-Industrys-Most-Advanced-Conductor-Etch-Technology-to-Date">https://investor.lamresearch.com/2025-02-19-Lam-Research-Unveils-Industrys-Most-Advanced-Conductor-Etch-Technology-to-Date</a></li>
+    <li>ASML 2025 기술보고 — <a href="https://ourbrand.asml.com/m/8ab959d4926657b/original/asml-2025-annual-report-strategic-report-section.pdf">https://ourbrand.asml.com/m/8ab959d4926657b/original/asml-2025-annual-report-strategic-report-section.pdf</a></li>
+    <li>imec 패터닝 과제 — <a href="https://staging.imec-int.com/en/articles/challenges-and-innovations-patterning">https://staging.imec-int.com/en/articles/challenges-and-innovations-patterning</a></li>
+    <li>A 22nm high performance and low-power CMOS technology featuring fully-depleted tri-gate transistors, self-aligned contacts and high density MIM capacitors — <a href="https://doi.org/10.1109/VLSIT.2012.6242496">https://doi.org/10.1109/VLSIT.2012.6242496</a></li>
+    <li>Exploration of EUV-based self-aligned multipatterning (SAMP) options targeting pitches below 20nm — <a href="https://doi.org/10.1117/12.2515173">https://doi.org/10.1117/12.2515173</a></li>
+  </ol>
+</div>
+
+
+</div>
+</body>
+</html>

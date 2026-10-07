@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>작업 기록 7단계 · 패터닝 기술 리서치</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>7단계 · 패터닝 기술 리서치</h1>
+    <p class="phase-desc">항목 #25–#26 · 2026-10-07 20:26 ~ 21:38 · 멀티패터닝(DPT·QPT) 같은 패터닝 기술의 배경·동향·난제를 식각 관점에서 조사한다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-6.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><span class="cur" aria-current="page">7. 패터닝 기술 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #25 ===== -->
+    <article class="entry" id="e25">
+      <div class="entry-head">
+        <span class="no">#25</span>
+        <h2>DPT · QPT 조사 시작</h2>
+        <time>2026-10-07 20:26</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>DPT, QPT 에 대해 조사. 등장 배경과 최근 기술 동향 및 관련된 모든 난제들 포함.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>DPT(이중 패터닝)·QPT(4중 패터닝)는 ArF 이머전의 해상도 한계를 넘기 위한 멀티패터닝 기술. LELE 계열(나눠 노광)과 SADP·SAQP 계열(스페이서 복제)을 모두 다룬다.</li>
+          <li>세 축: ① 등장 배경(Rayleigh 한계, EUV 지연, 노드·업체별 도입), ② 최근 동향(2023–2026: EUV 공존, High-NA, SMIC, DRAM, 장비), ③ "모든 난제" — 리소·식각·설계·계측·비용을 빠짐없이.</li>
+          <li>A20과 무관한 일반 패터닝 리서치이므로 기록 단계를 새로 만들지 jev에게 묻는다. 결과물은 식각 관점을 강조한 출처 달린 보고서.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>20:26</time> <b>astra 리서치</b>(gpt-6-astra high, 웹 검색)를 백그라운드로 시작. 요청: 배경·방식 분류·난제 전 범위·2023–2026 동향·핵심 논문, 식각 관점 강조.</li>
+          <li><time>20:27</time> <b>jev 자문</b> 3건: 기록 위치 → 새 7단계 "패터닝 기술 리서치" (선택 b, 확률 0.88, 신뢰도 0.82) · 결과물 형식 → 출처 달린 HTML 보고서 + 공정 단면 SVG (a, 0.94, 신뢰도 0.91) · 용어를 지식 그래프에 바로 추가할지 → 0.29 (이번엔 보류). 모두 그대로 반영.</li>
+          <li><time>20:30</time> astra를 기다리는 동안 공정 단면 SVG 생성 스크립트 작성: LELE, SADP, SAQP, 피치 워킹, 컷 마스크 평면도 5종. 첫 시도 코드가 꼬여서 한 번 다시 썼다.</li>
+          <li><time>20:35</time> 기록 7단계 페이지(<code>history/phase-7.html</code>)를 만들고 1–6단계 페이지의 단계 이동 줄에 추가. 보고서 틀(스타일·목차·확인 수준 태그) 작성.</li>
+          <li><time>20:40</time> astra가 아직 검색 중이라 중간 보고 후 대기.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag warn">진행 중</span> 리서치가 길어져 이 시점엔 보고서 미완성. 마무리는 <a href="#e26">#26</a>.</p>
+      </section>
+    </article>
+
+    <!-- ===== 항목 #26 ===== -->
+    <article class="entry" id="e26">
+      <div class="entry-head">
+        <span class="no">#26</span>
+        <h2>DPT · QPT 보고서 완성 · 게시</h2>
+        <time>2026-10-07 21:38</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>좋아, 결과 나오면 마무리까지 진행해줘</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>#25의 남은 일 전부: astra 결과로 본문 작성 → 불확실한 주장 원문 대조 → 목차 추가 → 기록·스크린샷 → 보안 점검 → 커밋·푸시 → 사이트 확인.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>21:38</time> astra가 여전히 검색 중(시작 후 약 70분). 완료 대기를 걸어 둠.</li>
+          <li><time>21:47</time> <b>astra 완료</b> (약 81분). 결과 530줄, 출처 71개. 원본은 <code>research/dpt_qpt_raw.md</code>에 로컬 보관(비공개). astra가 지시·요청의 표현 세 가지를 바로잡음: "~38–40 nm"는 pitch가 아니라 half-pitch(pitch는 76–80 nm), "SAPD"는 SADP, QPT는 네 번 노광이 아님(한 번 노광 + 스페이서 두 번).</li>
+          <li><time>21:49</time> 가장 최신이라 불확실한 주장 두 개를 <b>원문에서 직접 확인</b>: Intel·ASML High-NA 발표(2026-09-07, Panther Lake 일부 제품의 선택된 레이어 양산 사용, "100만 장"은 인증·R&amp;D·양산 합계) · TechInsights Kirin 9030 Pro 분석(2026-08-27, SMIC N+3는 7 nm급의 축소 발전, 상용 5 nm보다 상당히 덜 축소). 둘 다 astra 설명과 일치.</li>
+          <li><time>21:50</time> <code>research/dpt_qpt_report.html</code> 작성: 한눈에 보기 → 등장 배경(Rayleigh 표) → 도입 연표(2007–2026) → 방식 분류(LELE·LFLE·LE3·SADP·SAQP·SAOP·SALELE·컷/블록, SID/SIM) → 공정 단면도 → 난제 15가지(치수·위치 / 스페이서·맨드릴 식각 / 컷·블록 / 설계·계측·수율·비용) → 2023–2026 동향 8가지 → 논문 읽기 질문 7개 → 출처 71개.</li>
+          <li><time>21:52</time> 로컬 미리보기에서 문제 3가지 발견·수정: LELE 그림 오른쪽 끝에 잘린 조각 → 어긋남 크기 조정 · 피치 워킹 그림에 "›" 화살표가 붙어 세 경우가 순서처럼 보임 → 화살표 제거 · 컷 그림 설명문이 잘림 → 본문과 겹치는 둘째 문장 삭제. 피치 워킹 수치(코어 14·갭 26, 선폭 24·갭 12)는 모델 P₀ = C + G + 2t로 검산.</li>
+          <li><time>21:59</time> 증거 스크린샷 4장 저장. 목차(<code>index.html</code>) 맨 위에 보고서 추가, 기록 갱신.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> DPT·QPT 보고서 완성. 출처 71개, 2026년 주장 2건은 원문 대조.</p>
+        <p><a href="../research/dpt_qpt_report.html">보고서 열기 → research/dpt_qpt_report.html</a></p>
+        <figure>
+          <img src="../history_img/20261007_215900_dpt_report_top.png" alt="보고서 첫 화면">
+          <figcaption>history_img/20261007_215900_dpt_report_top.png — 보고서 첫 화면: 확인 수준 태그와 목차</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261007_215900_dpt_sadp_saqp.png" alt="SADP·SAQP 공정 단면도">
+          <figcaption>history_img/20261007_215900_dpt_sadp_saqp.png — SADP(피치 80→40)와 SAQP(80→20) 단계별 단면</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261007_215900_dpt_pitch_walking.png" alt="피치 워킹">
+          <figcaption>history_img/20261007_215900_dpt_pitch_walking.png — 난제 01 피치 워킹: 맨드릴 CD·스페이서 두께 오차가 코어/갭 공간을 다르게 만듦</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261007_215900_dpt_trends.png" alt="최근 기술 동향">
+          <figcaption>history_img/20261007_215900_dpt_trends.png — 2023–2026 동향: EUV와 자기정렬 패터닝의 레이어별 공존</figcaption>
+        </figure>
+      </section>
+    </article>
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-6.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><span class="cur" aria-current="page">7. 패터닝 기술 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>
