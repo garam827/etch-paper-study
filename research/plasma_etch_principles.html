@@ -73,7 +73,7 @@
   .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:12px; }
   .grid2 .card { margin:0; }
   td.good { color:var(--ok); } td.bad { color:#991b1b; } td.mid { color:var(--rum); }
-  h2#p1 { font-size:24px; margin-top:40px; }
+  h2#p1, h2.part { font-size:24px; margin-top:56px; border-bottom-color:var(--accent); }
 </style>
 </head>
 <body>
@@ -95,7 +95,7 @@
     <thead><tr><th>부</th><th>주제</th><th>책의 범위</th><th>상태</th></tr></thead>
     <tbody>
       <tr><td class="num">1부</td><td><a href="#p1">식각의 직접 원리 — 메커니즘, 표면 반응, 화학, 대전 손상</a></td><td>15장 전체, 9.3–9.4</td><td><span class="tag t-ok">완료 2026-10-08</span></td></tr>
-      <tr><td class="num">2부</td><td>시스와 이온 에너지 — 이방성의 근원</td><td>6장, 11.4–11.6</td><td><span class="tag t-na">예정</span></td></tr>
+      <tr><td class="num">2부</td><td><a href="#p2">시스와 이온 에너지 — 이방성의 근원</a></td><td>6장, 11.4–11.6</td><td><span class="tag t-ok">완료 2026-10-08</span></td></tr>
       <tr><td class="num">3부</td><td>방전 장비 — 입자·에너지 균형, CCP, ICP, 펄스 방전</td><td>10장, 11장, 12장 (13장 요약)</td><td><span class="tag t-na">예정</span></td></tr>
       <tr><td class="num">4부</td><td>기체 화학과 진단 — 충돌, 반응 속도, 광방출·actinometry</td><td>3장, 7장, 8장, 9.1–9.2</td><td><span class="tag t-na">예정</span></td></tr>
       <tr><td class="num">5부</td><td>나머지 기초 요약 — 플라즈마 기초·수송, 증착, 먼지 입자, 운동론</td><td>1–2장, 4–5장, 14장, 16–18장</td><td><span class="tag t-na">예정</span></td></tr>
@@ -384,7 +384,159 @@
   </ul>
 </div>
 
-<p class="note" style="margin-top:24px">다음 2부에서는 이방성의 근원인 <b>시스와 이온 에너지</b>(6장, 11.4–11.6)를 정리합니다. 작업 기록: <a href="../history/phase-8.html">8단계</a>.</p>
+<h2 id="p2" class="part">2부 — 시스와 이온 에너지: 이방성의 근원</h2>
+<p class="note">1부에서 이온 구동 식각이 이방성을 주는 이유는 "이온이 수직으로 들어오기 때문"이었다. 2부는 그 이온이 <b>어떻게, 얼마의 에너지로, 어떤 분포로</b> 표면에 도착하는지 — 시스(sheath)의 물리를 정리한다. 2부 목차: <a href="#s12">시스란</a> · <a href="#s13">Bohm 기준</a> · <a href="#s14">부유 벽 전위</a> · <a href="#s15">고전압 시스</a> · <a href="#s16">전기음성·다종 이온</a> · <a href="#s17">탐침</a> · <a href="#s18">자기 바이어스</a> · <a href="#s19">저주파 시스</a> · <a href="#s20">이온 에너지 분포</a> · <a href="#s21">2부 정리</a></p>
+
+<!-- ============ 12 ============ -->
+<h2 id="s12">12. 시스란 무엇인가 <span class="ref">§6.1</span></h2>
+<div class="card">
+  <ul style="margin-bottom:0">
+    <li>전자는 이온보다 훨씬 가볍고 빨라서 벽으로 먼저 빠져나가려 한다. 그 결과 <b>플라즈마는 벽보다 양(+)의 전위</b>를 띠고, 벽 앞에 전자를 밀어내고 이온을 끌어당기는 <b>전하가 중성이 아닌 얇은 층</b>이 생긴다. 이것이 시스다. 이 전위가 벽으로 가는 이온·전자 흐름을 맞춘다.</li>
+    <li>약전리 공정 플라즈마에서는 전원이 전자만 데우므로 전자 온도 T<sub>e</sub>는 수 eV, 이온은 차갑다. 그래서 "차가운 이온이 시스 전위를 따라 떨어지고, 전자는 Boltzmann 분포로 줄어드는" 그림이 기본 모델이다. 시스 두께의 척도는 Debye 길이.</li>
+    <li>RF 시스는 전자는 순간 전압을 따라가고 이온은 느리게 반응하는 <b>시간 척도 분리</b>(전자 플라즈마 주파수 ≫ 인가 주파수, 이온 쪽은 경우에 따라)가 있을 때 근사적으로 풀린다. 이 분리가 이온 에너지 분포의 모양을 정한다 (<a href="#s20">§20</a>).</li>
+  </ul>
+</div>
+
+<!-- ============ 13 ============ -->
+<h2 id="s13">13. Bohm 기준과 프리시스 <span class="ref">§6.2</span></h2>
+<div class="card">
+  <p>안정된 시스가 생기려면 이온이 시스 경계에 <b>최소한 Bohm 속도</b>로 들어와야 한다.</p>
+  <div class="eq">u<sub>s</sub> ≥ u<sub>B</sub> = (eT<sub>e</sub>/M)<sup>1/2</sup> <span class="ref">식 6.2.4</span></div>
+  <ul style="margin-bottom:0">
+    <li><b>왜?</b> 시스 안에서는 어디서나 전자 밀도가 이온 밀도보다 작아야 하는데, 이온이 너무 느리게 들어오면 경계 근처에서 이 조건이 깨진다. 반대로 중성인 몸통(bulk) 플라즈마 안에서는 이온이 u<sub>B</sub>보다 느려야 하므로, <b>두 영역은 정확히 u<sub>B</sub>에서 만난다</b> (아음속 → 초음속 전환점).</li>
+    <li><b>프리시스(presheath)</b>: 이온을 u<sub>B</sub>까지 가속하려면 시스 바깥에 넓고 약한 전기장 영역이 필요하다. 충돌이 없으면 이 영역의 전위 차는 <b>T<sub>e</sub>/2</b>이고, 그만큼 밀도가 줄어 시스 경계 밀도는 몸통의 약 <b>0.61배</b>다 (식 6.2.12–13). 폭은 이온–중성 평균 자유 경로(충돌형)나 이온화 길이(이온화형) 정도.</li>
+    <li><b>벽으로 가는 이온 플럭스</b>: Γ<sub>i</sub> = n<sub>s</sub>u<sub>B</sub> ≈ 0.61 n u<sub>B</sub>. 1부의 식각 속도 모델(이온 공급 Y<sub>i</sub>Γ<sub>i</sub>)과 대전 모델(I<sub>i</sub> ≈ 0.61 e n u<sub>B</sub>A)이 모두 이 값을 쓴다.</li>
+    <li><b>충돌이 있으면</b>: 시스 경계가 흐려지고 경계 이온 속도가 u<sub>B</sub>보다 낮아진다(식 6.2.19–20). 하지만 공정 계산에서 중요한 것은 경계의 정확한 위치가 아니라 <b>시스로 들어가는 이온 플럭스</b>라는 것이 책의 정리다.</li>
+  </ul>
+</div>
+
+<!-- ============ 14 ============ -->
+<h2 id="s14">14. 떠 있는 벽의 시스 전위 — 이온 에너지 ≈ 5T<sub>e</sub> <span class="ref">§6.2</span></h2>
+<div class="card">
+  <p>전류를 흘리지 않는(부유) 벽에서는 이온 플럭스(n<sub>s</sub>u<sub>B</sub>)와 전자 플럭스(¼n<sub>s</sub>v̄<sub>e</sub>e<sup>Φ/T<sub>e</sub></sup>)가 같아지는 전위까지 벽이 내려간다:</p>
+  <div class="eq">Φ<sub>w</sub> = −T<sub>e</sub> ln (M/2πm)<sup>1/2</sup> <span class="ref">식 6.2.17</span></div>
+  <ul style="margin-bottom:0">
+    <li>계수 ln(M/2πm)<sup>1/2</sup>는 수소 약 2.8, <b>아르곤 약 4.7</b>. 프리시스에서 얻은 T<sub>e</sub>/2를 더하면 <b>Ar 이온은 부유 벽에 약 5.2T<sub>e</sub></b>로 부딪힌다. T<sub>e</sub> = 3–4 eV면 15–20 eV 정도.</li>
+    <li>이 값은 <b>플라즈마 밀도와 무관</b>하다 (1부 §9의 V<sub>f</sub>와 같은 식). 1부 §5에서 고밀도 방전 이온 에너지를 "≈ 5T<sub>e</sub>"로 둔 근거가 이것이다.</li>
+    <li>더 큰 에너지가 필요하면 전극에 직류나 RF 전압을 걸어야 하고, 그러면 그 전극은 상당한 순전류를 끌어간다 (§15, §18).</li>
+    <li class="note"><b>해설</b>: 그래서 바이어스가 없는 반응기 벽·창·절연물은 수십 eV 이하의 이온만 받는다 — 스퍼터 문턱(20–50 eV, 1부 §10) 근처라 벽은 대개 화학적으로만 반응한다. 기판에 따로 바이어스를 거는 이유다.</li>
+  </ul>
+</div>
+
+<!-- ============ 15 ============ -->
+<h2 id="s15">15. 고전압 시스 — Child 법칙 <span class="ref">§6.3, §6.5</span></h2>
+<div class="card">
+  <p>전극 전압 V<sub>0</sub>가 T<sub>e</sub>보다 훨씬 크면 시스 안에는 사실상 이온만 남는다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>모델</th><th>전류–전압–두께 관계</th><th>시스 두께</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td><b>매트릭스 시스</b> (이온 밀도 균일)</td><td>전위가 x²로 변함</td><td>s = λ<sub>Ds</sub>(2V<sub>0</sub>/T<sub>e</sub>)<sup>1/2</sup> (식 6.3.5)</td><td>펄스 전압을 막 걸었을 때 (PIII, 16장)</td></tr>
+      <tr><td><b>Child 법칙 시스</b> (무충돌, 정상 상태)</td><td>J<sub>0</sub> = (4/9)ε<sub>0</sub>(2e/M)<sup>1/2</sup> V<sub>0</sub><sup>3/2</sup>/s² (식 6.3.12)</td><td>s = (√2/3) λ<sub>Ds</sub> (2V<sub>0</sub>/T<sub>e</sub>)<sup>3/4</sup> (식 6.3.14)</td><td>Debye 길이의 ~100배, <b>~1 cm</b>까지. 전자가 없어 <b>어둡게</b> 보임(dark space)</td></tr>
+      <tr><td><b>충돌 시스</b> (평균 자유 경로 일정)</td><td>J<sub>0</sub> ∝ V<sub>0</sub><sup>3/2</sup>/s<sup>5/2</sup> (식 6.5.7)</td><td>s ∝ λ<sub>i</sub><sup>1/5</sup> — 압력이 오르면 약간 얇아짐</td><td>이온이 시스 안에서 충돌</td></tr>
+      <tr><td><b>충돌 시스</b> (이동도 일정, 고압)</td><td>J<sub>0</sub> = (9/8)ε<sub>0</sub>μ<sub>i</sub>V<sub>0</sub>²/s³ (식 6.5.8)</td><td></td><td>더 높은 압력</td></tr>
+    </tbody>
+  </table></div>
+  <ul style="margin-bottom:0">
+    <li>Child 시스 안의 전위는 (x/s)<sup>4/3</sup>로 변하고, 이온이 시스를 건너는 시간은 t<sub>i</sub> = 3s/v<sub>0</sub> (v<sub>0</sub> = (2eV<sub>0</sub>/M)<sup>1/2</sup>, 식 6.3.21). 이 <b>통과 시간과 RF 주기의 비</b>가 §20의 이온 에너지 분포를 결정한다.</li>
+    <li>Child 법칙은 시스 전압이 T<sub>e</sub>보다 클 때만 쓸 수 있다 (부유 벽에는 부적합). RF 방전 시스 두께 계산에는 수정해서 쓴다.</li>
+    <li class="note"><b>해설</b>: 시스 두께(수백 μm–cm)는 식각하는 패턴(수–수십 nm)보다 훨씬 크다. 그래서 패턴 입장에서는 이온이 넓고 평평한 전기장을 지나 거의 수직으로 떨어지며, 이것이 이방성의 출발점이다. 반대로 시스 안 충돌은 에너지와 방향을 흐트러뜨린다 (§20).</li>
+  </ul>
+</div>
+
+<!-- ============ 16 ============ -->
+<h2 id="s16">16. 전기음성 기체와 여러 종류의 이온 <span class="ref">§6.4</span></h2>
+<div class="card">
+  <ul style="margin-bottom:0">
+    <li><b>일반 Bohm 기준</b>: 임의의 이온·전자 분포에 대해 적분 형태로 일반화된다(식 6.4.1). 차가운 이온·Maxwell 전자면 원래 식으로 돌아간다.</li>
+    <li><b>음이온이 있을 때</b> (Cl₂, O₂, SF₆, CF₄ 같은 식각 기체): 시스 경계의 음이온/전자 비 α<sub>s</sub>, 온도비 γ = T<sub>e</sub>/T<sub>i</sub>라 하면
+      <div class="eq">u<sub>s</sub> ≥ [eT<sub>e</sub>(1 + α<sub>s</sub>) / M(1 + α<sub>s</sub>γ)]<sup>1/2</sup> <span class="ref">식 6.4.7</span></div>
+      차가운 음이온이 많으면 필요한 속도가 크게 줄어든다. 하지만 프리시스 전위가 차가운 음이온을 밀어내 <b>시스 경계에서는 음이온 비율이 몸통보다 훨씬 작아진다</b>(식 6.4.8). 몸통의 음이온 비가 2 미만이고 γ &gt; 30인 보통 조건에서는 프리시스 전위가 여전히 약 T<sub>e</sub>/2 — 즉 <b>약한 전기음성 방전에서는 원래 Bohm 기준이 거의 그대로</b> 맞다. 강한 경우는 10장(3부)에서.</li>
+    <li><b>양이온이 여러 종류일 때</b> (Ar⁺ + CF₃⁺ + … 같은 실제 공정 기체): 조건은 Σ n<sub>j</sub>/(m<sub>j</sub>u<sub>j</sub>²) = n<sub>e</sub>/(eT<sub>e</sub>) 하나뿐이라 각 종의 속도가 유일하게 정해지지 않는다(식 6.4.19). 둘 다 자기 Bohm 속도로 들어가거나, 하나는 느리고 하나는 빠르다. 프리시스가 충돌형이면 <b>더 잘 충돌하는 이온은 Bohm 속도보다 느리게</b> 들어온다 (PIC 시뮬레이션으로 확인).</li>
+  </ul>
+</div>
+
+<!-- ============ 17 ============ -->
+<h2 id="s17">17. 랭뮤어 탐침 — 시스로 플라즈마 재기 <span class="ref">§6.6</span></h2>
+<div class="card">
+  <ul style="margin-bottom:0">
+    <li>금속 탐침에 전압을 걸고 전류를 재면 시스 물리를 거꾸로 이용해 플라즈마를 진단할 수 있다. 전압을 내리면서 보면: <b>전자 포화</b>(플라즈마 전위 위) → <b>전자 반발 영역</b>(전류가 지수적으로 변함 — 기울기에서 <b>T<sub>e</sub></b>) → <b>부유 전위</b>(전류 0) → <b>이온 포화</b>(I ≈ 0.61 e n u<sub>B</sub>A — 여기서 <b>밀도</b>).</li>
+    <li>전자 분포가 Maxwell이 아니면(저압 CCP에서 흔한 "두 온도" 분포) 포화 전류로 구한 밀도에 큰 오차가 생긴다. 이때는 전류–전압 곡선의 <b>2차 미분으로 전자 에너지 분포(EEDF)</b>를 직접 구하는 방법(Druyvesteyn 방식)이 권장된다.</li>
+    <li>가는 도선 탐침은 궤도 운동 효과, RF 플라즈마는 전위 출렁임 보정(탐침을 플라즈마와 함께 흔들리게), 그 밖에 이중 탐침·발광(emissive) 탐침(플라즈마 전위 측정) 등이 있다.</li>
+    <li class="note">진단 전반(광방출·actinometry 포함)은 4부에서 더 다룬다.</li>
+  </ul>
+</div>
+
+<!-- ============ 18 ============ -->
+<h2 id="s18">18. 비대칭 방전과 자기 바이어스 (self-bias) <span class="ref">§11.4</span></h2>
+<div class="card">
+  <p>실제 용량성(CCP) 반응기는 거의 다 비대칭이다 — 접지된 면(벽 포함)이 RF가 걸린 전극보다 훨씬 넓다. RF 전류는 두 시스를 직렬로 지나므로, <b>면적이 작은 전극의 시스가 더 작은 정전용량 → 더 큰 전압</b>을 받는다. 차단 축전기 때문에 구동 전극에는 <b>음의 직류 자기 바이어스</b>가 생긴다: V<sub>bias</sub> = −(V̄<sub>a</sub> − V̄<sub>b</sub>) (식 11.4.2).</p>
+  <div class="tbl"><table>
+    <thead><tr><th>모델</th><th>V̄<sub>a</sub>/V̄<sub>b</sub> = (A<sub>b</sub>/A<sub>a</sub>)<sup>q</sup>의 q</th></tr></thead>
+    <tbody>
+      <tr><td>가장 단순한 모델 (무충돌 Child 시스, 두 전극 앞 밀도 같음)</td><td class="num">4</td></tr>
+      <tr><td>충돌 시스 (평균 자유 경로 일정)</td><td class="num">2.5</td></tr>
+      <tr><td>구 껍질 모델 — 기하 때문에 작은 전극 앞 밀도가 더 높음 (n<sub>b</sub>/n<sub>a</sub> ≈ (A<sub>a</sub>/A<sub>b</sub>)<sup>0.29</sup>)</td><td class="num">3.42 (무충돌) · 2.21 (충돌)</td></tr>
+      <tr><td>여러 이온화·시스 모델 조합 (표 11.1)</td><td class="num">1.25 – 4</td></tr>
+      <tr><td><b>실험</b> (주로 높은 압력)</td><td class="num"><b>≲ 2.5</b></td></tr>
+    </tbody>
+  </table></div>
+  <ul style="margin-bottom:0">
+    <li>면적비가 매우 크면 넓은(접지) 쪽 시스 전압은 부유 전위(§14)까지만 내려가고 더 줄지 않는다.</li>
+    <li class="note"><b>해설</b>: 웨이퍼를 <b>작은 구동 전극</b> 위에 놓는 RIE 구성은 바로 이 비대칭 덕에 웨이퍼 쪽 이온 에너지를 크게, 벽 쪽은 작게(벽 스퍼터·오염 감소) 만든다. 실제 반응기 기하에서는 단순 거듭제곱 법칙이 맞지 않아 원 논문의 2차원 계산이 필요하다는 것이 책의 단서.</li>
+  </ul>
+</div>
+
+<!-- ============ 19 ============ -->
+<h2 id="s19">19. 저주파 RF 시스 — 이온이 전압을 따라갈 때 <span class="ref">§11.5</span></h2>
+<div class="card">
+  <ul>
+    <li><b>기준 주파수</b>: 이온이 시스를 건너는 시간으로 정한 이온 통과 주파수 ω<sub>i</sub> = πω<sub>pi</sub>(2T<sub>e</sub>/V<sub>0</sub>)<sup>1/4</sup> (식 11.5.2). V<sub>0</sub> ~ 100 V, T<sub>e</sub> ~ 3 V면 ω<sub>i</sub> ~ 이온 플라즈마 주파수.</li>
+    <li><b>ω ≪ ω<sub>i</sub> (저주파 또는 고밀도·얇은 시스)</b>: 이온은 순간 전압에 반응하고, 변위 전류가 작아 시스가 <b>저항성·정류성</b>이 된다 (J<sub>d</sub>/J<sub>i</sub> = (3π/2)(V<sub>1</sub>/V<sub>0</sub>)(ω/ω<sub>i</sub>), 식 11.5.4). 각 시스는 "이상 다이오드(전자) ∥ 전류원(이온)"으로 모델링되고, 두 시스가 번갈아 0 V 근처로 붙잡히며 전류가 사각파가 된다.</li>
+    <li><b>자기 바이어스</b>: V<sub>bias</sub> = V<sub>rf</sub> sin[(π/2)(n<sub>sb</sub>A<sub>b</sub> − n<sub>sa</sub>A<sub>a</sub>)/(n<sub>sb</sub>A<sub>b</sub> + n<sub>sa</sub>A<sub>a</sub>)] (식 11.5.14). 면적비 지수는 고주파의 4 대신 <b>π/2</b>. 매우 비대칭이면 V<sub>bias</sub> → V<sub>rf</sub>, 작은 전극의 최대 가속 전압 → <b>2V<sub>rf</sub></b>.</li>
+    <li>열 보정: V<sub>bias</sub> = V<sub>rf</sub> + (T<sub>e</sub>/2)[ln(M/2πm) − ln(2πV<sub>rf</sub>/T<sub>e</sub>)] (식 11.5.20) — 전자가 주기 중 짧은 시간에만 도착하기 때문에 생기는 항.</li>
+  </ul>
+</div>
+
+<!-- ============ 20 ============ -->
+<h2 id="s20">20. 이온 에너지 분포 (IED) <span class="ref">§11.6</span></h2>
+<div class="card">
+  <p>표면에 도착하는 이온의 에너지 분포 g<sub>i</sub>(E)는 재료 공정에서 결정적이다. 무충돌이면 "언제 시스에 들어왔는가"와 "그때의 시스 전압"으로 정해진다 (식 11.6.2).</p>
+  <div class="tbl"><table>
+    <thead><tr><th>영역</th><th>분포 모양</th><th>폭 · 특징</th></tr></thead>
+    <tbody>
+      <tr><td><b>저주파</b> ω ≪ ω<sub>i</sub></td><td>부유 전위부터 V<sub>rf</sub> + V<sub>bias</sub>까지 <b>넓게 퍼짐</b>, 최대 에너지 쪽에 뾰족한 봉우리 + 부유 전위의 단일 에너지 성분 (식 11.6.6–7)</td><td><b>이온 질량과 무관</b> (어떤 이온이든 느린 전압 변화를 다 따라감). <b>낮은 에너지 이온이 상당히 많다</b></td></tr>
+      <tr><td><b>고주파</b> ω ≫ ω<sub>i</sub></td><td>평균 직류 전압 V<sub>bias</sub>를 중심으로 <b>두 봉우리(bimodal)</b> (식 11.6.15)</td><td>ΔE = (8/3)(v<sub>0</sub>/ωs)V<sub>rf</sub> = (4/π)(t<sub>rf</sub>/t<sub>i</sub>)V<sub>rf</sub> (식 11.6.13) → <b>주파수가 높을수록, 이온이 무거울수록(∝ M<sup>−1/2</sup>) 좁아짐</b></td></tr>
+      <tr><td>중간 주파수</td><td>해석이 어려움 — PIC 시뮬레이션</td><td>He, 통과 시간 77 ns, 1 → 100 MHz로 올리면 두 봉우리가 점점 가까워짐</td></tr>
+      <tr><td><b>시스 안 충돌</b> (높은 압력)</td><td>전하 교환으로 생긴 "2차" 차가운 이온이 <b>낮은 에너지 쪽에 여러 봉우리</b>를 만듦</td><td>압력이 오르면 주 이온의 두 봉우리는 약해지고 낮은 에너지 쪽이 늘어남</td></tr>
+    </tbody>
+  </table></div>
+  <ul style="margin-bottom:0">
+    <li><b>질량별 분리</b>: 13.56 MHz 실험에서 가벼운 H₃⁺는 넓고 비대칭(저주파 영역처럼), H₂O⁺는 전형적인 두 봉우리, 무거운 Eu⁺(152 amu)는 하나의 봉우리. CF₄ 방전에서도 이온 종류마다 봉우리가 뚜렷이 갈린다.</li>
+    <li>1부 §9의 <b>노칭</b> 설명이 "넓은 이온 에너지 분포의 낮은 에너지 이온이 거의 90° 꺾인다"였다 — 저주파·고압일수록 이런 이온이 많다.</li>
+    <li>1부 §9의 <b>RF 바이어스 대전</b>: 주파수가 낮을수록 게이트 대전 전압이 커진다. 저주파는 IED를 넓히는 동시에 대전에도 불리하다.</li>
+    <li class="note"><b>해설</b>: 이 결과가 오늘날 <b>이중 주파수 CCP</b>(높은 주파수로 밀도, 낮은 주파수로 이온 에너지)와 <b>펄스·맞춤 파형 바이어스</b>(좁은 IED를 원하는 에너지에 놓기) 같은 장비 설계의 물리적 배경이다. 이 책의 해당 절에는 그런 장비 이야기가 직접 나오지 않으며, 3부(11·12장)에서 확인할 예정.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>덧붙임 — 자기 강화 RIE (MERIE) <span class="ref">§11.7 도입부</span></h3>
+  <p style="margin-bottom:0">구동 전극과 나란히 50–200 G의 약한 자기장을 걸면 같은 전력에서 밀도는 오르고 시스 전압은 내려간다 (전자 가두기, 시스와의 반복 충돌로 가열 효율↑). 대신 E×B 표류로 플라즈마가 반경·방위 방향으로 불균일해져 자기장을 ~0.5 Hz로 돌려 완화하며, 이 불균일은 1부 §9의 <b>대전 손상</b> 원인이 될 수 있다. CCP는 이온 에너지와 이온 플럭스를 따로 조절하기 어렵다는 한계가 있어, 이를 넘으려는 고밀도 소스(ICP 등)는 3부에서 다룬다.</p>
+</div>
+
+<!-- ============ 21 ============ -->
+<h2 id="s21">21. 2부 정리 — 이온이 표면에 도착하는 방식</h2>
+<div class="card">
+  <ol style="margin-bottom:0">
+    <li><b>플럭스</b>: 시스로 들어가는 이온 플럭스 ≈ 0.61 n u<sub>B</sub>. 밀도와 T<sub>e</sub>가 정한다.</li>
+    <li><b>바이어스 없는 면의 에너지</b>: ≈ 5T<sub>e</sub> (Ar). 밀도와 무관 — 벽·절연물은 낮은 에너지 이온만 받는다.</li>
+    <li><b>시스 두께</b>: Child 법칙으로 V<sub>0</sub><sup>3/4</sup>에 비례, 패턴보다 훨씬 크다 → 수직 입사의 근거.</li>
+    <li><b>자기 바이어스</b>: 전극 면적비가 정한다 (실험 지수 ≲ 2.5, 저주파면 π/2).</li>
+    <li><b>이온 에너지 분포</b>: 주파수 대 이온 통과 시간(ω/ω<sub>i</sub>), 이온 질량, 압력(시스 내 충돌)이 정한다. 고주파·무거운 이온 → 좁은 두 봉우리, 저주파·가벼운 이온 → 넓은 분포, 고압 → 낮은 에너지 꼬리.</li>
+    <li><b>식각과의 연결</b>: IED가 1부의 수율 Y<sub>i</sub>(√E 의존)와 선택비(낮은 에너지가 유리), 노칭(낮은 에너지 이온이 꺾임), 대전(저주파 불리)을 모두 좌우한다.</li>
+  </ol>
+</div>
+
+<p class="note" style="margin-top:24px">다음 3부에서는 <b>방전 장비</b> — 입자·에너지 균형, 전기음성·펄스 방전(10장), CCP(11장), ICP(12장) — 를 정리합니다. 작업 기록: <a href="../history/phase-8.html">8단계</a>.</p>
 
 </div>
 </body>
