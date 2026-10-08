@@ -60,7 +60,7 @@
   <header>
     <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
     <h1>7단계 · 패터닝 기술 리서치</h1>
-    <p class="phase-desc">항목 #25–#28 · 2026-10-07 20:26 ~ 10-08 01:51 · 멀티패터닝(DPT·QPT) 같은 패터닝 기술의 배경·동향·난제를 식각 관점에서 조사한다.</p>
+    <p class="phase-desc">항목 #25–#29 · 2026-10-07 20:26 ~ 10-08 19:41 · 멀티패터닝(DPT·QPT) 같은 패터닝 기술의 배경·동향·난제를 식각 관점에서 조사한다.</p>
   </header>
   <nav class="pager" aria-label="단계 이동"><a href="phase-6.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><span class="cur" aria-current="page">7. 패터닝 기술 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
 
@@ -224,6 +224,8 @@
           <li><time>01:51</time> 권한 확인 정상화, 스크립트 적용 성공: 용어 82 → 126개(새 44개), 관계 146 → 220개, 새 분류 "패터닝 기법" 15개. 출처가 붙은 용어 121개, 연결된 서로 다른 출처 94개. 근거가 없어 비워 둔 용어 5개: FinFET, CMP, 패턴 붕괴, 잔사, 단락.</li>
           <li><time>01:53</time> 로컬 미리보기 확인: <code>#saqp</code>로 열면 SAQP에 포커스되고 오른쪽 패널에 논문·출처 3개(Intel IEDM 2017, imec 2017, Raley SPIE 2016)와 관계가 나옴. 용어집의 "논문·출처 n개"를 펼치면 링크 목록. 검색창에 "IEDM"을 넣으면 출처 제목으로 용어 9개가 걸러짐. 그래프 라이브러리 오류 없음(노드 126·엣지 220 렌더링).</li>
           <li><time>01:55</time> 증거 스크린샷 2장 저장, 목차(<code>index.html</code>)의 용어·관계 수 갱신, 기록 갱신.</li>
+          <li><time>01:57</time> 민감정보 검사 통과, 커밋 메일 no-reply 확인 → 커밋. <span class="tag warn">실패·재시도</span> 푸시가 GitHub 서버 오류(<code>Internal Server Error</code>)로 연달아 거부됨. GitHub 상태 페이지는 정상, fetch는 됨 → 45초 간격 자동 재시도 2번째(02:00)에 성공.</li>
+          <li><time>02:00</time> 그러나 Pages 배포 작업이 GitHub Actions 대기열(queued)에서 시작되지 않아 사이트는 이전 버전 유지 → <a href="#e29">#29</a>에서 해결.</li>
         </ol>
       </section>
 
@@ -239,6 +241,42 @@
           <img src="../history_img/20261008_015500_gloss_source_search.png" alt="용어집 출처 검색">
           <figcaption>history_img/20261008_015500_gloss_source_search.png — 용어집에서 "IEDM"으로 검색: 출처에 IEDM 논문이 있는 용어만 남고, "논문·출처 n개"를 펼친 모습</figcaption>
         </figure>
+      </section>
+    </article>
+
+    <!-- ===== 항목 #29 ===== -->
+    <article class="entry" id="e29">
+      <div class="entry-head">
+        <span class="no">#29</span>
+        <h2>배포 멈춤 진단 · 재배포</h2>
+        <time>2026-10-08 19:41</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>deploy에 문제가 있나?</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>#28의 커밋은 GitHub에 올라갔는데 사이트에 반영되지 않은 상태. 원인이 저장소(빌드 오류)인지 GitHub 쪽(작업 대기)인지 가리고, 배포를 다시 걸어 사이트를 갱신한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>19:41</time> 진단: 원격 main은 새 커밋과 일치(푸시 정상). Pages 배포 작업(pages-build-deployment)은 푸시 뒤 약 17시간째 <b>queued</b> — 러너가 배정되지 않아 빌드가 시작조차 안 됨. 빌드 오류 메시지 없음. GitHub 상태 페이지는 "All Systems Operational". → 저장소 문제가 아니라 GitHub Actions 쪽 작업이 멈춘 것으로 판단.</li>
+          <li><time>19:42</time> 멈춘 작업 취소 시도 → GitHub이 "이미 완료된 작업"이라며 거부(목록에는 queued로 남은 상태 불일치). 새 Pages 빌드를 요청.</li>
+          <li><time>19:43</time> 새 배포 작업이 약 20초 만에 성공. 실제 사이트에서 지식 그래프에 출처 기능이 반영된 것과 보고서·기록·목차·새 스크린샷 모두 200 확인 (<code>&lt;계정&gt;.github.io/etch-paper-study/</code>).</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 원인은 GitHub Actions의 배포 작업 대기열 멈춤(저장소·코드 문제 아님). 새 빌드 요청으로 해결, #27–#28 변경이 사이트에 반영됨.</p>
+        <p>참고: 앞으로 푸시 후 배포 작업이 몇 분 넘게 queued로 남으면, 같은 방법(새 Pages 빌드 요청)으로 다시 걸면 된다.</p>
       </section>
     </article>
   </div>
