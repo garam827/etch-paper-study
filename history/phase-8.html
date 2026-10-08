@@ -60,7 +60,7 @@
   <header>
     <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
     <h1>8단계 · 플라즈마 식각 기초 문헌 학습</h1>
-    <p class="phase-desc">항목 #31–#35 · 2026-10-08 20:25 ~ 22:26 · 플라즈마 공정 교과서(Lieberman & Lichtenberg)를 파트로 나눠 읽고 식각 지식을 정리한다.</p>
+    <p class="phase-desc">항목 #31–#36 · 2026-10-08 20:25 ~ 22:33 · 플라즈마 공정 교과서(Lieberman & Lichtenberg)를 파트로 나눠 읽고 식각 지식을 정리한다.</p>
   </header>
   <nav class="pager" aria-label="단계 이동"><a href="phase-7.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><span class="cur" aria-current="page">8. 플라즈마 식각 기초 문헌 학습</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
 
@@ -333,6 +333,53 @@
         <figure>
           <img src="../history_img/20261008_224000_lieb5_overall_map.png" alt="전체 정리">
           <figcaption>history_img/20261008_224000_lieb5_overall_map.png — §49 전체 정리: 다섯 부를 한 장의 지도로</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <!-- ===== 항목 #36 ===== -->
+    <article class="entry" id="e36">
+      <div class="entry-head">
+        <span class="no">#36</span>
+        <h2>플라즈마 식각 원리 용어를 용어집·지식 그래프에 추가</h2>
+        <time>2026-10-08 22:33</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>용어집과 지식 그래프에 추가해줘</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>#31–#35에서 완성한 플라즈마 식각 원리 노트(49개 절)의 핵심 용어를 기존 용어집·지식 그래프(126개)에 넣고 기존 노드(이방성 식각, 선택비, 로딩, 노칭, 펄스 플라즈마, 하드마스크 등)와 관계로 잇는다.</li>
+          <li>기존 용어의 "논문·출처"는 모두 공개 URL인데, 교과서는 원문 링크가 없으므로 출처 표기 방법을 정해야 한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>22:33</time> 기존 노드 id·분류 확인 (126개, 9개 분류). 후보 용어 약 50개 선정.</li>
+          <li><time>22:34</time> <b>jev 자문</b> 3건: 분류 → 기존 분류에 성격대로 흩어 넣기 (선택 c, 확률 0.75, 신뢰도 0.61) · 범위 → 후보 약 50개 모두 (a, 0.98) · 출처 → 교과서 서지(저자·연도·절 번호) + 우리 노트의 해당 절 링크 (a, 1.00). 그런데 시스·Bohm·IED 같은 순수 플라즈마 물리 개념은 기존 9개 분류 어디에도 맞지 않아 <b>추가 질문</b>: 이 개념들만 새 분류로 묶을지 → 새 분류 "플라즈마 물리" (a, 1.00). 모두 반영 (해리·해리 부착 2개도 같은 이유로 이 분류에 포함).</li>
+          <li><time>22:36</time> 추가 스크립트 작성·적용: 새 용어 54개(플라즈마 물리 17, 기타 공정·장비 11, 식각 기술 9, 결함·과제 7, 재료 5, 테스트 4, 구조 1 — SiO₂ 노드가 없어 새로 추가), 관계 82개, 교과서 출처 44개(각각 노트 절로 링크), 기존 용어 11개에도 교과서 출처 보강. 스크립트는 없는 노드·출처를 가리키면 멈추도록 검사 포함, 페이지 스크립트 문법 검사 통과.</li>
+          <li><time>22:38</time> 브라우저 확인 중 <b>버그 발견</b>: 출처 라벨이 "정리 노트 §0"처럼 절 번호 앞자리가 잘림(앵커 문자열을 한 글자 더 잘라냄) → 44개 라벨을 링크 앵커에서 다시 만들어 고침. 첫 스크린샷은 레이아웃 계산 중 응답 없음으로 실패해 새 탭에서 다시 촬영.</li>
+          <li><time>22:40</time> 확인: 용어 180개·관계 302개 렌더링, 그래프 라이브러리 오류 없음, IED 노드 패널에 "§11.6 — 정리 노트 §20" 링크, "Lieberman" 검색 65개(새 54 + 출처 보강 11), "F/C" 검색 4개와 펼친 출처 목록. 목차 수치 갱신.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 용어 126 → 180개, 관계 220 → 302개, 새 분류 "플라즈마 물리". 출처가 붙은 용어 175개.</p>
+        <p><a href="../research/a20_etch_knowledge_graph.html#ied">지식 그래프에서 IED 보기 →</a></p>
+        <figure>
+          <img src="../history_img/20261008_224500_graph_ied_plasma.png" alt="IED 노드">
+          <figcaption>history_img/20261008_224500_graph_ied_plasma.png — 새 분류 "플라즈마 물리"(청록), IED 포커스: 자기 바이어스·이중 주파수에서 들어오고 수율·노칭·대전으로 나감, 출처는 교과서 절 + 노트 절 링크</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261008_224500_gloss_fc_sources.png" alt="F/C 검색">
+          <figcaption>history_img/20261008_224500_gloss_fc_sources.png — 용어집 "F/C" 검색: F/C 비·SiO₂·CF₄·c-C₄F₈와 펼친 논문·출처</figcaption>
         </figure>
       </section>
     </article>
