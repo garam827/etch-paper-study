@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>플라즈마 식각 원리 노트</title>
+<style>
+  :root {
+    --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb;
+    --accent:#2563eb; --etch:#dc2626; --etch-bg:#fef2f2;
+    --ok:#166534; --ok-bg:#dcfce7; --est:#1e40af; --est-bg:#dbeafe;
+    --rum:#92400e; --rum-bg:#fef3c7; --na:#4b5563; --na-bg:#f3f4f6;
+  }
+  * { box-sizing:border-box; }
+  html { color-scheme: light; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.7 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; }
+  .wrap { max-width:980px; margin:0 auto; padding:40px 16px 80px; }
+  h1 { font-size:28px; margin:0 0 6px; line-height:1.3; text-wrap:balance; }
+  h2 { font-size:21px; margin:48px 0 14px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  h3 { font-size:17px; margin:0 0 6px; }
+  h4 { font-size:15px; margin:14px 0 4px; }
+  p { max-width:78ch; }
+  a { color:var(--accent); }
+  .sub { color:var(--muted); margin:0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:12px 0; }
+  .card > :first-child { margin-top:0; } .card > :last-child { margin-bottom:0; }
+  .tag { display:inline-block; font-size:12px; font-weight:600; padding:1px 8px; border-radius:999px; margin-right:4px; white-space:nowrap; }
+  .t-ok { background:var(--ok-bg); color:var(--ok); }
+  .t-est { background:var(--est-bg); color:var(--est); }
+  .t-rum { background:var(--rum-bg); color:var(--rum); }
+  .t-na { background:var(--na-bg); color:var(--na); }
+  .t-etch { background:var(--etch-bg); color:var(--etch); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+  .kpi { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .kpi b { display:block; font-size:20px; color:var(--accent); font-variant-numeric:tabular-nums; }
+  .kpi span { color:var(--muted); font-size:13px; }
+  table { border-collapse:collapse; width:100%; font-size:14px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#f3f6fb; white-space:nowrap; }
+  td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .tbl { overflow-x:auto; border-radius:10px; }
+  .diagram { overflow-x:auto; }
+  .diagram svg { display:block; min-width:720px; width:100%; height:auto; font-family:"Malgun Gothic",system-ui,sans-serif; }
+  .diagram svg .pt { font-size:12px; font-weight:700; fill:#1f2937; }
+  .diagram svg .pn { font-size:10.5px; fill:#6b7280; }
+  .diagram svg .pv { font-size:10px; font-weight:700; }
+  .diagram svg .ar { font-size:22px; fill:#9ca3af; }
+  .legend { display:flex; flex-wrap:wrap; gap:12px; font-size:13px; color:var(--muted); margin-top:8px; }
+  .legend i { display:inline-block; width:14px; height:14px; border-radius:3px; vertical-align:-2px; margin-right:4px; border:1px solid #64748b; }
+  .note { font-size:13px; color:var(--muted); }
+  .warn { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:12px 16px; }
+  .ch { border-left:4px solid var(--etch); }
+  .ch .hd { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; margin-bottom:6px; }
+  .ch .no { font-weight:800; color:var(--etch); font-variant-numeric:tabular-nums; }
+  .ch dl { display:grid; grid-template-columns:96px 1fr; gap:4px 12px; margin:0; }
+  .ch dt { color:var(--muted); font-size:13px; padding-top:2px; }
+  .ch dd { margin:0; }
+  .cat { font-size:13px; font-weight:700; letter-spacing:.04em; color:var(--muted); margin:26px 0 4px; }
+  .toc { columns:2 260px; column-gap:28px; margin:0; padding-left:20px; }
+  ol.src { font-size:13px; padding-left:22px; word-break:break-all; }
+  ol.src li { margin-bottom:3px; }
+  .tl { list-style:none; padding:0; margin:0; border-left:2px solid var(--line); }
+  .tl li { position:relative; padding:0 0 12px 18px; }
+  .tl li::before { content:""; position:absolute; left:-6px; top:8px; width:10px; height:10px; border-radius:50%; background:var(--accent); }
+  .tl b.y { font-variant-numeric:tabular-nums; margin-right:6px; }
+  @media (max-width:560px){ .ch dl { grid-template-columns:1fr; } .ch dt { padding-top:6px; } }
+  .ref { font-size:12px; font-weight:600; color:var(--muted); font-family:Consolas,monospace; margin-left:6px; white-space:nowrap; }
+  h2 .ref { font-size:13px; }
+  .eq { background:#f3f6fb; border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin:10px 0; font-family:"Cambria Math","Times New Roman",serif; font-size:16px; overflow-x:auto; }
+  .eq .ref { font-family:Consolas,monospace; }
+  .callout { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px 16px; margin:12px 0; }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:12px; }
+  .grid2 .card { margin:0; }
+  td.good { color:var(--ok); } td.bad { color:#991b1b; } td.mid { color:var(--rum); }
+  h2#p1 { font-size:24px; margin-top:40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>플라즈마 식각의 원리 — Lieberman 교과서 지식 정리</h1>
+  <p class="sub">참고: M. A. Lieberman, A. J. Lichtenberg, <i>Principles of Plasma Discharges and Materials Processing</i>, 2nd ed. (Wiley, 2005) · 정리 시작 2026-10-08 · 판단 자문: jev · 정리: Claude</p>
+  <p class="sub" style="margin-top:6px"><a href="../index.html">← 목차</a> · <a href="a20_etch_knowledge_graph.html">식각 지식 그래프</a> · <a href="dpt_qpt_report.html">DPT·QPT 보고서</a></p>
+</header>
+
+<div class="warn" style="margin-top:20px">
+  <b>읽기 전에.</b> 이 페이지는 교과서를 읽고 <b>식각에 필요한 지식만 골라 자기 말로 요약</b>한 학습 노트입니다. 원문 문장·그림은 옮기지 않았고, 수식과 수치는 확인할 수 있도록 <b>책의 절·식 번호</b>(예: §15.2, 식 15.2.8)를 붙였습니다. 책은 2005년판이므로 장비·공정 사례는 당시 기준이며, 최신 동향은 <a href="dpt_qpt_report.html">DPT·QPT 보고서</a> 등 다른 페이지를 참고하세요.
+</div>
+
+<nav class="card" aria-label="진행 상황">
+  <h3>진행 상황 — 5부로 나눠 정리</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>부</th><th>주제</th><th>책의 범위</th><th>상태</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1부</td><td><a href="#p1">식각의 직접 원리 — 메커니즘, 표면 반응, 화학, 대전 손상</a></td><td>15장 전체, 9.3–9.4</td><td><span class="tag t-ok">완료 2026-10-08</span></td></tr>
+      <tr><td class="num">2부</td><td>시스와 이온 에너지 — 이방성의 근원</td><td>6장, 11.4–11.6</td><td><span class="tag t-na">예정</span></td></tr>
+      <tr><td class="num">3부</td><td>방전 장비 — 입자·에너지 균형, CCP, ICP, 펄스 방전</td><td>10장, 11장, 12장 (13장 요약)</td><td><span class="tag t-na">예정</span></td></tr>
+      <tr><td class="num">4부</td><td>기체 화학과 진단 — 충돌, 반응 속도, 광방출·actinometry</td><td>3장, 7장, 8장, 9.1–9.2</td><td><span class="tag t-na">예정</span></td></tr>
+      <tr><td class="num">5부</td><td>나머지 기초 요약 — 플라즈마 기초·수송, 증착, 먼지 입자, 운동론</td><td>1–2장, 4–5장, 14장, 16–18장</td><td><span class="tag t-na">예정</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-bottom:0">순서는 식각과 관련이 큰 장부터. 1부 목차: <a href="#s1">요구 조건</a> · <a href="#s2">네 가지 메커니즘</a> · <a href="#s3">휘발성</a> · <a href="#s4">표면 반응 모델</a> · <a href="#s5">방전·로딩</a> · <a href="#s6">화학적 틀</a> · <a href="#s7">Si의 할로젠 식각</a> · <a href="#s8">SiO₂·질화막·금속·레지스트</a> · <a href="#s9">대전 손상</a> · <a href="#s10">표면 과정 기초</a> · <a href="#s11">정리</a></p>
+</nav>
+
+<h2 id="p1" style="border-bottom-color:var(--accent)">1부 — 식각의 직접 원리</h2>
+
+<!-- ============ 1 ============ -->
+<h2 id="s1">1. 식각 요구 조건과 트레이드오프 <span class="ref">§15.1</span></h2>
+<div class="card">
+  <p>식각 공정은 한 가지 지표만으로 평가할 수 없다. <b>식각 속도, 이방성, 선택비, 균일도, 표면 품질, 재현성</b>을 동시에 만족해야 하고, 이들은 서로 맞바꾸는 관계다. 책은 레지스트 500 nm / 폴리실리콘 100 nm / 게이트 산화막 2 nm 적층을 예로 숫자를 계산한다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>지표</th><th>정의 · 핵심 식</th><th>책의 예시 숫자</th></tr></thead>
+    <tbody>
+      <tr><td><b>선택비 (마스크)</b></td><td>s = E<sub>poly</sub> / E<sub>resist</sub></td><td>폴리 100 nm를 레지스트로 깎으려면 최소 0.2, 실제로는 2–3이면 충분</td></tr>
+      <tr><td><b>선택비 (하부막)</b></td><td>과식각 중 드러난 얇은 산화막을 지켜야 함</td><td>20% 과식각이면 폴리:산화막 ≥ 10, 용도에 따라 100–200 필요</td></tr>
+      <tr><td><b>이방성</b></td><td>a<sub>h</sub> = E<sub>v</sub> / E<sub>h</sub> (식 15.1.1), 필요조건 a<sub>h</sub> ≥ 2d/(w − w<sub>m</sub>) (식 15.1.4)</td><td>폭 50 nm, 깊이 100 nm, 마스크 최소폭 25 nm → a<sub>h</sub> ≥ 8. 마스크가 0이어도 ≥ 4</td></tr>
+      <tr><td><b>균일도</b></td><td>막 두께 오차 a, 식각 속도 오차 b → 과식각 계수 f ≈ 1 + a + b (식 15.1.10)</td><td>a = b = 0.1이면 하부 산화막 손실을 0.2 nm 이하로 하려면 선택비 ≥ 200</td></tr>
+    </tbody>
+  </table></div>
+  <p>두 가지 트레이드오프가 정리된다 (그림 15.2의 내용):</p>
+  <ul style="margin-bottom:0">
+    <li><b>이방성 ↔ 마스크 선택비</b>: (E<sub>h</sub> + E<sub>prh</sub>)/E<sub>v</sub> ≈ (w − w<sub>m0</sub>)/(2fd) (식 15.1.13). 측벽 식각(E<sub>h</sub>)과 마스크 옆면 후퇴(E<sub>prh</sub>)의 <b>합</b>이 예산 안에 들어야 한다. 예시에서 이 합은 수직 속도의 약 10%. 패턴이 깊어질수록 더 엄격해진다.</li>
+    <li><b>균일도 ↔ 하부막 선택비</b>: (a + b)·E<sub>oxv</sub>/E<sub>v</sub> = d<sub>ox</sub>/(2d) (식 15.1.16). 웨이퍼가 고르지 않을수록 과식각 시간이 길어지고, 그만큼 하부막 선택비가 높아야 한다.</li>
+  </ul>
+</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="s2">2. 네 가지 기본 식각 메커니즘 <span class="ref">§15.1</span></h2>
+<div class="tbl"><table>
+  <thead><tr><th>메커니즘</th><th>플라즈마가 공급하는 것</th><th>선택비</th><th>이방성</th><th>속도</th><th>특징</th></tr></thead>
+  <tbody>
+    <tr><td><b>① 스퍼터링</b></td><td>수백 V 이상의 이온</td><td class="bad">낮음 — 재료별 수율 차이 2–3배 이내</td><td class="good">높음 (수직 입사)</td><td class="bad">느림 — 이온당 원자 ~1개</td><td>비휘발성 생성물도 제거할 수 있는 <b>유일한</b> 방식. 수율이 경사각에서 최대가 되어 마스크 모서리에 <b>facet</b>이 생김. 재증착을 피하려면 저압</td></tr>
+    <tr><td><b>② 순수 화학 식각</b></td><td>중성 활성종 (F, O 등)</td><td class="good">매우 높음</td><td class="bad">등방성 (중성은 모든 방향에서 옴)</td><td class="good">빠를 수 있음</td><td>생성물이 휘발성이어야 함. 속도는 보통 활성종 도착이 아니라 <b>표면 반응 단계</b>가 제한. 예: Si + 4F → SiF₄, 레지스트 + O → CO₂ + H₂O</td></tr>
+    <tr><td><b>③ 이온 에너지 구동 식각</b></td><td>활성종 + 에너지 이온</td><td class="mid">②보다 낮음</td><td class="good">높음</td><td class="good">①·②의 합보다 훨씬 큼</td><td>F가 충분하면 1 kV Ar⁺ 이온 하나가 Si 원자 최대 25개(F 100개)를 떼어냄. 수 V 문턱 이상에서 에너지와 함께 증가. <b>이방성과 선택비의 맞바꿈</b>이 공정 설계의 핵심</td></tr>
+    <tr><td><b>④ 이온 강화 억제제 식각</b></td><td>활성종 + 이온 + 억제제 전구체 (CF₂, CF₃, CCl₂ …)</td><td class="mid">③과 비슷</td><td class="good">매우 높음 (수직 측벽)</td><td class="good">빠름</td><td>억제막(플루오로·클로로카본 폴리머)이 측벽을 보호하고, 이온이 바닥의 막만 걷어냄. 고전적 예: CCl₄/Cl₂로 Al 이방성 식각. 오염과 막 제거가 숙제</td></tr>
+  </tbody>
+</table></div>
+<div class="card">
+  <p style="margin:0"><b>실제 공정은 조합이다.</b> 두꺼운 폴리실리콘을 산화막에서 멈춰야 하면, 먼저 빠르고 이방성이 큰 이온 구동 식각(주 식각)으로 대부분을 걷어낸 뒤, 마지막에 느리지만 선택비가 높은(대신 약간 등방성인) 식각으로 남은 부분을 제거한다. 남은 두께가 얇으면 약간의 언더컷은 감수할 수 있다. — 오늘날 <b>main etch → soft landing / over etch</b> 단계 분리와 같은 발상이다.</p>
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="s3">3. 생성물 휘발성이 화학을 정한다 <span class="ref">§15.1, 표 15.1</span></h2>
+<div class="card">
+  <p>스퍼터링을 빼면 모든 식각은 <b>휘발성 생성물</b>을 만들어야 한다. 그래서 재료마다 쓸 수 있는 할로젠이 정해진다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>재료</th><th>쓰는 식각 원자</th><th>이유 · 비고</th></tr></thead>
+    <tbody>
+      <tr><td>Si, Ge</td><td>F, Cl, Br</td><td>SiF₄, SiCl₄ 등 휘발성</td></tr>
+      <tr><td>SiO₂</td><td>F, F + C</td><td>C가 산소를 CO/CO₂로 가져감</td></tr>
+      <tr><td>Si₃N₄, 실리사이드</td><td>F</td><td></td></tr>
+      <tr><td>Al</td><td>Cl, Br</td><td>AlF₃는 비휘발성 → F 불가</td></tr>
+      <tr><td>Cu</td><td>Cl (약 210 °C 이상)</td><td>저온에서 쓸 화학이 없음 → 다마신으로 우회</td></tr>
+      <tr><td>C, 유기물(레지스트)</td><td>O</td><td>CO, CO₂, H₂O</td></tr>
+      <tr><td>W, Ta, Ti, Mo, Nb</td><td>F, Cl</td><td></td></tr>
+      <tr><td>Au / Cr</td><td>Cl / Cl, Cl + O</td><td></td></tr>
+      <tr><td>GaAs / InP</td><td>Cl, Br / Cl, C + H</td><td></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="s4">4. 표면 반응 모델 — 이온 플럭스 제한 vs 중성 플럭스 제한 <span class="ref">§15.2</span></h2>
+<div class="card">
+  <p>책은 O 원자로 탄소를 깎는 경우를 예로 <b>Langmuir 흡착 모델</b>을 세운다. O가 빈 자리에 붙어 C:O가 되고(속도 K<sub>a</sub>), 이것이 열로 떨어지거나(K<sub>d</sub>) 이온 충격으로 떨어져(이온당 수율 Y<sub>i</sub>) CO가 된다. 표면 덮임률 θ의 정상 상태에서 수직 식각 속도는</p>
+  <div class="eq">1/E<sub>v</sub> = n<sub>C</sub> · ( 1/(Y<sub>i</sub>Γ<sub>i</sub>) + 1/Γ<sub>O</sub> ) <span class="ref">식 15.2.12 (이온 구동 영역)</span></div>
+  <p>즉 <b>이온 쪽 공급(Y<sub>i</sub>Γ<sub>i</sub>)과 중성 쪽 공급(Γ<sub>O</sub>)이 직렬 저항처럼</b> 작용한다. 더 작은 쪽이 속도를 정한다. 수율은 스퍼터링과 같은 꼴로 Y<sub>i</sub> ∝ √E<sub>i</sub> − √E<sub>thr</sub>. 이온이 수직으로만 들어오면 측벽에는 이온이 없으므로 측벽 속도 E<sub>h</sub>는 화학 항(K<sub>d</sub>)만으로 정해진다 (식 15.2.9).</p>
+  <div class="tbl"><table>
+    <thead><tr><th>영역</th><th>조건</th><th>식각 속도를 정하는 것</th><th>이방성</th></tr></thead>
+    <tbody>
+      <tr><td><b>활성종 부족</b></td><td>K<sub>a</sub>n<sub>OS</sub> ≪ K<sub>d</sub></td><td>중성 도착 속도 (수직·측벽 모두)</td><td>낮음</td></tr>
+      <tr><td><b>중성 플럭스 제한</b></td><td>K<sub>d</sub> ≪ K<sub>a</sub>n<sub>OS</sub> ≪ Y<sub>i</sub>K<sub>i</sub>n<sub>is</sub></td><td>E<sub>v</sub>는 n<sub>OS</sub>에 비례해 계속 증가, 측벽은 포화</td><td>a<sub>h</sub> = K<sub>a</sub>n<sub>OS</sub>/K<sub>d</sub> — 이온 에너지·플럭스와 무관 (식 15.2.11)</td></tr>
+      <tr><td><b>이온 플럭스 제한</b></td><td>K<sub>a</sub>n<sub>OS</sub> ≫ Y<sub>i</sub>K<sub>i</sub>n<sub>is</sub> ≫ K<sub>d</sub></td><td>이온 도착 속도 × 수율</td><td>최대 Y<sub>i</sub>K<sub>i</sub>n<sub>is</sub>/K<sub>d</sub> — 이온 에너지·플럭스↑, 기판 온도↓(K<sub>d</sub>↓)일수록 커짐 (식 15.2.10)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-bottom:0">모델 확장: 탄소 스퍼터링, O의 연관 탈착, 이온에 의한 O 탈착, CO₂ 생성, 이온 각도 분포. F처럼 먼저 <b>물리흡착</b>되는 경우 덮임률이 기체 밀도에 비례(θ<sub>p</sub> ∝ n<sub>FS</sub>)해 같은 꼴이 된다(식 15.2.15). 이런 모델은 통찰을 주지만 실제 화학 물리를 다 담지는 않는다는 것이 책의 단서다.</p>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="s5">5. 방전 조건과 로딩 효과 <span class="ref">§15.2</span></h2>
+<div class="card">
+  <h3>스케일링 — 고밀도 방전 (이온 에너지 ≈ 5T<sub>e</sub>)</h3>
+  <ul>
+    <li><b>전력 P<sub>abs</sub>↑</b>: 이온 밀도와 활성종 밀도가 둘 다 비례해 늘고 이온 에너지는 그대로 → 이온 구동 영역에서 <b>E<sub>v</sub> ∝ P<sub>abs</sub></b>. 두 공급이 함께 늘어 영역(이온/중성 제한)은 바뀌지 않는다.</li>
+    <li><b>압력(기체 밀도 n<sub>g</sub>)↑</b>: T<sub>e</sub>와 이온 에너지가 약간 내려가고, 이온 밀도는 그대로, 활성종은 n<sub>OS</sub> ∝ n<sub>g</sub><sup>0.5–0.7</sup>로 증가 → 활성종이 넘치는 <b>이온 플럭스 제한</b> 쪽으로 이동.</li>
+  </ul>
+  <h3>로딩 효과 (loading effect)</h3>
+  <p>식각할 웨이퍼 면적 A<sub>w</sub>가 늘면 활성종이 식각 반응(확률 γ<sub>r</sub>)으로 더 많이 소비되어 밀도가 떨어진다:</p>
+  <div class="eq">1/n<sub>OS</sub> = 1/n<sub>OS</sub><sup>(0)</sup> + A<sub>w</sub>(γ<sub>r</sub> − γ<sub>rec</sub>) v̄<sub>O</sub> / (8 A l n<sub>g</sub> n<sub>i</sub> K<sub>diss</sub>) <span class="ref">식 15.2.18</span></div>
+  <ul style="margin-bottom:0">
+    <li>중성 플럭스 제한 영역에서는 식각 속도가 n<sub>OS</sub>에 비례하므로 <b>면적이 넓을수록 느려진다</b>.</li>
+    <li>줄이는 법: 분모 n<sub>g</sub>n<sub>i</sub>l (활성종 생성)을 크게.</li>
+    <li><b>F</b>는 대부분 벽에서 재결합 확률이 작아(γ<sub>rec</sub> ~ 10⁻⁴–10⁻³) γ<sub>r</sub> ≫ γ<sub>rec</sub> → <b>로딩이 크다</b>. <b>Cl, Br, O</b>는 벽 재결합이 커서(최대 ~0.1) 로딩이 약하거나 오히려 반대(음의 로딩)일 수 있다.</li>
+    <li>SiO₂ 식각은 Si 식각보다 로딩이 작다 (반응당 F 소비가 적음, 문제 15.4).</li>
+  </ul>
+</div>
+
+<!-- ============ 6 ============ -->
+<h2 id="s6">6. 식각 기체의 화학적 틀 <span class="ref">§15.2</span></h2>
+<div class="card">
+  <p>공급 기체와 플라즈마가 만든 조각을 역할별로 나누면 레시피를 읽기 쉬워진다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>분류</th><th>예</th><th>역할</th></tr></thead>
+    <tbody>
+      <tr><td>포화 분자 (saturates)</td><td>CF₄, CCl₄, CF₃Cl, COF₂, SF₆</td><td>공급 기체. 전자 충돌로 쪼개져 아래 종들을 만듦</td></tr>
+      <tr><td>불포화 라디칼 (unsaturates)</td><td>CF, CF₂, CF₃, CCl₃</td><td>표면에 막(폴리머)을 만듦. SiO₂에서는 스스로 식각종이 되기도 함</td></tr>
+      <tr><td>식각종 (etchants)</td><td>F, Cl, Br, O(레지스트), F₂, Cl₂, Br₂</td><td>휘발성 생성물을 만듦</td></tr>
+      <tr><td>산화제</td><td>O, O₂</td><td>불포화종을 태워 식각종으로 바꿈 (예: CF₃ + O → COF₂ + F)</td></tr>
+      <tr><td>환원제</td><td>H, H₂</td><td>식각종을 잡아먹음 (H + F → HF) → 폴리머 쪽으로</td></tr>
+      <tr><td>비반응 기체</td><td>N₂, Ar, He</td><td>방전 전기 특성·열 전달 조절, 희석, Penning 이온화 등</td></tr>
+    </tbody>
+  </table></div>
+  <p style="margin-bottom:0"><b>핵심 공정 변수는 "식각종 : 불포화종" 비율</b>이다. 높으면 등방성 식각, 낮으면 막 증착, 그 사이에서 측벽엔 억제막이 쌓이고 바닥은 이온이 청소하는 <b>이방성 억제제 식각</b>이 된다. 비율을 올리려면 Cl₂·Br₂를 넣거나 O₂로 불포화종을 태우고, 내리려면 F/C가 낮은 기체(c-C₄F₈, C₃F₈, C₂F₄)나 H₂를 넣는다. 그 밖에 산화막 돌파용(Al₂O₃ 위 Al 식각)이나 수분 제거용 첨가제도 쓴다.</p>
+</div>
+
+<!-- ============ 7 ============ -->
+<h2 id="s7">7. 실리콘의 할로젠 원자 식각 <span class="ref">§15.3</span></h2>
+<div class="card">
+  <h3>F 원자의 순수 화학 식각</h3>
+  <ul>
+    <li><b>속도식</b> (Flamm 외 1981, 고압 측정): E<sub>Si</sub>(Å/min) = 2.86×10⁻¹² n<sub>FS</sub> T<sup>1/2</sup> e<sup>−1248/T</sup>, E<sub>SiO₂</sub> = 0.61×10⁻¹² n<sub>FS</sub> T<sup>1/2</sup> e<sup>−1892/T</sup> (식 15.3.1–2). 활성종 밀도에 <b>선형</b>, 온도에 Arrhenius.</li>
+    <li><b>Si:SiO₂ 선택비</b> = 4.66 e<sup>644/T</sup> → 상온에서 약 40 (n<sub>F</sub> = 3×10¹⁴ cm⁻³이면 Si 230 Å/min, SiO₂ 5.9 Å/min). 질화막·레지스트에도 선택비가 좋다. 온도가 낮을수록 선택비↑.</li>
+    <li><b>반응 확률</b>은 측정법마다 0.0017 ~ 0.1로 크게 다르다 — 표면 오염, 잔류 이온, 생성물 분포 미지 등이 원인으로 거론.</li>
+    <li><b>SiF<sub>x</sub> 반응층</b>: 정상 상태에서 2–5 단원자층 두께, 맨 위는 주로 SiF₃. 식각이 빠를수록 얇다 (확산과 식각의 균형, 두께 ~D/E<sub>Si</sub>). 상온 생성물은 SiF₄ 약 65% + Si₂F₆, Si₃F₈; 고온일수록 SiF₂가 늘어난다.</li>
+    <li><b>도핑 효과</b>: n형이 p형보다 빨리 깎인다 — F는 약 2배, <b>Cl은 수 자릿수</b>. 표면의 음전하 중심(F⁻)이 속도를 정한다는 모델(Winters–Haarer)로 설명: E<sub>Si</sub> ∝ (음전하 밀도)×(SiF₃ 밀도)×n<sub>FS</sub>.</li>
+  </ul>
+  <h3>이온 에너지 구동 F 식각</h3>
+  <ul>
+    <li>이온 충격으로 속도가 5–10배 증가. 하지만 이방성도 5–10 정도라 측벽 화학 식각이 상당 → <b>강한 이방성 Si 식각에는 F 계열을 잘 쓰지 않고</b> 다른 할로젠을 쓴다 (억제막으로 보완은 가능하나 오염 문제).</li>
+    <li>제안된 증대 메커니즘 평가: 손상 영역 반응성↑(F–Si엔 해당 없음) · 온도 상승(부족) · <b>화학적으로 강화된 물리 스퍼터링(주 원인 아님)</b> · <b>화학적 스퍼터링 — 충돌 캐스케이드가 결합을 끊고 재배열해 약하게 붙은 SiF₄·SiF₂를 만듦(유력)</b> · 반응층을 얇게 해 화학 식각을 키움(기여하나 2배 이하).</li>
+  </ul>
+  <h3>CF₄ 방전의 화학</h3>
+  <ul>
+    <li>전체 반응: 4CF₄ + Si → 2C₂F₆ + SiF₄. CF₄의 모든 전자 들뜸은 해리성이고 CF₄⁺는 불안정.</li>
+    <li>전자 충돌 해리에서 CF₃:CF₂ 생성비가 약 1:2.5이고 재결합 반응 때문에 <b>CF₂ 밀도가 CF₃보다 훨씬 클 수 있다</b>. 3체 재결합이 압력 중간 영역에서 중요(식 15.3.8).</li>
+    <li><b>벽에서의 F</b>: 대부분 표면(Al₂O₃, SiO₂, 스테인리스 등) 재결합 확률 10⁻⁴–10⁻³ → 거의 원자 그대로 되돌아옴. 예외: Cu 0.01, 황동 0.05, Zn 0.2. Cl·O는 최대 ~0.1.</li>
+    <li><b>탄소 수지</b>: CF<sub>x</sub>가 Si에 해리 흡착하면 F도 주지만 C도 남긴다. E<sub>Si</sub> = [Γ<sub>F</sub> − (4 − x)Γ<sub>CFx</sub>] / (4n<sub>Si</sub>) (식 15.3.10). F가 모자라면 탄소가 쌓여 식각이 멈춘다. 이온이 CF<sub>y</sub> 폴리머를 떼어 내면 (y − x)로 바뀌어 식각이 이어진다.</li>
+  </ul>
+  <div class="callout">
+    <b>F/C 비와 바이어스의 지도</b> (Coburn–Winters 그림 15.7의 정성적 경계)
+    <ul style="margin:6px 0 0">
+      <li><b>F/C &gt; 3</b>: 바이어스와 무관하게 식각. 측벽 보호 없음 → 이방성 낮음.</li>
+      <li><b>2 &lt; F/C &lt; 3</b>: 측벽은 억제막, 바닥은 이온이 청소 → <b>플루오로카본 고이방성 식각 영역</b>.</li>
+      <li><b>F/C &lt; 2</b>: 측벽·바닥 모두 막 증착 → 식각 정지.</li>
+      <li>로딩(F 소비)·H₂ 첨가는 F/C를 낮추는 쪽, O₂ 첨가와 높은 바이어스는 식각 쪽으로 민다.</li>
+    </ul>
+  </div>
+  <h3>O₂·H₂ 첨가</h3>
+  <ul>
+    <li><b>CF₄/O₂</b>: ~16%까지는 O가 CF<sub>x</sub>를 태워 F가 늘고 표면 탄소도 치워 E<sub>Si</sub>↑ → 16–30%에서는 F는 계속 늘지만 O가 표면 자리를 차지해 표면이 "산화막처럼" 되어 E<sub>Si</sub>↓ → 30% 이상은 희석으로 둘 다↓.</li>
+    <li><b>H₂</b>: H + F → HF로 F를 줄여 폴리머 쪽으로 이동.</li>
+  </ul>
+  <h3>Cl·Br 원자</h3>
+  <ul style="margin-bottom:0">
+    <li><b>Cl</b>: 결정 방향 효과가 뚜렷(원자 밀도가 높은 ⟨111⟩이 ⟨100⟩보다 느림)하고 도핑 효과가 매우 크다. 활성화 에너지 ~0.19 eV. 도핑 안 된 Si의 순수 화학 식각은 매우 느리다 → 측벽이 잘 안 깎여 이방성에 유리.</li>
+    <li>Cl₂ 분자는 상온에서 Si를 거의 못 깎아 <b>공급 기체로 그대로 쓴다</b>. 이온 보조 수율은 1 kV Ar⁺당 3–5개로 F 원자의 1/5–1/10. Cl 원자는 Cl₂보다 2–3배 효율적.</li>
+    <li><b>Br</b>: 더 반응성이 낮아 상온 순수 화학 식각이 없다 (고온에서 큰 도핑 효과).</li>
+  </ul>
+</div>
+
+<!-- ============ 8 ============ -->
+<h2 id="s8">8. SiO₂ · 질화막 · 금속 · 레지스트 <span class="ref">§15.4</span></h2>
+<div class="grid2">
+  <div class="card">
+    <h3>SiO₂ (플루오로카본)</h3>
+    <ul style="margin-bottom:0">
+      <li>F의 순수 화학 식각은 무시할 만큼 느리고, CF<sub>x</sub>는 저절로 깎지도, 해리 흡착하지도 않는다 → <b>SiO₂ 식각은 전부 이온 구동</b>.</li>
+      <li>500 V 이상 이온에서 2000 Å/min 이상, <b>기판 온도와 무관</b>, 로딩 작음.</li>
+      <li>F가 많은 방전은 Si와 선택비가 없다 → <b>F/C가 낮은 기체(c-C₄F₈)나 CF₄/H₂</b>로 F를 줄이고 CF<sub>x</sub>를 늘린다.</li>
+      <li>SiO₂ 위에는 1–2 nm 두께 SiC<sub>x</sub>F<sub>y</sub>O<sub>z</sub> 층이 생기고, <b>산화막 속 산소가 탄소를 CO·CO₂로 데려가</b> 탄소가 쌓이지 않는다. 같은 조건에서 Si 위에는 10–20 nm 폴리머가 쌓여 식각이 막힌다 → <b>SiO₂/Si 선택비</b>(CF₄/H₂에서 최대 15:1).</li>
+      <li>H₂가 20%를 넘으면 SiO₂ 위에도 두꺼운 폴리머가 쌓여 식각이 갑자기 멈춘다.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Si₃N₄</h3>
+    <ul style="margin-bottom:0">
+      <li>CVD(고온) 질화막과 PECVD(&lt;400 °C, 수소 포함) 질화막은 다르다 — PECVD가 더 빨리 깎인다.</li>
+      <li>F 순수 화학 식각: 등방성, SiO₂ 대비 5–10, Si와는 선택비 없음, 활성화 에너지 ~0.17 eV.</li>
+      <li>이방성 식각은 저 F/C 플루오로카본: SiO₂와 선택비는 작고, Si·레지스트와는 꽤 높다.</li>
+    </ul>
+    <h3 style="margin-top:12px">레지스트 (O 플라즈마)</h3>
+    <ul style="margin-bottom:0">
+      <li>O 원자 순수 화학 식각: 등방성(스트립), Si·SiO₂ 대비 선택비 매우 높음, 활성화 에너지 0.2–0.6 eV. 유리 전이 온도 위아래로 두 값이 나오기도 함 (PMMA).</li>
+      <li>CF₄·C₂F₆ 몇 %를 넣으면 빨라진다 (F가 H를 떼어 HF를 만들거나, 벽의 O 재결합을 줄여 O가 늘어남).</li>
+      <li>표면 이미징 건식 현상(실릴화): 실릴화 영역이 SiO<sub>x</sub> 마스크가 되고 나머지를 이방성 식각. 선택비 10–20 필요, 튄 SiO<sub>x</sub>가 마이크로마스크가 되어 "grass" 잔류. F 오염은 선택비를 망친다.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Al (염소)</h3>
+    <ul style="margin-bottom:0">
+      <li>AlF₃가 비휘발성 → Cl₂·Br₂. <b>Cl 원자보다 Cl₂ 분자가 주 식각종</b>이며 플라즈마 없이도 깨끗한 Al을 깎는다(등방성).</li>
+      <li>이방성에는 억제제 화학(CCl₄, CHCl₃, SiCl₄, BCl₃ 첨가).</li>
+      <li>약 3 nm 자연 산화막(Al₂O₃)은 Cl로 안 깎임 → 스퍼터링 + BCl₃·SiCl₄ 등으로 돌파. 수분은 방해 → BCl₃·SiCl₄가 제거 역할도.</li>
+      <li>Al–Cu 합금: Cu 염화물이 거의 비휘발성 → 고온이나 강한 이온 스퍼터링 필요. 레지스트 보호 위해 기판은 100–150 °C 이하.</li>
+      <li><b>식각 후 부식</b>: 남은 AlCl₃가 수분과 HCl을 만들어 Al을 부식 → 습식(HNO₃)이나 플루오로카본 플라즈마로 AlF₃로 바꿔 안정화.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Cu</h3>
+    <ul style="margin-bottom:0">
+      <li>Cu 할로젠화물의 증기압이 낮아 <b>상용 저온 식각이 없다</b> (불화물 비휘발, 염화물은 200 °C 이상에서만). Cl₂ 노출 시 CuCl 막이 자라고 생성물은 Cu₃Cl₃.</li>
+      <li>CCl₄/N₂ 플라즈마 연구에서 190 °C 이하 식각 없음, 210 °C 이상 약 600 nm/min.</li>
+      <li>→ 그래서 <b>다마신</b>: 절연막을 식각하고 Cu를 채운 뒤 CMP. 금속 식각이 절연막 식각으로 바뀐 것. (최근 Ru 직접 식각 연구와 대비해 보면 흥미로운 지점 — <a href="dpt_qpt_report.html#s7">DPT·QPT 보고서</a>)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ 9 ============ -->
+<h2 id="s9">9. 기판 대전과 손상 <span class="ref">§15.5</span></h2>
+<div class="card">
+  <p>패턴이 있는 웨이퍼로 이온·전자가 흘러들면 표면이 대전되어 <b>얇은 게이트 산화막을 망가뜨리거나 식각 형상을 비튼다</b>.</p>
+  <h3>게이트 산화막 손상의 기준</h3>
+  <ul>
+    <li>2–20 nm 산화막은 약 10 MV/cm에서 절연 파괴. 그보다 낮아도 Fowler–Nordheim 터널링 전류가 전하 포획·계면 결함을 만든다. 파괴까지 흐르는 총 전하 Q<sub>BD</sub>의 <b>1%만 흘러도</b> 트랜지스터 이득이 5% 줄 수 있어, 누적 전류를 Q<sub>BD</sub>의 1% 이하로 묶는 것이 목표.</li>
+    <li>떠 있는 도체는 부동 전위 V<sub>f</sub> = (T<sub>e</sub>/2)(1 + ln(M/2πm))만큼 플라즈마보다 낮아진다 (식 15.5.4) — <b>밀도와 무관</b>. 보통 이 전압만으로는 파괴까지 가지 않는다.</li>
+    <li><b>안테나 비</b> A<sub>R</sub> = (필드 산화막 위 도체 면적)/(게이트 산화막 면적). 얇은 산화막에서는 흐르는 전류가 A<sub>R</sub>에 비례 → 설계에서 안테나 비를 줄인다.</li>
+  </ul>
+  <h3>손상을 만드는 상황</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>상황</th><th>무슨 일이 일어나나</th><th>교훈</th></tr></thead>
+    <tbody>
+      <tr><td><b>불균일 플라즈마</b></td><td>밀도가 바깥으로 줄면 플라즈마 전위도 V<sub>p</sub>(r) = T<sub>e</sub> ln[n(r)/n(0)]로 줄어든다. 웨이퍼 중심과 가장자리 사이에 전위차가 생겨 산화막을 가로질러 전압·전류가 걸림. 전위가 높은 쪽 시스가 역바이어스되어 대부분의 전압을 받는다</td><td>플라즈마 균일도는 식각 균일도뿐 아니라 <b>소자 손상</b> 문제</td></tr>
+      <tr><td><b>식각 끝무렵 (과도 손상)</b></td><td>막이 이어져 있는 동안은 전류가 막을 따라 흘러 무해. 끝점 근처에서 열린 영역부터 뚫리면 <b>안테나 비가 큰 고립 게이트</b>가 생겨 큰 전류가 산화막을 지남. 과식각으로 다 걷히면 줄어듦</td><td>끝점 근처가 위험 구간</td></tr>
+      <tr><td><b>전자 그늘 효과 (electron shading)</b></td><td>이온은 수직으로 와서 레지스트 윗면만큼만 막히지만, 전자는 등방성이라 좁은 틈의 레지스트 옆벽에 더 많이 잡힌다. 그 차이(I<sub>g</sub> = I<sub>i</sub>(1 − α<sub>i</sub>/α<sub>e</sub>))만큼 직류가 게이트로 흐름 — <b>균일한 플라즈마에서도</b></td><td>종횡비가 클수록 심해짐</td></tr>
+      <tr><td><b>RF 바이어스</b></td><td>저주파 바이어스에서 전자는 주기 중 짧게만 들어오므로 게이트 전하가 톱니파로 출렁 → 산화막 전압 진폭 ∝ (이온 전류 × 산화막 두께)/(주파수) (식 15.5.19)</td><td><b>밀도가 너무 높거나 바이어스 주파수가 너무 낮으면</b> 불리</td></tr>
+      <tr><td><b>형상 왜곡 — 노칭</b></td><td>열린 영역 옆 마지막 폴리 선은 전자를 더 받고, 좁은 틈 바닥의 절연막은 양전하로 대전 → 틈 안 전기장이 이온을 굽혀 <b>선 아래 모서리를 옆으로 파냄</b> (과식각 중 SiO₂ 계면에서). 에너지 낮은 이온은 거의 90° 꺾이기도</td><td>이온 에너지 분포, 밀도, T<sub>e</sub>, 패턴 배치가 모두 변수</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- ============ 10 ============ -->
+<h2 id="s10">10. 표면 과정의 기초 <span class="ref">§9.3–9.4</span></h2>
+<div class="card">
+  <h3>이온이 표면에 닿을 때 — 에너지별</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>에너지</th><th>주된 현상</th></tr></thead>
+    <tbody>
+      <tr><td>열 에너지</td><td>물리흡착, 화학흡착, 탈착</td></tr>
+      <tr><td>수십 eV</td><td>분자가 원자로 <b>쪼개짐</b> (결합 에너지의 4–5배면 절반 이상). CCP 전극처럼 이온 에너지가 높으면 분자 이온은 거의 다 쪼개진다</td></tr>
+      <tr><td>수백 eV</td><td><b>스퍼터링</b> (문턱 20–50 eV)</td></tr>
+      <tr><td>수 keV</td><td><b>주입</b> (1 kV 이상에서 중요 — 16장 PIII)</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><b>중화와 이차 전자</b>: 10–1000 eV 양이온은 표면에서 거의 즉시 중화된다(Auger 과정). 이온화 에너지가 일함수의 2배를 넘으면 이차 전자가 나오며 계수는 대략 γ<sub>se</sub> ≈ 0.016(E<sub>iz</sub> − 2E<sub>φ</sub>) (식 9.3.4). 예: Ar⁺ → Si 약 0.025, He⁺ → Si 약 0.17. 실제 공정 표면은 깨끗하지 않아 값이 크게 달라진다.</li>
+    <li><b>물리흡착 vs 화학흡착</b>: 물리흡착은 반데르발스 힘, 우물 깊이 0.01–0.25 eV, 표면을 빠르게 이동, 여러 층 가능. 화학흡착은 화학 결합, 0.4–4 eV, 대개 단원자층에서 멈춤. 단일 결합 분자는 두 자리를 차지하며 <b>해리 흡착</b>.</li>
+    <li><b>부착 계수(sticking coefficient)</b> s: 입사 플럭스 중 붙는 비율. Langmuir 근사 s = s₀(1 − θ). 상온 값이 10⁻⁶–1로 넓고 결정 방향·거칠기(계단, 꼬임 등 결함 자리)에 민감. 예: Si에 H는 ~1, H₂는 몇 %, O₂는 10⁻⁴–10⁻³.</li>
+    <li><b>탈착</b>: Arrhenius K<sub>0</sub>e<sup>−E/T</sup>, 전지수 인자 물리흡착 10¹²–10¹⁴ s⁻¹, 화학흡착 10¹³–10¹⁵ s⁻¹.</li>
+  </ul>
+  <h3>스퍼터링 수율</h3>
+  <ul>
+    <li>Y ∝ (√E<sub>i</sub> − √E<sub>thr</sub>) (식 9.3.14), 문턱 E<sub>thr</sub> ≈ 8E<sub>t</sub>(M<sub>i</sub>/M<sub>t</sub>)<sup>2/5</sup> (E<sub>t</sub>: 표면 결합 에너지 ~ 기화 엔탈피). 문턱이 결합 에너지보다 한 자릿수 큰 이유는 원자 하나를 뒤로 튕겨내려면 최소 세 번의 충돌이 필요하기 때문.</li>
+    <li>튀어나온 원자 에너지 분포는 E<sub>t</sub>/2에서 최대(1.5–3 eV) — 상온보다 훨씬 뜨겁다. 방출 각도는 코사인 분포.</li>
+    <li><b>입사각</b>: 수직에서 기울수록 수율이 커지다(침투 깊이가 얕아져 ~sec θ) 최대점을 지나 스치는 각(90°)에서 0 → 마스크 모서리 <b>faceting</b>의 원인.</li>
+    <li>600 V Ar⁺ 수율 예: Si 0.54, SiO₂ 1.34, Al 0.83, Cu 2.0, W 0.32, Al₂O₃ 0.18 — 재료 간 차이가 작아 스퍼터링은 선택비가 낮다.</li>
+  </ul>
+  <h3>표면 반응 속도론</h3>
+  <ul style="margin-bottom:0">
+    <li><b>벽까지 가는 손실</b>: 1/K<sub>loss</sub> = 1/K<sub>D</sub>(확산) + 1/K<sub>w</sub>(벽 반응) (식 9.4.13). 예: 10 mTorr O₂ 속 O 원자, 간격 10 cm, γ = 0.01 → K<sub>D</sub> ≈ 3600 s⁻¹, K<sub>w</sub> ≈ 77 s⁻¹ → <b>저압에서는 벽 반응이 병목</b>이고 밀도가 거의 균일. 고압이면 확산이 병목.</li>
+    <li><b>등온식</b>: Langmuir θ = Kn/(1 + Kn); 해리 흡착이면 θ ∝ n<sup>1/2</sup>로 더 느리게 증가; 물리흡착은 여러 층(BET).</li>
+    <li><b>두 반응 메커니즘</b>: Langmuir–Hinshelwood(흡착된 두 종이 표면에서 반응) vs Eley–Rideal(흡착종에 기체 분자가 바로 부딪혀 반응). 저압에서는 둘 다 2차 반응.</li>
+    <li><b>손실 확률과 표면 상수</b>: 덮임률이 작으면 γ = s₀K<sub>r</sub>/(K<sub>d</sub> + K<sub>r</sub>) (식 9.4.41) — 기체 밀도와 무관한 1차 반응. 저압 공정 방전에서 전형적. 문제 9.11의 결론: 벽은 대부분의 반응성 원자를 <b>원자 그대로 플라즈마로 되돌려 보낸다</b> (F에서 전형적).</li>
+  </ul>
+</div>
+
+<!-- ============ 11 ============ -->
+<h2 id="s11">11. 1부 정리 — 식각 엔지니어의 체크포인트</h2>
+<div class="card">
+  <ol>
+    <li><b>어떤 메커니즘인가?</b> 스퍼터·화학·이온 구동·억제제 중 무엇이 주도하는지에 따라 선택비와 이방성의 상한이 정해진다.</li>
+    <li><b>무엇이 속도를 제한하나?</b> 이온 공급(Y<sub>i</sub>Γ<sub>i</sub>)과 중성 공급(Γ<sub>n</sub>)의 비. 중성 제한이면 로딩·패턴 밀도에 민감하고, 이온 제한이면 바이어스·밀도에 민감.</li>
+    <li><b>생성물이 휘발성인가?</b> 아니면 화학을 바꾸거나(Al은 Cl), 온도를 올리거나, 공정 구조를 바꾼다(Cu는 다마신).</li>
+    <li><b>식각종:불포화종(F/C) 비는?</b> 측벽 보호와 바닥 청소의 균형. O₂는 올리고, H₂·저 F/C 기체·로딩은 내린다.</li>
+    <li><b>선택비의 물리적 근거는?</b> SiO₂ vs Si는 "산소가 탄소를 치우는가", Si vs SiO₂(F)는 활성화 에너지 차이, Al은 자연 산화막.</li>
+    <li><b>대전은 안전한가?</b> 안테나 비, 끝점 근처, 종횡비(전자 그늘), 바이어스 주파수, 열린 영역 옆 노칭.</li>
+  </ol>
+  <h3>이 스터디의 다른 주제와 연결</h3>
+  <ul style="margin-bottom:0">
+    <li><b>SADP·SAQP의 맨드릴 제거·스페이서 에치백</b>(<a href="../viz/sadp_3d.html">3D</a>): "선택비 행렬"은 §6–8의 재료별 화학 선택(산소가 탄소 맨드릴을 태우고 산화막 스페이서는 남김)으로 읽을 수 있다.</li>
+    <li><b>GAA의 SiGe 선택 식각</b>(<a href="../viz/channel_release_3d.html">채널 릴리스 3D</a>): 이온 없이 등방성으로 SiGe만 깎는 것은 §2의 ② 순수 화학 식각 영역 — 이방성 대신 선택비를 극대화한 경우.</li>
+    <li><b>노칭·로딩</b>(<a href="a20_etch_knowledge_graph.html#i_notch">지식 그래프</a>): §5와 §9가 메커니즘을 설명한다.</li>
+  </ul>
+</div>
+
+<p class="note" style="margin-top:24px">다음 2부에서는 이방성의 근원인 <b>시스와 이온 에너지</b>(6장, 11.4–11.6)를 정리합니다. 작업 기록: <a href="../history/phase-8.html">8단계</a>.</p>
+
+</div>
+</body>
+</html>

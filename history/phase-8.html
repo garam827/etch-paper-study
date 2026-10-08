@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>작업 기록 8단계 · 플라즈마 식각 기초 문헌 학습</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>8단계 · 플라즈마 식각 기초 문헌 학습</h1>
+    <p class="phase-desc">항목 #31– · 2026-10-08 20:25 ~ · 플라즈마 공정 교과서(Lieberman & Lichtenberg)를 파트로 나눠 읽고 식각 지식을 정리한다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-7.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><span class="cur" aria-current="page">8. 플라즈마 식각 기초 문헌 학습</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #31 ===== -->
+    <article class="entry" id="e31">
+      <div class="entry-head">
+        <span class="no">#31</span>
+        <h2>Lieberman 교과서에서 플라즈마 식각 지식 추출 — 1부</h2>
+        <time>2026-10-08 20:25</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>Lieberman - Principles of Plasma Discharges and Materials Processing - 2nd edition
+위 문서 참고하여 일반적인 플라즈마 식각 공정에 대한 지식 추출.
+문서가 너무 길어서 전체 해석하는 데 오래 걸릴 경우 파트를 나눠서 진행.</blockquote>
+        <p class="note" style="margin:6px 0 0;color:#6b7280;font-size:13px">지시의 나머지 부분은 사용자 요청에 따라 기록하지 않음.</p>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>플라즈마 공정의 표준 교과서(794쪽, 18장)에서 <b>식각에 필요한 지식</b>을 추출한다. 한 번에 다 읽기엔 길어 파트로 나눈다.</li>
+          <li>저작권 자료이므로 원문 문장·그림은 옮기지 않고, <b>자기 말로 요약</b>하되 수식·수치에는 책의 절·식 번호를 붙여 확인할 수 있게 한다.</li>
+          <li>지금까지의 리서치(최신 동향)와 성격이 다른 "기초 문헌 학습"이라 기록 단계를 새로 만들지 jev에게 묻는다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>20:25</time> 문서 확인: 794쪽, 텍스트 약 148만 자. 책갈피가 없어 본문에서 목차를 찾아 장 구조(18장)와 쪽 번호 대응(책 쪽 + 37 = 파일 쪽)을 파악.</li>
+          <li><time>20:27</time> <b>jev 자문</b> 4건: 기록 단계 → 새 8단계 (선택 a, 확률 0.64, 신뢰도 0.46 — 7단계 이어가기 0.34와 차이가 크지 않음) · 파트 나누기 → 식각 관련도 순 5부 (a, 0.90) · 결과물 → 한 페이지를 파트마다 키워 가기 (a, 0.97) · 이번엔 1부만 완성하고 다음 지시를 기다릴지 → 0.68 (그렇게 함). 모두 반영.</li>
+          <li><time>20:28</time> 5부 구성 확정: 1부 식각 직접(15장 + 9.3–9.4) → 2부 시스·이온 에너지(6장, 11.4–11.6) → 3부 방전 장비(10·11·12장) → 4부 기체 화학·진단(3·7·8장, 9.1–9.2) → 5부 나머지 기초 요약.</li>
+          <li><time>20:30</time> 1부 정독: 15장 전체(식각 요구 조건, 네 가지 메커니즘, 표면 반응 모델, 로딩, 화학적 틀, Si의 F·Cl·Br 식각과 CF₄ 화학, SiO₂·질화막·Al·Cu·레지스트, 기판 대전·손상)와 9.3–9.4(이온 중화·이차 전자, 흡착·탈착, 스퍼터링 수율, 표면 반응 속도론).</li>
+          <li><time>20:45</time> <code>research/plasma_etch_principles.html</code> 작성: 진행 상황 표(5부), 1부 11개 절, 표 10개, 주요 식에 절·식 번호, 끝에 "식각 엔지니어 체크포인트"와 이 스터디의 다른 주제(SADP·SAQP, 채널 릴리스, 노칭·로딩)와의 연결.</li>
+          <li><time>20:52</time> 로컬 미리보기 확인(가로 넘침 없음), 증거 스크린샷 4장, 목차에 추가, 기록 8단계 페이지 생성.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 1부(식각의 직접 원리) 완료. 2–5부는 다음 지시 때 이어서 진행.</p>
+        <p><a href="../research/plasma_etch_principles.html">지식 정리 페이지 열기 →</a></p>
+        <figure>
+          <img src="../history_img/20261008_205500_lieb_progress.png" alt="진행 상황 표">
+          <figcaption>history_img/20261008_205500_lieb_progress.png — 페이지 첫 화면: 5부 진행 상황 표</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261008_205500_lieb_surface_model.png" alt="표면 반응 모델">
+          <figcaption>history_img/20261008_205500_lieb_surface_model.png — §15.2 표면 반응 모델: 이온·중성 공급이 직렬 저항처럼 작용, 세 영역 표</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261008_205500_lieb_fc_map.png" alt="F/C 비 지도">
+          <figcaption>history_img/20261008_205500_lieb_fc_map.png — §15.3 CF₄ 방전 화학과 F/C 비·바이어스 지도</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261008_205500_lieb_charging.png" alt="기판 대전">
+          <figcaption>history_img/20261008_205500_lieb_charging.png — §15.5 기판 대전과 게이트 산화막 손상</figcaption>
+        </figure>
+      </section>
+    </article>
+
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-7.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><span class="cur" aria-current="page">8. 플라즈마 식각 기초 문헌 학습</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>

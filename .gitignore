@@ -10,3 +10,6 @@ research/*_log.txt
 .claude/settings.local.json
 __pycache__/
 *.pyc
+
+# 참고 문헌 원본 (저작권 자료, 로컬 보관만)
+source/
