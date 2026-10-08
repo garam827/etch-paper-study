@@ -50,6 +50,11 @@
   details.src ul, .panel ul.srcl { margin:4px 0 0; padding-left:18px; }
   details.src a, .panel ul.srcl a { color:var(--accent); word-break:break-word; }
   .panel ul.srcl { font-size:13px; margin-bottom:8px; }
+  .bridge-grid { display:grid; grid-template-columns:minmax(0,360px) 1fr; gap:16px; align-items:start; }
+  table.mini td.n { text-align:right; font-variant-numeric:tabular-nums; }
+  ul.blist { columns:2 300px; font-size:13.5px; padding-left:18px; margin:6px 0 0; }
+  ul.blist a { color:var(--accent); cursor:pointer; }
+  @media (max-width:860px) { .bridge-grid { grid-template-columns:1fr; } }
   .err { display:none; padding:14px; color:#991b1b; }
   @media (max-width:860px) { .main { grid-template-columns:1fr; } #cy { height:520px; } .panel { height:auto; } }
 </style>
@@ -58,7 +63,7 @@
 <div class="wrap">
   <header>
     <h1>Apple A20 (TSMC 2nm) 식각 지식 그래프 · 용어집</h1>
-    <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-05 (10-06 용어 18개 추가, 10-07 DPT·QPT 용어 44개와 용어별 논문·출처 추가, 10-08 플라즈마 식각 원리 용어 54개 추가) · 근거: <a href="tsmc_n2_a20_etch_report.html">A20 식각 중심 보고서</a> · <a href="dpt_qpt_report.html">DPT·QPT 보고서</a> · <a href="plasma_etch_principles.html">플라즈마 식각 원리 노트</a> · 노드를 클릭하면 설명과 연결 관계가 오른쪽에 나옵니다.</p>
+    <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-05 (10-06 용어 18개 추가, 10-07 DPT·QPT 용어 44개와 용어별 논문·출처 추가, 10-08 플라즈마 식각 원리 용어 54개 추가·영역 간 연결 검토) · 근거: <a href="tsmc_n2_a20_etch_report.html">A20 식각 중심 보고서</a> · <a href="dpt_qpt_report.html">DPT·QPT 보고서</a> · <a href="plasma_etch_principles.html">플라즈마 식각 원리 노트</a> · 노드를 클릭하면 설명과 연결 관계가 오른쪽에 나옵니다.</p>
   </header>
 
   <div class="toolbar" id="filters"></div>
@@ -66,6 +71,7 @@
     <input id="q" type="search" placeholder="용어·출처 검색 (예: 채널 릴리스, SAQP, IEDM)">
     <button class="act" id="btnFit">전체 보기</button>
     <button class="act" id="btnEtch">식각 경로만 강조</button>
+    <button class="act" id="btnBridge">영역 간 연결 강조</button>
     <button class="act" id="btnReset">초기화</button>
   </div>
 
@@ -74,6 +80,14 @@
     <aside class="panel" id="panel"><p class="hint">노드를 클릭하세요.<br><br>• 색 = 용어 분류<br>• 화살표 = 관계 방향 (예: 채널 릴리스 → <i>제거한다</i> → SiGe)<br>• 마우스 휠로 확대, 드래그로 이동</p></aside>
   </div>
   <p class="legend-edges">관계 종류: <b>다음 단계</b> (공정 순서) · <b>사용</b> (기술/장비) · <b>제거</b> (식각 대상) · <b>형성</b> (만들어지는 구조) · <b>보존해야 함</b> (선택비 대상) · <b>위험</b> (결함/과제) · <b>검출</b> (테스트) · <b>구성</b> (구조의 재료/일부)</p>
+
+  <h2 id="bridges">영역 간 연결 검토 (2026-10-08)</h2>
+  <p class="note">그래프는 네 묶음에서 자랐다 — A20·GAA 소자, BEOL·패키징, 패터닝(DPT·QPT), 플라즈마 원리. 묶음 안쪽은 촘촘한데 묶음 사이 다리가 적어, 노트에 근거가 있는 관계를 중심으로 다리를 보강했다. 노트에 직접 근거가 없는 업계 일반 지식 3개는 관계 이름에 "(일반 지식)"을 붙였다. 위의 <b>영역 간 연결 강조</b> 버튼으로 다리만 볼 수 있다.</p>
+  <div class="bridge-grid">
+    <div class="tbl"><table class="mini"><thead><tr><th>영역 쌍</th><th>전</th><th>후</th></tr></thead><tbody><tr><td>BEOL·패키징 ↔ 패터닝(DPT·QPT)</td><td class="n">2</td><td class="n"><b>5</b></td></tr><tr><td>BEOL·패키징 ↔ 플라즈마 원리</td><td class="n">4</td><td class="n"><b>8</b></td></tr><tr><td>패터닝(DPT·QPT) ↔ 플라즈마 원리</td><td class="n">6</td><td class="n"><b>10</b></td></tr><tr><td>A20·GAA 소자 ↔ 패터닝(DPT·QPT)</td><td class="n">16</td><td class="n"><b>25</b></td></tr><tr><td>A20·GAA 소자 ↔ 플라즈마 원리</td><td class="n">13</td><td class="n"><b>20</b></td></tr><tr><td>BEOL·패키징 ↔ A20·GAA 소자</td><td class="n">24</td><td class="n"><b>27</b></td></tr></tbody></table>
+      <p class="note">연결이 하나뿐인 용어: 34개 → 11개 · 관계 302 → 345개</p></div>
+    <div><b style="font-size:14px">새 다리 관계 30개</b><ul class="blist"><li><a data-id="sidsim">SID / SIM</a> → 배선 구현 방식 → <a data-id="beol">BEOL 배선</a></li><li><a data-id="cutblock">컷 / 블록 마스크</a> → 배선 끊기 → <a data-id="beol">BEOL 배선</a></li><li><a data-id="highna">High-NA EUV</a> → Ru 직접 식각 시연 → <a data-id="ru">Ru (루테늄)</a></li><li><a data-id="beol">BEOL 배선</a> → 다마신 이유(Cu 비휘발) → <a data-id="volatility">생성물 휘발성</a></li><li><a data-id="s_almetal">Al 금속 식각</a> → 이방성 확보 → <a data-id="e_inhib">억제제(측벽 보호) 식각</a></li><li><a data-id="i_corrosion">부식 (염소 잔류)</a> → 염소 잔류 → <a data-id="cl2">Cl₂</a></li><li><a data-id="e_descum">Descum (O₂ 플라즈마)</a> → O 원자 등방성 제거 → <a data-id="e_iso">고선택비 등방성 식각</a></li><li><a data-id="e_wet">습식 식각</a> → 등방성이라 유발 → <a data-id="i_undercut">언더컷</a></li><li><a data-id="i_punch">식각 관통</a> → 하부막 선택비 부족 → <a data-id="selectivity">선택비</a></li><li><a data-id="wat">WAT / PCM</a> → 안테나 구조로 검출 (일반 지식) → <a data-id="i_charging">대전 손상</a></li><li><a data-id="i_short">단락</a> → 파티클이 유발 (일반 지식) → <a data-id="i_particle">파티클 오염</a></li><li><a data-id="s_pull">맨드릴 제거 (pull)</a> → 선택 제거(탄소 맨드릴은 O계) → <a data-id="e_iso">고선택비 등방성 식각</a></li><li><a data-id="s_speb">스페이서 에치백</a> → 윗부분 손실 → <a data-id="i_facet">패시팅</a></li><li><a data-id="sos">Spacer-on-spacer</a> → 까다로운 선택비 → <a data-id="selectivity">선택비</a></li><li><a data-id="s_transfer">패턴 전사</a> → 이온 구동 전사 → <a data-id="e_ionenh">이온 강화 식각</a></li><li><a data-id="s_transfer">패턴 전사</a> → 마스크 모서리 깎임 → <a data-id="i_facet">패시팅</a></li><li><a data-id="asd">ASD (영역 선택 증착)</a> → 선택적 핵생성 → <a data-id="sticking">부착 계수</a></li><li><a data-id="e_ale">ALE (원자층 식각)</a> → 구분됨(펄스 ≠ ALE) → <a data-id="e_pulsed">펄스 플라즈마</a></li><li><a data-id="cutblock">컷 / 블록 마스크</a> → EUV 블록 → <a data-id="euv">EUV 리소그래피</a></li><li><a data-id="euv">EUV 리소그래피</a> → 확률적 거칠기 → <a data-id="i_ler">LER · LWR</a></li><li><a data-id="intel10nm">Intel 10nm (Intel 7)</a> → fin pitch 34 nm → <a data-id="finfet">FinFET</a></li><li><a data-id="i_collapse">패턴 붕괴</a> → 같은 모세관력 → <a data-id="i_stiction">시트 달라붙음</a></li><li><a data-id="pspacer">패터닝 스페이서</a> → 같은 형성 원리(ALD+에치백) → <a data-id="innerspacer">내부 스페이서</a></li><li><a data-id="pspacer">패터닝 스페이서</a> → 같은 형성 원리 → <a data-id="outerspacer">외부 스페이서</a></li><li><a data-id="s_contact">컨택 식각</a> → 산화막 관통 → <a data-id="sio2">SiO₂</a></li><li><a data-id="s_contact">컨택 식각</a> → 고종횡비에서 심함 → <a data-id="eshading">전자 그늘 효과</a></li><li><a data-id="s_contact">컨택 식각</a> → 저 F/C 선택 식각 (일반 지식) → <a data-id="c4f8">c-C₄F₈</a></li><li><a data-id="s_stack">스택 패터닝</a> → Si 이방성 식각(할로젠) → <a data-id="cl2">Cl₂</a></li><li><a data-id="sio2">SiO₂</a> → 충진 절연막 → <a data-id="sti">STI (얕은 트렌치 소자분리)</a></li><li><a data-id="sticking">부착 계수</a> → 벽 재결합 확률 → <a data-id="i_loading">로딩 효과</a></li></ul></div>
+  </div>
 
   <h2>주요 용어집</h2>
   <p class="note">용어를 클릭하면 그래프에서 해당 노드로 이동합니다. 분류 필터와 검색이 용어집에도 함께 적용됩니다. "논문·출처"를 펼치면 그 용어의 근거 자료가 나옵니다 — 세 리서치(A20 보고서, PSPI·BDI 용어, DPT·QPT 보고서)에서 해당 주제에 실제로 인용된 것만 연결했고, 플라즈마 원리 용어는 교과서 서지(Lieberman·Lichtenberg 2005, 절 번호)와 우리 정리 노트의 해당 절로 연결했으며, 근거가 없는 용어는 비워 두었습니다.</p>
@@ -339,6 +353,8 @@ const EDGES = [
   ["rayleigh","multipat","등장 배경"],["arfi","rayleigh","한계"],["multipat","dpt","종류"],["multipat","qpt","종류"],["multipat","le3","종류"],["dpt","lele","구현"],["dpt","lfle","구현"],["dpt","sadp","구현"],["qpt","saqp","구현"],["sadp","saqp","두 번 반복"],["saqp","saop","확장"],["salele","lele","결합"],["salele","pspacer","사용"],["sos","saqp","단계 축소"],["sidsim","sadp","구현 방식"],["sidsim","ru","예: 직접 식각"],["arfi","sadp","출발 패턴"],["euv","euvsadp","사용"],["euvsadp","sadp","결합"],["euv","multipat","일부 대체"],["highna","multipat","일부 대체"],["euv","highna","다음 세대"],["sadp","mandrel","사용"],["sadp","pspacer","사용"],["sadp","s_mandrel","포함"],["s_mandrel","s_speb","다음 단계"],["s_speb","s_pull","다음 단계"],["s_pull","s_transfer","다음 단계"],["s_transfer","s_cut","다음 단계"],["s_mandrel","mandrel","형성"],["s_mandrel","e_aniso","사용"],["s_mandrel","i_mprofile","위험"],["pspacer","ald","형성 방법"],["s_speb","pspacer","형성"],["s_speb","e_etchback","사용"],["s_speb","e_aniso","사용"],["s_pull","mandrel","제거"],["s_pull","pspacer","보존해야 함"],["s_pull","selectivity","핵심 지표"],["s_pull","i_collapse","위험"],["s_transfer","hardmask","사용"],["s_transfer","e_aniso","사용"],["s_transfer","i_loading","위험"],["s_transfer","i_ler","위험"],["cutblock","s_cut","사용"],["cutblock","sablock","개선"],["s_cut","i_tip","위험"],["s_cut","i_epe","위험"],["sadp","i_pitchwalk","위험"],["saqp","i_pitchwalk","위험"],["i_mprofile","i_pitchwalk","유발"],["lele","i_overlay","위험"],["lele","i_coloring","위험"],["i_overlay","i_epe","구성"],["i_ler","i_epe","구성"],["saqp","i_cost","위험"],["saqp","cutblock","필요"],["ocd","i_pitchwalk","검출"],["ocd","i_metro","한계"],["i_metro","i_pitchwalk","가림"],["dsa","multipat","보완"],["asd","sablock","보완"],["sculpta","i_tip","line-end 조정"],["sculpta","euv","노광 횟수 축소"],["e_pulsed","i_loading","억제"],["e_pulsed","selectivity","개선"],["e_ale","s_mandrel","정밀 trim 후보"],["smic","saqp","DUV 멀티패터닝"],["intel10nm","saqp","양산 적용"],["dram","saqp","사용"],["dram","euv","일부 레이어"],["saqp","s_stack","핀 패터닝 (Intel 10nm)"],["multipat","s_via","미세 배선"],["highna","i_tip","개선 시연"],
   // --- 2026-10-08 추가: 플라즈마 식각 원리 ---
   ["sheath","bohm","경계 조건"],["sheath","childlaw","고전압 형태"],["sheath","floatpot","부유 시 전위"],["sheath","debye","두께 척도"],["sheath","ied","결정"],["sheath","e_aniso","수직 이온 입사"],["selfbias","ied","에너지 결정"],["rfbias","selfbias","형성"],["ied","sputteryield","수율 결정"],["ied","i_notch","저에너지 이온 꺾임"],["ied","i_charging","저주파 시 대전↑"],["te","bohm","속도 결정"],["te","floatpot","비례"],["eedf","te","대표값"],["eedf","dissociation","속도 결정"],["eedf","oes","세기 좌우"],["globalmodel","te","입자 균형"],["stochheat","eedf","두 온도 분포"],["ambipolar","globalmodel","손실 경로"],["electroneg","bohm","조건 수정"],["dissattach","electroneg","음이온 생성"],["cl2","dissattach","문턱 0 부착"],["cf4","dissociation","F·CF_x 생성"],["dissociation","fc_ratio","정함"],["ccp","stochheat","주 가열"],["ccp","selfbias","형성"],["ccp","dualfreq","발전형"],["ccp","merie","변형"],["dualfreq","ied","분리 제어"],["icp","skindepth","전력 흡수층"],["icp","ehmode","운전 특성"],["icp","rfbias","에너지 제어"],["ecr","rfbias","에너지 제어"],["helicon","rfbias","에너지 제어"],["electroneg","ehmode","이완 진동"],["matching","ccp","전력 전달"],["matching","icp","전력 전달"],["merie","i_charging","불균일로 유발"],["e_pulsed","i_charging","T_e↓로 완화"],["e_pulsed","i_particle","입자 생성 억제"],["e_pulsed","electroneg","음이온 방출"],["pecvd","hardmask","증착"],["pecvd","pspacer","증착"],["piii","childlaw","매트릭스 시스"],["magnetron","e_sputter","원리 공유"],["e_aniso","e_ionenh","주 메커니즘"],["e_aniso","e_inhib","측벽 보호"],["e_ionenh","e_chemsput","유력 메커니즘"],["e_ionenh","sputteryield","수율"],["e_inhib","fcpolymer","억제막"],["e_sputter","i_facet","유발"],["e_sputter","sputteryield","수율"],["e_iso","sticking","흡착"],["fluxlimit","i_loading","중성 제한 시"],["fluxlimit","e_ionenh","속도 모델"],["fc_ratio","fcpolymer","낮으면 증착"],["fc_ratio","selectivity","조절"],["c4f8","fc_ratio","낮춤"],["cf4","fc_ratio","높음(4)"],["c4f8","sio2","선택 식각"],["fcpolymer","si","선택비(Si 보호)"],["sio2","e_ionenh","이온 구동만"],["sifx","si","표면층"],["e_chemsput","sifx","무대"],["dopingeff","si","식각 속도 차"],["volatility","al","AlCl₃ 휘발/AlF₃ 비휘발"],["volatility","cu","염화물 비휘발"],["volatility","selectivity","화학 선택"],["cl2","al","주 식각종"],["cl2","si","이방성 식각"],["i_charging","antenna","비례"],["i_charging","eshading","원인"],["eshading","i_notch","유발"],["i_charging","floatpot","기준 전위"],["i_aging","oes","감시"],["oes","endpoint","활용"],["actinometry","oes","정량화"],["endpoint","s_pad","적용 예"],["langmuir","te","측정"],["langmuir","eedf","측정"],["i_particle","sheath","경계에 포획"],["i_facet","hardmask","마스크 손실"],
+  // --- 2026-10-08 영역 간 연결 검토: 다리 관계 (관계 이름의 '(일반 지식)'은 노트에 직접 근거가 없는 업계 일반 지식) ---
+  ["sidsim","beol","배선 구현 방식"],["cutblock","beol","배선 끊기"],["highna","ru","Ru 직접 식각 시연"],["beol","volatility","다마신 이유(Cu 비휘발)"],["s_almetal","e_inhib","이방성 확보"],["i_corrosion","cl2","염소 잔류"],["e_descum","e_iso","O 원자 등방성 제거"],["e_wet","i_undercut","등방성이라 유발"],["i_punch","selectivity","하부막 선택비 부족"],["wat","i_charging","안테나 구조로 검출 (일반 지식)"],["i_short","i_particle","파티클이 유발 (일반 지식)"],["s_pull","e_iso","선택 제거(탄소 맨드릴은 O계)"],["s_speb","i_facet","윗부분 손실"],["sos","selectivity","까다로운 선택비"],["highna","hardmask","얇은 레지스트 → HM 선택비↑"],["s_transfer","e_ionenh","이온 구동 전사"],["s_transfer","i_facet","마스크 모서리 깎임"],["asd","sticking","선택적 핵생성"],["e_ale","e_pulsed","구분됨(펄스 ≠ ALE)"],["i_aging","i_particle","벽 막 박리"],["cutblock","euv","EUV 블록"],["euv","i_ler","확률적 거칠기"],["dsa","i_ler","거칠기 보정"],["saop","i_cost","긴 공정"],["le3","i_overlay","세 집단 정렬"],["lfle","i_overlay","두 노광 정렬"],["i_coloring","le3","2색 불가 시 3색"],["smic","arfi","DUV 멀티패터닝"],["intel10nm","finfet","fin pitch 34 nm"],["i_collapse","i_stiction","같은 모세관력"],["pspacer","innerspacer","같은 형성 원리(ALD+에치백)"],["pspacer","outerspacer","같은 형성 원리"],["s_contact","sio2","산화막 관통"],["s_contact","eshading","고종횡비에서 심함"],["s_contact","c4f8","저 F/C 선택 식각 (일반 지식)"],["s_stack","cl2","Si 이방성 식각(할로젠)"],["contact","hkmg","게이트 캡 기준 자기정렬"],["sio2","sti","충진 절연막"],["debye","childlaw","두께 척도(~100 λ_D)"],["skindepth","dualfreq","고주파 표피 효과"],["actinometry","fc_ratio","F 밀도 측정"],["dopingeff","cl2","Cl에서 큼"],["sticking","i_loading","벽 재결합 확률"],
 ];
 
 // 용어별 논문·출처: 세 리서치 원본(A20 보고서, PSPI·BDI 용어, DPT·QPT 보고서)에서 해당 주제에 실제로 인용된 것만 연결
@@ -661,6 +677,10 @@ const SOURCES = {
 };
 const srcList = id => (SOURCES[id] || []).map(k => `<li><a href="${SRC[k][1]}" target="_blank" rel="noopener">${SRC[k][0]}</a></li>`).join("");
 
+// 영역: 용어가 어느 주제 묶음에서 왔는지 (영역 간 연결 강조·검토에 사용)
+const AREA_LABEL = {"gaa":"A20·GAA 소자","beol":"BEOL·패키징","pattern":"패터닝(DPT·QPT)","plasma":"플라즈마 원리"};
+const AREA = {"a20":"gaa","n2":"gaa","n2p":"gaa","a16":"gaa","gaa":"gaa","finfet":"gaa","superlattice":"gaa","nanosheet":"gaa","sti":"gaa","dummygate":"gaa","outerspacer":"gaa","innerspacer":"gaa","sd":"gaa","hkmg":"gaa","contact":"gaa","beol":"beol","mim":"beol","rdl":"beol","bump":"beol","si":"gaa","sige":"gaa","highk":"gaa","wfm":"gaa","lowk":"beol","cu":"beol","ru":"beol","s_clean":"gaa","s_stack":"gaa","s_sdrecess":"gaa","s_lateral":"gaa","s_dgremove":"gaa","s_release":"gaa","s_gaterecess":"gaa","s_contact":"gaa","s_via":"beol","s_pad":"beol","s_seed":"beol","s_dicing":"beol","e_aniso":"gaa","e_iso":"gaa","e_ale":"gaa","e_wet":"gaa","e_etchback":"gaa","e_plasmadice":"beol","selectivity":"gaa","euv":"gaa","ald":"gaa","cmp":"beol","epi":"gaa","i_siloss":"gaa","i_geres":"gaa","i_stiction":"gaa","i_recessvar":"gaa","i_parasitic":"gaa","i_notch":"gaa","i_loading":"gaa","i_lowkdmg":"beol","i_short":"gaa","i_residue":"gaa","i_undercut":"beol","wat":"beol","cp":"beol","info":"beol","wmcm":"beol","pspi":"beol","s_pspi":"beol","e_descum":"beol","pv":"beol","vv":"beol","lb":"beol","al":"beol","al_rdl":"beol","cu_rdl":"beol","s_almetal":"beol","sap":"beol","bdi":"beol","s_bdi":"beol","i_subleak":"beol","esd":"beol","esige":"beol","i_corrosion":"beol","i_punch":"beol","multipat":"pattern","dpt":"pattern","qpt":"pattern","rayleigh":"pattern","arfi":"pattern","lele":"pattern","lfle":"pattern","le3":"pattern","sadp":"pattern","saqp":"pattern","saop":"pattern","salele":"pattern","sos":"pattern","sidsim":"pattern","cutblock":"pattern","sablock":"pattern","mandrel":"pattern","pspacer":"pattern","hardmask":"pattern","s_mandrel":"pattern","s_speb":"pattern","s_pull":"pattern","s_transfer":"pattern","s_cut":"pattern","i_pitchwalk":"pattern","i_overlay":"pattern","i_epe":"pattern","i_coloring":"pattern","i_ler":"pattern","i_mprofile":"pattern","i_collapse":"pattern","i_tip":"pattern","i_metro":"pattern","i_cost":"pattern","highna":"pattern","euvsadp":"pattern","dsa":"pattern","asd":"pattern","sculpta":"pattern","e_pulsed":"pattern","ocd":"pattern","smic":"pattern","intel10nm":"pattern","dram":"pattern","sheath":"plasma","bohm":"plasma","floatpot":"plasma","childlaw":"plasma","debye":"plasma","te":"plasma","eedf":"plasma","ambipolar":"plasma","selfbias":"plasma","ied":"plasma","stochheat":"plasma","skindepth":"plasma","globalmodel":"plasma","electroneg":"plasma","ehmode":"plasma","dissociation":"plasma","dissattach":"plasma","ccp":"plasma","icp":"plasma","dualfreq":"plasma","merie":"plasma","ecr":"plasma","helicon":"plasma","matching":"plasma","rfbias":"plasma","magnetron":"plasma","pecvd":"plasma","piii":"plasma","e_sputter":"plasma","e_ionenh":"plasma","e_inhib":"plasma","e_chemsput":"plasma","fluxlimit":"plasma","sputteryield":"plasma","fc_ratio":"plasma","volatility":"plasma","sticking":"plasma","i_charging":"plasma","antenna":"plasma","eshading":"plasma","i_particle":"plasma","i_aging":"plasma","dopingeff":"plasma","i_facet":"plasma","sio2":"plasma","cf4":"plasma","cl2":"plasma","c4f8":"plasma","fcpolymer":"plasma","sifx":"plasma","oes":"plasma","actinometry":"plasma","endpoint":"plasma","langmuir":"plasma"};
+
 const typeOf = Object.fromEntries(NODES.map(n => [n[0], n[3]]));
 const nameOf = Object.fromEntries(NODES.map(n => [n[0], n[1]]));
 const active = new Set(Object.keys(TYPES));
@@ -744,12 +764,13 @@ try {
       { selector: ".faded", style: { opacity: .12 } },
       { selector: "node.match", style: { "border-color": "#facc15", "border-width": 5 } },
       { selector: ".etchpath", style: { "line-color": "#dc2626", "target-arrow-color": "#dc2626", width: 3 } },
+      { selector: ".bridge", style: { "line-color": "#7c3aed", "target-arrow-color": "#7c3aed", width: 2.5 } },
     ],
     layout: { name: "cose", animate: false, randomize: false, idealEdgeLength: 100, nodeRepulsion: 22000, gravity: .2, nodeOverlap: 20, componentSpacing: 60, numIter: 2500, padding: 20 },
     wheelSensitivity: 0.25,
   });
   cy.on("tap", "node", e => focusNode(e.target.id()));
-  cy.on("tap", e => { if (e.target === cy) cy.elements().removeClass("faded hl etchpath"); });
+  cy.on("tap", e => { if (e.target === cy) cy.elements().removeClass("faded hl etchpath bridge"); });
 } catch (err) {
   document.getElementById("err").style.display = "block";
 }
@@ -758,7 +779,7 @@ document.getElementById("btnFit").onclick = () => cy && cy.fit(undefined, 20);
 document.getElementById("btnReset").onclick = () => {
   document.getElementById("q").value = ""; active.clear(); Object.keys(TYPES).forEach(k => active.add(k));
   fbox.querySelectorAll(".chip").forEach(c => c.classList.remove("off"));
-  applyFilter(); if (cy) { cy.elements().removeClass("faded hl etchpath match"); cy.fit(undefined, 20); }
+  applyFilter(); if (cy) { cy.elements().removeClass("faded hl etchpath bridge match"); cy.fit(undefined, 20); }
   panel.innerHTML = '<p class="hint">노드를 클릭하세요.</p>';
 };
 document.getElementById("btnEtch").onclick = () => {
@@ -769,6 +790,15 @@ document.getElementById("btnEtch").onclick = () => {
   cy.elements().not(keep.union(edges)).addClass("faded");
   edges.filter(e => ["사용","제거","위험","보존해야 함"].includes(e.data("label"))).addClass("etchpath hl");
 };
+
+document.getElementById("btnBridge").onclick = () => {
+  if (!cy) return;
+  cy.elements().removeClass("faded hl etchpath bridge");
+  const br = cy.edges().filter(e => AREA[e.data("source")] !== AREA[e.data("target")]);
+  cy.elements().not(br.union(br.connectedNodes())).addClass("faded");
+  br.addClass("bridge hl");
+};
+document.querySelectorAll('ul.blist a[data-id]').forEach(a => a.onclick = () => { focusNode(a.dataset.id); document.getElementById('cy').scrollIntoView({behavior:'smooth', block:'center'}); });
 
 renderGloss();
 // 주소 끝에 #노드id 를 붙이면 그 용어에 포커스 (예: #s_release)
