@@ -60,7 +60,7 @@
   <header>
     <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
     <h1>7단계 · 패터닝 기술 리서치</h1>
-    <p class="phase-desc">항목 #25–#29 · 2026-10-07 20:26 ~ 10-08 19:41 · 멀티패터닝(DPT·QPT) 같은 패터닝 기술의 배경·동향·난제를 식각 관점에서 조사한다.</p>
+    <p class="phase-desc">항목 #25–#30 · 2026-10-07 20:26 ~ 10-08 19:50 · 멀티패터닝(DPT·QPT) 같은 패터닝 기술의 배경·동향·난제를 식각 관점에서 조사한다.</p>
   </header>
   <nav class="pager" aria-label="단계 이동"><a href="phase-6.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><span class="cur" aria-current="page">7. 패터닝 기술 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
 
@@ -277,6 +277,67 @@
         <h3>결과 / 증거</h3>
         <p><span class="tag">성공</span> 원인은 GitHub Actions의 배포 작업 대기열 멈춤(저장소·코드 문제 아님). 새 빌드 요청으로 해결, #27–#28 변경이 사이트에 반영됨.</p>
         <p>참고: 앞으로 푸시 후 배포 작업이 몇 분 넘게 queued로 남으면, 같은 방법(새 Pages 빌드 요청)으로 다시 걸면 된다.</p>
+      </section>
+    </article>
+
+    <!-- ===== 항목 #30 ===== -->
+    <article class="entry" id="e30">
+      <div class="entry-head">
+        <span class="no">#30</span>
+        <h2>SADP · SAQP 3D 페이지</h2>
+        <time>2026-10-08 19:50</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>SADP·SAQP도 3D 페이지로 만들어줘</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>기존 3D 연작(내부 스페이서·채널 릴리스·BDI)과 같은 구성 — 단계별 3D, 단면 보기, 실패 실험, 왜 필요한가/어려운가 — 으로 SADP·SAQP를 만든다.</li>
+          <li>보고서의 핵심인 <b>피치 워킹</b>을 직접 만들어 볼 수 있게: 맨드릴 CD·스페이서 두께를 바꾸면 공간 집단(SADP 코어/갭, SAQP α·β·γ)을 색으로 칠하고 실제 수치를 표시한다.</li>
+          <li>스페이서가 맨드릴 둘레로 <b>고리</b>를 이룬다는 점(그래서 트림·컷이 필요)은 2D 단면도로는 안 보이므로 3D의 "위에서 보기"로 보여준다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>19:50</time> 기존 BDI 3D 페이지 구조 확인 (Three.js r128, 단계 패널, 실패 실험, 주소로 상태 지정).</li>
+          <li><time>19:50</time> <b>jev 자문</b> 6건: 페이지 구성 → SADP·SAQP 별도 두 페이지 (선택 b, 확률 0.84, 신뢰도 0.68) · 피치 워킹 실험 0.70 · 에치백 부족/과다 실험 0.81 · 맨드릴 제거 선택비 실험 0.60 · 패턴 붕괴 실험 0.50 · 컷 단계 0.55. 0.5를 넘는 것만 넣고 <b>패턴 붕괴는 제외</b>(페이지에 명시).</li>
+          <li><time>19:55</time> 두 페이지가 같은 3D 엔진을 쓰도록 공통 스크립트 <code>viz/spacer_pattern_3d.js</code> 작성. 모든 구조를 위에서 본 직사각형(고리 = 직사각형 4개)으로 만들고 y로 세우는 방식 — SAQP에서 스페이서 1 고리를 맨드릴 2로 옮기고, 그 안팎에 스페이서 2 고리 두 겹이 생기는 것까지 같은 규칙으로 계산. 페이지 두 개(<code>viz/sadp_3d.html</code> 7단계, <code>viz/saqp_3d.html</code> 9단계)는 같은 틀에서 생성.</li>
+          <li><time>20:00</time> 로컬 미리보기 확인 중 문제 3가지 수정: 기본 시점이 너무 가까움 → 카메라 뒤로 · 하드마스크·대상막이 두 번 그려져 면이 깜빡일 수 있음 → 중복 제거 · <b>위에서 보면 고리 끝(z = ±70)이 기판(±62) 밖으로 튀어나오고 트림 후에도 남음</b> → 영역을 ±80으로 넓혀 해결. 단면 시점도 대상이 화면 아래로 쏠려 조정.</li>
+          <li><time>20:10</time> 수치 검산: SADP 맨드릴 CD −6 → 코어 14 · 갭 26 · 피치 34/46 · 워킹 12 (P₀ = C + G + 2t와 일치). SAQP 스페이서 1 두께 +3 → α 13 · β 10 · γ 4 (α = t₁, β = C₁ − 2t₂, γ = P₀ − C₁ − 2t₁ − 2t₂와 일치). 에치백 부족 → 코어만 열리고 갭은 막혀 빨간 브리지. 0→4단계 연속 애니메이션 정상.</li>
+          <li><time>20:15</time> 증거 스크린샷 5장 저장, 목차에 두 페이지 추가, DPT·QPT 보고서 단면도 절에 3D 링크 추가.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> SADP·SAQP 3D 페이지 완성 (3D 연작 4·5편).</p>
+        <p><a href="../viz/sadp_3d.html">SADP 3D 열기</a> · <a href="../viz/saqp_3d.html">SAQP 3D 열기</a></p>
+        <figure>
+          <img src="../history_img/20261008_201500_sadp_step4_loops.png" alt="SADP 맨드릴 제거 후 스페이서 고리">
+          <figcaption>history_img/20261008_201500_sadp_step4_loops.png — SADP ④ 맨드릴 제거: 맨드릴 하나당 선 두 개, 끝이 이어진 고리</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261008_201500_sadp_pitchwalk_section.png" alt="SADP 피치 워킹 단면">
+          <figcaption>history_img/20261008_201500_sadp_pitchwalk_section.png — 맨드릴 CD −6, 단면: 코어(주황) 14 vs 갭(파랑) 26</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261008_201500_sadp_measure.png" alt="측정값과 판정">
+          <figcaption>history_img/20261008_201500_sadp_measure.png — 실패 실험 패널: 측정값 표(피치 34/46, 워킹 12)와 판정</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261008_201500_saqp_top_double_loops.png" alt="SAQP 고리 두 겹">
+          <figcaption>history_img/20261008_201500_saqp_top_double_loops.png — SAQP ⑥ 위에서 보기: 맨드릴 1 하나가 스페이서 2 고리 두 겹(선 네 개)</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261008_201500_saqp_abg_section.png" alt="SAQP α β γ 단면">
+          <figcaption>history_img/20261008_201500_saqp_abg_section.png — 스페이서 1 두께 +3, 단면: α(주황) 13 · β(파랑) 10 · γ(초록) 4</figcaption>
+        </figure>
       </section>
     </article>
   </div>

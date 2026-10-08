@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SADP 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  /* 레이아웃: 제목 → [3D 뷰 | 단계 설명] → 실패 실험·측정값 → 왜 필요한가 → 왜 어려운가 (3D 연작 공통 구성) */
+  :root {
+    --bg:#f7f8fb; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb;
+    --si:#60a5fa; --sige:#f59e0b; --hige:#c2410c; --bdi:#14b8a6; --spacer:#a78bfa; --inner:#7c3aed; --gate:#94a3b8; --epi:#22c55e; --etch:#dc2626;
+    --hk:#facc15; --metal:#64748b; --leak:#ef4444;
+    --ok:#166534; --ok-bg:#dcfce7; --bad:#991b1b; --bad-bg:#fee2e2; --mid:#92400e; --mid-bg:#fef3c7;
+    --font:"Noto Sans KR","Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;
+    --mono:"JetBrains Mono",Consolas,monospace;
+  }
+  * { box-sizing:border-box; }
+  html { color-scheme: light; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.7 var(--font); }
+  .wrap { max-width:1240px; margin:0 auto; padding-block:28px 72px; padding-inline:16px; }
+  a { color:var(--accent); }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  h1 { font-size:26px; line-height:1.3; margin:0 0 4px; text-wrap:balance; }
+  h2 { font-size:20px; margin:40px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  .sub { color:var(--muted); margin:0; }
+  .main { display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:14px; margin-top:16px; }
+  .view { position:relative; background:linear-gradient(#ffffff,#eef2f7); border:1px solid var(--line); border-radius:14px; overflow:hidden; height:600px; }
+  #c { width:100%; height:100%; display:block; }
+  .hud { position:absolute; left:12px; top:12px; display:flex; flex-wrap:wrap; gap:6px; max-width:calc(100% - 200px); }
+  .hud button, .seg button { font:inherit; font-size:13px; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:8px; padding:5px 10px; cursor:pointer; }
+  .hud button[aria-pressed="true"], .seg button[aria-pressed="true"] { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .hud button.cmp[aria-pressed="true"] { background:var(--leak); border-color:var(--leak); }
+  .legend { position:absolute; left:12px; bottom:12px; display:flex; flex-wrap:wrap; gap:6px 12px; font-size:12.5px; background:rgba(255,255,255,.9); border:1px solid var(--line); border-radius:8px; padding:6px 10px; max-width:calc(100% - 24px); }
+  .legend i { display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:-1px; margin-right:4px; }
+  .hint { position:absolute; right:12px; top:12px; font-size:12px; color:var(--muted); background:rgba(255,255,255,.85); border-radius:6px; padding:3px 8px; }
+  .badge { position:absolute; right:12px; top:44px; font-size:13px; font-weight:700; border-radius:8px; padding:4px 10px; background:var(--bad-bg); color:var(--bad); display:none; }
+  .fallback { display:none; position:absolute; inset:0; place-items:center; padding:24px; text-align:center; color:var(--bad); }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; display:flex; flex-direction:column; gap:10px; }
+  .steps { display:grid; grid-template-columns:repeat(auto-fill,minmax(34px,1fr)); gap:6px; }
+  .steps button { font:inherit; font-weight:700; font-size:14px; border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px 0; cursor:pointer; color:var(--ink); }
+  .steps button[aria-current="step"] { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .steps button.etch { border-color:#fecaca; }
+  .nav { display:flex; gap:8px; }
+  .nav button { flex:1; font:inherit; font-size:14px; border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px; cursor:pointer; }
+  .panel h3 { margin:4px 0 0; font-size:18px; line-height:1.4; }
+  .kind { font-size:12px; font-weight:700; display:inline-block; padding:1px 9px; border-radius:999px; background:#f3f4f6; color:#374151; }
+  .kind.etch { background:var(--bad-bg); color:var(--etch); }
+  .panel p { margin:0; }
+  .panel dl { margin:0; display:grid; grid-template-columns:72px 1fr; gap:4px 10px; font-size:14px; }
+  .panel dt { color:var(--muted); }
+  .panel dd { margin:0; }
+  .lab { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px 24px; }
+  .lab label { font-weight:700; font-size:14px; display:block; margin-bottom:4px; }
+  .lab input[type=range] { width:100%; accent-color:var(--accent); }
+  .row { display:flex; justify-content:space-between; font-size:12.5px; color:var(--muted); font-family:var(--mono); }
+  .seg { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+  .verdict { grid-column:1 / -1; border-radius:10px; padding:12px 14px; font-size:14.5px; }
+  .verdict strong { display:block; font-size:15px; }
+  .v-ok { background:var(--ok-bg); color:var(--ok); } .v-bad { background:var(--bad-bg); color:var(--bad); } .v-mid { background:var(--mid-bg); color:var(--mid); }
+  .why { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+  .why div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:14.5px; }
+  .why strong { display:block; margin-bottom:2px; }
+  .note { color:var(--muted); font-size:13px; }
+  @media (max-width:900px) { .main { grid-template-columns:1fr; } .view { height:440px; } .hud { max-width:calc(100% - 24px); } .hint { display:none; } }
+  .meas table { border-collapse:collapse; width:100%; font-size:13.5px; }
+  .meas td { border-top:1px solid var(--line); padding:5px 6px; vertical-align:top; }
+  .meas td.n { text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .meas td i { display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:5px; vertical-align:-1px; }
+  .lab .wide { grid-column:1 / -1; }
+  .lab button.act { font:inherit; font-size:13px; border:1px solid var(--line); background:#fff; border-radius:8px; padding:5px 10px; cursor:pointer; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="sub"><a href="../index.html">← 목차</a> · <a href="saqp_3d.html">SAQP 3D</a> · <a href="../research/dpt_qpt_report.html">DPT·QPT 보고서</a> · <a href="../research/a20_etch_knowledge_graph.html#sadp">지식 그래프에서 보기</a></p>
+    <h1>SADP (자기정렬 이중 패터닝) — 3D로 보기</h1>
+    <p class="sub">맨드릴 옆벽에 스페이서를 세우고 맨드릴을 빼서, 노광 한 번으로 피치를 절반으로 만든다. 최종 선폭은 증착 두께가, 공간은 맨드릴 CD와 식각이 정한다.</p>
+  </header>
+
+  <div class="main">
+    <div class="view">
+      <canvas id="c" aria-label="SADP 3D 공정의 3D 모델"></canvas>
+      <div class="hud">
+        <button id="bSec" aria-pressed="false">단면 보기</button>
+        <button id="bTop" aria-pressed="false">위에서 보기</button>
+        <button id="bReset">시점 초기화</button>
+      </div>
+      <div class="hint">드래그: 회전 · 휠: 확대</div>
+      <div class="legend">
+        <span><i style="background:#93c5fd"></i>대상막</span>
+        <span><i style="background:#94a3b8"></i>하드마스크</span>
+        <span><i style="background:#fdba74"></i>맨드릴</span>
+        <span><i style="background:#a78bfa"></i>스페이서</span>
+        <span><i style="background:#86efac"></i>레지스트</span>
+        <span><i style="background:#6d28d9"></i>바닥 잔류막</span>
+        <span><i style="background:#ef4444"></i>브리지 · 컷 마스크</span>
+      </div>
+      <div class="fallback" id="fallback">3D를 표시할 수 없습니다. 브라우저의 WebGL이 꺼져 있거나 라이브러리를 불러오지 못했습니다 (인터넷 연결 필요).</div>
+    </div>
+
+    <aside class="panel" aria-live="polite">
+      <div class="steps" id="steps"></div>
+      <div class="nav"><button id="prev">← 이전</button><button id="next">다음 →</button></div>
+      <div><span class="kind" id="kind"></span></div>
+      <h3 id="title"></h3>
+      <p id="desc"></p>
+      <dl id="facts"></dl>
+    </aside>
+  </div>
+
+  <h2>직접 바꿔보기 — 실패 양상과 측정값</h2>
+  <div class="lab">
+    <div>
+      <label for="dc">맨드릴 CD 오차 (기준 20)</label>
+      <input id="dc" type="range" min="-8" max="8" step="1" value="0">
+      <div class="row"><span>−8</span><span id="dcVal">0</span><span>+8</span></div>
+      <label for="dt" style="margin-top:12px">스페이서 두께 오차 (기준 20)</label>
+      <input id="dt" type="range" min="-6" max="6" step="1" value="0">
+      <div class="row"><span>−6</span><span id="dtVal">0</span><span>+6</span></div>
+    </div>
+    <div>
+      <label>스페이서 에치백</label>
+      <div class="seg" id="eb">
+        <button data-v="0" aria-pressed="true">적정</button>
+        <button data-v="1" aria-pressed="false">부족 (바닥막 잔류)</button>
+        <button data-v="2" aria-pressed="false">과다 (윗부분 손실)</button>
+      </div>
+      <label>맨드릴 제거 선택비</label>
+      <div class="seg" id="pull">
+        <button data-v="0" aria-pressed="true">높음</button>
+        <button data-v="1" aria-pressed="false">낮음 (스페이서 깎임)</button>
+      </div>
+      <button class="act" id="bReset2">값 초기화</button>
+    </div>
+    <div class="meas" id="meas" aria-live="polite"></div>
+    <div class="verdict" id="verdict"></div>
+  </div>
+  <p class="note">값을 바꾸면 3D가 패턴 전사 단계로 넘어가 결과를 보여줍니다. 숫자는 그림 단위(초기 피치 80 기준, nm로 읽어도 됨)이며 실제 공정 치수가 아닙니다. 맨드릴은 실제로 더 길고, 여기서는 고리 끝이 보이도록 짧게 그렸습니다. 패턴 붕괴는 이번 모델에 넣지 않았습니다.</p>
+
+  <h2>왜 필요한가</h2>
+  <div class="why">
+    <div><strong>노광의 한계</strong>ArF 이머전 한 번 노광의 조밀 격자 한계는 피치 약 76–80 nm. 그보다 촘촘한 선은 한 번에 그릴 수 없다.</div>
+    <div><strong>측벽은 자기정렬</strong>스페이서는 맨드릴 옆벽에 붙어 자라므로 두 번째 노광 없이 선이 생긴다. LELE처럼 두 노광의 정렬 오차(overlay)가 선 간격을 흔들지 않는다.</div>
+    <div><strong>두께로 정하는 선폭</strong>선폭이 노광이 아니라 ALD 두께로 정해져, 원자층 수준으로 고르게 맞출 수 있다.</div>
+  </div>
+
+  <h2>왜 어려운가</h2>
+  <div class="why">
+    <div><strong>공간이 두 종류</strong>코어(맨드릴 자리)와 갭(스페이서 사이)은 서로 다른 공정이 정한다. 하나만 틀어져도 피치가 번갈아 바뀌는데, 평균 피치는 그대로라 평균 계측에 안 잡힌다.</div>
+    <div><strong>식각이 치수를 정함</strong>에치백이 덜 되면 선이 붙고, 더 되면 마스크 키가 모자란다. 맨드릴 제거의 선택비가 낮으면 선이 가늘어진다. 세 번의 식각이 모두 최종 CD에 들어간다.</div>
+    <div><strong>고리와 컷</strong>스페이서는 맨드릴 둘레로 고리를 이룬다. 끝을 자르고 회로대로 끊는 컷 공정이 따로 필요하고, 선 끝 위치는 이 컷의 정렬이 정한다.</div>
+    <div><strong>쓰러짐</strong>맨드릴을 빼면 얇고 높은 스페이서가 홀로 선다. 높으면 쓰러지고, 낮추면 전사할 마스크가 모자란다.</div>
+  </div>
+  <p class="note" style="margin-top:16px">근거: <a href="../research/dpt_qpt_report.html">DPT·QPT 보고서</a> (Bencher 외 SPIE 2008, Intel IEDM 2014·2017, Raley 외 SPIE 2016, Fang 외 SPIE 2017 등). 작업 기록: <a href="../history/phase-7.html">7단계</a>. 3D 모델은 Claude Code가 Three.js로 작성.</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+window.SP_MODE = "sadp";
+window.SP_STEPS = [
+ {
+  "kind": "출발 구조",
+  "etch": false,
+  "title": "맨드릴 막 위에 레지스트 선 (피치 80)",
+  "desc": "대상막 위에 하드마스크와 맨드릴 막을 쌓고, 노광으로 레지스트 선을 그렸다. 피치 80은 ArF 이머전 한 번 노광으로 그릴 수 있는 수준이다. 목표는 이 피치를 절반(40)으로 만드는 것.",
+  "facts": [
+   [
+    "대상막",
+    "최종 패턴을 새길 층 (파랑)"
+   ],
+   [
+    "하드마스크",
+    "전사용 단단한 막 (회색)"
+   ],
+   [
+    "맨드릴 막",
+    "희생 기둥이 될 막 (주황)"
+   ]
+  ]
+ },
+ {
+  "kind": "식각 · 이방성",
+  "etch": true,
+  "title": "① 맨드릴 식각",
+  "desc": "레지스트를 마스크로 맨드릴 막을 수직으로 깎아 기둥(맨드릴)을 세운다. 맨드릴의 폭(CD)이 나중에 '코어 공간'의 폭이 된다.",
+  "facts": [
+   [
+    "방식",
+    "이방성 플라즈마 식각 (+ 필요 시 CD trim)"
+   ],
+   [
+    "핵심",
+    "수직 측벽, footing 없이"
+   ],
+   [
+    "결정하는 것",
+    "코어 공간 C"
+   ]
+  ]
+ },
+ {
+  "kind": "증착 · ALD",
+  "etch": false,
+  "title": "② 스페이서 막 등각 증착",
+  "desc": "맨드릴 위·옆·바닥을 같은 두께로 덮는 막을 입힌다. 옆벽에 붙은 두께 t가 그대로 최종 선폭이 된다.",
+  "facts": [
+   [
+    "방식",
+    "ALD (또는 등각 CVD) 산화막·질화막"
+   ],
+   [
+    "결정하는 것",
+    "최종 선폭 t"
+   ]
+  ]
+ },
+ {
+  "kind": "식각 · 이방성",
+  "etch": true,
+  "title": "③ 스페이서 에치백",
+  "desc": "아래 방향으로만 깎아 바닥과 맨드릴 윗면의 막을 걷어내고 옆벽에만 남긴다. 덜 깎으면 바닥막이 남아 선이 붙고, 더 깎으면 스페이서 키가 줄어든다.",
+  "facts": [
+   [
+    "방식",
+    "이방성 식각, 바닥 막 완전 제거"
+   ],
+   [
+    "위험",
+    "바닥 잔류(브리지), 윗부분 손실·faceting"
+   ]
+  ]
+ },
+ {
+  "kind": "식각 · 선택",
+  "etch": true,
+  "title": "④ 맨드릴 제거 (pull)",
+  "desc": "스페이서는 남기고 맨드릴만 골라 제거한다. 이제 맨드릴 하나당 선 두 개 — 피치가 절반이 됐다. '위에서 보기'를 누르면 스페이서가 맨드릴 둘레를 따라 고리(loop)를 이룬 것이 보인다.",
+  "facts": [
+   [
+    "방식",
+    "맨드릴만 녹이는 선택 식각 (탄소 맨드릴이면 O₂ 계열 등)"
+   ],
+   [
+    "지켜야 할 것",
+    "스페이서, 바닥 하드마스크"
+   ],
+   [
+    "위험",
+    "스페이서 얇아짐, 쓰러짐"
+   ]
+  ]
+ },
+ {
+  "kind": "식각 · 이방성",
+  "etch": true,
+  "title": "⑤ 패턴 전사",
+  "desc": "스페이서를 마스크로 하드마스크 → 대상막 순서로 깎는다. 공간을 색으로 칠했다: 주황 = 코어(맨드릴이 있던 자리), 파랑 = 갭(스페이서 사이). 둘의 폭이 다르면 피치 워킹이다.",
+  "facts": [
+   [
+    "방식",
+    "이방성 식각, 마스크 소모 관리"
+   ],
+   [
+    "결과",
+    "피치 80 → 40"
+   ],
+   [
+    "확인",
+    "아래 측정값 표"
+   ]
+  ]
+ },
+ {
+  "kind": "식각 · 컷",
+  "etch": true,
+  "title": "⑥ 트림 · 컷",
+  "desc": "고리의 양 끝을 잘라내(트림) 직선만 남기고, 회로에 맞게 일부 선을 끊는다(컷). 반투명 빨강이 컷 마스크다. 선 끝 위치와 끝-끝 간격은 이 단계가 정한다.",
+  "facts": [
+   [
+    "방식",
+    "추가 노광 + 식각"
+   ],
+   [
+    "위험",
+    "덜 끊김, 이웃 선 손상 (EPE)"
+   ]
+  ]
+ }
+];
+</script>
+<script src="spacer_pattern_3d.js"></script>
+</body>
+</html>
