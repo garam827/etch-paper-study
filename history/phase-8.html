@@ -60,7 +60,7 @@
   <header>
     <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
     <h1>8단계 · 플라즈마 식각 기초 문헌 학습</h1>
-    <p class="phase-desc">항목 #31–#32 · 2026-10-08 20:25 ~ 22:02 · 플라즈마 공정 교과서(Lieberman & Lichtenberg)를 파트로 나눠 읽고 식각 지식을 정리한다.</p>
+    <p class="phase-desc">항목 #31–#33 · 2026-10-08 20:25 ~ 22:09 · 플라즈마 공정 교과서(Lieberman & Lichtenberg)를 파트로 나눠 읽고 식각 지식을 정리한다.</p>
   </header>
   <nav class="pager" aria-label="단계 이동"><a href="phase-7.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><span class="cur" aria-current="page">8. 플라즈마 식각 기초 문헌 학습</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
 
@@ -173,6 +173,59 @@
         <figure>
           <img src="../history_img/20261008_221500_lieb2_ied.png" alt="이온 에너지 분포">
           <figcaption>history_img/20261008_221500_lieb2_ied.png — §20 이온 에너지 분포: 주파수·질량·압력에 따른 모양</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <!-- ===== 항목 #33 ===== -->
+    <article class="entry" id="e33">
+      <div class="entry-head">
+        <span class="no">#33</span>
+        <h2>Lieberman 지식 정리 — 3부: 방전 장비</h2>
+        <time>2026-10-08 22:09</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>3부 진행</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>5부 계획의 3부: 10장(입자·에너지 균형, 전기음성·펄스 방전), 11장(CCP, 앞 부분 중 2부에서 안 다룬 11.1–11.3과 11.8), 12장(ICP), 13장(파동 가열 소스) 개요.</li>
+          <li>분량이 가장 많은 파트(약 200쪽)라, 유도 과정보다 <b>결론·스케일링·수치 예시</b> 위주로 읽고 정리한다.</li>
+          <li>2부 §20에서 "이 책에 직접 나오지 않으며 3부에서 확인할 예정"이라 적어 둔 이중 주파수 CCP를 실제로 확인해 고친다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>22:09</time> 3부 범위 추출: 10장 60쪽, 11장 앞 43쪽 + 11.8, 12장 30쪽, 13장 44쪽.</li>
+          <li><time>22:12</time> 10장 정독: 가열 방식 4가지, 전역 모델(입자 균형 → T<sub>e</sub>, 에너지 균형 → 밀도)과 책의 세 계산 예(저전압 시스·자기장·500 V 시스), 라디칼 스케일링, 전기음성 방전의 층 구조와 O₂·Cl₂ 실험, 펄스 방전(T<sub>e</sub>가 밀도보다 빨리 식음, 음이온 방출, 라디칼은 최대 전력으로 유지).</li>
+          <li><time>22:20</time> 11장은 제목·스케일링 문장을 먼저 찾아 핵심 부분만 정독: 확률적·저항 가열 증거, 저압 스케일링(n ∝ ω²V), Godyak 실험의 두 온도 분포, <b>이중 주파수 조건과 정재파·표피 효과</b>(§11.2 — 2부의 예상이 맞음을 확인), 정합 회로·전력 측정.</li>
+          <li><time>22:25</time> 12장 정독(표피 깊이, 변압기 모델과 계산 예, 코일 턴 수, E–H 모드 전환·히스테리시스·전기음성 이완 진동, 평면 코일 측정), 13장은 각 절 도입부만 읽어 ECR·헬리콘·표면파 개요.</li>
+          <li><time>22:35</time> 3부 11개 절(§22–§32) 작성. 정합 회로 절의 "흡수 전력 측정법"은 쓰기 전에 원문(§11.8)을 다시 확인해 구체적 방법(방전을 끄고 같은 전압에서 비교)으로 고침. 펄스 방전의 시간 단위는 텍스트 추출에서 μ가 깨져 있어 계산값(감쇠율)으로 μs임을 확인. 책 내용이 아닌 해석은 "해설"로 표시.</li>
+          <li><time>22:42</time> 2부 §20 해설 수정(이중 주파수는 책 §11.2에 있음, 맞춤 파형 바이어스는 책에 없음), 진행 상황 표 3부 "완료", 목차 태그 "3/5부", 로컬 미리보기(가로 넘침 없음), 증거 스크린샷 3장.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 3부 완료 (5부 중 3부). 다음은 4부 기체 화학과 진단.</p>
+        <p><a href="../research/plasma_etch_principles.html#p3">3부 열기 →</a></p>
+        <figure>
+          <img src="../history_img/20261008_224500_lieb3_global_model.png" alt="전역 모델">
+          <figcaption>history_img/20261008_224500_lieb3_global_model.png — §23 전역 모델: 입자 균형은 T<sub>e</sub>, 에너지 균형은 밀도 + 책의 계산 예 비교</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261008_224500_lieb3_dual_freq.png" alt="이중 주파수와 정합">
+          <figcaption>history_img/20261008_224500_lieb3_dual_freq.png — §28 이중 주파수 CCP 조건과 대가, §29 정합 회로·전력 측정</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261008_224500_lieb3_icp.png" alt="ICP">
+          <figcaption>history_img/20261008_224500_lieb3_icp.png — §30 ICP: 표피 깊이, 변압기 모델, E–H 모드·이완 진동</figcaption>
         </figure>
       </section>
     </article>
