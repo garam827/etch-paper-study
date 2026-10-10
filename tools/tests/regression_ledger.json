@@ -1,0 +1,90 @@
+{
+ "schema_version": "1",
+ "topic": "회귀 사례 — 지난 작업(#25–#38)에서 실제로 나왔던 오류를 원래 문장 그대로 + 정상 대조군 2개",
+ "note": "expected 필드는 체계 검증용 정답 (도구는 읽지 않음). 체계가 이 오류들을 잡는지 확인한다.",
+ "claims": [
+  {
+   "claim_id": "R1", "revision": 1, "author_run": "A-regression", "risk": "medium", "as_of": "2026-10-09",
+   "statement": "DRAM에 EUV는 2021년 이후 일부 레이어에 적용되기 시작했다.",
+   "scope": {"device": "DRAM", "node_label": null, "conditions": {}, "assumptions": []},
+   "quantity": {}, "event": {"type": "first_production_use", "date": "2021", "precision": "year", "planned_or_actual": "actual"},
+   "evidence": [{"source_id": "S1", "doi": null, "url": "https://news.samsung.com/global/samsung-announces-industrys-first-euv-dram-with-shipment-of-first-million-modules",
+     "tier": "T2", "document_type": "press_release", "evidence_kind": "company_claim", "origin_group": "samsung-2020-03",
+     "access_level": "secondary", "locator": null, "relation": "unassessed"}],
+   "expected": {"lint": "ok", "verdict": "refuted", "why": "삼성 D1x EUV DRAM은 2020년 3월 발표 (#38에서 발견)"}
+  },
+  {
+   "claim_id": "R2", "revision": 1, "author_run": "A-regression", "risk": "low", "as_of": "2026-10-09",
+   "statement": "CCP의 이온 에너지는 200–1000 V이다.",
+   "scope": {"device": "CCP", "conditions": {}, "assumptions": []},
+   "quantity": {"metric": "ion energy", "raw": "200–1000 V", "value": [200, 1000], "unit": "V"}, "event": {},
+   "evidence": [{"source_id": "S2", "doi": "10.1002/0471724254", "url": null, "tier": "T1", "document_type": "textbook",
+     "evidence_kind": "review", "origin_group": "lieberman-2005", "access_level": "full_text", "locator": "Table 1.1", "relation": "unassessed"}],
+   "expected": {"lint": "error", "why": "에너지 지표에 전압 단위 (#38에서 발견)"}
+  },
+  {
+   "claim_id": "R3", "revision": 1, "author_run": "A-regression", "risk": "low", "as_of": "2026-10-09",
+   "statement": "1 kV Ar⁺ 이온 하나가 F 존재 시 Si 원자 최대 25개를 제거한다.",
+   "scope": {"conditions": {}, "assumptions": []},
+   "quantity": {"metric": "etch yield", "raw": "25", "value": 25, "unit": "atoms/ion"}, "event": {},
+   "evidence": [{"source_id": "S2", "doi": "10.1002/0471724254", "url": null, "tier": "T1", "document_type": "textbook",
+     "evidence_kind": "review", "origin_group": "lieberman-2005", "access_level": "full_text", "locator": "§15.1", "relation": "unassessed"}],
+   "expected": {"lint": "error", "why": "kV 표기 + 실험 조건 없는 수치 (#38에서 발견)"}
+  },
+  {
+   "claim_id": "R4", "revision": 1, "author_run": "A-regression", "risk": "medium", "as_of": "2026-10-09",
+   "statement": "쉬스 경계의 이온 밀도는 플라즈마 중심 밀도의 약 0.61배이다.",
+   "scope": {"conditions": {}, "assumptions": []},
+   "quantity": {"metric": "ratio", "raw": "0.61", "value": 0.61, "unit": null}, "event": {},
+   "evidence": [{"source_id": "S2", "doi": "10.1002/0471724254", "url": null, "tier": "T1", "document_type": "textbook",
+     "evidence_kind": "theory", "origin_group": "lieberman-2005", "access_level": "full_text", "locator": "§6.2", "relation": "unassessed"}],
+   "expected": {"lint": "warn", "verdict": "partially_supported", "why": "이상적 무충돌 모델의 값을 일반값처럼 씀 (#38에서 발견)"}
+  },
+  {
+   "claim_id": "R5", "revision": 1, "author_run": "A-regression", "risk": "medium", "as_of": "2026-10-09",
+   "statement": "Intel 10nm 공정과 Intel 7은 같은 공정이며 IEDM 2017에서 SAQP 적용이 보고되었다.",
+   "scope": {"node_label": "Intel 10nm / Intel 7", "conditions": {}, "assumptions": []},
+   "quantity": {}, "event": {"type": "paper_presented", "date": "2017-12", "precision": "month", "planned_or_actual": "actual"},
+   "evidence": [{"source_id": "S3", "doi": null, "url": "https://download.intel.com/newsroom/2021/client-computing/accelerating-process-innovation.pdf",
+     "tier": "T2", "document_type": "company_presentation", "evidence_kind": "company_claim", "origin_group": "intel-2021-07",
+     "access_level": "secondary", "locator": null, "relation": "unassessed"}],
+   "expected": {"lint": "ok", "verdict": "refuted_or_partial", "why": "Intel 7은 10nm Enhanced SuperFin의 새 이름 — 2017년 초기 10nm와 동일시 불가 (#38에서 발견)"}
+  },
+  {
+   "claim_id": "R6", "revision": 1, "author_run": "A-regression", "risk": "low", "as_of": "2026-10-09",
+   "statement": "습식 식각은 등방성이다.",
+   "scope": {"conditions": {}, "assumptions": []}, "quantity": {}, "event": {},
+   "evidence": [{"source_id": "S4", "doi": null, "url": "https://www.iue.tuwien.ac.at/phd/toifl/Anisotropic-Wet-Etching.html",
+     "tier": "T1", "document_type": "thesis", "evidence_kind": "review", "origin_group": "tuwien-toifl",
+     "access_level": "secondary", "locator": null, "relation": "unassessed"}],
+   "expected": {"lint": "ok", "verdict": "partially_supported", "why": "KOH·TMAH 결정 Si 식각은 이방성 (#38에서 발견)"}
+  },
+  {
+   "claim_id": "R7", "revision": 1, "author_run": "A-regression", "risk": "low", "as_of": "2026-10-09",
+   "statement": "Loubet 등(IEDM 2019)은 적층 GAA 나노시트 소자를 위한 SiGe 건식 선택 식각 공정을 보고했다.",
+   "scope": {"device": "stacked GAA nanosheet", "conditions": {}, "assumptions": []}, "quantity": {},
+   "event": {"type": "paper_presented", "date": "2019-12", "precision": "month", "planned_or_actual": "actual"},
+   "evidence": [{"source_id": "S5", "doi": "10.1109/iedm19573.2019.8993615", "url": null, "tier": "T1", "document_type": "conference_paper",
+     "evidence_kind": "experiment", "origin_group": "loubet-iedm2019", "access_level": "metadata_only", "locator": null, "relation": "unassessed",
+     "title": "A Novel Dry Selective Etch of SiGe for the Enablement of High Performance Logic Stacked Gate-All-Around NanoSheet Devices"}],
+   "expected": {"lint": "ok", "verdict": "supported", "why": "정상 대조군"}
+  },
+  {
+   "claim_id": "R8", "revision": 1, "author_run": "A-regression", "risk": "medium", "as_of": "2026-10-09",
+   "statement": "삼성은 2020년 3월 EUV를 적용한 1세대 10nm급(D1x) DRAM 모듈 100만 개 출하를 발표했다.",
+   "scope": {"device": "DRAM D1x", "conditions": {}, "assumptions": []}, "quantity": {},
+   "event": {"type": "announcement", "date": "2020-03-25", "precision": "day", "planned_or_actual": "actual"},
+   "evidence": [{"source_id": "S1", "doi": null, "url": "https://news.samsung.com/global/samsung-announces-industrys-first-euv-dram-with-shipment-of-first-million-modules",
+     "tier": "T2", "document_type": "press_release", "evidence_kind": "company_claim", "origin_group": "samsung-2020-03",
+     "access_level": "full_text", "locator": "본문 첫 문단", "relation": "supports"}],
+   "expected": {"lint": "ok", "verdict": "supported", "why": "정상 대조군 (회사 발표 사실 자체)"}
+  }
+ ],
+ "sources": [
+  {"id": "S1", "url": "https://news.samsung.com/global/samsung-announces-industrys-first-euv-dram-with-shipment-of-first-million-modules"},
+  {"id": "S2", "doi": "10.1002/0471724254", "title": "Principles of Plasma Discharges and Materials Processing"},
+  {"id": "S3", "url": "https://download.intel.com/newsroom/2021/client-computing/accelerating-process-innovation.pdf"},
+  {"id": "S4", "url": "https://www.iue.tuwien.ac.at/phd/toifl/Anisotropic-Wet-Etching.html"},
+  {"id": "S5", "doi": "10.1109/iedm19573.2019.8993615", "title": "A Novel Dry Selective Etch of SiGe for the Enablement of High Performance Logic Stacked Gate-All-Around NanoSheet Devices"}
+ ]
+}
