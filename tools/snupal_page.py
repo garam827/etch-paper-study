@@ -95,6 +95,7 @@ const $ = s => document.querySelector(s);
 const esc = s => (s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const cats = [...new Set(DATA.posts.map(p => p.cat || "기타"))].sort();
 cats.forEach(c => $("#cat").insertAdjacentHTML("beforeend", `<option>${esc(c)}</option>`));
+try { const u = new URLSearchParams(location.search).get("q"); if (u) $("#q").value = u; } catch (e) {}
 const hl = (s, q) => { s = esc(s); if (!q) return s; const i = s.toLowerCase().indexOf(q.toLowerCase()); return i < 0 ? s : s.slice(0, i) + "<mark>" + s.slice(i, i + q.length) + "</mark>" + s.slice(i + q.length); };
 const link = id => { const p = byId[id]; return p ? `<a href="${p.url}" target="_blank" rel="noopener" title="${esc(p.title)}">#${p.id}</a>` : ""; };
 const typeName = { substantive: "답변 있음", pointer: "안내", none: "답변 없음" };

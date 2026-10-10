@@ -60,7 +60,7 @@
   <header>
     <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
     <h1>10단계 · SNU PAL 질의응답 지식화</h1>
-    <p class="phase-desc">항목 #40 · 2026-10-09 20:10 ~ 10-10 12:40 · 서울대 플라즈마 응용 연구실 질의응답 게시판 838개 글을 데이터베이스로 만들고 지식·용어를 추출한다.</p>
+    <p class="phase-desc">항목 #40–#41 · 2026-10-09 20:10 ~ 10-10 18:59 · 서울대 플라즈마 응용 연구실 질의응답 게시판 838개 글을 데이터베이스로 만들고 지식·용어를 추출한다.</p>
   </header>
   <nav class="pager" aria-label="단계 이동"><a href="phase-9.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><span class="cur" aria-current="page">10. SNU PAL 질의응답 지식화</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
 
@@ -122,6 +122,57 @@
         <figure>
           <img src="../history_img/20261010_123954_snupal_knowledge_sheath.png" alt="분류별 지식">
           <figcaption>history_img/20261010_123954_snupal_knowledge_sheath.png — 분류별 지식: Sheath 분류에서 "쉬스" 검색 24개 글, 글마다 재서술한 지식과 원문 링크</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <!-- ===== 항목 #41 ===== -->
+    <article class="entry" id="e41">
+      <div class="entry-head">
+        <span class="no">#41</span>
+        <h2>SNU PAL 질의응답 용어를 용어집·지식 그래프에 병합</h2>
+        <time>2026-10-10 12:47</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>용어집과 지식 그래프에 합쳐줘</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>#40에서 만든 SNU PAL 질의응답 용어 649개를 기존 용어집·지식 그래프(용어 180·관계 345)에 합친다. 이미 있는 용어와의 중복·동의어를 가려야 하고, 새 용어의 관계는 연구실 답변에 근거해야 한다.</li>
+          <li>649개 중 429개는 한 글에만 나온 용어라 전부 노드로 넣으면 그래프가 쓰기 어려워진다(180개에서도 스크린샷이 가끔 멈춤) → 범위를 정해야 한다.</li>
+          <li>#39에서 만든 검증 체계(주장 장부 → 독립 검증 → 규칙 채택)를 처음 실제 작업에 적용한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>12:47</time> 진단: 기존 노드와 정확히 일치 33개, 새 용어 616개(1개 글 429 · 2개 92 · 3개 이상 95). 동의어인데 표기가 달라 자동 일치가 안 된 것도 있음(임피던스 정합≈정합 회로 등).</li>
+          <li><time>12:48</time> <b>jev 자문</b> 4건: 범위 → 3개 이상 글에 나온 용어만 정리해 노드로, 나머지는 질의응답 페이지에 두고 용어집에서 연결 (선택 b, 확률 0.91, 신뢰도 0.86) · 기존 용어·동의어는 새 노드 없이 기존 노드에 출처 추가 → 0.91 · 관계 → 모델이 연구실 답변 근거로 의미 있는 관계 제안 + 근거 글 번호 + 표본 원문 대조 (b, 1.00) · 별도 영역 → 0.42(아니오, 플라즈마 원리 영역에 둠). 모두 반영. astra 사용량 한도 풀림 확인.</li>
+          <li><time>12:50</time> 후보 113개(3개 이상 글)마다 그 용어가 나온 글들의 지식 항목을 묶고, 기존 노드 목록·전체 후보 이름과 함께 <b>astra(high)</b>에 3개로 나눠 병렬 요청: 후보마다 기존 노드 연결 / 후보끼리 병합 / 새 노드 / 제외, 새 노드의 정의·식각 관점·분류, 근거 글 번호가 달린 관계.</li>
+          <li><time>13:02</time> 제안 수신(113/113): 기존 노드 29(동의어 포함 — 시즈닝 → 챔버 벽 상태 변화, 전자 사이클로트론 공명 → ECR 소스, 바이어스 전력 → 기판 RF 바이어스 등), 병합 14, 새 노드 67, 제외 3(플라즈마·이온화·부산물). 식각 그래프와 거리가 먼 2개(핵융합, PDP)는 Claude 판단으로 추가 제외 → 새 노드 65. 관계 검사(대상 노드 존재, 근거 글에 그 용어가 실제로 나옴, 중복): 202개 통과(중복 27 버림), 관계 없는 새 노드 0.</li>
+          <li><time>13:03</time> <b>검증 체계 적용</b>: 관계 12개를 무작위로 골라 주장 장부(<code>ledger/snupal_edges.json</code>)에 "그 글의 연구실 답변이 이 관계를 이렇게 설명한다"는 주장으로 등록 → lint 오류 0 → blind 입력을 <code>claim-verifier</code> 에이전트(웹만, 로컬 파일 접근 없음)에 전달. 에이전트는 각 글을 직접 열어 답변과 대조(약 1.5분). 결과 반영은 18:58 (그 사이 세션 대기).</li>
+          <li><time>18:58</time> 판정 기록·gate: <b>채택 11 · 조건부 1 · 반박 0</b>. 조건부 1개(이동도 → 쉬스 "형성 원인")는 관계는 답변에 있으나 덧붙인 설명 문장("전자가 먼저 빠져나간다")이 답변에 없음 — 그래프에는 관계 이름만 들어가므로 관계는 유지. 표본에서 반박이 없어 202개 관계 모두 반영 판단.</li>
+          <li><time>18:58</time> 병합 적용(미리 시험 적용·문법 검사 후 되돌려 두었던 스크립트): 새 노드 65, 새 관계 183(기존 관계와 겹치는 19개 제외), 출처로 질의응답 글 330개, 출처가 붙은 노드 88(기존 노드 23 포함). 노드 패널의 관계마다 근거 글 번호 링크, 용어집 검색창 아래 "질의응답 용어 사전에서 찾기" 링크(질의응답 페이지가 주소의 검색어를 받도록 수정), 병합 설명 절 추가.</li>
+          <li><time>18:59</time> 브라우저 확인: 용어 245·관계 528 렌더링, 오류 없음, "반사 전력" 패널에 출처 6·근거 글 링크 6, 검색 "시즈닝" → 챔버 벽 상태 변화, 검색어별 질의응답 링크 정상.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 지식 그래프 용어 180 → 245개, 관계 345 → 528개. 질의응답 용어 중 3개 이상 글에 나온 것은 그래프에(새 65 + 기존 노드 출처 보강), 나머지는 질의응답 용어 사전에 두고 용어집에서 바로 찾아가게 연결. 새 관계 표본 12개 독립 검증: 지지 11, 부분 지지 1, 반박 0.</p>
+        <p><a href="../research/a20_etch_knowledge_graph.html#palmerge">병합 설명 절 열기 →</a></p>
+        <figure>
+          <img src="../history_img/20261010_185903_graph_pal_reflected_power.png" alt="반사 전력 노드">
+          <figcaption>history_img/20261010_185903_graph_pal_reflected_power.png — 새 노드 "반사 전력": 정합 회로·챔버 벽 상태 변화·미세 아크 등과 연결, 출처는 SNU PAL 질의응답 글</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261010_185911_graph_pal_merge_section.png" alt="병합 절">
+          <figcaption>history_img/20261010_185911_graph_pal_merge_section.png — 병합 설명 절과 용어집 검색 "시즈닝"(동의어로 챔버 벽 상태 변화), 질의응답 용어 사전 링크</figcaption>
         </figure>
       </section>
     </article>
