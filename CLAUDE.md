@@ -10,7 +10,7 @@
 
 - `history.html` — 기록 첫 화면. "최근 항목" 3개와 단계 카드(단계명, 항목 범위·개수, 기간, 요약, 항목 목록)만 둔다. 항목 본문은 넣지 않는다.
 - `history/phase-N.html` — N단계의 항목 본문. 위아래에 단계 이동(이전/다음, 단계 번호)이 있다.
-- 현재 단계 (2026-10-08 기준):
+- 현재 단계 (2026-10-09 기준):
   1. 기록·자문 체계 구축 (#1–#8)
   2. A20 식각 리서치 (#9–#12)
   3. 공유·배포·보안 (#13–#15)
@@ -18,7 +18,9 @@
   5. 기록 체계 개선 (#21)
   6. 용어·개념 학습 (#22–#24)
   7. 패터닝 기술 리서치 (#25–#30)
-  8. 플라즈마 식각 기초 문헌 학습 (#31–)
+  8. 플라즈마 식각 기초 문헌 학습 (#31–#38)
+  9. 리서치 검증 체계 구축 (#39–)
+  10. SNU PAL 질의응답 지식화 (#40–)
 
 ### 새 항목 추가 방법
 
@@ -99,6 +101,24 @@ codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_
 - 응답: 판단값, 신뢰도, 선택지별 확률, 토큰 사용량.
 - 판단을 구할 땐 질문과 jev의 답(판단값·신뢰도)을 기록의 "과정"에 남긴다.
 - 참고: https://grow-up-by-coding.tistory.com/entry/Jev-API-%EC%A7%81%EC%A0%91-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0-%EA%B0%80%EA%B2%A9
+
+### 리서치 검증 체계 (2026-10-09, #39)
+
+새 사실을 보고서·용어집·그래프에 넣거나 기존 내용을 검증할 때는 `semi-research` 스킬 절차를 따른다 (`.claude/skills/semi-research/` — SKILL.md, policy.md 출처 등급·함정 체크리스트, schema.md 장부 형식).
+
+- 주장 장부 `ledger/<주제>.json` (비공개). `python tools/claims.py lint|blind|record|gate|summary`.
+- 채택은 `claims.py gate`만 결정한다. 작성자(Claude)가 자기 주장을 채택으로 올리지 않는다. 주장을 고치면 이전 검증은 자동 무효.
+- 검증은 `claim-verifier` 에이전트(웹 도구만, 로컬 파일 접근 없음)에 `claims.py blind` 출력만 넘긴다. 에이전트가 세션에 아직 안 올라왔으면 별도 실행으로 같은 격리를 건다:
+  `claude -p --agent claim-verifier --allowedTools WebSearch WebFetch --disallowedTools Bash Read Write Edit Glob Grep NotebookEdit Agent PowerShell --output-format json < 입력.txt`
+- 수집은 `paper-scout` 에이전트(중립 질문만) + `python tools/lit_search.py`. 출처 실재는 `python tools/check_refs.py` (DOI가 있다고 내용이 맞는 것은 아님).
+- jev는 범위·우선순위 같은 이산 판단에 쓰고, **증거 충돌의 종결에는 쓰지 않는다** (충돌은 보류로 두고 조건·정의·시점 차이를 조사).
+- 체계를 고치면 `tools/tests/regression_ledger.json`(지난 실제 오류 6개 + 정상 2개)로 다시 확인한다.
+
+### 외부 자료 수집 (2026-10-09, #40)
+
+- 수집 전 robots.txt·이용 조건 확인, 요청 사이 1초 이상 쉰다.
+- 원문 전체·작성자 이름은 `data/`(비공개, .gitignore)에만 둔다. 공개 결과물에는 **재서술한 지식·용어 + 원문 링크**만 싣고, 원문을 15단어 넘게 옮기지 않는다.
+- SNU PAL 게시판: `python tools/snupal_crawl.py list|docs|stats` → `data/snupal/snupal.db`, 추출 결과 병합·검사 `tools/snupal_merge.py`, 공개 페이지 생성 `tools/snupal_page.py`.
 
 ## 5. 공유 사이트 (GitHub Pages)
 

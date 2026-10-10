@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>리서치 검증 체계</title>
+<style>
+  :root { --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb;
+          --ok:#166534; --ok-bg:#dcfce7; --cd:#1e40af; --cd-bg:#dbeafe; --hold:#92400e; --hold-bg:#fef3c7; --rej:#991b1b; --rej-bg:#fee2e2; }
+  * { box-sizing:border-box; }
+  html { color-scheme: light; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.7 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; }
+  .wrap { max-width:980px; margin:0 auto; padding:40px 16px 80px; }
+  h1 { font-size:28px; margin:0 0 6px; line-height:1.3; }
+  h2 { font-size:21px; margin:40px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  p { max-width:78ch; } a { color:var(--accent); }
+  .sub, .note { color:var(--muted); } .note { font-size:13px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:12px 0; }
+  table { border-collapse:collapse; width:100%; font-size:14px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#f3f6fb; white-space:nowrap; }
+  .tbl { overflow-x:auto; border-radius:10px; }
+  .tag { display:inline-block; font-size:12px; font-weight:700; padding:1px 9px; border-radius:999px; white-space:nowrap; }
+  .adopt { background:var(--ok-bg); color:var(--ok); } .cond { background:var(--cd-bg); color:var(--cd); }
+  .hold { background:var(--hold-bg); color:var(--hold); } .reject { background:var(--rej-bg); color:var(--rej); }
+  .flow { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; counter-reset:s; }
+  .flow div { background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; font-size:14px; position:relative; }
+  .flow div::before { counter-increment:s; content:counter(s); position:absolute; top:-10px; left:12px; background:var(--accent); color:#fff; font-size:12px; font-weight:800; border-radius:999px; width:22px; height:22px; display:grid; place-items:center; }
+  .flow b { display:block; margin-top:4px; }
+  code { background:#eef2f7; padding:1px 5px; border-radius:5px; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>반도체 지식·논문 리서치 검증 체계</h1>
+  <p class="sub" style="margin-top:6px"><a href="../index.html">← 목차</a> · 2026-10-09 v1</p>
+  <p>지금까지는 Claude(작성) + astra(다른 계열 모델 자문) + jev(판단 API)를 그때그때 불렀다. 그러다 보니 <b>쓴 쪽이 스스로 검증</b>해 오류가 늦게 발견됐다 — 예: 교과서 모델 수치를 일반값처럼 쓰기, 이온 에너지를 V로 표기, EUV DRAM 도입 연도 혼동(용어 검토 #38에서 51개 용어 수정). 이 체계는 <b>"찾기 → 주장 장부 → 분리된 검증 → 규칙 기반 채택"</b>을 반복 가능한 절차로 만든다.</p>
+
+  <h2>절차</h2>
+  <div class="flow">
+    <div><b>질문 정리</b>하위 질문·기준일·고위험 주장</div>
+    <div><b>수집</b>paper-scout 에이전트(중립 질문만) + 학술 DB 검색</div>
+    <div><b>주장 장부</b>한 문장 한 사실, 단위·조건·사건 종류·원문 접근 범위</div>
+    <div><b>기계 검사</b>단위·날짜·조건 lint, DOI·URL 실재 확인</div>
+    <div><b>분리된 검증</b>claim-verifier — 주장만 받고 웹 원문 대조</div>
+    <div><b>규칙 채택</b>gate가 채택·조건부·보류·제외 결정</div>
+  </div>
+
+  <h2>역할과 권한</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>구성</th><th>하는 일</th><th>하지 않는 일 / 막는 방법</th></tr></thead>
+    <tbody>
+      <tr><td>Claude (조율·작성)</td><td>질문 정리, 장부 작성, 결과물 반영</td><td>자기 주장을 "채택"으로 올리지 못함 — 채택은 gate만 기록 (어기면 lint 오류)</td></tr>
+      <tr><td><code>semi-research</code> 스킬</td><td>위 절차·출처 등급·함정 체크리스트·장부 형식</td><td>—</td></tr>
+      <tr><td><code>paper-scout</code> 에이전트</td><td>후보 출처 수집 (등급·접근 범위 표시)</td><td>결론·종합 금지, 기억으로 DOI를 만들지 않음(학술 DB 결과만)</td></tr>
+      <tr><td><code>claim-verifier</code> 에이전트</td><td>주장을 웹 원문과 대조해 판정</td><td><b>로컬 파일 도구 없음</b>(웹 검색·열기만) → 작성자 메모·판단을 볼 수 없음. 작성자 근거와 다른 출처도 직접 찾음</td></tr>
+      <tr><td>도구 <code>claims.py</code></td><td>lint, blind 입력 생성, 검증 기록, gate 판정</td><td>주장을 고치면 내용 해시가 바뀌어 이전 검증 자동 무효</td></tr>
+      <tr><td>도구 <code>lit_search.py</code> · <code>check_refs.py</code></td><td>OpenAlex·Crossref·arXiv 검색, DOI·제목 일치·URL 확인</td><td>"DOI가 있다" ≠ "내용이 맞다" — 내용은 검증자가 봄</td></tr>
+      <tr><td>astra (다른 계열 모델)</td><td>고위험 주장 비평, 대량 추출 등 선택적으로</td><td>매 질문마다 자동 호출하지 않음</td></tr>
+      <tr><td>jev (판단 API)</td><td>범위·우선순위 같은 이산 판단</td><td><b>증거 충돌을 종결하지 않음</b> — 충돌은 보류로 남기고 조건·정의·시점 차이를 조사</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>출처 등급 (유형이지 사실성 순위가 아님)</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>등급</th><th>예</th><th>채택 범위</th></tr></thead>
+    <tbody>
+      <tr><td>T1 논문·교과서</td><td>IEDM·VLSI·JVST·JAP·SPIE, 교과서</td><td>원문에 명시된 조건의 결과 — 한 실험을 보편값으로 확대 금지</td></tr>
+      <tr><td>T2 회사·연구소</td><td>TSMC·Intel·Samsung·imec 발표</td><td>"그 기관이 발표했다"는 사실. 성능 우위를 사실로 쓰려면 독립 증거</td></tr>
+      <tr><td>T3 분석사</td><td>TechInsights 등</td><td>실제 열람한 직접 분석의 샘플 범위</td></tr>
+      <tr><td>T4 언론</td><td>기사</td><td>제한적. 기사 10개가 같은 보도자료면 근거는 1개</td></tr>
+      <tr><td>T5 루머</td><td>공급망 루머, 커뮤니티</td><td>탐색 단서만 — 결론에서 제외</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>회귀 시험 — 지난 실제 오류로 확인</h2>
+  <p>#25–#38에서 실제로 나왔던 틀린 문장 6개를 원래 그대로 넣고, 맞는 문장 2개를 대조군으로 넣었다. 검증자는 별도 실행(웹 도구만 허용)으로 돌렸다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>ID</th><th>주장 (원래 문장)</th><th>잡은 곳</th><th>결과</th></tr></thead>
+    <tbody>
+      <tr><td>R1</td><td>DRAM에 EUV는 2021년 이후 적용되기 시작했다</td><td>검증자: 근거 자체가 2020년 3월 출하</td><td><span class="tag reject">제외</span></td></tr>
+      <tr><td>R2</td><td>CCP의 이온 에너지는 200–1000 V</td><td>lint: 에너지에 전압 단위</td><td><span class="tag hold">보류</span></td></tr>
+      <tr><td>R3</td><td>1 kV Ar⁺ 하나가 Si 최대 25개 제거</td><td>lint: kV 표기 + 조건 없는 수치</td><td><span class="tag hold">보류</span></td></tr>
+      <tr><td>R4</td><td>쉬스 경계 밀도는 중심의 약 0.61배</td><td>검증자: 무충돌·Boltzmann 전자·차가운 이온 모델에서만</td><td><span class="tag cond">조건부</span></td></tr>
+      <tr><td>R5</td><td>Intel 10nm과 Intel 7은 같은 공정</td><td>검증자: Intel 7은 10nm Enhanced SuperFin의 새 이름</td><td><span class="tag cond">조건부</span></td></tr>
+      <tr><td>R6</td><td>습식 식각은 등방성이다</td><td>검증자: 제시한 근거가 KOH 이방성 식각을 설명</td><td><span class="tag reject">제외</span></td></tr>
+      <tr><td>R7</td><td>Loubet 등(IEDM 2019) SiGe 건식 선택 식각 보고 — 대조군</td><td>DOI·제목 일치, 검증 지지</td><td><span class="tag adopt">채택</span></td></tr>
+      <tr><td>R8</td><td>삼성 2020-03 EUV D1x DRAM 100만 개 출하 발표 — 대조군</td><td>검증 지지 (회사 발표 사실)</td><td><span class="tag adopt">채택</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">추가 확인: R7의 문장을 한 단어 고친 뒤 다시 판정하자 "검증 후 주장이 바뀌어 재검증 필요"로 보류되고, 옛 검증 보고는 기록이 거부됨. 검증자는 원문을 못 연 경우(유료 교과서, 회사 PDF)를 판정 이유에 그대로 밝혔다.</p>
+
+  <h2>한계</h2>
+  <ul>
+    <li>검증자도 같은 계열 모델이라 오류가 통계적으로 독립이라고 보장하지는 못한다 — 고위험 주장은 다른 계열(astra) 비평을 추가로 받는다.</li>
+    <li>유료 논문·분석 보고서는 원문을 못 여는 경우가 많다. 그때는 "초록만/메타데이터만"으로 표시하고 본문 조건까지 확인한 것으로 쓰지 않는다.</li>
+    <li>장부(<code>ledger/</code>)는 원문 발췌가 들어갈 수 있어 공개하지 않는다. 공개 결과물에는 재서술한 주장과 링크만.</li>
+  </ul>
+  <p class="note">설계: Claude 초안 → astra(xhigh) 비평 반영 → jev 판단. 파일: <code>.claude/skills/semi-research/</code>, <code>.claude/agents/</code>, <code>tools/claims.py · lit_search.py · check_refs.py</code>, 회귀 사례 <code>tools/tests/regression_ledger.json</code>.</p>
+</div>
+</body>
+</html>
