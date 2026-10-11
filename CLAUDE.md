@@ -20,7 +20,8 @@
   7. 패터닝 기술 리서치 (#25–#30)
   8. 플라즈마 식각 기초 문헌 학습 (#31–#38)
   9. 리서치 검증 체계 구축 (#39–)
-  10. SNU PAL 질의응답 지식화 (#40–) — **비공개 기록** (아래 참고)
+  10. OES 식각 화학 데이터 병합 (#46–)
+  - (비공개) SNU PAL 질의응답 지식화 (#40–#45) — 공개 단계 목록에 없음, `data/history_private/snupal_history.html`
 
 ### 새 항목 추가 방법
 
@@ -41,7 +42,7 @@
   4. **결과 / 증거** — 성공 여부, 그리고 증거 스크린샷.
 - 디자인은 **밝은 톤**을 유지한다.
 - 사용자가 "(history 기록 x)"처럼 기록하지 말라고 한 지시는 기록하지 않는다.
-- **SNU PAL 질의응답 데이터셋 관련 작업은 공개 기록(history.html·history/·history_img/)에 싣지 않는다** (2026-10-11 사용자 지시). 같은 형식으로 `data/history_private/phase-10.html`(스크린샷은 `data/history_private/history_img/`)에 기록한다. 공개 단계 이동 줄·첫 화면에도 넣지 않는다.
+- **SNU PAL 질의응답 데이터셋 관련 작업은 공개 기록(history.html·history/·history_img/)에 싣지 않는다** (2026-10-11 사용자 지시). 같은 형식으로 `data/history_private/snupal_history.html`(스크린샷은 `data/history_private/history_img/`)에 기록한다. 공개 단계 이동 줄·첫 화면에도 넣지 않는다.
 - 작업이 끝날 때 기록을 갱신하는 것을 잊지 않는다. 기록 없이 작업을 마치지 않는다.
 
 ## 2. 증거 스크린샷 (history_img/)
@@ -129,6 +130,7 @@ codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_
 - 첫 화면은 `index.html`(목차). 새 결과물을 만들면 목차에 항목을 추가하고, 결과물 페이지에는 `← 목차` 링크를 넣는다.
 - 작업이 끝나면 기록(현재 단계 페이지 + history.html 첫 화면) 갱신 → 커밋 → `git push`로 사이트를 업데이트한다. 푸시 후 Pages 빌드 완료와 실제 페이지(200)를 확인한다.
 - 절대 커밋 금지: `.env`(API 키). `.gitignore`로 막혀 있지만, 커밋 전에 올라갈 파일에 키·IP·계정정보가 없는지 매번 검사한다.
+- OES Assistant 데이터 페이지: `python tools/oes_page.py <oes_assistant 폴더> <파장검증.json> [조합검증.json]` → `research/oes_etch_chemistry.html`. 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
 - 원본 리서치(`research/*_raw.md`)와 실행 로그(`research/*_log.txt`)는 공개하지 않는다 (로컬 보관).
 - 사이트 주소에는 GitHub 계정명이 들어가므로, history에는 `<계정>.github.io/etch-paper-study/`처럼 가려서 적는다.
 

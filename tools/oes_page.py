@@ -1,0 +1,173 @@
+"""OES Assistant(별도 프로젝트)의 식각 화학 데이터 → 정적 읽기 전용 페이지.
+
+    python tools/oes_page.py <oes_assistant 폴더> <파장검증.json> [조합검증.json]
+
+- 읽는 것: <폴더>/data/etch_knowledge.json (막질×기체 조합 67개), data/spectra.json (기준 파장).
+  앱 코드·.env·worker는 읽지 않는다.
+- 파장검증.json: [species, nm, source_id, 원문일치(bool), medium, kind] 목록 (NIST 표·논문 원문 대조 결과).
+- 조합검증.json: {claim_id: {"combo": id, "verdict": ..., "notes": ...}} (표본 독립 검증, 선택).
+출력: research/oes_etch_chemistry.html
+"""
+import html
+import json
+import sys
+from collections import Counter
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+src = Path(sys.argv[1])
+K = json.load(open(src / "data/etch_knowledge.json", encoding="utf-8"))
+SP = json.load(open(src / "data/spectra.json", encoding="utf-8"))
+VER = json.load(open(sys.argv[2], encoding="utf-8"))
+CV = json.load(open(sys.argv[3], encoding="utf-8")) if len(sys.argv) > 3 else {}
+e = html.escape
+
+KIND = {"atomic_line": "원자선", "ionic_line": "이온선", "molecular_band": "분자 진단 위치", "molecular_diagnostic": "분자 진단 위치"}
+EVID = {"provided_feed": "공급 가스", "chemical_inference": "추론", "reported_in_reference": "문헌 보고"}
+BASIS = {"reference_example": "출처의 공정 예시", "literature_family": "문헌의 반응 계열", "chemistry_variant": "화학 변형 예시"}
+VERD = {"supported": ("지지", "adopt"), "partial": ("부분 지지", "cond"), "contradicted": ("반박", "reject"), "unverifiable": ("확인 불가", "hold")}
+
+sources = {**K["sources"], **SP["sources"]}
+ok = {(v[0], v[1]): v[3] for v in VER}
+n_ok = sum(v[3] for v in VER)
+
+# 1) 기준 파장
+rows = []
+for name, s in SP["species"].items():
+    src_ = SP["sources"][s["source_id"]]
+    marks = " ".join(f'{w}{"" if ok.get((name, w)) else " ⚠"}' for w in s["wavelengths_nm"])
+    rows.append(f'<tr><td><b>{e(name)}</b></td><td>{KIND.get(s["kind"], e(s["kind"]))}</td><td class="num">{marks}</td>'
+                f'<td>{e(s["medium"])}</td><td><a href="{e(src_["url"])}" target="_blank" rel="noopener">{e(src_["title"])}</a></td></tr>')
+spectra_tbl = "\n".join(rows)
+
+# 2) 조합 (JS에서 필터)
+combo_verdict = {v["combo"]: v for v in CV.values()}
+items = []
+for x in K["items"]:
+    sp = [{"f": s["formula"], "e": s["evidence"], "w": bool(s.get("spectrum"))} for s in x["species"]]
+    items.append({"id": x["id"], "film": x["film"]["name"], "fam": x["family_label"], "gas": x["gases"], "mode": x["mode_label"],
+                  "basis": BASIS.get(x["basis"], x["basis"]), "src": x["sources"], "prod": x.get("products", []),
+                  "res": x.get("residues", []), "note": x.get("note", ""), "sp": sp,
+                  "v": combo_verdict.get(x["id"], {}).get("verdict")})
+src_js = {k: [v["title"], v["url"]] for k, v in sources.items()}
+fams = sorted(set(i["fam"] for i in items))
+ev = Counter(s["evidence"] for x in K["items"] for s in x["species"])
+
+# 3) 표본 검증 표
+cv_rows = ""
+for cid, v in sorted(CV.items()):
+    x = next(i for i in K["items"] if i["id"] == v["combo"])
+    lab, cls = VERD.get(v["verdict"], (v["verdict"], "hold"))
+    cv_rows += (f'<tr><td>{e(cid)}</td><td>{e(x["id"])}</td><td>{e(x["film"]["name"])} · {e(" + ".join(x["gases"]))}</td>'
+                f'<td><span class="tag {cls}">{lab}</span></td><td>{e(v.get("notes", ""))}</td></tr>')
+cv_count = Counter(v["verdict"] for v in CV.values())
+
+limits = "".join(f"<li>{e(t)}</li>" for t in K["limitations"])
+src_rows = "".join(f'<tr><td><code>{e(k)}</code></td><td><a href="{e(v["url"])}" target="_blank" rel="noopener">{e(v["title"])}</a></td>'
+                   f'<td>{e(v.get("kind", "파장 기준"))}</td></tr>' for k, v in sorted(sources.items()))
+
+page = f"""<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>식각 화학·OES 파장</title>
+<style>
+  :root {{ --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb;
+          --ok:#166534; --ok-bg:#dcfce7; --cd:#1e40af; --cd-bg:#dbeafe; --hold:#92400e; --hold-bg:#fef3c7; --rej:#991b1b; --rej-bg:#fee2e2; }}
+  * {{ box-sizing:border-box; }}
+  html {{ color-scheme: light; }}
+  body {{ margin:0; background:var(--bg); color:var(--ink); font:15px/1.7 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; }}
+  .wrap {{ max-width:1100px; margin:0 auto; padding:40px 16px 80px; }}
+  h1 {{ font-size:28px; margin:0 0 6px; line-height:1.3; }}
+  h2 {{ font-size:21px; margin:40px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--line); }}
+  p, ul {{ max-width:84ch; }} a {{ color:var(--accent); }}
+  .sub, .note {{ color:var(--muted); }} .note {{ font-size:13px; }}
+  .card {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:12px 0; }}
+  table {{ border-collapse:collapse; width:100%; font-size:14px; background:#fff; }}
+  th, td {{ border:1px solid var(--line); padding:7px 9px; text-align:left; vertical-align:top; }}
+  th {{ background:#f3f6fb; white-space:nowrap; }}
+  td.num {{ font-variant-numeric:tabular-nums; }}
+  .tbl {{ overflow-x:auto; border-radius:10px; }}
+  .tag {{ display:inline-block; font-size:12px; font-weight:700; padding:1px 9px; border-radius:999px; white-space:nowrap; }}
+  .adopt {{ background:var(--ok-bg); color:var(--ok); }} .cond {{ background:var(--cd-bg); color:var(--cd); }}
+  .hold {{ background:var(--hold-bg); color:var(--hold); }} .reject {{ background:var(--rej-bg); color:var(--rej); }}
+  .sp {{ display:inline-block; font-size:12.5px; border:1px solid var(--line); border-radius:6px; padding:0 6px; margin:1px 2px; background:#fff; }}
+  .sp.feed {{ background:#f3f4f6; color:#4b5563; }} .sp.rep {{ border-color:#16a34a; color:#166534; }}
+  .sp.w::after {{ content:" ✦"; color:#7c3aed; }}
+  .bar {{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:8px 0 10px; }}
+  input, select {{ font:inherit; padding:6px 10px; border:1px solid var(--line); border-radius:8px; background:#fff; }}
+  input {{ flex:1 1 240px; }}
+  code {{ background:#eef2f7; padding:1px 5px; border-radius:5px; font-size:13px; }}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>식각 화학 조합 · OES 기준 파장</h1>
+  <p class="sub" style="margin-top:6px"><a href="../index.html">← 목차</a> · 2026-10-11 · 별도 프로젝트 “OES Assistant”의 데이터(버전 {e(K["version"])}, 파장 {e(SP["version"])})를 읽기 전용으로 옮김</p>
+  <p>막질과 공급 가스 조합 {len(items)}개마다 <b>생성될 수 있는 화학종 후보</b>와, 그중 출처가 확인된 <b>OES 기준 파장</b>을 정리했다. 원래 앱은 레시피를 넣으면 언어 모델이 후보를 추론하는 서버 프로그램이고, 여기에는 그 앱이 기준으로 쓰는 정리된 데이터만 옮겼다(모델 호출 없음). 용어는 <a href="a20_etch_knowledge_graph.html">지식 그래프</a>의 광방출 분광(OES)·Actinometry 노드와 연결된다.</p>
+
+  <div class="card">
+    <b>해석 범위</b> — 이 데이터가 말하지 않는 것
+    <ul>{limits}</ul>
+    <p class="note">화학종 표시: <span class="sp feed">공급 가스</span> <span class="sp">추론 후보</span> <span class="sp rep">문헌 보고</span> <span class="sp w">기준 파장 있음</span> · 전체 {sum(ev.values())}개 중 추론 {ev["chemical_inference"]}, 공급 가스 {ev["provided_feed"]}, 문헌 보고 {ev["reported_in_reference"]}.</p>
+  </div>
+
+  <h2 id="spectra">OES 기준 파장 ({len(SP["species"])}종 {len(VER)}선)</h2>
+  <p>원자선·이온선은 NIST 원소별 강한 선 표(공기 중 Å → nm, ÷10), 분자 위치는 논문 1편의 진단 파장이다. <b>2026-10-11에 {len(VER)}개 값을 모두 원문 표와 기계적으로 대조해 {n_ok}개 일치</b>를 확인했다(⚠ 표시는 불일치).</p>
+  <div class="tbl"><table>
+    <thead><tr><th>화학종</th><th>종류</th><th>파장 (nm)</th><th>매질</th><th>출처</th></tr></thead>
+    <tbody>{spectra_tbl}</tbody>
+  </table></div>
+  <p class="note">원자선은 그 원자(여기 상태)의 방출이고 모분자 전체를 특정하지 않는다. 기준 목록에 없다고 발광이 없다는 뜻은 아니다. 가까운 선은 분광기 분해능에 따라 겹칠 수 있다(예: CF₂ 251.9 nm와 Si 251.92 nm).</p>
+
+  <h2 id="combos">막질 × 기체 조합 ({len(items)}개)</h2>
+  <div class="bar">
+    <input id="q" type="search" placeholder="막질·기체·화학종 검색 (예: SiO2, HBr, CF2)">
+    <select id="fam"><option value="">모든 막질 계열</option>{"".join(f'<option>{e(f)}</option>' for f in fams)}</select>
+    <span class="note" id="cnt"></span>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>ID</th><th>막질</th><th>기체 · 방식</th><th>화학종 후보</th><th>근거</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+
+  <h2 id="verify">검증</h2>
+  <ul>
+    <li><b>기준 파장</b>: {len(VER)}개 전부 원문 표·논문과 대조 → {n_ok}개 일치.</li>
+    <li><b>조합의 출처</b>: 출처마다 1개씩 뽑은 표본 {len(CV)}개를 독립 검증 에이전트(웹 원문만 보고 작성 과정은 모름)가 원문과 대조했다{": " + ", ".join(f"{VERD.get(k, (k,))[0]} {n}" for k, n in cv_count.items()) if CV else " (진행 중)"}. 검증 대상은 “출처가 이 막질을 이 기체로 식각하는 예를 제시한다”까지이며, 화학종 후보(대부분 추론)는 검증 대상이 아니다.</li>
+  </ul>
+  {'<div class="tbl"><table><thead><tr><th>주장</th><th>조합</th><th>막질 · 기체</th><th>판정</th><th>검증자 메모</th></tr></thead><tbody>' + cv_rows + '</tbody></table></div>' if CV else ''}
+
+  <h2 id="sources">출처 ({len(sources)}개)</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>ID</th><th>출처</th><th>종류</th></tr></thead>
+    <tbody>{src_rows}</tbody>
+  </table></div>
+</div>
+<script>
+const ITEMS = {json.dumps(items, ensure_ascii=False, separators=(",", ":"))};
+const SRC = {json.dumps(src_js, ensure_ascii=False, separators=(",", ":"))};
+const VERD = {json.dumps({k: list(v) for k, v in VERD.items()}, ensure_ascii=False)};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}})[c]);
+const cls = {{provided_feed:"feed", reported_in_reference:"rep", chemical_inference:""}};
+function render() {{
+  const q = document.getElementById("q").value.trim().toLowerCase(), fam = document.getElementById("fam").value;
+  const out = ITEMS.filter(x => (!fam || x.fam === fam) && (!q || JSON.stringify([x.id, x.film, x.gas, x.sp.map(s => s.f), x.note]).toLowerCase().includes(q)));
+  document.getElementById("cnt").textContent = out.length + "개";
+  document.getElementById("rows").innerHTML = out.map(x => `<tr id="${{x.id}}"><td>${{x.id}}</td><td>${{esc(x.film)}}<div class="note">${{esc(x.fam)}}</div></td>`
+    + `<td>${{x.gas.map(esc).join(" + ")}}<div class="note">${{esc(x.mode)}}</div></td>`
+    + `<td>${{x.sp.map(s => `<span class="sp ${{cls[s.e] || ""}}${{s.w ? " w" : ""}}">${{esc(s.f)}}</span>`).join("")}}${{x.note ? `<div class="note">${{esc(x.note)}}</div>` : ""}}</td>`
+    + `<td>${{esc(x.basis)}}<div>${{x.src.map(s => SRC[s] ? `<a href="${{esc(SRC[s][1])}}" target="_blank" rel="noopener">${{esc(SRC[s][0])}}</a>` : esc(s)).join("<br>")}}</div>`
+    + `${{x.v ? `<span class="tag ${{VERD[x.v][1]}}">표본 검증: ${{VERD[x.v][0]}}</span>` : ""}}</td></tr>`).join("");
+}}
+document.getElementById("q").addEventListener("input", render);
+document.getElementById("fam").addEventListener("change", render);
+const u = new URLSearchParams(location.search).get("q"); if (u) document.getElementById("q").value = u;
+render();
+</script>
+</body>
+</html>
+"""
+(ROOT / "research/oes_etch_chemistry.html").write_text(page, encoding="utf-8")
+print("ok", len(items), "combos", len(VER), "lines", n_ok, "ok", len(CV), "verified")

@@ -19,3 +19,4 @@ data/
 
 # 주장 장부 (원문 발췌 포함 가능, 로컬 보관)
 ledger/
+merge_src/

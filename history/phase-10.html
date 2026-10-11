@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10단계 · OES 식각 화학 데이터 병합</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>10단계 · OES 식각 화학 데이터 병합</h1>
+    <p class="phase-desc">항목 #46 · 2026-10-11 22:03 ~ 22:18 · 별도로 만든 OES 분석 앱의 식각 화학·파장 데이터를 검증해 이 사이트에 합친다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-9.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><span class="cur" aria-current="page">10. OES 식각 화학 데이터 병합</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #39 ===== -->
+    <article class="entry" id="e46">
+      <div class="entry-head">
+        <span class="no">#46</span>
+        <h2>OES Assistant 프로젝트 데이터 검토 · 병합</h2>
+        <time>2026-10-11 22:03</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>oes_assistant 폴더 확인 할 것. 해당 폴더의 데이터 확인 후 지금 프로젝트에 merge 가능한 지 검토 후 실행하라.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>작업 폴더에 복사된 <code>oes_assistant</code>는 별도 git 저장소인 웹 앱(FastAPI 서버 + OpenAI API 호출)이다. 레시피를 넣으면 생성 화학종을 추론하고, 출처가 확인된 OES 기준 파장을 연결한다. 이 사이트는 정적 GitHub Pages라 서버 앱은 동작하지 않는다.</li>
+          <li>합칠 수 있는 것은 앱이 기준으로 쓰는 <b>정리된 데이터</b>다: 막질×공급 기체 조합 67개(막질 29, 화학종 109), OES 기준 파장 12종 40선(NIST 표·논문 1편), 출처 26개. 위키 문서 259개는 모두 "가져왔으나 미재검토" 상태라, 새 사실로 넣기 전에 검증이 필요하다.</li>
+          <li>앱 코드, 키 파일(.env 등), 가상환경·배포 작업 폴더(약 234MB)는 합치지 않고 열지도 않는다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>22:08</time> 폴더 확인: README, 데이터 8개, 위키 파일 274개, 앱·테스트 코드. 기존 그래프와 겹치는 용어는 CF₄·Cl₂·c-C₄F₈·SiO₂·Al·Cu·low-k 정도이고, OES·Actinometry 노드는 이미 있다.</li>
+          <li><time>22:10</time> <b>jev 자문</b> 3건. 모두 반영.<br>
+            · 병합 방식: 코드는 넣지 않고 데이터만 정적 페이지로, 파장은 원문 대조, 조합은 "추론 후보" 표시 유지, 그래프에는 핵심만 노드로 (선택 b, 확률 0.98, 신뢰도 0.97)<br>
+            · 공개 전 검증 필요 → 0.85(예)<br>
+            · 원래 저장소는 그대로 두고 복사본은 커밋하지 않음 → 0.79(예)</li>
+          <li><time>22:12</time> <b>파장 검증</b>: NIST 원소별 표 8개와 논문 PDF를 받아 40개 값을 기계적으로 대조했다. 처음에는 32/40 일치. 불일치 8개는 원문이 끝자리에 0을 붙여 쓴 것(예: 3092.710 Å)이어서, 비교 방식을 고쳐 <b>40/40 일치</b>를 확인했다.</li>
+          <li><time>22:14</time> <b>조합 출처 검증</b> (리서치 검증 체계 적용)<br>
+            · 출처마다 하나씩 무작위로 뽑은 표본 10개를 주장 장부에 등록 (lint 오류 0)<br>
+            · blind 입력을 독립 검증 에이전트(웹만 사용, 로컬 파일 접근 없음)에 전달, 약 2.5분<br>
+            · 결과: 지지 8 · 부분 지지 2 · 반박 0 → gate: 채택 8, 조건부 2<br>
+            · 부분 지지 2개: SF₆+C₄F₈+Ar의 Si (출처 페이지에는 SF₆만 명시), Cl₂+BCl₃+Ar의 GaN (초록에 Ar 없음)<br>
+            · 처음 기록할 때 판정 값을 잘못 적어(partial) 2건이 무시되어, 올바른 값으로 다시 기록했다.</li>
+          <li><time>22:15</time> 정적 페이지 생성 도구 <code>tools/oes_page.py</code>를 작성해 <code>research/oes_etch_chemistry.html</code>를 만들었다. 페이지 구성:<br>
+            · 해석 범위<br>
+            · 기준 파장 표 (원문 링크)<br>
+            · 조합 67개: 검색·막질 계열 필터, 화학종을 공급 가스·추론·문헌 보고로 구분, 파장이 있는 종 표시, 표본 검증 결과 표시<br>
+            · 검증 절, 출처 26개<br>
+            화면을 확인하다가 파장이 6자리로 반올림되어 보이는 문제(703.7469 → 703.747)를 발견해, 원래 값 그대로 표시하도록 고쳤다.</li>
+          <li><time>22:16</time> 지식 그래프 병합<br>
+            · 새 노드 6: SF₆·HBr·BCl₃ 기체, F 원자선·CF/CF₂·CO 진단 위치<br>
+            · 새 관계 13: 예) SF₆·CF₄ → F 원자선 "F 공급(해리)", F 원자선 → Actinometry, BCl₃ → Al·high-k "식각"<br>
+            · 노드마다 출처(NIST·논문·장비사)와 새 페이지 링크<br>
+            · 용어 245 → 251, 관계 528 → 541, 끊어진 관계 0. 목차에 새 페이지 추가.</li>
+          <li><time>22:18</time> 브라우저 확인<br>
+            · 새 페이지에서 "SF6" 검색 → 조합 7개, 조건부 표본 표시 정상<br>
+            · 그래프 251·541 렌더링, 오류 없음, "F 원자선" 패널에 NIST 출처와 관계 표시<br>
+            · 한 탭에서 화면 캡처가 계속 멈춰 새 탭에서 다시 찍었다.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> OES Assistant의 데이터를 읽기 전용 페이지로 옮기고(조합 67개, 파장 40선 원문 대조 완료), 지식 그래프에 식각 기체 3개와 OES 파장 3묶음을 연결했다. 조합 출처 표본 10개를 독립 검증한 결과는 채택 8, 조건부 2다. 원래 앱 저장소와 복사 폴더(<code>merge_src/</code>)는 건드리지 않았고 커밋하지 않았다.</p>
+        <p><a href="../research/oes_etch_chemistry.html">식각 화학 조합 · OES 기준 파장 열기 →</a></p>
+        <figure>
+          <img src="../history_img/20261011_221801_oes_combos_sf6.png" alt="조합 표 SF6 검색">
+          <figcaption>history_img/20261011_221801_oes_combos_sf6.png — 조합 표에서 "SF6" 검색: 화학종 후보(공급 가스·추론·문헌 보고, ✦는 기준 파장 있음), 출처, 표본 검증 결과(지지·부분 지지)</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261011_221828_graph_oes_f_line.png" alt="그래프 F 원자선">
+          <figcaption>history_img/20261011_221828_graph_oes_f_line.png — 지식 그래프의 새 노드 "F 원자선": OES·Actinometry·CF₄와 연결, 출처는 NIST 표와 새 페이지</figcaption>
+        </figure>
+      </section>
+    </article>
+
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-9.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><span class="cur" aria-current="page">10. OES 식각 화학 데이터 병합</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>
