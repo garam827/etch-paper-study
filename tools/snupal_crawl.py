@@ -10,12 +10,20 @@
     python tools/snupal_crawl.py list      # 목록 전체 수집
     python tools/snupal_crawl.py docs      # 아직 안 받은 문서 수집
     python tools/snupal_crawl.py stats
+    python tools/snupal_crawl.py media     # 본문·답변 속 그림·첨부 파일 보관 (data/snupal/media/)
+
+media: 원래 주소 → (옛 주소 pal.snu.ac.kr이면) 새 주소 → 인터넷 아카이브 보관본 순서로 받는다.
+연구실 서버(snu.ac.kr)에 있던 것만 받고, 외부 사이트 링크(논문 PDF 등)는 주소만 기록한다.
 """
+import hashlib
+import json
+import mimetypes
 import re
 import sqlite3
 import sys
 import time
 from pathlib import Path
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -37,6 +45,9 @@ create table if not exists comments(
   comment_id integer primary key autoincrement, doc_id integer, depth integer, ord integer,
   author text, created text, text text, html text,
   unique(doc_id, ord));
+create table if not exists media(
+  url text primary key, kind text, docs text, status text, via text,
+  local_path text, content_type text, bytes integer, sha256 text, fetched_at text);
 """
 
 
@@ -146,6 +157,84 @@ def crawl_docs():
         if k % 25 == 0 or k == len(todo): print(f"{k}/{len(todo)}", flush=True)
 
 
+def media_refs(c):
+    """본문·답변 HTML 속 그림(img)과 첨부(파일 다운로드·문서 링크) 주소 → {url: (kind, {doc_id})}"""
+    refs = {}
+    rows = list(c.execute("select doc_id, question_html from posts")) + list(c.execute("select doc_id, html from comments"))
+    for d, h in rows:
+        s = BeautifulSoup(h or "", "html.parser")
+        found = [("img", i.get("src")) for i in s.find_all("img")]
+        found += [("file", a["href"]) for a in s.find_all("a", href=True)
+                  if "procFileDownload" in a["href"] or re.search(r"\.(pdf|docx?|pptx?|xlsx?|hwp|zip)$", a["href"], re.I)]
+        for kind, u in found:
+            if not u or u.startswith("data:"): continue
+            u = urljoin(f"{BASE}/document/{d}/", u.replace("&amp;", "&"))
+            refs.setdefault(u, (kind, set()))[1].add(d)
+    return refs
+
+
+def fetch_bin(url):
+    try:
+        r = requests.get(url, headers=UA, timeout=40, allow_redirects=True)
+        ct = r.headers.get("content-type", "").split(";")[0]
+        if r.status_code == 200 and r.content and "text/html" not in ct:
+            return r.content, ct, r.headers.get("content-disposition", "")
+    except requests.RequestException:
+        pass
+    return None
+
+
+def wayback(url):
+    """인터넷 아카이브에서 상태 200인 가장 최근 보관본(원본 바이트, id_)"""
+    bare = re.sub(r"^https?://", "", url)
+    try:
+        r = requests.get("https://web.archive.org/cdx/search/cdx", headers=UA, timeout=60,
+                         params={"url": bare, "fl": "timestamp,statuscode", "filter": "statuscode:200", "output": "json"})
+        rows = r.json()[1:] if r.status_code == 200 and r.text.strip() else []
+    except (requests.RequestException, ValueError):
+        rows = []
+    for ts, _ in reversed(rows[-3:]):
+        time.sleep(DELAY)
+        got = fetch_bin(f"https://web.archive.org/web/{ts}id_/{url}")
+        if got: return got + (f"wayback {ts}",)
+    return None
+
+
+def crawl_media():
+    c = db(); out = DATA / "media"; out.mkdir(exist_ok=True)
+    refs = media_refs(c)
+    done = {r[0] for r in c.execute("select url from media where status='ok' or status='external'")}
+    print("주소:", len(refs), "/ 남은 것:", len(set(refs) - done), flush=True)
+    for k, (url, (kind, docs)) in enumerate(sorted(refs.items()), 1):
+        if url in done: continue
+        host = urlparse(url).netloc
+        row = dict(url=url, kind=kind, docs=json.dumps(sorted(docs)), status="missing", via=None,
+                   local_path=None, content_type=None, bytes=None, sha256=None)
+        if not host.endswith("snu.ac.kr"):
+            row["status"] = "external"   # 외부 사이트 자료: 주소만 기록
+        else:
+            tries = [url]
+            if host == "pal.snu.ac.kr": tries.append(url.replace("://pal.snu.ac.kr", "://snupal.snu.ac.kr").replace("http://", "https://"))
+            got = None
+            for u in tries:
+                got = fetch_bin(u); time.sleep(DELAY)
+                if got: got = got + ("original" if u == url else "new-domain",); break
+            if not got: got = wayback(url)
+            if got:
+                data, ct, disp, via = got
+                m = re.search(r"filename\*?=(?:UTF-8'')?\"?([^\";]+)", disp)
+                ext = Path(m.group(1)).suffix if m else (Path(urlparse(url).path).suffix or mimetypes.guess_extension(ct) or ".bin")
+                h = hashlib.sha256(data).hexdigest()
+                f = out / f"{h[:16]}{ext.lower()[:6]}"; f.write_bytes(data)
+                row.update(status="ok", via=via, local_path=str(f.relative_to(DATA)).replace("\\", "/"),
+                           content_type=ct, bytes=len(data), sha256=h)
+        c.execute("""insert or replace into media(url, kind, docs, status, via, local_path, content_type, bytes, sha256, fetched_at)
+                     values(:url,:kind,:docs,:status,:via,:local_path,:content_type,:bytes,:sha256,datetime('now'))""", row)
+        c.commit()
+        print(f"{k}/{len(refs)} {row['status']:8} {row['via'] or ''} {url[:90]}", flush=True)
+    print("결과:", c.execute("select kind, status, count(*) from media group by 1,2").fetchall())
+
+
 def stats():
     c = db()
     q = lambda s: c.execute(s).fetchall()
@@ -154,8 +243,9 @@ def stats():
     print("분류:", q("select category, count(*) from posts group by 1 order by 2 desc"))
     print("답변자:", q("select author, count(*) from comments group by 1 order by 2 desc limit 8"))
     print("기간:", q("select min(date), max(date) from posts")[0])
+    print("그림·첨부:", q("select kind, status, count(*), coalesce(sum(bytes),0) from media group by 1,2"))
 
 
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding="utf-8")
-    {"list": crawl_list, "docs": crawl_docs, "stats": stats}[sys.argv[1]]()
+    {"list": crawl_list, "docs": crawl_docs, "stats": stats, "media": crawl_media}[sys.argv[1]]()
