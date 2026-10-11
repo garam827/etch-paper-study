@@ -1,0 +1,1068 @@
+{
+ "atomic": {
+  "Br": {
+   "lines": [
+    {
+     "nm": 635.073,
+     "A_text": "6350.73",
+     "int": 800
+    },
+    {
+     "nm": 655.98,
+     "A_text": "6559.80",
+     "int": 700
+    },
+    {
+     "nm": 663.162,
+     "A_text": "6631.62",
+     "int": 700
+    },
+    {
+     "nm": 827.244,
+     "A_text": "8272.44",
+     "int": 1000
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/brominetable2.htm",
+   "spectrum": "Br I"
+  },
+  "Br+": {
+   "lines": [
+    {
+     "nm": 231.73,
+     "A_text": "2317.30",
+     "int": 500
+    },
+    {
+     "nm": 238.67,
+     "A_text": "2386.70",
+     "int": 500
+    },
+    {
+     "nm": 422.389,
+     "A_text": "4223.89",
+     "int": 1000
+    },
+    {
+     "nm": 436.563,
+     "A_text": "4365.63",
+     "int": 1000
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/brominetable2.htm",
+   "spectrum": "Br II"
+  },
+  "Ga": {
+   "lines": [
+    {
+     "nm": 287.4235,
+     "A_text": "2874.235",
+     "int": 400
+    },
+    {
+     "nm": 294.3636,
+     "A_text": "2943.636",
+     "int": 600
+    },
+    {
+     "nm": 403.2984,
+     "A_text": "4032.984",
+     "int": 500
+    },
+    {
+     "nm": 417.2042,
+     "A_text": "4172.042",
+     "int": 1000
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/galliumtable2.htm",
+   "spectrum": "Ga I"
+  },
+  "In": {
+   "lines": [
+    {
+     "nm": 303.9356,
+     "A_text": "3039.356",
+     "int": 400
+    },
+    {
+     "nm": 325.6089,
+     "A_text": "3256.089",
+     "int": 700
+    },
+    {
+     "nm": 410.17504,
+     "A_text": "4101.7504",
+     "int": 900
+    },
+    {
+     "nm": 451.12972,
+     "A_text": "4511.2972",
+     "int": 1000
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/indiumtable2.htm",
+   "spectrum": "In I"
+  },
+  "Ti": {
+   "lines": [
+    {
+     "nm": 364.2674,
+     "A_text": "3642.674",
+     "int": 800
+    },
+    {
+     "nm": 365.3495,
+     "A_text": "3653.495",
+     "int": 900
+    },
+    {
+     "nm": 399.8636,
+     "A_text": "3998.636",
+     "int": 1000
+    },
+    {
+     "nm": 430.5907,
+     "A_text": "4305.907",
+     "int": 800
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/titaniumtable2.htm",
+   "spectrum": "Ti I"
+  },
+  "Cu": {
+   "lines": [
+    {
+     "nm": 223.008,
+     "A_text": "2230.08",
+     "int": 250
+    },
+    {
+     "nm": 224.426,
+     "A_text": "2244.26",
+     "int": 250
+    },
+    {
+     "nm": 324.754,
+     "A_text": "3247.54",
+     "int": 1000
+    },
+    {
+     "nm": 327.396,
+     "A_text": "3273.96",
+     "int": 1000
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/coppertable2.htm",
+   "spectrum": "Cu I"
+  },
+  "W": {
+   "lines": [
+    {
+     "nm": 255.135,
+     "A_text": "2551.35",
+     "int": 300
+    },
+    {
+     "nm": 400.875,
+     "A_text": "4008.75",
+     "int": 1000
+    },
+    {
+     "nm": 407.436,
+     "A_text": "4074.36",
+     "int": 600
+    },
+    {
+     "nm": 429.461,
+     "A_text": "4294.61",
+     "int": 500
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/tungstentable2.htm",
+   "spectrum": "W I"
+  },
+  "Hf": {
+   "lines": [
+    {
+     "nm": 286.637,
+     "A_text": "2866.37",
+     "int": 1000
+    },
+    {
+     "nm": 291.648,
+     "A_text": "2916.48",
+     "int": 900
+    },
+    {
+     "nm": 307.288,
+     "A_text": "3072.88",
+     "int": 1000
+    },
+    {
+     "nm": 368.224,
+     "A_text": "3682.24",
+     "int": 1000
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/hafniumtable2.htm",
+   "spectrum": "Hf I"
+  },
+  "B": {
+   "lines": [
+    {
+     "nm": 206.7186,
+     "A_text": "2067.186",
+     "int": 250
+    },
+    {
+     "nm": 208.957,
+     "A_text": "2089.570",
+     "int": 500
+    },
+    {
+     "nm": 249.7722,
+     "A_text": "2497.722",
+     "int": 800
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/borontable2.htm",
+   "spectrum": "B I"
+  },
+  "C": {
+   "lines": [
+    {
+     "nm": 247.8561,
+     "A_text": "2478.561",
+     "int": 400
+    },
+    {
+     "nm": 538.034,
+     "A_text": "5380.34",
+     "int": 150
+    },
+    {
+     "nm": 601.322,
+     "A_text": "6013.22",
+     "int": 150
+    },
+    {
+     "nm": 833.515,
+     "A_text": "8335.15",
+     "int": 250
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/carbontable2.htm",
+   "spectrum": "C I"
+  },
+  "S": {
+   "lines": [
+    {
+     "nm": 469.413,
+     "A_text": "4694.13",
+     "int": 40
+    },
+    {
+     "nm": 675.716,
+     "A_text": "6757.16",
+     "int": 40
+    },
+    {
+     "nm": 792.39,
+     "A_text": "7923.90",
+     "int": 100
+    },
+    {
+     "nm": 869.471,
+     "A_text": "8694.71",
+     "int": 40
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/sulfurtable2.htm",
+   "spectrum": "S I"
+  },
+  "He": {
+   "lines": [
+    {
+     "nm": 388.86489,
+     "A_text": "3888.6489",
+     "int": 300
+    },
+    {
+     "nm": 447.1479,
+     "A_text": "4471.479",
+     "int": 200
+    },
+    {
+     "nm": 587.56148,
+     "A_text": "5875.6148",
+     "int": 500
+    },
+    {
+     "nm": 667.81517,
+     "A_text": "6678.1517",
+     "int": 200
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/heliumtable2.htm",
+   "spectrum": "He I"
+  },
+  "Cl+": {
+   "lines": [
+    {
+     "nm": 479.455,
+     "A_text": "4794.55",
+     "int": 600
+    },
+    {
+     "nm": 489.677,
+     "A_text": "4896.77",
+     "int": 400
+    },
+    {
+     "nm": 521.794,
+     "A_text": "5217.94",
+     "int": 300
+    },
+    {
+     "nm": 542.323,
+     "A_text": "5423.23",
+     "int": 600
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/chlorinetable2.htm",
+   "spectrum": "Cl II"
+  },
+  "O+": {
+   "lines": [
+    {
+     "nm": 313.472,
+     "A_text": "3134.720",
+     "int": 400
+    },
+    {
+     "nm": 391.1957,
+     "A_text": "3911.957",
+     "int": 400
+    },
+    {
+     "nm": 397.32562,
+     "A_text": "3973.2562",
+     "int": 400
+    },
+    {
+     "nm": 407.5862,
+     "A_text": "4075.862",
+     "int": 400
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/oxygentable2.htm",
+   "spectrum": "O II"
+  },
+  "As": {
+   "lines": [
+    {
+     "nm": 200.335,
+     "A_text": "2003.35",
+     "int": 200
+    },
+    {
+     "nm": 245.653,
+     "A_text": "2456.53",
+     "int": 400
+    },
+    {
+     "nm": 278.022,
+     "A_text": "2780.22",
+     "int": 900
+    },
+    {
+     "nm": 286.044,
+     "A_text": "2860.44",
+     "int": 1000
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/arsenictable2.htm",
+   "spectrum": "As I"
+  },
+  "Cr": {
+   "lines": [
+    {
+     "nm": 357.8682,
+     "A_text": "3578.682",
+     "int": 1000
+    },
+    {
+     "nm": 359.3481,
+     "A_text": "3593.481",
+     "int": 800
+    },
+    {
+     "nm": 425.4331,
+     "A_text": "4254.331",
+     "int": 1000
+    },
+    {
+     "nm": 427.4806,
+     "A_text": "4274.806",
+     "int": 800
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/chromiumtable2.htm",
+   "spectrum": "Cr I"
+  }
+ },
+ "mol": [
+  {
+   "id": "M01",
+   "decision": "adopt",
+   "sp": "SiF",
+   "nm": "440",
+   "tr": "A²Σ→X²Π",
+   "statement": "SiF 방출을 440 nm(A²Σ→X²Π)에서 감시했다.",
+   "cond": "화학: SF6/O2/Ar Si 식각; 값의 의미: 감시 파장",
+   "src": [
+    [
+     "Kwon et al., Materials 14, 3005 (2021)",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC8199536/"
+    ]
+   ],
+   "note": "Table A2에 SiF 440 nm, A²Σ–X²Π(3/2)가 감시 파장으로 실려 있다(SF6/O2/Ar 공정). SiF A–X 밴드가 약 436–440 nm라는 것은 일반적인 분광 지식과 맞지만, 이번에 별도 문헌을 열어 보지는 않았다."
+  },
+  {
+   "id": "M02",
+   "decision": "adopt",
+   "sp": "SiF2",
+   "nm": "220–280 (최대 ~225), 360–440",
+   "tr": "Ã–X̃, ã–X̃",
+   "statement": "SiF₂ 방출은 220–280 nm(Ã¹B₁→X̃¹A₁, 최대 약 225 nm)와 360–440 nm(ã³B₁→X̃¹A₁) 범위에 나타난다.",
+   "cond": "실험: SiF4 광해리 형광",
+   "src": [
+    [
+     "Biehl et al., J. Chem. Phys. 107, 720 (1997)",
+     "https://pure-oai.bham.ac.uk/ws/files/39722658/finalpaper.pdf"
+    ]
+   ],
+   "note": "원문은 A–X를 220–280 nm(최대 약 225 nm), ã³B₁–X̃¹A₁을 360–440 nm로 적는다. 다른 문장에는 A–X를 210–270 nm로 쓴 곳도 있다. 위치 표시는 p.724가 아니라 p.727이다."
+  },
+  {
+   "id": "M04",
+   "decision": "adopt",
+   "sp": "SiCl2",
+   "nm": "~320 (넓은 밴드)",
+   "tr": "Ã–X̃",
+   "statement": "SiCl₂ 방출(Ã¹B₁→X̃¹A₁)은 약 320 nm에 최대가 있는 넓은 밴드다.",
+   "cond": "실험: SiCl4 광해리 형광",
+   "src": [
+    [
+     "Biehl et al., J. Electron Spectrosc. 97, 89 (1998)",
+     "https://pure-oai.bham.ac.uk/ws/portalfiles/portal/39722887/paper7.pdf"
+    ]
+   ],
+   "note": "320 nm에 최대가 있는 밴드를 SiCl₂ Ã¹B₁–X̃¹A₁로 배정했고 범위는 300–420 nm다. 핵심 문장은 p.97에 있다. 밴드 원점 333 nm는 최대 파장과 다른 값이다."
+  },
+  {
+   "id": "M05",
+   "decision": "adopt",
+   "sp": "BCl",
+   "nm": "272.0–272.2 (목록에 266.5, 286.0도)",
+   "tr": "—",
+   "statement": "BCl 방출 위치로 272 nm 부근(272.0–272.2 nm)이 식각 감시용 목록에 실려 있다.",
+   "cond": "용도: 식각 OES 감시 목록",
+   "src": [
+    [
+     "Verity Instruments, Applications Information (장비사)",
+     "https://www.verityinst.com/wp-content/uploads/2016/09/Applications_Information.pdf"
+    ],
+    [
+     "Applied Materials 특허 US6455437B1",
+     "https://patents.google.com/patent/US6455437B1/en"
+    ]
+   ],
+   "note": "BCl이 Verity 표에는 266.5/272.2/286.0 nm로, AMAT 특허에는 272.0 nm로 실려 있다. Verity 표에는 272 nm 외의 BCl 선도 있다."
+  },
+  {
+   "id": "M06",
+   "decision": "adopt",
+   "sp": "AlCl",
+   "nm": "261.4–261.7 (목록에 264.8, 268.3도)",
+   "tr": "—",
+   "statement": "AlCl 방출 위치로 261 nm 부근(261.4–261.7 nm)이 식각 감시용 목록에 실려 있다.",
+   "cond": "용도: 식각 OES 감시 목록",
+   "src": [
+    [
+     "Verity Instruments, Applications Information (장비사)",
+     "https://www.verityinst.com/wp-content/uploads/2016/09/Applications_Information.pdf"
+    ],
+    [
+     "Applied Materials 특허 US6455437B1",
+     "https://patents.google.com/patent/US6455437B1/en"
+    ]
+   ],
+   "note": "AlCl이 Verity 표에는 261.4/264.8/268.3 nm로, AMAT 특허에는 261.7 nm로 실려 있다."
+  },
+  {
+   "id": "M07",
+   "decision": "adopt",
+   "sp": "CN",
+   "nm": "388.34, 387.14, 386.19",
+   "tr": "B²Σ⁺→X²Σ⁺",
+   "statement": "CN violet 계(B²Σ⁺→X²Σ⁺)의 (0,0) 밴드는 388.34 nm, (1,1)은 387.14 nm에 나타난다.",
+   "cond": "실험: LIBS 방출",
+   "src": [
+    [
+     "Alrebdi et al., Polymers 14, 3686 (2022)",
+     "https://pdfs.semanticscholar.org/48fb/3aa17dd0b53e0507d951224f54443920a7f1.pdf"
+    ]
+   ],
+   "note": "(0,0)은 388.34 nm, (1,1)은 387.14 nm, B²Σ⁺–X²Σ⁺로 적혀 있다(LIBS). qian2016 OES의 CN 387.1/388.3 nm와도 일치한다."
+  },
+  {
+   "id": "M08",
+   "decision": "adopt",
+   "sp": "N2",
+   "nm": "337 (337.1, 357.7, 380.5)",
+   "tr": "C³Πu→B³Πg",
+   "statement": "N₂ second positive 계(C³Πu→B³Πg)의 (0,0) 밴드 헤드는 337 nm다.",
+   "cond": "측정: TiN 식각 OES",
+   "src": [
+    [
+     "Shin et al., JVST A 31, 031305 (2013)",
+     "https://www.chee.uh.edu/sites/chbe/files/faculty/node/selective-etch-tin_tan_2013.pdf"
+    ]
+   ],
+   "note": "N₂ C³Πu(v=0)→B³Πg(v=0)를 337 nm에서 감시했고, 결론에서는 '337 nm 밴드 헤드'라고 부른다."
+  },
+  {
+   "id": "M09",
+   "decision": "adopt",
+   "sp": "N2+",
+   "nm": "391.4, 427.8",
+   "tr": "B²Σu⁺→X²Σg⁺",
+   "statement": "N₂⁺ first negative 계(B²Σu⁺→X²Σg⁺)의 밴드는 391.4 nm와 427.8 nm에 있다.",
+   "cond": "측정: 충격파 방출 분광 표",
+   "src": [
+    [
+     "Cruden & Brandis, NASA (2017)",
+     "https://ntrs.nasa.gov/api/citations/20170007384/downloads/20170007384.pdf"
+    ]
+   ],
+   "note": "N₂⁺ 1st Negative B²Σu⁺→X²Σg⁺의 밴드가 330.8/358.2/391.4/427.8/470.9 nm로 실려 있다. 391.4와 427.8 nm 외에도 밴드가 더 있다."
+  },
+  {
+   "id": "M10",
+   "decision": "adopt",
+   "sp": "OH",
+   "nm": "309",
+   "tr": "A–X",
+   "statement": "OH 방출(A–X)을 309 nm에서 감시했다.",
+   "cond": "측정: 플라즈마 OES",
+   "src": [
+    [
+     "Qian et al., Chinese Phys. B 25, 105205 (2016)",
+     "https://cpb.iphy.ac.cn/fileCPB/journal/article/cpb/html/2016/1849/cpb_25_10_105205.html"
+    ]
+   ],
+   "note": "OES의 OH 309 nm 선과 LIF 309 nm 검출 모두 확인된다. 이 플라즈마는 식각이 아니라 CH₃OH/Ar 대기압 플라즈마 제트다."
+  },
+  {
+   "id": "M11",
+   "decision": "adopt",
+   "sp": "CO",
+   "nm": "483.5 (Angström 계)",
+   "tr": "B¹Σ→A¹Π",
+   "statement": "CO Angström 계(B¹Σ→A¹Π) 밴드를 483.5 nm에서 진단에 썼다.",
+   "cond": "방전: CO2/N2/He",
+   "src": [
+    [
+     "Morávek et al., Phys. Scr. T161, 014056 (2014)",
+     "https://dspace.cuni.cz/bitstream/handle/20.500.11956/82431/140051997.pdf?isAllowed=y&sequence=1"
+    ]
+   ],
+   "note": "CO2–N2–He 방전에서 CO Ångström 밴드 B¹Σ(v=1)→A¹Π(v=1)의 483.5 nm 세기로 CO 농도 분포를 구했다(N₂를 기준으로 한 actinometry). 학위논문 본문은 O2 방전 내용이고, 이 결과는 학위논문에 수록된 논문에 있다."
+  },
+  {
+   "id": "M12",
+   "decision": "adopt",
+   "sp": "CO2+",
+   "nm": "288.3, 289.6",
+   "tr": "B²Σ→X²Π",
+   "statement": "CO₂⁺ B²Σ→X²Π UV 이중선은 288.3 nm와 289.6 nm에 있다.",
+   "cond": "맥락: 행성 대기 방출(식각 적용 아님)",
+   "src": [
+    [
+     "Gérard et al., JGR Space Phys. 124 (2019)",
+     "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2019JA026596"
+    ]
+   ],
+   "note": "§4는 B²Σ→X²Π 이중선을 288.3/289.6 nm로 적는다. 그런데 같은 논문의 초록·서론은 298–299 nm로 쓰고 있어 오타로 보인다. 독립 실험실 연구(NSF PAR)도 288.3/289.6 nm로 적고 있으니, 인용할 때 초록 값을 쓰지 말 것."
+  },
+  {
+   "id": "M13",
+   "decision": "adopt",
+   "sp": "C2",
+   "nm": "516.5, 473.7, 563.5",
+   "tr": "d³Πg→a³Πu",
+   "statement": "C₂ Swan 계(d³Πg→a³Πu)의 (0,0) 밴드는 516.5 nm에 있다.",
+   "cond": "실험: LIBS 방출",
+   "src": [
+    [
+     "Alrebdi et al., Polymers 14, 3686 (2022)",
+     "https://pdfs.semanticscholar.org/48fb/3aa17dd0b53e0507d951224f54443920a7f1.pdf"
+    ]
+   ],
+   "note": "C₂ Swan d³Πg–a³Πu의 (0,0)을 516.5 nm로 적고 있다(LIBS)."
+  },
+  {
+   "id": "M14",
+   "decision": "adopt",
+   "sp": "CH",
+   "nm": "431.3",
+   "tr": "A²Δ→X²Π",
+   "statement": "CH A²Δ→X²Π 방출은 431.3 nm에 있다.",
+   "cond": "측정: 플라즈마 OES",
+   "src": [
+    [
+     "Qian et al., Chinese Phys. B 25, 105205 (2016)",
+     "https://cpb.iphy.ac.cn/fileCPB/journal/article/cpb/html/2016/1849/cpb_25_10_105205.html"
+    ]
+   ],
+   "note": "CH A–X(A²Δ→X²Π)를 431.3 nm로 적고 있다(CH₃OH/Ar 대기압 플라즈마 제트)."
+  },
+  {
+   "id": "M15",
+   "decision": "adopt",
+   "sp": "Cl2",
+   "nm": "~305",
+   "tr": "이온쌍 상태 방출",
+   "statement": "Cl₂ 플라즈마에서 약 305 nm에 Cl₂ 방출 밴드가 나타난다.",
+   "cond": "맥락: 식각 리뷰",
+   "src": [
+    [
+     "Donnelly & Kornblit, JVST A 31, 050825 (2013)",
+     "https://www.uniba.it/it/docenti/favia-pietro/attivita-didattica/chim-ind-inorg-processi-industriali-via-plasma/jvst_etch_rev_donnely-2013.pdf/@@download/file/jvst_etch_rev_Donnely%202013.pdf"
+    ]
+   ],
+   "note": "약 305 nm의 Cl₂ 방출을 8.4 eV(또는 9.2 eV) 이온쌍 상태의 전자충돌 여기로 설명한다. Fig.10은 Cl₂ 플라즈마에서 Si·SiO₂를 식각할 때의 스펙트럼이다."
+  },
+  {
+   "id": "M16",
+   "decision": "adopt",
+   "sp": "Cl2+",
+   "nm": "400–550 (범위)",
+   "tr": "A²Πu→X²Πg",
+   "statement": "Cl₂⁺ A²Πu→X²Πg 방출은 400–550 nm 범위에 나타난다.",
+   "cond": "맥락: 식각 리뷰",
+   "src": [
+    [
+     "Donnelly & Kornblit, JVST A 31, 050825 (2013)",
+     "https://www.uniba.it/it/docenti/favia-pietro/attivita-didattica/chim-ind-inorg-processi-industriali-via-plasma/jvst_etch_rev_donnely-2013.pdf/@@download/file/jvst_etch_rev_Donnely%202013.pdf"
+    ]
+   ],
+   "note": "Cl₂⁺ A²Πu→X²Πg 방출이 400–550 nm에 나타난다고 적는다. 다만 이 방출은 고출력·저압 조건에서 두드러진다(관찰 조건)."
+  },
+  {
+   "id": "M17",
+   "decision": "adopt",
+   "sp": "TiCl",
+   "nm": "418.3, 419.3",
+   "tr": "—",
+   "statement": "TiCl 방출 위치로 418.3 nm와 419.3 nm가 식각 감시용 목록에 실려 있다.",
+   "cond": "용도: 식각 OES 감시 목록",
+   "src": [
+    [
+     "Verity Instruments, Applications Information (장비사)",
+     "https://www.verityinst.com/wp-content/uploads/2016/09/Applications_Information.pdf"
+    ]
+   ],
+   "note": "TiCl이 418.3/419.3 nm로 실려 있다. 쪽 번호는 PDF 기준 12–13으로 읽혔는데, 인쇄 쪽 번호 11–12와 같은 쪽으로 보인다."
+  },
+  {
+   "id": "M18",
+   "decision": "adopt",
+   "sp": "GaCl",
+   "nm": "337",
+   "tr": "—",
+   "statement": "Cl₂/BCl₃ GaN계 식각 스펙트럼에서 337 nm 방출을 GaCl로 배정했다.",
+   "cond": "화학: Cl2/BCl3",
+   "src": [
+    [
+     "Kim et al., Mater. Sci. Eng. B 82, 159 (2001)",
+     "https://swb.skku.edu/_res/pnpl/etc/2001-05.pdf"
+    ]
+   ],
+   "note": "Cl₂/BCl₃ 스펙트럼의 생성물 피크로 'GaCl 337 nm'을 적고 있다(Al 309/396, AlCl 406, Ga 286/294/403/417, N₂ 358 nm도 함께). 시료가 AlGaN/GaN 구조라 Al 선도 포함된다. 337 nm는 N₂ C–X (0,0)과 겹치므로 배정할 때 주의가 필요하다."
+  },
+  {
+   "id": "M19",
+   "decision": "adopt",
+   "sp": "BF",
+   "nm": "310–340 (범위)",
+   "tr": "b³Σ⁺→a³Π",
+   "statement": "BF b³Σ⁺→a³Π 방출은 310–340 nm 범위에 나타난다.",
+   "cond": "방전: BF3/Ar",
+   "src": [
+    [
+     "Kudrya et al., Russ. Microelectron. 48, 37 (2019)",
+     "https://link.springer.com/article/10.1134/S1063739719010050"
+    ]
+   ],
+   "note": "초록에 따르면 BF₃/Ar 공정 플라즈마에서 BF b³Σ⁺(v''=0–2)→a³Π 밴드가 310–340 nm에 있고, 다른 붕소 화합물의 선은 보이지 않았다."
+  }
+ ],
+ "epd": [
+  {
+   "id": "P01",
+   "decision": "adopt",
+   "film": "SiO₂ → Si",
+   "chem": "Ar/CHF₃/CF₄",
+   "sig": "CO 483 nm ↓",
+   "statement": "Ar/CHF₃/CF₄로 SiO₂를 식각해 Si에 닿을 때 CO 483 nm 방출이 줄어드는 것을 종말점으로 썼다.",
+   "cond": "화학: Ar/CHF3/CF4, O2 무첨가",
+   "src": [
+    [
+     "Applied Materials 특허 EP0442488A2",
+     "https://patents.google.com/patent/EP0442488A2/en"
+    ]
+   ],
+   "note": "불활성기체(Ar)+CHF3(+CF4), O2 없이 SiO2를 식각하며 CO 483 nm 라인으로 종말점을 감시한다. 산소원이 산화막뿐이라 Si 노출 시 CO 라인이 사라진다(감소)고 원문에 적혀 있다. CF4는 원문에서 선택적 첨가로 표현된다."
+  },
+  {
+   "id": "P02",
+   "decision": "adopt",
+   "film": "Si₃N₄ (→ TEOS)",
+   "chem": "—",
+   "sig": "CN 387 nm",
+   "statement": "질화막 식각 종말점 검출에 CN 387 nm 방출을 감시하는 방법을 제시한다.",
+   "cond": "구조: 질화막 아래 TEOS 산화막",
+   "src": [
+    [
+     "특허 US6376262B1 (이중 종말점 검출)",
+     "https://patents.google.com/patent/US6376262"
+    ]
+   ],
+   "note": "387 nm(CN)는 질화막 식각을 나타내는 신호로 감시된다. 적층은 TEOS(약 300 Å)/질화막/상부 TEOS이고, 질화막 식각 중 387 nm가 감소하면 멈춘다. 상부 TEOS 식각 단계에서는 387 nm가 증가할 때 멈추는 이중 종말점 구조다."
+  },
+  {
+   "id": "P03",
+   "decision": "adopt",
+   "film": "poly-Si → 게이트 산화막",
+   "chem": "Cl₂/HBr",
+   "sig": "Si 관련 405 nm ↓",
+   "statement": "Cl₂/HBr로 poly-Si 게이트를 식각할 때 게이트 산화막이 드러나며 405 nm 실리콘 관련 피크가 줄어드는 것으로 종말점을 판단한다.",
+   "cond": "화학: Cl2/HBr",
+   "src": [
+    [
+     "TSMC 특허 US6242350B1",
+     "https://patents.google.com/patent/US6242350"
+    ]
+   ],
+   "note": "화학은 Cl2(70-90 sccm)/HBr(110-130 sccm)이고 He를 운반 기체로 쓴다. OES로 405 nm 실리콘 피크의 감소를 감시하며, 이 감소가 게이트 산화막 노출 시작을 뜻하고 고선택비 과식각으로 넘어가는 시점이 된다."
+  },
+  {
+   "id": "P04",
+   "decision": "adopt",
+   "film": "Al",
+   "chem": "Cl₂/BCl₃",
+   "sig": "Al 396 nm ↓",
+   "statement": "Cl₂/BCl₃ 플라즈마의 Al 식각에서 Al 396 nm 방출 감소를 종말점 신호로 쓴다.",
+   "cond": "화학: Cl2/BCl3",
+   "src": [
+    [
+     "특허 US6472329B1 (Al 식각)",
+     "https://patents.google.com/patent/US6472329"
+    ],
+    [
+     "AT&T 특허 US4491499A",
+     "https://patents.google.com/patent/US4491499"
+    ]
+   ],
+   "note": "US6472329는 Cl2/BCl3 Al 식각에서 396 nm Al 선의 급격한 감소를 종말점으로 쓴다. US4491499는 396.1 nm 필터로 Al을 감시하고 종말점에서 강도가 감소한다는 점은 맞지만, 해당 대목에서 Cl2/BCl3 화학은 명시하지 않는다."
+  },
+  {
+   "id": "P05",
+   "decision": "adopt",
+   "film": "포토레지스트 애싱",
+   "chem": "O₂",
+   "sig": "CO ~483·520 nm ↓",
+   "statement": "O₂ 플라즈마 레지스트 애싱에서 CO 방출(약 483·520 nm)이 줄거나 평탄해지는 시점을 종말점으로 쓴다.",
+   "cond": "화학: O2 플라즈마",
+   "src": [
+    [
+     "PIE Scientific, Photoresist Ashing (장비사)",
+     "https://piescientific.com/resource_pages/resource_photoresist_ashing/"
+    ]
+   ],
+   "note": "CO 약 483/520 nm(그리고 H 486/657 nm)를 감시하며, 레지스트가 소진되면 신호가 급감하거나 평탄해지는 시점을 종말점으로 본다고 적혀 있다. 장비 업체의 일반 설명 자료로, 실험 데이터는 아니다."
+  },
+  {
+   "id": "P06",
+   "decision": "adopt",
+   "film": "low-k 위 ACL 제거",
+   "chem": "O₂/Ar",
+   "sig": "288 nm 채널 ↓",
+   "statement": "low-k 위 비정질 탄소막(ACL)을 O₂/Ar로 제거할 때 288 nm 채널(저자 표기 CO) 신호가 줄어드는 것으로 종말점을 판단했다.",
+   "cond": "화학: O2/Ar; 주의: low-k 자체 식각 EPD 아님",
+   "src": [
+    [
+     "Park et al., Materials 14, 1144 (2021)",
+     "https://pdfs.semanticscholar.org/7c4a/36f3b69772c8184a8813fde5d98be39441f0.pdf"
+    ]
+   ],
+   "note": "Europe PMC 전문(PMC7957736)에서 O2/Ar로 low-k 위 ACL을 제거하는 strip 공정, 288 nm의 'CO' 피크 강도 감소, 기울기가 0이 되는 지점을 종말점으로 삼는다는 내용을 확인했다. low-k는 식각 대상이 아니라 하부막이다. 288 nm를 CO로 붙인 것은 저자 표기다."
+  },
+  {
+   "id": "P07",
+   "decision": "adopt",
+   "film": "TiN·TaN → Si",
+   "chem": "HCl/He",
+   "sig": "N₂ 337 nm (질화막), Si 288 nm (하부 Si)",
+   "statement": "HCl/He 플라즈마로 TiN·TaN을 식각할 때 N₂ 337 nm 밴드 헤드 방출로 질화막 식각을, Si 288 nm 방출로 하부 Si 노출을 감시했다.",
+   "cond": "화학: 30% HCl/70% He",
+   "src": [
+    [
+     "Shin et al., JVST A 31, 031305 (2013)",
+     "https://www.chee.uh.edu/sites/chbe/files/faculty/node/selective-etch-tin_tan_2013.pdf"
+    ]
+   ],
+   "note": "조건은 30%HCl/70%He, 35 mTorr다. N2 337 nm 밴드헤드는 질화막 식각 생성물 신호로, Si 288 nm는 TiN 종말점 이후 하부 Si 노출 신호로 쓰였다. TaN에는 자연 산화막 때문에 유도 기간이 있었다."
+  },
+  {
+   "id": "P08",
+   "decision": "adopt",
+   "film": "W 에치백",
+   "chem": "SF₆",
+   "sig": "F 704 nm ↑",
+   "statement": "SF₆ 기반 W 에치백에서 W가 다 깎이면 F 소비가 줄어 F 704 nm 방출이 늘어나는 것을 종말점으로 쓴다.",
+   "cond": "화학: SF6 W etchback",
+   "src": [
+    [
+     "Applied Materials 특허 US5552016A",
+     "https://patents.google.com/patent/US5552016A/en"
+    ]
+   ],
+   "note": "W 식각 중에는 F가 소비되어 704 nm 신호가 약하다가, W가 대부분 깎여 접착층이 드러나면 F 신호가 크게 늘고 이후 평탄해진다고 적혀 있다. 특허 Background에 있는 종래 기술 설명이다."
+  },
+  {
+   "id": "P09",
+   "decision": "adopt",
+   "film": "AlGaN / GaN",
+   "chem": "Cl₂/BCl₃",
+   "sig": "Al 396.1 nm, Ga 417.2 nm",
+   "statement": "Cl₂/BCl₃ ICP로 AlGaN/GaN 구조를 식각할 때 종말점 검출 파장으로 Al 396.1 nm와 Ga 417.2 nm를 골랐다.",
+   "cond": "화학: Cl2/BCl3 ICP",
+   "src": [
+    [
+     "Kim et al., Mater. Sci. Eng. B 82, 159 (2001)",
+     "https://swb.skku.edu/_res/pnpl/etc/2001-05.pdf"
+    ]
+   ],
+   "note": "ICP Cl2/BCl3 레시피 두 가지(90/10, 70/30)로 AlGaN/GaN을 식각했다. 신호 대 배경비가 높아 Ga 417.2 nm와 Al 396.1 nm를 공정 감시 선으로 골랐다."
+  },
+  {
+   "id": "P10",
+   "decision": "adopt",
+   "film": "탄소막 / SiO₂",
+   "chem": "—",
+   "sig": "CN 387 / SiF 440 nm",
+   "statement": "탄소막 식각 종말점에 CN 387 nm, 산화실리콘막 식각 종말점에 SiF 440 nm 방출을 쓰는 예를 제시한다.",
+   "cond": "방식: OES+QMS 결합",
+   "src": [
+    [
+     "Tokyo Electron 특허 US10892146B2",
+     "https://patents.google.com/patent/US10892146B2/en"
+    ]
+   ],
+   "note": "탄소막 실시예는 OES로 CN 387 nm, QMS로 H2(질량 2)를 감시하고, 산화실리콘막 실시예는 OES로 SiF 440 nm, QMS로 CO(질량 28)를 감시한다. 두 신호를 곱해 SNR을 높이는 OES+QMS 결합 방식이다."
+  },
+  {
+   "id": "P11",
+   "decision": "adopt",
+   "film": "Si₃N₄ → SiO₂",
+   "chem": "CF₄",
+   "sig": "CO 519.8 nm ↑",
+   "statement": "CF₄ 플라즈마로 SiO₂ 위 Si₃N₄를 식각할 때 질화막이 걷히면 CO 519.8 nm 방출이 늘어나는 것을 종말점으로 쓴다.",
+   "cond": "화학: CF4",
+   "src": [
+    [
+     "IBM 특허 US4493745A",
+     "https://patents.google.com/patent/US4493745"
+    ]
+   ],
+   "note": "CO 519.8 nm를 감시하며, SiO2 위 Si3N4를 식각할 때는 계면에 이르러 산화막이 식각되기 시작하면 CO 방출이 증가한다. 식각 기체는 특허 전반에서 대표 기체로 CF4를 들고 있고, 질화막 예에 별도 기체를 명시하지는 않는다."
+  }
+ ],
+ "act": [
+  {
+   "id": "A01",
+   "decision": "adopt",
+   "t": "F",
+   "pair": "F 703.7 / Ar 750.4",
+   "cond": "화학: SF6/O2/Ar CCP",
+   "statement": "F 원자 밀도 actinometry에 F 703.7 nm / Ar 750.4 nm 선 쌍을 썼다.",
+   "src": [
+    [
+     "Kwon et al., Materials 14, 3005 (2021)",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC8199536/"
+    ],
+    [
+     "Hebner et al., Sandia SAND2002-0340 (2002)",
+     "https://www.osti.gov/servlets/purl/793326"
+    ]
+   ],
+   "note": "Kwon 2021은 SF6/O2/Ar CCP(20 mTorr, 60 MHz/2 MHz)에서 F 703.7 nm(685.6 nm도 함께)/Ar 750.4 nm 비를 썼고, Hebner(SAND2002-0340)도 Ar/SF6 혼합에서 F 703.75/Ar 750.39 nm 비를 써서 독립 계보로 확인됨. Kwon은 703.7만이 아니라 685.6 nm도 같이 썼다는 점은 참고할 것."
+  },
+  {
+   "id": "A02",
+   "decision": "conditional",
+   "t": "Cl",
+   "pair": "Cl 837.6 / Ar 811.5 (원문 확인) · Cl 792.5 / Xe 828.0 (튜토리얼 표, 원문 미확인)",
+   "cond": "정리: 튜토리얼 표 (선행 연구 정리)",
+   "statement": "Cl 원자 actinometry 선 쌍으로 Cl 837.6/Ar 811.5 nm와 Cl 792.5/Xe 828.0 nm가 쓰였다.",
+   "src": [
+    [
+     "Britun et al., J. Appl. Phys. 136, 111101 (2024)",
+     "https://www.researchgate.net/publication/384113249_Optical_actinometry_for_number_density_measurements_in_low-pressure_plasmas_Advantages_error_sources_and_method_validation"
+    ],
+    [
+     "Hanish et al., IEEE Trans. Semicond. Manuf. (1999)",
+     "https://grizzle.robotics.umich.edu/files/cl2_act.pdf"
+    ]
+   ],
+   "note": "Hanish 등은 Aydil·Economou가 Cl 808.7·837.6 nm와 Ar 811.5 nm를 썼다고 인용하므로 Cl 837.6/Ar 811.5 쌍은 지지된다. 반면 이 논문에는 792.5 nm와 828.0 nm가 나오지 않는다(Xe는 Cl2 306 nm/Xe 823.2 nm로만 등장). Britun Table I은 열 수 없어 Cl 792.5/Xe 828.0 쌍은 확인하지 못했다. 이 쌍은 Britun 근거로만 남기고 확인 전까지 보류해야 한다."
+  },
+  {
+   "id": "A03",
+   "decision": "adopt",
+   "t": "O",
+   "pair": "O 844.6 / Ar 750.4",
+   "cond": "맥락: RF 산소 플라즈마",
+   "statement": "O 원자 actinometry에 O 844.6 nm / Ar 750.4 nm 선 쌍을 쓰며, O₂의 해리 들뜸 항을 식에 넣어 보정한다.",
+   "src": [
+    [
+     "Greb et al., Appl. Phys. Lett. 105, 234105 (2014)",
+     "https://eprints.whiterose.ac.uk/id/eprint/84036/1/1.4903931.pdf"
+    ],
+    [
+     "Tsutsumi et al., J. Appl. Phys. 121, 143301 (2017)",
+     "https://eprints.whiterose.ac.uk/114943/1/Tsutsumi2017.pdf"
+    ]
+   ],
+   "note": "두 문헌 모두 O 844.6 nm와 Ar 750.4 nm를 쓰고, 식의 둘째 항으로 O2 해리 들뜸을 반영한다. 다만 Greb 2014는 대기압 13.56 MHz RF 플라즈마 제트이고, Tsutsumi 2017은 저압 CCP 산소 플라즈마(Ar 2%)다. 압력 조건이 서로 다르다는 점은 맥락으로 남길 만하다."
+  },
+  {
+   "id": "A04",
+   "decision": "adopt",
+   "t": "H",
+   "pair": "Hα 656 또는 Hβ 486 / Ar 750.4",
+   "cond": "방전: 13.56 MHz 저압 수소 RF 방전",
+   "statement": "수소 플라즈마에서 Hα 656 nm와 Hβ 486 nm를 각각 Ar 750.4 nm와 비교한 actinometry가 서로 다른 H 원자 밀도를 주었다.",
+   "src": [
+    [
+     "Krištof et al., Phys. Scr. 91, 074009 (2016)",
+     "https://arxiv.org/pdf/1911.03319"
+    ]
+   ],
+   "note": "13.56 MHz 수소 RF 방전(2-10 Pa)에서 Ar 750.4 nm(2p1-1s2)를 기준선으로 썼다. Hα로 구한 H 밀도가 Hβ보다 높게 나왔고, 저자들은 Fulcher 방법과 일치하는 Hβ를 채택했다."
+  },
+  {
+   "id": "A05",
+   "decision": "adopt",
+   "t": "N",
+   "pair": "N 746.8 / Ar 750.4",
+   "cond": "장치: 해당 연구 장치에 한정",
+   "statement": "N₂ 플라즈마에 Ar 1%를 넣고 N 746.8 nm / Ar 750.4 nm 비로 N 원자 밀도를 구해 VUV 흡수 측정과 비교했다.",
+   "src": [
+    [
+     "Nishio et al., Plasma Fusion Res. 17, 1201004 (2022)",
+     "https://www.jstage.jst.go.jp/article/pfr/17/0/17_1201004/_pdf"
+    ]
+   ],
+   "note": "N2 플라즈마에 Ar 1%를 넣고 N 746.8/Ar 750.4 nm 비로 N 밀도를 구했으며 VUV 흡수(VUVAS)와 비교한 내용이 확인된다. 거의 일치한다는 표현은 5 A 방전 조건에 대한 것이라 장치·조건 한정은 유지할 것."
+  },
+  {
+   "id": "A06",
+   "decision": "conditional",
+   "t": "Br",
+   "pair": "Br 700.5 / Ar 750.4",
+   "cond": "사례: CF3Br/Ar ICP; HBr + 7% Ar 챔버 상태 감시",
+   "statement": "Br 원자 상대 밀도를 Br 700.5 nm / Ar 750.4 nm 방출 비로 구했다.",
+   "src": [
+    [
+     "Kuzmenko & Myakon'kikh, Tech. Phys. Lett. (2021)",
+     "https://www.mathnet.ru/php/getFT.phtml?jrnid=pjtf&paperid=4889&what=fullt&option_lang=eng"
+    ],
+    [
+     "Applied Materials 특허 US7067432B2",
+     "https://patents.google.com/patent/US7067432"
+    ]
+   ],
+   "note": "US7067432는 HBr+7% Ar 탐침 기체로 Br 700.5 nm / Ar 750.4 nm 강도비를 써서 챔버 상태를 감시한다고 명시한다. Kuzmenko 2021은 CF3Br ICP에서 actinometry로 Br 라디칼을 구했다는 것까지만 초록으로 확인했다. 쓰인 선(700.5/750.4 nm)은 원문을 읽지 못해 대조하지 못했으므로, CF3Br/Ar 사례는 미확인으로 남긴다."
+  }
+ ],
+ "ovl": [
+  {
+   "id": "D01",
+   "decision": "adopt",
+   "pair": "BCl ↔ NO",
+   "nm": "272.2, 286.0",
+   "statement": "식각 감시용 목록에서 BCl과 NO가 272.2 nm와 286.0 nm에 함께 실려 있다.",
+   "cond": "용도: 목록",
+   "src": [
+    [
+     "Verity Instruments, Applications Information (장비사)",
+     "https://www.verityinst.com/wp-content/uploads/2016/09/Applications_Information.pdf"
+    ]
+   ],
+   "note": "272.2 nm와 286.0 nm 모두에 BCl과 NO가 함께 실려 있다. 다만 변환본 기준으로 인쇄 쪽번호는 p.11이 아니라 p.12로 보이므로 locator를 고칠 필요가 있다."
+  },
+  {
+   "id": "D02",
+   "decision": "adopt",
+   "pair": "CO ↔ In",
+   "nm": "451.1",
+   "statement": "식각 감시용 목록에서 CO와 In이 모두 451.1 nm에 실려 있다.",
+   "cond": "용도: 목록",
+   "src": [
+    [
+     "Verity Instruments, Applications Information (장비사)",
+     "https://www.verityinst.com/wp-content/uploads/2016/09/Applications_Information.pdf"
+    ]
+   ],
+   "note": "451.1 nm에 In과 CO가 모두 실려 있다. 쪽번호는 p.11이 아니라 p.12로 보인다."
+  },
+  {
+   "id": "D03",
+   "decision": "adopt",
+   "pair": "SiF ↔ O",
+   "nm": "777.0 / 777.2",
+   "statement": "식각 감시용 목록에서 SiF는 777.0 nm, O는 777.2 nm로 0.2 nm 떨어져 있다.",
+   "cond": "용도: 목록",
+   "src": [
+    [
+     "Verity Instruments, Applications Information (장비사)",
+     "https://www.verityinst.com/wp-content/uploads/2016/09/Applications_Information.pdf"
+    ]
+   ],
+   "note": "목록에 SiF 777.0 nm와 O 777.2 nm가 있어 차이는 0.2 nm이고, 표기된 범위(pp.10–12) 안에 있다. 차이는 목록에 적힌 값 기준이며, 실제 O 777 nm는 세 선이 겹친 선이라는 점은 별도로 다뤄야 한다."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "M03",
+   "decision": "hold",
+   "sp": "SiCl",
+   "nm": "287–288",
+   "tr": "B–X",
+   "statement": "SiCl B–X 밴드는 287–288 nm에 나타난다.",
+   "cond": "방전: RF SiCl4/H2 (증착 연구)",
+   "src": [
+    [
+     "Bruno et al., Plasma Chem. Plasma Process. 6, 109 (1986)",
+     "https://www.researchgate.net/publication/226038776_Mechanism_of_silicon_film_deposition_in_the_RF_plasma_reduction_of_silicon_tetrachloride"
+    ]
+   ],
+   "note": "Table III을 열지 못해 287–288 nm를 확인할 수 없었다. 독립 분광 자료(RSC)도 CAPTCHA로 막혀 따로 대조하지 못했다."
+  }
+ ]
+}

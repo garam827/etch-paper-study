@@ -130,7 +130,7 @@ codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_
 - 첫 화면은 `index.html`(목차). 새 결과물을 만들면 목차에 항목을 추가하고, 결과물 페이지에는 `← 목차` 링크를 넣는다.
 - 작업이 끝나면 기록(현재 단계 페이지 + history.html 첫 화면) 갱신 → 커밋 → `git push`로 사이트를 업데이트한다. 푸시 후 Pages 빌드 완료와 실제 페이지(200)를 확인한다.
 - 절대 커밋 금지: `.env`(API 키). `.gitignore`로 막혀 있지만, 커밋 전에 올라갈 파일에 키·IP·계정정보가 없는지 매번 검사한다.
-- OES Assistant 데이터 페이지: `python tools/oes_page.py <oes_assistant 폴더> <파장검증.json> [조합검증.json]` → `research/oes_etch_chemistry.html`. 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
+- OES Assistant 데이터 페이지: `python tools/oes_page.py <oes_assistant 폴더> <파장검증.json> [조합검증.json]` → `research/oes_etch_chemistry.html`. 보완 데이터는 `python tools/oes_supplement_build.py <NIST 추출.json> ledger/oes_supplement.json <검증메모.json>` → `tools/oes_supplement.json`(장부 gate의 채택·조건부만). 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
 - 원본 리서치(`research/*_raw.md`)와 실행 로그(`research/*_log.txt`)는 공개하지 않는다 (로컬 보관).
 - 사이트 주소에는 GitHub 계정명이 들어가므로, history에는 `<계정>.github.io/etch-paper-study/`처럼 가려서 적는다.
 

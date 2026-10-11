@@ -60,7 +60,7 @@
   <header>
     <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
     <h1>10단계 · OES 식각 화학 데이터 병합</h1>
-    <p class="phase-desc">항목 #46 · 2026-10-11 22:03 ~ 22:22 · 별도로 만든 OES 분석 앱의 식각 화학·파장 데이터를 검증해 이 사이트에 합친다.</p>
+    <p class="phase-desc">항목 #46–#47 · 2026-10-11 22:03 ~ 23:21 · 별도로 만든 OES 분석 앱의 식각 화학·파장 데이터를 검증해 이 사이트에 합친다.</p>
   </header>
   <nav class="pager" aria-label="단계 이동"><a href="phase-9.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><span class="cur" aria-current="page">10. OES 식각 화학 데이터 병합</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
 
@@ -132,6 +132,68 @@
         <figure>
           <img src="../history_img/20261011_221828_graph_oes_f_line.png" alt="그래프 F 원자선">
           <figcaption>history_img/20261011_221828_graph_oes_f_line.png — 지식 그래프의 새 노드 "F 원자선": OES·Actinometry·CF₄와 연결, 출처는 NIST 표와 새 페이지</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <!-- ===== 항목 #47 ===== -->
+    <article class="entry" id="e47">
+      <div class="entry-head">
+        <span class="no">#47</span>
+        <h2>OES 데이터 보완 조사 — 원자선·분자 방출·종말점 검출·actinometry</h2>
+        <time>2026-10-11 22:27</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>OES 관련 데이터를 좀 더 조사해서 보완해줘.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>#46에서 옮긴 기준 파장은 12종 40선뿐이다. 조합 표의 화학종 중 약 70종(SiF·SiCl·BCl·AlCl·CN·N₂·OH·Br·Ga·Ti 등)은 기준 위치가 없다.</li>
+          <li>보완할 것은 네 가지다: ① 빠진 원자·이온 선 ② 분자 방출 위치 ③ 실제 식각에서 OES를 어디에 쓰는지(종말점 검출 사례) ④ actinometry 선 쌍과 그 한계.</li>
+          <li>리서치 검증 체계(<code>semi-research</code>)를 따른다: 수집 → 주장 장부 → 독립 검증 → 규칙 채택. 기억으로 파장을 만들지 않고, 원문에서 확인한 값만 쓴다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>22:27</time> 빈칸 분석: 조합 표 화학종 중 기준 파장이 없는 것을 등장 횟수 순으로 정리(Cl⁺·Cl₂⁺ 26, SiF₄ 23, BCl 18 …). 수집 두 갈래를 동시에 시작: <b>astra(high, 웹 검색)</b>에 화학종별 방출 위치·종말점 사례·actinometry·겹침 조사, <b>paper-scout</b> 에이전트에 중립 질문으로 출처만 수집.</li>
+          <li><time>22:29</time> <b>원자·이온 선</b>: NIST 원소별 강한 선 표 15개를 받아, 200–900 nm에서 상대 세기 상위 4개를 기계적으로 뽑음(Br·Br⁺·Ga·In·Ti·Cu·W·Hf·B·C·S·He·Cl⁺·O⁺·As·Cr, 16종). 처음엔 표 머리글을 못 찾아 0개가 나왔고, He처럼 미세 구조 성분이 겹쳐 뽑히는 문제도 있어 1 nm 안 중복을 빼도록 고침.</li>
+          <li><time>22:47</time> astra 결과: 원문에서 확인한 값만 표로 정리하고, 확인 못 한 종(HCl⁺·Br₂·SF·S₂·InCl·WF)은 "미확인"으로 남김. CF₃ 614 nm 연속 발광은 귀속이 가설이라 제외. paper-scout는 출처 30개와 빈칸 목록을 돌려줌.</li>
+          <li><time>22:48</time> <b>주장 장부</b> <code>ledger/oes_supplement.json</code>에 38개 등록(분자 방출 19, 종말점 사례 10, actinometry 6, 가까운 선 3) → lint 오류 0. 출처 URL 확인: 27개 중 정상 21, 자동 접근 차단 6(ResearchGate·출판사).</li>
+          <li><time>22:54</time> <b>독립 검증</b>: blind 입력을 세 묶음으로 나눠 claim-verifier 에이전트 3개에 동시에 맡김(웹만 사용, 작성 과정은 모름). 23:01까지 결과 수신 → gate: 채택 28 · 조건부 1 · 보류 9. 보류는 대부분 원문을 열 수 없어서였다(ResearchGate 403, 스캔 PDF, 10MB 넘는 PDF).</li>
+          <li><time>23:02</time> 보류 항목을 위해 paper-scout에 "자동 접근으로 전문이 열리는 출처"를 다시 수집하게 함(특허 전문, 저장소 사본, arXiv 등).</li>
+          <li><time>23:14</time> 보류 8개의 근거를 열리는 출처로 바꾸거나 주장을 원문 범위에 맞게 좁혀 고침(예: Al 396 nm 종말점 → Cl₂/BCl₃ Al 식각 특허, O 원자 actinometry → 저장소 공개 논문 2편, H 원자 → arXiv 저자본). 새 사례 1개(질화막이 걷힐 때 CO 519.8 nm 증가) 추가. 주장을 고치면 이전 판정은 자동 무효 → 9개 재검증: 지지 8, 부분 지지 1.</li>
+          <li><time>23:15</time> 도구: <code>tools/oes_supplement_build.py</code>(NIST 추출 + 장부의 채택·조건부만 묶어 <code>tools/oes_supplement.json</code>로), <code>tools/oes_page.py</code>에 보완 절 5개 추가(원자선, 분자 방출, 종말점 검출, actinometry, 가까운 선). 조합 표에서 보완 위치가 생긴 화학종은 ✧로 표시.</li>
+          <li><time>23:18</time> 최종 gate: <b>채택 36 · 조건부 2 · 보류 1</b>(SiCl 287–288 nm, 열리는 원문이 없음 → 싣지 않음). 조건부 2개는 확인된 부분과 미확인 부분을 표시에서 구분(Cl/Xe 선 쌍, CF₃Br 사례는 "원문 미확인").</li>
+          <li><time>23:18</time> 지식 그래프: 종말점 신호 노드 3개(SiF 440 nm, CN 387–388 nm, Al 396 nm)와 관계 10개 추가. 기존 CO·F 노드도 식각 종말점 검출(EPD)에 연결. 용어 251 → 254, 관계 541 → 551, 끊어진 관계 0.</li>
+          <li><time>23:19</time> 브라우저 확인: 종말점 검출 표에 판정·검증 메모·출처 표시 정상. 그래프 254·551 렌더링, 오류 없음, EPD 패널에 새 출처 표시. 그래프 화면 캡처가 한 번 멈춰 다시 찍음.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 식각 화학·OES 페이지에 보완 절을 추가했다.</p>
+        <ul>
+          <li>원자·이온 선 16종: NIST 표에서 기계적으로 추출</li>
+          <li>분자 방출 위치 18종: SiF, SiF₂, SiCl₂, BCl, AlCl, CN, N₂, N₂⁺, OH, CO, CO₂⁺, C₂, CH, Cl₂, Cl₂⁺, TiCl, GaCl, BF</li>
+          <li>식각 종말점 검출 사례 11건: SiO₂·질화막·poly-Si·Al·레지스트·ACL·TiN/TaN·W·GaN 등</li>
+          <li>actinometry 선 쌍 6개: F, Cl, O, H, N, Br</li>
+          <li>가까운 선 주의 3건</li>
+        </ul>
+        <p>장부 판정은 채택 36, 조건부 2, 보류 1이며, 보류 1건은 싣지 않았다.</p>
+        <p><a href="../research/oes_etch_chemistry.html#supp">보완 절 열기 →</a></p>
+        <figure>
+          <img src="../history_img/20261011_231945_oes_supp_epd.png" alt="종말점 검출 표">
+          <figcaption>history_img/20261011_231945_oes_supp_epd.png — 보완 절의 "식각 종말점 검출에서 감시하는 방출" 표: 막질·화학·감시 방출과 변화 방향, 판정(채택)과 검증자 메모, 출처(특허·논문)</figcaption>
+        </figure>
+        <figure>
+          <img src="../history_img/20261011_232100_graph_epd_signals.png" alt="그래프 EPD 신호">
+          <figcaption>history_img/20261011_232100_graph_epd_signals.png — 지식 그래프의 식각 종말점 검출(EPD) 노드: 새 노드 SiF 방출·CN 방출·Al 원자선과 기존 CO·F 노드가 종말점 신호로 연결됨</figcaption>
         </figure>
       </section>
     </article>

@@ -6,6 +6,7 @@
   앱 코드·.env·worker는 읽지 않는다.
 - 파장검증.json: [species, nm, source_id, 원문일치(bool), medium, kind] 목록 (NIST 표·논문 원문 대조 결과).
 - 조합검증.json: {claim_id: {"combo": id, "verdict": ..., "notes": ...}} (표본 독립 검증, 선택).
+- tools/oes_supplement.json이 있으면 보완 절(원자선·분자 방출·종말점·actinometry·겹침)을 덧붙인다 (tools/oes_supplement_build.py).
 출력: research/oes_etch_chemistry.html
 """
 import html
@@ -26,6 +27,10 @@ KIND = {"atomic_line": "원자선", "ionic_line": "이온선", "molecular_band":
 EVID = {"provided_feed": "공급 가스", "chemical_inference": "추론", "reported_in_reference": "문헌 보고"}
 BASIS = {"reference_example": "출처의 공정 예시", "literature_family": "문헌의 반응 계열", "chemistry_variant": "화학 변형 예시"}
 VERD = {"supported": ("지지", "adopt"), "partial": ("부분 지지", "cond"), "contradicted": ("반박", "reject"), "unverifiable": ("확인 불가", "hold")}
+SUPP_F = ROOT / "tools/oes_supplement.json"
+SUP = json.load(open(SUPP_F, encoding="utf-8")) if SUPP_F.exists() else None
+DEC = {"adopt": ("채택", "adopt"), "conditional": ("조건부", "cond")}
+supp_species = set(SUP["atomic"]) | {m["sp"] for m in SUP["mol"]} if SUP else set()
 
 sources = {**K["sources"], **SP["sources"]}
 ok = {(v[0], v[1]): v[3] for v in VER}
@@ -44,7 +49,7 @@ spectra_tbl = "\n".join(rows)
 combo_verdict = {v["combo"]: v for v in CV.values()}
 items = []
 for x in K["items"]:
-    sp = [{"f": s["formula"], "e": s["evidence"], "w": bool(s.get("spectrum"))} for s in x["species"]]
+    sp = [{"f": s["formula"], "e": s["evidence"], "w": bool(s.get("spectrum")), "w2": (not s.get("spectrum")) and s["formula"] in supp_species} for s in x["species"]]
     items.append({"id": x["id"], "film": x["film"]["name"], "fam": x["family_label"], "gas": x["gases"], "mode": x["mode_label"],
                   "basis": BASIS.get(x["basis"], x["basis"]), "src": x["sources"], "prod": x.get("products", []),
                   "res": x.get("residues", []), "note": x.get("note", ""), "sp": sp,
@@ -65,6 +70,48 @@ cv_count = Counter(v["verdict"] for v in CV.values())
 limits = "".join(f"<li>{e(t)}</li>" for t in K["limitations"])
 src_rows = "".join(f'<tr><td><code>{e(k)}</code></td><td><a href="{e(v["url"])}" target="_blank" rel="noopener">{e(v["title"])}</a></td>'
                    f'<td>{e(v.get("kind", "파장 기준"))}</td></tr>' for k, v in sorted(sources.items()))
+
+# 4) 보완 절
+supp_html = ""
+if SUP:
+    def srcs(r): return "<br>".join(f'<a href="{e(u)}" target="_blank" rel="noopener">{e(n)}</a>' for n, u in r["src"])
+    def tag(r): lab, cls = DEC[r["decision"]]; return f'<span class="tag {cls}">{lab}</span>'
+    def note(r): return f'<div class="note">{e(r["note"])}</div>' if r.get("note") else ""
+    at = "".join(f'<tr><td><b>{e(k)}</b></td><td>{e(v["spectrum"])}</td><td class="num">{" ".join(str(l["nm"]) for l in v["lines"])}</td>'
+                 f'<td><a href="{e(v["url"])}" target="_blank" rel="noopener">NIST · Strong Lines</a></td></tr>' for k, v in sorted(SUP["atomic"].items()))
+    mol = "".join(f'<tr><td><b>{e(r["sp"])}</b></td><td class="num">{e(r["nm"])}</td><td>{e(r["tr"])}</td><td>{e(r["cond"])}</td>'
+                  f'<td>{tag(r)} <code>{r["id"]}</code>{note(r)}</td><td>{srcs(r)}</td></tr>' for r in SUP["mol"])
+    epd = "".join(f'<tr><td>{e(r["film"])}</td><td>{e(r["chem"])}</td><td><b>{e(r["sig"])}</b></td><td>{e(r["cond"])}</td>'
+                  f'<td>{tag(r)} <code>{r["id"]}</code>{note(r)}</td><td>{srcs(r)}</td></tr>' for r in SUP["epd"])
+    act = "".join(f'<tr><td><b>{e(r["t"])}</b></td><td>{e(r["pair"])}</td><td>{e(r["cond"])}</td>'
+                  f'<td>{tag(r)} <code>{r["id"]}</code>{note(r)}</td><td>{srcs(r)}</td></tr>' for r in SUP["act"])
+    ovl = "".join(f'<tr><td><b>{e(r["pair"])}</b></td><td class="num">{e(r["nm"])}</td><td>{tag(r)} <code>{r["id"]}</code>{note(r)}</td><td>{srcs(r)}</td></tr>' for r in SUP["ovl"])
+    n_all = sum(len(SUP[k]) for k in ("mol", "epd", "act", "ovl")); n_ex = len(SUP["excluded"])
+    ex = ", ".join(f'{r["id"]}({r["decision"]})' for r in SUP["excluded"])
+    supp_html = f"""
+  <h2 id="supp">보완 (2026-10-11 조사)</h2>
+  <p>위 기준 목록에 없던 화학종의 방출 위치와, 실제 식각에서 OES를 어떻게 쓰는지를 따로 조사해 보탰다. 원자선은 NIST 표에서 기계적으로 뽑았고, 나머지는 주장 장부 → 독립 검증(웹 원문만 보는 별도 에이전트) → 규칙 채택을 거쳐 <b>채택·조건부 {n_all}개</b>만 실었다{f" (보류·제외 {n_ex}개: {e(ex)})" if n_ex else ""}. 조합 표에서 <span class="sp w2">보완 위치 있음</span>으로 표시된다.</p>
+
+  <h3 id="supp-atomic">원자·이온 선 (NIST 강한 선 표, {len(SUP["atomic"])}종)</h3>
+  <p class="note">각 원소 표(공기 중 파장)에서 200–900 nm 구간의 상대 세기 상위 4개를 1 nm 안 중복을 빼고 뽑았다. 상대 세기는 원소마다 기준이 달라 원소끼리 비교할 수 없고, 식각 장비에서 실제로 잘 보이는 선과 다를 수 있다.</p>
+  <div class="tbl"><table><thead><tr><th>화학종</th><th>스펙트럼</th><th>파장 (nm, 공기)</th><th>출처</th></tr></thead><tbody>{at}</tbody></table></div>
+
+  <h3 id="supp-mol">분자 방출 위치</h3>
+  <p class="note">밴드 헤드, 넓은 밴드의 최대점, 장비 감시 채널값이 섞여 있다(“값” 열 그대로). 공기/진공 기준은 대부분 출처에 명시되지 않았다. 식각이 아닌 실험(광해리 형광, LIBS, 대기 방출)에서 확인한 값은 조건 열에 적었다.</p>
+  <div class="tbl"><table><thead><tr><th>화학종</th><th>값 (nm)</th><th>전이</th><th>조건</th><th>판정</th><th>출처</th></tr></thead><tbody>{mol}</tbody></table></div>
+
+  <h3 id="supp-epd">식각 종말점 검출(EPD)에서 감시하는 방출</h3>
+  <p class="note">↑/↓는 그 출처의 공정에서 관측한 변화다. 같은 파장도 어떤 계면을 지나느냐에 따라 방향이 바뀔 수 있어 고정 규칙으로 쓰면 안 된다. 특허·장비사 자료는 출처 이름에 표시했다.</p>
+  <div class="tbl"><table><thead><tr><th>막질 · 경계</th><th>화학</th><th>감시 방출</th><th>조건</th><th>판정</th><th>출처</th></tr></thead><tbody>{epd}</tbody></table></div>
+
+  <h3 id="supp-act">Actinometry 선 쌍</h3>
+  <p class="note">방출 세기 비를 밀도 비로 바꾸려면 두 선의 들뜸률 비가 조건에 따라 크게 변하지 않아야 한다. 해리 들뜸(분자가 깨지며 들뜬 원자가 생김), 준안정 상태, 들뜸 에너지 차이가 오차 원인이다.</p>
+  <div class="tbl"><table><thead><tr><th>대상</th><th>선 쌍 (nm)</th><th>조건</th><th>판정</th><th>출처</th></tr></thead><tbody>{act}</tbody></table></div>
+
+  <h3 id="supp-ovl">가까운 선 주의</h3>
+  <div class="tbl"><table><thead><tr><th>조합</th><th>위치 (nm)</th><th>판정</th><th>출처</th></tr></thead><tbody>{ovl}</tbody></table></div>
+  <p class="note">위 기준 목록의 CF₂ 251.9 nm와 Si 251.92 nm(NIST)도 같은 경우다.</p>
+"""
 
 page = f"""<!doctype html>
 <html lang="ko">
@@ -95,6 +142,8 @@ page = f"""<!doctype html>
   .sp {{ display:inline-block; font-size:12.5px; border:1px solid var(--line); border-radius:6px; padding:0 6px; margin:1px 2px; background:#fff; }}
   .sp.feed {{ background:#f3f4f6; color:#4b5563; }} .sp.rep {{ border-color:#16a34a; color:#166534; }}
   .sp.w::after {{ content:" ✦"; color:#7c3aed; }}
+  .sp.w2::after {{ content:" ✧"; color:#0891b2; }}
+  h3 {{ font-size:17px; margin:26px 0 8px; }}
   .bar {{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:8px 0 10px; }}
   input, select {{ font:inherit; padding:6px 10px; border:1px solid var(--line); border-radius:8px; background:#fff; }}
   input {{ flex:1 1 240px; }}
@@ -110,7 +159,7 @@ page = f"""<!doctype html>
   <div class="card">
     <b>해석 범위</b> — 이 데이터가 말하지 않는 것
     <ul>{limits}</ul>
-    <p class="note">화학종 표시: <span class="sp feed">공급 가스</span> <span class="sp">추론 후보</span> <span class="sp rep">문헌 보고</span> <span class="sp w">기준 파장 있음</span> · 전체 {sum(ev.values())}개 중 추론 {ev["chemical_inference"]}, 공급 가스 {ev["provided_feed"]}, 문헌 보고 {ev["reported_in_reference"]}.</p>
+    <p class="note">화학종 표시: <span class="sp feed">공급 가스</span> <span class="sp">추론 후보</span> <span class="sp rep">문헌 보고</span> <span class="sp w">기준 파장 있음</span> <span class="sp w2">보완 위치 있음</span> · 전체 {sum(ev.values())}개 중 추론 {ev["chemical_inference"]}, 공급 가스 {ev["provided_feed"]}, 문헌 보고 {ev["reported_in_reference"]}.</p>
   </div>
 
   <h2 id="spectra">OES 기준 파장 ({len(SP["species"])}종 {len(VER)}선)</h2>
@@ -121,6 +170,7 @@ page = f"""<!doctype html>
   </table></div>
   <p class="note">원자선은 그 원자(여기 상태)의 방출이고 모분자 전체를 특정하지 않는다. 기준 목록에 없다고 발광이 없다는 뜻은 아니다. 가까운 선은 분광기 분해능에 따라 겹칠 수 있다(예: CF₂ 251.9 nm와 Si 251.92 nm).</p>
 
+{supp_html}
   <h2 id="combos">막질 × 기체 조합 ({len(items)}개)</h2>
   <div class="bar">
     <input id="q" type="search" placeholder="막질·기체·화학종 검색 (예: SiO2, HBr, CF2)">
@@ -157,7 +207,7 @@ function render() {{
   document.getElementById("cnt").textContent = out.length + "개";
   document.getElementById("rows").innerHTML = out.map(x => `<tr id="${{x.id}}"><td>${{x.id}}</td><td>${{esc(x.film)}}<div class="note">${{esc(x.fam)}}</div></td>`
     + `<td>${{x.gas.map(esc).join(" + ")}}<div class="note">${{esc(x.mode)}}</div></td>`
-    + `<td>${{x.sp.map(s => `<span class="sp ${{cls[s.e] || ""}}${{s.w ? " w" : ""}}">${{esc(s.f)}}</span>`).join("")}}${{x.note ? `<div class="note">${{esc(x.note)}}</div>` : ""}}</td>`
+    + `<td>${{x.sp.map(s => `<span class="sp ${{cls[s.e] || ""}}${{s.w ? " w" : ""}}${{s.w2 ? " w2" : ""}}">${{esc(s.f)}}</span>`).join("")}}${{x.note ? `<div class="note">${{esc(x.note)}}</div>` : ""}}</td>`
     + `<td>${{esc(x.basis)}}<div>${{x.src.map(s => SRC[s] ? `<a href="${{esc(SRC[s][1])}}" target="_blank" rel="noopener">${{esc(SRC[s][0])}}</a>` : esc(s)).join("<br>")}}</div>`
     + `${{x.v ? `<span class="tag ${{VERD[x.v][1]}}">표본 검증: ${{VERD[x.v][0]}}</span>` : ""}}</td></tr>`).join("");
 }}
