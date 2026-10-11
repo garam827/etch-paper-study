@@ -121,6 +121,7 @@ codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_
 - 원문 전체·작성자 이름은 `data/`(비공개, .gitignore)에만 둔다. 공개 결과물에는 **재서술한 지식·용어 + 원문 링크**만 싣고, 원문을 15단어 넘게 옮기지 않는다.
 - SNU PAL 게시판: `python tools/snupal_crawl.py list|docs|media|stats` → `data/snupal/snupal.db`, 추출 결과 병합·검사 `tools/snupal_merge.py`, 공개 페이지 생성 `tools/snupal_page.py`.
 - 본문 속 그림·첨부(옛 주소 pal.snu.ac.kr)는 원래 사이트에서도 이미 볼 수 없고 인터넷 아카이브에도 없다(2026-10-11 확인, `media` 표에 상태 기록). 텍스트 보관본(`data/snupal/`)이 유일한 사본이다.
+- 백업(2026-10-11): `data/backup/snupal_archive_YYYYMMDD*.zip`(README·JSONL·SHA-256 포함, 10MB 미만 조각) → 사용자 구글 드라이브 `snupal_archive` 폴더(비공유). 보관본이 바뀌면 새 날짜로 다시 만들어 올린다.
 
 ## 5. 공유 사이트 (GitHub Pages)
 
