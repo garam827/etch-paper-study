@@ -1,0 +1,283 @@
+{
+ "sections": [
+  {
+   "id": "basics",
+   "title": "기초 원리",
+   "desc": "플라즈마가 어떻게 식각을 하는지"
+  },
+  {
+   "id": "research",
+   "title": "공정 리서치",
+   "desc": "실제 공정·기술 동향 보고서"
+  },
+  {
+   "id": "kb",
+   "title": "지식 베이스",
+   "desc": "용어·관계·화학종을 찾아보는 자료"
+  },
+  {
+   "id": "viz",
+   "title": "3D로 보기",
+   "desc": "식각 단계를 직접 돌려 보는 모형"
+  },
+  {
+   "id": "method",
+   "title": "방법론 · 기록",
+   "desc": "리서치·검증 방식과 작업 기록"
+  }
+ ],
+ "path": [
+  {
+   "title": "플라즈마 원리",
+   "pages": [
+    "research/plasma_etch_principles.html",
+    "research/snupal_qna_knowledge.html"
+   ]
+  },
+  {
+   "title": "식각 화학 · OES",
+   "pages": [
+    "research/oes_etch_chemistry.html"
+   ]
+  },
+  {
+   "title": "멀티패터닝 (DPT · QPT)",
+   "pages": [
+    "research/dpt_qpt_report.html",
+    "viz/sadp_3d.html",
+    "viz/saqp_3d.html"
+   ]
+  },
+  {
+   "title": "GAA · A20 공정",
+   "pages": [
+    "research/tsmc_n2_a20_etch_report.html",
+    "viz/inner_spacer_3d.html",
+    "viz/channel_release_3d.html",
+    "viz/bdi_3d.html"
+   ]
+  }
+ ],
+ "pages": [
+  {
+   "href": "research/snupal_qna_knowledge.html",
+   "title": "플라즈마 질의응답 주제 해설",
+   "desc": "서울대 플라즈마 응용 연구실 질의응답 게시판의 연구실 답변이 반복해 설명하는 원리를 주제 9개·해설 54개로 종합하고, 용어 649개를 정리. 해설마다 근거 글 링크.",
+   "section": "kb",
+   "tags": [
+    "플라즈마",
+    "주제 해설",
+    "용어 사전"
+   ],
+   "etch_tag": "플라즈마",
+   "date": "2026-10-13",
+   "go": "해설 보기 →",
+   "keywords": []
+  },
+  {
+   "href": "research/oes_etch_chemistry.html",
+   "title": "식각 화학 조합 · OES 기준 파장",
+   "desc": "막질×공급 기체 조합 67개마다 생성될 수 있는 화학종 후보(공급 가스·추론·문헌 보고 구분)와, 출처가 확인된 OES 기준 파장 12종 40선(NIST·논문, 원문 대조 완료). 보완 조사: 원자·이온 선 16종, 분자 방출 18종, 식각 종말점 검출 사례 11건, actinometry 선 쌍 6개, 가까운 선 주의 3건(독립 검증 채택분만). 검색·막질 계열 필터.",
+   "section": "kb",
+   "tags": [
+    "식각",
+    "OES",
+    "출처 링크"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-11",
+   "go": "표 보기 →",
+   "keywords": []
+  },
+  {
+   "href": "research/semi_research_system.html",
+   "title": "리서치 검증 체계 — 스킬·에이전트",
+   "desc": "반도체 지식·논문을 \"찾기 → 주장 장부 → 분리된 검증 → 규칙 채택\"으로 다루는 절차. 수집·검증 에이전트 역할과 권한, 출처 등급, 지난 실제 오류로 한 회귀 시험 결과.",
+   "section": "method",
+   "tags": [
+    "체계",
+    "검증"
+   ],
+   "etch_tag": null,
+   "date": "2026-10-09",
+   "go": "체계 보기 →",
+   "keywords": []
+  },
+  {
+   "href": "research/plasma_etch_principles.html",
+   "title": "플라즈마 식각의 원리 — 교과서 지식 정리",
+   "desc": "Lieberman & Lichtenberg 교과서를 5부로 나눠 식각 지식만 요약. 1부: 식각 메커니즘·표면 반응·로딩·F/C 비·재료별 화학·대전 손상. 2부: Bohm 기준, 쉬스 전위, Child 법칙, 자기 바이어스, 이온 에너지 분포. 3부: 전역 모델, 전기음성·펄스 방전, CCP·이중 주파수, ICP·E–H 모드. 4부: 전자–분자 충돌, 반응 속도론, 휘발성, 광방출·actinometry. 5부: 기초·증착·파티클·운동론과 전체 지도.",
+   "section": "basics",
+   "tags": [
+    "식각",
+    "교과서",
+    "5부 완료"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-08",
+   "go": "노트 →",
+   "keywords": []
+  },
+  {
+   "href": "viz/sadp_3d.html",
+   "title": "SADP (자기정렬 이중 패터닝) — 3D",
+   "desc": "맨드릴 식각 → 스페이서 증착·에치백 → 맨드릴 제거 → 전사 → 트림·컷. 맨드릴 CD·스페이서 두께로 피치 워킹을 만들고 코어/갭 공간을 측정, 에치백·선택비 실패 실험.",
+   "section": "viz",
+   "tags": [
+    "식각",
+    "3D",
+    "패터닝"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-08",
+   "go": "3D 보기 →",
+   "keywords": []
+  },
+  {
+   "href": "viz/saqp_3d.html",
+   "title": "SAQP (자기정렬 4중 패터닝) — 3D",
+   "desc": "스페이서 공정 두 번으로 피치 80 → 20. 맨드릴 하나가 고리 두 겹(선 네 개)이 되는 과정과 α·β·γ 세 공간 집단, 오차의 복제를 직접 바꿔 보기.",
+   "section": "viz",
+   "tags": [
+    "식각",
+    "3D",
+    "패터닝"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-08",
+   "go": "3D 보기 →",
+   "keywords": []
+  },
+  {
+   "href": "research/dpt_qpt_report.html",
+   "title": "DPT · QPT 멀티패터닝 보고서",
+   "desc": "LELE·SADP·SAQP의 등장 배경, 도입 연표, 공정 단면도, 난제 15가지, 2023–2026 동향(High-NA·SMIC·DRAM·장비). 출처 71개.",
+   "section": "research",
+   "tags": [
+    "식각",
+    "패터닝"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-07",
+   "go": "보고서 →",
+   "keywords": []
+  },
+  {
+   "href": "research/tsmc_n2_a20_etch_report.html",
+   "title": "Apple A20 (TSMC 2nm) 식각 공정 보고서",
+   "desc": "Wafer IN부터 출하까지 전·후공정 흐름을 식각 중심으로 정리. GAA 나노시트의 핵심 식각 단계, 단면 그림, 출처 32개.",
+   "section": "research",
+   "tags": [
+    "식각",
+    "GAA 나노시트"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-05",
+   "go": "보고서 →",
+   "keywords": []
+  },
+  {
+   "href": "research/a20_etch_knowledge_graph.html",
+   "title": "식각 지식 그래프 · 용어집",
+   "desc": "용어 254개와 관계 551개를 인터랙티브 그래프로 표현(DPT·QPT 멀티패터닝, 플라즈마 식각 원리, SNU PAL 질의응답 용어, 식각 기체·OES 파장·종말점 신호 포함). 용어마다 근거 논문·출처를 펼쳐 볼 수 있고, 출처로도 검색된다. 영역 간 연결 강조·검토, 용어 검토(2026-10-08) 포함.",
+   "section": "kb",
+   "tags": [
+    "식각",
+    "용어집"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-05",
+   "go": "그래프 →",
+   "keywords": []
+  },
+  {
+   "href": "viz/inner_spacer_3d.html",
+   "title": "SiGe 측면 리세스 · 내부 스페이서 에치백 — 3D",
+   "desc": "GAA 최고 난도 식각을 Three.js 3D로. 단계별 전환, 단면 보기, 리세스 깊이·균일도·Si 손실을 바꿔 실패 양상 확인.",
+   "section": "viz",
+   "tags": [
+    "식각",
+    "3D"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-05",
+   "go": "3D 보기 →",
+   "keywords": []
+  },
+  {
+   "href": "viz/channel_release_3d.html",
+   "title": "채널 릴리스 (SiGe 희생층 제거) — 3D",
+   "desc": "더미 게이트 제거부터 HKMG까지. 폭 방향 단면으로 식각 앞면이 가운데로 모이는 모습, 잔류·과식각·선택비·Ge 잔류·시트 달라붙음 실험.",
+   "section": "viz",
+   "tags": [
+    "식각",
+    "3D"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-05",
+   "go": "3D 보기 →",
+   "keywords": []
+  },
+  {
+   "href": "viz/bdi_3d.html",
+   "title": "BDI (하부 유전체 절연) — 3D",
+   "desc": "나노시트 아래 고-Ge 희생층을 녹여 절연막으로 바꾸는 과정. \"BDI 없이 보기\"로 기판 누설 경로 비교, 잔류·선택비·기공 실험.",
+   "section": "viz",
+   "tags": [
+    "식각",
+    "3D"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-06",
+   "go": "3D 보기 →",
+   "keywords": []
+  },
+  {
+   "href": "guide/agent_architecture.html",
+   "title": "Claude · Codex · jev 자문 에이전트 — 구조와 사용법",
+   "desc": "이 프로젝트가 쓰는 자문 체계의 구조도, 누구에게 물을지 정하는 규칙, 실제 흐름 예시, 따라 하기 7단계, 겪은 문제와 개선 제안.",
+   "section": "method",
+   "tags": [
+    "가이드",
+    "에이전트"
+   ],
+   "etch_tag": null,
+   "date": "2026-10-05",
+   "go": "가이드 →",
+   "keywords": []
+  },
+  {
+   "href": "history.html",
+   "title": "작업 기록 (history)",
+   "desc": "모든 지시의 원문, Claude의 분석, 작업 과정과 성공 증거 스크린샷을 시간순으로 기록.",
+   "section": "method",
+   "tags": [
+    "기록",
+    "시간순"
+   ],
+   "etch_tag": null,
+   "date": null,
+   "go": "기록 →",
+   "keywords": []
+  },
+  {
+   "href": "research/claims_status.html",
+   "title": "핵심 주장 검증 현황",
+   "desc": "A20 보고서·지식 그래프의 핵심 수치·날짜 주장 26개를 독립 검증 에이전트가 원문과 다시 대조한 결과. 주장마다 채택·조건부 상태, 필요한 조건, 검토일, 확인한 출처.",
+   "section": "method",
+   "tags": [
+    "검증",
+    "주장 장부"
+   ],
+   "etch_tag": null,
+   "date": "2026-10-13",
+   "go": "현황 →",
+   "keywords": [
+    "검증",
+    "채택",
+    "조건부",
+    "claim"
+   ]
+  }
+ ]
+}

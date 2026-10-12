@@ -122,6 +122,84 @@
       </section>
     </article>
 
+    <!-- ===== 항목 #49 ===== -->
+    <article class="entry" id="e49">
+      <div class="entry-head">
+        <span class="no">#49</span>
+        <h2>재정비 계획 실행 — 원본 분리·핵심 주장 재검증·목차 개편·자동 점검</h2>
+        <time>2026-10-12 23:30</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>순서대로 진행. 확인 필요한 건 나에게 질문해줘.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>#48 계획의 1~5단계를 순서대로 실행한다. 사용자 결정이 필요한 곳(공개 범위, 공개 저장소에 올릴 데이터)은 묻고 진행한다.</li>
+          <li>각 단계의 완료 기준은 #48에서 정한 대로 둔다. 2단계는 새 복제본에서 명령 하나로 같은 결과가 나와야 하고, 3단계는 주장마다 상태와 검토일이 보여야 하며, 4단계는 모든 공개 자료에 목차에서 닿을 수 있어야 하고, 5단계는 변경마다 자동 점검을 통과해야 한다.</li>
+          <li>새 자문은 따로 받지 않고 #48의 astra·jev 자문과 사용자 답을 기준으로 삼았다. 사실 검증은 독립 검증 에이전트가 맡았다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>23:31</time> #48에 배포 확인 줄을 추가했다.</li>
+          <li><time>23:40</time> <b>1단계(공개 범위)</b>: 사용자에게 질문해 결정을 받았다. 교재 기반 노트의 요약 표는 그대로 둔다. 나머지 결정과 처리 내용은 공개 기록 범위 밖이라 여기 적지 않는다.</li>
+          <li><time>00:28</time> <b>2단계(원본과 결과물 분리)</b>: 그래프 페이지의 데이터 상수 8개를 Node.js로 그대로 계산해 꺼냈다. 이것을 <code>kb/graph/</code>의 JSON 4개(노드·관계·출처·분류)와 페이지 틀 <code>tools/templates/</code>로 나눴다. 노드별 출처·영역과 관계별 근거 글은 각 항목 안으로 합쳤다. 생성 도구 <code>tools/build_site.py</code>는 중복 id, 없는 분류·영역·출처, 끊어진 관계를 검사한다.</li>
+          <li><time>00:29</time> 사용자 질문: OES 페이지 입력은 비공개 저장소 데이터다. 결정은 <b>"외부 폴더 의존 유지"</b>였다. OES 페이지는 build에 넣지 않고 기존 결과물을 그대로 둔다.</li>
+          <li><time>00:31</time> 같은지 확인: 다시 만든 그래프 페이지의 데이터 8종이 원래 값과 모두 같다(SOURCES는 키 순서만 다르고, 순서를 쓰는 코드가 없음). 데이터 블록 밖의 HTML은 글자 하나까지 같다. 질의응답 페이지는 바이트 단위로 같다.</li>
+          <li><time>00:32</time> 구조 이관만 따로 커밋했다. 저장소를 새로 복제해 <code>build_site.py --check</code>를 실행하니 통과했고, 다시 생성해도 내용 차이는 0이었다. 첫 시도에서는 줄바꿈 문자(LF/CRLF)만 달라 표시되어, 출력이 운영체제 기본 줄바꿈을 따르도록 고쳤다.</li>
+          <li><time>00:35</time> <b>3단계(핵심 주장 재검증)</b>: A20 보고서에서 12개, 지식 그래프에서 14개, 모두 26개 주장을 골라 장부 <code>ledger/retro_core.json</code>에 올렸다. 결론을 좌우하는 수치·날짜·비교 주장이다. lint 결과 오류 0, 경고 2(NA 값에 조건이 없음). 출처 18개 확인: 정상 14, 자동 접근 차단 2, 시간 초과 2.</li>
+          <li><time>00:36</time> blind 입력을 세 묶음으로 나눠 <b>claim-verifier 에이전트 3개</b>에 동시에 맡겼다. 에이전트는 웹만 쓰고 작성 과정은 모른다. 3번 묶음 입력에서 G14의 근거 URL을 잘못 옮겼는데, 검증자가 이를 "근거 위치가 다름"으로 짚고 맞는 출처를 따로 찾아 부분 지지로 판정했다.</li>
+          <li><time>00:43</time> <b>4단계(탐색)</b> — 검증 결과를 기다리는 동안 진행: 목차를 <code>kb/pages.json</code>에서 생성하도록 바꿨다.<br>
+            · 영역 5개: 기초 원리 / 공정 리서치 / 지식 베이스 / 3D로 보기 / 방법론·기록.<br>
+            · 학습 경로 4단계: 플라즈마 원리 → 식각 화학·OES → 멀티패터닝 → GAA·A20. 단계마다 읽을거리와 3D 모형을 붙였다.<br>
+            · 검색: 자료 15개와 그래프 용어 254개. 용어를 누르면 그래프의 해당 노드로 이동한다.<br>
+            · 그래프 페이지 제목을 "식각 지식 그래프 · 용어집"으로 바꿨다. 주소는 그대로다.<br>
+            · 브라우저 확인: "쉬스" 검색 → 쉬스 관련 용어 3개와 플라즈마 원리 노트, "채널 릴리스" 검색 → 3D 페이지와 용어. 자료 링크 14개(검증 현황 추가 전) 모두 표시.</li>
+          <li><time>00:45</time> 판정 26건을 기록한 뒤 gate 결과는 <b>채택 15 · 조건부 채택 11 · 보류·제외 0</b>이다. 조건부의 대부분은 근거가 회사 발표 한 곳뿐인 고위험 주장이다. 부분 지지는 5건이다.<br>
+            · R06: Fab 20·22의 N2 생산은 업계 보도로만 확인된다.<br>
+            · R07: TSMC 표기는 "~>90%"이고 평균·최고 구분이 없다.<br>
+            · G01: "동일 전력" 조건은 2차 보도에만 있다.<br>
+            · G09: 2025년 출하는 샘플 출하다.<br>
+            · G14: 근거를 바꾸고 상용 장비 기준으로 한정해야 한다.</li>
+          <li><time>00:45</time> <b>5단계(운영)</b>: 내부 링크·앵커 검사 <code>tools/check_links.py</code>를 만들었다. 첫 실행에서 3D 페이지의 상태 주소(<code>#step=4&amp;…</code>) 4개를 앵커로 잘못 읽어, 값이 있는 주소 조각은 건너뛰게 고쳤다. 결과는 페이지 27개, 문제 0이다. GitHub Actions <code>site-check</code>는 푸시마다 build 일치와 링크 검사를 돌린다.</li>
+          <li><time>00:46</time> 지적을 반영해 내용을 고쳤다.<br>
+            · A20 보고서: Fab 20·22를 "확인"에서 "업계 보도 기준"으로 낮췄다. 시험 칩 수율에는 TSMC 표기와 다른 보도의 구분을 함께 적었다.<br>
+            · 그래프 High-NA 노드: "일부 제품의 선택 레이어"로 좁혔다.<br>
+            · <code>tools/claims_export.py</code>(장부 → 공개용 <code>kb/claims/</code>)와 <b>검증 현황 페이지</b>를 만들었다. 주장마다 상태·검증 판정·조건·검토일·확인한 출처를 싣고, <code>#R07</code>처럼 바로 링크할 수 있다.<br>
+            · 보고서와 그래프에 재검증 안내와 링크를 넣었다.</li>
+          <li><time>00:48</time> 작업 규칙 문서를 나눴다. 규칙은 <code>CLAUDE.md</code>(13.6 → 11.3KB)에 남기고, 명령·사용법은 <code>docs/runbook.md</code>로 옮겼다. 목차가 생성 파일이 되었으므로 "새 결과물은 kb/pages.json에 추가" 규칙을 넣었다.</li>
+          <li><time>00:49</time> 성능 측정: 압축 전송량은 목차 4KB, 질의응답 87KB, 그래프 73KB로 충분히 작다. 기록 페이지는 이미지를 한꺼번에 받는다(8단계 21장 9.8MB, 7단계 3.1MB). 그래서 모든 기록 이미지에 지연 로딩(<code>loading="lazy"</code>)을 넣었다. PNG 변환이나 이력 재작성은 하지 않았다(#48 astra 권고).</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 재정비 계획 5단계를 마쳤다. 단, OES 페이지는 사용자 결정에 따라 생성 경로 밖에 둔다.</p>
+        <ul>
+          <li>재현: 저장소를 새로 복제한 뒤 <code>python tools/build_site.py</code> 한 번으로 목차·그래프·질의응답·검증 현황 4개 페이지를 다시 만든다.</li>
+          <li>검증: 핵심 주장 26개 중 채택 15, 조건부 11. 내용 수정 3곳.</li>
+          <li>탐색: 영역 5 · 학습 경로 4단계 · 검색 269개 항목.</li>
+          <li>점검: build 일치와 내부 링크 검사가 푸시마다 자동으로 돈다.</li>
+        </ul>
+        <p><a href="../index.html">목차 열기 →</a> · <a href="../research/claims_status.html">검증 현황 열기 →</a></p>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261013_004403_index_sections.png" alt="새 목차">
+          <figcaption>history_img/20261013_004403_index_sections.png — 새 목차: 검색 창, 영역 바로가기 5개, 학습 경로 4단계, 영역별 자료 카드</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261013_004750_claims_status.png" alt="검증 현황">
+          <figcaption>history_img/20261013_004750_claims_status.png — 핵심 주장 검증 현황: 26개 중 채택 15·조건부 11. 주장마다 상태·검증 판정·조건·검토일·출처</figcaption>
+        </figure>
+      </section>
+    </article>
+
+
   </div>
 
   <nav class="pager" aria-label="단계 이동"><a href="phase-10.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><span class="cur" aria-current="page">11. 사이트 구조 재정비</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>

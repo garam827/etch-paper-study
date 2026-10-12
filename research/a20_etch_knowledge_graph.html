@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A20 식각 지식 그래프</title>
+<title>식각 지식 그래프</title>
 <style>
   :root {
     --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb;
@@ -63,10 +63,11 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>Apple A20 (TSMC 2nm) 식각 지식 그래프 · 용어집</h1>
+    <h1>식각 지식 그래프 · 용어집</h1>
     <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-05 (10-06 용어 18개 추가, 10-07 DPT·QPT 용어 44개와 용어별 논문·출처 추가, 10-08 플라즈마 식각 원리 용어 54개 추가·영역 간 연결 검토, 10-10 SNU PAL 질의응답 용어 65개 병합, 10-11 식각 기체·OES 파장·종말점 신호 9개 추가) · 근거: <a href="tsmc_n2_a20_etch_report.html">A20 식각 중심 보고서</a> · <a href="dpt_qpt_report.html">DPT·QPT 보고서</a> · <a href="plasma_etch_principles.html">플라즈마 식각 원리 노트</a> · 노드를 클릭하면 설명과 연결 관계가 오른쪽에 나옵니다.</p>
   </header>
 
+  <p class="sub" style="margin:6px 0 0">2026-10-13 다시 검증: 제품·공정 용어의 핵심 수치·날짜 주장 14개 — 채택 7, 조건부 채택 7. 주장별 상태는 <a href="claims_status.html">검증 현황</a>.</p>
   <div class="toolbar" id="filters"></div>
   <div class="toolbar">
     <input id="q" type="search" placeholder="용어·출처 검색 (예: 채널 릴리스, SAQP, IEDM)">
@@ -238,7 +239,7 @@ const NODES = [
   ["i_tip", "선 끝 · tip-to-tip", "Line-end / tip-to-tip", "issue", "컷으로 만든 선 끝 위치와 끝-끝 간격. 컷 간격이 좁으면 컷 마스크 자체가 다시 멀티패터닝이 됨.", "line-end 후퇴·둥글어짐, 이웃선 손상."],
   ["i_metro", "계측 한계", "Metrology limits", "issue", "OCD는 주기 대칭성 때문에 α·β·γ 공간을 분리하기 어렵고, CD-SEM은 충전·수축·묻힌 형상 한계.", "평균만 맞추면 집단별 식각 편차가 가려짐."],
   ["i_cost", "비용 · 사이클 타임", "Cost / cycle time", "issue", "SAQP는 노광은 적어도 증착·식각·세정·계측 단계가 많음. 'QPT라서 비용 4배'는 성립하지 않음.", "식각 단계 수·챔버 매칭·queue time이 비용에 직결."],
-  ["highna", "High-NA EUV", "High-NA (0.55 NA) EUV", "tool", "NA 0.55 EUV. 해상 치수 약 0.6배, 초점심도 약 0.36배. Intel이 2026년 Panther Lake 일부 레이어에 양산 사용.", "일부 멀티패터닝을 대체하지만, 얇은 레지스트 때문에 하드마스크 선택비·전사 부담은 커짐."],
+  ["highna", "High-NA EUV", "High-NA (0.55 NA) EUV", "tool", "NA 0.55 EUV. 해상 치수 약 0.6배, 초점심도 약 0.36배. Intel이 2026년 Panther Lake 일부 제품의 선택 레이어에 양산 사용(2026-09-07 발표).", "일부 멀티패터닝을 대체하지만, 얇은 레지스트 때문에 하드마스크 선택비·전사 부담은 커짐."],
   ["euvsadp", "EUV + SADP", "EUV + SADP", "pattern", "느슨한 EUV 패턴을 SADP로 배밀화. 2024년 0.33NA EUV + SADP로 metal pitch 16 nm 목표 연구.", "맨드릴·스페이서·pull·피치 워킹 과제를 그대로 가짐."],
   ["dsa", "DSA (유도 자기조립)", "Directed Self-Assembly", "tool", "블록 공중합체가 가이드 패턴을 따라 스스로 정렬해 미세 패턴을 만듦. EUV 거칠기 보정 연구.", "한 성분을 선택 제거 후 하드마스크로 전사. 결함(dislocation·bridge)이 과제."],
   ["asd", "ASD (영역 선택 증착)", "Area-Selective Deposition", "tool", "원하는 표면에만 막을 증착. self-aligned via/block에 활용.", "기생 핵생성을 선택 식각으로 정리 — 식각을 없애기보다 역할을 바꿈."],

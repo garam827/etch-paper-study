@@ -51,7 +51,7 @@
 - 성공한 결과의 증거는 스크린샷으로 남기고 `history_img/` 폴더에 저장한다.
 - 파일명에는 날짜와 시간을 넣는다: `YYYYMMDD_HHMMSS_<짧은설명>.png`
   - 예: `20261005_183000_history_setup.png`
-- 단계 페이지에서 `../history_img/파일명.png`로 `<img>`를 넣어 이미지가 바로 보이게 한다.
+- 단계 페이지에서 `<img loading="lazy" decoding="async" src="../history_img/파일명.png">`로 넣어 이미지가 바로 보이게 한다(지연 로딩: 한 단계 페이지에 이미지가 수 MB라서).
 - 스크린샷을 저장하기 전에 화면에 민감정보가 보이지 않는지 확인한다.
 
 ## 3. 민감정보 금지 (절대 규칙)
@@ -72,47 +72,16 @@ history.html·history/ 단계 페이지, history_img의 스크린샷, 기타 공
 2. **판단이 필요할 때** → **jev**에게 묻고 의견을 구한다.
 3. **아주 중요한 판단** → `gpt-6-astra` (reasoning effort **xhigh**)를 호출해 자문을 받는다.
 
-### 호출 방법 (Codex CLI)
-
-```bash
-# 아주 중요한 판단: astra (동작 확인됨)
-codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_effort='"xhigh"' "<질문>" </dev/null
-
-# 리서치: astra high (Bash run_in_background=true 로 비동기 실행, 웹 검색 사용)
-codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_effort='"high"' -c tools.web_search=true "<리서치 요청>" </dev/null
-```
-
-- 자문 프롬프트에 IP·토큰·계정정보 등 민감정보를 넣지 않는다.
-- Codex 출력의 session id 등 식별자는 history에 옮기지 않는다.
-- `</dev/null`을 꼭 붙인다 (없으면 Codex가 입력을 기다리며 멈춤).
-
-### 현재 상태 (2026-10-05 기준)
-
-- `gpt-6-astra` xhigh(중요 판단) / high(리서치): 호출 성공 확인.
-- `gpt-6.1-sol` high: **현재 ChatGPT 계정으로는 Codex에서 지원되지 않음** ("not supported when using Codex with a ChatGPT account"). → 리서치는 `gpt-6-astra` high로 대체.
-- **jev**: TypeSafe의 판단 전용 API (모델 `jev-latest`). 호출 성공 확인 (2026-10-05). 도우미: `python tools/ask_jev.py <질문.json>` — 질문 JSON은 scratchpad에 만들고, 키는 `.env`에서 자동으로 읽는다.
-
-### jev 사용법 (TypeSafe API)
-
-- 엔드포인트: `POST https://api.typesafe.ai/v1/systemone`
-- 인증: `Authorization: Bearer $TYPESAFE_API_KEY` (키는 `.env`에만 두고, 출력·기록 금지)
-- 요청: `{"model": "jev-latest", "state": "<상황 설명>", "questions": {<질문id>: {...}}}`
-- 질문 유형:
-  - `noul` — 예/아니오 확률(0~1): `{"type": "noul", "instructions": "..."}`
-  - `choice` — 선택지 중 고르기: `{"type": "choice", "instructions": "...", "criteria": {"a": "설명", "b": "설명"}}`
-  - `score` — 순서 있는 척도: `{"type": "score", "instructions": "...", "criteria": ["매우 나쁨", ..., "매우 좋음"]}`
-- 응답: 판단값, 신뢰도, 선택지별 확률, 토큰 사용량.
-- 판단을 구할 땐 질문과 jev의 답(판단값·신뢰도)을 기록의 "과정"에 남긴다.
-- 참고: https://grow-up-by-coding.tistory.com/entry/Jev-API-%EC%A7%81%EC%A0%91-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0-%EA%B0%80%EA%B2%A9
+호출 명령, 모델 지원 상태, jev API 사용법은 `docs/runbook.md` §1에 있다. 자문 프롬프트에 IP·토큰·계정정보를 넣지 않고, Codex 출력의 session id 같은 식별자는 기록에 옮기지 않는다.
 
 ### 리서치 검증 체계 (2026-10-09, #39)
 
 새 사실을 보고서·용어집·그래프에 넣거나 기존 내용을 검증할 때는 `semi-research` 스킬 절차를 따른다 (`.claude/skills/semi-research/` — SKILL.md, policy.md 출처 등급·함정 체크리스트, schema.md 장부 형식).
 
 - 주장 장부 `ledger/<주제>.json` (비공개). `python tools/claims.py lint|blind|record|gate|summary`.
-- 채택은 `claims.py gate`만 결정한다. 작성자(Claude)가 자기 주장을 채택으로 올리지 않는다. 주장을 고치면 이전 검증은 자동 무효.
+- 채택은 `claims.py gate`만 결정한다. 작성자(Claude)가 자기 주장을 채택으로 올리지 않는다. 주장을 고치면 이전 검증은 자동 무효. 공개 페이지에 주장별 상태를 보이려면 `python tools/claims_export.py ledger/<주제>.json` → `kb/claims/` → build (검증 현황 페이지 `research/claims_status.html`).
 - 검증은 `claim-verifier` 에이전트(웹 도구만, 로컬 파일 접근 없음)에 `claims.py blind` 출력만 넘긴다. 에이전트가 세션에 아직 안 올라왔으면 별도 실행으로 같은 격리를 건다:
-  `claude -p --agent claim-verifier --allowedTools WebSearch WebFetch --disallowedTools Bash Read Write Edit Glob Grep NotebookEdit Agent PowerShell --output-format json < 입력.txt`
+  (명령은 `docs/runbook.md` §2)
 - 수집은 `paper-scout` 에이전트(중립 질문만) + `python tools/lit_search.py`. 출처 실재는 `python tools/check_refs.py` (DOI가 있다고 내용이 맞는 것은 아님).
 - jev는 범위·우선순위 같은 이산 판단에 쓰고, **증거 충돌의 종결에는 쓰지 않는다** (충돌은 보류로 두고 조건·정의·시점 차이를 조사).
 - 체계를 고치면 `tools/tests/regression_ledger.json`(지난 실제 오류 6개 + 정상 2개)로 다시 확인한다.
@@ -121,20 +90,20 @@ codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_
 
 - 수집 전 robots.txt·이용 조건 확인, 요청 사이 1초 이상 쉰다.
 - 원문 전체·작성자 이름은 `data/`(비공개, .gitignore)에만 둔다. 공개 결과물에는 **재서술한 지식·용어 + 원문 링크**만 싣고, 원문을 15단어 넘게 옮기지 않는다.
-- SNU PAL 게시판: `python tools/snupal_crawl.py list|docs|media|stats` → `data/snupal/snupal.db`, 추출 결과 병합·검사 `tools/snupal_merge.py`, 공개 데이터 준비 `python tools/snupal_page.py prepare <export.json>` → `kb/snupal/page.json`. 공개 페이지는 주제별 해설(`kb/snupal/topics.json`)과 용어 사전만 싣는다(글별 요약·목록 금지, 2026-10-13 결정).
+- SNU PAL 게시판(도구는 `docs/runbook.md` §3): 공개 페이지는 주제별 해설(`kb/snupal/topics.json`)과 용어 사전만 싣는다(글별 요약·목록 금지, 2026-10-13 결정).
 - 본문 속 그림·첨부(옛 주소 pal.snu.ac.kr)는 원래 사이트에서도 이미 볼 수 없고 인터넷 아카이브에도 없다(2026-10-11 확인, `media` 표에 상태 기록). 텍스트 보관본(`data/snupal/`)이 유일한 사본이다.
 - 백업(2026-10-11): `data/backup/snupal_archive_YYYYMMDD*.zip`(README·JSONL·SHA-256 포함, 10MB 미만 조각) → 사용자 구글 드라이브 `snupal_archive` 폴더(비공유). 보관본이 바뀌면 새 날짜로 다시 만들어 올린다.
 
 ## 5. 공유 사이트 (GitHub Pages)
 
 - 공유는 GitHub Pages로 한다. 저장소: `etch-paper-study` (공개), main 브랜치 루트가 그대로 사이트가 된다.
-- 첫 화면은 `index.html`(목차). 새 결과물을 만들면 목차에 항목을 추가하고, 결과물 페이지에는 `← 목차` 링크를 넣는다.
-- 작업이 끝나면 기록(현재 단계 페이지 + history.html 첫 화면) 갱신 → 커밋 → `git push`로 사이트를 업데이트한다. 푸시 후 Pages 빌드 완료와 실제 페이지(200)를 확인한다.
+- 첫 화면 `index.html`(목차·학습 경로·검색)은 **생성 파일**이다. 새 결과물은 `kb/pages.json`에 항목(영역·태그·날짜)을 추가하고, 필요하면 학습 경로에도 넣은 뒤 build 한다. 결과물 페이지에는 `← 목차` 링크를 넣는다.
+- 작업이 끝나면 기록(현재 단계 페이지 + history.html 첫 화면) 갱신 → 커밋 → `git push`로 사이트를 업데이트한다. 푸시 전 `python tools/build_site.py --check`와 `python tools/check_links.py`가 통과해야 하고(GitHub Actions `site-check`도 같은 검사), 푸시 후 Pages 빌드 완료와 실제 페이지(200)를 확인한다.
 - 절대 커밋 금지: `.env`(API 키). `.gitignore`로 막혀 있지만, 커밋 전에 올라갈 파일에 키·IP·계정정보가 없는지 매번 검사한다.
-- **원본과 결과물 (2026-10-13)**: 지식 그래프와 질의응답 페이지는 `kb/`가 원본이다. 결과물 HTML을 직접 고치지 말고 `kb/`(또는 `tools/templates/`)를 고친 뒤 `python tools/build_site.py`로 만든다. 커밋 전 `python tools/build_site.py --check`가 통과해야 한다.
-  - 그래프: `kb/graph/nodes.json`(용어마다 id·이름·영문·분류·영역·설명·식각 관계·출처 키), `edges.json`(관계·근거 글), `sources.json`(출처 키 → 제목·URL), `types.json`(분류·영역 이름). 노드 id는 "한 개념 = 한 id"로 쓰고 바꾸지 않는다(링크 `#앵커`가 걸려 있음).
+- **원본과 결과물 (2026-10-13)**: 목차·지식 그래프·질의응답·검증 현황 페이지는 `kb/`가 원본이다. 결과물 HTML을 직접 고치지 말고 `kb/`(또는 `tools/templates/`)를 고친 뒤 `python tools/build_site.py`로 만든다. 커밋 전 `python tools/build_site.py --check`가 통과해야 한다.
+  - 파일 구성은 `docs/runbook.md` §4. 노드 id는 "한 개념 = 한 id"로 쓰고 바꾸지 않는다(링크 `#앵커`가 걸려 있음).
   - 구조 이관과 내용 수정은 따로 커밋한다.
-- OES Assistant 데이터 페이지: `python tools/oes_page.py <oes_assistant 폴더> <파장검증.json> [조합검증.json]` → `research/oes_etch_chemistry.html`. 보완 데이터는 `python tools/oes_supplement_build.py <NIST 추출.json> ledger/oes_supplement.json <검증메모.json>` → `tools/oes_supplement.json`(장부 gate의 채택·조건부만). 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
+- OES 페이지는 별도 비공개 저장소 데이터가 필요해 build에 들어가지 않는다(사용자 결정 2026-10-13, 도구는 `docs/runbook.md` §5). 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
 - 원본 리서치(`research/*_raw.md`)와 실행 로그(`research/*_log.txt`)는 공개하지 않는다 (로컬 보관).
 - 사이트 주소에는 GitHub 계정명이 들어가므로, history에는 `<계정>.github.io/etch-paper-study/`처럼 가려서 적는다.
 

@@ -1467,7 +1467,7 @@
   "en": "High-NA (0.55 NA) EUV",
   "type": "tool",
   "area": "pattern",
-  "desc": "NA 0.55 EUV. 해상 치수 약 0.6배, 초점심도 약 0.36배. Intel이 2026년 Panther Lake 일부 레이어에 양산 사용.",
+  "desc": "NA 0.55 EUV. 해상 치수 약 0.6배, 초점심도 약 0.36배. Intel이 2026년 Panther Lake 일부 제품의 선택 레이어에 양산 사용(2026-09-07 발표).",
   "etch": "일부 멀티패터닝을 대체하지만, 얇은 레지스트 때문에 하드마스크 선택비·전사 부담은 커짐.",
   "src": [
    "asmlhna",
