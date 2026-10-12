@@ -175,6 +175,7 @@
             · 보고서와 그래프에 재검증 안내와 링크를 넣었다.</li>
           <li><time>00:48</time> 작업 규칙 문서를 나눴다. 규칙은 <code>CLAUDE.md</code>(13.6 → 11.3KB)에 남기고, 명령·사용법은 <code>docs/runbook.md</code>로 옮겼다. 목차가 생성 파일이 되었으므로 "새 결과물은 kb/pages.json에 추가" 규칙을 넣었다.</li>
           <li><time>00:49</time> 성능 측정: 압축 전송량은 목차 4KB, 질의응답 87KB, 그래프 73KB로 충분히 작다. 기록 페이지는 이미지를 한꺼번에 받는다(8단계 21장 9.8MB, 7단계 3.1MB). 그래서 모든 기록 이미지에 지연 로딩(<code>loading="lazy"</code>)을 넣었다. PNG 변환이나 이력 재작성은 하지 않았다(#48 astra 권고).</li>
+          <li><time>00:52</time> 커밋·푸시 → GitHub Actions <code>site-check</code> 통과(build 일치·링크 검사), Pages 빌드 완료. <code>&lt;계정&gt;.github.io/etch-paper-study/</code>의 목차·검증 현황·그래프·11단계 기록 모두 200 확인.</li>
         </ol>
       </section>
 
