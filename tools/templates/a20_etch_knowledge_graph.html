@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A20 식각 지식 그래프</title>
+<style>
+  :root {
+    --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#2563eb;
+    --c-product:#7c3aed; --c-structure:#0891b2; --c-material:#ca8a04; --c-step:#2563eb;
+    --c-etch:#dc2626; --c-tool:#4b5563; --c-issue:#ea580c; --c-test:#16a34a;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.65 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; }
+  .wrap { max-width:1200px; margin:0 auto; padding:32px 20px 80px; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  h2 { font-size:20px; margin:40px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  .sub { color:var(--muted); margin:0; }
+  .sub a { color:var(--accent); }
+  .toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:18px 0 10px; }
+  .chip { border:1px solid var(--line); background:#fff; border-radius:999px; padding:4px 12px 4px 8px; font-size:13px;
+    cursor:pointer; display:inline-flex; align-items:center; gap:6px; user-select:none; color:var(--ink); font-family:inherit; }
+  .chip i { width:11px; height:11px; border-radius:50%; display:inline-block; }
+  .chip.off { opacity:.35; }
+  .toolbar input { border:1px solid var(--line); border-radius:8px; padding:6px 10px; font:inherit; font-size:14px; min-width:200px; flex:1; max-width:320px; }
+  .toolbar button.act { border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px 12px; font:inherit; font-size:13px; cursor:pointer; }
+  .main { display:grid; grid-template-columns: 1fr 340px; gap:14px; }
+  #cy { height:680px; background:#fff; border:1px solid var(--line); border-radius:12px; }
+  .panel { background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; height:680px; overflow:auto; }
+  .panel h3 { margin:0 0 2px; font-size:19px; }
+  .panel .en { color:var(--muted); font-size:13px; margin-bottom:8px; }
+  .panel .type { display:inline-block; font-size:12px; font-weight:700; color:#fff; border-radius:999px; padding:1px 9px; }
+  .panel .def { margin:10px 0; }
+  .panel ul { padding-left:18px; margin:4px 0; font-size:14px; }
+  .panel li a { color:var(--accent); cursor:pointer; text-decoration:none; }
+  .panel .rel { color:var(--muted); font-size:12px; }
+  .panel .hint { color:var(--muted); font-size:14px; }
+  .legend-edges { font-size:13px; color:var(--muted); margin-top:8px; }
+  table { border-collapse:collapse; width:100%; font-size:14px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top; }
+  th { background:#f3f6fb; position:sticky; top:0; }
+  td.term { font-weight:700; white-space:nowrap; cursor:pointer; color:var(--accent); }
+  td.term small { display:block; font-weight:400; color:var(--muted); }
+  .tbl { overflow-x:auto; border-radius:10px; max-height:none; }
+  .badge { display:inline-block; font-size:12px; font-weight:700; color:#fff; border-radius:999px; padding:0 8px; white-space:nowrap; }
+  .note { color:var(--muted); font-size:13px; }
+  details.src { margin-top:6px; font-size:13px; }
+  details.src summary { cursor:pointer; color:var(--accent); font-weight:600; }
+  details.src ul, .panel ul.srcl { margin:4px 0 0; padding-left:18px; }
+  details.src a, .panel ul.srcl a { color:var(--accent); word-break:break-word; }
+  .panel ul.srcl { font-size:13px; margin-bottom:8px; }
+  .bridge-grid { display:grid; grid-template-columns:minmax(0,360px) 1fr; gap:16px; align-items:start; }
+  table.mini td.n { text-align:right; font-variant-numeric:tabular-nums; }
+  ul.blist { columns:2 300px; font-size:13.5px; padding-left:18px; margin:6px 0 0; }
+  ul.blist a { color:var(--accent); cursor:pointer; }
+  @media (max-width:860px) { .bridge-grid { grid-template-columns:1fr; } }
+  a.pal { font-size:11.5px; color:var(--muted); margin-left:2px; }
+  .err { display:none; padding:14px; color:#991b1b; }
+  @media (max-width:860px) { .main { grid-template-columns:1fr; } #cy { height:520px; } .panel { height:auto; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Apple A20 (TSMC 2nm) 식각 지식 그래프 · 용어집</h1>
+    <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-05 (10-06 용어 18개 추가, 10-07 DPT·QPT 용어 44개와 용어별 논문·출처 추가, 10-08 플라즈마 식각 원리 용어 54개 추가·영역 간 연결 검토, 10-10 SNU PAL 질의응답 용어 65개 병합, 10-11 식각 기체·OES 파장·종말점 신호 9개 추가) · 근거: <a href="tsmc_n2_a20_etch_report.html">A20 식각 중심 보고서</a> · <a href="dpt_qpt_report.html">DPT·QPT 보고서</a> · <a href="plasma_etch_principles.html">플라즈마 식각 원리 노트</a> · 노드를 클릭하면 설명과 연결 관계가 오른쪽에 나옵니다.</p>
+  </header>
+
+  <div class="toolbar" id="filters"></div>
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="용어·출처 검색 (예: 채널 릴리스, SAQP, IEDM)">
+    <button class="act" id="btnFit">전체 보기</button>
+    <button class="act" id="btnEtch">식각 경로만 강조</button>
+    <button class="act" id="btnBridge">영역 간 연결 강조</button>
+    <button class="act" id="btnReset">초기화</button>
+  </div>
+
+  <div class="main">
+    <div id="cy"><div class="err" id="err">그래프 라이브러리를 불러오지 못했습니다 (인터넷 연결 필요). 아래 용어집은 그대로 볼 수 있습니다.</div></div>
+    <aside class="panel" id="panel"><p class="hint">노드를 클릭하세요.<br><br>• 색 = 용어 분류<br>• 화살표 = 관계 방향 (예: 채널 릴리스 → <i>제거한다</i> → SiGe)<br>• 마우스 휠로 확대, 드래그로 이동</p></aside>
+  </div>
+  <p class="legend-edges">관계 종류: <b>다음 단계</b> (공정 순서) · <b>사용</b> (기술/장비) · <b>제거</b> (식각 대상) · <b>형성</b> (만들어지는 구조) · <b>보존해야 함</b> (선택비 대상) · <b>위험</b> (결함/과제) · <b>검출</b> (테스트) · <b>구성</b> (구조의 재료/일부)</p>
+
+  <h2 id="bridges">영역 간 연결 검토 (2026-10-08)</h2>
+  <p class="note">그래프는 네 묶음에서 자랐다 — A20·GAA 소자, BEOL·패키징, 패터닝(DPT·QPT), 플라즈마 원리. 묶음 안쪽은 촘촘한데 묶음 사이 다리가 적어, 노트에 근거가 있는 관계를 중심으로 다리를 보강했다. 노트에 직접 근거가 없는 업계 일반 지식 3개는 관계 이름에 "(일반 지식)"을 붙였다. 위의 <b>영역 간 연결 강조</b> 버튼으로 다리만 볼 수 있다.</p>
+  <div class="bridge-grid">
+    <div class="tbl"><table class="mini"><thead><tr><th>영역 쌍</th><th>전</th><th>후</th></tr></thead><tbody><tr><td>BEOL·패키징 ↔ 패터닝(DPT·QPT)</td><td class="n">2</td><td class="n"><b>5</b></td></tr><tr><td>BEOL·패키징 ↔ 플라즈마 원리</td><td class="n">4</td><td class="n"><b>8</b></td></tr><tr><td>패터닝(DPT·QPT) ↔ 플라즈마 원리</td><td class="n">6</td><td class="n"><b>10</b></td></tr><tr><td>A20·GAA 소자 ↔ 패터닝(DPT·QPT)</td><td class="n">16</td><td class="n"><b>25</b></td></tr><tr><td>A20·GAA 소자 ↔ 플라즈마 원리</td><td class="n">13</td><td class="n"><b>20</b></td></tr><tr><td>BEOL·패키징 ↔ A20·GAA 소자</td><td class="n">24</td><td class="n"><b>27</b></td></tr></tbody></table>
+      <p class="note">연결이 하나뿐인 용어: 34개 → 11개 · 관계 302 → 345개</p></div>
+    <div><b style="font-size:14px">새 다리 관계 30개</b><ul class="blist"><li><a data-id="sidsim">SID / SIM</a> → 배선 구현 방식 → <a data-id="beol">BEOL 배선</a></li><li><a data-id="cutblock">컷 / 블록 마스크</a> → 배선 끊기 → <a data-id="beol">BEOL 배선</a></li><li><a data-id="highna">High-NA EUV</a> → Ru 직접 식각 시연 → <a data-id="ru">Ru (루테늄)</a></li><li><a data-id="beol">BEOL 배선</a> → 다마신 이유(Cu 비휘발) → <a data-id="volatility">생성물 휘발성</a></li><li><a data-id="s_almetal">Al 금속 식각</a> → 이방성 확보 → <a data-id="e_inhib">억제제(측벽 보호) 식각</a></li><li><a data-id="i_corrosion">부식 (염소 잔류)</a> → 염소 잔류 → <a data-id="cl2">Cl₂</a></li><li><a data-id="e_descum">Descum (O₂ 플라즈마)</a> → O 원자 등방성 제거 → <a data-id="e_iso">고선택비 등방성 식각</a></li><li><a data-id="e_wet">습식 식각</a> → 등방성이라 유발 → <a data-id="i_undercut">언더컷</a></li><li><a data-id="i_punch">식각 관통</a> → 하부막 선택비 부족 → <a data-id="selectivity">선택비</a></li><li><a data-id="wat">WAT / PCM</a> → 안테나 구조로 검출 (일반 지식) → <a data-id="i_charging">대전 손상</a></li><li><a data-id="i_short">단락</a> → 파티클이 유발 (일반 지식) → <a data-id="i_particle">파티클 오염</a></li><li><a data-id="s_pull">맨드릴 제거 (pull)</a> → 선택 제거(탄소 맨드릴은 O계) → <a data-id="e_iso">고선택비 등방성 식각</a></li><li><a data-id="s_speb">스페이서 에치백</a> → 윗부분 손실 → <a data-id="i_facet">패시팅</a></li><li><a data-id="sos">Spacer-on-spacer</a> → 까다로운 선택비 → <a data-id="selectivity">선택비</a></li><li><a data-id="s_transfer">패턴 전사</a> → 이온 구동 전사 → <a data-id="e_ionenh">이온 강화 식각</a></li><li><a data-id="s_transfer">패턴 전사</a> → 마스크 모서리 깎임 → <a data-id="i_facet">패시팅</a></li><li><a data-id="asd">ASD (영역 선택 증착)</a> → 선택적 핵생성 → <a data-id="sticking">부착 계수</a></li><li><a data-id="e_ale">ALE (원자층 식각)</a> → 구분됨(펄스 ≠ ALE) → <a data-id="e_pulsed">펄스 플라즈마</a></li><li><a data-id="cutblock">컷 / 블록 마스크</a> → EUV 블록 → <a data-id="euv">EUV 리소그래피</a></li><li><a data-id="euv">EUV 리소그래피</a> → 확률적 거칠기 → <a data-id="i_ler">LER · LWR</a></li><li><a data-id="intel10nm">Intel 10nm</a> → fin pitch 34 nm → <a data-id="finfet">FinFET</a></li><li><a data-id="i_collapse">패턴 붕괴</a> → 같은 모세관력 → <a data-id="i_stiction">시트 달라붙음</a></li><li><a data-id="pspacer">패터닝 스페이서</a> → 같은 형성 원리(ALD+에치백) → <a data-id="innerspacer">내부 스페이서</a></li><li><a data-id="pspacer">패터닝 스페이서</a> → 같은 형성 원리 → <a data-id="outerspacer">외부 스페이서</a></li><li><a data-id="s_contact">컨택 식각</a> → 산화막 관통 → <a data-id="sio2">SiO₂</a></li><li><a data-id="s_contact">컨택 식각</a> → 고종횡비에서 심함 → <a data-id="eshading">전자 차폐 효과</a></li><li><a data-id="s_contact">컨택 식각</a> → 저 F/C 선택 식각 (일반 지식) → <a data-id="c4f8">c-C₄F₈</a></li><li><a data-id="s_stack">스택 패터닝</a> → Si 이방성 식각(할로젠) → <a data-id="cl2">Cl₂</a></li><li><a data-id="sio2">SiO₂</a> → 충진 절연막 → <a data-id="sti">STI (얕은 트렌치 소자분리)</a></li><li><a data-id="sticking">부착 계수</a> → 벽 재결합 확률 → <a data-id="i_loading">로딩 효과</a></li></ul></div>
+  </div>
+
+  <h2 id="termreview">용어 검토 (2026-10-08)</h2>
+  <p class="note">용어 180개의 한국어 용어·영문·설명을 다시 검토해 <b>51개 용어</b>를 고쳤다 — 사실 오류(삼성 EUV DRAM 도입 2021 → 2020, 이온 에너지 단위 V → eV, 1 kV → 1 keV, Intel 10nm와 Intel 7 구분), 빠진 약어 풀이(BEOL, WAT/PCM, OCD/CD-SEM, WMCM, EPD), 교과서 모델·실험의 수치에 조건 표시("이상적 모델에서", "교과서 예"), 일반화가 지나친 설명(습식=등방성 등). 표기는 사이트 전체에서 <b>쉬스</b>(시스), <b>식각 종말점 검출</b>(끝점 검출), <b>전자 차폐 효과</b>(전자 그늘 효과), <b>챔버 벽 상태 변화</b>(챔버 노화)로 통일했다. 에치백·맨드릴·패시팅은 업계 통용 표기라 유지.</p>
+
+  <h2 id="palmerge">SNU PAL 질의응답 용어 병합 (2026-10-10)</h2>
+  <p class="note"><a href="snupal_qna_knowledge.html">SNU PAL 질의응답 용어 사전</a>(649개) 중 <b>3개 이상 글에 나온 용어</b>를 그래프에 합쳤다. 기존 용어와 같거나 동의어인 29개(예: 시즈닝 → 챔버 벽 상태 변화, 임피던스 정합·정합기 → 정합 회로)는 새 노드를 만들지 않고 기존 노드에 질의응답 글을 출처로 붙였고, 새 용어 <b>65개</b>(반사 전력, 정전척, 라디칼, 파셴 법칙, 에지 링, VI 센서 등)를 노드로 추가했다. 너무 일반적인 3개(플라즈마, 이온화, 부산물)와 식각과 거리가 먼 2개(핵융합, PDP)는 제외. 새 관계는 연구실 답변에 근거한 것만 만들었고(관계마다 근거 글 번호 — 노드 패널의 #번호 링크), 무작위 12개를 독립 검증 에이전트가 원문과 대조한 결과 11개 지지·1개 부분 지지(관계는 맞고 덧붙인 설명 문장만 과함)·반박 0. 그래프에 없는 용어는 위 검색창 아래 링크로 질의응답 용어 사전에서 찾을 수 있다. 현재 용어 245개 · 관계 528개.</p>
+
+  <h2 id="oesmerge">식각 기체·OES 기준 파장 병합 (2026-10-11)</h2>
+  <p class="note">별도 프로젝트 OES Assistant의 데이터에서 그래프에 없던 식각 기체 3개(SF₆·HBr·BCl₃)와 OES 기준 파장 3묶음(F 원자선, CF·CF₂ 진단 위치, CO 진단 위치)을 노드로 추가하고, 기존 CF₄·c-C₄F₈·Cl₂·SiO₂·Si·Al·high-k·OES·Actinometry 노드와 관계 13개로 이었다. 파장 40개는 NIST 표·논문 원문과 모두 일치함을 기계적으로 확인했고, 막질×기체 조합의 출처는 표본 10개를 독립 검증했다(채택 8, 조건부 2). 전체 조합 67개와 파장 표는 <a href="oes_etch_chemistry.html">식각 화학 조합 · OES 기준 파장</a> 페이지에 있다. 이어서 보완 조사로 종말점 검출 신호 3개(SiF 440 nm, CN 387–388 nm, Al 396 nm)를 노드로 더하고, 기존 CO·F 노드와 함께 식각 종말점 검출(EPD) 노드에 이었다(관계 10, 모두 독립 검증 채택분).</p>
+
+  <h2>주요 용어집</h2>
+  <p class="note">용어를 클릭하면 그래프에서 해당 노드로 이동합니다. 분류 필터와 검색이 용어집에도 함께 적용됩니다. "논문·출처"를 펼치면 그 용어의 근거 자료가 나옵니다 — 세 리서치(A20 보고서, PSPI·BDI 용어, DPT·QPT 보고서)에서 해당 주제에 실제로 인용된 것만 연결했고, 플라즈마 원리 용어는 교과서 서지(Lieberman·Lichtenberg 2005, 절 번호)와 우리 정리 노트의 해당 절로 연결했으며, 근거가 없는 용어는 비워 두었습니다.</p>
+  <p class="note" id="palLink"></p>
+  <div class="tbl"><table id="gloss"><thead><tr><th>용어</th><th>분류</th><th>설명 · 논문·출처</th><th>식각과의 관계</th></tr></thead><tbody></tbody></table></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.2/cytoscape.min.js"></script>
+<script>
+const TYPES = __KB_TYPES__;
+
+// [id, 이름, 영문, 분류, 설명, 식각과의 관계]
+const NODES = __KB_NODES__;
+
+// [from, to, 관계]
+const EDGES = __KB_EDGES__;
+
+// 용어별 논문·출처: 세 리서치 원본(A20 보고서, PSPI·BDI 용어, DPT·QPT 보고서)에서 해당 주제에 실제로 인용된 것만 연결
+const SRC = __KB_SRC__;
+const SOURCES = __KB_SOURCES__;
+// 관계별 근거 글 (SNU PAL 질의응답 번호)
+const EDGE_SRC = __KB_EDGE_SRC__
+const srcList = id => (SOURCES[id] || []).map(k => `<li><a href="${SRC[k][1]}" target="_blank" rel="noopener">${SRC[k][0]}</a></li>`).join("");
+
+// 영역: 용어가 어느 주제 묶음에서 왔는지 (영역 간 연결 강조·검토에 사용)
+const AREA_LABEL = __KB_AREA_LABEL__
+const AREA = __KB_AREA__
+
+const typeOf = Object.fromEntries(NODES.map(n => [n[0], n[3]]));
+const nameOf = Object.fromEntries(NODES.map(n => [n[0], n[1]]));
+const active = new Set(Object.keys(TYPES));
+
+// filters
+const fbox = document.getElementById("filters");
+for (const [k, t] of Object.entries(TYPES)) {
+  const b = document.createElement("button");
+  b.className = "chip"; b.dataset.type = k;
+  b.innerHTML = `<i style="background:${t.color}"></i>${t.label} <span style="color:#9ca3af">${NODES.filter(n=>n[3]===k).length}</span>`;
+  b.onclick = () => { active.has(k) ? active.delete(k) : active.add(k); b.classList.toggle("off"); applyFilter(); };
+  fbox.appendChild(b);
+}
+
+// glossary
+const tbody = document.querySelector("#gloss tbody");
+function renderGloss() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  tbody.innerHTML = "";
+  const pal = document.getElementById("palLink");
+  if (pal) { const raw = document.getElementById("q").value.trim(); pal.innerHTML = raw ? `질의응답 용어 사전에서 <a href="snupal_qna_knowledge.html?q=${encodeURIComponent(raw)}">“${raw.replace(/[<>&"]/g, "")}” 찾기 →</a> (그래프에 없는 용어 649개 포함)` : `그래프에 없는 용어는 <a href="snupal_qna_knowledge.html">SNU PAL 질의응답 용어 사전</a>(649개)에서 찾을 수 있다.`; }
+  NODES.filter(n => active.has(n[3]) && (!q || (n[1]+n[2]+n[4]+n[5]+(SOURCES[n[0]]||[]).map(k=>SRC[k][0]).join(" ")).toLowerCase().includes(q)))
+    .forEach(n => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td class="term">${n[1]}<small>${n[2]}</small></td><td><span class="badge" style="background:${TYPES[n[3]].color}">${TYPES[n[3]].label}</span></td><td>${n[4]}${SOURCES[n[0]] ? `<details class="src"><summary>논문·출처 ${SOURCES[n[0]].length}개</summary><ul>${srcList(n[0])}</ul></details>` : ""}</td><td>${n[5]}</td>`;
+      tr.querySelector(".term").onclick = () => { focusNode(n[0]); document.getElementById("cy").scrollIntoView({behavior:"smooth", block:"center"}); };
+      tbody.appendChild(tr);
+    });
+}
+
+let cy = null;
+const panel = document.getElementById("panel");
+function showPanel(id) {
+  const n = NODES.find(x => x[0] === id); if (!n) return;
+  const out = EDGES.filter(e => e[0] === id), inn = EDGES.filter(e => e[1] === id);
+  const li = (arr, other, dir) => arr.map(e => { const ev = EDGE_SRC[e[0] + ">" + e[1]]; return `<li><span class="rel">${dir === "out" ? "→ " + e[2] : e[2] + " ←"}</span> <a data-id="${e[other]}">${nameOf[e[other]]}</a>${ev ? " " + ev.map(p => `<a class="pal" href="https://snupal.snu.ac.kr/qna/document/${p}/" target="_blank" rel="noopener" title="근거: SNU PAL 질의응답">#${p}</a>`).join(" ") : ""}</li>`; }).join("");
+  panel.innerHTML = `<span class="type" style="background:${TYPES[n[3]].color}">${TYPES[n[3]].label}</span>
+    <h3 style="margin-top:8px">${n[1]}</h3><div class="en">${n[2]}</div>
+    <div class="def">${n[4]}</div>
+    <div class="def"><b>식각 관점:</b> ${n[5]}</div>
+    ${SOURCES[id] ? `<b style="font-size:14px">논문·출처</b><ul class="srcl">${srcList(id)}</ul>` : ""}
+    ${out.length ? `<b style="font-size:14px">이 용어에서 나가는 관계</b><ul>${li(out,1,"out")}</ul>` : ""}
+    ${inn.length ? `<b style="font-size:14px">이 용어로 들어오는 관계</b><ul>${li(inn,0,"in")}</ul>` : ""}`;
+  panel.querySelectorAll("a[data-id]").forEach(a => a.onclick = () => focusNode(a.dataset.id));
+}
+function focusNode(id) {
+  showPanel(id);
+  if (!cy) return;
+  const node = cy.getElementById(id);
+  cy.elements().removeClass("faded hl");
+  const nb = node.closedNeighborhood();
+  cy.elements().not(nb).addClass("faded"); nb.addClass("hl");
+  cy.animate({ center: { eles: node }, zoom: Math.max(cy.zoom(), 1.1) }, { duration: 350 });
+}
+function applyFilter() {
+  renderGloss();
+  if (!cy) return;
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  cy.nodes().forEach(n => {
+    const d = NODES.find(x => x[0] === n.id());
+    const show = active.has(d[3]);
+    n.style("display", show ? "element" : "none");
+    n.toggleClass("match", !!q && (d[1]+d[2]).toLowerCase().includes(q));
+  });
+}
+document.getElementById("q").addEventListener("input", applyFilter);
+
+try {
+  cy = cytoscape({
+    container: document.getElementById("cy"),
+    elements: [
+      ...NODES.map(n => ({ data: { id: n[0], label: n[1], color: TYPES[n[3]].color, big: ["s_lateral","s_release","s_gaterecess","gaa","e_iso","sadp","saqp","sheath","ied"].includes(n[0]) ? 1 : 0 } })),
+      ...EDGES.map((e, i) => ({ data: { id: "e" + i, source: e[0], target: e[1], label: e[2], seq: e[2] === "다음 단계" ? 1 : 0 } })),
+    ],
+    style: [
+      { selector: "node", style: { "background-color": "data(color)", label: "data(label)", "font-size": 11, "font-family": "Malgun Gothic, system-ui, sans-serif",
+        color: "#1f2937", "text-valign": "bottom", "text-margin-y": 4, width: 22, height: 22, "text-wrap": "wrap", "text-max-width": 90,
+        "text-background-color": "#ffffff", "text-background-opacity": .85, "text-background-padding": 1, "border-width": 2, "border-color": "#fff" } },
+      { selector: "node[big = 1]", style: { width: 34, height: 34, "font-weight": "bold", "font-size": 12, "border-color": "#fecaca", "border-width": 4 } },
+      { selector: "edge", style: { width: 1.3, "line-color": "#cbd5e1", "target-arrow-color": "#cbd5e1", "target-arrow-shape": "triangle", "arrow-scale": .8, "curve-style": "bezier" } },
+      { selector: "edge[seq = 1]", style: { width: 3, "line-color": "#93c5fd", "target-arrow-color": "#60a5fa" } },
+      { selector: "edge.hl", style: { label: "data(label)", "font-size": 10, color: "#374151", "text-background-color": "#fff", "text-background-opacity": 1, "line-color": "#64748b", "target-arrow-color": "#64748b", width: 2 } },
+      { selector: ".faded", style: { opacity: .12 } },
+      { selector: "node.match", style: { "border-color": "#facc15", "border-width": 5 } },
+      { selector: ".etchpath", style: { "line-color": "#dc2626", "target-arrow-color": "#dc2626", width: 3 } },
+      { selector: ".bridge", style: { "line-color": "#7c3aed", "target-arrow-color": "#7c3aed", width: 2.5 } },
+    ],
+    layout: { name: "cose", animate: false, randomize: false, idealEdgeLength: 100, nodeRepulsion: 22000, gravity: .2, nodeOverlap: 20, componentSpacing: 60, numIter: 2500, padding: 20 },
+    wheelSensitivity: 0.25,
+  });
+  cy.on("tap", "node", e => focusNode(e.target.id()));
+  cy.on("tap", e => { if (e.target === cy) cy.elements().removeClass("faded hl etchpath bridge"); });
+} catch (err) {
+  document.getElementById("err").style.display = "block";
+}
+
+document.getElementById("btnFit").onclick = () => cy && cy.fit(undefined, 20);
+document.getElementById("btnReset").onclick = () => {
+  document.getElementById("q").value = ""; active.clear(); Object.keys(TYPES).forEach(k => active.add(k));
+  fbox.querySelectorAll(".chip").forEach(c => c.classList.remove("off"));
+  applyFilter(); if (cy) { cy.elements().removeClass("faded hl etchpath bridge match"); cy.fit(undefined, 20); }
+  panel.innerHTML = '<p class="hint">노드를 클릭하세요.</p>';
+};
+document.getElementById("btnEtch").onclick = () => {
+  if (!cy) return;
+  cy.elements().removeClass("faded hl etchpath");
+  const keep = cy.nodes().filter(n => ["step","etch","issue"].includes(typeOf[n.id()]) || ["sige","si","nanosheet","innerspacer","lowk"].includes(n.id()));
+  const edges = keep.edgesWith(keep);
+  cy.elements().not(keep.union(edges)).addClass("faded");
+  edges.filter(e => ["사용","제거","위험","보존해야 함"].includes(e.data("label"))).addClass("etchpath hl");
+};
+
+document.getElementById("btnBridge").onclick = () => {
+  if (!cy) return;
+  cy.elements().removeClass("faded hl etchpath bridge");
+  const br = cy.edges().filter(e => AREA[e.data("source")] !== AREA[e.data("target")]);
+  cy.elements().not(br.union(br.connectedNodes())).addClass("faded");
+  br.addClass("bridge hl");
+};
+document.querySelectorAll('ul.blist a[data-id]').forEach(a => a.onclick = () => { focusNode(a.dataset.id); document.getElementById('cy').scrollIntoView({behavior:'smooth', block:'center'}); });
+
+renderGloss();
+// 주소 끝에 #노드id 를 붙이면 그 용어에 포커스 (예: #s_release)
+if (cy) {
+  const h = decodeURIComponent(location.hash.slice(1));
+  cy.ready(() => { cy.fit(undefined, 20); if (h && cy.getElementById(h).length) focusNode(h); });
+}
+</script>
+</body>
+</html>

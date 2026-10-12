@@ -121,7 +121,7 @@ codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_
 
 - 수집 전 robots.txt·이용 조건 확인, 요청 사이 1초 이상 쉰다.
 - 원문 전체·작성자 이름은 `data/`(비공개, .gitignore)에만 둔다. 공개 결과물에는 **재서술한 지식·용어 + 원문 링크**만 싣고, 원문을 15단어 넘게 옮기지 않는다.
-- SNU PAL 게시판: `python tools/snupal_crawl.py list|docs|media|stats` → `data/snupal/snupal.db`, 추출 결과 병합·검사 `tools/snupal_merge.py`, 공개 페이지 생성 `tools/snupal_page.py`.
+- SNU PAL 게시판: `python tools/snupal_crawl.py list|docs|media|stats` → `data/snupal/snupal.db`, 추출 결과 병합·검사 `tools/snupal_merge.py`, 공개 데이터 준비 `python tools/snupal_page.py prepare <export.json>` → `kb/snupal/page.json`. 공개 페이지는 주제별 해설(`kb/snupal/topics.json`)과 용어 사전만 싣는다(글별 요약·목록 금지, 2026-10-13 결정).
 - 본문 속 그림·첨부(옛 주소 pal.snu.ac.kr)는 원래 사이트에서도 이미 볼 수 없고 인터넷 아카이브에도 없다(2026-10-11 확인, `media` 표에 상태 기록). 텍스트 보관본(`data/snupal/`)이 유일한 사본이다.
 - 백업(2026-10-11): `data/backup/snupal_archive_YYYYMMDD*.zip`(README·JSONL·SHA-256 포함, 10MB 미만 조각) → 사용자 구글 드라이브 `snupal_archive` 폴더(비공유). 보관본이 바뀌면 새 날짜로 다시 만들어 올린다.
 
@@ -131,6 +131,9 @@ codex exec --skip-git-repo-check -s read-only -m gpt-6-astra -c model_reasoning_
 - 첫 화면은 `index.html`(목차). 새 결과물을 만들면 목차에 항목을 추가하고, 결과물 페이지에는 `← 목차` 링크를 넣는다.
 - 작업이 끝나면 기록(현재 단계 페이지 + history.html 첫 화면) 갱신 → 커밋 → `git push`로 사이트를 업데이트한다. 푸시 후 Pages 빌드 완료와 실제 페이지(200)를 확인한다.
 - 절대 커밋 금지: `.env`(API 키). `.gitignore`로 막혀 있지만, 커밋 전에 올라갈 파일에 키·IP·계정정보가 없는지 매번 검사한다.
+- **원본과 결과물 (2026-10-13)**: 지식 그래프와 질의응답 페이지는 `kb/`가 원본이다. 결과물 HTML을 직접 고치지 말고 `kb/`(또는 `tools/templates/`)를 고친 뒤 `python tools/build_site.py`로 만든다. 커밋 전 `python tools/build_site.py --check`가 통과해야 한다.
+  - 그래프: `kb/graph/nodes.json`(용어마다 id·이름·영문·분류·영역·설명·식각 관계·출처 키), `edges.json`(관계·근거 글), `sources.json`(출처 키 → 제목·URL), `types.json`(분류·영역 이름). 노드 id는 "한 개념 = 한 id"로 쓰고 바꾸지 않는다(링크 `#앵커`가 걸려 있음).
+  - 구조 이관과 내용 수정은 따로 커밋한다.
 - OES Assistant 데이터 페이지: `python tools/oes_page.py <oes_assistant 폴더> <파장검증.json> [조합검증.json]` → `research/oes_etch_chemistry.html`. 보완 데이터는 `python tools/oes_supplement_build.py <NIST 추출.json> ledger/oes_supplement.json <검증메모.json>` → `tools/oes_supplement.json`(장부 gate의 채택·조건부만). 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
 - 원본 리서치(`research/*_raw.md`)와 실행 로그(`research/*_log.txt`)는 공개하지 않는다 (로컬 보관).
 - 사이트 주소에는 GitHub 계정명이 들어가므로, history에는 `<계정>.github.io/etch-paper-study/`처럼 가려서 적는다.

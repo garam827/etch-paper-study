@@ -1,0 +1,50 @@
+{
+ "types": {
+  "product": {
+   "label": "제품·노드",
+   "color": "#7c3aed"
+  },
+  "structure": {
+   "label": "구조",
+   "color": "#0891b2"
+  },
+  "material": {
+   "label": "재료",
+   "color": "#ca8a04"
+  },
+  "step": {
+   "label": "공정 단계",
+   "color": "#2563eb"
+  },
+  "etch": {
+   "label": "식각 기술",
+   "color": "#dc2626"
+  },
+  "tool": {
+   "label": "기타 공정·장비",
+   "color": "#4b5563"
+  },
+  "issue": {
+   "label": "결함·과제",
+   "color": "#ea580c"
+  },
+  "test": {
+   "label": "테스트·패키징",
+   "color": "#16a34a"
+  },
+  "pattern": {
+   "label": "패터닝 기법",
+   "color": "#db2777"
+  },
+  "plasma": {
+   "label": "플라즈마 물리",
+   "color": "#0f766e"
+  }
+ },
+ "area_labels": {
+  "gaa": "A20·GAA 소자",
+  "beol": "BEOL·패키징",
+  "pattern": "패터닝(DPT·QPT)",
+  "plasma": "플라즈마 원리"
+ }
+}

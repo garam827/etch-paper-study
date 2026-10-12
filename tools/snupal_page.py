@@ -1,6 +1,7 @@
-"""공개용 JSON(snupal_merge.py export) + 주제 해설(tools/snupal_topics.json) → research/snupal_qna_knowledge.html
+"""질의응답 주제 해설 페이지 (research/snupal_qna_knowledge.html)
 
-    python tools/snupal_page.py <export.json>
+    python tools/snupal_page.py prepare <export.json>   # 비공개 export → kb/snupal/page.json (페이지에 싣는 것만)
+    python tools/snupal_page.py build                   # kb/snupal/page.json + kb/snupal/topics.json → 페이지 (build_site.py가 부름)
 
 공개 범위(2026-10-13 결정): 글별 요약·색인은 싣지 않는다. 주제별 종합 해설 + 대표 글 링크, 용어마다 정의 1개와 그 근거 글 링크 1개만.
 """
@@ -10,47 +11,63 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-data = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-topics = json.loads((ROOT / "tools/snupal_topics.json").read_text(encoding="utf-8"))["topics"]
-m = data["meta"]
-posts = {p["id"]: p for p in data["posts"]}
+KB = ROOT / "kb" / "snupal"
+OUT = ROOT / "research" / "snupal_qna_knowledge.html"
 e = html.escape
 
 
-def plink(i, title=False):
-    p = posts[i]
-    label = e(p["title"]) if title else f"글 {i}"
-    return f'<a href="{e(p["url"])}" target="_blank" rel="noopener" title="{e(p["title"])}">{label}</a>'
+def prepare(export_path):
+    data = json.loads(Path(export_path).read_text(encoding="utf-8"))
+    topics = json.loads((KB / "topics.json").read_text(encoding="utf-8"))["topics"]
+    terms, used = [], set()
+    for t in topics:
+        used.update(t["picks"])
+        for s in t["sections"]:
+            used.update(s["refs"])
+    for t in data["terms"]:
+        ds = sorted(t["defs"], key=lambda d: len(d["d"]))
+        d = ds[len(ds) // 2]
+        used.add(d["id"])
+        terms.append({"ko": t["ko"], "en": t.get("en"), "alt": t.get("alt") or [], "def": d["d"], "post": d["id"]})
+    posts = {str(p["id"]): {"title": p["title"], "url": p["url"]} for p in data["posts"] if p["id"] in used}
+    m = data["meta"]
+    meta = {"source": m["source"], "board": m["board"], "posts": m["posts"], "period": m["period"]}
+    (KB / "page.json").write_text(json.dumps({"meta": meta, "posts": posts, "terms": terms}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print("kb/snupal/page.json: 용어", len(terms), "· 링크 글", len(posts))
 
 
-nav, body, n_sec, refs = [], [], 0, set()
-for t in topics:
-    nav.append(f'<a href="#t-{t["key"]}">{e(t["name"])}</a>')
-    secs = []
-    for s in t["sections"]:
-        n_sec += 1
-        refs.update(s["refs"])
-        secs.append(f'<div class="card"><h4>{e(s["title"])}</h4><p>{e(s["text"])}</p>'
-                    f'<div class="links">근거 글: {" ".join(plink(r) for r in s["refs"])}</div></div>')
-    refs.update(t["picks"])
-    picks = "".join(f"<li>{plink(i, True)}</li>" for i in t["picks"])
-    body.append(f'<section class="topic" id="t-{t["key"]}"><h2>{e(t["name"])}</h2>'
-                f'<p class="intro">{e(t["intro"])}</p>{"".join(secs)}'
-                f'<div class="picks"><b>먼저 읽어 볼 글</b><ol>{picks}</ol></div></section>')
+def render():
+    data = json.loads((KB / "page.json").read_text(encoding="utf-8"))
+    topics = json.loads((KB / "topics.json").read_text(encoding="utf-8"))["topics"]
+    m, posts = data["meta"], data["posts"]
 
-terms = []
-for t in data["terms"]:
-    ds = sorted(t["defs"], key=lambda d: len(d["d"]))
-    d = ds[len(ds) // 2]
-    ids = [d["id"]]
-    refs.update(ids)
-    key = " ".join([t["ko"], t.get("en") or "", *(t.get("alt") or [])]).lower()
-    en = f' <span class="en">{e(t["en"])}</span>' if t.get("en") else ""
-    alt = f'<div class="links">다른 표기: {e(", ".join(t["alt"]))}</div>' if t.get("alt") else ""
-    terms.append(f'<li data-k="{e(key)}"><b>{e(t["ko"])}</b>{en} — {e(d["d"])} '
-                 f'<span class="links">{" ".join(plink(i) for i in ids)}</span>{alt}</li>')
+    def plink(i, title=False):
+        p = posts[str(i)]
+        label = e(p["title"]) if title else f"글 {i}"
+        return f'<a href="{e(p["url"])}" target="_blank" rel="noopener" title="{e(p["title"])}">{label}</a>'
 
-page = f"""<!doctype html>
+    nav, body, n_sec = [], [], 0
+    for t in topics:
+        nav.append(f'<a href="#t-{t["key"]}">{e(t["name"])}</a>')
+        secs = []
+        for s in t["sections"]:
+            n_sec += 1
+            secs.append(f'<div class="card"><h4>{e(s["title"])}</h4><p>{e(s["text"])}</p>'
+                        f'<div class="links">근거 글: {" ".join(plink(r) for r in s["refs"])}</div></div>')
+        picks = "".join(f"<li>{plink(i, True)}</li>" for i in t["picks"])
+        body.append(f'<section class="topic" id="t-{t["key"]}"><h2>{e(t["name"])}</h2>'
+                    f'<p class="intro">{e(t["intro"])}</p>{"".join(secs)}'
+                    f'<div class="picks"><b>먼저 읽어 볼 글</b><ol>{picks}</ol></div></section>')
+
+    terms = []
+    for t in data["terms"]:
+        key = " ".join([t["ko"], t["en"] or "", *t["alt"]]).lower()
+        en = f' <span class="en">{e(t["en"])}</span>' if t["en"] else ""
+        alt = f'<div class="links">다른 표기: {e(", ".join(t["alt"]))}</div>' if t["alt"] else ""
+        terms.append(f'<li data-k="{e(key)}"><b>{e(t["ko"])}</b>{en} — {e(t["def"])} '
+                     f'<span class="links">{plink(t["post"])}</span>{alt}</li>')
+
+    page = f"""<!doctype html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
@@ -109,6 +126,13 @@ q.oninput = () => {{ const s = q.value.trim().toLowerCase(); items.forEach(li =>
 </body>
 </html>
 """
-out = ROOT / "research" / "snupal_qna_knowledge.html"
-out.write_text(page, encoding="utf-8")
-print("written", out, round(out.stat().st_size / 1024), "KB · 링크한 글", len(refs))
+
+    return page
+
+
+if __name__ == "__main__":
+    if sys.argv[1] == "prepare":
+        prepare(sys.argv[2])
+    else:
+        OUT.write_text(render(), encoding="utf-8")
+        print("written", OUT)

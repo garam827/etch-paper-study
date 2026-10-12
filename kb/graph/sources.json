@@ -1,0 +1,1942 @@
+{
+ "oes_us10892146": {
+  "title": "Tokyo Electron 특허 US10892146B2 (CN 387·SiF 440 nm 종말점)",
+  "url": "https://patents.google.com/patent/US10892146B2/en"
+ },
+ "oes_kwon2021": {
+  "title": "Kwon et al., Materials 14, 3005 (2021) — SF₆/O₂/Ar OES 감시 파장",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8199536/"
+ },
+ "oes_us6376262": {
+  "title": "특허 US6376262B1 — 질화막 종말점 CN 387 nm",
+  "url": "https://patents.google.com/patent/US6376262"
+ },
+ "oes_alrebdi2022": {
+  "title": "Alrebdi et al., Polymers 14, 3686 (2022) — CN violet 밴드 위치",
+  "url": "https://pdfs.semanticscholar.org/48fb/3aa17dd0b53e0507d951224f54443920a7f1.pdf"
+ },
+ "oes_us6472329": {
+  "title": "특허 US6472329B1 — Cl₂/BCl₃ Al 식각 396 nm 종말점",
+  "url": "https://patents.google.com/patent/US6472329"
+ },
+ "oes_nist_al": {
+  "title": "NIST · Strong Lines of Aluminum",
+  "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/aluminumtable2.htm"
+ },
+ "oes_ep0442488": {
+  "title": "Applied Materials 특허 EP0442488A2 — CO 483 nm 산화막 종말점",
+  "url": "https://patents.google.com/patent/EP0442488A2/en"
+ },
+ "oes_us5552016": {
+  "title": "Applied Materials 특허 US5552016A — W 에치백 F 704 nm",
+  "url": "https://patents.google.com/patent/US5552016A/en"
+ },
+ "oes_page": {
+  "title": "식각 화학 조합 · OES 기준 파장 (이 사이트, OES Assistant 데이터)",
+  "url": "oes_etch_chemistry.html"
+ },
+ "oes_drie": {
+  "title": "Oxford Instruments · DRIE processes",
+  "url": "https://plasma.oxinst.com/technologies/drie-new-template"
+ },
+ "oes_w1989": {
+  "title": "Turban et al. (1989) · SF6 reactive ion etching of tungsten",
+  "url": "https://www.sciencedirect.com/science/article/pii/0040609089901028"
+ },
+ "oes_si_halogen": {
+  "title": "Cheng et al. (1994) · Competitive halogenation of Si in HBr/Cl2",
+  "url": "https://www.columbia.edu/~iph1/Download/71.%20Cheng-HBrCl2PlasmaEtching-1994-JVA001970.pdf"
+ },
+ "oes_gan2018": {
+  "title": "Li et al. (2018) · Slow and smooth ICP etching of GaN",
+  "url": "https://www.jos.ac.cn/en/article/id/5be9258a-ddbb-49d4-9292-cc578251779c"
+ },
+ "oes_highk2009": {
+  "title": "IBM Research (2009) · Plasma etching of Hf-based high-k films, Part I",
+  "url": "https://research.ibm.com/publications/plasma-etching-of-hf-based-high-k-thin-films-part-i-effect-of-complex-ions-and-radicals-on-the-surface-reactions"
+ },
+ "oes_trion_metals": {
+  "title": "Trion Technology · Metal etching",
+  "url": "https://triontech.com/process/etching/metal-etch/"
+ },
+ "oes_nist_f": {
+  "title": "NIST · Strong Lines of Fluorine",
+  "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/fluorinetable2.htm"
+ },
+ "oes_kim2015": {
+  "title": "G.-H. Kim et al. · Trans. Electr. Electron. Mater. 16(2), 90–94 (2015)",
+  "url": "https://oak.go.kr/repository/journal/15707/E1TEAO_2015_v16n2_90.pdf"
+ },
+ "pal_89": {
+  "title": "SNU PAL 질의응답 #89 — 충돌단면적에 관하여",
+  "url": "https://snupal.snu.ac.kr/qna/document/89/"
+ },
+ "pal_90": {
+  "title": "SNU PAL 질의응답 #90 — ICP 플라즈마에 관해서",
+  "url": "https://snupal.snu.ac.kr/qna/document/90/"
+ },
+ "pal_95": {
+  "title": "SNU PAL 질의응답 #95 — QMA에서 electron beam의 generation 과정",
+  "url": "https://snupal.snu.ac.kr/qna/document/95/"
+ },
+ "pal_97": {
+  "title": "SNU PAL 질의응답 #97 — CCP/ICP , E/H mode",
+  "url": "https://snupal.snu.ac.kr/qna/document/97/"
+ },
+ "pal_100": {
+  "title": "SNU PAL 질의응답 #100 — Langmuir probe tip 재료",
+  "url": "https://snupal.snu.ac.kr/qna/document/100/"
+ },
+ "pal_108": {
+  "title": "SNU PAL 질의응답 #108 — 플라즈마 진동수와 전자온도",
+  "url": "https://snupal.snu.ac.kr/qna/document/108/"
+ },
+ "pal_109": {
+  "title": "SNU PAL 질의응답 #109 — F/S (Faraday Shield)",
+  "url": "https://snupal.snu.ac.kr/qna/document/109/"
+ },
+ "pal_111": {
+  "title": "SNU PAL 질의응답 #111 — 형광등과 플라즈마",
+  "url": "https://snupal.snu.ac.kr/qna/document/111/"
+ },
+ "pal_115": {
+  "title": "SNU PAL 질의응답 #115 — Light flower bulb",
+  "url": "https://snupal.snu.ac.kr/qna/document/115/"
+ },
+ "pal_117": {
+  "title": "SNU PAL 질의응답 #117 — DC glow discharge",
+  "url": "https://snupal.snu.ac.kr/qna/document/117/"
+ },
+ "pal_118": {
+  "title": "SNU PAL 질의응답 #118 — 대기압 플라즈마에 대해서",
+  "url": "https://snupal.snu.ac.kr/qna/document/118/"
+ },
+ "pal_125": {
+  "title": "SNU PAL 질의응답 #125 — Plasma potential이.. 음수가 될수 있나요?..",
+  "url": "https://snupal.snu.ac.kr/qna/document/125/"
+ },
+ "pal_126": {
+  "title": "SNU PAL 질의응답 #126 — CCP의 Vp가 ICP의 Vp보다 높은 이유",
+  "url": "https://snupal.snu.ac.kr/qna/document/126/"
+ },
+ "pal_128": {
+  "title": "SNU PAL 질의응답 #128 — 산업용 플라즈마 내에서 particle의 형성",
+  "url": "https://snupal.snu.ac.kr/qna/document/128/"
+ },
+ "pal_133": {
+  "title": "SNU PAL 질의응답 #133 — 유전체 플라즈마",
+  "url": "https://snupal.snu.ac.kr/qna/document/133/"
+ },
+ "pal_134": {
+  "title": "SNU PAL 질의응답 #134 — 충돌",
+  "url": "https://snupal.snu.ac.kr/qna/document/134/"
+ },
+ "pal_135": {
+  "title": "SNU PAL 질의응답 #135 — 플라즈마와 자기장의 관계",
+  "url": "https://snupal.snu.ac.kr/qna/document/135/"
+ },
+ "pal_136": {
+  "title": "SNU PAL 질의응답 #136 — 플라즈마의 상태",
+  "url": "https://snupal.snu.ac.kr/qna/document/136/"
+ },
+ "pal_137": {
+  "title": "SNU PAL 질의응답 #137 — ccp-icp",
+  "url": "https://snupal.snu.ac.kr/qna/document/137/"
+ },
+ "pal_141": {
+  "title": "SNU PAL 질의응답 #141 — self bias [Capacitor와 mobility]",
+  "url": "https://snupal.snu.ac.kr/qna/document/141/"
+ },
+ "pal_142": {
+  "title": "SNU PAL 질의응답 #142 — Noise 문제, 탐침에 의한 식각 플라즈마의.. [RF ground와 Cl Plasma]",
+  "url": "https://snupal.snu.ac.kr/qna/document/142/"
+ },
+ "pal_145": {
+  "title": "SNU PAL 질의응답 #145 — [Q]플라즈마 생성위한 자유전자라는게 뭐죠? [Breakdown, cosmic ray]",
+  "url": "https://snupal.snu.ac.kr/qna/document/145/"
+ },
+ "pal_148": {
+  "title": "SNU PAL 질의응답 #148 — 플라즈마내에서의 아킹 [Charge와 plasma potential]",
+  "url": "https://snupal.snu.ac.kr/qna/document/148/"
+ },
+ "pal_149": {
+  "title": "SNU PAL 질의응답 #149 — 플라즈마 처리 [표면처리와 Plasma Chemistry]",
+  "url": "https://snupal.snu.ac.kr/qna/document/149/"
+ },
+ "pal_150": {
+  "title": "SNU PAL 질의응답 #150 — 산업용 플라즈마의 특성 [Thermal Plasma와 Cold Plasma]",
+  "url": "https://snupal.snu.ac.kr/qna/document/150/"
+ },
+ "pal_151": {
+  "title": "SNU PAL 질의응답 #151 — 플라즈마를 이용한 오존 발생장치 [Ozone과 Plasma]",
+  "url": "https://snupal.snu.ac.kr/qna/document/151/"
+ },
+ "pal_153": {
+  "title": "SNU PAL 질의응답 #153 — In-flight plasma process [Remote Plasma와 Plasma Torch]",
+  "url": "https://snupal.snu.ac.kr/qna/document/153/"
+ },
+ "pal_154": {
+  "title": "SNU PAL 질의응답 #154 — 플라즈마를 이용한 폐기물 처리 [코로나 방전, 먼지 집진]",
+  "url": "https://snupal.snu.ac.kr/qna/document/154/"
+ },
+ "pal_155": {
+  "title": "SNU PAL 질의응답 #155 — 고온플라즈마와 저온플라즈마 [Collision과 Wall loss]",
+  "url": "https://snupal.snu.ac.kr/qna/document/155/"
+ },
+ "pal_160": {
+  "title": "SNU PAL 질의응답 #160 — corona [Streamer와 Impurity]",
+  "url": "https://snupal.snu.ac.kr/qna/document/160/"
+ },
+ "pal_161": {
+  "title": "SNU PAL 질의응답 #161 — DBD plasma [Excitation과 Power Current]",
+  "url": "https://snupal.snu.ac.kr/qna/document/161/"
+ },
+ "pal_162": {
+  "title": "SNU PAL 질의응답 #162 — DBD 플라즈마와 플라즈마 impedance [DBD plasma, Matching]",
+  "url": "https://snupal.snu.ac.kr/qna/document/162/"
+ },
+ "pal_165": {
+  "title": "SNU PAL 질의응답 #165 — 플라즈마 온도 [Density와 Temperature]",
+  "url": "https://snupal.snu.ac.kr/qna/document/165/"
+ },
+ "pal_166": {
+  "title": "SNU PAL 질의응답 #166 — 플라즈마와 자기장의 상호작용 [Magnetic Confinement]",
+  "url": "https://snupal.snu.ac.kr/qna/document/166/"
+ },
+ "pal_178": {
+  "title": "SNU PAL 질의응답 #178 — ICP 식각에 대하여… [Electronegative plasma]",
+  "url": "https://snupal.snu.ac.kr/qna/document/178/"
+ },
+ "pal_184": {
+  "title": "SNU PAL 질의응답 #184 — manetically enhanced plasmas",
+  "url": "https://snupal.snu.ac.kr/qna/document/184/"
+ },
+ "pal_185": {
+  "title": "SNU PAL 질의응답 #185 — self Bias voltage [Self bias와 mobility]",
+  "url": "https://snupal.snu.ac.kr/qna/document/185/"
+ },
+ "pal_186": {
+  "title": "SNU PAL 질의응답 #186 — Ar plasma와 O2 plasma 차이??(Matching Network) [Matching Q factor와 negative ion]",
+  "url": "https://snupal.snu.ac.kr/qna/document/186/"
+ },
+ "pal_189": {
+  "title": "SNU PAL 질의응답 #189 — No. of antenna coil turns for ICP [안테나 turn 수와 플라즈마 발생 효율]",
+  "url": "https://snupal.snu.ac.kr/qna/document/189/"
+ },
+ "pal_190": {
+  "title": "SNU PAL 질의응답 #190 — Self Bias [Self bias와 플라즈마 특성 인자]",
+  "url": "https://snupal.snu.ac.kr/qna/document/190/"
+ },
+ "pal_194": {
+  "title": "SNU PAL 질의응답 #194 — 이온과 라디칼의 농도 [해리도와 전자 에너지 분포]",
+  "url": "https://snupal.snu.ac.kr/qna/document/194/"
+ },
+ "pal_208": {
+  "title": "SNU PAL 질의응답 #208 — 플라즈마를 손으로 만질 수는 없나요 [플라즈마의 온도와 밀도]",
+  "url": "https://snupal.snu.ac.kr/qna/document/208/"
+ },
+ "pal_209": {
+  "title": "SNU PAL 질의응답 #209 — sheath와 debye sheilding에 관하여 [전자와 이온의 흐름]",
+  "url": "https://snupal.snu.ac.kr/qna/document/209/"
+ },
+ "pal_216": {
+  "title": "SNU PAL 질의응답 #216 — 반응기의 면적에 대한 질문 [전극의 면적에 따른 전압 강하]",
+  "url": "https://snupal.snu.ac.kr/qna/document/216/"
+ },
+ "pal_218": {
+  "title": "SNU PAL 질의응답 #218 — Electrode의 역할에 대해서 궁금합니다. [이차전자의 방출과 스퍼터링]",
+  "url": "https://snupal.snu.ac.kr/qna/document/218/"
+ },
+ "pal_223": {
+  "title": "SNU PAL 질의응답 #223 — 플라즈마 온도 질문+충돌 단면적 [전자의 에너지에 따른 충돌반응]",
+  "url": "https://snupal.snu.ac.kr/qna/document/223/"
+ },
+ "pal_227": {
+  "title": "SNU PAL 질의응답 #227 — PECVD에서 플라즈마 demage가 발생 조건 [쉬스와 플라즈마 밀도에 의한 damage]",
+  "url": "https://snupal.snu.ac.kr/qna/document/227/"
+ },
+ "pal_230": {
+  "title": "SNU PAL 질의응답 #230 — Plasma source type [CCP, ICP, TCP]",
+  "url": "https://snupal.snu.ac.kr/qna/document/230/"
+ },
+ "pal_231": {
+  "title": "SNU PAL 질의응답 #231 — 스퍼터링시 시편 두께와 박막두께 [박막의 하전량 변화]",
+  "url": "https://snupal.snu.ac.kr/qna/document/231/"
+ },
+ "pal_235": {
+  "title": "SNU PAL 질의응답 #235 — 확산펌프 [DP 변수 검토]",
+  "url": "https://snupal.snu.ac.kr/qna/document/235/"
+ },
+ "pal_238": {
+  "title": "SNU PAL 질의응답 #238 — RF 플라즈마와 Microwave 플라즈마의 차이 [해리와 세정 활성종]",
+  "url": "https://snupal.snu.ac.kr/qna/document/238/"
+ },
+ "pal_241": {
+  "title": "SNU PAL 질의응답 #241 — 이온주입량에 대한 문의",
+  "url": "https://snupal.snu.ac.kr/qna/document/241/"
+ },
+ "pal_242": {
+  "title": "SNU PAL 질의응답 #242 — Breakdown에 대해",
+  "url": "https://snupal.snu.ac.kr/qna/document/242/"
+ },
+ "pal_245": {
+  "title": "SNU PAL 질의응답 #245 — Lissajous figure에 대하여..",
+  "url": "https://snupal.snu.ac.kr/qna/document/245/"
+ },
+ "pal_247": {
+  "title": "SNU PAL 질의응답 #247 — 대기압플라즈마를 이용한 세정장치",
+  "url": "https://snupal.snu.ac.kr/qna/document/247/"
+ },
+ "pal_253": {
+  "title": "SNU PAL 질의응답 #253 — 스퍼터링에서 DC bias의 감소 원인이 궁금합니다..",
+  "url": "https://snupal.snu.ac.kr/qna/document/253/"
+ },
+ "pal_254": {
+  "title": "SNU PAL 질의응답 #254 — 플라즈마에서 전자가 에너지를 어느 부분에서..",
+  "url": "https://snupal.snu.ac.kr/qna/document/254/"
+ },
+ "pal_255": {
+  "title": "SNU PAL 질의응답 #255 — Three body collision process",
+  "url": "https://snupal.snu.ac.kr/qna/document/255/"
+ },
+ "pal_256": {
+  "title": "SNU PAL 질의응답 #256 — AMS진단에 대하여 궁금합니다",
+  "url": "https://snupal.snu.ac.kr/qna/document/256/"
+ },
+ "pal_258": {
+  "title": "SNU PAL 질의응답 #258 — DC Bias Vs Self bias [전자 에너지 분포]",
+  "url": "https://snupal.snu.ac.kr/qna/document/258/"
+ },
+ "pal_259": {
+  "title": "SNU PAL 질의응답 #259 — 궁금합니다 [입자 속도에 따른 충돌 단면적과 mean free path]",
+  "url": "https://snupal.snu.ac.kr/qna/document/259/"
+ },
+ "pal_263": {
+  "title": "SNU PAL 질의응답 #263 — floating substrate 에서 sheath 형성 과정 의문점 [Ambipolar diffusion, Floating potential]",
+  "url": "https://snupal.snu.ac.kr/qna/document/263/"
+ },
+ "pal_264": {
+  "title": "SNU PAL 질의응답 #264 — RF plasma에 대해서 질문드립니다. [Sheath model, Ion current density]",
+  "url": "https://snupal.snu.ac.kr/qna/document/264/"
+ },
+ "pal_267": {
+  "title": "SNU PAL 질의응답 #267 — Dechucking 시 wafer 상의 전하 문제",
+  "url": "https://snupal.snu.ac.kr/qna/document/267/"
+ },
+ "pal_272": {
+  "title": "SNU PAL 질의응답 #272 — scattering cross-section, rf grounding에 관한 질문입니다. [RF matching 및 반응 단면적]",
+  "url": "https://snupal.snu.ac.kr/qna/document/272/"
+ },
+ "pal_273": {
+  "title": "SNU PAL 질의응답 #273 — Dry Etch장비에서 Vdc와 Etch rate관계 [플라즈마 및 반응기 임피던스]",
+  "url": "https://snupal.snu.ac.kr/qna/document/273/"
+ },
+ "pal_274": {
+  "title": "SNU PAL 질의응답 #274 — CCP형, 진공챔버 내에서의 플라즈마... [플라즈마 확산 및 전력정합 영역 제어]",
+  "url": "https://snupal.snu.ac.kr/qna/document/274/"
+ },
+ "pal_277": {
+  "title": "SNU PAL 질의응답 #277 — 전자온도에 대하여 궁금한 사항이 있습니다. [전자 가열 매커니즘과 이온 에너지]",
+  "url": "https://snupal.snu.ac.kr/qna/document/277/"
+ },
+ "pal_279": {
+  "title": "SNU PAL 질의응답 #279 — Arcing [전하 축적에 의한 방전 개시]",
+  "url": "https://snupal.snu.ac.kr/qna/document/279/"
+ },
+ "pal_293": {
+  "title": "SNU PAL 질의응답 #293 — 질문이 몇가지 있읍니다. [Lorentz force와 Magnetic cusp]",
+  "url": "https://snupal.snu.ac.kr/qna/document/293/"
+ },
+ "pal_294": {
+  "title": "SNU PAL 질의응답 #294 — N2 플라즈마 공정 시간에 따른 Etching rate의 변화 이유가 알고 싶어요 [Cooling과 Etch rate]",
+  "url": "https://snupal.snu.ac.kr/qna/document/294/"
+ },
+ "pal_310": {
+  "title": "SNU PAL 질의응답 #310 — ECR plasma 장비관련 질문입니다. [ECR과 enhanced process]",
+  "url": "https://snupal.snu.ac.kr/qna/document/310/"
+ },
+ "pal_323": {
+  "title": "SNU PAL 질의응답 #323 — 상압 플라즈마 방전에 관한 문의 [Electric field와 breakdown]",
+  "url": "https://snupal.snu.ac.kr/qna/document/323/"
+ },
+ "pal_331": {
+  "title": "SNU PAL 질의응답 #331 — RF Power에 따라 전자온도가 증가하는 경우에 대하여 궁금합니다. [Power와 Gas ionization]",
+  "url": "https://snupal.snu.ac.kr/qna/document/331/"
+ },
+ "pal_332": {
+  "title": "SNU PAL 질의응답 #332 — [Sputter Forward,Reflect Power] [Sputter와 matching]",
+  "url": "https://snupal.snu.ac.kr/qna/document/332/"
+ },
+ "pal_337": {
+  "title": "SNU PAL 질의응답 #337 — ICP dry etch 장비에서 skin depth가 클수록 좋다고 볼 수 있는 건가요? [ICP의 skin depth와 공정 균일도]",
+  "url": "https://snupal.snu.ac.kr/qna/document/337/"
+ },
+ "pal_338": {
+  "title": "SNU PAL 질의응답 #338 — 플라즈마 발생 억제 문의 [Induction field와 breakdown]",
+  "url": "https://snupal.snu.ac.kr/qna/document/338/"
+ },
+ "pal_343": {
+  "title": "SNU PAL 질의응답 #343 — 플라즈마가 생기는 메커니즘에 대한 질문입니다. [플라즈마 형성 과정과 파센의 법칙]",
+  "url": "https://snupal.snu.ac.kr/qna/document/343/"
+ },
+ "pal_349": {
+  "title": "SNU PAL 질의응답 #349 — [기초]CCP Type에서의 Self-Bias(-Vdc)+Vp(plasma potential)관련 질문입니다. [플라즈마 전위와 쉬스]",
+  "url": "https://snupal.snu.ac.kr/qna/document/349/"
+ },
+ "pal_359": {
+  "title": "SNU PAL 질의응답 #359 — ICP 구성에서 PLASMA IGNITON시 문의 [ICP와 플라즈마 발생]",
+  "url": "https://snupal.snu.ac.kr/qna/document/359/"
+ },
+ "pal_365": {
+  "title": "SNU PAL 질의응답 #365 — 정전척 isolation문의 입니다. [Paschen's law와 절연파괴현상]",
+  "url": "https://snupal.snu.ac.kr/qna/document/365/"
+ },
+ "pal_367": {
+  "title": "SNU PAL 질의응답 #367 — N2 환겨에서의 코로나 방전을 통한 이온생성에 대한 질문입니다. [방전 장치의 플라즈마 성능 평가]",
+  "url": "https://snupal.snu.ac.kr/qna/document/367/"
+ },
+ "pal_369": {
+  "title": "SNU PAL 질의응답 #369 — 방전에서의 재질 질문입니다. [방전과 전압]",
+  "url": "https://snupal.snu.ac.kr/qna/document/369/"
+ },
+ "pal_379": {
+  "title": "SNU PAL 질의응답 #379 — HF+LF 사용 중. HF Power 증가 시 Depostion Rate 감소 현상 문의 [전자의 에너지와 중성입자와의 충돌]",
+  "url": "https://snupal.snu.ac.kr/qna/document/379/"
+ },
+ "pal_386": {
+  "title": "SNU PAL 질의응답 #386 — M/W, RF의 Plasma에 의한 Ashing 관련 문의드립니다. [DC 글로우 방전 및 Breakdown]",
+  "url": "https://snupal.snu.ac.kr/qna/document/386/"
+ },
+ "pal_391": {
+  "title": "SNU PAL 질의응답 #391 — Dry Etching Uniformity 개선 방법 [장치 구조에 따른 공간 분포]",
+  "url": "https://snupal.snu.ac.kr/qna/document/391/"
+ },
+ "pal_392": {
+  "title": "SNU PAL 질의응답 #392 — Plasma 에칭 후 정전기 처리 [표면 전위 생성 및 방전]",
+  "url": "https://snupal.snu.ac.kr/qna/document/392/"
+ },
+ "pal_394": {
+  "title": "SNU PAL 질의응답 #394 — PPV(플라즈마 용융 유리화)에 관해 질문드립니다. [글로우 방전 및 아크 방전]",
+  "url": "https://snupal.snu.ac.kr/qna/document/394/"
+ },
+ "pal_395": {
+  "title": "SNU PAL 질의응답 #395 — RF chamber에서.. particle(부유물) 와 RF reflect power연관성 [플라즈마 유전상수]",
+  "url": "https://snupal.snu.ac.kr/qna/document/395/"
+ },
+ "pal_396": {
+  "title": "SNU PAL 질의응답 #396 — N2, Ar Plasma Treatment 질문입니다. [쉬스 전위 및 플라즈마 세정]",
+  "url": "https://snupal.snu.ac.kr/qna/document/396/"
+ },
+ "pal_397": {
+  "title": "SNU PAL 질의응답 #397 — 플라즈마 띄울때..ㅠㅠ!!? [Breakdown voltage 및 이온화 에너지]",
+  "url": "https://snupal.snu.ac.kr/qna/document/397/"
+ },
+ "pal_398": {
+  "title": "SNU PAL 질의응답 #398 — RF Generator와 Impedance 관련 질문있습니다 [High Power RFG]",
+  "url": "https://snupal.snu.ac.kr/qna/document/398/"
+ },
+ "pal_402": {
+  "title": "SNU PAL 질의응답 #402 — Ar plasma power/time [Self bias와 sputtering 효과]",
+  "url": "https://snupal.snu.ac.kr/qna/document/402/"
+ },
+ "pal_403": {
+  "title": "SNU PAL 질의응답 #403 — HF + LF 사용 중, LF와 POWER와의 관계에 대한 질문입니다. [Sputtering 및 particle issue]",
+  "url": "https://snupal.snu.ac.kr/qna/document/403/"
+ },
+ "pal_411": {
+  "title": "SNU PAL 질의응답 #411 — CCP에서 DIelectric(유전체)의 역활 [유전체 격벽 방전]",
+  "url": "https://snupal.snu.ac.kr/qna/document/411/"
+ },
+ "pal_415": {
+  "title": "SNU PAL 질의응답 #415 — RPS를 이용한 NF3와 CF4 Etch Rate 차이 [물리적/화학적 세정]",
+  "url": "https://snupal.snu.ac.kr/qna/document/415/"
+ },
+ "pal_421": {
+  "title": "SNU PAL 질의응답 #421 — DC Magnetron Sputter 플라즈마 진단 [플라즈마 공간 분포 진단]",
+  "url": "https://snupal.snu.ac.kr/qna/document/421/"
+ },
+ "pal_422": {
+  "title": "SNU PAL 질의응답 #422 — O2 plasma etching 관련 질문이 있습니다. [Global model]",
+  "url": "https://snupal.snu.ac.kr/qna/document/422/"
+ },
+ "pal_427": {
+  "title": "SNU PAL 질의응답 #427 — RF power에 대한 설명 요청드립니다. [Child-Langmuir sheath 및 Debye length]",
+  "url": "https://snupal.snu.ac.kr/qna/document/427/"
+ },
+ "pal_431": {
+  "title": "SNU PAL 질의응답 #431 — Ar Gas 량에 따른 Deposition Rate 변화 [Depo radical 형성 및 sputtering]",
+  "url": "https://snupal.snu.ac.kr/qna/document/431/"
+ },
+ "pal_433": {
+  "title": "SNU PAL 질의응답 #433 — Plasma Etch시 Wafer Edge 영향 [Standing wave 및 플라즈마 밀도 분포]",
+  "url": "https://snupal.snu.ac.kr/qna/document/433/"
+ },
+ "pal_434": {
+  "title": "SNU PAL 질의응답 #434 — 안녕하세요. 플라즈마 기체분자종에 따른 기판charing정도차이 문의 [Self bias]",
+  "url": "https://snupal.snu.ac.kr/qna/document/434/"
+ },
+ "pal_438": {
+  "title": "SNU PAL 질의응답 #438 — RIE에 관한 질문이 있습니다. [Sheath 이온 거동 및 bias power]",
+  "url": "https://snupal.snu.ac.kr/qna/document/438/"
+ },
+ "pal_439": {
+  "title": "SNU PAL 질의응답 #439 — 조선업에서 철재절단용으로 사용하는 가스 프라즈마에 대한 질문 [열플라즈마와 \"플라즈마 금속학\"]",
+  "url": "https://snupal.snu.ac.kr/qna/document/439/"
+ },
+ "pal_440": {
+  "title": "SNU PAL 질의응답 #440 — Impedence 위상관련 문의 [Circuit model, matching]",
+  "url": "https://snupal.snu.ac.kr/qna/document/440/"
+ },
+ "pal_441": {
+  "title": "SNU PAL 질의응답 #441 — ICP power와 ion energy사이의 관계에 대해서 문의드립니다. [Ion energy와 heat, sheath energy]",
+  "url": "https://snupal.snu.ac.kr/qna/document/441/"
+ },
+ "pal_444": {
+  "title": "SNU PAL 질의응답 #444 — RF FREUNCY와 D/R 과의 상관 관계에 관한 질문입니다. [CCP와 ionization]",
+  "url": "https://snupal.snu.ac.kr/qna/document/444/"
+ },
+ "pal_446": {
+  "title": "SNU PAL 질의응답 #446 — ICP와 CCP의 차이 [Self bias와 Maxwellian distribution]",
+  "url": "https://snupal.snu.ac.kr/qna/document/446/"
+ },
+ "pal_452": {
+  "title": "SNU PAL 질의응답 #452 — Remote Plasma가 가능한 이온 [Remote plasma와 diffusion]",
+  "url": "https://snupal.snu.ac.kr/qna/document/452/"
+ },
+ "pal_453": {
+  "title": "SNU PAL 질의응답 #453 — sputtering gas에 따른 플라즈마 데미지 [Sputter와 sheath, flux]",
+  "url": "https://snupal.snu.ac.kr/qna/document/453/"
+ },
+ "pal_454": {
+  "title": "SNU PAL 질의응답 #454 — ICP와 CCP에서의 Breakdown voltage [Breakdown과 E-H transition]",
+  "url": "https://snupal.snu.ac.kr/qna/document/454/"
+ },
+ "pal_456": {
+  "title": "SNU PAL 질의응답 #456 — rf chamber 내에 생기는 byproduct에 대한 질문 있습니다. [Byproduct와 gas flow, cleaning]",
+  "url": "https://snupal.snu.ac.kr/qna/document/456/"
+ },
+ "pal_461": {
+  "title": "SNU PAL 질의응답 #461 — 코로나 전류에 따른 발생되는 이온의 수와, 하전에 영향을 미치는 요소에 대해서 질문드립니다. [Corona breakdown, current density]",
+  "url": "https://snupal.snu.ac.kr/qna/document/461/"
+ },
+ "pal_467": {
+  "title": "SNU PAL 질의응답 #467 — Plasma에서 Coupled(결합)의 의미 [Power coupling과 breakdown]",
+  "url": "https://snupal.snu.ac.kr/qna/document/467/"
+ },
+ "pal_473": {
+  "title": "SNU PAL 질의응답 #473 — 아래 382번 질문에 대한 추가 질문 드립니다. [Self bias와 capacitance]",
+  "url": "https://snupal.snu.ac.kr/qna/document/473/"
+ },
+ "pal_474": {
+  "title": "SNU PAL 질의응답 #474 — VI sensor를 활용한 진단 방법 [Monitoring과 target]",
+  "url": "https://snupal.snu.ac.kr/qna/document/474/"
+ },
+ "pal_476": {
+  "title": "SNU PAL 질의응답 #476 — RF PLASMA를 사용한 J.R ESC DECHUCK에 대하여 문의드립니다. [Ionization과 chucking]",
+  "url": "https://snupal.snu.ac.kr/qna/document/476/"
+ },
+ "pal_479": {
+  "title": "SNU PAL 질의응답 #479 — PR wafer seasoning [Particle balance, seasoning]",
+  "url": "https://snupal.snu.ac.kr/qna/document/479/"
+ },
+ "pal_481": {
+  "title": "SNU PAL 질의응답 #481 — CCP에서 전자밀도증가 -> 임피던스 감소 과정 질문있습니다. [Breakdown과 impedance]",
+  "url": "https://snupal.snu.ac.kr/qna/document/481/"
+ },
+ "pal_487": {
+  "title": "SNU PAL 질의응답 #487 — langmuir probe관련하여 질문드리고 싶습니다. [Langmuir probe와 ground]",
+  "url": "https://snupal.snu.ac.kr/qna/document/487/"
+ },
+ "pal_489": {
+  "title": "SNU PAL 질의응답 #489 — 플라즈마 색 관찰 [플라즈마 빛과 OES신호]",
+  "url": "https://snupal.snu.ac.kr/qna/document/489/"
+ },
+ "pal_490": {
+  "title": "SNU PAL 질의응답 #490 — Etch 공정(PE mode) Vpp 변동 관련. [Self bias 형성 과정과 전자의 에너지]",
+  "url": "https://snupal.snu.ac.kr/qna/document/490/"
+ },
+ "pal_491": {
+  "title": "SNU PAL 질의응답 #491 — Collisional mean free path 문의… [MFP와 평균값 개념]",
+  "url": "https://snupal.snu.ac.kr/qna/document/491/"
+ },
+ "pal_493": {
+  "title": "SNU PAL 질의응답 #493 — 플라즈마 깜빡임에 대해 질문이 있습니다. [Ionization collision 및 Effective ionization energy]",
+  "url": "https://snupal.snu.ac.kr/qna/document/493/"
+ },
+ "pal_495": {
+  "title": "SNU PAL 질의응답 #495 — I-V characteristic에 관하여 질문이 있습니다. [전자전류의 해석]",
+  "url": "https://snupal.snu.ac.kr/qna/document/495/"
+ },
+ "pal_502": {
+  "title": "SNU PAL 질의응답 #502 — etching에 관한 질문입니다. [충돌 현상 및 이온화 과정]",
+  "url": "https://snupal.snu.ac.kr/qna/document/502/"
+ },
+ "pal_503": {
+  "title": "SNU PAL 질의응답 #503 — 코로나 전류가 0가까이 떨어지는 현상 [전극 설계 및 방전기 운전 모드 개발]",
+  "url": "https://snupal.snu.ac.kr/qna/document/503/"
+ },
+ "pal_504": {
+  "title": "SNU PAL 질의응답 #504 — RIE 공정시에 형성되는 두 효과를 분리해보고 싶습니다. [플라즈마 가속 전자의 충돌 반응]",
+  "url": "https://snupal.snu.ac.kr/qna/document/504/"
+ },
+ "pal_508": {
+  "title": "SNU PAL 질의응답 #508 — 해수에서 플라즈마 방전 극대화 방안 [Plasma breakdown과 살균 과정]",
+  "url": "https://snupal.snu.ac.kr/qna/document/508/"
+ },
+ "pal_509": {
+  "title": "SNU PAL 질의응답 #509 — 챔버 임피던스 변화에 따른 공정변화 [Chamber impedance와 공정 드리프트 진단 인자]",
+  "url": "https://snupal.snu.ac.kr/qna/document/509/"
+ },
+ "pal_511": {
+  "title": "SNU PAL 질의응답 #511 — glass에 air plasma 후 반응에 대해 질문이 있습니다. [상압 플라즈마 방전 메커니즘과 특성]",
+  "url": "https://snupal.snu.ac.kr/qna/document/511/"
+ },
+ "pal_515": {
+  "title": "SNU PAL 질의응답 #515 — Descum 관련 문의 사항. [라디컬 및 이온 생성과 플라즈마 생성 메커니즘]",
+  "url": "https://snupal.snu.ac.kr/qna/document/515/"
+ },
+ "pal_516": {
+  "title": "SNU PAL 질의응답 #516 — 플라즈마 장치 관련 기초적 질문입니다. [Breakdown 이해]",
+  "url": "https://snupal.snu.ac.kr/qna/document/516/"
+ },
+ "pal_518": {
+  "title": "SNU PAL 질의응답 #518 — 수중속 저온 플라즈마 방전 관련 질문 드립니다. [방전 특성과 절연 파괴]",
+  "url": "https://snupal.snu.ac.kr/qna/document/518/"
+ },
+ "pal_528": {
+  "title": "SNU PAL 질의응답 #528 — magnetic substrate와 플라즈마 거동 [대면 재료의 전기적 특성와 플라즈마 쉬스의 변화]",
+  "url": "https://snupal.snu.ac.kr/qna/document/528/"
+ },
+ "pal_529": {
+  "title": "SNU PAL 질의응답 #529 — 염소발생 전기분해 시 스파크 발생에 관해 질문드립니다. [방전과 에폭시]",
+  "url": "https://snupal.snu.ac.kr/qna/document/529/"
+ },
+ "pal_530": {
+  "title": "SNU PAL 질의응답 #530 — Ar/O2 ICP 플라즈마 관하여 [ICP match impedance]",
+  "url": "https://snupal.snu.ac.kr/qna/document/530/"
+ },
+ "pal_536": {
+  "title": "SNU PAL 질의응답 #536 — [CVD] 막 증착 관련 질문입니다. [수소의 확산과 쉬스에 의한 가속]",
+  "url": "https://snupal.snu.ac.kr/qna/document/536/"
+ },
+ "pal_543": {
+  "title": "SNU PAL 질의응답 #543 — 부가적인 스퍼터링 관련 질문 드립니다. [라디컬의 화학반응성 및 DC 타깃 전극]",
+  "url": "https://snupal.snu.ac.kr/qna/document/543/"
+ },
+ "pal_544": {
+  "title": "SNU PAL 질의응답 #544 — 프리쉬스에 관한 질문입니다. [Ambipolar diffusion 및 collisionless sheath]",
+  "url": "https://snupal.snu.ac.kr/qna/document/544/"
+ },
+ "pal_552": {
+  "title": "SNU PAL 질의응답 #552 — 상압플라즈마 제품 원리 질문드립니다 [I-V characteristic 방전 커브]",
+  "url": "https://snupal.snu.ac.kr/qna/document/552/"
+ },
+ "pal_553": {
+  "title": "SNU PAL 질의응답 #553 — Langmuir probe의 위치에 관한 질문입니다. [전자 소실 및 플라즈마 전위]",
+  "url": "https://snupal.snu.ac.kr/qna/document/553/"
+ },
+ "pal_554": {
+  "title": "SNU PAL 질의응답 #554 — 쉬쓰 천이지역에 관한 질문입니다. [Ambipolar diffusion]",
+  "url": "https://snupal.snu.ac.kr/qna/document/554/"
+ },
+ "pal_555": {
+  "title": "SNU PAL 질의응답 #555 — 임피던스 실수부에 대해 궁금한 점이 있습니다. [플라즈마 dielectric property]",
+  "url": "https://snupal.snu.ac.kr/qna/document/555/"
+ },
+ "pal_557": {
+  "title": "SNU PAL 질의응답 #557 — ICP plasma에서 RF bias에 대한 문의가 있습니다 [Self bias 및 플라즈마 방전 매커니즘]",
+  "url": "https://snupal.snu.ac.kr/qna/document/557/"
+ },
+ "pal_561": {
+  "title": "SNU PAL 질의응답 #561 — N2 Plasma 상태에 대해서 질문 드립니다. [충돌 반응 및 전력 전달 모델]",
+  "url": "https://snupal.snu.ac.kr/qna/document/561/"
+ },
+ "pal_562": {
+  "title": "SNU PAL 질의응답 #562 — PEALD관련 질문 [Passivation 막 증착 과정]",
+  "url": "https://snupal.snu.ac.kr/qna/document/562/"
+ },
+ "pal_564": {
+  "title": "SNU PAL 질의응답 #564 — 리모트 플라스마 소스 AK 부품 수출 관련 질문 입니다 반도체 장비 부풉ㅁ",
+  "url": "https://snupal.snu.ac.kr/qna/document/564/"
+ },
+ "pal_571": {
+  "title": "SNU PAL 질의응답 #571 — matcher, ESC, Heater에 대해 질문 드립니다. [회로 모델 및 부품 impedance]",
+  "url": "https://snupal.snu.ac.kr/qna/document/571/"
+ },
+ "pal_573": {
+  "title": "SNU PAL 질의응답 #573 — EEDF, IEDF, Cross section관련 질문 [Plasma spectroscopy]",
+  "url": "https://snupal.snu.ac.kr/qna/document/573/"
+ },
+ "pal_575": {
+  "title": "SNU PAL 질의응답 #575 — Ion과 Radical의 이동 거리 및 거리에 따른 농도와 증착 품질 관련 [충돌 거리 및 Deposition]",
+  "url": "https://snupal.snu.ac.kr/qna/document/575/"
+ },
+ "pal_576": {
+  "title": "SNU PAL 질의응답 #576 — [질문] Plasma 장비에 대한 Monitoring 질문 [OES, VI 신호 및 가상계측 인자]",
+  "url": "https://snupal.snu.ac.kr/qna/document/576/"
+ },
+ "pal_577": {
+  "title": "SNU PAL 질의응답 #577 — 매쳐에서의 load, tune에 대하여 좀 가르쳐 주세요~ [RF 전력 전달]",
+  "url": "https://snupal.snu.ac.kr/qna/document/577/"
+ },
+ "pal_578": {
+  "title": "SNU PAL 질의응답 #578 — 플라즈마 관련 기초지식 [DC glow discharge]",
+  "url": "https://snupal.snu.ac.kr/qna/document/578/"
+ },
+ "pal_579": {
+  "title": "SNU PAL 질의응답 #579 — PECVD Precursor 별 Arcing 원인 [하전에 의한 전기장 형성 및 방전 시간]",
+  "url": "https://snupal.snu.ac.kr/qna/document/579/"
+ },
+ "pal_583": {
+  "title": "SNU PAL 질의응답 #583 — plasma sheath 두께의 영향에 대하여 질문드립니다. [Child-Langmuir sheath model]",
+  "url": "https://snupal.snu.ac.kr/qna/document/583/"
+ },
+ "pal_584": {
+  "title": "SNU PAL 질의응답 #584 — glow 방전 현상과 플라즈마 현상에 궁금하여 글 남깁니다. [고전압 방전 및 DBD]",
+  "url": "https://snupal.snu.ac.kr/qna/document/584/"
+ },
+ "pal_586": {
+  "title": "SNU PAL 질의응답 #586 — 전쉬스에 대한 간단한 질문 [Debye length 및 sheath 형성]",
+  "url": "https://snupal.snu.ac.kr/qna/document/586/"
+ },
+ "pal_587": {
+  "title": "SNU PAL 질의응답 #587 — 임피던스 매칭회로 [전기공학 회로 이론 및 impedance matching]",
+  "url": "https://snupal.snu.ac.kr/qna/document/587/"
+ },
+ "pal_589": {
+  "title": "SNU PAL 질의응답 #589 — Ar과 O2 plasma source에 따른 ignition condition에 대하여 질문 있습니다. [Step ionization, Dissociative ionization]",
+  "url": "https://snupal.snu.ac.kr/qna/document/589/"
+ },
+ "pal_590": {
+  "title": "SNU PAL 질의응답 #590 — Arcing(아킹) 현상 및 local plasma 관련 문의 [ESC와 matcher]",
+  "url": "https://snupal.snu.ac.kr/qna/document/590/"
+ },
+ "pal_591": {
+  "title": "SNU PAL 질의응답 #591 — 압력, 유량과 residence time에 대해 질문있습니다. [MFC와 residence time]",
+  "url": "https://snupal.snu.ac.kr/qna/document/591/"
+ },
+ "pal_592": {
+  "title": "SNU PAL 질의응답 #592 — ICP reflecot power [Insulator와 rf leak]",
+  "url": "https://snupal.snu.ac.kr/qna/document/592/"
+ },
+ "pal_594": {
+  "title": "SNU PAL 질의응답 #594 — Gas flow rate에 따른 etch rate의 변화가 궁금합니다. [Flow rate와 moral ratio, resident time]",
+  "url": "https://snupal.snu.ac.kr/qna/document/594/"
+ },
+ "pal_595": {
+  "title": "SNU PAL 질의응답 #595 — 플라즈마 형성시 하전입자의 밀도와 챔버에 관련해서 질문드립니다. [Skin depth, global model과 floating potential]",
+  "url": "https://snupal.snu.ac.kr/qna/document/595/"
+ },
+ "pal_597": {
+  "title": "SNU PAL 질의응답 #597 — ICP-RIE process 및 plasma에 대해 질문있습니다. [Etch와 IEDF]",
+  "url": "https://snupal.snu.ac.kr/qna/document/597/"
+ },
+ "pal_604": {
+  "title": "SNU PAL 질의응답 #604 — Vpp, Vdc 측정관련 문의 [Self bias와 DC offset]",
+  "url": "https://snupal.snu.ac.kr/qna/document/604/"
+ },
+ "pal_605": {
+  "title": "SNU PAL 질의응답 #605 — HEATER 교체 이후 SELF BIAS 상승관련 문의 [Self bias와 dummy 공정]",
+  "url": "https://snupal.snu.ac.kr/qna/document/605/"
+ },
+ "pal_607": {
+  "title": "SNU PAL 질의응답 #607 — ECR 플라즈마에 대해서 질문드립니다. [ECR과 uniformity]",
+  "url": "https://snupal.snu.ac.kr/qna/document/607/"
+ },
+ "pal_608": {
+  "title": "SNU PAL 질의응답 #608 — Depostion 진행 중 matcher(shunt, series) 관계 질문 [Matcher와 VI sensor]",
+  "url": "https://snupal.snu.ac.kr/qna/document/608/"
+ },
+ "pal_610": {
+  "title": "SNU PAL 질의응답 #610 — 산소 플라즈마 처리 관하여 질문드립니다. [DBD]",
+  "url": "https://snupal.snu.ac.kr/qna/document/610/"
+ },
+ "pal_611": {
+  "title": "SNU PAL 질의응답 #611 — 안녕하세요. O2 plasma etching에 대해 궁금한 것이 있습니다. [Bias power]",
+  "url": "https://snupal.snu.ac.kr/qna/document/611/"
+ },
+ "pal_612": {
+  "title": "SNU PAL 질의응답 #612 — Wafer Warpage에 따른 CCP Type Chamber 내부 Impedance [ESC와 Chamber impedance]",
+  "url": "https://snupal.snu.ac.kr/qna/document/612/"
+ },
+ "pal_614": {
+  "title": "SNU PAL 질의응답 #614 — remote plasma 데미지 질문 [DC glow discharge와 Breakdown]",
+  "url": "https://snupal.snu.ac.kr/qna/document/614/"
+ },
+ "pal_615": {
+  "title": "SNU PAL 질의응답 #615 — KM 모델의 해석에 관한 질문 [Self bias와 ambipolar diffusion]",
+  "url": "https://snupal.snu.ac.kr/qna/document/615/"
+ },
+ "pal_616": {
+  "title": "SNU PAL 질의응답 #616 — CVD품질과 RF Delibery power 관계 질문 [RF power와 plasma information]",
+  "url": "https://snupal.snu.ac.kr/qna/document/616/"
+ },
+ "pal_618": {
+  "title": "SNU PAL 질의응답 #618 — 쉬스(sheath)에서 전자와 이온의 감소 관련하여 질문 [Floating sheath]",
+  "url": "https://snupal.snu.ac.kr/qna/document/618/"
+ },
+ "pal_619": {
+  "title": "SNU PAL 질의응답 #619 — RPS를 이용한 SIO2 에칭 [Etch와 remote plasma]",
+  "url": "https://snupal.snu.ac.kr/qna/document/619/"
+ },
+ "pal_620": {
+  "title": "SNU PAL 질의응답 #620 — Plasma etch 관련 질문이 드립니다. [Sheath와 uniformity]",
+  "url": "https://snupal.snu.ac.kr/qna/document/620/"
+ },
+ "pal_621": {
+  "title": "SNU PAL 질의응답 #621 — O2 plasma, H2 plasma 처리 관련 질문이 있습니다. [Chemical reaction과 pressure]",
+  "url": "https://snupal.snu.ac.kr/qna/document/621/"
+ },
+ "pal_624": {
+  "title": "SNU PAL 질의응답 #624 — H-field 측정위치에 따른 H Field MAP 변화 관련 [ICP와 H field]",
+  "url": "https://snupal.snu.ac.kr/qna/document/624/"
+ },
+ "pal_628": {
+  "title": "SNU PAL 질의응답 #628 — CCP/ICP 의 플라즈마 밀도/균일도 에 대해서 질문이 있습니다. [Plasma source와 loss]",
+  "url": "https://snupal.snu.ac.kr/qna/document/628/"
+ },
+ "pal_629": {
+  "title": "SNU PAL 질의응답 #629 — 플라즈마 입자 운동 원리(전자기장에서) [Lorentz force와 magnetic confinement]",
+  "url": "https://snupal.snu.ac.kr/qna/document/629/"
+ },
+ "pal_630": {
+  "title": "SNU PAL 질의응답 #630 — Dry etch 할 때 센터와 사이드 etch rate [Plasma diffusion과 distribution]",
+  "url": "https://snupal.snu.ac.kr/qna/document/630/"
+ },
+ "pal_633": {
+  "title": "SNU PAL 질의응답 #633 — O2 Asher o-ring 문의드립니다. [Plasma heat와 dissociation]",
+  "url": "https://snupal.snu.ac.kr/qna/document/633/"
+ },
+ "pal_636": {
+  "title": "SNU PAL 질의응답 #636 — Vacuum chamber(Etching)내에서 열의 이동과 Byproduct 이동과의 관계 [Plasma bulk Temp와 wall Temp]",
+  "url": "https://snupal.snu.ac.kr/qna/document/636/"
+ },
+ "pal_637": {
+  "title": "SNU PAL 질의응답 #637 — 챔버내 Arcing 발생 개선안에 대해 질문드립니다. [Arc 형성 조건]",
+  "url": "https://snupal.snu.ac.kr/qna/document/637/"
+ },
+ "pal_639": {
+  "title": "SNU PAL 질의응답 #639 — 접착력을 위한 플라즈마 처리 관련 질문입니다. [플라즈마 소스 변경]",
+  "url": "https://snupal.snu.ac.kr/qna/document/639/"
+ },
+ "pal_640": {
+  "title": "SNU PAL 질의응답 #640 — 안녕하세요. 교수님 ICP 관련하여 문의드립니다. [충돌 단면적 및 반응 계수]",
+  "url": "https://snupal.snu.ac.kr/qna/document/640/"
+ },
+ "pal_645": {
+  "title": "SNU PAL 질의응답 #645 — 교수님 안녕하세요, icp 관련 질문이 있습니다. [Self bias 및 ICP E/H mode]",
+  "url": "https://snupal.snu.ac.kr/qna/document/645/"
+ },
+ "pal_646": {
+  "title": "SNU PAL 질의응답 #646 — 알고싶습니다 [Seasoning, 플라즈마 공정 및 부품 표면 특성 데이터]",
+  "url": "https://snupal.snu.ac.kr/qna/document/646/"
+ },
+ "pal_647": {
+  "title": "SNU PAL 질의응답 #647 — 좁은 간격 CCP 전원의 플라즈마 분포 논문에 대해 궁금한 점이 있습니다. [전력 인가와 플라즈마 밀도]",
+  "url": "https://snupal.snu.ac.kr/qna/document/647/"
+ },
+ "pal_648": {
+  "title": "SNU PAL 질의응답 #648 — Etcher Chamber Wall에 의도적으로 Polymer를 증착시키고 싶습니다. [ONO 공정 중 질화막 모니터링]",
+  "url": "https://snupal.snu.ac.kr/qna/document/648/"
+ },
+ "pal_652": {
+  "title": "SNU PAL 질의응답 #652 — 압력 변화와 Ch Impedance 상관관계 질문 [플라즈마 임피던스, 운전압력조절 방전 조건]",
+  "url": "https://snupal.snu.ac.kr/qna/document/652/"
+ },
+ "pal_653": {
+  "title": "SNU PAL 질의응답 #653 — 연면거리에 대해 궁금합니다. [아크 제어]",
+  "url": "https://snupal.snu.ac.kr/qna/document/653/"
+ },
+ "pal_654": {
+  "title": "SNU PAL 질의응답 #654 — ESC Chuck 기능이 Wafer 위에서의 Chemical Bond 생성을 boosting 할 수 있는지 궁금합니다. [ESC, 쉬스 전기장 및  bias 전력 조절]",
+  "url": "https://snupal.snu.ac.kr/qna/document/654/"
+ },
+ "pal_656": {
+  "title": "SNU PAL 질의응답 #656 — 연속 plasma 방전시 RF power drop 및 Reflect 발생 [Cleaning procedure 플라즈마 공정진단 기술]",
+  "url": "https://snupal.snu.ac.kr/qna/document/656/"
+ },
+ "pal_665": {
+  "title": "SNU PAL 질의응답 #665 — Plasma arcing 관련하여 문의드립니다. [플라즈마 내 전자 축적]",
+  "url": "https://snupal.snu.ac.kr/qna/document/665/"
+ },
+ "pal_667": {
+  "title": "SNU PAL 질의응답 #667 — 타겟 임피던스 값과 균일도 문제 [플라즈마 확산]",
+  "url": "https://snupal.snu.ac.kr/qna/document/667/"
+ },
+ "pal_668": {
+  "title": "SNU PAL 질의응답 #668 — RF 반사파와 이물과의 관계 [Physical/chemical cleaning]",
+  "url": "https://snupal.snu.ac.kr/qna/document/668/"
+ },
+ "pal_671": {
+  "title": "SNU PAL 질의응답 #671 — 안녕하세요 교수님. ICP관련하여 문의드립니다. [Faraday shield]",
+  "url": "https://snupal.snu.ac.kr/qna/document/671/"
+ },
+ "pal_672": {
+  "title": "SNU PAL 질의응답 #672 — 플라즈마 용어 질문드립니다. [Self bias]",
+  "url": "https://snupal.snu.ac.kr/qna/document/672/"
+ },
+ "pal_673": {
+  "title": "SNU PAL 질의응답 #673 — 플라즈마 임피던스와 Vpp가 관련이 있나요? [플라즈마 주파수와 Vpp, sheath]",
+  "url": "https://snupal.snu.ac.kr/qna/document/673/"
+ },
+ "pal_674": {
+  "title": "SNU PAL 질의응답 #674 — Decoupled Plasma 관련 질문입니다.[플라즈마 내 입자의 거동]",
+  "url": "https://snupal.snu.ac.kr/qna/document/674/"
+ },
+ "pal_676": {
+  "title": "SNU PAL 질의응답 #676 — RIE에서 O2역할이 궁금합니다 [충돌 반응 rate constant]",
+  "url": "https://snupal.snu.ac.kr/qna/document/676/"
+ },
+ "pal_679": {
+  "title": "SNU PAL 질의응답 #679 — electron energy distribution에 대해서 질문드립니다. [Maxwallian EEDF]",
+  "url": "https://snupal.snu.ac.kr/qna/document/679/"
+ },
+ "pal_682": {
+  "title": "SNU PAL 질의응답 #682 — CCP에서 전극에 쌓이는 막질에 의한 Capacitance 변화가 궁금합니다. [플라즈마 특성변화와 SH impedance 변화]",
+  "url": "https://snupal.snu.ac.kr/qna/document/682/"
+ },
+ "pal_685": {
+  "title": "SNU PAL 질의응답 #685 — RF Power와 균일도 연관성 질문드립니다 [고주파 플라즈마 반응 특성]",
+  "url": "https://snupal.snu.ac.kr/qna/document/685/"
+ },
+ "pal_689": {
+  "title": "SNU PAL 질의응답 #689 — CCP에서 접지된 전극에 기판을 놓았을 때 반응 [Self bias]",
+  "url": "https://snupal.snu.ac.kr/qna/document/689/"
+ },
+ "pal_690": {
+  "title": "SNU PAL 질의응답 #690 — 공정 진행 중간에 60Mhz만 Ref가 튀는 현상 관련하여 어떤 이유들이 있을까요..? [Chamber impedance]",
+  "url": "https://snupal.snu.ac.kr/qna/document/690/"
+ },
+ "pal_693": {
+  "title": "SNU PAL 질의응답 #693 — 잔류시간 Residence Time에 대해 [표면 유속 정보, 유체해석 코드]",
+  "url": "https://snupal.snu.ac.kr/qna/document/693/"
+ },
+ "pal_695": {
+  "title": "SNU PAL 질의응답 #695 — CVD 공정에서의 self bias [이차 전자 생성, 입사 이온 에너지 분포]",
+  "url": "https://snupal.snu.ac.kr/qna/document/695/"
+ },
+ "pal_697": {
+  "title": "SNU PAL 질의응답 #697 — 전자 온도 구하기 [쉬스 전압, 스퍼터링 효과]",
+  "url": "https://snupal.snu.ac.kr/qna/document/697/"
+ },
+ "pal_700": {
+  "title": "SNU PAL 질의응답 #700 — 라디컬의 재결합 방지 [해리 반응상수]",
+  "url": "https://snupal.snu.ac.kr/qna/document/700/"
+ },
+ "pal_701": {
+  "title": "SNU PAL 질의응답 #701 — CVD (CCP) 공정의 Chamber seasoning과 플라즈마 밀도 [Plasma information variable model]",
+  "url": "https://snupal.snu.ac.kr/qna/document/701/"
+ },
+ "pal_703": {
+  "title": "SNU PAL 질의응답 #703 — 플라즈마를 통한 정전기 제거관련. [플라즈마 표면 반응]",
+  "url": "https://snupal.snu.ac.kr/qna/document/703/"
+ },
+ "pal_709": {
+  "title": "SNU PAL 질의응답 #709 — CCP plasma에서 gap과 Pressure간의 상관관계 [Paschen's Law, P-d 방전 곡선]",
+  "url": "https://snupal.snu.ac.kr/qna/document/709/"
+ },
+ "pal_711": {
+  "title": "SNU PAL 질의응답 #711 — 전자 온도에 대한 질문이 있습니다. [Light flower bulb]",
+  "url": "https://snupal.snu.ac.kr/qna/document/711/"
+ },
+ "pal_712": {
+  "title": "SNU PAL 질의응답 #712 — CVD 막질의 성질에 대해 질문드립니다. [챔버 벽면 성질 및 가스 손실]",
+  "url": "https://snupal.snu.ac.kr/qna/document/712/"
+ },
+ "pal_714": {
+  "title": "SNU PAL 질의응답 #714 — CCP 구조가 ICP 구조보다 Arcing 발생에 더 취약한가요? [Breakdown 전기장, 아크 방전]",
+  "url": "https://snupal.snu.ac.kr/qna/document/714/"
+ },
+ "pal_718": {
+  "title": "SNU PAL 질의응답 #718 — 안녕하세요 DBD 플라즈마 소독 관련질문입니다. [상압 플라즈마 임피던스, matching]",
+  "url": "https://snupal.snu.ac.kr/qna/document/718/"
+ },
+ "pal_719": {
+  "title": "SNU PAL 질의응답 #719 — IMPEDANCE MATCHING PATH에서  S/H ~ MATCHER 간 전력전송 방법들에 대해 문의드립니다. [접촉 저항]",
+  "url": "https://snupal.snu.ac.kr/qna/document/719/"
+ },
+ "pal_720": {
+  "title": "SNU PAL 질의응답 #720 — RF 주파수와 공정 Chamber 크기의 상관관계 [Standing wave effect]",
+  "url": "https://snupal.snu.ac.kr/qna/document/720/"
+ },
+ "pal_722": {
+  "title": "SNU PAL 질의응답 #722 — standing wave effect에 대한 질문이 있습니다. [Standing wave 운전 조건, 안테나 설계]",
+  "url": "https://snupal.snu.ac.kr/qna/document/722/"
+ },
+ "pal_723": {
+  "title": "SNU PAL 질의응답 #723 — Uniformity 관련하여 문의드립니다. [베르누이 정리]",
+  "url": "https://snupal.snu.ac.kr/qna/document/723/"
+ },
+ "pal_724": {
+  "title": "SNU PAL 질의응답 #724 — Plasma Cleaning 관련 문의 [Remote plasma source]",
+  "url": "https://snupal.snu.ac.kr/qna/document/724/"
+ },
+ "pal_727": {
+  "title": "SNU PAL 질의응답 #727 — 임피던스 매칭 및 플라즈마 진단 [플라즈마 전류량]",
+  "url": "https://snupal.snu.ac.kr/qna/document/727/"
+ },
+ "pal_732": {
+  "title": "SNU PAL 질의응답 #732 — RF matcher와 particle 관계 [DC glow 방전, 플라즈마 임피던스]",
+  "url": "https://snupal.snu.ac.kr/qna/document/732/"
+ },
+ "pal_733": {
+  "title": "SNU PAL 질의응답 #733 — plasma 형성 관계 [Paschen's law, 플라즈마 주파수]",
+  "url": "https://snupal.snu.ac.kr/qna/document/733/"
+ },
+ "pal_734": {
+  "title": "SNU PAL 질의응답 #734 — Tungsten 표면 Contamination 제거(실명재등록) [Atmostpheric pressure plasma jet]",
+  "url": "https://snupal.snu.ac.kr/qna/document/734/"
+ },
+ "pal_736": {
+  "title": "SNU PAL 질의응답 #736 — SiO2 박말 밀도와 반응성 간 상관 관계 질문 [세정 시간 및 식각 효율]",
+  "url": "https://snupal.snu.ac.kr/qna/document/736/"
+ },
+ "pal_739": {
+  "title": "SNU PAL 질의응답 #739 — 플라즈마 세정 장비 (CCP구조)에서 자재 로딩 수에 따른 플라즈마 효과 및 Discolor [CCP 방전 원리]",
+  "url": "https://snupal.snu.ac.kr/qna/document/739/"
+ },
+ "pal_740": {
+  "title": "SNU PAL 질의응답 #740 — Matcher 구성에 따른 챔버 임피던스 영향에 대해 문의드립니다. [Matcher와 Plasma Impedence]",
+  "url": "https://snupal.snu.ac.kr/qna/document/740/"
+ },
+ "pal_745": {
+  "title": "SNU PAL 질의응답 #745 — etch defect 관련 질문드립니다 [Plasma distribution]",
+  "url": "https://snupal.snu.ac.kr/qna/document/745/"
+ },
+ "pal_750": {
+  "title": "SNU PAL 질의응답 #750 — RF Power 인가 시 Gas Ramping Flow 이유 [RF Power와 reflection]",
+  "url": "https://snupal.snu.ac.kr/qna/document/750/"
+ },
+ "pal_753": {
+  "title": "SNU PAL 질의응답 #753 — Dry Chamber VPP 변동 관련 질문입니다. [VI Phase]",
+  "url": "https://snupal.snu.ac.kr/qna/document/753/"
+ },
+ "pal_760": {
+  "title": "SNU PAL 질의응답 #760 — Polymer Temp Etch [이온 입사 에너지]",
+  "url": "https://snupal.snu.ac.kr/qna/document/760/"
+ },
+ "pal_761": {
+  "title": "SNU PAL 질의응답 #761 — Plasma Arching [Plasma property]",
+  "url": "https://snupal.snu.ac.kr/qna/document/761/"
+ },
+ "pal_762": {
+  "title": "SNU PAL 질의응답 #762 — Plasma Ignition 시 Gas 사용에 대한 궁금증 요청드립니다. [Pachen's law와 Ar Gas]",
+  "url": "https://snupal.snu.ac.kr/qna/document/762/"
+ },
+ "pal_764": {
+  "title": "SNU PAL 질의응답 #764 — Chamber 내 Pressure와 Fluid Density, Residence Time [TVP(Thorottle Valve Position)]",
+  "url": "https://snupal.snu.ac.kr/qna/document/764/"
+ },
+ "pal_768": {
+  "title": "SNU PAL 질의응답 #768 — PECVD 증착시 온도, 기판의 종류의 영향에 대해서 질문드립니다! [PECVD와 PACVD]",
+  "url": "https://snupal.snu.ac.kr/qna/document/768/"
+ },
+ "pal_773": {
+  "title": "SNU PAL 질의응답 #773 — 전자밀도 크기에 대하여 질문드립니다. (Ar, O2, N2 가스) [Plasma density와 Balance equation]",
+  "url": "https://snupal.snu.ac.kr/qna/document/773/"
+ },
+ "pal_775": {
+  "title": "SNU PAL 질의응답 #775 — 플라즈마 주파수 예측관련 질문드립니다 [Global model과 Balance equation]",
+  "url": "https://snupal.snu.ac.kr/qna/document/775/"
+ },
+ "pal_784": {
+  "title": "SNU PAL 질의응답 #784 — CCP RIE 플라즈마 밀도 [Global model, Plasma generation, Ionization collision]",
+  "url": "https://snupal.snu.ac.kr/qna/document/784/"
+ },
+ "pal_787": {
+  "title": "SNU PAL 질의응답 #787 — PECVD Cleaning에서 Ar Gas의 역활 [Ar plasma, Ar metastable]",
+  "url": "https://snupal.snu.ac.kr/qna/document/787/"
+ },
+ "pal_789": {
+  "title": "SNU PAL 질의응답 #789 — 경전척의 chucking voltage 범위가 궁금합니다.",
+  "url": "https://snupal.snu.ac.kr/qna/document/789/"
+ },
+ "pal_790": {
+  "title": "SNU PAL 질의응답 #790 — Self bias 내용 질문입니다. [쉬스와 표면 전위]",
+  "url": "https://snupal.snu.ac.kr/qna/document/790/"
+ },
+ "pal_792": {
+  "title": "SNU PAL 질의응답 #792 — OES를 통한 공정 개선사례가 있는지 궁금합니다. [플라즈마의 분포와 공정 진단]",
+  "url": "https://snupal.snu.ac.kr/qna/document/792/"
+ },
+ "pal_793": {
+  "title": "SNU PAL 질의응답 #793 — SI 표면에 Ar Plasma Etching 하면 안되는 이유 [표면 전처리]",
+  "url": "https://snupal.snu.ac.kr/qna/document/793/"
+ },
+ "pal_794": {
+  "title": "SNU PAL 질의응답 #794 — E-field plasma simulation correlating with film growth profile [플라즈마 확산과 밀도 분포]",
+  "url": "https://snupal.snu.ac.kr/qna/document/794/"
+ },
+ "pal_795": {
+  "title": "SNU PAL 질의응답 #795 — ICP Dry Etch 설비 DC bias Hunting 관련 질문드립니다. [RF 접지 및 체결, 결합부분 교체]",
+  "url": "https://snupal.snu.ac.kr/qna/document/795/"
+ },
+ "pal_797": {
+  "title": "SNU PAL 질의응답 #797 — ISD OES파형 관련하여 질문드립니다. [SiC 식각과 Ring 교체 주기 및 모니터링 방법]",
+  "url": "https://snupal.snu.ac.kr/qna/document/797/"
+ },
+ "pal_798": {
+  "title": "SNU PAL 질의응답 #798 — plasma 공정 중 색변화 [플라즈마 진단과 분광학]",
+  "url": "https://snupal.snu.ac.kr/qna/document/798/"
+ },
+ "pal_799": {
+  "title": "SNU PAL 질의응답 #799 — 플라즈마 제균 탈취 가능 여부 [대기압 환경 플라즈마와 라디컬 분포]",
+  "url": "https://snupal.snu.ac.kr/qna/document/799/"
+ },
+ "pal_800": {
+  "title": "SNU PAL 질의응답 #800 — corona model에 대한 질문입니다. [준중성과 저압플라즈마]",
+  "url": "https://snupal.snu.ac.kr/qna/document/800/"
+ },
+ "pal_801": {
+  "title": "SNU PAL 질의응답 #801 — RIE 식각공정중 발생하는 가스를 예측할 수 있는 메커니즘에 대해 질문하고 싶습니다. [플라즈마-화학-표면 반응 모델]",
+  "url": "https://snupal.snu.ac.kr/qna/document/801/"
+ },
+ "pal_802": {
+  "title": "SNU PAL 질의응답 #802 — 안녕하세요 CLEAN GAS 관련 질문이 있습니다. [플라즈마 이온화 및 해리 반응, 반응기 벽면 세정]",
+  "url": "https://snupal.snu.ac.kr/qna/document/802/"
+ },
+ "pal_803": {
+  "title": "SNU PAL 질의응답 #803 — 메틸기의 플라즈마 에칭반응 메커니즘 [공정 플라즈마]",
+  "url": "https://snupal.snu.ac.kr/qna/document/803/"
+ },
+ "pal_804": {
+  "title": "SNU PAL 질의응답 #804 — Ashing 공정에 필요한 O2plasma에 대해 궁금한 점이 있습니다. [전자 충돌 이온화 반응 해리 반응 흡착 반응]",
+  "url": "https://snupal.snu.ac.kr/qna/document/804/"
+ },
+ "pal_805": {
+  "title": "SNU PAL 질의응답 #805 — ICP VIPOLAR ESC 관련 이론과 Chuck Force 계산 질문드립니다 [Plasma breakdown 및 생성]",
+  "url": "https://snupal.snu.ac.kr/qna/document/805/"
+ },
+ "pal_812": {
+  "title": "SNU PAL 질의응답 #812 — Plasma Reflect를 관리하는 방법이 있을까요? [임피던스 매칭]",
+  "url": "https://snupal.snu.ac.kr/qna/document/812/"
+ },
+ "pal_815": {
+  "title": "SNU PAL 질의응답 #815 — Sheath와 Plasma Bulk에 걸리는 전압 관련 문의 [Sheath impedance]",
+  "url": "https://snupal.snu.ac.kr/qna/document/815/"
+ },
+ "pal_822": {
+  "title": "SNU PAL 질의응답 #822 — Arcing과 Self-DC Bias Voltage 상관 관계 [Self bias와 DC glow 방전]",
+  "url": "https://snupal.snu.ac.kr/qna/document/822/"
+ },
+ "pal_823": {
+  "title": "SNU PAL 질의응답 #823 — plasma off시 일어나는 현상 문의드립니다. [DC 바이어스 전압과 쉬스 전기장]",
+  "url": "https://snupal.snu.ac.kr/qna/document/823/"
+ },
+ "pal_824": {
+  "title": "SNU PAL 질의응답 #824 — RF sputter 증착 문제 질문드립니다. [OES 진단과 sputter yield]",
+  "url": "https://snupal.snu.ac.kr/qna/document/824/"
+ },
+ "pal_825": {
+  "title": "SNU PAL 질의응답 #825 — ICP Dry Etch 설비 DC bias Hunting 관련 질문드립니다. [방전 기전]",
+  "url": "https://snupal.snu.ac.kr/qna/document/825/"
+ },
+ "pal_826": {
+  "title": "SNU PAL 질의응답 #826 — remote plasma를 이용한 SiO2 ethching 질문드립니다. [식각률 self limit과 쉬스 에너지 변화]",
+  "url": "https://snupal.snu.ac.kr/qna/document/826/"
+ },
+ "pal_827": {
+  "title": "SNU PAL 질의응답 #827 — 주파수 증가시 플라즈마 밀도 증가 [ICP, CCP 플라즈마 heating]",
+  "url": "https://snupal.snu.ac.kr/qna/document/827/"
+ },
+ "pal_828": {
+  "title": "SNU PAL 질의응답 #828 — 플라즈마 전원 공급장치에 대한 질문 [전자 가열 방법 및 생산성에 따른 구별]",
+  "url": "https://snupal.snu.ac.kr/qna/document/828/"
+ },
+ "pal_830": {
+  "title": "SNU PAL 질의응답 #830 — 안녕하세요 자문을 구할 수 있을지 궁금합니다. [E x B drift]",
+  "url": "https://snupal.snu.ac.kr/qna/document/830/"
+ },
+ "pal_832": {
+  "title": "SNU PAL 질의응답 #832 — RIE Gas 질문 하나 드려도 될까요? [Sheath instability]",
+  "url": "https://snupal.snu.ac.kr/qna/document/832/"
+ },
+ "pal_833": {
+  "title": "SNU PAL 질의응답 #833 — 안녕하세요, RPS나 DEPOSITION 간에 발생하는 ELECTRON TEMPERATURE가 궁금합니다. [플라즈마 충돌 반응]",
+  "url": "https://snupal.snu.ac.kr/qna/document/833/"
+ },
+ "pal_834": {
+  "title": "SNU PAL 질의응답 #834 — RF Frequency 가변과 Forward Power의 상관관계 [임피던스 매칭]",
+  "url": "https://snupal.snu.ac.kr/qna/document/834/"
+ },
+ "pal_835": {
+  "title": "SNU PAL 질의응답 #835 — center to edge 문제를 극복하기 위한 방법 [CCP 균일도, CCP edge]",
+  "url": "https://snupal.snu.ac.kr/qna/document/835/"
+ },
+ "pal_837": {
+  "title": "SNU PAL 질의응답 #837 — RF 주파수에 따른 차이점 [이온 및 전자 주파수 선택]",
+  "url": "https://snupal.snu.ac.kr/qna/document/837/"
+ },
+ "pal_838": {
+  "title": "SNU PAL 질의응답 #838 — Plasma 장비 소재 특성 관련하여 문의드립니다. [DC breakdown 및 sheath]",
+  "url": "https://snupal.snu.ac.kr/qna/document/838/"
+ },
+ "pal_839": {
+  "title": "SNU PAL 질의응답 #839 — standing wave effect, skin effect 원리 [Maxwell 방정식 이해]",
+  "url": "https://snupal.snu.ac.kr/qna/document/839/"
+ },
+ "pal_842": {
+  "title": "SNU PAL 질의응답 #842 — PECVD Uniformity [플라즈마 균일도 제어]",
+  "url": "https://snupal.snu.ac.kr/qna/document/842/"
+ },
+ "pal_845": {
+  "title": "SNU PAL 질의응답 #845 — CCP 설비 Capacitance 및 Impedance 변화에 따른 Vpp 변동성 문의 [플라즈마 회로 설계]",
+  "url": "https://snupal.snu.ac.kr/qna/document/845/"
+ },
+ "pal_846": {
+  "title": "SNU PAL 질의응답 #846 — DBD 플라즈마 작동 시 유전체에 가해지는 데미지 [상압플라즈마 소스]",
+  "url": "https://snupal.snu.ac.kr/qna/document/846/"
+ },
+ "pal_847": {
+  "title": "SNU PAL 질의응답 #847 — Remote plasma source의 주파수 400kHz 이유 [Remote plasma 이해]",
+  "url": "https://snupal.snu.ac.kr/qna/document/847/"
+ },
+ "pal_848": {
+  "title": "SNU PAL 질의응답 #848 — PECVD설비 Matcher 아킹 질문 [RF 전원과 matcher]",
+  "url": "https://snupal.snu.ac.kr/qna/document/848/"
+ },
+ "pal_850": {
+  "title": "SNU PAL 질의응답 #850 — AP plasma 공정 관련 문의 [OES 활용 장비 플라즈마 데이터 분석]",
+  "url": "https://snupal.snu.ac.kr/qna/document/850/"
+ },
+ "pal_851": {
+  "title": "SNU PAL 질의응답 #851 — ICP 방식에서 RF Foward Power를 상향하면 ER이 빨라지는 이유 [플라즈마 생성 반응]",
+  "url": "https://snupal.snu.ac.kr/qna/document/851/"
+ },
+ "pal_854": {
+  "title": "SNU PAL 질의응답 #854 — RF 반사와 전기에서 쓰이는 무효전력 반사 차이점이 궁금합니다. [RF 전원과 매칭]",
+  "url": "https://snupal.snu.ac.kr/qna/document/854/"
+ },
+ "pal_855": {
+  "title": "SNU PAL 질의응답 #855 — 챔버 내 전자&이온의 에너지 손실에 대해 [에너지 균형과 입자 균형식]",
+  "url": "https://snupal.snu.ac.kr/qna/document/855/"
+ },
+ "pal_856": {
+  "title": "SNU PAL 질의응답 #856 — Etch Plasma 관련 문의 건.. [RF 주파수와 플라즈마 주파수]",
+  "url": "https://snupal.snu.ac.kr/qna/document/856/"
+ },
+ "pal_858": {
+  "title": "SNU PAL 질의응답 #858 — 파장길이와 동축 케이블 길이 관련 문의드립니다 [Matcher 기능]",
+  "url": "https://snupal.snu.ac.kr/qna/document/858/"
+ },
+ "pal_859": {
+  "title": "SNU PAL 질의응답 #859 — CCP장비 discharge 전압 및 전류 측정 방법 과 matcher 문제 관하여 [HV probe 전압 측정]",
+  "url": "https://snupal.snu.ac.kr/qna/document/859/"
+ },
+ "pal_861": {
+  "title": "SNU PAL 질의응답 #861 — Edge ring의 역할 및 원리 질문 [플라즈마 밀도 및 전위 제어]",
+  "url": "https://snupal.snu.ac.kr/qna/document/861/"
+ },
+ "pal_863": {
+  "title": "SNU PAL 질의응답 #863 — ICP에서 전자의 가속 [Plasma breakdown 이해]",
+  "url": "https://snupal.snu.ac.kr/qna/document/863/"
+ },
+ "pal_864": {
+  "title": "SNU PAL 질의응답 #864 — 플라즈마 식각 시 notching 현상 관련 [Ar, O2 플라즈마 생성 특성]",
+  "url": "https://snupal.snu.ac.kr/qna/document/864/"
+ },
+ "pal_865": {
+  "title": "SNU PAL 질의응답 #865 — Microwave & RF Plasma [플라즈마 주파수와 rate constant]",
+  "url": "https://snupal.snu.ac.kr/qna/document/865/"
+ },
+ "pal_866": {
+  "title": "SNU PAL 질의응답 #866 — 플라즈마 밀도와 라디칼 [플라즈마 충돌 반응]",
+  "url": "https://snupal.snu.ac.kr/qna/document/866/"
+ },
+ "pal_870": {
+  "title": "SNU PAL 질의응답 #870 — ICP에서의 Self bias 효과 [DC offset voltage와 floating potential]",
+  "url": "https://snupal.snu.ac.kr/qna/document/870/"
+ },
+ "pal_871": {
+  "title": "SNU PAL 질의응답 #871 — 반사파에 의한 micro arc 질문 [VHF 전력 인가]",
+  "url": "https://snupal.snu.ac.kr/qna/document/871/"
+ },
+ "pal_872": {
+  "title": "SNU PAL 질의응답 #872 — Impedance I 값을 결정 짓는 요소 관련 질문 [Impedance matching 이해]",
+  "url": "https://snupal.snu.ac.kr/qna/document/872/"
+ },
+ "pal_873": {
+  "title": "SNU PAL 질의응답 #873 — skin depth에 대한 이해 [Stochastic heating 이해]",
+  "url": "https://snupal.snu.ac.kr/qna/document/873/"
+ },
+ "pal_875": {
+  "title": "SNU PAL 질의응답 #875 — RF magnetron Sputtering 공정에서의 질문 [Lorentz force와 ExB drift 이해]",
+  "url": "https://snupal.snu.ac.kr/qna/document/875/"
+ },
+ "pal_877": {
+  "title": "SNU PAL 질의응답 #877 — 진공 챔버에서 Plasma Off시 Particle의 wafer 표면 충돌 속도 [Sheath energy]",
+  "url": "https://snupal.snu.ac.kr/qna/document/877/"
+ },
+ "pal_878": {
+  "title": "SNU PAL 질의응답 #878 — DBD 방전 방식의 저온 플라즈마 관련해서 3가지 질문 드립니다. [DBD 방전과 DC breakdown]",
+  "url": "https://snupal.snu.ac.kr/qna/document/878/"
+ },
+ "pal_880": {
+  "title": "SNU PAL 질의응답 #880 — Showerhead와 Heater간 간격에 따른 RPC 효율성 [Pachen's law 이해]",
+  "url": "https://snupal.snu.ac.kr/qna/document/880/"
+ },
+ "pal_887": {
+  "title": "SNU PAL 질의응답 #887 — HE LEAK 과 접촉저항사이 관계 [국부 방전과 chucking]",
+  "url": "https://snupal.snu.ac.kr/qna/document/887/"
+ },
+ "pal_888": {
+  "title": "SNU PAL 질의응답 #888 — ICP Plasma etch chamber 구조가 궁금합니다. [플라즈마 생성 공간과 플라즈마 확산]",
+  "url": "https://snupal.snu.ac.kr/qna/document/888/"
+ },
+ "pal_889": {
+  "title": "SNU PAL 질의응답 #889 — Ion 입사각을 확인하는 방법 문의드립니다 [식각 플라즈마의 가장자리 균일도 제어]",
+  "url": "https://snupal.snu.ac.kr/qna/document/889/"
+ },
+ "pal_890": {
+  "title": "SNU PAL 질의응답 #890 — CVD 박막 Clean 중 Ar에 의한 Etch 여부가 궁금합니다. [Ar plasma chemical etching]",
+  "url": "https://snupal.snu.ac.kr/qna/document/890/"
+ },
+ "pal_891": {
+  "title": "SNU PAL 질의응답 #891 — CCP Chamber 사용 중 Impedance 변화 원인 문의드립니다. [Chamber impedance 변화]",
+  "url": "https://snupal.snu.ac.kr/qna/document/891/"
+ },
+ "pal_893": {
+  "title": "SNU PAL 질의응답 #893 — Wafer Capacitance 성분과 Vdc 관계 문의드립니다. [Sheath 크기 및 전위 분포]",
+  "url": "https://snupal.snu.ac.kr/qna/document/893/"
+ },
+ "pal_894": {
+  "title": "SNU PAL 질의응답 #894 — micro arc에 대해 질문드립니다. [DC glow 방전과 breakdown 전기장]",
+  "url": "https://snupal.snu.ac.kr/qna/document/894/"
+ },
+ "pal_895": {
+  "title": "SNU PAL 질의응답 #895 — Forward와 Reflect가 계속해서 걸립니다. [RF generator]",
+  "url": "https://snupal.snu.ac.kr/qna/document/895/"
+ },
+ "pal_897": {
+  "title": "SNU PAL 질의응답 #897 — 플라즈마 식각 공정 중 폴리머의 거동 [재료 표면 반응]",
+  "url": "https://snupal.snu.ac.kr/qna/document/897/"
+ },
+ "pal_898": {
+  "title": "SNU PAL 질의응답 #898 — Debey Length에 대해 문의 드립니다. [플라즈마 정의와 Deybe length]",
+  "url": "https://snupal.snu.ac.kr/qna/document/898/"
+ },
+ "pal_899": {
+  "title": "SNU PAL 질의응답 #899 — ExB drift 식 유도 과정에서의 질문 [삼각함수의 위상각]",
+  "url": "https://snupal.snu.ac.kr/qna/document/899/"
+ },
+ "pal_902": {
+  "title": "SNU PAL 질의응답 #902 — ICP에서 biasing 질문 [RF sheath와 self bias]",
+  "url": "https://snupal.snu.ac.kr/qna/document/902/"
+ },
+ "pal_903": {
+  "title": "SNU PAL 질의응답 #903 — Dielectric Etcher(CCP)에서 사용하는 주파수 [Plasma frequency 및 RF sheath]",
+  "url": "https://snupal.snu.ac.kr/qna/document/903/"
+ },
+ "pal_904": {
+  "title": "SNU PAL 질의응답 #904 — 인가전압과 ESC의 관계 질문 [Floating sheath]",
+  "url": "https://snupal.snu.ac.kr/qna/document/904/"
+ },
+ "pal_905": {
+  "title": "SNU PAL 질의응답 #905 — HF PLASMA DEPOSITION 시 POWER에 따른 DEP RATE 변화 [장비 플라즈마, Rate constant]",
+  "url": "https://snupal.snu.ac.kr/qna/document/905/"
+ },
+ "pal_906": {
+  "title": "SNU PAL 질의응답 #906 — ICP/CCP 플라즈마 식각 공정 개발 [Plasma sheath 및 Plasma generation]",
+  "url": "https://snupal.snu.ac.kr/qna/document/906/"
+ },
+ "pal_907": {
+  "title": "SNU PAL 질의응답 #907 — 챔버의 Plasma density 확인방법 문의드립니다.  [플라즈마 모니터링, OES, LP]",
+  "url": "https://snupal.snu.ac.kr/qna/document/907/"
+ },
+ "pal_908": {
+  "title": "SNU PAL 질의응답 #908 — RF플라즈마에서 quasineutral에 대해 궁금한게 있어 질문글 올립니다.[quasineutral]",
+  "url": "https://snupal.snu.ac.kr/qna/document/908/"
+ },
+ "pal_909": {
+  "title": "SNU PAL 질의응답 #909 — ICP 장비 TCP Reflect 발생 간 조언 부탁드립니다.",
+  "url": "https://snupal.snu.ac.kr/qna/document/909/"
+ },
+ "pal_910": {
+  "title": "SNU PAL 질의응답 #910 — liquid plasma 공부 방향에 대해서 알고싶습니다.",
+  "url": "https://snupal.snu.ac.kr/qna/document/910/"
+ },
+ "pal_912": {
+  "title": "SNU PAL 질의응답 #912 — 동일한 RF방전챔버에서 화학종별 이온화율에 대한 질문",
+  "url": "https://snupal.snu.ac.kr/qna/document/912/"
+ },
+ "pal_916": {
+  "title": "SNU PAL 질의응답 #916 — III-V 반도체 에칭 공정 문의",
+  "url": "https://snupal.snu.ac.kr/qna/document/916/"
+ },
+ "pal_919": {
+  "title": "SNU PAL 질의응답 #919 — RF BIAS REDLECT POWER HUNTING 문제",
+  "url": "https://snupal.snu.ac.kr/qna/document/919/"
+ },
+ "pal_920": {
+  "title": "SNU PAL 질의응답 #920 — PEALD 챔버 세정법",
+  "url": "https://snupal.snu.ac.kr/qna/document/920/"
+ },
+ "pal_921": {
+  "title": "SNU PAL 질의응답 #921 — Ar Plasma로 AlN Pedestal 표면에 AlFx desorption 가능 여부가 궁금합니다.",
+  "url": "https://snupal.snu.ac.kr/qna/document/921/"
+ },
+ "pal_923": {
+  "title": "SNU PAL 질의응답 #923 — OES를 통한 Radical 생성량 트렌드 파악",
+  "url": "https://snupal.snu.ac.kr/qna/document/923/"
+ },
+ "pal_925": {
+  "title": "SNU PAL 질의응답 #925 — Dual frequency CCP에 대해 질문 드립니다.",
+  "url": "https://snupal.snu.ac.kr/qna/document/925/"
+ },
+ "pal_926": {
+  "title": "SNU PAL 질의응답 #926 — RF Power와 MFP의 관계",
+  "url": "https://snupal.snu.ac.kr/qna/document/926/"
+ },
+ "lb_15_1": {
+  "title": "Lieberman·Lichtenberg (2005) §15.1 — 정리 노트 §1 식각 요구 조건",
+  "url": "plasma_etch_principles.html#s1"
+ },
+ "lb_15_1m": {
+  "title": "Lieberman·Lichtenberg (2005) §15.1 — 정리 노트 §2 네 가지 메커니즘",
+  "url": "plasma_etch_principles.html#s2"
+ },
+ "lb_t15_1": {
+  "title": "Lieberman·Lichtenberg (2005) 표 15.1 — 정리 노트 §3 휘발성",
+  "url": "plasma_etch_principles.html#s3"
+ },
+ "lb_15_2": {
+  "title": "Lieberman·Lichtenberg (2005) §15.2 — 정리 노트 §4 표면 반응 모델",
+  "url": "plasma_etch_principles.html#s4"
+ },
+ "lb_15_2l": {
+  "title": "Lieberman·Lichtenberg (2005) §15.2 — 정리 노트 §5 방전·로딩",
+  "url": "plasma_etch_principles.html#s5"
+ },
+ "lb_15_2c": {
+  "title": "Lieberman·Lichtenberg (2005) §15.2 — 정리 노트 §6 화학적 틀",
+  "url": "plasma_etch_principles.html#s6"
+ },
+ "lb_15_3": {
+  "title": "Lieberman·Lichtenberg (2005) §15.3 — 정리 노트 §7 Si의 할로젠 식각",
+  "url": "plasma_etch_principles.html#s7"
+ },
+ "lb_15_4": {
+  "title": "Lieberman·Lichtenberg (2005) §15.4 — 정리 노트 §8 SiO₂·질화막·금속·레지스트",
+  "url": "plasma_etch_principles.html#s8"
+ },
+ "lb_15_5": {
+  "title": "Lieberman·Lichtenberg (2005) §15.5 — 정리 노트 §9 기판 대전",
+  "url": "plasma_etch_principles.html#s9"
+ },
+ "lb_9_3": {
+  "title": "Lieberman·Lichtenberg (2005) §9.3–9.4 — 정리 노트 §10 표면 과정",
+  "url": "plasma_etch_principles.html#s10"
+ },
+ "lb_6_1": {
+  "title": "Lieberman·Lichtenberg (2005) §6.1 — 정리 노트 §12 쉬스",
+  "url": "plasma_etch_principles.html#s12"
+ },
+ "lb_6_2": {
+  "title": "Lieberman·Lichtenberg (2005) §6.2 — 정리 노트 §13 Bohm 기준",
+  "url": "plasma_etch_principles.html#s13"
+ },
+ "lb_6_2w": {
+  "title": "Lieberman·Lichtenberg (2005) §6.2 — 정리 노트 §14 부유 벽 전위",
+  "url": "plasma_etch_principles.html#s14"
+ },
+ "lb_6_3": {
+  "title": "Lieberman·Lichtenberg (2005) §6.3, §6.5 — 정리 노트 §15 고전압 쉬스",
+  "url": "plasma_etch_principles.html#s15"
+ },
+ "lb_6_4": {
+  "title": "Lieberman·Lichtenberg (2005) §6.4 — 정리 노트 §16 전기음성·다종 이온",
+  "url": "plasma_etch_principles.html#s16"
+ },
+ "lb_6_6": {
+  "title": "Lieberman·Lichtenberg (2005) §6.6 — 정리 노트 §17 랭뮤어 탐침",
+  "url": "plasma_etch_principles.html#s17"
+ },
+ "lb_11_4": {
+  "title": "Lieberman·Lichtenberg (2005) §11.4 — 정리 노트 §18 자기 바이어스",
+  "url": "plasma_etch_principles.html#s18"
+ },
+ "lb_11_5": {
+  "title": "Lieberman·Lichtenberg (2005) §11.5 — 정리 노트 §19 저주파 쉬스",
+  "url": "plasma_etch_principles.html#s19"
+ },
+ "lb_11_6": {
+  "title": "Lieberman·Lichtenberg (2005) §11.6 — 정리 노트 §20 이온 에너지 분포",
+  "url": "plasma_etch_principles.html#s20"
+ },
+ "lb_10_1": {
+  "title": "Lieberman·Lichtenberg (2005) §10.1 — 정리 노트 §22 가열 방식",
+  "url": "plasma_etch_principles.html#s22"
+ },
+ "lb_10_2": {
+  "title": "Lieberman·Lichtenberg (2005) §10.2 — 정리 노트 §23 전역 모델",
+  "url": "plasma_etch_principles.html#s23"
+ },
+ "lb_10_2r": {
+  "title": "Lieberman·Lichtenberg (2005) §10.2 — 정리 노트 §24 라디칼 스케일링",
+  "url": "plasma_etch_principles.html#s24"
+ },
+ "lb_10_3": {
+  "title": "Lieberman·Lichtenberg (2005) §10.3–10.5 — 정리 노트 §25 전기음성 방전",
+  "url": "plasma_etch_principles.html#s25"
+ },
+ "lb_10_6": {
+  "title": "Lieberman·Lichtenberg (2005) §10.6 — 정리 노트 §26 펄스 방전",
+  "url": "plasma_etch_principles.html#s26"
+ },
+ "lb_11_1": {
+  "title": "Lieberman·Lichtenberg (2005) §11.1–11.3 — 정리 노트 §27 CCP",
+  "url": "plasma_etch_principles.html#s27"
+ },
+ "lb_11_2": {
+  "title": "Lieberman·Lichtenberg (2005) §11.2 — 정리 노트 §28 이중 주파수",
+  "url": "plasma_etch_principles.html#s28"
+ },
+ "lb_11_8": {
+  "title": "Lieberman·Lichtenberg (2005) §11.8 — 정리 노트 §29 정합 회로",
+  "url": "plasma_etch_principles.html#s29"
+ },
+ "lb_12": {
+  "title": "Lieberman·Lichtenberg (2005) §12.1–12.3 — 정리 노트 §30 ICP",
+  "url": "plasma_etch_principles.html#s30"
+ },
+ "lb_13": {
+  "title": "Lieberman·Lichtenberg (2005) 13장 — 정리 노트 §31 파동 가열 소스",
+  "url": "plasma_etch_principles.html#s31"
+ },
+ "lb_3": {
+  "title": "Lieberman·Lichtenberg (2005) 3장, §3.5 — 정리 노트 §33 충돌 기초",
+  "url": "plasma_etch_principles.html#s33"
+ },
+ "lb_8_3": {
+  "title": "Lieberman·Lichtenberg (2005) §8.2–8.3 — 정리 노트 §34 전자–분자 충돌",
+  "url": "plasma_etch_principles.html#s34"
+ },
+ "lb_9_2": {
+  "title": "Lieberman·Lichtenberg (2005) §9.1–9.2 — 정리 노트 §36 반응 속도론",
+  "url": "plasma_etch_principles.html#s36"
+ },
+ "lb_7_5": {
+  "title": "Lieberman·Lichtenberg (2005) §7.5 — 정리 노트 §37 휘발성",
+  "url": "plasma_etch_principles.html#s37"
+ },
+ "lb_8_6o": {
+  "title": "Lieberman·Lichtenberg (2005) §8.6 — 정리 노트 §38 광방출",
+  "url": "plasma_etch_principles.html#s38"
+ },
+ "lb_8_6a": {
+  "title": "Lieberman·Lichtenberg (2005) §8.6 — 정리 노트 §39 actinometry",
+  "url": "plasma_etch_principles.html#s39"
+ },
+ "lb_1": {
+  "title": "Lieberman·Lichtenberg (2005) 1장 — 정리 노트 §41 큰 그림",
+  "url": "plasma_etch_principles.html#s41"
+ },
+ "lb_2": {
+  "title": "Lieberman·Lichtenberg (2005) 2장 — 정리 노트 §42 플라즈마 기초",
+  "url": "plasma_etch_principles.html#s42"
+ },
+ "lb_4_6": {
+  "title": "Lieberman·Lichtenberg (2005) §4.6 — 정리 노트 §43 파동 진단",
+  "url": "plasma_etch_principles.html#s43"
+ },
+ "lb_5": {
+  "title": "Lieberman·Lichtenberg (2005) 5장 — 정리 노트 §44 확산",
+  "url": "plasma_etch_principles.html#s44"
+ },
+ "lb_14": {
+  "title": "Lieberman·Lichtenberg (2005) 14장 — 정리 노트 §45 DC 방전·스퍼터",
+  "url": "plasma_etch_principles.html#s45"
+ },
+ "lb_16": {
+  "title": "Lieberman·Lichtenberg (2005) 16장 — 정리 노트 §46 증착·주입",
+  "url": "plasma_etch_principles.html#s46"
+ },
+ "lb_17": {
+  "title": "Lieberman·Lichtenberg (2005) 17장 — 정리 노트 §47 먼지 입자",
+  "url": "plasma_etch_principles.html#s47"
+ },
+ "lb_18": {
+  "title": "Lieberman·Lichtenberg (2005) 18장 — 정리 노트 §48 운동론",
+  "url": "plasma_etch_principles.html#s48"
+ },
+ "lb_11_7": {
+  "title": "Lieberman·Lichtenberg (2005) §11.7 — 정리 노트 §20 MERIE(덧붙임)",
+  "url": "plasma_etch_principles.html#s20"
+ },
+ "akara": {
+  "title": "Lam Research (2025) — Akara 도체 식각 (TEMPO 펄싱)",
+  "url": "https://investor.lamresearch.com/2025-02-19-Lam-Research-Unveils-Industrys-Most-Advanced-Conductor-Etch-Technology-to-Date"
+ },
+ "asd24": {
+  "title": "Int. J. Machine Tools (2024) — Area selective deposition",
+  "url": "https://doi.org/10.1016/j.ijmachtools.2024.104173"
+ },
+ "asd25": {
+  "title": "Liu·Bent — Area selective deposition review (Materials Horizons 2025)",
+  "url": "https://doi.org/10.1039/D4MH01472C"
+ },
+ "asmlhna": {
+  "title": "ASML — 5 things about High-NA EUV",
+  "url": "https://www.asml.com/en/company/stories/2024/5-things-high-na-euv"
+ },
+ "asmlray": {
+  "title": "ASML — Rayleigh criterion",
+  "url": "https://www.asml.com/en/technology/lithography-principles/rayleigh-criterion"
+ },
+ "bdilast": {
+  "title": "Micromachines (2023) — GAA Full BDI-last 연구",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10302010/"
+ },
+ "bencher": {
+  "title": "Bencher 외 — 22nm half-pitch by CVD spacer SADP (SPIE 2008)",
+  "url": "https://doi.org/10.1117/12.772953"
+ },
+ "decomp": {
+  "title": "arXiv 1404.0321 — 멀티패터닝 레이아웃 분할",
+  "url": "https://arxiv.org/abs/1404.0321"
+ },
+ "decoster19": {
+  "title": "Decoster 외 — EUV 기반 SAMP 옵션 (SPIE 2019)",
+  "url": "https://doi.org/10.1117/12.2515173"
+ },
+ "donnelly": {
+  "title": "Donnelly·Kornblit — Plasma etching: yesterday, today, tomorrow (JVST A 2013)",
+  "url": "https://doi.org/10.1116/1.4819316"
+ },
+ "dsa25": {
+  "title": "MRS Communications (2025) — DSA·EUV 연구 검토",
+  "url": "https://doi.org/10.1557/s43579-025-00841-7"
+ },
+ "dualcarbon": {
+  "title": "J. Photopolymer Sci. Tech. (2017) — Dual-carbon SAQP의 Si 침투",
+  "url": "https://www.jstage.jst.go.jp/article/photopolymer/30/3/30_361/_pdf"
+ },
+ "ecsbr2": {
+  "title": "ECS — 하부 절연용 Br₂ 선택 SiGe 식각",
+  "url": "https://ecs.confex.com/ecs/242/webprogram/Paper164686.html"
+ },
+ "ecscu": {
+  "title": "ECS — Copper Seed Layer Wet Etching for 3D Integration (CEA-Leti·ST)",
+  "url": "https://ecs.confex.com/ecs/224/webprogram/Abstract/Paper24100/E7-2068.pdf"
+ },
+ "ep4580342": {
+  "title": "특허 EP4580342A1 — Epitaxial Source/Drain 용례",
+  "url": "https://data.epo.org/publication-server/rest/v1.2/publication-dates/2025-07-02/patents/EP4580342NWA1/document.pdf"
+ },
+ "esalele": {
+  "title": "imec — eSALELE의 EPE 기반 결함 검출",
+  "url": "https://imec-publications.be/server/api/core/bitstreams/1c7be17c-f2d5-436e-a306-fb46acc0315e/content"
+ },
+ "fang": {
+  "title": "Fang 외 — SAQP pitch walk metrology (SPIE 2017)",
+  "url": "https://doi.org/10.1117/12.2261620"
+ },
+ "hdm": {
+  "title": "HD MicroSystems — 감광성 PI의 RDL 적용",
+  "url": "https://www.hdmicrosystems.com/products/hd7204?hsLang=en"
+ },
+ "hermans": {
+  "title": "Hermans 외 — 0.33NA EUV MP16 SADP semi-damascene (SPIE 2024)",
+  "url": "https://doi.org/10.1117/12.3034200"
+ },
+ "ibmbdi": {
+  "title": "IBM (IEDM 2019) — Full Bottom Dielectric Isolation",
+  "url": "https://research.ibm.com/publications/full-bottom-dielectric-isolation-to-enable-stacked-nanosheet-transistor-for-low-power-and-high-performance-applications"
+ },
+ "imaps": {
+  "title": "IMAPS (2018) — 미세 Cu RDL의 시드 식각",
+  "url": "https://meridian.allenpress.com/ism/article/2018/1/000207/9546/Enabling-a-Robust-Copper-Seed-Etch-Process-for"
+ },
+ "imec2019": {
+  "title": "imec (2019) — EUV lithography: weighing the options",
+  "url": "https://www.imec-int.com/en/imec-magazine/imec-magazine-june-2019/euv-lithography-weighing-the-options-for-future-logic-and-memory-applications"
+ },
+ "imechna24": {
+  "title": "imec (2024) — High-NA로 로직·DRAM 구조 시연",
+  "url": "https://www.imec-int.com/en/press/imec-demonstrates-logic-and-dram-structures-using-high-na-euv-lithography"
+ },
+ "imechna25": {
+  "title": "imec (2025) — High-NA 단일 노광: 20nm pitch, Ru 직접 식각",
+  "url": "https://www.imec-int.com/en/press/imec-achieves-new-milestones-single-patterning-high-na-euv-lithography-both-damascene-and"
+ },
+ "imecn5": {
+  "title": "imec — N5-equivalent 배선: DUV SAQP + EUV block",
+  "url": "https://www.imec-int.com/en/articles/imec-presents-patterning-solutions-for-n5-equivalent-metal-layers"
+ },
+ "imecru18": {
+  "title": "Decoster 외 (imec) — Ru 18nm pitch 패터닝 (SPIE 원고)",
+  "url": "https://imec-publications.be/bitstream/handle/20.500.12860/40370.2/SPIE%20proceedings%20-%20Decoster%20-%20Patterning%20of%20Ru%20metal%20lines%20at%2018%20nm%20pitch%20-%20online.pdf?isAllowed=y&sequence=1"
+ },
+ "imecsaqp": {
+  "title": "imec (2017) — N5 BEOL용 SAQP 공정 설명",
+  "url": "https://www.imec-int.com/en/imec-magazine/imec-magazine-march-2017/first-euv-lithography-high-volume-manufacturing-solution-for-n5-beol"
+ },
+ "intel10": {
+  "title": "Auth 외 — Intel 10nm, Self-Aligned Quad Patterning (IEDM 2017)",
+  "url": "https://doi.org/10.1109/IEDM.2017.8268472"
+ },
+ "intel14": {
+  "title": "Natarajan 외 — Intel 14nm, SADP (IEDM 2014)",
+  "url": "https://doi.org/10.1109/IEDM.2014.7046976"
+ },
+ "intelhna": {
+  "title": "Intel·ASML (2026-09-07) — High-NA EUV 양산 레이어 적용",
+  "url": "https://www.intel.com/content/www/us/en/newsroom/news/intel-foundry/intel-foundry-asml-accelerate-industry-readiness-for-high-na-euv.html"
+ },
+ "irds": {
+  "title": "IEEE IRDS 2023 — Lithography",
+  "url": "https://irds.ieee.org/images/files/pdf/2023/2023IRDS_Litho.pdf"
+ },
+ "kanarik": {
+  "title": "Kanarik 외 — Overview of atomic layer etching (JVST A 2015)",
+  "url": "https://doi.org/10.1116/1.4913379"
+ },
+ "lam101": {
+  "title": "Lam Research — How advanced patterning enables smaller chips",
+  "url": "https://newsroom.lamresearch.com/how-advanced-patterning-enables-smarter-smaller-chips-semi-101"
+ },
+ "lamcu": {
+  "title": "Lam Research — Cu 다마신 20주년",
+  "url": "https://newsroom.lamresearch.com/Celebrating-the-Copper-Revolutions-20th-Anniversary"
+ },
+ "lazzarino": {
+  "title": "Lazzarino 외 — Self-aligned block technology (SPIE 2017)",
+  "url": "https://doi.org/10.1117/12.2258028"
+ },
+ "lfle": {
+  "title": "Pieczulewski·Rosslee — LFLE double patterning (SPIE 2009)",
+  "url": "https://doi.org/10.1117/12.837221"
+ },
+ "lorusso": {
+  "title": "Lorusso 외 — SAQP 전사 중 LWR 분석 (SPIE 2016)",
+  "url": "https://doi.org/10.1117/12.2218863"
+ },
+ "micron1g": {
+  "title": "Micron (2025) — 1γ DRAM 출하 (첫 EUV)",
+  "url": "https://micron.gcs-web.com/news-releases/news-release-details/micron-announces-shipment-1g-1-gamma-dram-pioneering-memory"
+ },
+ "micronpat": {
+  "title": "Micron — 투자자 자료: 1β까지 멀티패터닝, EUV 조합 전략",
+  "url": "https://investors.micron.com/static-files/875ad906-90ad-4fff-aad9-dc18d04042a4"
+ },
+ "p10586738": {
+  "title": "특허 US10586738 — Embedded Source/Drain",
+  "url": "https://patents.justia.com/patent/10586738"
+ },
+ "p12199054": {
+  "title": "특허 US12199054 — Al RDL과 증착·식각",
+  "url": "https://patents.justia.com/patent/12199054"
+ },
+ "p20120064686": {
+  "title": "특허 US20120064686 — eSiGe용 Si 리세스 식각",
+  "url": "https://patents.justia.com/patent/20120064686"
+ },
+ "p20140367751": {
+  "title": "특허 US20140367751 — eSiGe용 FinFET 식각",
+  "url": "https://patents.google.com/patent/US20140367751"
+ },
+ "p20250359147": {
+  "title": "특허 US20250359147A1 — Bottom/Buried Dielectric Isolation",
+  "url": "https://patents.google.com/patent/US20250359147A1/en"
+ },
+ "p4412885": {
+  "title": "특허 US4412885A — Al·Al 합금의 염소계 식각",
+  "url": "https://patents.google.com/patent/US4412885A/en"
+ },
+ "p6127721": {
+  "title": "특허 US6127721A — PSPI 패터닝과 식각 마스크 사용",
+  "url": "https://patents.google.com/patent/US6127721A/en"
+ },
+ "p9947645": {
+  "title": "특허 US9947645B2 — VV·LB 레이어 정의와 식각 관통",
+  "url": "https://patents.google.com/patent/US9947645B2/en"
+ },
+ "pietch": {
+  "title": "Microelectronic Engineering (1986) — O₂/CF₄ 폴리이미드 식각",
+  "url": "https://www.sciencedirect.com/science/article/pii/0167931786900663"
+ },
+ "raley": {
+  "title": "Raley 외 — SAQP spacer-on-spacer (SPIE 2016)",
+  "url": "https://doi.org/10.1117/12.2219321"
+ },
+ "s1": {
+  "title": "TSMC — 2nm Technology (공식)",
+  "url": "https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_2nm"
+ },
+ "s10": {
+  "title": "9to5Mac — A20 WMCM 공급망 분석가 발언 인용 (루머, 2025-08-12)",
+  "url": "https://9to5mac.com/2025/08/12/next-years-iphones-could-get-bigger-than-usual-upgrades-with-a20-chip/"
+ },
+ "s11": {
+  "title": "imec — Entering the nanosheet transistor era",
+  "url": "https://www.imec-int.com/en/articles/entering-nanosheet-transistor-era-0"
+ },
+ "s12": {
+  "title": "TEL–imec — Selective isotropic etching of Group-IV semiconductors (발표 자료, PDF)",
+  "url": "https://www.linx-consulting.com/wp-content/uploads/2018/04/01-06-S_Kal-TEL-imec_Selective_isotropic_etching_of_Group-IV_semiconductors.pdf"
+ },
+ "s13": {
+  "title": "Lam Research — Selective Etch Product Family",
+  "url": "https://www.lamresearch.com/product/selective-etch-product-family/"
+ },
+ "s14": {
+  "title": "Applied Materials — Endura Trillium ALD",
+  "url": "https://www.appliedmaterials.com/us/en/product-library/endura-trillium-ald.html"
+ },
+ "s15": {
+  "title": "Lam Research — Tech Brief: All About ALE",
+  "url": "https://newsroom.lamresearch.com/Tech-Brief-All-About-ALE"
+ },
+ "s16": {
+  "title": "ASML — EUV lithography systems",
+  "url": "https://www.asml.com/en/products/euv-lithography-systems"
+ },
+ "s17": {
+  "title": "Applied Materials — Frontside wiring for 2nm and beyond",
+  "url": "https://www.appliedmaterials.com/us/en/newsroom/blogs/beyond-backside-power-scaling-chips-to-2nm-and-beyond-also-requi.html"
+ },
+ "s18": {
+  "title": "imec — 16nm-pitch Ru semi-damascene (2025)",
+  "url": "https://www.imec-int.com/en/press/imec-demonstrates-16nm-pitch-ru-lines-record-low-resistance-obtained-using-semi-damascene"
+ },
+ "s19": {
+  "title": "FormFactor — Parametric Test / WAT",
+  "url": "https://www.formfactor.com/applications/high-volume-test-on-wafer/parametric-test/"
+ },
+ "s20": {
+  "title": "Advantest — Automated Test Equipment",
+  "url": "https://www.advantest.com/en/semiconductor-basics/automated-test-equipment/"
+ },
+ "s21": {
+  "title": "DISCO — Corporate Report 2020 (박막화·절단, PDF)",
+  "url": "https://disco.co.jp/eg/ir/library/doc/dar/dar2020.pdf"
+ },
+ "s22": {
+  "title": "TSMC — InFO / InFO-PoP",
+  "url": "https://3dfabric.tsmc.com/schinese/dedicatedFoundry/technology/InFO.htm"
+ },
+ "s24": {
+  "title": "Amkor — Wafer Bumping Services",
+  "url": "https://amkor.com/services/wafer-bumping/"
+ },
+ "s25": {
+  "title": "Amkor — S-SWIFT와 RDL 시드 언더컷",
+  "url": "https://amkor.com/blog/revolutionizing-ic-packaging-with-s-swift-technology/"
+ },
+ "s26": {
+  "title": "TSMC — 2024 Annual Report (리소그래피 개발, PDF)",
+  "url": "https://investor.tsmc.com/sites/ir/annual-report/2024/2024%20Annual%20Report_E.pdf"
+ },
+ "s28": {
+  "title": "Applied Materials — Advanced Logic 공정 모듈",
+  "url": "https://www.appliedmaterials.com/us/en/semiconductor/markets-and-inflections/advanced-logic.html"
+ },
+ "s29": {
+  "title": "Applied Materials — New Ways to Shrink 2022: GAA 에피·선택 제거 (PDF)",
+  "url": "https://ir.appliedmaterials.com/static-files/f2fbf48d-a761-4c4f-ab4c-73f312ab1ebc"
+ },
+ "s3": {
+  "title": "TSMC Research — IEDM 2024 N2 논문 공개 초록",
+  "url": "https://research.tsmc.com/page/transistor-structure/59.html"
+ },
+ "s30": {
+  "title": "특허 US20220157941A1 — Semiconductor Gate-All-Around Device (TSMC)",
+  "url": "https://patents.google.com/patent/US20220157941A1/en"
+ },
+ "s31": {
+  "title": "Applied Materials — Interconnect: Cu와 Ru계 라이너",
+  "url": "https://www.appliedmaterials.com/us/en/semiconductor/markets-and-inflections/advanced-logic/interconnect.html"
+ },
+ "s32": {
+  "title": "Keysight — Parametric Test Solutions",
+  "url": "https://www.keysight.com/gq/en/products/semiconductors/parametric-test-solutions.html"
+ },
+ "s4": {
+  "title": "TSMC — 2024 Technology Symposium (NanoFlex·A16, PDF)",
+  "url": "https://pr.tsmc.com/system/files/newspdf/attachment/34a0127e5c396217a02a97ee58c481b168437a1a/2024%20Tech%20Symposium%20%28E%29_final_wmn.pdf"
+ },
+ "s5": {
+  "title": "TSMC — HPC Advanced Technologies (N2P·A16·MIM)",
+  "url": "https://www.cld.tsmc.com/english/dedicatedFoundry/technology/platform_HPC_tech_advancedTech"
+ },
+ "s6": {
+  "title": "TSMC — 2025 Annual Report (N2 양산·수율)",
+  "url": "https://investor.tsmc.com/static/annualReports/2025/english/index.html"
+ },
+ "s7": {
+  "title": "TSMC — Fabs (12인치 팹)",
+  "url": "https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs"
+ },
+ "s8": {
+  "title": "Apple — iPhone 18 Pro / Pro Max 발표 (2026-09-09)",
+  "url": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/"
+ },
+ "s9": {
+  "title": "Apple — iPhone Duo 발표",
+  "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/"
+ },
+ "salele": {
+  "title": "EDN — Multi-patterning strategies sub-5nm, part 2 (SALELE)",
+  "url": "https://www.edn.com/multi-patterning-strategies-for-navigating-the-sub-5-nm-frontier-part-2/"
+ },
+ "sam10": {
+  "title": "Samsung (2016) — 10nm 양산: triple patterning·양방향 배선",
+  "url": "https://news.samsung.com/global/samsung-starts-industrys-first-mass-production-of-system-on-chip-with-10-nanometer-finfet-technology"
+ },
+ "sam14euv": {
+  "title": "Samsung (2021) — 14nm DRAM, EUV 5개 레이어",
+  "url": "https://news.samsung.com/global/samsung-starts-mass-production-of-most-advanced-14nm-euv-ddr5-dram"
+ },
+ "samco": {
+  "title": "Samco — SiO₂·SiN 식각 기술 자료 (PDF)",
+  "url": "https://www.samcointl.com/tech_notes/pdf/Technical%20Report%2077.pdf"
+ },
+ "samdram10": {
+  "title": "Samsung — 10nm급 DRAM의 QPT (한 번 노광 후 네 패턴)",
+  "url": "https://news.samsung.com/global/exploring-the-key-samsung-technologies-that-enabled-10nm-class-dram"
+ },
+ "samnand": {
+  "title": "Samsung (2007) — 30나노 64Gb NAND 개발, SaDPT 적용",
+  "url": "https://news.samsung.com/kr/삼성전자-세계-최초-30나노-64기가-낸드-개발-성공"
+ },
+ "saop": {
+  "title": "Yu 외 — Critical challenges of SAOP (SPIE 2014)",
+  "url": "https://doi.org/10.1117/12.2046094"
+ },
+ "saqpocd": {
+  "title": "SPIE (2016) — SAQP scatterometry 공정 제어",
+  "url": "https://doi.org/10.1117/12.2220287"
+ },
+ "sculpta": {
+  "title": "Applied Materials (2023) — Sculpta 패턴 셰이핑 발표",
+  "url": "https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-innovative-pattern-shaping-technology-reduces/"
+ },
+ "shaping": {
+  "title": "Applied Materials — Pattern shaping 원리",
+  "url": "https://www.appliedmaterials.com/eu/en/semiconductor/semiconductor-technologies/pattern-shaping.html"
+ },
+ "sidsim": {
+  "title": "IEEE TCAD (2015) — SID/SIM SADP routing",
+  "url": "https://doi.org/10.1109/TCAD.2015.2404878"
+ },
+ "sub10": {
+  "title": "SPIE (2016) — Patterning challenges in the sub-10 nm era",
+  "url": "https://doi.org/10.1117/12.2222256"
+ },
+ "ti9000s": {
+  "title": "TechInsights (2023) — Kirin 9000S, SMIC 7nm N+2",
+  "url": "https://www.techinsights.com/ja/node/54046"
+ },
+ "tin3": {
+  "title": "TechInsights (2026-08-27) — Kirin 9030 Pro, SMIC N+3",
+  "url": "https://www.techinsights.com/blog/smic-n3-kirin-9030-pro-process-flow-analysis"
+ },
+ "tsmc2013": {
+  "title": "TSMC — 2013 연차보고서 기술개발 (PDF)",
+  "url": "https://investor.tsmc.com/static/annualReports/2013/english/pdf/c_11_1.pdf"
+ },
+ "tsmcdpt": {
+  "title": "TSMC (2012) — DPT 설계 reference flow 발표",
+  "url": "https://pr.tsmc.com/schinese/news/1745"
+ }
+}

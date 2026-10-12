@@ -1,0 +1,3343 @@
+[
+ {
+  "from": "a20",
+  "to": "n2",
+  "label": "제조 공정 (업계 추정)"
+ },
+ {
+  "from": "n2",
+  "to": "n2p",
+  "label": "개선판"
+ },
+ {
+  "from": "n2p",
+  "to": "a16",
+  "label": "다음 세대"
+ },
+ {
+  "from": "n2",
+  "to": "gaa",
+  "label": "트랜지스터 구조"
+ },
+ {
+  "from": "finfet",
+  "to": "gaa",
+  "label": "후속 구조"
+ },
+ {
+  "from": "a20",
+  "to": "wmcm",
+  "label": "패키징"
+ },
+ {
+  "from": "info",
+  "to": "wmcm",
+  "label": "이전 방식"
+ },
+ {
+  "from": "gaa",
+  "to": "superlattice",
+  "label": "출발 구조"
+ },
+ {
+  "from": "superlattice",
+  "to": "si",
+  "label": "구성"
+ },
+ {
+  "from": "superlattice",
+  "to": "sige",
+  "label": "구성"
+ },
+ {
+  "from": "gaa",
+  "to": "nanosheet",
+  "label": "구성"
+ },
+ {
+  "from": "gaa",
+  "to": "innerspacer",
+  "label": "구성"
+ },
+ {
+  "from": "gaa",
+  "to": "hkmg",
+  "label": "구성"
+ },
+ {
+  "from": "gaa",
+  "to": "sd",
+  "label": "구성"
+ },
+ {
+  "from": "nanosheet",
+  "to": "si",
+  "label": "구성"
+ },
+ {
+  "from": "s_clean",
+  "to": "s_stack",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_stack",
+  "to": "s_sdrecess",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_sdrecess",
+  "to": "s_lateral",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_lateral",
+  "to": "s_dgremove",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_dgremove",
+  "to": "s_release",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_release",
+  "to": "s_gaterecess",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_gaterecess",
+  "to": "s_contact",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_contact",
+  "to": "s_via",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_via",
+  "to": "s_pad",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_pad",
+  "to": "wat",
+  "label": "다음 단계"
+ },
+ {
+  "from": "wat",
+  "to": "cp",
+  "label": "다음 단계"
+ },
+ {
+  "from": "cp",
+  "to": "s_seed",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_seed",
+  "to": "s_dicing",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_dicing",
+  "to": "wmcm",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_clean",
+  "to": "e_wet",
+  "label": "사용"
+ },
+ {
+  "from": "s_clean",
+  "to": "si",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "epi",
+  "to": "superlattice",
+  "label": "형성"
+ },
+ {
+  "from": "s_clean",
+  "to": "epi",
+  "label": "표면 준비"
+ },
+ {
+  "from": "s_stack",
+  "to": "euv",
+  "label": "사용"
+ },
+ {
+  "from": "s_stack",
+  "to": "e_aniso",
+  "label": "사용"
+ },
+ {
+  "from": "s_stack",
+  "to": "superlattice",
+  "label": "제거"
+ },
+ {
+  "from": "s_stack",
+  "to": "sti",
+  "label": "형성"
+ },
+ {
+  "from": "s_stack",
+  "to": "i_notch",
+  "label": "위험"
+ },
+ {
+  "from": "s_stack",
+  "to": "i_loading",
+  "label": "위험"
+ },
+ {
+  "from": "sti",
+  "to": "cmp",
+  "label": "사용"
+ },
+ {
+  "from": "dummygate",
+  "to": "e_aniso",
+  "label": "패터닝"
+ },
+ {
+  "from": "outerspacer",
+  "to": "e_etchback",
+  "label": "형성 방법"
+ },
+ {
+  "from": "dummygate",
+  "to": "outerspacer",
+  "label": "측벽"
+ },
+ {
+  "from": "s_sdrecess",
+  "to": "e_aniso",
+  "label": "사용"
+ },
+ {
+  "from": "s_sdrecess",
+  "to": "superlattice",
+  "label": "제거"
+ },
+ {
+  "from": "s_sdrecess",
+  "to": "sd",
+  "label": "자리 형성"
+ },
+ {
+  "from": "sd",
+  "to": "epi",
+  "label": "형성 방법"
+ },
+ {
+  "from": "s_lateral",
+  "to": "e_iso",
+  "label": "사용"
+ },
+ {
+  "from": "s_lateral",
+  "to": "sige",
+  "label": "제거"
+ },
+ {
+  "from": "s_lateral",
+  "to": "si",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "s_lateral",
+  "to": "innerspacer",
+  "label": "형성"
+ },
+ {
+  "from": "innerspacer",
+  "to": "ald",
+  "label": "형성 방법"
+ },
+ {
+  "from": "innerspacer",
+  "to": "e_etchback",
+  "label": "형성 방법"
+ },
+ {
+  "from": "s_lateral",
+  "to": "i_recessvar",
+  "label": "위험"
+ },
+ {
+  "from": "i_recessvar",
+  "to": "i_parasitic",
+  "label": "유발"
+ },
+ {
+  "from": "innerspacer",
+  "to": "i_parasitic",
+  "label": "억제"
+ },
+ {
+  "from": "s_dgremove",
+  "to": "dummygate",
+  "label": "제거"
+ },
+ {
+  "from": "s_dgremove",
+  "to": "e_wet",
+  "label": "사용"
+ },
+ {
+  "from": "s_dgremove",
+  "to": "nanosheet",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "s_release",
+  "to": "e_iso",
+  "label": "사용"
+ },
+ {
+  "from": "s_release",
+  "to": "sige",
+  "label": "제거"
+ },
+ {
+  "from": "s_release",
+  "to": "nanosheet",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "s_release",
+  "to": "innerspacer",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "s_release",
+  "to": "i_siloss",
+  "label": "위험"
+ },
+ {
+  "from": "s_release",
+  "to": "i_geres",
+  "label": "위험"
+ },
+ {
+  "from": "s_release",
+  "to": "i_stiction",
+  "label": "위험"
+ },
+ {
+  "from": "e_wet",
+  "to": "i_stiction",
+  "label": "유발 가능"
+ },
+ {
+  "from": "e_iso",
+  "to": "selectivity",
+  "label": "핵심 지표"
+ },
+ {
+  "from": "selectivity",
+  "to": "sige",
+  "label": "식각 대상"
+ },
+ {
+  "from": "selectivity",
+  "to": "si",
+  "label": "보존 대상"
+ },
+ {
+  "from": "s_gaterecess",
+  "to": "hkmg",
+  "label": "형성"
+ },
+ {
+  "from": "hkmg",
+  "to": "highk",
+  "label": "구성"
+ },
+ {
+  "from": "hkmg",
+  "to": "wfm",
+  "label": "구성"
+ },
+ {
+  "from": "hkmg",
+  "to": "ald",
+  "label": "형성 방법"
+ },
+ {
+  "from": "s_gaterecess",
+  "to": "wfm",
+  "label": "제거"
+ },
+ {
+  "from": "s_gaterecess",
+  "to": "highk",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "s_gaterecess",
+  "to": "e_ale",
+  "label": "후보 기술"
+ },
+ {
+  "from": "s_gaterecess",
+  "to": "i_residue",
+  "label": "위험"
+ },
+ {
+  "from": "s_contact",
+  "to": "contact",
+  "label": "형성"
+ },
+ {
+  "from": "s_contact",
+  "to": "e_aniso",
+  "label": "사용"
+ },
+ {
+  "from": "s_contact",
+  "to": "e_ale",
+  "label": "후보 기술"
+ },
+ {
+  "from": "s_contact",
+  "to": "i_short",
+  "label": "위험"
+ },
+ {
+  "from": "s_contact",
+  "to": "i_residue",
+  "label": "위험"
+ },
+ {
+  "from": "s_contact",
+  "to": "sd",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "s_via",
+  "to": "beol",
+  "label": "형성"
+ },
+ {
+  "from": "s_via",
+  "to": "lowk",
+  "label": "제거"
+ },
+ {
+  "from": "s_via",
+  "to": "e_aniso",
+  "label": "사용"
+ },
+ {
+  "from": "s_via",
+  "to": "euv",
+  "label": "사용"
+ },
+ {
+  "from": "s_via",
+  "to": "i_lowkdmg",
+  "label": "위험"
+ },
+ {
+  "from": "beol",
+  "to": "cu",
+  "label": "구성"
+ },
+ {
+  "from": "beol",
+  "to": "lowk",
+  "label": "구성"
+ },
+ {
+  "from": "beol",
+  "to": "cmp",
+  "label": "사용"
+ },
+ {
+  "from": "ru",
+  "to": "beol",
+  "label": "차세대 후보"
+ },
+ {
+  "from": "beol",
+  "to": "mim",
+  "label": "포함"
+ },
+ {
+  "from": "s_pad",
+  "to": "mim",
+  "label": "주변 공정"
+ },
+ {
+  "from": "s_pad",
+  "to": "i_residue",
+  "label": "위험"
+ },
+ {
+  "from": "s_seed",
+  "to": "rdl",
+  "label": "형성"
+ },
+ {
+  "from": "s_seed",
+  "to": "bump",
+  "label": "형성"
+ },
+ {
+  "from": "s_seed",
+  "to": "e_wet",
+  "label": "사용"
+ },
+ {
+  "from": "s_seed",
+  "to": "i_undercut",
+  "label": "위험"
+ },
+ {
+  "from": "s_seed",
+  "to": "i_short",
+  "label": "잔류 시 유발"
+ },
+ {
+  "from": "s_dicing",
+  "to": "e_plasmadice",
+  "label": "선택 가능"
+ },
+ {
+  "from": "s_dicing",
+  "to": "cmp",
+  "label": "손상층 제거"
+ },
+ {
+  "from": "wmcm",
+  "to": "rdl",
+  "label": "사용"
+ },
+ {
+  "from": "info",
+  "to": "rdl",
+  "label": "사용"
+ },
+ {
+  "from": "wat",
+  "to": "i_siloss",
+  "label": "검출"
+ },
+ {
+  "from": "wat",
+  "to": "i_residue",
+  "label": "검출"
+ },
+ {
+  "from": "wat",
+  "to": "i_lowkdmg",
+  "label": "검출"
+ },
+ {
+  "from": "cp",
+  "to": "a20",
+  "label": "양품 선별"
+ },
+ {
+  "from": "beol",
+  "to": "vv",
+  "label": "다음 층"
+ },
+ {
+  "from": "vv",
+  "to": "lb",
+  "label": "다음 층"
+ },
+ {
+  "from": "lb",
+  "to": "pv",
+  "label": "다음 층"
+ },
+ {
+  "from": "pv",
+  "to": "pspi",
+  "label": "재료"
+ },
+ {
+  "from": "s_pad",
+  "to": "pv",
+  "label": "개구"
+ },
+ {
+  "from": "s_pad",
+  "to": "lb",
+  "label": "드러냄"
+ },
+ {
+  "from": "vv",
+  "to": "e_aniso",
+  "label": "형성 방법"
+ },
+ {
+  "from": "lb",
+  "to": "al",
+  "label": "흔한 재료"
+ },
+ {
+  "from": "lb",
+  "to": "i_punch",
+  "label": "위험"
+ },
+ {
+  "from": "vv",
+  "to": "i_residue",
+  "label": "위험"
+ },
+ {
+  "from": "s_pspi",
+  "to": "pspi",
+  "label": "대상"
+ },
+ {
+  "from": "s_pspi",
+  "to": "e_descum",
+  "label": "사용"
+ },
+ {
+  "from": "s_pspi",
+  "to": "i_residue",
+  "label": "위험"
+ },
+ {
+  "from": "s_pspi",
+  "to": "s_pad",
+  "label": "마스크로 사용"
+ },
+ {
+  "from": "pspi",
+  "to": "rdl",
+  "label": "층간 절연막"
+ },
+ {
+  "from": "rdl",
+  "to": "al_rdl",
+  "label": "종류"
+ },
+ {
+  "from": "rdl",
+  "to": "cu_rdl",
+  "label": "종류"
+ },
+ {
+  "from": "al_rdl",
+  "to": "al",
+  "label": "구성"
+ },
+ {
+  "from": "cu_rdl",
+  "to": "cu",
+  "label": "구성"
+ },
+ {
+  "from": "s_almetal",
+  "to": "al_rdl",
+  "label": "형성"
+ },
+ {
+  "from": "s_almetal",
+  "to": "e_aniso",
+  "label": "사용"
+ },
+ {
+  "from": "s_almetal",
+  "to": "i_corrosion",
+  "label": "위험"
+ },
+ {
+  "from": "cu_rdl",
+  "to": "sap",
+  "label": "형성 방법"
+ },
+ {
+  "from": "sap",
+  "to": "s_seed",
+  "label": "포함"
+ },
+ {
+  "from": "gaa",
+  "to": "bdi",
+  "label": "선택 구조"
+ },
+ {
+  "from": "s_bdi",
+  "to": "bdi",
+  "label": "형성"
+ },
+ {
+  "from": "s_bdi",
+  "to": "sige",
+  "label": "제거"
+ },
+ {
+  "from": "s_bdi",
+  "to": "e_iso",
+  "label": "사용"
+ },
+ {
+  "from": "s_bdi",
+  "to": "nanosheet",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "s_bdi",
+  "to": "esige",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "bdi",
+  "to": "i_subleak",
+  "label": "억제"
+ },
+ {
+  "from": "esige",
+  "to": "esd",
+  "label": "대표 예"
+ },
+ {
+  "from": "esige",
+  "to": "sige",
+  "label": "구성"
+ },
+ {
+  "from": "s_sdrecess",
+  "to": "esd",
+  "label": "자리 형성"
+ },
+ {
+  "from": "esd",
+  "to": "epi",
+  "label": "형성 방법"
+ },
+ {
+  "from": "sd",
+  "to": "esd",
+  "label": "같은 개념"
+ },
+ {
+  "from": "s_release",
+  "to": "esige",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "rayleigh",
+  "to": "multipat",
+  "label": "등장 배경"
+ },
+ {
+  "from": "arfi",
+  "to": "rayleigh",
+  "label": "한계"
+ },
+ {
+  "from": "multipat",
+  "to": "dpt",
+  "label": "종류"
+ },
+ {
+  "from": "multipat",
+  "to": "qpt",
+  "label": "종류"
+ },
+ {
+  "from": "multipat",
+  "to": "le3",
+  "label": "종류"
+ },
+ {
+  "from": "dpt",
+  "to": "lele",
+  "label": "구현"
+ },
+ {
+  "from": "dpt",
+  "to": "lfle",
+  "label": "구현"
+ },
+ {
+  "from": "dpt",
+  "to": "sadp",
+  "label": "구현"
+ },
+ {
+  "from": "qpt",
+  "to": "saqp",
+  "label": "구현"
+ },
+ {
+  "from": "sadp",
+  "to": "saqp",
+  "label": "두 번 반복"
+ },
+ {
+  "from": "saqp",
+  "to": "saop",
+  "label": "확장"
+ },
+ {
+  "from": "salele",
+  "to": "lele",
+  "label": "결합"
+ },
+ {
+  "from": "salele",
+  "to": "pspacer",
+  "label": "사용"
+ },
+ {
+  "from": "sos",
+  "to": "saqp",
+  "label": "단계 축소"
+ },
+ {
+  "from": "sidsim",
+  "to": "sadp",
+  "label": "구현 방식"
+ },
+ {
+  "from": "sidsim",
+  "to": "ru",
+  "label": "예: 직접 식각"
+ },
+ {
+  "from": "arfi",
+  "to": "sadp",
+  "label": "출발 패턴"
+ },
+ {
+  "from": "euv",
+  "to": "euvsadp",
+  "label": "사용"
+ },
+ {
+  "from": "euvsadp",
+  "to": "sadp",
+  "label": "결합"
+ },
+ {
+  "from": "euv",
+  "to": "multipat",
+  "label": "일부 대체"
+ },
+ {
+  "from": "highna",
+  "to": "multipat",
+  "label": "일부 대체"
+ },
+ {
+  "from": "euv",
+  "to": "highna",
+  "label": "다음 세대"
+ },
+ {
+  "from": "sadp",
+  "to": "mandrel",
+  "label": "사용"
+ },
+ {
+  "from": "sadp",
+  "to": "pspacer",
+  "label": "사용"
+ },
+ {
+  "from": "sadp",
+  "to": "s_mandrel",
+  "label": "포함"
+ },
+ {
+  "from": "s_mandrel",
+  "to": "s_speb",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_speb",
+  "to": "s_pull",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_pull",
+  "to": "s_transfer",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_transfer",
+  "to": "s_cut",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_mandrel",
+  "to": "mandrel",
+  "label": "형성"
+ },
+ {
+  "from": "s_mandrel",
+  "to": "e_aniso",
+  "label": "사용"
+ },
+ {
+  "from": "s_mandrel",
+  "to": "i_mprofile",
+  "label": "위험"
+ },
+ {
+  "from": "pspacer",
+  "to": "ald",
+  "label": "형성 방법"
+ },
+ {
+  "from": "s_speb",
+  "to": "pspacer",
+  "label": "형성"
+ },
+ {
+  "from": "s_speb",
+  "to": "e_etchback",
+  "label": "사용"
+ },
+ {
+  "from": "s_speb",
+  "to": "e_aniso",
+  "label": "사용"
+ },
+ {
+  "from": "s_pull",
+  "to": "mandrel",
+  "label": "제거"
+ },
+ {
+  "from": "s_pull",
+  "to": "pspacer",
+  "label": "보존해야 함"
+ },
+ {
+  "from": "s_pull",
+  "to": "selectivity",
+  "label": "핵심 지표"
+ },
+ {
+  "from": "s_pull",
+  "to": "i_collapse",
+  "label": "위험"
+ },
+ {
+  "from": "s_transfer",
+  "to": "hardmask",
+  "label": "사용"
+ },
+ {
+  "from": "s_transfer",
+  "to": "e_aniso",
+  "label": "사용"
+ },
+ {
+  "from": "s_transfer",
+  "to": "i_loading",
+  "label": "위험"
+ },
+ {
+  "from": "s_transfer",
+  "to": "i_ler",
+  "label": "위험"
+ },
+ {
+  "from": "cutblock",
+  "to": "s_cut",
+  "label": "사용"
+ },
+ {
+  "from": "cutblock",
+  "to": "sablock",
+  "label": "개선"
+ },
+ {
+  "from": "s_cut",
+  "to": "i_tip",
+  "label": "위험"
+ },
+ {
+  "from": "s_cut",
+  "to": "i_epe",
+  "label": "위험"
+ },
+ {
+  "from": "sadp",
+  "to": "i_pitchwalk",
+  "label": "위험"
+ },
+ {
+  "from": "saqp",
+  "to": "i_pitchwalk",
+  "label": "위험"
+ },
+ {
+  "from": "i_mprofile",
+  "to": "i_pitchwalk",
+  "label": "유발"
+ },
+ {
+  "from": "lele",
+  "to": "i_overlay",
+  "label": "위험"
+ },
+ {
+  "from": "lele",
+  "to": "i_coloring",
+  "label": "위험"
+ },
+ {
+  "from": "i_overlay",
+  "to": "i_epe",
+  "label": "구성"
+ },
+ {
+  "from": "i_ler",
+  "to": "i_epe",
+  "label": "구성"
+ },
+ {
+  "from": "saqp",
+  "to": "i_cost",
+  "label": "위험"
+ },
+ {
+  "from": "saqp",
+  "to": "cutblock",
+  "label": "필요"
+ },
+ {
+  "from": "ocd",
+  "to": "i_pitchwalk",
+  "label": "검출"
+ },
+ {
+  "from": "ocd",
+  "to": "i_metro",
+  "label": "한계"
+ },
+ {
+  "from": "i_metro",
+  "to": "i_pitchwalk",
+  "label": "가림"
+ },
+ {
+  "from": "dsa",
+  "to": "multipat",
+  "label": "보완"
+ },
+ {
+  "from": "asd",
+  "to": "sablock",
+  "label": "보완"
+ },
+ {
+  "from": "sculpta",
+  "to": "i_tip",
+  "label": "line-end 조정"
+ },
+ {
+  "from": "sculpta",
+  "to": "euv",
+  "label": "노광 횟수 축소"
+ },
+ {
+  "from": "e_pulsed",
+  "to": "i_loading",
+  "label": "억제"
+ },
+ {
+  "from": "e_pulsed",
+  "to": "selectivity",
+  "label": "개선"
+ },
+ {
+  "from": "e_ale",
+  "to": "s_mandrel",
+  "label": "정밀 trim 후보"
+ },
+ {
+  "from": "smic",
+  "to": "saqp",
+  "label": "DUV 멀티패터닝"
+ },
+ {
+  "from": "intel10nm",
+  "to": "saqp",
+  "label": "양산 적용"
+ },
+ {
+  "from": "dram",
+  "to": "saqp",
+  "label": "사용"
+ },
+ {
+  "from": "dram",
+  "to": "euv",
+  "label": "일부 레이어"
+ },
+ {
+  "from": "saqp",
+  "to": "s_stack",
+  "label": "핀 패터닝 (Intel 10nm)"
+ },
+ {
+  "from": "multipat",
+  "to": "s_via",
+  "label": "미세 배선"
+ },
+ {
+  "from": "highna",
+  "to": "i_tip",
+  "label": "개선 시연"
+ },
+ {
+  "from": "sheath",
+  "to": "bohm",
+  "label": "경계 조건"
+ },
+ {
+  "from": "sheath",
+  "to": "childlaw",
+  "label": "고전압 형태"
+ },
+ {
+  "from": "sheath",
+  "to": "floatpot",
+  "label": "부유 시 전위"
+ },
+ {
+  "from": "sheath",
+  "to": "debye",
+  "label": "두께 척도"
+ },
+ {
+  "from": "sheath",
+  "to": "ied",
+  "label": "결정"
+ },
+ {
+  "from": "sheath",
+  "to": "e_aniso",
+  "label": "수직 이온 입사"
+ },
+ {
+  "from": "selfbias",
+  "to": "ied",
+  "label": "에너지 결정"
+ },
+ {
+  "from": "rfbias",
+  "to": "selfbias",
+  "label": "형성"
+ },
+ {
+  "from": "ied",
+  "to": "sputteryield",
+  "label": "수율 결정"
+ },
+ {
+  "from": "ied",
+  "to": "i_notch",
+  "label": "저에너지 이온 꺾임"
+ },
+ {
+  "from": "ied",
+  "to": "i_charging",
+  "label": "저주파 시 대전↑"
+ },
+ {
+  "from": "te",
+  "to": "bohm",
+  "label": "속도 결정"
+ },
+ {
+  "from": "te",
+  "to": "floatpot",
+  "label": "비례"
+ },
+ {
+  "from": "eedf",
+  "to": "te",
+  "label": "대표값"
+ },
+ {
+  "from": "eedf",
+  "to": "dissociation",
+  "label": "속도 결정"
+ },
+ {
+  "from": "eedf",
+  "to": "oes",
+  "label": "세기 좌우"
+ },
+ {
+  "from": "globalmodel",
+  "to": "te",
+  "label": "입자 균형"
+ },
+ {
+  "from": "stochheat",
+  "to": "eedf",
+  "label": "두 온도 분포"
+ },
+ {
+  "from": "ambipolar",
+  "to": "globalmodel",
+  "label": "손실 경로"
+ },
+ {
+  "from": "electroneg",
+  "to": "bohm",
+  "label": "조건 수정"
+ },
+ {
+  "from": "dissattach",
+  "to": "electroneg",
+  "label": "음이온 생성"
+ },
+ {
+  "from": "cl2",
+  "to": "dissattach",
+  "label": "문턱 0 부착"
+ },
+ {
+  "from": "cf4",
+  "to": "dissociation",
+  "label": "F·CF_x 생성"
+ },
+ {
+  "from": "dissociation",
+  "to": "fc_ratio",
+  "label": "정함"
+ },
+ {
+  "from": "ccp",
+  "to": "stochheat",
+  "label": "주 가열"
+ },
+ {
+  "from": "ccp",
+  "to": "selfbias",
+  "label": "형성"
+ },
+ {
+  "from": "ccp",
+  "to": "dualfreq",
+  "label": "발전형"
+ },
+ {
+  "from": "ccp",
+  "to": "merie",
+  "label": "변형"
+ },
+ {
+  "from": "dualfreq",
+  "to": "ied",
+  "label": "분리 제어"
+ },
+ {
+  "from": "icp",
+  "to": "skindepth",
+  "label": "전력 흡수층"
+ },
+ {
+  "from": "icp",
+  "to": "ehmode",
+  "label": "운전 특성"
+ },
+ {
+  "from": "icp",
+  "to": "rfbias",
+  "label": "에너지 제어"
+ },
+ {
+  "from": "ecr",
+  "to": "rfbias",
+  "label": "에너지 제어"
+ },
+ {
+  "from": "helicon",
+  "to": "rfbias",
+  "label": "에너지 제어"
+ },
+ {
+  "from": "electroneg",
+  "to": "ehmode",
+  "label": "이완 진동"
+ },
+ {
+  "from": "matching",
+  "to": "ccp",
+  "label": "전력 전달"
+ },
+ {
+  "from": "matching",
+  "to": "icp",
+  "label": "전력 전달"
+ },
+ {
+  "from": "merie",
+  "to": "i_charging",
+  "label": "불균일로 유발"
+ },
+ {
+  "from": "e_pulsed",
+  "to": "i_charging",
+  "label": "T_e↓로 완화"
+ },
+ {
+  "from": "e_pulsed",
+  "to": "i_particle",
+  "label": "입자 생성 억제"
+ },
+ {
+  "from": "e_pulsed",
+  "to": "electroneg",
+  "label": "음이온 방출"
+ },
+ {
+  "from": "pecvd",
+  "to": "hardmask",
+  "label": "증착"
+ },
+ {
+  "from": "pecvd",
+  "to": "pspacer",
+  "label": "증착"
+ },
+ {
+  "from": "piii",
+  "to": "childlaw",
+  "label": "매트릭스 쉬스"
+ },
+ {
+  "from": "magnetron",
+  "to": "e_sputter",
+  "label": "원리 공유"
+ },
+ {
+  "from": "e_aniso",
+  "to": "e_ionenh",
+  "label": "주 메커니즘"
+ },
+ {
+  "from": "e_aniso",
+  "to": "e_inhib",
+  "label": "측벽 보호"
+ },
+ {
+  "from": "e_ionenh",
+  "to": "e_chemsput",
+  "label": "유력 메커니즘"
+ },
+ {
+  "from": "e_ionenh",
+  "to": "sputteryield",
+  "label": "수율"
+ },
+ {
+  "from": "e_inhib",
+  "to": "fcpolymer",
+  "label": "억제막"
+ },
+ {
+  "from": "e_sputter",
+  "to": "i_facet",
+  "label": "유발"
+ },
+ {
+  "from": "e_sputter",
+  "to": "sputteryield",
+  "label": "수율"
+ },
+ {
+  "from": "e_iso",
+  "to": "sticking",
+  "label": "흡착"
+ },
+ {
+  "from": "fluxlimit",
+  "to": "i_loading",
+  "label": "중성 제한 시"
+ },
+ {
+  "from": "fluxlimit",
+  "to": "e_ionenh",
+  "label": "속도 모델"
+ },
+ {
+  "from": "fc_ratio",
+  "to": "fcpolymer",
+  "label": "낮으면 증착"
+ },
+ {
+  "from": "fc_ratio",
+  "to": "selectivity",
+  "label": "조절"
+ },
+ {
+  "from": "c4f8",
+  "to": "fc_ratio",
+  "label": "낮춤"
+ },
+ {
+  "from": "cf4",
+  "to": "fc_ratio",
+  "label": "높음(4)"
+ },
+ {
+  "from": "c4f8",
+  "to": "sio2",
+  "label": "선택 식각"
+ },
+ {
+  "from": "fcpolymer",
+  "to": "si",
+  "label": "선택비(Si 보호)"
+ },
+ {
+  "from": "sio2",
+  "to": "e_ionenh",
+  "label": "주로 이온 구동"
+ },
+ {
+  "from": "sifx",
+  "to": "si",
+  "label": "표면층"
+ },
+ {
+  "from": "e_chemsput",
+  "to": "sifx",
+  "label": "무대"
+ },
+ {
+  "from": "dopingeff",
+  "to": "si",
+  "label": "식각 속도 차"
+ },
+ {
+  "from": "volatility",
+  "to": "al",
+  "label": "AlCl₃ 휘발/AlF₃ 비휘발"
+ },
+ {
+  "from": "volatility",
+  "to": "cu",
+  "label": "염화물 비휘발"
+ },
+ {
+  "from": "volatility",
+  "to": "selectivity",
+  "label": "화학 선택"
+ },
+ {
+  "from": "cl2",
+  "to": "al",
+  "label": "주 식각종"
+ },
+ {
+  "from": "cl2",
+  "to": "si",
+  "label": "이방성 식각"
+ },
+ {
+  "from": "i_charging",
+  "to": "antenna",
+  "label": "비례"
+ },
+ {
+  "from": "i_charging",
+  "to": "eshading",
+  "label": "원인"
+ },
+ {
+  "from": "eshading",
+  "to": "i_notch",
+  "label": "유발"
+ },
+ {
+  "from": "i_charging",
+  "to": "floatpot",
+  "label": "기준 전위"
+ },
+ {
+  "from": "i_aging",
+  "to": "oes",
+  "label": "감시"
+ },
+ {
+  "from": "oes",
+  "to": "endpoint",
+  "label": "활용"
+ },
+ {
+  "from": "actinometry",
+  "to": "oes",
+  "label": "정량화"
+ },
+ {
+  "from": "endpoint",
+  "to": "s_pad",
+  "label": "적용 예"
+ },
+ {
+  "from": "langmuir",
+  "to": "te",
+  "label": "측정"
+ },
+ {
+  "from": "langmuir",
+  "to": "eedf",
+  "label": "측정"
+ },
+ {
+  "from": "i_particle",
+  "to": "sheath",
+  "label": "경계에 포획"
+ },
+ {
+  "from": "i_facet",
+  "to": "hardmask",
+  "label": "마스크 손실"
+ },
+ {
+  "from": "sidsim",
+  "to": "beol",
+  "label": "배선 구현 방식"
+ },
+ {
+  "from": "cutblock",
+  "to": "beol",
+  "label": "배선 끊기"
+ },
+ {
+  "from": "highna",
+  "to": "ru",
+  "label": "Ru 직접 식각 시연"
+ },
+ {
+  "from": "beol",
+  "to": "volatility",
+  "label": "다마신 이유(Cu 비휘발)"
+ },
+ {
+  "from": "s_almetal",
+  "to": "e_inhib",
+  "label": "이방성 확보"
+ },
+ {
+  "from": "i_corrosion",
+  "to": "cl2",
+  "label": "염소 잔류"
+ },
+ {
+  "from": "e_descum",
+  "to": "e_iso",
+  "label": "O 원자 등방성 제거"
+ },
+ {
+  "from": "e_wet",
+  "to": "i_undercut",
+  "label": "등방성이라 유발"
+ },
+ {
+  "from": "i_punch",
+  "to": "selectivity",
+  "label": "하부막 선택비 부족"
+ },
+ {
+  "from": "wat",
+  "to": "i_charging",
+  "label": "안테나 구조로 검출 (일반 지식)"
+ },
+ {
+  "from": "i_short",
+  "to": "i_particle",
+  "label": "파티클이 유발 (일반 지식)"
+ },
+ {
+  "from": "s_pull",
+  "to": "e_iso",
+  "label": "선택 제거(탄소 맨드릴은 O계)"
+ },
+ {
+  "from": "s_speb",
+  "to": "i_facet",
+  "label": "윗부분 손실"
+ },
+ {
+  "from": "sos",
+  "to": "selectivity",
+  "label": "까다로운 선택비"
+ },
+ {
+  "from": "highna",
+  "to": "hardmask",
+  "label": "얇은 레지스트 → HM 선택비↑"
+ },
+ {
+  "from": "s_transfer",
+  "to": "e_ionenh",
+  "label": "이온 구동 전사"
+ },
+ {
+  "from": "s_transfer",
+  "to": "i_facet",
+  "label": "마스크 모서리 깎임"
+ },
+ {
+  "from": "asd",
+  "to": "sticking",
+  "label": "선택적 핵생성"
+ },
+ {
+  "from": "e_ale",
+  "to": "e_pulsed",
+  "label": "구분됨(펄스 ≠ ALE)"
+ },
+ {
+  "from": "i_aging",
+  "to": "i_particle",
+  "label": "벽 막 박리"
+ },
+ {
+  "from": "cutblock",
+  "to": "euv",
+  "label": "EUV 블록"
+ },
+ {
+  "from": "euv",
+  "to": "i_ler",
+  "label": "확률적 거칠기"
+ },
+ {
+  "from": "dsa",
+  "to": "i_ler",
+  "label": "거칠기 보정"
+ },
+ {
+  "from": "saop",
+  "to": "i_cost",
+  "label": "긴 공정"
+ },
+ {
+  "from": "le3",
+  "to": "i_overlay",
+  "label": "세 집단 정렬"
+ },
+ {
+  "from": "lfle",
+  "to": "i_overlay",
+  "label": "두 노광 정렬"
+ },
+ {
+  "from": "i_coloring",
+  "to": "le3",
+  "label": "2색 불가 시 3색"
+ },
+ {
+  "from": "smic",
+  "to": "arfi",
+  "label": "DUV 멀티패터닝"
+ },
+ {
+  "from": "intel10nm",
+  "to": "finfet",
+  "label": "fin pitch 34 nm"
+ },
+ {
+  "from": "i_collapse",
+  "to": "i_stiction",
+  "label": "같은 모세관력"
+ },
+ {
+  "from": "pspacer",
+  "to": "innerspacer",
+  "label": "같은 형성 원리(ALD+에치백)"
+ },
+ {
+  "from": "pspacer",
+  "to": "outerspacer",
+  "label": "같은 형성 원리"
+ },
+ {
+  "from": "s_contact",
+  "to": "sio2",
+  "label": "산화막 관통"
+ },
+ {
+  "from": "s_contact",
+  "to": "eshading",
+  "label": "고종횡비에서 심함"
+ },
+ {
+  "from": "s_contact",
+  "to": "c4f8",
+  "label": "저 F/C 선택 식각 (일반 지식)"
+ },
+ {
+  "from": "s_stack",
+  "to": "cl2",
+  "label": "Si 이방성 식각(할로젠)"
+ },
+ {
+  "from": "contact",
+  "to": "hkmg",
+  "label": "게이트 캡 기준 자기정렬"
+ },
+ {
+  "from": "sio2",
+  "to": "sti",
+  "label": "충진 절연막"
+ },
+ {
+  "from": "debye",
+  "to": "childlaw",
+  "label": "두께 척도(~100 λ_D)"
+ },
+ {
+  "from": "skindepth",
+  "to": "dualfreq",
+  "label": "고주파 표피 효과"
+ },
+ {
+  "from": "actinometry",
+  "to": "fc_ratio",
+  "label": "F 밀도 측정"
+ },
+ {
+  "from": "dopingeff",
+  "to": "cl2",
+  "label": "Cl에서 큼"
+ },
+ {
+  "from": "sticking",
+  "to": "i_loading",
+  "label": "벽 재결합 확률"
+ },
+ {
+  "from": "selfbias",
+  "to": "sheath",
+  "label": "전압 조절",
+  "posts": [
+   790
+  ]
+ },
+ {
+  "from": "matching",
+  "to": "selfbias",
+  "label": "형성 기여",
+  "posts": [
+   790
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "e_sputter",
+  "label": "에너지 공급",
+  "posts": [
+   804
+  ]
+ },
+ {
+  "from": "matching",
+  "to": "p_reflected_power",
+  "label": "반사 억제",
+  "posts": [
+   812,
+   592
+  ]
+ },
+ {
+  "from": "i_aging",
+  "to": "p_reflected_power",
+  "label": "변동 원인",
+  "posts": [
+   592
+  ]
+ },
+ {
+  "from": "e_sputter",
+  "to": "i_particle",
+  "label": "유발 가능",
+  "posts": [
+   403
+  ]
+ },
+ {
+  "from": "p_electrostatic_chuc",
+  "to": "sheath",
+  "label": "회로 연계",
+  "posts": [
+   805
+  ]
+ },
+ {
+  "from": "p_electrostatic_chuc",
+  "to": "p_capacitance",
+  "label": "모델 인자",
+  "posts": [
+   845
+  ]
+ },
+ {
+  "from": "dissociation",
+  "to": "p_radical",
+  "label": "생성",
+  "posts": [
+   438
+  ]
+ },
+ {
+  "from": "p_radical",
+  "to": "e_ionenh",
+  "label": "반응종 공급",
+  "posts": [
+   438
+  ]
+ },
+ {
+  "from": "oes",
+  "to": "sputteryield",
+  "label": "진단",
+  "posts": [
+   824
+  ]
+ },
+ {
+  "from": "oes",
+  "to": "p_tool_to_tool_match",
+  "label": "비교 진단",
+  "posts": [
+   850
+  ]
+ },
+ {
+  "from": "langmuir",
+  "to": "floatpot",
+  "label": "측정",
+  "posts": [
+   697
+  ]
+ },
+ {
+  "from": "matching",
+  "to": "p_reactance",
+  "label": "상쇄",
+  "posts": [
+   587,
+   555
+  ]
+ },
+ {
+  "from": "p_collision_cross_se",
+  "to": "p_mean_free_path",
+  "label": "결정 인자",
+  "posts": [
+   575,
+   259
+  ]
+ },
+ {
+  "from": "p_mean_free_path",
+  "to": "e_aniso",
+  "label": "방향성 영향",
+  "posts": [
+   621,
+   889
+  ]
+ },
+ {
+  "from": "langmuir",
+  "to": "magnetron",
+  "label": "분포 진단",
+  "posts": [
+   421
+  ]
+ },
+ {
+  "from": "p_paschen_s_law",
+  "to": "p_breakdown_voltage",
+  "label": "관계 설명",
+  "posts": [
+   880,
+   733
+  ]
+ },
+ {
+  "from": "p_paschen_s_law",
+  "to": "ccp",
+  "label": "운전 해석",
+  "posts": [
+   709
+  ]
+ },
+ {
+  "from": "eedf",
+  "to": "p_reaction_rate_coef",
+  "label": "결정 인자",
+  "posts": [
+   865,
+   912
+  ]
+ },
+ {
+  "from": "p_reaction_rate_coef",
+  "to": "dissociation",
+  "label": "반응률 결정",
+  "posts": [
+   866,
+   700
+  ]
+ },
+ {
+  "from": "p_quasi_neutrality",
+  "to": "sheath",
+  "label": "조건 이탈",
+  "posts": [
+   427
+  ]
+ },
+ {
+  "from": "p_negative_ion",
+  "to": "p_quasi_neutrality",
+  "label": "전하 기여",
+  "posts": [
+   800
+  ]
+ },
+ {
+  "from": "oes",
+  "to": "te",
+  "label": "진단",
+  "posts": [
+   697
+  ]
+ },
+ {
+  "from": "ambipolar",
+  "to": "p_remote_plasma_sour",
+  "label": "수송",
+  "posts": [
+   452
+  ]
+ },
+ {
+  "from": "ambipolar",
+  "to": "icp",
+  "label": "분포 형성",
+  "posts": [
+   189,
+   628
+  ]
+ },
+ {
+  "from": "ccp",
+  "to": "dissociation",
+  "label": "생성 촉진",
+  "posts": [
+   444
+  ]
+ },
+ {
+  "from": "p_dielectric_barrier",
+  "to": "p_arcing",
+  "label": "억제",
+  "posts": [
+   245,
+   118
+  ]
+ },
+ {
+  "from": "p_dielectric_barrier",
+  "to": "p_streamer",
+  "label": "발생 유도",
+  "posts": [
+   245,
+   118
+  ]
+ },
+ {
+  "from": "p_dielectric_barrier",
+  "to": "p_secondary_electron2",
+  "label": "형성 관여",
+  "posts": [
+   133
+  ]
+ },
+ {
+  "from": "p_electron_attachmen",
+  "to": "p_negative_ion",
+  "label": "생성",
+  "posts": [
+   136,
+   142
+  ]
+ },
+ {
+  "from": "p_negative_ion",
+  "to": "e_pulsed",
+  "label": "대전 완화",
+  "posts": [
+   674
+  ]
+ },
+ {
+  "from": "p_negative_ion",
+  "to": "langmuir",
+  "label": "측정 영향",
+  "posts": [
+   142
+  ]
+ },
+ {
+  "from": "p_mobility",
+  "to": "sheath",
+  "label": "형성 원인",
+  "posts": [
+   441,
+   438
+  ]
+ },
+ {
+  "from": "p_mobility",
+  "to": "selfbias",
+  "label": "형성 원인",
+  "posts": [
+   185,
+   141
+  ]
+ },
+ {
+  "from": "te",
+  "to": "sheath",
+  "label": "전위 영향",
+  "posts": [
+   833,
+   277
+  ]
+ },
+ {
+  "from": "p_plasma_potential",
+  "to": "sheath",
+  "label": "전압 결정",
+  "posts": [
+   349
+  ]
+ },
+ {
+  "from": "p_plasma_potential",
+  "to": "floatpot",
+  "label": "전위 비교",
+  "posts": [
+   125
+  ]
+ },
+ {
+  "from": "ccp",
+  "to": "p_plasma_potential",
+  "label": "전위 영향",
+  "posts": [
+   349
+  ]
+ },
+ {
+  "from": "p_lorentz_force",
+  "to": "p_magnetic_confineme",
+  "label": "구속 기전",
+  "posts": [
+   629,
+   135
+  ]
+ },
+ {
+  "from": "p_lorentz_force",
+  "to": "p_electric_field_cro",
+  "label": "운동 기전",
+  "posts": [
+   184,
+   135
+  ]
+ },
+ {
+  "from": "p_lorentz_force",
+  "to": "merie",
+  "label": "동작 원리",
+  "posts": [
+   184
+  ]
+ },
+ {
+  "from": "p_breakdown_voltage",
+  "to": "p_electrical_breakdo",
+  "label": "개시 기준",
+  "posts": [
+   242
+  ]
+ },
+ {
+  "from": "p_secondary_electron2",
+  "to": "p_breakdown_voltage",
+  "label": "전압 저감",
+  "posts": [
+   369
+  ]
+ },
+ {
+  "from": "p_streamer",
+  "to": "p_arcing",
+  "label": "발달 경로",
+  "posts": [
+   822
+  ]
+ },
+ {
+  "from": "p_electrical_breakdo",
+  "to": "p_arcing",
+  "label": "발생 기전",
+  "posts": [
+   590
+  ]
+ },
+ {
+  "from": "i_particle",
+  "to": "p_arcing",
+  "label": "발생 기여",
+  "posts": [
+   590
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "ccp",
+  "label": "전자 가열",
+  "posts": [
+   230,
+   90
+  ]
+ },
+ {
+  "from": "ccp",
+  "to": "p_arcing",
+  "label": "발생 가능",
+  "posts": [
+   714
+  ]
+ },
+ {
+  "from": "globalmodel",
+  "to": "sheath",
+  "label": "손실 반영",
+  "posts": [
+   855
+  ]
+ },
+ {
+  "from": "p_paschen_s_law",
+  "to": "p_electrical_breakdo",
+  "label": "조건 설명",
+  "posts": [
+   343
+  ]
+ },
+ {
+  "from": "p_electrical_breakdo",
+  "to": "p_corona_discharge",
+  "label": "개시",
+  "posts": [
+   518
+  ]
+ },
+ {
+  "from": "matching",
+  "to": "i_aging",
+  "label": "변화 진단",
+  "posts": [
+   398
+  ]
+ },
+ {
+  "from": "e_sputter",
+  "to": "p_corona_discharge",
+  "label": "전극 침식",
+  "posts": [
+   552
+  ]
+ },
+ {
+  "from": "p_paschen_s_law",
+  "to": "p_corona_discharge",
+  "label": "조건 해석",
+  "posts": [
+   461
+  ]
+ },
+ {
+  "from": "skindepth",
+  "to": "p_radical",
+  "label": "생성 분포",
+  "posts": [
+   337
+  ]
+ },
+ {
+  "from": "p_plasma_frequency",
+  "to": "rfbias",
+  "label": "주파수 기준",
+  "posts": [
+   690
+  ]
+ },
+ {
+  "from": "p_plasma_frequency",
+  "to": "p_plasma_impedance",
+  "label": "특성 결정",
+  "posts": [
+   395
+  ]
+ },
+ {
+  "from": "p_voltage_current_se",
+  "to": "p_plasma_impedance",
+  "label": "진단",
+  "posts": [
+   859,
+   398
+  ]
+ },
+ {
+  "from": "p_voltage_current_se",
+  "to": "matching",
+  "label": "정합 진단",
+  "posts": [
+   474,
+   608
+  ]
+ },
+ {
+  "from": "p_voltage_current_se",
+  "to": "i_aging",
+  "label": "변화 진단",
+  "posts": [
+   740
+  ]
+ },
+ {
+  "from": "oes",
+  "to": "p_fault_detection_an",
+  "label": "진단 입력",
+  "posts": [
+   668,
+   576
+  ]
+ },
+ {
+  "from": "p_voltage_current_se",
+  "to": "p_fault_detection_an",
+  "label": "진단 입력",
+  "posts": [
+   576
+  ]
+ },
+ {
+  "from": "p_fault_detection_an",
+  "to": "i_aging",
+  "label": "상태 진단",
+  "posts": [
+   612
+  ]
+ },
+ {
+  "from": "p_stepwise_ionizatio",
+  "to": "p_metastable_state",
+  "label": "중간 상태",
+  "posts": [
+   589,
+   502
+  ]
+ },
+ {
+  "from": "p_residence_time",
+  "to": "p_stepwise_ionizatio",
+  "label": "반응량 영향",
+  "posts": [
+   589,
+   502
+  ]
+ },
+ {
+  "from": "p_reactance",
+  "to": "p_plasma_impedance",
+  "label": "구성 요소",
+  "posts": [
+   555
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "p_reactance",
+  "label": "용량 성분",
+  "posts": [
+   608
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "p_sheath_potential_d",
+  "label": "전위 강하",
+  "posts": [
+   216
+  ]
+ },
+ {
+  "from": "p_sheath_potential_d",
+  "to": "e_aniso",
+  "label": "에너지 조절",
+  "posts": [
+   916
+  ]
+ },
+ {
+  "from": "p_sheath_potential_d",
+  "to": "selfbias",
+  "label": "변동 연계",
+  "posts": [
+   490
+  ]
+ },
+ {
+  "from": "p_edge_ring",
+  "to": "sheath",
+  "label": "전기장 조절",
+  "posts": [
+   861
+  ]
+ },
+ {
+  "from": "p_edge_ring",
+  "to": "ccp",
+  "label": "균일도 조절",
+  "posts": [
+   835
+  ]
+ },
+ {
+  "from": "oes",
+  "to": "p_excitation",
+  "label": "발광 진단",
+  "posts": [
+   515
+  ]
+ },
+ {
+  "from": "p_excitation",
+  "to": "endpoint",
+  "label": "검출 신호",
+  "posts": [
+   386
+  ]
+ },
+ {
+  "from": "p_remote_plasma_sour",
+  "to": "dissociation",
+  "label": "생성 기전",
+  "posts": [
+   802
+  ]
+ },
+ {
+  "from": "p_remote_plasma_sour",
+  "to": "p_radical",
+  "label": "생성·전달",
+  "posts": [
+   619
+  ]
+ },
+ {
+  "from": "i_aging",
+  "to": "p_remote_plasma_sour",
+  "label": "벽 상태 영향",
+  "posts": [
+   802
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "p_secondary_electron",
+  "label": "가속",
+  "posts": [
+   578,
+   254
+  ]
+ },
+ {
+  "from": "p_secondary_electron",
+  "to": "dissociation",
+  "label": "유발",
+  "posts": [
+   481
+  ]
+ },
+ {
+  "from": "p_secondary_electron",
+  "to": "p_excitation",
+  "label": "유발",
+  "posts": [
+   481
+  ]
+ },
+ {
+  "from": "electroneg",
+  "to": "sheath",
+  "label": "불안정 유발",
+  "posts": [
+   832
+  ]
+ },
+ {
+  "from": "electroneg",
+  "to": "matching",
+  "label": "정합 변동",
+  "posts": [
+   832
+  ]
+ },
+ {
+  "from": "p_electron_attachmen",
+  "to": "electroneg",
+  "label": "음이온 생성",
+  "posts": [
+   178
+  ]
+ },
+ {
+  "from": "p_electric_field_cro",
+  "to": "merie",
+  "label": "밀도 향상",
+  "posts": [
+   184
+  ]
+ },
+ {
+  "from": "p_electric_field_cro",
+  "to": "magnetron",
+  "label": "입자 운동",
+  "posts": [
+   135
+  ]
+ },
+ {
+  "from": "p_electron_attachmen",
+  "to": "eedf",
+  "label": "분포 변화",
+  "posts": [
+   676
+  ]
+ },
+ {
+  "from": "p_standing_wave",
+  "to": "ccp",
+  "label": "밀도 분포",
+  "posts": [
+   433
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "p_standing_wave",
+  "label": "형성 조건",
+  "posts": [
+   433
+  ]
+ },
+ {
+  "from": "p_residence_time",
+  "to": "p_metastable_state",
+  "label": "입자 손실",
+  "posts": [
+   502
+  ]
+ },
+ {
+  "from": "p_remote_plasma_sour",
+  "to": "p_metastable_state",
+  "label": "활용 입자",
+  "posts": [
+   415
+  ]
+ },
+ {
+  "from": "p_residence_time",
+  "to": "dissociation",
+  "label": "해리 영향",
+  "posts": [
+   194
+  ]
+ },
+ {
+  "from": "p_throttle_valve",
+  "to": "p_residence_time",
+  "label": "배기 조절",
+  "posts": [
+   591,
+   764
+  ]
+ },
+ {
+  "from": "p_faraday_shield",
+  "to": "icp",
+  "label": "결합 조절",
+  "posts": [
+   671
+  ]
+ },
+ {
+  "from": "p_faraday_shield",
+  "to": "selfbias",
+  "label": "감소",
+  "posts": [
+   109
+  ]
+ },
+ {
+  "from": "p_particle_flux",
+  "to": "e_sputter",
+  "label": "효과 결정",
+  "posts": [
+   453
+  ]
+ },
+ {
+  "from": "p_particle_flux",
+  "to": "p_radical",
+  "label": "입사량 표현",
+  "posts": [
+   736
+  ]
+ },
+ {
+  "from": "bohm",
+  "to": "p_particle_flux",
+  "label": "산정",
+  "posts": [
+   618
+  ]
+ },
+ {
+  "from": "p_peak_to_peak_volta",
+  "to": "selfbias",
+  "label": "조절",
+  "posts": [
+   689
+  ]
+ },
+ {
+  "from": "p_peak_to_peak_volta",
+  "to": "rfbias",
+  "label": "전압 지표",
+  "posts": [
+   689
+  ]
+ },
+ {
+  "from": "p_edge_ring",
+  "to": "p_peak_to_peak_volta",
+  "label": "전압 영향",
+  "posts": [
+   845
+  ]
+ },
+ {
+  "from": "oes",
+  "to": "p_virtual_metrology",
+  "label": "입력 신호",
+  "posts": [
+   576
+  ]
+ },
+ {
+  "from": "p_voltage_current_se",
+  "to": "p_virtual_metrology",
+  "label": "입력 신호",
+  "posts": [
+   576
+  ]
+ },
+ {
+  "from": "p_virtual_metrology",
+  "to": "p_fault_detection_an",
+  "label": "진단 활용",
+  "posts": [
+   616
+  ]
+ },
+ {
+  "from": "i_particle",
+  "to": "p_micro_arc",
+  "label": "발생 원인",
+  "posts": [
+   637
+  ]
+ },
+ {
+  "from": "p_reflected_power",
+  "to": "p_micro_arc",
+  "label": "동반 가능",
+  "posts": [
+   871
+  ]
+ },
+ {
+  "from": "p_sheath_potential_d",
+  "to": "p_sheath_acceleratio",
+  "label": "가속 에너지",
+  "posts": [
+   877
+  ]
+ },
+ {
+  "from": "p_sheath_acceleratio",
+  "to": "e_ionenh",
+  "label": "식각 촉진",
+  "posts": [
+   826
+  ]
+ },
+ {
+  "from": "i_aging",
+  "to": "selfbias",
+  "label": "변동 완화",
+  "posts": [
+   605
+  ]
+ },
+ {
+  "from": "i_aging",
+  "to": "p_radical",
+  "label": "벽면 반응",
+  "posts": [
+   646
+  ]
+ },
+ {
+  "from": "i_aging",
+  "to": "p_tool_to_tool_match",
+  "label": "관리 인자",
+  "posts": [
+   701
+  ]
+ },
+ {
+  "from": "p_thermionic_electro",
+  "to": "p_electrical_breakdo",
+  "label": "개시 지원",
+  "posts": [
+   145
+  ]
+ },
+ {
+  "from": "p_thermionic_electro",
+  "to": "p_arcing",
+  "label": "개시 가능",
+  "posts": [
+   338
+  ]
+ },
+ {
+  "from": "p_secondary_electron2",
+  "to": "p_secondary_electron",
+  "label": "생성",
+  "posts": [
+   218
+  ]
+ },
+ {
+  "from": "p_secondary_electron2",
+  "to": "langmuir",
+  "label": "재료 기준",
+  "posts": [
+   100
+  ]
+ },
+ {
+  "from": "p_magnetic_confineme",
+  "to": "p_radical",
+  "label": "반응률 영향",
+  "posts": [
+   293
+  ]
+ },
+ {
+  "from": "ecr",
+  "to": "dissociation",
+  "label": "촉진",
+  "posts": [
+   310
+  ]
+ },
+ {
+  "from": "ecr",
+  "to": "te",
+  "label": "가열",
+  "posts": [
+   310
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "p_charge_exchange",
+  "label": "충돌 영역",
+  "posts": [
+   654
+  ]
+ },
+ {
+  "from": "p_charge_exchange",
+  "to": "pecvd",
+  "label": "손상 완화",
+  "posts": [
+   227
+  ]
+ },
+ {
+  "from": "matching",
+  "to": "p_plasma_impedance",
+  "label": "정합",
+  "posts": [
+   812
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "p_plasma_impedance",
+  "label": "용량 성분",
+  "posts": [
+   440
+  ]
+ },
+ {
+  "from": "te",
+  "to": "p_plasma_impedance",
+  "label": "변화 인자",
+  "posts": [
+   812
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "stochheat",
+  "label": "가열 기전",
+  "posts": [
+   379
+  ]
+ },
+ {
+  "from": "stochheat",
+  "to": "icp",
+  "label": "가열 기여",
+  "posts": [
+   873
+  ]
+ },
+ {
+  "from": "selfbias",
+  "to": "i_particle",
+  "label": "부유 유지",
+  "posts": [
+   823
+  ]
+ },
+ {
+  "from": "te",
+  "to": "debye",
+  "label": "길이 변화",
+  "posts": [
+   108
+  ]
+ },
+ {
+  "from": "i_aging",
+  "to": "p_process_drift",
+  "label": "유발",
+  "posts": [
+   712,
+   473
+  ]
+ },
+ {
+  "from": "e_sputter",
+  "to": "p_process_drift",
+  "label": "유발",
+  "posts": [
+   723
+  ]
+ },
+ {
+  "from": "p_showerhead",
+  "to": "p_process_drift",
+  "label": "침식 영향",
+  "posts": [
+   723
+  ]
+ },
+ {
+  "from": "rfbias",
+  "to": "e_ionenh",
+  "label": "식각 촉진",
+  "posts": [
+   851
+  ]
+ },
+ {
+  "from": "rfbias",
+  "to": "e_aniso",
+  "label": "방향성 강화",
+  "posts": [
+   851
+  ]
+ },
+ {
+  "from": "p_inelastic_collisio",
+  "to": "dissociation",
+  "label": "반응 유형",
+  "posts": [
+   926,
+   866
+  ]
+ },
+ {
+  "from": "p_inelastic_collisio",
+  "to": "p_excitation",
+  "label": "반응 유형",
+  "posts": [
+   866
+  ]
+ },
+ {
+  "from": "p_reaction_rate_coef",
+  "to": "p_inelastic_collisio",
+  "label": "반응 구분",
+  "posts": [
+   866
+  ]
+ },
+ {
+  "from": "p_showerhead",
+  "to": "i_particle",
+  "label": "축적 완화",
+  "posts": [
+   456
+  ]
+ },
+ {
+  "from": "p_throttle_valve",
+  "to": "matching",
+  "label": "정합값 변화",
+  "posts": [
+   652
+  ]
+ },
+ {
+  "from": "p_throttle_valve",
+  "to": "p_plasma_impedance",
+  "label": "압력 영향",
+  "posts": [
+   652
+  ]
+ },
+ {
+  "from": "rfbias",
+  "to": "sputteryield",
+  "label": "에너지 조절",
+  "posts": [
+   332
+  ]
+ },
+ {
+  "from": "sputteryield",
+  "to": "i_particle",
+  "label": "노듈 기여",
+  "posts": [
+   128
+  ]
+ },
+ {
+  "from": "p_arcing",
+  "to": "p_thermal_plasma",
+  "label": "열원",
+  "posts": [
+   394
+  ]
+ },
+ {
+  "from": "p_collision_frequenc",
+  "to": "p_thermal_plasma",
+  "label": "열평형 촉진",
+  "posts": [
+   150
+  ]
+ },
+ {
+  "from": "eedf",
+  "to": "icp",
+  "label": "반응 조절",
+  "posts": [
+   238
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "p_cathode_fall",
+  "label": "형성 영역",
+  "posts": [
+   578,
+   254
+  ]
+ },
+ {
+  "from": "p_cathode_fall",
+  "to": "p_secondary_electron",
+  "label": "가속",
+  "posts": [
+   578,
+   254
+  ]
+ },
+ {
+  "from": "p_ionizer",
+  "to": "p_surface_charging",
+  "label": "제전 대상",
+  "posts": [
+   367,
+   392
+  ]
+ },
+ {
+  "from": "p_ionizer",
+  "to": "p_ultraviolet_radiat",
+  "label": "생성",
+  "posts": [
+   734
+  ]
+ },
+ {
+  "from": "p_ionizer",
+  "to": "p_negative_ion",
+  "label": "생성",
+  "posts": [
+   734,
+   367
+  ]
+ },
+ {
+  "from": "p_ionization_cross_s",
+  "to": "p_reaction_rate_coef",
+  "label": "계산 인자",
+  "posts": [
+   912
+  ]
+ },
+ {
+  "from": "eedf",
+  "to": "p_ionization_cross_s",
+  "label": "분포 평균",
+  "posts": [
+   912
+  ]
+ },
+ {
+  "from": "p_ionization_fractio",
+  "to": "pecvd",
+  "label": "열전달 해석",
+  "posts": [
+   768
+  ]
+ },
+ {
+  "from": "matching",
+  "to": "p_impedance",
+  "label": "정합",
+  "posts": [
+   272,
+   162
+  ]
+ },
+ {
+  "from": "p_reactance",
+  "to": "p_impedance",
+  "label": "구성 성분",
+  "posts": [
+   272
+  ]
+ },
+ {
+  "from": "p_impedance",
+  "to": "p_reflected_power",
+  "label": "부정합 유발",
+  "posts": [
+   272
+  ]
+ },
+ {
+  "from": "p_dielectric_barrier",
+  "to": "p_ultraviolet_radiat",
+  "label": "생성",
+  "posts": [
+   247
+  ]
+ },
+ {
+  "from": "p_tool_to_tool_match",
+  "to": "p_chamber_impedance",
+  "label": "비교 지표",
+  "posts": [
+   571
+  ]
+ },
+ {
+  "from": "p_recombination",
+  "to": "p_radical",
+  "label": "조성 변화",
+  "posts": [
+   700,
+   619
+  ]
+ },
+ {
+  "from": "p_remote_plasma_sour",
+  "to": "p_recombination",
+  "label": "수송 중 반응",
+  "posts": [
+   619
+  ]
+ },
+ {
+  "from": "p_reaction_rate_coef",
+  "to": "p_recombination",
+  "label": "반응 판단",
+  "posts": [
+   700
+  ]
+ },
+ {
+  "from": "p_electron_plasma_fr",
+  "to": "dualfreq",
+  "label": "주파수 기준",
+  "posts": [
+   903
+  ]
+ },
+ {
+  "from": "p_plasma_frequency",
+  "to": "p_electron_plasma_fr",
+  "label": "하위 개념",
+  "posts": [
+   865,
+   856
+  ]
+ },
+ {
+  "from": "p_capacitance",
+  "to": "matching",
+  "label": "정합 조절",
+  "posts": [
+   162
+  ]
+ },
+ {
+  "from": "i_aging",
+  "to": "p_chamber_impedance",
+  "label": "변화 반영",
+  "posts": [
+   740,
+   509
+  ]
+ },
+ {
+  "from": "p_chamber_impedance",
+  "to": "p_process_drift",
+  "label": "진단",
+  "posts": [
+   740,
+   509
+  ]
+ },
+ {
+  "from": "p_voltage_current_se",
+  "to": "p_chamber_impedance",
+  "label": "측정",
+  "posts": [
+   740
+  ]
+ },
+ {
+  "from": "p_chamber_impedance",
+  "to": "p_fault_detection_an",
+  "label": "진단 입력",
+  "posts": [
+   509
+  ]
+ },
+ {
+  "from": "p_collision_frequenc",
+  "to": "p_reflected_power",
+  "label": "변화 유발",
+  "posts": [
+   395
+  ]
+ },
+ {
+  "from": "i_particle",
+  "to": "p_collision_frequenc",
+  "label": "충돌 증가",
+  "posts": [
+   395
+  ]
+ },
+ {
+  "from": "p_collision_frequenc",
+  "to": "te",
+  "label": "에너지 영향",
+  "posts": [
+   223
+  ]
+ },
+ {
+  "from": "sheath",
+  "to": "p_capacitance",
+  "label": "축전 구조",
+  "posts": [
+   682
+  ]
+ },
+ {
+  "from": "p_capacitance",
+  "to": "selfbias",
+  "label": "전하량 추정",
+  "posts": [
+   267
+  ]
+ },
+ {
+  "from": "p_capacitance",
+  "to": "p_surface_charging",
+  "label": "축적량 영향",
+  "posts": [
+   682
+  ]
+ },
+ {
+  "from": "p_capacitance",
+  "to": "p_arcing",
+  "label": "전하 공급",
+  "posts": [
+   637
+  ]
+ },
+ {
+  "from": "p_passivation",
+  "to": "e_aniso",
+  "label": "프로파일 조절",
+  "posts": [
+   916,
+   906
+  ]
+ },
+ {
+  "from": "p_passivation",
+  "to": "p_surface_charging",
+  "label": "측벽 하전",
+  "posts": [
+   916
+  ]
+ },
+ {
+  "from": "p_surface_charging",
+  "to": "ied",
+  "label": "입사량 변화",
+  "posts": [
+   760
+  ]
+ },
+ {
+  "from": "p_surface_charging",
+  "to": "p_arcing",
+  "label": "유발",
+  "posts": [
+   148
+  ]
+ },
+ {
+  "from": "p_surface_charging",
+  "to": "e_ionenh",
+  "label": "식각 촉진",
+  "posts": [
+   137
+  ]
+ },
+ {
+  "from": "ald",
+  "to": "p_plasma_enhanced_at",
+  "label": "공정 유형",
+  "posts": [
+   794
+  ]
+ },
+ {
+  "from": "p_plasma_enhanced_at",
+  "to": "p_passivation",
+  "label": "증착 제어",
+  "posts": [
+   562
+  ]
+ },
+ {
+  "from": "e_pulsed",
+  "to": "p_plasma_enhanced_at",
+  "label": "원리 검토",
+  "posts": [
+   562
+  ]
+ },
+ {
+  "from": "p_thermal_plasma",
+  "to": "p_plasma_torch",
+  "label": "열 이용",
+  "posts": [
+   208,
+   165
+  ]
+ },
+ {
+  "from": "p_collision_frequenc",
+  "to": "p_plasma_torch",
+  "label": "기체 가열",
+  "posts": [
+   165
+  ]
+ },
+ {
+  "from": "sf6",
+  "to": "oes_f",
+  "label": "F 공급(해리)"
+ },
+ {
+  "from": "cf4",
+  "to": "oes_f",
+  "label": "F 공급(해리)"
+ },
+ {
+  "from": "c4f8",
+  "to": "oes_cfx",
+  "label": "CF_x 공급(해리)"
+ },
+ {
+  "from": "oes_f",
+  "to": "oes",
+  "label": "측정 선"
+ },
+ {
+  "from": "oes_cfx",
+  "to": "oes",
+  "label": "측정 위치"
+ },
+ {
+  "from": "oes_co",
+  "to": "oes",
+  "label": "측정 위치"
+ },
+ {
+  "from": "oes_f",
+  "to": "actinometry",
+  "label": "F 밀도 측정에 사용"
+ },
+ {
+  "from": "sio2",
+  "to": "oes_co",
+  "label": "식각 생성물(추론)"
+ },
+ {
+  "from": "sf6",
+  "to": "si",
+  "label": "식각"
+ },
+ {
+  "from": "hbr",
+  "to": "si",
+  "label": "식각"
+ },
+ {
+  "from": "bcl3",
+  "to": "al",
+  "label": "식각"
+ },
+ {
+  "from": "bcl3",
+  "to": "highk",
+  "label": "식각(HfO₂·Al₂O₃)"
+ },
+ {
+  "from": "bcl3",
+  "to": "cl2",
+  "label": "혼합 사용"
+ },
+ {
+  "from": "oes_sif",
+  "to": "endpoint",
+  "label": "종말점 신호(SiO₂)"
+ },
+ {
+  "from": "sio2",
+  "to": "oes_sif",
+  "label": "식각 생성물"
+ },
+ {
+  "from": "oes_cn",
+  "to": "endpoint",
+  "label": "종말점 신호(질화막·탄소막)"
+ },
+ {
+  "from": "oes_al",
+  "to": "endpoint",
+  "label": "종말점 신호(Al)"
+ },
+ {
+  "from": "al",
+  "to": "oes_al",
+  "label": "식각 시 발광"
+ },
+ {
+  "from": "oes_co",
+  "to": "endpoint",
+  "label": "종말점 신호(SiO₂→Si: 감소)"
+ },
+ {
+  "from": "oes_f",
+  "to": "endpoint",
+  "label": "종말점 신호(W 에치백: 증가)"
+ },
+ {
+  "from": "oes_sif",
+  "to": "oes",
+  "label": "측정 위치"
+ },
+ {
+  "from": "oes_cn",
+  "to": "oes",
+  "label": "측정 위치"
+ },
+ {
+  "from": "oes_al",
+  "to": "oes",
+  "label": "측정 선"
+ }
+]

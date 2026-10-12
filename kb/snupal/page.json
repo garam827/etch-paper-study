@@ -1,0 +1,6734 @@
+{
+ "meta": {
+  "source": "서울대학교 플라즈마 응용 연구실(SNU PAL) 질의응답 게시판",
+  "board": "https://snupal.snu.ac.kr/qna/list/",
+  "posts": 838,
+  "period": [
+   "2004-06-19",
+   "2026-03-06"
+  ]
+ },
+ "posts": {
+  "926": {
+   "title": "RF Power와 MFP의 관계",
+   "url": "https://snupal.snu.ac.kr/qna/document/926/"
+  },
+  "924": {
+   "title": "OES Actinometry 측정 방법",
+   "url": "https://snupal.snu.ac.kr/qna/document/924/"
+  },
+  "923": {
+   "title": "OES를 통한 Radical 생성량 트렌드 파악",
+   "url": "https://snupal.snu.ac.kr/qna/document/923/"
+  },
+  "922": {
+   "title": "[Update] Shower Head의 구멍이 일부 막힌 Case의 출력",
+   "url": "https://snupal.snu.ac.kr/qna/document/922/"
+  },
+  "921": {
+   "title": "Ar Plasma로 AlN Pedestal 표면에 AlFx desorption 가능 여부가 궁금합니다.",
+   "url": "https://snupal.snu.ac.kr/qna/document/921/"
+  },
+  "920": {
+   "title": "PEALD 챔버 세정법",
+   "url": "https://snupal.snu.ac.kr/qna/document/920/"
+  },
+  "919": {
+   "title": "RF BIAS REDLECT POWER HUNTING 문제",
+   "url": "https://snupal.snu.ac.kr/qna/document/919/"
+  },
+  "918": {
+   "title": "RF ROD 연결부 부하로 인한 SHUNT, SERIES 열화",
+   "url": "https://snupal.snu.ac.kr/qna/document/918/"
+  },
+  "917": {
+   "title": "HF와 LF중 LF REFLECT POWER가 커지는 현상에 대해서 도움이 필요합니다.",
+   "url": "https://snupal.snu.ac.kr/qna/document/917/"
+  },
+  "916": {
+   "title": "III-V 반도체 에칭 공정 문의",
+   "url": "https://snupal.snu.ac.kr/qna/document/916/"
+  },
+  "915": {
+   "title": "CCP 장비 하부 전극 dc 펄스 전력",
+   "url": "https://snupal.snu.ac.kr/qna/document/915/"
+  },
+  "914": {
+   "title": "DC Arc Plasma Torch 관련 문의",
+   "url": "https://snupal.snu.ac.kr/qna/document/914/"
+  },
+  "913": {
+   "title": "Wafer 영역별 E/R 차이에 대한 질문  [Gas flow system vs E/R]",
+   "url": "https://snupal.snu.ac.kr/qna/document/913/"
+  },
+  "912": {
+   "title": "동일한 RF방전챔버에서 화학종별 이온화율에 대한 질문",
+   "url": "https://snupal.snu.ac.kr/qna/document/912/"
+  },
+  "911": {
+   "title": "ESC 사용 공정에서 Dummy Wafer Chuck Force 에 대해서 궁급합니다",
+   "url": "https://snupal.snu.ac.kr/qna/document/911/"
+  },
+  "906": {
+   "title": "ICP/CCP 플라즈마 식각 공정 개발 [Plasma sheath 및 Plasma generation]",
+   "url": "https://snupal.snu.ac.kr/qna/document/906/"
+  },
+  "905": {
+   "title": "HF PLASMA DEPOSITION 시 POWER에 따른 DEP RATE 변화 [장비 플라즈마, Rate constant]",
+   "url": "https://snupal.snu.ac.kr/qna/document/905/"
+  },
+  "903": {
+   "title": "Dielectric Etcher(CCP)에서 사용하는 주파수 [Plasma frequency 및 RF sheath]",
+   "url": "https://snupal.snu.ac.kr/qna/document/903/"
+  },
+  "902": {
+   "title": "ICP에서 biasing 질문 [RF sheath와 self bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/902/"
+  },
+  "901": {
+   "title": "가스 조성 및 온도에 따른 식각률 관련 질문입니다. [Arrhenius equation 이해]",
+   "url": "https://snupal.snu.ac.kr/qna/document/901/"
+  },
+  "900": {
+   "title": "RF sputtering reflect power에 대해서 질문 남깁니다.",
+   "url": "https://snupal.snu.ac.kr/qna/document/900/"
+  },
+  "899": {
+   "title": "ExB drift 식 유도 과정에서의 질문 [삼각함수의 위상각]",
+   "url": "https://snupal.snu.ac.kr/qna/document/899/"
+  },
+  "898": {
+   "title": "Debey Length에 대해 문의 드립니다. [플라즈마 정의와 Deybe length]",
+   "url": "https://snupal.snu.ac.kr/qna/document/898/"
+  },
+  "896": {
+   "title": "플라즈마 사이즈 측정 방법 [플라즈마 분포 측정 및 산포 평가]",
+   "url": "https://snupal.snu.ac.kr/qna/document/896/"
+  },
+  "894": {
+   "title": "micro arc에 대해 질문드립니다. [DC glow 방전과 breakdown 전기장]",
+   "url": "https://snupal.snu.ac.kr/qna/document/894/"
+  },
+  "893": {
+   "title": "Wafer Capacitance 성분과 Vdc 관계 문의드립니다. [Sheath 크기 및 전위 분포]",
+   "url": "https://snupal.snu.ac.kr/qna/document/893/"
+  },
+  "892": {
+   "title": "Surface wave plasma 조건에 관해 질문드립니다. [표면파의 전파]",
+   "url": "https://snupal.snu.ac.kr/qna/document/892/"
+  },
+  "891": {
+   "title": "CCP Chamber 사용 중 Impedance 변화 원인 문의드립니다. [Chamber impedance 변화]",
+   "url": "https://snupal.snu.ac.kr/qna/document/891/"
+  },
+  "890": {
+   "title": "CVD 박막 Clean 중 Ar에 의한 Etch 여부가 궁금합니다. [Ar plasma chemical etching]",
+   "url": "https://snupal.snu.ac.kr/qna/document/890/"
+  },
+  "889": {
+   "title": "Ion 입사각을 확인하는 방법 문의드립니다 [식각 플라즈마의 가장자리 균일도 제어]",
+   "url": "https://snupal.snu.ac.kr/qna/document/889/"
+  },
+  "888": {
+   "title": "ICP Plasma etch chamber 구조가 궁금합니다. [플라즈마 생성 공간과 플라즈마 확산]",
+   "url": "https://snupal.snu.ac.kr/qna/document/888/"
+  },
+  "885": {
+   "title": "스터퍼링시 기판 온도 계산에 대해 질문드립니다! [열전달 방정식 이해]",
+   "url": "https://snupal.snu.ac.kr/qna/document/885/"
+  },
+  "884": {
+   "title": "공정 DATA TARGET 간 난제가 있어 문의드립니다. [Sheath uniformity 이해]",
+   "url": "https://snupal.snu.ac.kr/qna/document/884/"
+  },
+  "877": {
+   "title": "진공 챔버에서 Plasma Off시 Particle의 wafer 표면 충돌 속도 [Sheath energy]",
+   "url": "https://snupal.snu.ac.kr/qna/document/877/"
+  },
+  "875": {
+   "title": "RF magnetron Sputtering 공정에서의 질문 [Lorentz force와 ExB drift 이해]",
+   "url": "https://snupal.snu.ac.kr/qna/document/875/"
+  },
+  "874": {
+   "title": "Non-maxwellian 전자 분포의 원인 [Druyvesteyn distribution 이해]",
+   "url": "https://snupal.snu.ac.kr/qna/document/874/"
+  },
+  "870": {
+   "title": "ICP에서의 Self bias 효과 [DC offset voltage와 floating potential]",
+   "url": "https://snupal.snu.ac.kr/qna/document/870/"
+  },
+  "867": {
+   "title": "Ni DC 스퍼터 관련 질문있습니다. [Base pressure 이해]",
+   "url": "https://snupal.snu.ac.kr/qna/document/867/"
+  },
+  "866": {
+   "title": "플라즈마 밀도와 라디칼 [플라즈마 충돌 반응]",
+   "url": "https://snupal.snu.ac.kr/qna/document/866/"
+  },
+  "865": {
+   "title": "Microwave & RF Plasma [플라즈마 주파수와 rate constant]",
+   "url": "https://snupal.snu.ac.kr/qna/document/865/"
+  },
+  "864": {
+   "title": "플라즈마 식각 시 notching 현상 관련 [Ar, O2 플라즈마 생성 특성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/864/"
+  },
+  "862": {
+   "title": "내플라즈마 코팅의 절연손실에 따른 챔버 내부 분위기 영향 여부 질문드립니다. [유전체 상태 모니터링]",
+   "url": "https://snupal.snu.ac.kr/qna/document/862/"
+  },
+  "861": {
+   "title": "Edge ring의 역할 및 원리 질문 [플라즈마 밀도 및 전위 제어]",
+   "url": "https://snupal.snu.ac.kr/qna/document/861/"
+  },
+  "859": {
+   "title": "CCP장비 discharge 전압 및 전류 측정 방법 과 matcher 문제 관하여 [HV probe 전압 측정]",
+   "url": "https://snupal.snu.ac.kr/qna/document/859/"
+  },
+  "858": {
+   "title": "파장길이와 동축 케이블 길이 관련 문의드립니다 [Matcher 기능]",
+   "url": "https://snupal.snu.ac.kr/qna/document/858/"
+  },
+  "855": {
+   "title": "챔버 내 전자&이온의 에너지 손실에 대해 [에너지 균형과 입자 균형식]",
+   "url": "https://snupal.snu.ac.kr/qna/document/855/"
+  },
+  "851": {
+   "title": "ICP 방식에서 RF Foward Power를 상향하면 ER이 빨라지는 이유 [플라즈마 생성 반응]",
+   "url": "https://snupal.snu.ac.kr/qna/document/851/"
+  },
+  "850": {
+   "title": "AP plasma 공정 관련 문의 [OES 활용 장비 플라즈마 데이터 분석]",
+   "url": "https://snupal.snu.ac.kr/qna/document/850/"
+  },
+  "845": {
+   "title": "CCP 설비 Capacitance 및 Impedance 변화에 따른 Vpp 변동성 문의 [플라즈마 회로 설계]",
+   "url": "https://snupal.snu.ac.kr/qna/document/845/"
+  },
+  "842": {
+   "title": "PECVD Uniformity [플라즈마 균일도 제어]",
+   "url": "https://snupal.snu.ac.kr/qna/document/842/"
+  },
+  "839": {
+   "title": "standing wave effect, skin effect 원리 [Maxwell 방정식 이해]",
+   "url": "https://snupal.snu.ac.kr/qna/document/839/"
+  },
+  "835": {
+   "title": "center to edge 문제를 극복하기 위한 방법 [CCP 균일도, CCP edge]",
+   "url": "https://snupal.snu.ac.kr/qna/document/835/"
+  },
+  "834": {
+   "title": "RF Frequency 가변과 Forward Power의 상관관계 [임피던스 매칭]",
+   "url": "https://snupal.snu.ac.kr/qna/document/834/"
+  },
+  "832": {
+   "title": "RIE Gas 질문 하나 드려도 될까요? [Sheath instability]",
+   "url": "https://snupal.snu.ac.kr/qna/document/832/"
+  },
+  "831": {
+   "title": "RIE 설비 관련 질문 좀 드려도 될까요? [RF matcher noise]",
+   "url": "https://snupal.snu.ac.kr/qna/document/831/"
+  },
+  "829": {
+   "title": "CURRENT PATH로 인한 아킹 [RF 접지 면접촉 개선]",
+   "url": "https://snupal.snu.ac.kr/qna/document/829/"
+  },
+  "828": {
+   "title": "플라즈마 전원 공급장치에 대한 질문 [전자 가열 방법 및 생산성에 따른 구별]",
+   "url": "https://snupal.snu.ac.kr/qna/document/828/"
+  },
+  "827": {
+   "title": "주파수 증가시 플라즈마 밀도 증가 [ICP, CCP 플라즈마 heating]",
+   "url": "https://snupal.snu.ac.kr/qna/document/827/"
+  },
+  "826": {
+   "title": "remote plasma를 이용한 SiO2 ethching 질문드립니다. [식각률 self limit과 쉬스 에너지 변화]",
+   "url": "https://snupal.snu.ac.kr/qna/document/826/"
+  },
+  "825": {
+   "title": "ICP Dry Etch 설비 DC bias Hunting 관련 질문드립니다. [방전 기전]",
+   "url": "https://snupal.snu.ac.kr/qna/document/825/"
+  },
+  "824": {
+   "title": "RF sputter 증착 문제 질문드립니다. [OES 진단과 sputter yield]",
+   "url": "https://snupal.snu.ac.kr/qna/document/824/"
+  },
+  "823": {
+   "title": "plasma off시 일어나는 현상 문의드립니다. [DC 바이어스 전압과 쉬스 전기장]",
+   "url": "https://snupal.snu.ac.kr/qna/document/823/"
+  },
+  "820": {
+   "title": "반사파와 유,무효전력 관련 질문 [플라즈마 생성과 가열]",
+   "url": "https://snupal.snu.ac.kr/qna/document/820/"
+  },
+  "819": {
+   "title": "GWP(Global warming potential)에 따른 Etch gas 변화에 대한 질문",
+   "url": "https://snupal.snu.ac.kr/qna/document/819/"
+  },
+  "817": {
+   "title": "Plasma 표면 개질에 대해 질문드립니다. [O2 플라즈마와 Ar 플라즈마]",
+   "url": "https://snupal.snu.ac.kr/qna/document/817/"
+  },
+  "816": {
+   "title": "PECVD 고온 공정에서 증착 막으로의 열전달 관련 문의 드립니다. [플라즈마 분포와 확산]",
+   "url": "https://snupal.snu.ac.kr/qna/document/816/"
+  },
+  "815": {
+   "title": "Sheath와 Plasma Bulk에 걸리는 전압 관련 문의 [Sheath impedance]",
+   "url": "https://snupal.snu.ac.kr/qna/document/815/"
+  },
+  "814": {
+   "title": "chamber에 인가되는 forward power 관련 문의 [송전선로 모델 및 전원의 특성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/814/"
+  },
+  "812": {
+   "title": "Plasma Reflect를 관리하는 방법이 있을까요? [임피던스 매칭]",
+   "url": "https://snupal.snu.ac.kr/qna/document/812/"
+  },
+  "809": {
+   "title": "Lxcat dataset에 따른 Plasma discharge에 대한 질문입니다. [CX 데이터]",
+   "url": "https://snupal.snu.ac.kr/qna/document/809/"
+  },
+  "805": {
+   "title": "ICP VIPOLAR ESC 관련 이론과 Chuck Force 계산 질문드립니다 [Plasma breakdown 및 생성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/805/"
+  },
+  "804": {
+   "title": "Ashing 공정에 필요한 O2plasma에 대해 궁금한 점이 있습니다. [전자 충돌 이온화 반응 해리 반응 흡착 반응]",
+   "url": "https://snupal.snu.ac.kr/qna/document/804/"
+  },
+  "803": {
+   "title": "메틸기의 플라즈마 에칭반응 메커니즘 [공정 플라즈마]",
+   "url": "https://snupal.snu.ac.kr/qna/document/803/"
+  },
+  "802": {
+   "title": "안녕하세요 CLEAN GAS 관련 질문이 있습니다. [플라즈마 이온화 및 해리 반응, 반응기 벽면 세정]",
+   "url": "https://snupal.snu.ac.kr/qna/document/802/"
+  },
+  "799": {
+   "title": "플라즈마 제균 탈취 가능 여부 [대기압 환경 플라즈마와 라디컬 분포]",
+   "url": "https://snupal.snu.ac.kr/qna/document/799/"
+  },
+  "798": {
+   "title": "plasma 공정 중 색변화 [플라즈마 진단과 분광학]",
+   "url": "https://snupal.snu.ac.kr/qna/document/798/"
+  },
+  "795": {
+   "title": "ICP Dry Etch 설비 DC bias Hunting 관련 질문드립니다. [RF 접지 및 체결, 결합부분 교체]",
+   "url": "https://snupal.snu.ac.kr/qna/document/795/"
+  },
+  "794": {
+   "title": "E-field plasma simulation correlating with film growth profile [플라즈마 확산과 밀도 분포]",
+   "url": "https://snupal.snu.ac.kr/qna/document/794/"
+  },
+  "793": {
+   "title": "SI 표면에 Ar Plasma Etching 하면 안되는 이유 [표면 전처리]",
+   "url": "https://snupal.snu.ac.kr/qna/document/793/"
+  },
+  "792": {
+   "title": "OES를 통한 공정 개선사례가 있는지 궁금합니다. [플라즈마의 분포와 공정 진단]",
+   "url": "https://snupal.snu.ac.kr/qna/document/792/"
+  },
+  "790": {
+   "title": "Self bias 내용 질문입니다. [쉬스와 표면 전위]",
+   "url": "https://snupal.snu.ac.kr/qna/document/790/"
+  },
+  "788": {
+   "title": "챔버 시즈닝에 대한 플라즈마의 영향성 [플라즈마 생성, Plasma collision reaction]",
+   "url": "https://snupal.snu.ac.kr/qna/document/788/"
+  },
+  "787": {
+   "title": "PECVD Cleaning에서 Ar Gas의 역활 [Ar plasma, Ar metastable]",
+   "url": "https://snupal.snu.ac.kr/qna/document/787/"
+  },
+  "782": {
+   "title": "RF 전압인가 시 LF와 HF 에서의 Sheath 비교 [Plasma sheath, Stochastic heating]",
+   "url": "https://snupal.snu.ac.kr/qna/document/782/"
+  },
+  "781": {
+   "title": "기판표면 번개모양 불량발생 [Plasma charging]",
+   "url": "https://snupal.snu.ac.kr/qna/document/781/"
+  },
+  "780": {
+   "title": "전공수준에 따른 RF plasma 영향 관련 질문 [Ion beam source]",
+   "url": "https://snupal.snu.ac.kr/qna/document/780/"
+  },
+  "778": {
+   "title": "plasma modeling 관련 질문 [Balance equation]",
+   "url": "https://snupal.snu.ac.kr/qna/document/778/"
+  },
+  "775": {
+   "title": "플라즈마 주파수 예측관련 질문드립니다 [Global model과 Balance equation]",
+   "url": "https://snupal.snu.ac.kr/qna/document/775/"
+  },
+  "773": {
+   "title": "전자밀도 크기에 대하여 질문드립니다. (Ar, O2, N2 가스) [Plasma density와 Balance equation]",
+   "url": "https://snupal.snu.ac.kr/qna/document/773/"
+  },
+  "772": {
+   "title": "OES를 이용한 Gas Species 정량적 분석 방법 [수소, Ar 단원자 진단]",
+   "url": "https://snupal.snu.ac.kr/qna/document/772/"
+  },
+  "771": {
+   "title": "sticking coefficient 관련 질문입니다. [HAR, LF bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/771/"
+  },
+  "769": {
+   "title": "OES 파장 관련하여 질문 드립니다. [데이터+플라즈마광학 모델]",
+   "url": "https://snupal.snu.ac.kr/qna/document/769/"
+  },
+  "768": {
+   "title": "PECVD 증착시 온도, 기판의 종류의 영향에 대해서 질문드립니다! [PECVD와 PACVD]",
+   "url": "https://snupal.snu.ac.kr/qna/document/768/"
+  },
+  "767": {
+   "title": "plasma striation 관련 문의 [Plasma striation]",
+   "url": "https://snupal.snu.ac.kr/qna/document/767/"
+  },
+  "765": {
+   "title": "주파수 변화와 Plasma 온도 연관성 [Plasma heating]",
+   "url": "https://snupal.snu.ac.kr/qna/document/765/"
+  },
+  "764": {
+   "title": "Chamber 내 Pressure와 Fluid Density, Residence Time [TVP(Thorottle Valve Position)]",
+   "url": "https://snupal.snu.ac.kr/qna/document/764/"
+  },
+  "763": {
+   "title": "RPSC 시 Pressure와 Throttle Valve Position의 관계 [Plasma cleaning]",
+   "url": "https://snupal.snu.ac.kr/qna/document/763/"
+  },
+  "761": {
+   "title": "Plasma Arching [Plasma property]",
+   "url": "https://snupal.snu.ac.kr/qna/document/761/"
+  },
+  "760": {
+   "title": "Polymer Temp Etch [이온 입사 에너지]",
+   "url": "https://snupal.snu.ac.kr/qna/document/760/"
+  },
+  "753": {
+   "title": "Dry Chamber VPP 변동 관련 질문입니다. [VI Phase]",
+   "url": "https://snupal.snu.ac.kr/qna/document/753/"
+  },
+  "749": {
+   "title": "플라즈마 진단 공부중 질문 [Balance equation]",
+   "url": "https://snupal.snu.ac.kr/qna/document/749/"
+  },
+  "745": {
+   "title": "etch defect 관련 질문드립니다 [Plasma distribution]",
+   "url": "https://snupal.snu.ac.kr/qna/document/745/"
+  },
+  "744": {
+   "title": "Co-relation between RF Forward Power and Vpp [RF ground]",
+   "url": "https://snupal.snu.ac.kr/qna/document/744/"
+  },
+  "743": {
+   "title": "RF Antena와 Matcher 間 상관관계 문의드립니다. [Ground와 Clamp]",
+   "url": "https://snupal.snu.ac.kr/qna/document/743/"
+  },
+  "742": {
+   "title": "연속 Plasma시 예상되는 문제와 횟수를 제한할 경우의 판단 기준 [Plasma information과 monitoring]",
+   "url": "https://snupal.snu.ac.kr/qna/document/742/"
+  },
+  "741": {
+   "title": "RIE 장비 사용 중 dc-bias의 감소 [Self bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/741/"
+  },
+  "740": {
+   "title": "Matcher 구성에 따른 챔버 임피던스 영향에 대해 문의드립니다. [Matcher와 Plasma Impedence]",
+   "url": "https://snupal.snu.ac.kr/qna/document/740/"
+  },
+  "739": {
+   "title": "플라즈마 세정 장비 (CCP구조)에서 자재 로딩 수에 따른 플라즈마 효과 및 Discolor [CCP 방전 원리]",
+   "url": "https://snupal.snu.ac.kr/qna/document/739/"
+  },
+  "738": {
+   "title": "doping type에 따른 ER 차이 [MD 시뮬레이션 연구]",
+   "url": "https://snupal.snu.ac.kr/qna/document/738/"
+  },
+  "737": {
+   "title": "ICP Dry Etch 진행시 정전기 발생에 관한 질문입니다. [국부 전기장 형성 및 edge 세정]",
+   "url": "https://snupal.snu.ac.kr/qna/document/737/"
+  },
+  "734": {
+   "title": "Tungsten 표면 Contamination 제거(실명재등록) [Atmostpheric pressure plasma jet]",
+   "url": "https://snupal.snu.ac.kr/qna/document/734/"
+  },
+  "733": {
+   "title": "plasma 형성 관계 [Paschen's law, 플라즈마 주파수]",
+   "url": "https://snupal.snu.ac.kr/qna/document/733/"
+  },
+  "732": {
+   "title": "RF matcher와 particle 관계 [DC glow 방전, 플라즈마 임피던스]",
+   "url": "https://snupal.snu.ac.kr/qna/document/732/"
+  },
+  "727": {
+   "title": "임피던스 매칭 및 플라즈마 진단 [플라즈마 전류량]",
+   "url": "https://snupal.snu.ac.kr/qna/document/727/"
+  },
+  "725": {
+   "title": "RF 전압과 압력의 영향? [DC glow 방전, Paschen's Law]",
+   "url": "https://snupal.snu.ac.kr/qna/document/725/"
+  },
+  "724": {
+   "title": "Plasma Cleaning 관련 문의 [Remote plasma source]",
+   "url": "https://snupal.snu.ac.kr/qna/document/724/"
+  },
+  "723": {
+   "title": "Uniformity 관련하여 문의드립니다. [베르누이 정리]",
+   "url": "https://snupal.snu.ac.kr/qna/document/723/"
+  },
+  "722": {
+   "title": "standing wave effect에 대한 질문이 있습니다. [Standing wave 운전 조건, 안테나 설계]",
+   "url": "https://snupal.snu.ac.kr/qna/document/722/"
+  },
+  "721": {
+   "title": "ICP 대기압 플라즈마 분석 [Collisional plasma, LTE 모델]",
+   "url": "https://snupal.snu.ac.kr/qna/document/721/"
+  },
+  "720": {
+   "title": "RF 주파수와 공정 Chamber 크기의 상관관계 [Standing wave effect]",
+   "url": "https://snupal.snu.ac.kr/qna/document/720/"
+  },
+  "719": {
+   "title": "IMPEDANCE MATCHING PATH에서  S/H ~ MATCHER 간 전력전송 방법들에 대해 문의드립니다. [접촉 저항]",
+   "url": "https://snupal.snu.ac.kr/qna/document/719/"
+  },
+  "717": {
+   "title": "텅스텐 Etch 관련하여 질문드립니다. [표면 화학 반응]",
+   "url": "https://snupal.snu.ac.kr/qna/document/717/"
+  },
+  "716": {
+   "title": "ESC 표면 온도랑 식각률의 차이가 어떤 관계로 있는걸까요?? [ESC 영역 온도 조절]",
+   "url": "https://snupal.snu.ac.kr/qna/document/716/"
+  },
+  "715": {
+   "title": "ICP와 CCP는 단순히 플라즈마를 생서하는 방법인가요? [플라즈마 생성 기전, RIE 모드]",
+   "url": "https://snupal.snu.ac.kr/qna/document/715/"
+  },
+  "712": {
+   "title": "CVD 막질의 성질에 대해 질문드립니다. [챔버 벽면 성질 및 가스 손실]",
+   "url": "https://snupal.snu.ac.kr/qna/document/712/"
+  },
+  "710": {
+   "title": "RF 전류가 흐르는 Shower head를 TC로 온도 측정 할 때 [TC gauge 동작 원리]",
+   "url": "https://snupal.snu.ac.kr/qna/document/710/"
+  },
+  "708": {
+   "title": "데포 중 RF VDC DROP 현상 [부유 전극의 self bias 형성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/708/"
+  },
+  "705": {
+   "title": "anode sheath 질문드립니다. [Sheath 형성 메커니즘]",
+   "url": "https://snupal.snu.ac.kr/qna/document/705/"
+  },
+  "704": {
+   "title": "안녕하세요. Plasma etch rate에 관하여 질문이 있습니다. [단위 Chamber의 PM 이력]",
+   "url": "https://snupal.snu.ac.kr/qna/document/704/"
+  },
+  "703": {
+   "title": "플라즈마를 통한 정전기 제거관련. [플라즈마 표면 반응]",
+   "url": "https://snupal.snu.ac.kr/qna/document/703/"
+  },
+  "701": {
+   "title": "CVD (CCP) 공정의 Chamber seasoning과 플라즈마 밀도 [Plasma information variable model]",
+   "url": "https://snupal.snu.ac.kr/qna/document/701/"
+  },
+  "699": {
+   "title": "LF Power에의한 Ion Bombardment [플라즈마 장비 물리]",
+   "url": "https://snupal.snu.ac.kr/qna/document/699/"
+  },
+  "698": {
+   "title": "PECVD와 RIE의 경계에 대해 [DC bias 형성 판단]",
+   "url": "https://snupal.snu.ac.kr/qna/document/698/"
+  },
+  "696": {
+   "title": "공정 진행 중 의도적인 섭동 효과에 대해서 질문 드립니다. [Rise rate]",
+   "url": "https://snupal.snu.ac.kr/qna/document/696/"
+  },
+  "695": {
+   "title": "CVD 공정에서의 self bias [이차 전자 생성, 입사 이온 에너지 분포]",
+   "url": "https://snupal.snu.ac.kr/qna/document/695/"
+  },
+  "693": {
+   "title": "잔류시간 Residence Time에 대해 [표면 유속 정보, 유체해석 코드]",
+   "url": "https://snupal.snu.ac.kr/qna/document/693/"
+  },
+  "689": {
+   "title": "CCP에서 접지된 전극에 기판을 놓았을 때 반응 [Self bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/689/"
+  },
+  "688": {
+   "title": "Edge ring과 플라즈마 밀도 균일성 [플라즈마 생성 분포와 sheath 전기장]",
+   "url": "https://snupal.snu.ac.kr/qna/document/688/"
+  },
+  "687": {
+   "title": "Etching 공정 중 wafer를 고정하기 위해 사용되는 Ring관련 [Sheath 전위 형성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/687/"
+  },
+  "686": {
+   "title": "매칭시 Shunt와 Series 값 [RF 전원 전력 전달 및 Load/Tune 계산]",
+   "url": "https://snupal.snu.ac.kr/qna/document/686/"
+  },
+  "685": {
+   "title": "RF Power와 균일도 연관성 질문드립니다 [고주파 플라즈마 반응 특성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/685/"
+  },
+  "682": {
+   "title": "CCP에서 전극에 쌓이는 막질에 의한 Capacitance 변화가 궁금합니다. [플라즈마 특성변화와 SH impedance 변화]",
+   "url": "https://snupal.snu.ac.kr/qna/document/682/"
+  },
+  "681": {
+   "title": "low pressure영역에서 아킹이 더 쉽게 발생하는 이유에 관해 문의드립니다. [파센 커브와 글로우 방전]",
+   "url": "https://snupal.snu.ac.kr/qna/document/681/"
+  },
+  "680": {
+   "title": "안녕하세요? 임피던스 매칭관련 질문드립니다. [회로인자 및 구동기구, 플라즈마 특성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/680/"
+  },
+  "678": {
+   "title": "안녕하세요 플라즈마의 원초적인 개념에서 궁금한 점이 생겨서 질문드립니다. [DC glow discharge]",
+   "url": "https://snupal.snu.ac.kr/qna/document/678/"
+  },
+  "677": {
+   "title": "플라즈마 에칭과 표면처리의 차이점 질문드립니다. [Cleaning, sputter etching, RIE]",
+   "url": "https://snupal.snu.ac.kr/qna/document/677/"
+  },
+  "676": {
+   "title": "RIE에서 O2역할이 궁금합니다 [충돌 반응 rate constant]",
+   "url": "https://snupal.snu.ac.kr/qna/document/676/"
+  },
+  "675": {
+   "title": "플라즈마 챔버 [화학반응 및 내열조건]",
+   "url": "https://snupal.snu.ac.kr/qna/document/675/"
+  },
+  "674": {
+   "title": "Decoupled Plasma 관련 질문입니다.[플라즈마 내 입자의 거동]",
+   "url": "https://snupal.snu.ac.kr/qna/document/674/"
+  },
+  "673": {
+   "title": "플라즈마 임피던스와 Vpp가 관련이 있나요? [플라즈마 주파수와 Vpp, sheath]",
+   "url": "https://snupal.snu.ac.kr/qna/document/673/"
+  },
+  "672": {
+   "title": "플라즈마 용어 질문드립니다. [Self bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/672/"
+  },
+  "671": {
+   "title": "안녕하세요 교수님. ICP관련하여 문의드립니다. [Faraday shield]",
+   "url": "https://snupal.snu.ac.kr/qna/document/671/"
+  },
+  "670": {
+   "title": "ICP-RIE etch에 관해서 여쭤볼것이 있습니다. [He 혼합비와 플라즈마 밀도]",
+   "url": "https://snupal.snu.ac.kr/qna/document/670/"
+  },
+  "668": {
+   "title": "RF 반사파와 이물과의 관계 [Physical/chemical cleaning]",
+   "url": "https://snupal.snu.ac.kr/qna/document/668/"
+  },
+  "667": {
+   "title": "타겟 임피던스 값과 균일도 문제 [플라즈마 확산]",
+   "url": "https://snupal.snu.ac.kr/qna/document/667/"
+  },
+  "666": {
+   "title": "압력과 플라즈마 크기의 관계가 궁금합니다. [Mean free path]",
+   "url": "https://snupal.snu.ac.kr/qna/document/666/"
+  },
+  "665": {
+   "title": "Plasma arcing 관련하여 문의드립니다. [플라즈마 내 전자 축적]",
+   "url": "https://snupal.snu.ac.kr/qna/document/665/"
+  },
+  "663": {
+   "title": "Load position관련 질문 드립니다. [Impedance matching]",
+   "url": "https://snupal.snu.ac.kr/qna/document/663/"
+  },
+  "661": {
+   "title": "엘립소미터 측정관련해서 질문이 있습니다. [나노광전자 데이터 분석]",
+   "url": "https://snupal.snu.ac.kr/qna/document/661/"
+  },
+  "659": {
+   "title": "ECR ion source에서 plasma가 켜지면 RF reflect가 심해집니다. [ECRiS]",
+   "url": "https://snupal.snu.ac.kr/qna/document/659/"
+  },
+  "656": {
+   "title": "연속 plasma 방전시 RF power drop 및 Reflect 발생 [Cleaning procedure 플라즈마 공정진단 기술]",
+   "url": "https://snupal.snu.ac.kr/qna/document/656/"
+  },
+  "654": {
+   "title": "ESC Chuck 기능이 Wafer 위에서의 Chemical Bond 생성을 boosting 할 수 있는지 궁금합니다. [ESC, 쉬스 전기장 및  bias 전력 조절]",
+   "url": "https://snupal.snu.ac.kr/qna/document/654/"
+  },
+  "653": {
+   "title": "연면거리에 대해 궁금합니다. [아크 제어]",
+   "url": "https://snupal.snu.ac.kr/qna/document/653/"
+  },
+  "652": {
+   "title": "압력 변화와 Ch Impedance 상관관계 질문 [플라즈마 임피던스, 운전압력조절 방전 조건]",
+   "url": "https://snupal.snu.ac.kr/qna/document/652/"
+  },
+  "651": {
+   "title": "플라즈마볼 제작시 [전기장 형성 및 플라즈마 방전]",
+   "url": "https://snupal.snu.ac.kr/qna/document/651/"
+  },
+  "649": {
+   "title": "Bias인가 Cable 위치 관련 문의 [플라즈마 분포 관찰]",
+   "url": "https://snupal.snu.ac.kr/qna/document/649/"
+  },
+  "647": {
+   "title": "좁은 간격 CCP 전원의 플라즈마 분포 논문에 대해 궁금한 점이 있습니다. [전력 인가와 플라즈마 밀도]",
+   "url": "https://snupal.snu.ac.kr/qna/document/647/"
+  },
+  "646": {
+   "title": "알고싶습니다 [Seasoning, 플라즈마 공정 및 부품 표면 특성 데이터]",
+   "url": "https://snupal.snu.ac.kr/qna/document/646/"
+  },
+  "645": {
+   "title": "교수님 안녕하세요, icp 관련 질문이 있습니다. [Self bias 및 ICP E/H mode]",
+   "url": "https://snupal.snu.ac.kr/qna/document/645/"
+  },
+  "644": {
+   "title": "Shield 및 housing은 ground와 floating중 어떤게 더 좋은지요 [장비 ground]",
+   "url": "https://snupal.snu.ac.kr/qna/document/644/"
+  },
+  "643": {
+   "title": "안녕하세요 OLED 증착 시 궁금한점이있어 문의드립니다. [플라즈마 확산 시간 및 표면 반응 시간 유지]",
+   "url": "https://snupal.snu.ac.kr/qna/document/643/"
+  },
+  "642": {
+   "title": "Edge ring 없이 ESC를 구현 가능한지 궁금해서 여쭤봅니다. [웨이퍼 근방 쉬스 특성, Edge ring]",
+   "url": "https://snupal.snu.ac.kr/qna/document/642/"
+  },
+  "641": {
+   "title": "접착력을 위한 플라즈마 처리 관련 질문입니다. [플라즈마 소스 변경]",
+   "url": "https://snupal.snu.ac.kr/qna/document/641/"
+  },
+  "640": {
+   "title": "안녕하세요. 교수님 ICP 관련하여 문의드립니다. [충돌 단면적 및 반응 계수]",
+   "url": "https://snupal.snu.ac.kr/qna/document/640/"
+  },
+  "638": {
+   "title": "전극에 따른 힘의 크기 질문드립니다. [웨이퍼 bending]",
+   "url": "https://snupal.snu.ac.kr/qna/document/638/"
+  },
+  "637": {
+   "title": "챔버내 Arcing 발생 개선안에 대해 질문드립니다. [Arc 형성 조건]",
+   "url": "https://snupal.snu.ac.kr/qna/document/637/"
+  },
+  "636": {
+   "title": "Vacuum chamber(Etching)내에서 열의 이동과 Byproduct 이동과의 관계 [Plasma bulk Temp와 wall Temp]",
+   "url": "https://snupal.snu.ac.kr/qna/document/636/"
+  },
+  "635": {
+   "title": "플라즈마 PIC 질문드립니다. [PIC simulation]",
+   "url": "https://snupal.snu.ac.kr/qna/document/635/"
+  },
+  "634": {
+   "title": "[RIE] reactice, non-reactice ion의 역할 [Dissociation과 Ar plasma]",
+   "url": "https://snupal.snu.ac.kr/qna/document/634/"
+  },
+  "633": {
+   "title": "O2 Asher o-ring 문의드립니다. [Plasma heat와 dissociation]",
+   "url": "https://snupal.snu.ac.kr/qna/document/633/"
+  },
+  "632": {
+   "title": "진공장치 챔버내 산소 또는 수분 제거 방법에 대해 [Chemisorption과 pruege gas]",
+   "url": "https://snupal.snu.ac.kr/qna/document/632/"
+  },
+  "631": {
+   "title": "자외선 세기와 결합에너지에 대해 질문드립니다. [UV energy]",
+   "url": "https://snupal.snu.ac.kr/qna/document/631/"
+  },
+  "630": {
+   "title": "Dry etch 할 때 센터와 사이드 etch rate [Plasma diffusion과 distribution]",
+   "url": "https://snupal.snu.ac.kr/qna/document/630/"
+  },
+  "627": {
+   "title": "플라즈마 살균 방식 [Plasma medicine]",
+   "url": "https://snupal.snu.ac.kr/qna/document/627/"
+  },
+  "626": {
+   "title": "Matcher의 효율에 대한 내용에 대해서 궁금합니다. [Matcher와 dynamic impedance]",
+   "url": "https://snupal.snu.ac.kr/qna/document/626/"
+  },
+  "625": {
+   "title": "RF/LF에 따른 CVD 막질 UNIFORMITY [LF와 Sheath]",
+   "url": "https://snupal.snu.ac.kr/qna/document/625/"
+  },
+  "624": {
+   "title": "H-field 측정위치에 따른 H Field MAP 변화 관련 [ICP와 H field]",
+   "url": "https://snupal.snu.ac.kr/qna/document/624/"
+  },
+  "622": {
+   "title": "Matcher의 Load/Tune Position 거동에 관해 질문이 있습니다. [Plasma impedance와 Matcher]",
+   "url": "https://snupal.snu.ac.kr/qna/document/622/"
+  },
+  "619": {
+   "title": "RPS를 이용한 SIO2 에칭 [Etch와 remote plasma]",
+   "url": "https://snupal.snu.ac.kr/qna/document/619/"
+  },
+  "618": {
+   "title": "쉬스(sheath)에서 전자와 이온의 감소 관련하여 질문 [Floating sheath]",
+   "url": "https://snupal.snu.ac.kr/qna/document/618/"
+  },
+  "616": {
+   "title": "CVD품질과 RF Delibery power 관계 질문 [RF power와 plasma information]",
+   "url": "https://snupal.snu.ac.kr/qna/document/616/"
+  },
+  "613": {
+   "title": "RF generator 관련 문의드립니다 [Matcher와 line damage]",
+   "url": "https://snupal.snu.ac.kr/qna/document/613/"
+  },
+  "612": {
+   "title": "Wafer Warpage에 따른 CCP Type Chamber 내부 Impedance [ESC와 Chamber impedance]",
+   "url": "https://snupal.snu.ac.kr/qna/document/612/"
+  },
+  "611": {
+   "title": "안녕하세요. O2 plasma etching에 대해 궁금한 것이 있습니다. [Bias power]",
+   "url": "https://snupal.snu.ac.kr/qna/document/611/"
+  },
+  "609": {
+   "title": "플라즈마의 직진성에 관해 질문드립니다. [PMI]",
+   "url": "https://snupal.snu.ac.kr/qna/document/609/"
+  },
+  "608": {
+   "title": "Depostion 진행 중 matcher(shunt, series) 관계 질문 [Matcher와 VI sensor]",
+   "url": "https://snupal.snu.ac.kr/qna/document/608/"
+  },
+  "607": {
+   "title": "ECR 플라즈마에 대해서 질문드립니다. [ECR과 uniformity]",
+   "url": "https://snupal.snu.ac.kr/qna/document/607/"
+  },
+  "605": {
+   "title": "HEATER 교체 이후 SELF BIAS 상승관련 문의 [Self bias와 dummy 공정]",
+   "url": "https://snupal.snu.ac.kr/qna/document/605/"
+  },
+  "604": {
+   "title": "Vpp, Vdc 측정관련 문의 [Self bias와 DC offset]",
+   "url": "https://snupal.snu.ac.kr/qna/document/604/"
+  },
+  "603": {
+   "title": "간단한 질문 몇개드립니다. [공정 drift와 database]",
+   "url": "https://snupal.snu.ac.kr/qna/document/603/"
+  },
+  "600": {
+   "title": "Hollow Cahthode glow Discharge 실험 관련해서 여쭤보고싶습니다. [장치 setting과 전극재료]",
+   "url": "https://snupal.snu.ac.kr/qna/document/600/"
+  },
+  "598": {
+   "title": "매쳐 출력값 검토 부탁 드립니다. [RF plasma와 circuit model]",
+   "url": "https://snupal.snu.ac.kr/qna/document/598/"
+  },
+  "595": {
+   "title": "플라즈마 형성시 하전입자의 밀도와 챔버에 관련해서 질문드립니다. [Skin depth, global model과 floating potential]",
+   "url": "https://snupal.snu.ac.kr/qna/document/595/"
+  },
+  "594": {
+   "title": "Gas flow rate에 따른 etch rate의 변화가 궁금합니다. [Flow rate와 moral ratio, resident time]",
+   "url": "https://snupal.snu.ac.kr/qna/document/594/"
+  },
+  "592": {
+   "title": "ICP reflecot power [Insulator와 rf leak]",
+   "url": "https://snupal.snu.ac.kr/qna/document/592/"
+  },
+  "591": {
+   "title": "압력, 유량과 residence time에 대해 질문있습니다. [MFC와 residence time]",
+   "url": "https://snupal.snu.ac.kr/qna/document/591/"
+  },
+  "589": {
+   "title": "Ar과 O2 plasma source에 따른 ignition condition에 대하여 질문 있습니다. [Step ionization, Dissociative ionization]",
+   "url": "https://snupal.snu.ac.kr/qna/document/589/"
+  },
+  "588": {
+   "title": "공정플라즈마 [플라즈마 입자 거동 및 유체 방정식]",
+   "url": "https://snupal.snu.ac.kr/qna/document/588/"
+  },
+  "586": {
+   "title": "전쉬스에 대한 간단한 질문 [Debye length 및 sheath 형성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/586/"
+  },
+  "583": {
+   "title": "plasma sheath 두께의 영향에 대하여 질문드립니다. [Child-Langmuir sheath model]",
+   "url": "https://snupal.snu.ac.kr/qna/document/583/"
+  },
+  "581": {
+   "title": "질문있습니다. [전자 에너지 분포함수 및 Maxwell 분포]",
+   "url": "https://snupal.snu.ac.kr/qna/document/581/"
+  },
+  "579": {
+   "title": "PECVD Precursor 별 Arcing 원인 [하전에 의한 전기장 형성 및 방전 시간]",
+   "url": "https://snupal.snu.ac.kr/qna/document/579/"
+  },
+  "576": {
+   "title": "[질문] Plasma 장비에 대한 Monitoring 질문 [OES, VI 신호 및 가상계측 인자]",
+   "url": "https://snupal.snu.ac.kr/qna/document/576/"
+  },
+  "574": {
+   "title": "Matcher의 Load, Tune 영향을 미치는 요소가 궁금합니다. [플라즈마 임피던스 및 내부 임피던스 변화]",
+   "url": "https://snupal.snu.ac.kr/qna/document/574/"
+  },
+  "573": {
+   "title": "EEDF, IEDF, Cross section관련 질문 [Plasma spectroscopy]",
+   "url": "https://snupal.snu.ac.kr/qna/document/573/"
+  },
+  "572": {
+   "title": "ICP, CCP 그리고 Ion Implantation 공정 관련 질문 드립니다. [플라즈마 방전 및 이온 가속]",
+   "url": "https://snupal.snu.ac.kr/qna/document/572/"
+  },
+  "571": {
+   "title": "matcher, ESC, Heater에 대해 질문 드립니다. [회로 모델 및 부품 impedance]",
+   "url": "https://snupal.snu.ac.kr/qna/document/571/"
+  },
+  "569": {
+   "title": "교수님 질문이 있습니다. [Child-Langmuir sheath]",
+   "url": "https://snupal.snu.ac.kr/qna/document/569/"
+  },
+  "568": {
+   "title": "wafer bias [Self bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/568/"
+  },
+  "565": {
+   "title": "RPG Cleaning에 관한 질문입니다. [라디컬 측정 방법 및 세정 기술]",
+   "url": "https://snupal.snu.ac.kr/qna/document/565/"
+  },
+  "563": {
+   "title": "안녕하세요 ICP dry etching 관련 질문사항드립니다! [N2 플라즈마]",
+   "url": "https://snupal.snu.ac.kr/qna/document/563/"
+  },
+  "561": {
+   "title": "N2 Plasma 상태에 대해서 질문 드립니다. [충돌 반응 및 전력 전달 모델]",
+   "url": "https://snupal.snu.ac.kr/qna/document/561/"
+  },
+  "560": {
+   "title": "dry etching중 온도, 진공도, glass상태에 따라 chucking force가 변화하는지요? [표면 하전 특성 및 chucking 불안정성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/560/"
+  },
+  "557": {
+   "title": "ICP plasma에서 RF bias에 대한 문의가 있습니다 [Self bias 및 플라즈마 방전 매커니즘]",
+   "url": "https://snupal.snu.ac.kr/qna/document/557/"
+  },
+  "556": {
+   "title": "VPS 공정에서 압력변수관련 질문입니다. [VPS]",
+   "url": "https://snupal.snu.ac.kr/qna/document/556/"
+  },
+  "555": {
+   "title": "임피던스 실수부에 대해 궁금한 점이 있습니다. [플라즈마 dielectric property]",
+   "url": "https://snupal.snu.ac.kr/qna/document/555/"
+  },
+  "554": {
+   "title": "쉬쓰 천이지역에 관한 질문입니다. [Ambipolar diffusion]",
+   "url": "https://snupal.snu.ac.kr/qna/document/554/"
+  },
+  "553": {
+   "title": "Langmuir probe의 위치에 관한 질문입니다. [전자 소실 및 플라즈마 전위]",
+   "url": "https://snupal.snu.ac.kr/qna/document/553/"
+  },
+  "551": {
+   "title": "식각 시 나타나는 micro-trench 문제 [소자 식각 데미지]",
+   "url": "https://snupal.snu.ac.kr/qna/document/551/"
+  },
+  "548": {
+   "title": "고온의 플라즈마와 저온의 플라즈마의 차이 [플라즈마 물리/화학적 특성, 중성입자 거동 및 자기장 성질]",
+   "url": "https://snupal.snu.ac.kr/qna/document/548/"
+  },
+  "547": {
+   "title": "charge effect에 대해 [Self bias 및 capacitively couple]",
+   "url": "https://snupal.snu.ac.kr/qna/document/547/"
+  },
+  "545": {
+   "title": "터보펌프 에러관련 [터보 펌프 구동 압력]",
+   "url": "https://snupal.snu.ac.kr/qna/document/545/"
+  },
+  "544": {
+   "title": "프리쉬스에 관한 질문입니다. [Ambipolar diffusion 및 collisionless sheath]",
+   "url": "https://snupal.snu.ac.kr/qna/document/544/"
+  },
+  "537": {
+   "title": "수중방전에 대해 질문있습니다. [플라즈마 생성 및 방전]",
+   "url": "https://snupal.snu.ac.kr/qna/document/537/"
+  },
+  "531": {
+   "title": "Frequency에 따라 플라즈마 영역이 달라질까요? [전자와 이온의 열운동 특성과 반응 거리]",
+   "url": "https://snupal.snu.ac.kr/qna/document/531/"
+  },
+  "528": {
+   "title": "magnetic substrate와 플라즈마 거동 [대면 재료의 전기적 특성와 플라즈마 쉬스의 변화]",
+   "url": "https://snupal.snu.ac.kr/qna/document/528/"
+  },
+  "526": {
+   "title": "Pecvd장비 공정 질문 [Dusty plasma와 벽면 particle 제어]",
+   "url": "https://snupal.snu.ac.kr/qna/document/526/"
+  },
+  "525": {
+   "title": "CCP챔버 접지 질문드립니다. [장치의 접지 일체화]",
+   "url": "https://snupal.snu.ac.kr/qna/document/525/"
+  },
+  "524": {
+   "title": "DRY Etcher Alarm : He Flow 관점 문의 드립니다. [O ring 결합부 근처 leak detect]",
+   "url": "https://snupal.snu.ac.kr/qna/document/524/"
+  },
+  "518": {
+   "title": "수중속 저온 플라즈마 방전 관련 질문 드립니다. [방전 특성과 절연 파괴]",
+   "url": "https://snupal.snu.ac.kr/qna/document/518/"
+  },
+  "515": {
+   "title": "Descum 관련 문의 사항. [라디컬 및 이온 생성과 플라즈마 생성 메커니즘]",
+   "url": "https://snupal.snu.ac.kr/qna/document/515/"
+  },
+  "514": {
+   "title": "RPC ClEAN시 THD 발생 [RF shield와 ground의 강화]",
+   "url": "https://snupal.snu.ac.kr/qna/document/514/"
+  },
+  "512": {
+   "title": "Plasma 발생영역에 관한 질문 [Plasma sheath의 형성과정]",
+   "url": "https://snupal.snu.ac.kr/qna/document/512/"
+  },
+  "510": {
+   "title": "OES를 활용한 excitation temperature 분석 질문입니다. [Electron Temperature와 Excitation Temperature]",
+   "url": "https://snupal.snu.ac.kr/qna/document/510/"
+  },
+  "509": {
+   "title": "챔버 임피던스 변화에 따른 공정변화 [Chamber impedance와 공정 드리프트 진단 인자]",
+   "url": "https://snupal.snu.ac.kr/qna/document/509/"
+  },
+  "508": {
+   "title": "해수에서 플라즈마 방전 극대화 방안 [Plasma breakdown과 살균 과정]",
+   "url": "https://snupal.snu.ac.kr/qna/document/508/"
+  },
+  "507": {
+   "title": "고전압 방전 전기장 내 측정 [전극과 탐침과의 간격]",
+   "url": "https://snupal.snu.ac.kr/qna/document/507/"
+  },
+  "504": {
+   "title": "RIE 공정시에 형성되는 두 효과를 분리해보고 싶습니다. [플라즈마 가속 전자의 충돌 반응]",
+   "url": "https://snupal.snu.ac.kr/qna/document/504/"
+  },
+  "502": {
+   "title": "etching에 관한 질문입니다. [충돌 현상 및 이온화 과정]",
+   "url": "https://snupal.snu.ac.kr/qna/document/502/"
+  },
+  "500": {
+   "title": "RF Vpp관련하여 문의드립니다. [Self bias와 플라즈마 쉬스]",
+   "url": "https://snupal.snu.ac.kr/qna/document/500/"
+  },
+  "498": {
+   "title": "(PAP)plasma absorption prove 관련 질문 [PAP 진단법]",
+   "url": "https://snupal.snu.ac.kr/qna/document/498/"
+  },
+  "496": {
+   "title": "Depo시 RF 초기 Reflect 관련하여 문의드립니다. [Matcher의 알고리즘]",
+   "url": "https://snupal.snu.ac.kr/qna/document/496/"
+  },
+  "495": {
+   "title": "I-V characteristic에 관하여 질문이 있습니다. [전자전류의 해석]",
+   "url": "https://snupal.snu.ac.kr/qna/document/495/"
+  },
+  "494": {
+   "title": "플라즈마 기초에 관하여 질문드립니다. [광운대 플라즈마 바이오 연구소]",
+   "url": "https://snupal.snu.ac.kr/qna/document/494/"
+  },
+  "493": {
+   "title": "플라즈마 깜빡임에 대해 질문이 있습니다. [Ionization collision 및 Effective ionization energy]",
+   "url": "https://snupal.snu.ac.kr/qna/document/493/"
+  },
+  "492": {
+   "title": "OES 원리에 대해 궁금합니다! [플라즈마 빛의 파장 정보]",
+   "url": "https://snupal.snu.ac.kr/qna/document/492/"
+  },
+  "489": {
+   "title": "플라즈마 색 관찰 [플라즈마 빛과 OES신호]",
+   "url": "https://snupal.snu.ac.kr/qna/document/489/"
+  },
+  "483": {
+   "title": "플라즈마 기초입니다 [Breakdown과 electrolysis]",
+   "url": "https://snupal.snu.ac.kr/qna/document/483/"
+  },
+  "482": {
+   "title": "O2 플라즈마 클리닝 관련 질문 [Physical sputtering과 cleaning]",
+   "url": "https://snupal.snu.ac.kr/qna/document/482/"
+  },
+  "479": {
+   "title": "PR wafer seasoning [Particle balance, seasoning]",
+   "url": "https://snupal.snu.ac.kr/qna/document/479/"
+  },
+  "476": {
+   "title": "RF PLASMA를 사용한 J.R ESC DECHUCK에 대하여 문의드립니다. [Ionization과 chucking]",
+   "url": "https://snupal.snu.ac.kr/qna/document/476/"
+  },
+  "475": {
+   "title": "wafer 두께가 증가함에 따라 Er이 급격하게 떨어지는 현상 [ER과 self bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/475/"
+  },
+  "474": {
+   "title": "VI sensor를 활용한 진단 방법 [Monitoring과 target]",
+   "url": "https://snupal.snu.ac.kr/qna/document/474/"
+  },
+  "473": {
+   "title": "아래 382번 질문에 대한 추가 질문 드립니다. [Self bias와 capacitance]",
+   "url": "https://snupal.snu.ac.kr/qna/document/473/"
+  },
+  "471": {
+   "title": "Plasma etcher particle 원인 [Particle issue와 wafer의 sheath]",
+   "url": "https://snupal.snu.ac.kr/qna/document/471/"
+  },
+  "470": {
+   "title": "PRECOATING 공정에서 SHOWERHEAT <-> STAGE HEATER 간 GAP과 DEPO 막질의 THK와의 연관성…. [Plasma property와 process control]",
+   "url": "https://snupal.snu.ac.kr/qna/document/470/"
+  },
+  "465": {
+   "title": "PDP 방전갭에 따른 휘도에 관해 질문드려요 [Pd condition과 PDP]",
+   "url": "https://snupal.snu.ac.kr/qna/document/465/"
+  },
+  "464": {
+   "title": "플라즈마 절단시 C와 N의 결합가능성 [Plasma torch와 cyanide]",
+   "url": "https://snupal.snu.ac.kr/qna/document/464/"
+  },
+  "463": {
+   "title": "플라즈마 진단에서 rogowski 코일 관련 질문 드립니다. [B-dot probe, plasma diagnostics]",
+   "url": "https://snupal.snu.ac.kr/qna/document/463/"
+  },
+  "461": {
+   "title": "코로나 전류에 따른 발생되는 이온의 수와, 하전에 영향을 미치는 요소에 대해서 질문드립니다. [Corona breakdown, current density]",
+   "url": "https://snupal.snu.ac.kr/qna/document/461/"
+  },
+  "460": {
+   "title": "SiO2를 Etching 할 시 NF3 단독 보다 O2를 1:1로 섞을시 Etching이 잘되는 이유 [ER과 energy transport]",
+   "url": "https://snupal.snu.ac.kr/qna/document/460/"
+  },
+  "459": {
+   "title": "플라즈마 압력에 대하여 [Glow discharge와 light]",
+   "url": "https://snupal.snu.ac.kr/qna/document/459/"
+  },
+  "458": {
+   "title": "RF plasma 증착 시 arcing 관련하여 질문드립니다. [Arc와 cleaning]",
+   "url": "https://snupal.snu.ac.kr/qna/document/458/"
+  },
+  "456": {
+   "title": "rf chamber 내에 생기는 byproduct에 대한 질문 있습니다. [Byproduct와 gas flow, cleaning]",
+   "url": "https://snupal.snu.ac.kr/qna/document/456/"
+  },
+  "455": {
+   "title": "Etch 공정 Dummy 사용이유가 뭔지 알 수 있을까요? [ESC coating와 dummy load]",
+   "url": "https://snupal.snu.ac.kr/qna/document/455/"
+  },
+  "454": {
+   "title": "ICP와 CCP에서의 Breakdown voltage [Breakdown과 E-H transition]",
+   "url": "https://snupal.snu.ac.kr/qna/document/454/"
+  },
+  "453": {
+   "title": "sputtering gas에 따른 플라즈마 데미지 [Sputter와 sheath, flux]",
+   "url": "https://snupal.snu.ac.kr/qna/document/453/"
+  },
+  "452": {
+   "title": "Remote Plasma가 가능한 이온 [Remote plasma와 diffusion]",
+   "url": "https://snupal.snu.ac.kr/qna/document/452/"
+  },
+  "451": {
+   "title": "CVD CCP/ICP 사용간 Wafet Bias volt 줄어듬 현상 문의드려요 [Wafer bias와 chuck cap]",
+   "url": "https://snupal.snu.ac.kr/qna/document/451/"
+  },
+  "448": {
+   "title": "플라즈마에서 가속 전압 또는 RF 파워 관련 질문드려요 [RF power와 power factor]",
+   "url": "https://snupal.snu.ac.kr/qna/document/448/"
+  },
+  "447": {
+   "title": "DC bias (Self bias) [\"Glow discharge processes\"]",
+   "url": "https://snupal.snu.ac.kr/qna/document/447/"
+  },
+  "446": {
+   "title": "ICP와 CCP의 차이 [Self bias와 Maxwellian distribution]",
+   "url": "https://snupal.snu.ac.kr/qna/document/446/"
+  },
+  "444": {
+   "title": "RF FREUNCY와 D/R 과의 상관 관계에 관한 질문입니다. [CCP와 ionization]",
+   "url": "https://snupal.snu.ac.kr/qna/document/444/"
+  },
+  "443": {
+   "title": "Ion Energy와 RF matchin관련 질문입니다. [Self bias와 matcher]",
+   "url": "https://snupal.snu.ac.kr/qna/document/443/"
+  },
+  "442": {
+   "title": "수소 플라즈마 관련해서 질문이 있습니다. [MFC와 H2 gas retention]",
+   "url": "https://snupal.snu.ac.kr/qna/document/442/"
+  },
+  "441": {
+   "title": "ICP power와 ion energy사이의 관계에 대해서 문의드립니다. [Ion energy와 heat, sheath energy]",
+   "url": "https://snupal.snu.ac.kr/qna/document/441/"
+  },
+  "440": {
+   "title": "Impedence 위상관련 문의 [Circuit model, matching]",
+   "url": "https://snupal.snu.ac.kr/qna/document/440/"
+  },
+  "438": {
+   "title": "RIE에 관한 질문이 있습니다. [Sheath 이온 거동 및 bias power]",
+   "url": "https://snupal.snu.ac.kr/qna/document/438/"
+  },
+  "435": {
+   "title": "PE 모드와 RIE 모드에서 쉬스 구역에 대한 질문 [전극 표면 전위]",
+   "url": "https://snupal.snu.ac.kr/qna/document/435/"
+  },
+  "434": {
+   "title": "안녕하세요. 플라즈마 기체분자종에 따른 기판charing정도차이 문의 [Self bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/434/"
+  },
+  "433": {
+   "title": "Plasma Etch시 Wafer Edge 영향 [Standing wave 및 플라즈마 밀도 분포]",
+   "url": "https://snupal.snu.ac.kr/qna/document/433/"
+  },
+  "432": {
+   "title": "O2 플라즈마 표면처리 관련 질문2154",
+   "url": "https://snupal.snu.ac.kr/qna/document/432/"
+  },
+  "431": {
+   "title": "Ar Gas 량에 따른 Deposition Rate 변화 [Depo radical 형성 및 sputtering]",
+   "url": "https://snupal.snu.ac.kr/qna/document/431/"
+  },
+  "426": {
+   "title": "가입인사드립니다.",
+   "url": "https://snupal.snu.ac.kr/qna/document/426/"
+  },
+  "425": {
+   "title": "문의 드립니다. [방전 개시 조건 및 Bohm current density]",
+   "url": "https://snupal.snu.ac.kr/qna/document/425/"
+  },
+  "424": {
+   "title": "analog tuner관련해서 질문드립니다. [박막 플라즈마 및 tunning 원리]",
+   "url": "https://snupal.snu.ac.kr/qna/document/424/"
+  },
+  "423": {
+   "title": "dbd-플라즈마 질문있어욤!!!!! [플라즈마 생성 반응]",
+   "url": "https://snupal.snu.ac.kr/qna/document/423/"
+  },
+  "420": {
+   "title": "O2, N2, Ar 플라즈마에 대한 질문입니다. [표면 화학 반응]",
+   "url": "https://snupal.snu.ac.kr/qna/document/420/"
+  },
+  "418": {
+   "title": "입자에너지에따른 궤도전자와 핵의 에너지loss rate",
+   "url": "https://snupal.snu.ac.kr/qna/document/418/"
+  },
+  "417": {
+   "title": "안녕하세요. ICP 플라즈마의 임피던스를 측정하는 방법에 대해서 문의를 드립니다. [VI probe]",
+   "url": "https://snupal.snu.ac.kr/qna/document/417/"
+  },
+  "416": {
+   "title": "3-body recombination 관련 문의드립니다. [Energy 보존 및 momentum 보존]",
+   "url": "https://snupal.snu.ac.kr/qna/document/416/"
+  },
+  "414": {
+   "title": "핵융합 질문 [NFRI 국가핵융합 연구소]",
+   "url": "https://snupal.snu.ac.kr/qna/document/414/"
+  },
+  "413": {
+   "title": "Dusty Plasma의 진단에 관해서 질문드립니다. [Sheath 전기장 및 instability]",
+   "url": "https://snupal.snu.ac.kr/qna/document/413/"
+  },
+  "412": {
+   "title": "잔류가스분석기(RGA)에 관하여 질문드립니다. [군산대학교 주정훈 교수님]",
+   "url": "https://snupal.snu.ac.kr/qna/document/412/"
+  },
+  "411": {
+   "title": "CCP에서 DIelectric(유전체)의 역활 [유전체 격벽 방전]",
+   "url": "https://snupal.snu.ac.kr/qna/document/411/"
+  },
+  "410": {
+   "title": "ICP Chamber Type의 Belljar Arcing관련 문의드립니다. [국부 전기장 형성 및 reflect power]",
+   "url": "https://snupal.snu.ac.kr/qna/document/410/"
+  },
+  "407": {
+   "title": "코로나방전, 이온풍 관련 문의 드립니다. [Reaction rate 및 reaction rate coefficient]",
+   "url": "https://snupal.snu.ac.kr/qna/document/407/"
+  },
+  "405": {
+   "title": "모노실란(SiH4) 분해 메카니즘 문의",
+   "url": "https://snupal.snu.ac.kr/qna/document/405/"
+  },
+  "404": {
+   "title": "플라즈마 방전을 위한 RF Power 공급시점에서의 반사파에 관해서 질문드립니다. [최적 정합 조건 및 정합 시간]",
+   "url": "https://snupal.snu.ac.kr/qna/document/404/"
+  },
+  "403": {
+   "title": "HF + LF 사용 중, LF와 POWER와의 관계에 대한 질문입니다. [Sputtering 및 particle issue]",
+   "url": "https://snupal.snu.ac.kr/qna/document/403/"
+  },
+  "402": {
+   "title": "Ar plasma power/time [Self bias와 sputtering 효과]",
+   "url": "https://snupal.snu.ac.kr/qna/document/402/"
+  },
+  "400": {
+   "title": "안녕하세요 반도체 공정 중 용어의 개념이 헷갈립니다. [공정 용법]",
+   "url": "https://snupal.snu.ac.kr/qna/document/400/"
+  },
+  "399": {
+   "title": "플라즈마 내에서의 현상 [Neo-classical transport theory]",
+   "url": "https://snupal.snu.ac.kr/qna/document/399/"
+  },
+  "398": {
+   "title": "RF Generator와 Impedance 관련 질문있습니다 [High Power RFG]",
+   "url": "https://snupal.snu.ac.kr/qna/document/398/"
+  },
+  "396": {
+   "title": "N2, Ar Plasma Treatment 질문입니다. [쉬스 전위 및 플라즈마 세정]",
+   "url": "https://snupal.snu.ac.kr/qna/document/396/"
+  },
+  "393": {
+   "title": "3 stub 정합에 대해 궁금합니다. [Wave guide 및 matcher position 변화]",
+   "url": "https://snupal.snu.ac.kr/qna/document/393/"
+  },
+  "392": {
+   "title": "Plasma 에칭 후 정전기 처리 [표면 전위 생성 및 방전]",
+   "url": "https://snupal.snu.ac.kr/qna/document/392/"
+  },
+  "391": {
+   "title": "Dry Etching Uniformity 개선 방법 [장치 구조에 따른 공간 분포]",
+   "url": "https://snupal.snu.ac.kr/qna/document/391/"
+  },
+  "390": {
+   "title": "micro plasma에 사용되는 전력을 알고 싶습니다. [Wave guide 설계 및 matcher 설계]",
+   "url": "https://snupal.snu.ac.kr/qna/document/390/"
+  },
+  "389": {
+   "title": "ICP 내부 기체 비율에 따른 spectrum intensity 변화 [Excitation transfer 반응과 방사천이율]",
+   "url": "https://snupal.snu.ac.kr/qna/document/389/"
+  },
+  "387": {
+   "title": "DC스퍼터링과 RF 스퍼터링에서의 처음 전자의 출처와 처음 이온의 생성 질문 [플라즈마 생성과 Sputtering]",
+   "url": "https://snupal.snu.ac.kr/qna/document/387/"
+  },
+  "386": {
+   "title": "M/W, RF의 Plasma에 의한 Ashing 관련 문의드립니다. [DC 글로우 방전 및 Breakdown]",
+   "url": "https://snupal.snu.ac.kr/qna/document/386/"
+  },
+  "379": {
+   "title": "HF+LF 사용 중. HF Power 증가 시 Depostion Rate 감소 현상 문의 [전자의 에너지와 중성입자와의 충돌]",
+   "url": "https://snupal.snu.ac.kr/qna/document/379/"
+  },
+  "377": {
+   "title": "양극 코로나 방전에 대한 질문입니다. [이차 전자의 방출 특성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/377/"
+  },
+  "376": {
+   "title": "13.56MHz resonator 해석 관련 문의 [Resonator의 matching]",
+   "url": "https://snupal.snu.ac.kr/qna/document/376/"
+  },
+  "369": {
+   "title": "방전에서의 재질 질문입니다. [방전과 전압]",
+   "url": "https://snupal.snu.ac.kr/qna/document/369/"
+  },
+  "365": {
+   "title": "정전척 isolation문의 입니다. [Paschen's law와 절연파괴현상]",
+   "url": "https://snupal.snu.ac.kr/qna/document/365/"
+  },
+  "364": {
+   "title": "Microwave 장비 관련 질문 [RF Plasma의 주파수에 따른 파장의 길이]",
+   "url": "https://snupal.snu.ac.kr/qna/document/364/"
+  },
+  "362": {
+   "title": "진공챔버내에서 플라즈마 발생 문의 [플라즈마의 형성 원리]",
+   "url": "https://snupal.snu.ac.kr/qna/document/362/"
+  },
+  "359": {
+   "title": "ICP 구성에서 PLASMA IGNITON시 문의 [ICP와 플라즈마 발생]",
+   "url": "https://snupal.snu.ac.kr/qna/document/359/"
+  },
+  "357": {
+   "title": "Remote Plasma에서 Baffle 재질에 따른 Plasma 특성 차이 [플라즈마의 유지와 쉬스]",
+   "url": "https://snupal.snu.ac.kr/qna/document/357/"
+  },
+  "354": {
+   "title": "RF & DC sputtering에 대해 질문드립니다. [RF& DC bias와 matcher의 접지]",
+   "url": "https://snupal.snu.ac.kr/qna/document/354/"
+  },
+  "353": {
+   "title": "Sheath와 Darkspace에 대한 질문입니다. [쉬스와 Bulk Plasma 영역]",
+   "url": "https://snupal.snu.ac.kr/qna/document/353/"
+  },
+  "350": {
+   "title": "수중 플라즈마에 대해 [수중 플라즈마의 화학 반응 현상]",
+   "url": "https://snupal.snu.ac.kr/qna/document/350/"
+  },
+  "349": {
+   "title": "[기초]CCP Type에서의 Self-Bias(-Vdc)+Vp(plasma potential)관련 질문입니다. [플라즈마 전위와 쉬스]",
+   "url": "https://snupal.snu.ac.kr/qna/document/349/"
+  },
+  "343": {
+   "title": "플라즈마가 생기는 메커니즘에 대한 질문입니다. [플라즈마 형성 과정과 파센의 법칙]",
+   "url": "https://snupal.snu.ac.kr/qna/document/343/"
+  },
+  "338": {
+   "title": "플라즈마 발생 억제 문의 [Induction field와 breakdown]",
+   "url": "https://snupal.snu.ac.kr/qna/document/338/"
+  },
+  "334": {
+   "title": "remote plasma에 대해 설명좀 부탁드립니다. [Remote plasma의 Radical]",
+   "url": "https://snupal.snu.ac.kr/qna/document/334/"
+  },
+  "332": {
+   "title": "[Sputter Forward,Reflect Power] [Sputter와 matching]",
+   "url": "https://snupal.snu.ac.kr/qna/document/332/"
+  },
+  "331": {
+   "title": "RF Power에 따라 전자온도가 증가하는 경우에 대하여 궁금합니다. [Power와 Gas ionization]",
+   "url": "https://snupal.snu.ac.kr/qna/document/331/"
+  },
+  "328": {
+   "title": "[질문] Plasma density 측정 방법 [Plasma property와  sputtering]",
+   "url": "https://snupal.snu.ac.kr/qna/document/328/"
+  },
+  "327": {
+   "title": "[질문] 석영 parts로인한 특성 이상 [Plasma 대면재료와 공정법]",
+   "url": "https://snupal.snu.ac.kr/qna/document/327/"
+  },
+  "325": {
+   "title": "kr 입자 조사에 의한 Cu 스퍼터링 에너지 및 이탈 속도 분포 함수",
+   "url": "https://snupal.snu.ac.kr/qna/document/325/"
+  },
+  "323": {
+   "title": "상압 플라즈마 방전에 관한 문의 [Electric field와 breakdown]",
+   "url": "https://snupal.snu.ac.kr/qna/document/323/"
+  },
+  "321": {
+   "title": "[질문] ICP plasma 를 이용하여 증착에 사용하고 있는데요. [Sheath model과 bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/321/"
+  },
+  "312": {
+   "title": "[re] H2/O2 혼합 플라즈마에 관련 질문에 대한 답변 드립니다.",
+   "url": "https://snupal.snu.ac.kr/qna/document/312/"
+  },
+  "310": {
+   "title": "ECR plasma 장비관련 질문입니다. [ECR과 enhanced process]",
+   "url": "https://snupal.snu.ac.kr/qna/document/310/"
+  },
+  "302": {
+   "title": "반도체 CVD 공정의 ACL공정에서 RF Reflect Power에 관하여 여쭤보고 싶습니다.",
+   "url": "https://snupal.snu.ac.kr/qna/document/302/"
+  },
+  "299": {
+   "title": "광플라즈마(Photoplasma)라는 것이 있는가요?",
+   "url": "https://snupal.snu.ac.kr/qna/document/299/"
+  },
+  "295": {
+   "title": "전자파 누설에 관해서 질문드립니다. [Coaxial cable과 wave shield]",
+   "url": "https://snupal.snu.ac.kr/qna/document/295/"
+  },
+  "294": {
+   "title": "N2 플라즈마 공정 시간에 따른 Etching rate의 변화 이유가 알고 싶어요 [Cooling과 Etch rate]",
+   "url": "https://snupal.snu.ac.kr/qna/document/294/"
+  },
+  "293": {
+   "title": "질문이 몇가지 있읍니다. [Lorentz force와 Magnetic cusp]",
+   "url": "https://snupal.snu.ac.kr/qna/document/293/"
+  },
+  "292": {
+   "title": "저온 플라즈마에서 이온, 전자, 중성자 온도의 비평형이 생기는 이유에 대해서 [Equilibrium과 collision]",
+   "url": "https://snupal.snu.ac.kr/qna/document/292/"
+  },
+  "290": {
+   "title": "dechucking시 Discharge 불량으로 Glass 깨짐 [ESC와 capacity]",
+   "url": "https://snupal.snu.ac.kr/qna/document/290/"
+  },
+  "287": {
+   "title": "Plasma Gas의 차이점 [플라즈마 화학 반응 및 에너지 전달]",
+   "url": "https://snupal.snu.ac.kr/qna/document/287/"
+  },
+  "283": {
+   "title": "[re] 터보분자펌프에 대해서 질문 좀 하고 싶어요!",
+   "url": "https://snupal.snu.ac.kr/qna/document/283/"
+  },
+  "280": {
+   "title": "Dry Etcher 내 reflect 현상 [Chuck 전압/전류 및 field breakdown]",
+   "url": "https://snupal.snu.ac.kr/qna/document/280/"
+  },
+  "279": {
+   "title": "Arcing [전하 축적에 의한 방전 개시]",
+   "url": "https://snupal.snu.ac.kr/qna/document/279/"
+  },
+  "277": {
+   "title": "전자온도에 대하여 궁금한 사항이 있습니다. [전자 가열 매커니즘과 이온 에너지]",
+   "url": "https://snupal.snu.ac.kr/qna/document/277/"
+  },
+  "274": {
+   "title": "CCP형, 진공챔버 내에서의 플라즈마... [플라즈마 확산 및 전력정합 영역 제어]",
+   "url": "https://snupal.snu.ac.kr/qna/document/274/"
+  },
+  "273": {
+   "title": "Dry Etch장비에서 Vdc와 Etch rate관계 [플라즈마 및 반응기 임피던스]",
+   "url": "https://snupal.snu.ac.kr/qna/document/273/"
+  },
+  "272": {
+   "title": "scattering cross-section, rf grounding에 관한 질문입니다. [RF matching 및 반응 단면적]",
+   "url": "https://snupal.snu.ac.kr/qna/document/272/"
+  },
+  "269": {
+   "title": "상압 플라즈마 관련 문의입니다. [열용량과 방전 전력에 따른 냉각 장치]",
+   "url": "https://snupal.snu.ac.kr/qna/document/269/"
+  },
+  "268": {
+   "title": "RF에 대하여...",
+   "url": "https://snupal.snu.ac.kr/qna/document/268/"
+  },
+  "267": {
+   "title": "Dechucking 시 wafer 상의 전하 문제",
+   "url": "https://snupal.snu.ac.kr/qna/document/267/"
+  },
+  "266": {
+   "title": "PECVD  매칭시 Reflect Power 증가 [반사파 형성과 플라즈마 운전 조건]",
+   "url": "https://snupal.snu.ac.kr/qna/document/266/"
+  },
+  "264": {
+   "title": "RF plasma에 대해서 질문드립니다. [Sheath model, Ion current density]",
+   "url": "https://snupal.snu.ac.kr/qna/document/264/"
+  },
+  "263": {
+   "title": "floating substrate 에서 sheath 형성 과정 의문점 [Ambipolar diffusion, Floating potential]",
+   "url": "https://snupal.snu.ac.kr/qna/document/263/"
+  },
+  "262": {
+   "title": "MATCHING NETWORK 에서 BACKWARD BIAS 가 생성되는 이유가 무엇 입니까? [Impedance matching과 반사파 형성]",
+   "url": "https://snupal.snu.ac.kr/qna/document/262/"
+  },
+  "260": {
+   "title": "self bias (rf 전압 강하)",
+   "url": "https://snupal.snu.ac.kr/qna/document/260/"
+  },
+  "259": {
+   "title": "궁금합니다 [입자 속도에 따른 충돌 단면적과 mean free path]",
+   "url": "https://snupal.snu.ac.kr/qna/document/259/"
+  },
+  "257": {
+   "title": "핵융합과 핵폐기물에 대한 질문",
+   "url": "https://snupal.snu.ac.kr/qna/document/257/"
+  },
+  "256": {
+   "title": "AMS진단에 대하여 궁금합니다",
+   "url": "https://snupal.snu.ac.kr/qna/document/256/"
+  },
+  "255": {
+   "title": "Three body collision process",
+   "url": "https://snupal.snu.ac.kr/qna/document/255/"
+  },
+  "254": {
+   "title": "플라즈마에서 전자가 에너지를 어느 부분에서..",
+   "url": "https://snupal.snu.ac.kr/qna/document/254/"
+  },
+  "253": {
+   "title": "스퍼터링에서 DC bias의 감소 원인이 궁금합니다..",
+   "url": "https://snupal.snu.ac.kr/qna/document/253/"
+  },
+  "252": {
+   "title": "RIE장비 에서 WALL 과 TOP 온도",
+   "url": "https://snupal.snu.ac.kr/qna/document/252/"
+  },
+  "250": {
+   "title": "Ground에 대하여",
+   "url": "https://snupal.snu.ac.kr/qna/document/250/"
+  },
+  "246": {
+   "title": "대기압 상태의 플라즈마 측정",
+   "url": "https://snupal.snu.ac.kr/qna/document/246/"
+  },
+  "245": {
+   "title": "Lissajous figure에 대하여..",
+   "url": "https://snupal.snu.ac.kr/qna/document/245/"
+  },
+  "244": {
+   "title": "plasma and sheath, 플라즈마 크기",
+   "url": "https://snupal.snu.ac.kr/qna/document/244/"
+  },
+  "241": {
+   "title": "이온주입량에 대한 문의",
+   "url": "https://snupal.snu.ac.kr/qna/document/241/"
+  },
+  "240": {
+   "title": "Peak RF Voltage의 의미",
+   "url": "https://snupal.snu.ac.kr/qna/document/240/"
+  },
+  "239": {
+   "title": "electrode gap",
+   "url": "https://snupal.snu.ac.kr/qna/document/239/"
+  },
+  "235": {
+   "title": "확산펌프 [DP 변수 검토]",
+   "url": "https://snupal.snu.ac.kr/qna/document/235/"
+  },
+  "233": {
+   "title": "핵융합 발전에서 폐기물이 않나오는…. [처리와 재활용]",
+   "url": "https://snupal.snu.ac.kr/qna/document/233/"
+  },
+  "232": {
+   "title": "플라즈마을 막는 옷의 소재는? [옷의 소재 표면 처리]",
+   "url": "https://snupal.snu.ac.kr/qna/document/232/"
+  },
+  "231": {
+   "title": "스퍼터링시 시편 두께와 박막두께 [박막의 하전량 변화]",
+   "url": "https://snupal.snu.ac.kr/qna/document/231/"
+  },
+  "230": {
+   "title": "Plasma source type [CCP, ICP, TCP]",
+   "url": "https://snupal.snu.ac.kr/qna/document/230/"
+  },
+  "229": {
+   "title": "플라즈마를 이용한 발광시스템에 관한 연구 [Plasma lamp]",
+   "url": "https://snupal.snu.ac.kr/qna/document/229/"
+  },
+  "228": {
+   "title": "CCP의 electrod 재질 혼동 [PECVD와 화학물 코팅]",
+   "url": "https://snupal.snu.ac.kr/qna/document/228/"
+  },
+  "227": {
+   "title": "PECVD에서 플라즈마 demage가 발생 조건 [쉬스와 플라즈마 밀도에 의한 damage]",
+   "url": "https://snupal.snu.ac.kr/qna/document/227/"
+  },
+  "226": {
+   "title": "플라즈마 코팅 관하여 [PECVD와 화학물 코팅]",
+   "url": "https://snupal.snu.ac.kr/qna/document/226/"
+  },
+  "223": {
+   "title": "플라즈마 온도 질문+충돌 단면적 [전자의 에너지에 따른 충돌반응]",
+   "url": "https://snupal.snu.ac.kr/qna/document/223/"
+  },
+  "222": {
+   "title": "DCMagnetron Sputter에서 (+)전원 인가시 [플라즈마 부유 전위]",
+   "url": "https://snupal.snu.ac.kr/qna/document/222/"
+  },
+  "221": {
+   "title": "DC SPT 문의 [절연체의 전위]",
+   "url": "https://snupal.snu.ac.kr/qna/document/221/"
+  },
+  "219": {
+   "title": "SCCM 단위에 대하여 궁금합니다. [Flow rate]",
+   "url": "https://snupal.snu.ac.kr/qna/document/219/"
+  },
+  "218": {
+   "title": "Electrode의 역할에 대해서 궁금합니다. [이차전자의 방출과 스퍼터링]",
+   "url": "https://snupal.snu.ac.kr/qna/document/218/"
+  },
+  "217": {
+   "title": "플라즈마에 대해서 꼭알고 싶은거 있는데요.. [디바이 차폐와 이온화된 가스]",
+   "url": "https://snupal.snu.ac.kr/qna/document/217/"
+  },
+  "216": {
+   "title": "반응기의 면적에 대한 질문 [전극의 면적에 따른 전압 강하]",
+   "url": "https://snupal.snu.ac.kr/qna/document/216/"
+  },
+  "213": {
+   "title": "플라즈마 분배에 관하여 정보를 얻고 싶습니다. [플라즈마 영향 인자]",
+   "url": "https://snupal.snu.ac.kr/qna/document/213/"
+  },
+  "211": {
+   "title": "핵융합에 대하여 [상온 핵융합 관련 연구 동향]",
+   "url": "https://snupal.snu.ac.kr/qna/document/211/"
+  },
+  "209": {
+   "title": "sheath와 debye sheilding에 관하여 [전자와 이온의 흐름]",
+   "url": "https://snupal.snu.ac.kr/qna/document/209/"
+  },
+  "208": {
+   "title": "플라즈마를 손으로 만질 수는 없나요 [플라즈마의 온도와 밀도]",
+   "url": "https://snupal.snu.ac.kr/qna/document/208/"
+  },
+  "207": {
+   "title": "플라즈마와 비행기에 미쳤거든여…^ _ ^ ; [플라즈마 우주선 추진 엔진]",
+   "url": "https://snupal.snu.ac.kr/qna/document/207/"
+  },
+  "200": {
+   "title": "Virtual Matching [Impedance matching]",
+   "url": "https://snupal.snu.ac.kr/qna/document/200/"
+  },
+  "198": {
+   "title": "플라즈마 밀도 [Langmuir 탐침과 플라즈마의 밀도]",
+   "url": "https://snupal.snu.ac.kr/qna/document/198/"
+  },
+  "195": {
+   "title": "Arcing [아크의 종류와 발생 원인]",
+   "url": "https://snupal.snu.ac.kr/qna/document/195/"
+  },
+  "194": {
+   "title": "이온과 라디칼의 농도 [해리도와 전자 에너지 분포]",
+   "url": "https://snupal.snu.ac.kr/qna/document/194/"
+  },
+  "193": {
+   "title": "PSM을 이용한 Radical 측정 방법 [이온화 전자 전류의 증가]",
+   "url": "https://snupal.snu.ac.kr/qna/document/193/"
+  },
+  "192": {
+   "title": "역 수소폭탄에 대하여… [핵융합에 필요한 요소들]",
+   "url": "https://snupal.snu.ac.kr/qna/document/192/"
+  },
+  "191": {
+   "title": "대기압 플라즈마 진단 [탐침을 통한 대기압 진단의 문제점]",
+   "url": "https://snupal.snu.ac.kr/qna/document/191/"
+  },
+  "189": {
+   "title": "No. of antenna coil turns for ICP [안테나 turn 수와 플라즈마 발생 효율]",
+   "url": "https://snupal.snu.ac.kr/qna/document/189/"
+  },
+  "188": {
+   "title": "입력전력에 따른 플라즈마 밀도 변화 (ICP/CCP) [ICP와 CCP의 heating]",
+   "url": "https://snupal.snu.ac.kr/qna/document/188/"
+  },
+  "187": {
+   "title": "CCP에서 Area effect(면적)? [Self bias와 sheath capacitance]",
+   "url": "https://snupal.snu.ac.kr/qna/document/187/"
+  },
+  "186": {
+   "title": "Ar plasma와 O2 plasma 차이??(Matching Network) [Matching Q factor와 negative ion]",
+   "url": "https://snupal.snu.ac.kr/qna/document/186/"
+  },
+  "185": {
+   "title": "self Bias voltage [Self bias와 mobility]",
+   "url": "https://snupal.snu.ac.kr/qna/document/185/"
+  },
+  "184": {
+   "title": "manetically enhanced plasmas",
+   "url": "https://snupal.snu.ac.kr/qna/document/184/"
+  },
+  "183": {
+   "title": "Splash 발생 및 감소 방안은 없는지요? [Splash와 TG Maker]",
+   "url": "https://snupal.snu.ac.kr/qna/document/183/"
+  },
+  "182": {
+   "title": "주변의 플라즈마에 대하여 [Neon sign과 태양]",
+   "url": "https://snupal.snu.ac.kr/qna/document/182/"
+  },
+  "181": {
+   "title": "플라즈마진단법엔 어떤것이? [접촉/비접촉식 진단법]",
+   "url": "https://snupal.snu.ac.kr/qna/document/181/"
+  },
+  "180": {
+   "title": "최적의 펌프는? [Turbo Pump와 corrosion free]",
+   "url": "https://snupal.snu.ac.kr/qna/document/180/"
+  },
+  "179": {
+   "title": "plasma cleanning에 관하여 [Sputtering과 Etch]",
+   "url": "https://snupal.snu.ac.kr/qna/document/179/"
+  },
+  "178": {
+   "title": "ICP 식각에 대하여… [Electronegative plasma]",
+   "url": "https://snupal.snu.ac.kr/qna/document/178/"
+  },
+  "177": {
+   "title": "plasma와 arc의 차이는? [Arc의 temperature]",
+   "url": "https://snupal.snu.ac.kr/qna/document/177/"
+  },
+  "176": {
+   "title": "플라즈마 상태와 RF MATCHING관계 문의 사항 [Matching과 particle]",
+   "url": "https://snupal.snu.ac.kr/qna/document/176/"
+  },
+  "175": {
+   "title": "상압플라즈마에서 온도와의 관계를 알고 싶습니다. [상압 플라즈마, Remote Plasma]",
+   "url": "https://snupal.snu.ac.kr/qna/document/175/"
+  },
+  "174": {
+   "title": "우주 플라즈마 [Plasma의 온도와 밀도]",
+   "url": "https://snupal.snu.ac.kr/qna/document/174/"
+  },
+  "173": {
+   "title": "laser induced plasma의 측정에 관하여 [Ablation plasma와 resolution]",
+   "url": "https://snupal.snu.ac.kr/qna/document/173/"
+  },
+  "172": {
+   "title": "ICP TORCH의 냉각방법 [냉각수와 와류]",
+   "url": "https://snupal.snu.ac.kr/qna/document/172/"
+  },
+  "171": {
+   "title": "등온플라즈마와 비등온플라즈마 [Pressure와 temperature]",
+   "url": "https://snupal.snu.ac.kr/qna/document/171/"
+  },
+  "170": {
+   "title": "RF에 대하여,, [Pierson coil과 V-I probe]",
+   "url": "https://snupal.snu.ac.kr/qna/document/170/"
+  },
+  "169": {
+   "title": "냉각수에 의한 Power Leak [Density와 Power]",
+   "url": "https://snupal.snu.ac.kr/qna/document/169/"
+  },
+  "168": {
+   "title": "AC 플라즈마에서의 전압/전류 형상… [Plasma Current와 dielectricity]",
+   "url": "https://snupal.snu.ac.kr/qna/document/168/"
+  },
+  "165": {
+   "title": "플라즈마 온도 [Density와 Temperature]",
+   "url": "https://snupal.snu.ac.kr/qna/document/165/"
+  },
+  "164": {
+   "title": "진로상담 [플라즈마 응용분야]",
+   "url": "https://snupal.snu.ac.kr/qna/document/164/"
+  },
+  "163": {
+   "title": "Faraday shielding & Screening effect [Fluctuation과 grid bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/163/"
+  },
+  "162": {
+   "title": "DBD 플라즈마와 플라즈마 impedance [DBD plasma, Matching]",
+   "url": "https://snupal.snu.ac.kr/qna/document/162/"
+  },
+  "161": {
+   "title": "DBD plasma [Excitation과 Power Current]",
+   "url": "https://snupal.snu.ac.kr/qna/document/161/"
+  },
+  "160": {
+   "title": "corona [Streamer와 Impurity]",
+   "url": "https://snupal.snu.ac.kr/qna/document/160/"
+  },
+  "159": {
+   "title": "capacitively/inductively coupled plasma [Heating mechanism과 coolant]",
+   "url": "https://snupal.snu.ac.kr/qna/document/159/"
+  },
+  "158": {
+   "title": "형광등으로 부터 플라즈마의 의해 [Filament, Sputtering]",
+   "url": "https://snupal.snu.ac.kr/qna/document/158/"
+  },
+  "157": {
+   "title": "플라즈마 쉬스 [Sheath와 self bias]",
+   "url": "https://snupal.snu.ac.kr/qna/document/157/"
+  },
+  "156": {
+   "title": "박막 형성 [ICP와 MOCVD]",
+   "url": "https://snupal.snu.ac.kr/qna/document/156/"
+  },
+  "155": {
+   "title": "고온플라즈마와 저온플라즈마 [Collision과 Wall loss]",
+   "url": "https://snupal.snu.ac.kr/qna/document/155/"
+  },
+  "154": {
+   "title": "플라즈마를 이용한 폐기물 처리 [코로나 방전, 먼지 집진]",
+   "url": "https://snupal.snu.ac.kr/qna/document/154/"
+  },
+  "153": {
+   "title": "In-flight plasma process [Remote Plasma와 Plasma Torch]",
+   "url": "https://snupal.snu.ac.kr/qna/document/153/"
+  },
+  "152": {
+   "title": "MFC [Direct liquid injection]",
+   "url": "https://snupal.snu.ac.kr/qna/document/152/"
+  },
+  "150": {
+   "title": "산업용 플라즈마의 특성 [Thermal Plasma와 Cold Plasma]",
+   "url": "https://snupal.snu.ac.kr/qna/document/150/"
+  },
+  "149": {
+   "title": "플라즈마 처리 [표면처리와 Plasma Chemistry]",
+   "url": "https://snupal.snu.ac.kr/qna/document/149/"
+  },
+  "148": {
+   "title": "플라즈마내에서의 아킹 [Charge와 plasma potential]",
+   "url": "https://snupal.snu.ac.kr/qna/document/148/"
+  },
+  "147": {
+   "title": "우주 플라즈마 [Orora와 density]",
+   "url": "https://snupal.snu.ac.kr/qna/document/147/"
+  },
+  "146": {
+   "title": "우주에서의 플라즈마의 성분비 [Orora와 density]",
+   "url": "https://snupal.snu.ac.kr/qna/document/146/"
+  },
+  "145": {
+   "title": "[Q]플라즈마 생성위한 자유전자라는게 뭐죠? [Breakdown, cosmic ray]",
+   "url": "https://snupal.snu.ac.kr/qna/document/145/"
+  },
+  "144": {
+   "title": "형광등에서 일어나는 물리적인 현상 [Film coating과 Ion frequency]",
+   "url": "https://snupal.snu.ac.kr/qna/document/144/"
+  },
+  "143": {
+   "title": "스퍼터링 후 시편표면에 전류가 흘렀던 흔적 [Capacitance와 DC ripple]",
+   "url": "https://snupal.snu.ac.kr/qna/document/143/"
+  },
+  "142": {
+   "title": "Noise 문제, 탐침에 의한 식각 플라즈마의.. [RF ground와 Cl Plasma]",
+   "url": "https://snupal.snu.ac.kr/qna/document/142/"
+  },
+  "141": {
+   "title": "self bias [Capacitor와 mobility]",
+   "url": "https://snupal.snu.ac.kr/qna/document/141/"
+  },
+  "140": {
+   "title": "rotational vibration excitation [TLD와 IRLAS]",
+   "url": "https://snupal.snu.ac.kr/qna/document/140/"
+  },
+  "139": {
+   "title": "플라즈마 matching [Heating mechanism, matching]",
+   "url": "https://snupal.snu.ac.kr/qna/document/139/"
+  },
+  "138": {
+   "title": "DBD란",
+   "url": "https://snupal.snu.ac.kr/qna/document/138/"
+  },
+  "137": {
+   "title": "ccp-icp",
+   "url": "https://snupal.snu.ac.kr/qna/document/137/"
+  },
+  "136": {
+   "title": "플라즈마의 상태",
+   "url": "https://snupal.snu.ac.kr/qna/document/136/"
+  },
+  "135": {
+   "title": "플라즈마와 자기장의 관계",
+   "url": "https://snupal.snu.ac.kr/qna/document/135/"
+  },
+  "134": {
+   "title": "충돌",
+   "url": "https://snupal.snu.ac.kr/qna/document/134/"
+  },
+  "133": {
+   "title": "유전체 플라즈마",
+   "url": "https://snupal.snu.ac.kr/qna/document/133/"
+  },
+  "132": {
+   "title": "sputtering",
+   "url": "https://snupal.snu.ac.kr/qna/document/132/"
+  },
+  "131": {
+   "title": "증착에 대하여...",
+   "url": "https://snupal.snu.ac.kr/qna/document/131/"
+  },
+  "130": {
+   "title": "nodule의 형성원인",
+   "url": "https://snupal.snu.ac.kr/qna/document/130/"
+  },
+  "129": {
+   "title": "물리적인 sputterting",
+   "url": "https://snupal.snu.ac.kr/qna/document/129/"
+  },
+  "127": {
+   "title": "물질내에서 전하의 이동시간",
+   "url": "https://snupal.snu.ac.kr/qna/document/127/"
+  },
+  "124": {
+   "title": "에칭후 particle에서 발생하는 현상",
+   "url": "https://snupal.snu.ac.kr/qna/document/124/"
+  },
+  "123": {
+   "title": "플라즈마 절단기에서 발생 플라즈마",
+   "url": "https://snupal.snu.ac.kr/qna/document/123/"
+  },
+  "121": {
+   "title": "공정검사를 위한 CCD 카메라 사용",
+   "url": "https://snupal.snu.ac.kr/qna/document/121/"
+  },
+  "119": {
+   "title": "핵융합반응/플라즈마",
+   "url": "https://snupal.snu.ac.kr/qna/document/119/"
+  },
+  "118": {
+   "title": "대기압 플라즈마에 대해서",
+   "url": "https://snupal.snu.ac.kr/qna/document/118/"
+  },
+  "117": {
+   "title": "DC glow discharge",
+   "url": "https://snupal.snu.ac.kr/qna/document/117/"
+  },
+  "116": {
+   "title": "Sputter",
+   "url": "https://snupal.snu.ac.kr/qna/document/116/"
+  },
+  "114": {
+   "title": "플라즈마를 이용한 박막처리",
+   "url": "https://snupal.snu.ac.kr/qna/document/114/"
+  },
+  "113": {
+   "title": "플라즈마와 사용되는 기체선택",
+   "url": "https://snupal.snu.ac.kr/qna/document/113/"
+  },
+  "112": {
+   "title": "공기정화기, 표면개질, PDP. 플라즈마응용",
+   "url": "https://snupal.snu.ac.kr/qna/document/112/"
+  },
+  "111": {
+   "title": "형광등과 플라즈마",
+   "url": "https://snupal.snu.ac.kr/qna/document/111/"
+  },
+  "110": {
+   "title": "고온플라즈마와 저온플라즈마",
+   "url": "https://snupal.snu.ac.kr/qna/document/110/"
+  },
+  "109": {
+   "title": "F/S (Faraday Shield)",
+   "url": "https://snupal.snu.ac.kr/qna/document/109/"
+  },
+  "108": {
+   "title": "플라즈마 진동수와 전자온도",
+   "url": "https://snupal.snu.ac.kr/qna/document/108/"
+  },
+  "107": {
+   "title": "플라즈마의 정의",
+   "url": "https://snupal.snu.ac.kr/qna/document/107/"
+  },
+  "106": {
+   "title": "플라즈마의 환경이용",
+   "url": "https://snupal.snu.ac.kr/qna/document/106/"
+  },
+  "105": {
+   "title": "Xe 기체를 사용한 플라즈마 응용",
+   "url": "https://snupal.snu.ac.kr/qna/document/105/"
+  },
+  "104": {
+   "title": "RF compensate probe",
+   "url": "https://snupal.snu.ac.kr/qna/document/104/"
+  },
+  "103": {
+   "title": "Silent Discharge",
+   "url": "https://snupal.snu.ac.kr/qna/document/103/"
+  },
+  "102": {
+   "title": "Plasma of Bio-Medical Application",
+   "url": "https://snupal.snu.ac.kr/qna/document/102/"
+  },
+  "101": {
+   "title": "플라즈마 응용분야",
+   "url": "https://snupal.snu.ac.kr/qna/document/101/"
+  },
+  "100": {
+   "title": "Langmuir probe tip 재료",
+   "url": "https://snupal.snu.ac.kr/qna/document/100/"
+  },
+  "99": {
+   "title": "플라즈마 온도중 Tr의 의미",
+   "url": "https://snupal.snu.ac.kr/qna/document/99/"
+  },
+  "98": {
+   "title": "탐침법",
+   "url": "https://snupal.snu.ac.kr/qna/document/98/"
+  },
+  "97": {
+   "title": "CCP/ICP , E/H mode",
+   "url": "https://snupal.snu.ac.kr/qna/document/97/"
+  },
+  "96": {
+   "title": "플라즈마의 발생과 ICP",
+   "url": "https://snupal.snu.ac.kr/qna/document/96/"
+  },
+  "95": {
+   "title": "QMA에서 electron beam의 generation 과정",
+   "url": "https://snupal.snu.ac.kr/qna/document/95/"
+  },
+  "93": {
+   "title": "QMA에 관하여",
+   "url": "https://snupal.snu.ac.kr/qna/document/93/"
+  },
+  "91": {
+   "title": "펄스바이어스 스퍼터링 답변",
+   "url": "https://snupal.snu.ac.kr/qna/document/91/"
+  },
+  "90": {
+   "title": "ICP 플라즈마에 관해서",
+   "url": "https://snupal.snu.ac.kr/qna/document/90/"
+  },
+  "89": {
+   "title": "충돌단면적에 관하여",
+   "url": "https://snupal.snu.ac.kr/qna/document/89/"
+  }
+ },
+ "terms": [
+  {
+   "ko": "자기 바이어스",
+   "en": "self bias",
+   "alt": [
+    "셀프 바이어스"
+   ],
+   "def": "본문의 절연성 웨이퍼 표면에서 스스로 형성되어 표면 전위를 낮추는 전위다.",
+   "post": 157
+  },
+  {
+   "ko": "쉬스",
+   "en": "sheath",
+   "alt": [],
+   "def": "유전체 표면 앞에서 전위차를 형성하여 이온을 벽 방향으로 가속하는 영역이다.",
+   "post": 189
+  },
+  {
+   "ko": "반사 전력",
+   "en": "reflected power",
+   "alt": [
+    "반사파"
+   ],
+   "def": "플라즈마 장치로 전달되지 않고 되돌아오는 마이크로파 전력이다.",
+   "post": 266
+  },
+  {
+   "ko": "스퍼터링",
+   "en": "sputtering",
+   "alt": [],
+   "def": "이온이 전달한 에너지로 표면 물질을 방출시켜 제거하는 물리적 과정이다.",
+   "post": 179
+  },
+  {
+   "ko": "정전척",
+   "en": "ESC (electrostatic chuck)",
+   "alt": [],
+   "def": "정전기력으로 웨이퍼를 고정하는 척.",
+   "post": 524
+  },
+  {
+   "ko": "라디칼",
+   "en": "radical",
+   "alt": [],
+   "def": "기체 해리로 형성되어 표면 화학반응에 활발히 참여하는 반응성 입자이다.",
+   "post": 116
+  },
+  {
+   "ko": "광방출 분광",
+   "en": "OES",
+   "alt": [
+    "광방출 분광법",
+    "발광 분광"
+   ],
+   "def": "플라즈마 빛의 파장별 세기를 재어 입자 종류와 여기 정도를 진단하는 방법.",
+   "post": 515
+  },
+  {
+   "ko": "부유 전위",
+   "en": "floating potential",
+   "alt": [],
+   "def": "외부 접지에 고정되지 않은 시편 표면이 플라즈마 속에서 갖는 전위이다.",
+   "post": 231
+  },
+  {
+   "ko": "임피던스 정합",
+   "en": "impedance matching",
+   "alt": [
+    "임피던스 매칭"
+   ],
+   "def": "전원과 외부 부하 사이의 전력 전달 조건을 맞추도록 부하 임피던스를 조정하는 과정이다.",
+   "post": 139
+  },
+  {
+   "ko": "평균 자유 행로",
+   "en": "mean free path",
+   "alt": [
+    "평균 충돌 거리",
+    "평균 충돌 행정거리"
+   ],
+   "def": "이 글에서는 방출 입자가 충돌로 방향을 바꾸기 전 이동하는 평균 거리이다.",
+   "post": 129
+  },
+  {
+   "ko": "해리",
+   "en": "dissociation",
+   "alt": [
+    "해리 반응"
+   ],
+   "def": "전자 충돌로 기체 화합물이 분해되어 후속 반응에 참여하게 되는 과정이다.",
+   "post": 106
+  },
+  {
+   "ko": "랭뮤어 탐침",
+   "en": "Langmuir probe",
+   "alt": [],
+   "def": "플라즈마에 넣은 도체의 전류–전압 관계로 플라즈마 특성을 조사하는 탐침이다.",
+   "post": 98
+  },
+  {
+   "ko": "유전체 장벽 방전",
+   "en": "DBD (dielectric barrier discharge)",
+   "alt": [
+    "유전체 격벽 방전"
+   ],
+   "def": "전극 사이에 유전체를 두어 유지하는 방전",
+   "post": 411
+  },
+  {
+   "ko": "파셴 법칙",
+   "en": "Paschen's law",
+   "alt": [
+    "파셴의 법칙"
+   ],
+   "def": "방전 개시에 필요한 전압을 압력과 전극 간격에 연결하는 관계이다.",
+   "post": 343
+  },
+  {
+   "ko": "반응 속도 상수",
+   "en": "rate constant",
+   "alt": [
+    "반응 계수",
+    "반응계수",
+    "반응률 계수",
+    "반응상수"
+   ],
+   "def": "충돌 반응이 일어나는 속도를 나타내는 계수.",
+   "post": 640
+  },
+  {
+   "ko": "준중성",
+   "en": "quasi-neutrality",
+   "alt": [],
+   "def": "전자와 이온 밀도가 거의 같아 전체적으로 중성에 가까운 상태.",
+   "post": 586
+  },
+  {
+   "ko": "광방출 분광",
+   "en": "optical emission spectroscopy (OES)",
+   "alt": [
+    "광방출 분광법"
+   ],
+   "def": "플라즈마의 방출광을 분석하여 반응하는 가스종과 공정 상태를 살피는 방법이다.",
+   "post": 353
+  },
+  {
+   "ko": "양극성 확산",
+   "en": "ambipolar diffusion",
+   "alt": [],
+   "def": "전자와 이온이 함께 확산하는 현상으로, 쉬스 입사 이온 속도 이해의 바탕.",
+   "post": 554
+  },
+  {
+   "ko": "유도 결합 플라즈마",
+   "en": "inductively coupled plasma (ICP)",
+   "alt": [],
+   "def": "안테나의 변화하는 전류로 유도한 전기장을 이용해 발생시키는 플라즈마이다.",
+   "post": 96
+  },
+  {
+   "ko": "용량성 결합 플라즈마",
+   "en": "CCP (Capacitively Coupled Plasma)",
+   "alt": [
+    "용량 결합 플라즈마",
+    "용량결합 플라즈마"
+   ],
+   "def": "극판 사이 전기장으로 전자를 가속하는 방전 방식.",
+   "post": 557
+  },
+  {
+   "ko": "유전체 장벽 방전",
+   "en": "dielectric barrier discharge (DBD)",
+   "alt": [],
+   "def": "전극 앞에 유전체를 배치해 전하의 이동을 제한하는 방전 방식이다.",
+   "post": 133
+  },
+  {
+   "ko": "음이온",
+   "en": "negative ion",
+   "alt": [],
+   "def": "전자를 받아 음전하를 띠며 자유전자와 함께 음전하 밀도에 기여하는 입자이다.",
+   "post": 136
+  },
+  {
+   "ko": "이동도",
+   "en": "mobility",
+   "alt": [],
+   "def": "전기장에 반응하여 하전입자가 얼마나 잘 움직이는지를 나타내는 성질이다.",
+   "post": 349
+  },
+  {
+   "ko": "전자 온도",
+   "en": "electron temperature",
+   "alt": [],
+   "def": "이 글에서 전자가 얻고 이온화에 소모하는 에너지 상태를 나타내는 온도이다.",
+   "post": 331
+  },
+  {
+   "ko": "플라즈마 전위",
+   "en": "plasma potential",
+   "alt": [
+    "공간 전위"
+   ],
+   "def": "전자와 이온의 경계 손실 균형에 따라 조정되는 플라즈마의 전위다.",
+   "post": 148
+  },
+  {
+   "ko": "로런츠 힘",
+   "en": "Lorentz force",
+   "alt": [
+    "로렌츠 힘"
+   ],
+   "def": "전기력과 움직이는 전하에 작용하는 자기력을 합한 힘이다.",
+   "post": 184
+  },
+  {
+   "ko": "방전 개시 전압",
+   "en": "breakdown voltage",
+   "alt": [
+    "절연파괴 전압"
+   ],
+   "def": "전하 분포와 가스 조건 등의 영향을 받으며 방전을 시작시키는 전압이다.",
+   "post": 323
+  },
+  {
+   "ko": "아킹",
+   "en": "arcing",
+   "alt": [],
+   "def": "시편 표면의 국부 방전으로 박막에 흔적이나 결함을 남기는 현상이다.",
+   "post": 143
+  },
+  {
+   "ko": "용량성 결합 플라즈마",
+   "en": "capacitively coupled plasma (CCP)",
+   "alt": [
+    "용량 결합 플라즈마",
+    "축전 결합 플라즈마",
+    "축전결합 플라즈마"
+   ],
+   "def": "진동 전기장과 전극 부근 쉬스의 전자 가열을 이용하는 플라즈마 발생 방식이다.",
+   "post": 230
+  },
+  {
+   "ko": "전역 모델",
+   "en": "global model",
+   "alt": [
+    "글로벌 모델"
+   ],
+   "def": "입자와 에너지 균형식으로 플라즈마의 평균 성질을 구하는 모델.",
+   "post": 595
+  },
+  {
+   "ko": "절연 파괴",
+   "en": "breakdown",
+   "alt": [],
+   "def": "기체가 전기장에 의해 절연성을 잃고 방전이 시작되는 현상.",
+   "post": 508
+  },
+  {
+   "ko": "정합기",
+   "en": "matcher",
+   "alt": [
+    "매처"
+   ],
+   "def": "플라즈마 부하의 임피던스를 전원과 맞춰 반사를 줄이는 장치.",
+   "post": 496
+  },
+  {
+   "ko": "코로나 방전",
+   "en": "corona discharge",
+   "alt": [],
+   "def": "본문에서 기체 오염물의 분해에 사용하는 플라즈마 발생 방식이다.",
+   "post": 154
+  },
+  {
+   "ko": "표피 깊이",
+   "en": "skin depth",
+   "alt": [
+    "스킨 깊이"
+   ],
+   "def": "안테나에서 전달된 전자기파가 플라즈마 안으로 침투하는 깊이이다.",
+   "post": 137
+  },
+  {
+   "ko": "플라즈마 주파수",
+   "en": "plasma frequency",
+   "alt": [],
+   "def": "이온과 전자가 전기장 변화를 따라갈 수 있는 한계를 가르는 기준 주파수.",
+   "post": 672
+  },
+  {
+   "ko": "VI 센서",
+   "en": "VI sensor",
+   "alt": [],
+   "def": "전압과 전류 신호로 임피던스를 판단하는 측정 수단.",
+   "post": 740
+  },
+  {
+   "ko": "고장 검출 및 분류",
+   "en": "FDC (fault detection and classification)",
+   "alt": [
+    "고장 감지 및 분류",
+    "장비 상태 감시 데이터"
+   ],
+   "def": "공정 이상을 감지하고 분류하는 장비 모니터링 기법.",
+   "post": 509
+  },
+  {
+   "ko": "단계 이온화",
+   "en": "step ionization",
+   "alt": [],
+   "def": "원자가 전자 충돌로 먼저 여기된 뒤 다시 전자 충돌로 이온화되는 과정.",
+   "post": 647
+  },
+  {
+   "ko": "리액턴스",
+   "en": "reactance",
+   "alt": [],
+   "def": "임피던스 중 에너지를 소모하지 않고 저장·반환하는 허수 성분",
+   "post": 398
+  },
+  {
+   "ko": "쉬스 전위",
+   "en": "sheath potential",
+   "alt": [],
+   "def": "플라즈마와 표면 사이 전위차로 이온에 에너지를 주는 값",
+   "post": 396
+  },
+  {
+   "ko": "스트리머",
+   "en": "streamer",
+   "alt": [],
+   "def": "유전체 장벽 방전에서 짧은 시간 나타나는 가느다란 플라즈마 기둥이다.",
+   "post": 118
+  },
+  {
+   "ko": "에지 링",
+   "en": "edge ring",
+   "alt": [
+    "엣지 링"
+   ],
+   "def": "웨이퍼 가장자리의 가스 유속·전기적 특성을 조절하는 부품.",
+   "post": 835
+  },
+  {
+   "ko": "여기",
+   "en": "excitation",
+   "alt": [],
+   "def": "입자가 충돌 에너지를 받아 높은 에너지 상태로 변했다가 빛을 방출할 수 있게 되는 과정이다.",
+   "post": 386
+  },
+  {
+   "ko": "원격 플라즈마 소스",
+   "en": "RPS (remote plasma source)",
+   "alt": [
+    "리모트 플라즈마 소스"
+   ],
+   "def": "챔버 밖에서 플라즈마를 만들어 라디칼을 공급하는 장치.",
+   "post": 619
+  },
+  {
+   "ko": "이차 전자",
+   "en": "secondary electron",
+   "alt": [
+    "2차 전자"
+   ],
+   "def": "이온이 음극 표면에 충돌할 때 방출되어 방전 유지에 기여하는 전자이다.",
+   "post": 117
+  },
+  {
+   "ko": "전기음성 플라즈마",
+   "en": "electronegative plasma",
+   "alt": [
+    "음이온 플라즈마"
+   ],
+   "def": "전자와 양이온에 더해 음이온이 함께 존재하는 플라즈마다.",
+   "post": 178
+  },
+  {
+   "ko": "전기장·자기장 드리프트",
+   "en": "E×B drift",
+   "alt": [
+    "ExB 드리프트",
+    "ExB 운동",
+    "E×B 드리프트"
+   ],
+   "def": "전기장과 자기장이 함께 있을 때 하전 입자가 두 장에 수직 방향으로 흐르는 운동이다.",
+   "post": 899
+  },
+  {
+   "ko": "전자 부착",
+   "en": "electron attachment",
+   "alt": [
+    "전자 흡착"
+   ],
+   "def": "전자가 중성 원자·분자에 붙어 음이온이 되는 반응.",
+   "post": 804
+  },
+  {
+   "ko": "정재파",
+   "en": "standing wave",
+   "alt": [
+    "정상파"
+   ],
+   "def": "전기장 세기 분포가 이동하지 않고 공간에 정체된 것처럼 형성되는 파동.",
+   "post": 722
+  },
+  {
+   "ko": "준안정 상태",
+   "en": "metastable",
+   "alt": [
+    "준안정종"
+   ],
+   "def": "Ar이 여기된 뒤 비교적 오래 유지되어 추가 이온화의 중간 단계가 되는 상태.",
+   "post": 589
+  },
+  {
+   "ko": "체류 시간",
+   "en": "residence time",
+   "alt": [],
+   "def": "가스 입자가 반응기에 들어와 배기되기까지, 또는 웨이퍼 상에 머무는 시간.",
+   "post": 591
+  },
+  {
+   "ko": "패러데이 차폐",
+   "en": "Faraday shield",
+   "alt": [
+    "패러데이 실드"
+   ],
+   "def": "안테나와 유전체 사이에 접지 도체를 넣어 용량성 전기장을 줄이는 구조.",
+   "post": 671
+  },
+  {
+   "ko": "플라즈마",
+   "en": "plasma",
+   "alt": [],
+   "def": "많은 하전 입자가 준중성과 집단 거동을 보이는 이온화 상태이다.",
+   "post": 107
+  },
+  {
+   "ko": "플럭스",
+   "en": "flux",
+   "alt": [
+    "입사속",
+    "입자속"
+   ],
+   "def": "전자나 이온이 표면으로 유입되는 흐름을 나타내는 양이다.",
+   "post": 263
+  },
+  {
+   "ko": "Bohm 속도",
+   "en": "Bohm velocity",
+   "alt": [
+    "보옴 속도"
+   ],
+   "def": "답변의 모델에서 이온이 쉬스 경계에 도달할 때 갖는 초기 속도이다.",
+   "post": 209
+  },
+  {
+   "ko": "Vpp",
+   "en": "peak-to-peak voltage",
+   "alt": [],
+   "def": "인가 RF 전압의 최대-최소 폭으로, 바이어스 크기를 나타내는 값.",
+   "post": 689
+  },
+  {
+   "ko": "가상계측",
+   "en": "virtual metrology",
+   "alt": [
+    "가상 진단 모델"
+   ],
+   "def": "센서·장비 데이터로 공정 결과를 예측하는 기법.",
+   "post": 576
+  },
+  {
+   "ko": "미세 아크",
+   "en": "micro arc",
+   "alt": [
+    "마이크로 아크"
+   ],
+   "def": "하전과 전기장 집중으로 생기는 미세 방전.",
+   "post": 825
+  },
+  {
+   "ko": "쉬스 에너지",
+   "en": "sheath energy",
+   "alt": [],
+   "def": "쉬스 전위차로 하전 입자가 얻는 운동에너지",
+   "post": 877
+  },
+  {
+   "ko": "쉬스 전위차",
+   "en": "sheath potential drop",
+   "alt": [
+    "쉬스 전위 강하"
+   ],
+   "def": "플라즈마와 벽 사이에서 이온의 입사 에너지를 만들어 주는 전위 차이다.",
+   "post": 179
+  },
+  {
+   "ko": "시즈닝",
+   "en": "seasoning",
+   "alt": [],
+   "def": "세정한 부품이나 챔버를 공정 플라즈마에 노출해 상태를 안정화하는 과정.",
+   "post": 605
+  },
+  {
+   "ko": "열전자",
+   "en": "thermionic electron",
+   "alt": [],
+   "def": "형광등 필라멘트가 가열될 때 방출되어 기체와 충돌하는 전자이다.",
+   "post": 111
+  },
+  {
+   "ko": "원격 플라즈마",
+   "en": "remote plasma",
+   "alt": [
+    "리모트 플라즈마"
+   ],
+   "def": "플라즈마를 만드는 영역과 실제 처리 반응이 일어나는 영역을 분리한 방식이다.",
+   "post": 153
+  },
+  {
+   "ko": "이온화",
+   "en": "ionization",
+   "alt": [],
+   "def": "가속된 전자와 중성입자의 충돌을 통해 전자와 이온이 생성되는 과정이다.",
+   "post": 292
+  },
+  {
+   "ko": "이차 전자 방출",
+   "en": "secondary electron emission",
+   "alt": [],
+   "def": "전극에 들어온 이온의 충돌로 전극에서 전자가 나오는 현상이다.",
+   "post": 218
+  },
+  {
+   "ko": "자기장 구속",
+   "en": "magnetic confinement",
+   "alt": [
+    "자기 구속"
+   ],
+   "def": "하전입자의 운동을 자기장으로 제한하여 벽 접촉과 손실을 줄이는 방법이다.",
+   "post": 155
+  },
+  {
+   "ko": "전자 사이클로트론 공명",
+   "en": "ECR (electron cyclotron resonance)",
+   "alt": [],
+   "def": "전기장 주파수가 전자의 자기장 내 회전 주파수와 맞아 전자가 에너지를 효율적으로 얻는 현상.",
+   "post": 607
+  },
+  {
+   "ko": "전자 에너지 분포",
+   "en": "EEDF (electron energy distribution function)",
+   "alt": [
+    "전자 에너지 분포 함수",
+    "전자 에너지 분포함수"
+   ],
+   "def": "전자들의 에너지별 분포로, 반응계수 결정에 중요하다.",
+   "post": 676
+  },
+  {
+   "ko": "전하 교환",
+   "en": "charge exchange",
+   "alt": [
+    "전하교환 반응"
+   ],
+   "def": "본문에서는 쉬스에서 이온이 고에너지 중성입자가 되는 과정과 관련된 반응이다.",
+   "post": 149
+  },
+  {
+   "ko": "정상파 효과",
+   "en": "standing wave effect",
+   "alt": [],
+   "def": "RF 전기장이 정지한 파동처럼 공간 분포를 가져 플라즈마 생성 분포가 불균일해지는 현상",
+   "post": 839
+  },
+  {
+   "ko": "정전척",
+   "en": "electrostatic chuck (ESC)",
+   "alt": [],
+   "def": "이 답변에서는 챔버와 절연한 상태로 전압을 인가해야 하는 전극으로 다룬다.",
+   "post": 365
+  },
+  {
+   "ko": "준중성",
+   "en": "quasineutrality",
+   "alt": [],
+   "def": "양전하와 음전하가 거의 균형을 이루는 플라즈마의 상태이다.",
+   "post": 287
+  },
+  {
+   "ko": "충돌 단면적",
+   "en": "collision cross section",
+   "alt": [],
+   "def": "이 글에서 입자 간 충돌 가능성을 나타내며 속도에 따라 달라질 수 있는 양이다.",
+   "post": 259
+  },
+  {
+   "ko": "파셴 곡선",
+   "en": "Paschen curve",
+   "alt": [],
+   "def": "파괴 전압을 압력과 전극 간 거리의 곱의 함수로 나타낸 곡선.",
+   "post": 681
+  },
+  {
+   "ko": "플라즈마 임피던스",
+   "en": "plasma impedance",
+   "alt": [],
+   "def": "플라즈마 벌크의 저항성분과 쉬스의 축전 성분으로 이루어진 부하 임피던스.",
+   "post": 812
+  },
+  {
+   "ko": "확률적 가열",
+   "en": "stochastic heating",
+   "alt": [],
+   "def": "고주파 전기장과 쉬스 경계의 상호작용으로 전자가 가열되는 현상이다.",
+   "post": 903
+  },
+  {
+   "ko": "DC 바이어스",
+   "en": "DC bias",
+   "alt": [],
+   "def": "RF 전극 표면에 형성되어 이온 가속 에너지를 결정하는 직류 전위.",
+   "post": 698
+  },
+  {
+   "ko": "Debye 길이",
+   "en": "Debye length",
+   "alt": [
+    "Debye \u0001"
+   ],
+   "def": "플라즈마 내 전기장 영향이 미치는 특성 길이이다.",
+   "post": 898
+  },
+  {
+   "ko": "VI 프로브",
+   "en": "VI probe",
+   "alt": [
+    "VI 센서"
+   ],
+   "def": "RF 전압·전류·위상을 측정해 임피던스를 구하는 센서",
+   "post": 417
+  },
+  {
+   "ko": "공정 드리프트",
+   "en": "process drift",
+   "alt": [],
+   "def": "부품 침식 등으로 공정 결과가 시간에 따라 서서히 변하는 현상.",
+   "post": 723
+  },
+  {
+   "ko": "바이어스 전력",
+   "en": "bias power",
+   "alt": [],
+   "def": "기판 쪽에 인가해 이온 에너지를 조절하는 RF 전력.",
+   "post": 611
+  },
+  {
+   "ko": "부산물",
+   "en": "byproduct",
+   "alt": [],
+   "def": "식각 중 생성되어 표면에서 반응하는 물질.",
+   "post": 636
+  },
+  {
+   "ko": "비탄성 충돌",
+   "en": "inelastic collision",
+   "alt": [],
+   "def": "에너지가 문턱값을 넘어 이온화·해리 등 반응을 일으키는 충돌이다.",
+   "post": 926
+  },
+  {
+   "ko": "샤워헤드",
+   "en": "showerhead",
+   "alt": [],
+   "def": "가스를 반응기에 고르게 공급하는 구조물",
+   "post": 391
+  },
+  {
+   "ko": "스로틀 밸브",
+   "en": "throttle valve",
+   "alt": [],
+   "def": "배기 conductance를 조절해 챔버 압력을 맞추는 밸브.",
+   "post": 652
+  },
+  {
+   "ko": "스퍼터링 수율",
+   "en": "sputtering yield",
+   "alt": [
+    "스퍼터 수율"
+   ],
+   "def": "이온 충돌에 의해 타겟 입자가 방출되는 정도를 나타내는 값이다.",
+   "post": 332
+  },
+  {
+   "ko": "아크",
+   "en": "arc",
+   "alt": [],
+   "def": "전하 축적으로 국부 방전이 시작되어 생기는 큰 전류의 방전.",
+   "post": 665
+  },
+  {
+   "ko": "아크 방전",
+   "en": "arc discharge",
+   "alt": [],
+   "def": "낮은 전압에서 유지될 수 있고 큰 전류가 흐르는 방전이다.",
+   "post": 279
+  },
+  {
+   "ko": "열플라즈마",
+   "en": "thermal plasma",
+   "alt": [],
+   "def": "충돌에 의해 전자·이온·기체의 온도 차이가 작아진 플라즈마다.",
+   "post": 150
+  },
+  {
+   "ko": "원격 플라즈마 소스",
+   "en": "remote plasma source (RPS)",
+   "alt": [
+    "원격 플라즈마"
+   ],
+   "def": "타깃에서 떨어진 곳에서 플라즈마를 만들어 라디칼만 보내 처리하는 소스.",
+   "post": 724
+  },
+  {
+   "ko": "유도 결합 플라즈마",
+   "en": "ICP (Inductively Coupled Plasma)",
+   "alt": [
+    "유도성 결합 플라즈마"
+   ],
+   "def": "패러데이 유도 전기장으로 전자를 가속하는 방전 방식.",
+   "post": 557
+  },
+  {
+   "ko": "음극 전압강하",
+   "en": "cathode fall",
+   "alt": [
+    "음극 강하"
+   ],
+   "def": "DC 방전에서 음극 앞 쉬스 영역으로, 전자가 가속되는 곳.",
+   "post": 254
+  },
+  {
+   "ko": "이오나이저",
+   "en": "ionizer",
+   "alt": [
+    "이온나이저"
+   ],
+   "def": "대기압 방전으로 이온을 만들어 정전기를 제거하는 장치.",
+   "post": 734
+  },
+  {
+   "ko": "이온화 단면적",
+   "en": "ionization cross section",
+   "alt": [
+    "이온화 충돌 단면적"
+   ],
+   "def": "전자빔이 라디칼을 이온화시키는 확률을 나타내는 값.",
+   "post": 256
+  },
+  {
+   "ko": "이온화율",
+   "en": "ionization fraction",
+   "alt": [],
+   "def": "전체 입자 중 이온과 전자가 되어 플라즈마를 이루는 비율.",
+   "post": 768
+  },
+  {
+   "ko": "임피던스",
+   "en": "impedance",
+   "alt": [],
+   "def": "RF 전류 흐름에 대한 저항과 리액턴스를 합친 전기적 부하 특성이다.",
+   "post": 891
+  },
+  {
+   "ko": "자외선",
+   "en": "ultraviolet (UV)",
+   "alt": [],
+   "def": "이 답변에서 박막 경화를 유발할 수 있는 조사 인자로 언급된 빛이다.",
+   "post": 294
+  },
+  {
+   "ko": "장비 간 매칭",
+   "en": "TTTM (tool-to-tool matching)",
+   "alt": [],
+   "def": "장비들 사이의 공정 결과 차이를 줄이는 것.",
+   "post": 656
+  },
+  {
+   "ko": "재결합",
+   "en": "recombination",
+   "alt": [],
+   "def": "해리된 라디칼이 다시 결합해 사라지는 반응.",
+   "post": 619
+  },
+  {
+   "ko": "전자 플라즈마 주파수",
+   "en": "electron plasma frequency",
+   "alt": [],
+   "def": "전자가 전기장에 응답하는 기준 주파수로, 전자 가열 가능 여부를 가른다.",
+   "post": 903
+  },
+  {
+   "ko": "절연 파괴",
+   "en": "dielectric breakdown",
+   "alt": [],
+   "def": "전기장이 재료나 공간의 한계를 넘어 절연이 깨지는 현상.",
+   "post": 653
+  },
+  {
+   "ko": "정합 회로",
+   "en": "matching network",
+   "alt": [
+    "정합기"
+   ],
+   "def": "RF 전원과 플라즈마 부하 사이의 임피던스를 맞추는 회로.",
+   "post": 240
+  },
+  {
+   "ko": "준안정 상태",
+   "en": "metastable state",
+   "alt": [],
+   "def": "여기된 Ar로 낮은 에너지 전자로도 쉽게 이온화되는 상태.",
+   "post": 787
+  },
+  {
+   "ko": "챔버 임피던스",
+   "en": "chamber impedance",
+   "alt": [],
+   "def": "챔버 구조·재질·내벽 상태에 따라 결정되는, RF 전원이 바라보는 부하 특성.",
+   "post": 740
+  },
+  {
+   "ko": "충돌 주파수",
+   "en": "collision frequency",
+   "alt": [
+    "충돌 빈도"
+   ],
+   "def": "하전입자가 중성 입자와 충돌하는 빈도.",
+   "post": 761
+  },
+  {
+   "ko": "캐패시턴스",
+   "en": "capacitance",
+   "alt": [
+    "정전용량"
+   ],
+   "def": "유전율×면적/간격으로 정해지며 전하 저장 능력을 나타내는 값.",
+   "post": 637
+  },
+  {
+   "ko": "패시베이션",
+   "en": "passivation",
+   "alt": [],
+   "def": "측벽 등에 보호막을 만들어 식각 방향성을 확보하는 작용이다.",
+   "post": 906
+  },
+  {
+   "ko": "표면 대전",
+   "en": "surface charging",
+   "alt": [
+    "표면 충전",
+    "표면 하전"
+   ],
+   "def": "표면에 들어온 전하가 충분히 빠져나가지 못하고 쌓이는 현상이다.",
+   "post": 148
+  },
+  {
+   "ko": "플라즈마 강화 원자층 증착",
+   "en": "PEALD",
+   "alt": [
+    "플라즈마 원자층 증착"
+   ],
+   "def": "플라즈마를 이용하는 원자층 증착 공정이다.",
+   "post": 920
+  },
+  {
+   "ko": "플라즈마 디스플레이 패널",
+   "en": "plasma display panel (PDP)",
+   "alt": [],
+   "def": "화소 내부 방전과 발광물질을 이용해 삼원색의 화면을 만드는 장치이다.",
+   "post": 112
+  },
+  {
+   "ko": "플라즈마 토치",
+   "en": "plasma torch",
+   "alt": [],
+   "def": "플라즈마의 열적 작용으로 강판 등을 절단하는 데 이용되는 장치이다.",
+   "post": 208
+  },
+  {
+   "ko": "피크 투 피크 전압",
+   "en": "Vpp",
+   "alt": [
+    "피크 대 피크 전압"
+   ],
+   "def": "RF 파형의 최대와 최소 사이 전압.",
+   "post": 673
+  },
+  {
+   "ko": "핵융합",
+   "en": "nuclear fusion",
+   "alt": [],
+   "def": "본문에서는 수소 등의 가벼운 핵이 결합하여 더 무거운 핵을 만드는 반응으로 설명한다.",
+   "post": 147
+  },
+  {
+   "ko": "3체 충돌",
+   "en": "three-body collision",
+   "alt": [],
+   "def": "남는 에너지를 제3의 입자가 흡수해야 결합이 일어나는 충돌 과정.",
+   "post": 255
+  },
+  {
+   "ko": "Debye \u0001 길이",
+   "en": "Debye shielding length",
+   "alt": [],
+   "def": "전자 재배치에 의한 전위 차폐의 지수적 감소를 나타내는 특성 거리이다.",
+   "post": 209
+  },
+  {
+   "ko": "E 모드/H 모드",
+   "en": "E-mode / H-mode",
+   "alt": [
+    "E-mode / H-mode"
+   ],
+   "def": "ICP에서 축전 결합이 지배적인 저밀도 상태와 유도 결합이 지배적인 고밀도 상태를 말한다.",
+   "post": 359
+  },
+  {
+   "ko": "RF 쉬스",
+   "en": "RF sheath",
+   "alt": [],
+   "def": "웨이퍼 쪽에 RF로 형성되어 이온을 가속하는 쉬스이다.",
+   "post": 903
+  },
+  {
+   "ko": "RF 접지",
+   "en": "RF ground",
+   "alt": [],
+   "def": "RF 전류가 돌아가는 접지 경로로, 불량하면 인접 반응기에서도 전압이 관측될 수 있다.",
+   "post": 744
+  },
+  {
+   "ko": "가변 진공 커패시터",
+   "en": "VVC (variable vacuum capacitor)",
+   "alt": [
+    "가변 진공 캐패시터"
+   ],
+   "def": "매처에서 정합을 위해 용량을 조절하는 가변 캐패시터이다.",
+   "post": 891
+  },
+  {
+   "ko": "고조파",
+   "en": "harmonics",
+   "alt": [],
+   "def": "기본 주파수의 정수배 성분으로, 회로가 잘 정렬되지 않으면 늘어 손실이 된다.",
+   "post": 740
+  },
+  {
+   "ko": "고주파",
+   "en": "radio frequency (RF)",
+   "alt": [],
+   "def": "이 글에서 플라즈마 발생과 증착 공정에 전력을 전달하는 교류 신호를 뜻한다.",
+   "post": 268
+  },
+  {
+   "ko": "골든 챔버",
+   "en": "golden chamber",
+   "alt": [],
+   "def": "챔버 상태를 맞출 때 기준으로 삼는 이상적인 챔버.",
+   "post": 712
+  },
+  {
+   "ko": "공간전하 제한 전류",
+   "en": "space-charge limited current",
+   "alt": [],
+   "def": "이온 빔 소스 이해의 출발점으로 제시된 개념.",
+   "post": 780
+  },
+  {
+   "ko": "공정 윈도우",
+   "en": "process window",
+   "alt": [],
+   "def": "좋은 결과가 나오는 전력·압력 등 운전 조건의 범위이다.",
+   "post": 926
+  },
+  {
+   "ko": "국부 방전",
+   "en": "local discharge",
+   "alt": [],
+   "def": "전하가 쌓인 표면의 일부에서 생기는 방전.",
+   "post": 781
+  },
+  {
+   "ko": "균일도",
+   "en": "uniformity",
+   "alt": [],
+   "def": "웨이퍼 전체에서 증착 또는 식각 결과가 고른 정도",
+   "post": 842
+  },
+  {
+   "ko": "글로우 방전",
+   "en": "glow discharge",
+   "alt": [],
+   "def": "전자의 에너지 획득과 충돌로 발광하는 방전 영역.",
+   "post": 459
+  },
+  {
+   "ko": "기울어짐",
+   "en": "tilt",
+   "alt": [
+    "틸트"
+   ],
+   "def": "웨이퍼 가장자리에서 이온 입사각이 기울어 식각 프로파일이 기우는 현상",
+   "post": 884
+  },
+  {
+   "ko": "기판 온도",
+   "en": "substrate temperature",
+   "alt": [],
+   "def": "박막과 시편의 특성에 맞추어 성장 조건을 조절할 때 고려하는 표면의 온도다.",
+   "post": 156
+  },
+  {
+   "ko": "노듈",
+   "en": "nodule",
+   "alt": [],
+   "def": "주변보다 스퍼터링이 덜 일어나는 부분이 남아 형성되는 타겟 표면 돌기이다.",
+   "post": 130
+  },
+  {
+   "ko": "능동 소자",
+   "en": "active component",
+   "alt": [],
+   "def": "이 글에서 플라즈마를 가리키는 말로, 상태에 따라 특성이 변하는 부하",
+   "post": 858
+  },
+  {
+   "ko": "대기압 플라즈마",
+   "en": "atmospheric pressure plasma",
+   "alt": [],
+   "def": "대기압에서 방전으로 만드는 플라즈마로, 라디칼 분포가 가스 유동에 좌우된다.",
+   "post": 799
+  },
+  {
+   "ko": "도파관",
+   "en": "waveguide",
+   "alt": [],
+   "def": "마이크로파를 반응기로 전달하며 진입부 냉각이 중요한 구조이다.",
+   "post": 266
+  },
+  {
+   "ko": "로딩 효과",
+   "en": "loading effect",
+   "alt": [],
+   "def": "식각 대상이 많아 반응종이 부족해지며 식각 속도가 달라지는 현상.",
+   "post": 717
+  },
+  {
+   "ko": "리모트 플라즈마 발생기",
+   "en": "RPG (Remote Plasma Generator)",
+   "alt": [
+    "원격 플라즈마 발생기"
+   ],
+   "def": "챔버 밖에서 NF3 등을 해리시켜 세정용 라디칼을 만드는 장치.",
+   "post": 565
+  },
+  {
+   "ko": "리플 전압",
+   "en": "ripple voltage",
+   "alt": [
+    "전압 리플"
+   ],
+   "def": "직류 전원 출력에 겹쳐 나타나는 주기적인 전압 변동이다.",
+   "post": 91
+  },
+  {
+   "ko": "맥스웰 분포",
+   "en": "Maxwellian distribution",
+   "alt": [],
+   "def": "충돌로 열평형에 이른 입자의 에너지 분포.",
+   "post": 446
+  },
+  {
+   "ko": "먼지 플라즈마",
+   "en": "dusty plasma",
+   "alt": [
+    "더스티 플라즈마"
+   ],
+   "def": "플라즈마 안에 미세 입자가 존재하며 상호작용하는 상태 또는 그 연구 분야.",
+   "post": 526
+  },
+  {
+   "ko": "반사 전력",
+   "en": "reflected power; backward power",
+   "alt": [],
+   "def": "부하에 전달되지 못하고 전원 방향으로 되돌아오는 고주파 전력이다.",
+   "post": 262
+  },
+  {
+   "ko": "반응성 스퍼터링",
+   "en": "reactive sputtering",
+   "alt": [],
+   "def": "Ar에 N2 같은 반응성 가스를 섞어 화합물 박막을 증착하는 스퍼터링이다.",
+   "post": 900
+  },
+  {
+   "ko": "반응성 이온 식각",
+   "en": "reactive ion etching (RIE)",
+   "alt": [],
+   "def": "이온 가속 에너지가 크게 걸리는 power 전극에 웨이퍼를 두어 이온으로 식각을 활성화한 운전 모드.",
+   "post": 715
+  },
+  {
+   "ko": "벌크 플라즈마",
+   "en": "bulk plasma",
+   "alt": [],
+   "def": "쉬스 밖에서 전위가 비교적 고르고 전기장이 작은 플라즈마 영역이다.",
+   "post": 353
+  },
+  {
+   "ko": "벽 손실",
+   "en": "wall loss",
+   "alt": [
+    "벽면 손실"
+   ],
+   "def": "플라즈마 입자가 대면 표면으로 이동하거나 표면 반응에 참여하여 플라즈마에서 사라지는 과정이다.",
+   "post": 357
+  },
+  {
+   "ko": "불활성 기체",
+   "en": "inert gas",
+   "alt": [
+    "불활성 가스"
+   ],
+   "def": "이 글에서는 화학반응보다 이온의 물리적 에너지 전달을 이용할 때 선택하는 기체이다.",
+   "post": 113
+  },
+  {
+   "ko": "선량",
+   "en": "dose",
+   "alt": [
+    "조사량"
+   ],
+   "def": "플럭스에 처리 시간을 곱한 총 조사량",
+   "post": 402
+  },
+  {
+   "ko": "송전선로 모델",
+   "en": "transmission line model",
+   "alt": [
+    "전송선 모델"
+   ],
+   "def": "전원에서 부하까지 전력 전달과 반사를 설명하는 전자기학 모델.",
+   "post": 814
+  },
+  {
+   "ko": "쉬스 전기장",
+   "en": "sheath electric field",
+   "alt": [],
+   "def": "쉬스 내 전위차로 형성되어 하전 파티클에 척력을 주는 전기장.",
+   "post": 823
+  },
+  {
+   "ko": "쉬스 전압",
+   "en": "sheath voltage",
+   "alt": [],
+   "def": "이온의 가속에 관여하는 플라즈마 전위와 표면 전위의 차이다.",
+   "post": 354
+  },
+  {
+   "ko": "스로틀 밸브 위치",
+   "en": "TVP (Throttle Valve Position)",
+   "alt": [],
+   "def": "배기 컨덕턴스를 조절해 챔버 압력을 맞추는 밸브의 개도.",
+   "post": 763
+  },
+  {
+   "ko": "스미스 차트",
+   "en": "Smith chart",
+   "alt": [],
+   "def": "본문에서 측정된 전기적 응답을 바탕으로 정합 상태를 확인하는 데 사용하는 도표다.",
+   "post": 170
+  },
+  {
+   "ko": "스트리머 방전",
+   "en": "streamer discharge",
+   "alt": [],
+   "def": "국부적으로 생기는 가느다란 방전으로, 지속되면 아크가 될 수 있는 형태.",
+   "post": 524
+  },
+  {
+   "ko": "식각 종말점",
+   "en": "endpoint",
+   "alt": [],
+   "def": "식각이 목표 막질에 도달해 끝나는 시점.",
+   "post": 512
+  },
+  {
+   "ko": "식각 종말점 검출",
+   "en": "endpoint detection (EPD)",
+   "alt": [],
+   "def": "식각 중 OES 등으로 식각 종료 시점을 감지하는 방법으로, 이 글에서는 분광 신호 확인에도 쓴다.",
+   "post": 704
+  },
+  {
+   "ko": "아레니우스 식",
+   "en": "Arrhenius equation",
+   "alt": [],
+   "def": "반응 속도의 온도 의존성을 나타내는 식이다.",
+   "post": 901
+  },
+  {
+   "ko": "액티노메트리",
+   "en": "actinometry",
+   "alt": [],
+   "def": "비활성 기체의 발광 강도를 기준으로 반응종 발광을 정규화해 농도를 추정하는 OES 기법이다.",
+   "post": 924
+  },
+  {
+   "ko": "에너지 플럭스",
+   "en": "energy flux",
+   "alt": [
+    "에너지속"
+   ],
+   "def": "입자 밀도와 에너지의 곱으로 표면에 전달되는 에너지의 크기이다.",
+   "post": 921
+  },
+  {
+   "ko": "여기 Ar",
+   "en": "Ar*",
+   "alt": [
+    "준안정 여기종"
+   ],
+   "def": "Ar의 여기 상태 입자로 산소 라디칼 생성과 플라즈마 유지에 기여.",
+   "post": 817
+  },
+  {
+   "ko": "여기종",
+   "en": "metastable/excited species (He*, Ar*)",
+   "alt": [],
+   "def": "여기 상태의 원자로, 이를 거쳐 이온화가 일어나는 경로가 있음.",
+   "post": 579
+  },
+  {
+   "ko": "열전자 방출",
+   "en": "thermionic emission",
+   "alt": [],
+   "def": "가열된 탐침에서 전자가 방출되어 측정 전류에 영향을 주는 현상이다.",
+   "post": 191
+  },
+  {
+   "ko": "예지 보전",
+   "en": "PdM (predictive maintenance)",
+   "alt": [],
+   "def": "설비 상태를 기반으로 미리 정비 시점을 판단하는 기술.",
+   "post": 626
+  },
+  {
+   "ko": "용량 결합 플라즈마",
+   "en": "CCP, Capacitively Coupled Plasma",
+   "alt": [],
+   "def": "전극 사이 전기장에 의한 전자 가속으로 생성되는 플라즈마다.",
+   "post": 159
+  },
+  {
+   "ko": "용량성 모드",
+   "en": "E-mode",
+   "alt": [
+    "E 모드"
+   ],
+   "def": "안테나 전압에 의한 용량성 전기장이 방전에 기여하는 모드이다.",
+   "post": 97
+  },
+  {
+   "ko": "원격 플라즈마 세정",
+   "en": "RPSC (remote plasma source cleaning)",
+   "alt": [],
+   "def": "챔버 밖에서 만든 플라즈마의 반응종으로 챔버를 세정하는 방식.",
+   "post": 763
+  },
+  {
+   "ko": "위상차",
+   "en": "phase difference",
+   "alt": [],
+   "def": "RF 전압과 전류 사이의 시간 어긋남으로 유효 전력을 정함.",
+   "post": 814
+  },
+  {
+   "ko": "유도 결합 플라즈마",
+   "en": "ICP, Inductively Coupled Plasma",
+   "alt": [],
+   "def": "안테나 전류에서 비롯된 유도 전기장으로 전자를 가속하여 만드는 플라즈마다.",
+   "post": 139
+  },
+  {
+   "ko": "유도 전기장",
+   "en": "induced electric field",
+   "alt": [],
+   "def": "시간에 따라 변하는 자기장으로 인해 공간에 생기는 전기장이다.",
+   "post": 96
+  },
+  {
+   "ko": "유도성 모드",
+   "en": "H-mode",
+   "alt": [],
+   "def": "ICP에서 유도 전기장에 의한 에너지 전달이 우세한 고밀도 방전 모드이다.",
+   "post": 90
+  },
+  {
+   "ko": "유전체 장벽 방전",
+   "en": "DBD, Dielectric Barrier Discharge",
+   "alt": [],
+   "def": "유전체가 포함된 전극 구조에서 발생시키는 방전으로, 본문에서는 발광과 전류로 생성 여부를 확인한다.",
+   "post": 161
+  },
+  {
+   "ko": "이온 에너지 분포 함수",
+   "en": "IEDF (ion energy distribution function)",
+   "alt": [],
+   "def": "표면에 입사하는 이온의 에너지 분포이다.",
+   "post": 902
+  },
+  {
+   "ko": "이온 조사량",
+   "en": "ion dose",
+   "alt": [
+    "이온 주입량"
+   ],
+   "def": "식각률을 해석할 때 이온 에너지와 함께 고려하는 입사 이온의 양이다.",
+   "post": 273
+  },
+  {
+   "ko": "이온 플라즈마 주파수",
+   "en": "ion plasma frequency",
+   "alt": [],
+   "def": "이온이 전기장 변화에 반응할 수 있는 기준 주파수로, 표면 이온 반응의 거동 기준.",
+   "post": 733
+  },
+  {
+   "ko": "이중층",
+   "en": "double layer",
+   "alt": [],
+   "def": "본문에서 오로라와 관련된 계단형 전위 구조를 더 알아보기 위해 제시한 개념이다.",
+   "post": 146
+  },
+  {
+   "ko": "입자 균형식",
+   "en": "particle balance equation",
+   "alt": [],
+   "def": "전체 가스 밀도를 바닥상태, 여기상태, 이온 밀도의 합으로 나타내는 식.",
+   "post": 749
+  },
+  {
+   "ko": "입자 밀도",
+   "en": "particle density",
+   "alt": [],
+   "def": "단위 부피에 존재하는 입자 수로, 높은 입자 온도가 전체 가열로 이어지는 정도를 이해하는 데 필요한 값이다.",
+   "post": 165
+  },
+  {
+   "ko": "자기 바이어스",
+   "en": "Vdc",
+   "alt": [
+    "직류 자기 바이어스"
+   ],
+   "def": "웨이퍼 표면에 쌓인 전하가 만드는 직류 전위이다.",
+   "post": 893
+  },
+  {
+   "ko": "자기 커스프",
+   "en": "Magnetic cusp",
+   "alt": [],
+   "def": "N극과 S극을 교대로 배치하여 전자 구속에 활용하는 자기장 구성이다.",
+   "post": 293
+  },
+  {
+   "ko": "자유전자",
+   "en": "free electron",
+   "alt": [],
+   "def": "원자핵에 묶여 있지 않아 전기장으로 가속되어 이온화에 참여할 수 있는 전자다.",
+   "post": 145
+  },
+  {
+   "ko": "자이로 주파수",
+   "en": "gyrofrequency",
+   "alt": [],
+   "def": "자기장 속에서 하전 입자가 회전하는 주파수.",
+   "post": 607
+  },
+  {
+   "ko": "잔류 가스 분석",
+   "en": "residual gas analysis (RGA)",
+   "alt": [],
+   "def": "유입된 중성 기체를 내부에서 이온화해 질량 성분을 분석하는 방식이다.",
+   "post": 93
+  },
+  {
+   "ko": "잔류가스분석기",
+   "en": "RGA (residual gas analyzer)",
+   "alt": [],
+   "def": "진공 중 잔류 가스 성분을 분석하는 질량분석 장치",
+   "post": 412
+  },
+  {
+   "ko": "저주파 전원",
+   "en": "LF (low frequency)",
+   "alt": [
+    "저주파"
+   ],
+   "def": "이온에 에너지를 주기 위해 이온 주파수 부근으로 인가하는 낮은 주파수 전원",
+   "post": 403
+  },
+  {
+   "ko": "저항 가열",
+   "en": "ohmic heating",
+   "alt": [
+    "저항성 가열"
+   ],
+   "def": "전자와 이온의 입사로 흐르는 전류가 물체의 온도를 높이는 가열 과정이다.",
+   "post": 149
+  },
+  {
+   "ko": "전기양성 플라즈마",
+   "en": "electropositive plasma",
+   "alt": [
+    "양전성 플라즈마"
+   ],
+   "def": "음이온이 거의 없이 이온과 전자로 이루어진 플라즈마",
+   "post": 392
+  },
+  {
+   "ko": "전도성",
+   "en": "conductivity",
+   "alt": [
+    "전도도"
+   ],
+   "def": "플라즈마가 전류를 전달하는 성질로, 본문에서는 밀도가 높아질수록 증가한다고 설명한다.",
+   "post": 188
+  },
+  {
+   "ko": "전력 결합",
+   "en": "power coupling",
+   "alt": [],
+   "def": "전원에서 공급한 에너지가 플라즈마에 전달되는 과정이다.",
+   "post": 364
+  },
+  {
+   "ko": "전자 가열",
+   "en": "electron heating",
+   "alt": [],
+   "def": "RF 전기장이 전자에 에너지를 전달해 전자 에너지를 높이는 과정.",
+   "post": 765
+  },
+  {
+   "ko": "전자 에너지 분포",
+   "en": "electron energy distribution function (EEDF)",
+   "alt": [
+    "전자 에너지 분포 함수"
+   ],
+   "def": "전자들이 에너지별로 어떻게 분포하는지 나타내며 단일 탐침으로 얻을 수 있는 정보이다.",
+   "post": 98
+  },
+  {
+   "ko": "전자 에너지 분포",
+   "en": "electron energy distribution",
+   "alt": [],
+   "def": "플라즈마의 전자들이 어떤 에너지를 얼마나 갖고 있는지 나타내며 충돌 반응에 영향을 주는 분포다.",
+   "post": 150
+  },
+  {
+   "ko": "전자 친화도",
+   "en": "electron affinity",
+   "alt": [],
+   "def": "원자가 전자를 붙잡아 음이온이 되려는 성향으로, 산소에서 크다.",
+   "post": 589
+  },
+  {
+   "ko": "접지",
+   "en": "ground",
+   "alt": [],
+   "def": "전압의 기준이 되는 0 V 지점.",
+   "post": 250
+  },
+  {
+   "ko": "접촉 저항",
+   "en": "contact resistance",
+   "alt": [],
+   "def": "RF 체결·접지 부위의 접촉 상태를 나타내는 저항.",
+   "post": 795
+  },
+  {
+   "ko": "정합",
+   "en": "matching",
+   "alt": [],
+   "def": "입력 전력이 반사 없이 부하로 전달되도록 임피던스를 맞추는 것.",
+   "post": 608
+  },
+  {
+   "ko": "질량유량계",
+   "en": "MFC (mass flow controller)",
+   "alt": [
+    "질량 유량 제어기"
+   ],
+   "def": "가스 유량을 정밀하게 조절하는 장치.",
+   "post": 442
+  },
+  {
+   "ko": "차단 커패시터",
+   "en": "blocking capacitor",
+   "alt": [],
+   "def": "전극 회로의 직류 전류를 차단하여 표면 전하 축적을 가능하게 하는 커패시터다.",
+   "post": 141
+  },
+  {
+   "ko": "차일드-랭뮤어 쉬스",
+   "en": "Child-Langmuir sheath",
+   "alt": [
+    "Child-Langmuir 쉬스"
+   ],
+   "def": "충돌 없는 조건에서 전압과 밀도로 두께가 정해지는 쉬스 모델.",
+   "post": 569
+  },
+  {
+   "ko": "척 해제",
+   "en": "dechucking",
+   "alt": [
+    "디척킹"
+   ],
+   "def": "공정을 마친 시편을 정전척에서 분리하는 과정이다.",
+   "post": 290
+  },
+  {
+   "ko": "척킹",
+   "en": "chucking",
+   "alt": [],
+   "def": "웨이퍼를 척에 고정하는 상태로, 웨이퍼와 척 사이 간극과 관련된다.",
+   "post": 741
+  },
+  {
+   "ko": "충돌 단면적",
+   "en": "cross section",
+   "alt": [],
+   "def": "충돌 후 일어날 반응의 확률을 나타내는, 입자 종류마다 고유한 값.",
+   "post": 561
+  },
+  {
+   "ko": "펄스 바이어스",
+   "en": "pulsed bias",
+   "alt": [],
+   "def": "기판 전위를 주기적인 펄스 형태로 바꾸어 표면 대전과 방전 거동을 조절하는 전압이다.",
+   "post": 91
+  },
+  {
+   "ko": "포화 전류",
+   "en": "saturation current",
+   "alt": [],
+   "def": "탐침 전압을 크게 올렸을 때 더 이상 늘지 않고 포화되는 전류.",
+   "post": 495
+  },
+  {
+   "ko": "표면 전위",
+   "en": "surface potential",
+   "alt": [],
+   "def": "챔버 대면 재료 표면에 쌓인 전하로 정해지는 전위.",
+   "post": 603
+  },
+  {
+   "ko": "표면 전처리",
+   "en": "surface pretreatment",
+   "alt": [],
+   "def": "본 증착에 앞서 표면 상태를 준비하기 위해 수행하는 처리이다.",
+   "post": 132
+  },
+  {
+   "ko": "프리쉬스",
+   "en": "presheath",
+   "alt": [],
+   "def": "쉬스 앞 영역으로, 확산에서 비롯되어 이온이 쉬스로 향하게 만드는 구간.",
+   "post": 544
+  },
+  {
+   "ko": "플라즈마 가열",
+   "en": "plasma heating",
+   "alt": [],
+   "def": "RF 전력이 충돌을 통해 전자에 에너지를 전달하는 과정.",
+   "post": 820
+  },
+  {
+   "ko": "플라즈마 모드",
+   "en": "plasma etch (PE) mode",
+   "alt": [
+    "플라즈마 식각 모드"
+   ],
+   "def": "접지 전극에 웨이퍼를 두어 쉬스 전위가 작아 화학적 식각이 큰 운전 모드.",
+   "post": 715
+  },
+  {
+   "ko": "플라즈마 밀도",
+   "en": "plasma density",
+   "alt": [],
+   "def": "입력 전력의 효과를 식각 결과와 구분해 평가하기 위해 측정하도록 제안한 플라즈마 특성값이다.",
+   "post": 169
+  },
+  {
+   "ko": "플라즈마 세정",
+   "en": "plasma cleaning",
+   "alt": [],
+   "def": "플라즈마의 물리적 충돌이나 화학반응으로 반응기 잔류물을 제거하는 공정이다.",
+   "post": 179
+  },
+  {
+   "ko": "플라즈마 화학",
+   "en": "plasma chemistry",
+   "alt": [],
+   "def": "플라즈마가 만든 활성종과 에너지를 이용한 기체 및 표면 반응을 다루는 분야다.",
+   "post": 149
+  },
+  {
+   "ko": "해리율",
+   "en": "dissociation rate",
+   "alt": [],
+   "def": "이 글에서는 공정가스 분자가 플라즈마에 의해 분해되는 정도를 나타낸다.",
+   "post": 364
+  },
+  {
+   "ko": "확산 펌프",
+   "en": "diffusion pump",
+   "alt": [],
+   "def": "가열한 오일 증기의 제트 분사로 기체를 벽으로 몰아 배기하는 고진공 펌프.",
+   "post": 235
+  },
+  {
+   "ko": "회로 모델",
+   "en": "circuit model",
+   "alt": [],
+   "def": "플라즈마를 커패시터, 다이오드, 저항, 인덕터로 표현해 해석하는 방법.",
+   "post": 440
+  },
+  {
+   "ko": "0차원 모델",
+   "en": "0-dimensional (global) model",
+   "alt": [],
+   "def": "공간 분포 없이 반응 테이블과 균형식으로 플라즈마를 기술하는 모델.",
+   "post": 778
+  },
+  {
+   "ko": "3체 재결합",
+   "en": "3-body recombination",
+   "alt": [],
+   "def": "세 번째 입자가 에너지·운동량을 가져가야 이온-전자 결합이 가능한 반응",
+   "post": 416
+  },
+  {
+   "ko": "B-dot 탐침",
+   "en": "B-dot probe",
+   "alt": [],
+   "def": "자기장의 시간 변화에서 생기는 기전력으로 측정하는 탐침.",
+   "post": 463
+  },
+  {
+   "ko": "Bohm 기준",
+   "en": "Bohm criterion",
+   "alt": [
+    "보옴 기준"
+   ],
+   "def": "이온이 쉬스에 들어갈 때 보옴 속도 이상을 가져야 한다는 조건.",
+   "post": 583
+  },
+  {
+   "ko": "CR 모델",
+   "en": "collisional-radiative model",
+   "alt": [],
+   "def": "충돌과 복사에 의한 준위 생성·소멸의 균형으로 선 세기를 계산하는 모델",
+   "post": 389
+  },
+  {
+   "ko": "DC 아크 플라즈마 토치",
+   "en": "DC arc plasma torch",
+   "alt": [],
+   "def": "직류 아크로 고온 플라즈마를 만들어 가스를 처리하는 장치이다.",
+   "post": 914
+  },
+  {
+   "ko": "DC 오프셋",
+   "en": "DC offset / self bias",
+   "alt": [],
+   "def": "RF 인가 시 전극에 쌓인 전하가 만드는 DC 전위.",
+   "post": 604
+  },
+  {
+   "ko": "Debye 차폐",
+   "en": "Debye shielding",
+   "alt": [
+    "Debye \u0001"
+   ],
+   "def": "국부적인 전위 변화가 일정 거리 밖으로 전달되는 것을 플라즈마 하전입자들이 약화하는 현상이다.",
+   "post": 217
+  },
+  {
+   "ko": "Druyvesteyn 분포",
+   "en": "Druyvesteyn distribution",
+   "alt": [],
+   "def": "맥스웰 분포와 구별되는 전자 에너지 분포 형태",
+   "post": 874
+  },
+  {
+   "ko": "E 모드",
+   "en": "E mode, Capacitive Mode",
+   "alt": [],
+   "def": "본문에서 정전기장에 의한 에너지 전달이 우세한 저밀도 ICP 운전 영역이다.",
+   "post": 188
+  },
+  {
+   "ko": "E 모드/H 모드",
+   "en": "E-mode/H-mode",
+   "alt": [],
+   "def": "ICP에서 안테나의 전기장(E)과 유도 기전력(H)으로 플라즈마를 가열하는 방식",
+   "post": 888
+  },
+  {
+   "ko": "ExB 드리프트",
+   "en": "ExB drift",
+   "alt": [],
+   "def": "전기장과 자기장이 수직으로 있을 때 하전 입자가 이동하는 현상",
+   "post": 875
+  },
+  {
+   "ko": "H 모드",
+   "en": "H mode, Inductive Mode",
+   "alt": [],
+   "def": "본문에서 유도 전기장에 의한 에너지 전달이 우세한 고밀도 ICP 운전 영역이다.",
+   "post": 188
+  },
+  {
+   "ko": "L형 정합 회로",
+   "en": "L-type matching network",
+   "alt": [],
+   "def": "인덕터와 커패시터 두 소자로 구성한 기본 정합 회로.",
+   "post": 743
+  },
+  {
+   "ko": "OES 선비 방법",
+   "en": "OES line ratio method",
+   "alt": [],
+   "def": "발광선 세기 비로 플라즈마 상태를 해석하는 방법.",
+   "post": 573
+  },
+  {
+   "ko": "PE 모드",
+   "en": "plasma etching mode",
+   "alt": [],
+   "def": "반대 전극에 시편을 두어 약한 이온을 쓰는 운전",
+   "post": 435
+  },
+  {
+   "ko": "PI 파라미터",
+   "en": "plasma information parameter",
+   "alt": [],
+   "def": "방전 이력과 표면 거칠기를 결합해 부산물 생성량과 노즐 손상을 추정하는 연구실의 지표이다.",
+   "post": 922
+  },
+  {
+   "ko": "PM",
+   "en": "preventive maintenance",
+   "alt": [],
+   "def": "주기적 장비 점검·세정",
+   "post": 410
+  },
+  {
+   "ko": "RC 시간",
+   "en": "RC time",
+   "alt": [],
+   "def": "축전 용량과 누설 저항이 정하는 전하 축적·방전의 시간 상수.",
+   "post": 568
+  },
+  {
+   "ko": "RF 누설",
+   "en": "RF leak",
+   "alt": [],
+   "def": "RF 전력이 의도하지 않은 경로로 새는 현상.",
+   "post": 592
+  },
+  {
+   "ko": "RF 정합",
+   "en": "RF matching",
+   "alt": [],
+   "def": "전원에서 부하(플라즈마)로 최대 전력이 전달되도록 임피던스를 맞추는 일이다.",
+   "post": 918
+  },
+  {
+   "ko": "RIE 모드",
+   "en": "reactive ion etching mode",
+   "alt": [],
+   "def": "전력 전극에 시편을 두어 큰 이온 에너지를 쓰는 운전",
+   "post": 435
+  },
+  {
+   "ko": "VHF",
+   "en": "very high frequency",
+   "alt": [],
+   "def": "이온 플라즈마 주파수보다 훨씬 높아 전자 가열을 통해 플라즈마 생성을 조절하는 데 쓰는 주파수 대역.",
+   "post": 695
+  },
+  {
+   "ko": "VI 위상",
+   "en": "V-I phase",
+   "alt": [],
+   "def": "전압과 전류 신호의 위상차로 임피던스 특성을 판단하는 지표.",
+   "post": 753
+  },
+  {
+   "ko": "Vdc",
+   "en": "DC bias voltage",
+   "alt": [],
+   "def": "부유 전극 표면에 형성되는 self bias 전압.",
+   "post": 708
+  },
+  {
+   "ko": "matrix 쉬스",
+   "en": "matrix sheath",
+   "alt": [],
+   "def": "전위가 급변한 직후 이온이 아직 움직이지 못한 채 형성되는 쉬스.",
+   "post": 241
+  },
+  {
+   "ko": "pd 조건",
+   "en": "pd (pressure × gap)",
+   "alt": [],
+   "def": "압력과 전극 간격의 곱으로, 방전 조건을 정하는 변수.",
+   "post": 465
+  },
+  {
+   "ko": "tail 전자",
+   "en": "high energy electron",
+   "alt": [],
+   "def": "에너지 분포 끝자락에 놓인 고에너지 전자.",
+   "post": 581
+  },
+  {
+   "ko": "가둠 링",
+   "en": "confinement ring",
+   "alt": [],
+   "def": "플라즈마 확산을 줄여 가두는 링.",
+   "post": 630
+  },
+  {
+   "ko": "가스 잔류",
+   "en": "retention",
+   "alt": [],
+   "def": "수소 플라즈마를 쪼인 재료 속에 수소가 남아 있는 현상.",
+   "post": 442
+  },
+  {
+   "ko": "가시광선",
+   "en": "visible light",
+   "alt": [],
+   "def": "육안으로 보이는 대략 380–750nm 파장 영역의 빛.",
+   "post": 489
+  },
+  {
+   "ko": "가열",
+   "en": "heating",
+   "alt": [],
+   "def": "전기장이 플라즈마 전자를 가속해 에너지를 주는 과정.",
+   "post": 685
+  },
+  {
+   "ko": "가열 기화기",
+   "en": "heated vaporiser",
+   "alt": [],
+   "def": "소개된 액체 주입 시스템에서 원료를 가열하여 기화하는 구성요소다.",
+   "post": 152
+  },
+  {
+   "ko": "갭필",
+   "en": "gap fill",
+   "alt": [],
+   "def": "증착과 식각이 동시에 일어나 패턴 사이 틈을 채우는 공정이다.",
+   "post": 889
+  },
+  {
+   "ko": "건식 공정",
+   "en": "dry process",
+   "alt": [],
+   "def": "플라즈마 등 기체상으로 수행하는 공정",
+   "post": 396
+  },
+  {
+   "ko": "고밀도 플라즈마 소스",
+   "en": "HDP (high density plasma source)",
+   "alt": [],
+   "def": "RF 전자 가열로 얻는 고밀도 플라즈마 소스.",
+   "post": 828
+  },
+  {
+   "ko": "고전압 탐침",
+   "en": "high-voltage probe",
+   "alt": [],
+   "def": "안테나에 인가되는 높은 전압을 측정하는 탐침이다.",
+   "post": 170
+  },
+  {
+   "ko": "고종횡비 식각",
+   "en": "HARC (high aspect ratio contact)",
+   "alt": [],
+   "def": "종횡비가 큰 구멍을 깊게 파는 식각 공정.",
+   "post": 670
+  },
+  {
+   "ko": "고종횡비 식각",
+   "en": "HAR (High Aspect Ratio) etch",
+   "alt": [],
+   "def": "깊고 좁은 구조를 만드는 식각.",
+   "post": 771
+  },
+  {
+   "ko": "고주파",
+   "en": "HF",
+   "alt": [],
+   "def": "전자 가열과 해리를 담당하는 높은 주파수 전원.",
+   "post": 625
+  },
+  {
+   "ko": "고주파 보상 탐침",
+   "en": "radio-frequency compensated probe",
+   "alt": [],
+   "def": "고주파 전위 변동의 영향을 보상하여 플라즈마 전류–전압 특성을 측정하는 탐침이다.",
+   "post": 104
+  },
+  {
+   "ko": "고주파 접지",
+   "en": "RF grounding, Radio-Frequency Grounding",
+   "alt": [],
+   "def": "고주파 전원과 탐침 측정계에서 잡음을 줄이기 위해 점검하는 접지 조건이다.",
+   "post": 142
+  },
+  {
+   "ko": "고주파 접지",
+   "en": "Radio Frequency grounding (RF grounding)",
+   "alt": [],
+   "def": "고주파 장비의 잡음 제거를 위해 점검해야 하는 접지 조건이다.",
+   "post": 216
+  },
+  {
+   "ko": "공정 기체",
+   "en": "process gas",
+   "alt": [],
+   "def": "처리 대상과 반응기 특성에 맞추어 플라즈마 공정에 공급하는 기체이다.",
+   "post": 113
+  },
+  {
+   "ko": "공정 제어",
+   "en": "APC (advanced process control)",
+   "alt": [],
+   "def": "공정 변수를 제어하는 고급 기법.",
+   "post": 616
+  },
+  {
+   "ko": "공정 진단",
+   "en": "Process diagnostics",
+   "alt": [],
+   "def": "정상 공정의 운전 변수와 이후 변화 추이를 비교하여 공정 상태를 추적하는 방법이다.",
+   "post": 328
+  },
+  {
+   "ko": "공정 플라즈마 관점",
+   "en": "process plasma perspective",
+   "alt": [],
+   "def": "주요 반응 기여 인자를 플라즈마 안에서 생성·조절할 수 있는지부터 따지는 접근.",
+   "post": 803
+  },
+  {
+   "ko": "공정부 플라즈마",
+   "en": "Process plasma",
+   "alt": [],
+   "def": "발생부에서 전달되어 실제 시편 처리에 이용되는 영역의 플라즈마이다.",
+   "post": 334
+  },
+  {
+   "ko": "공진기",
+   "en": "resonator",
+   "alt": [],
+   "def": "이 글에서 구조와 결합 위치를 고려하여 정합 및 전자기장을 해석하려는 고주파 장치이다.",
+   "post": 376
+  },
+  {
+   "ko": "광방출 분광법",
+   "en": "OES, Optical Emission Spectroscopy",
+   "alt": [],
+   "def": "플라즈마에서 방출되는 빛의 스펙트럼을 분석하는 진단법이다.",
+   "post": 140
+  },
+  {
+   "ko": "광자 로켓",
+   "en": "photon rocket",
+   "alt": [],
+   "def": "광원에서 나온 빛을 반사시켜 추진력을 얻는 구상의 로켓이다.",
+   "post": 207
+  },
+  {
+   "ko": "광자 에너지",
+   "en": "photon energy",
+   "alt": [],
+   "def": "광자 하나가 가진 에너지로 파장에 반비례.",
+   "post": 631
+  },
+  {
+   "ko": "광전자",
+   "en": "photoelectron",
+   "alt": [],
+   "def": "빛에 의해 방출되어 방전의 씨앗이 되는 전자.",
+   "post": 678
+  },
+  {
+   "ko": "광화학",
+   "en": "Photochemistry",
+   "alt": [],
+   "def": "빛 에너지의 노출로 물질에 화학적 변화가 생기는 현상을 다루는 개념이다.",
+   "post": 299
+  },
+  {
+   "ko": "국부 대전",
+   "en": "local charging",
+   "alt": [],
+   "def": "전도도가 낮은 절연체의 특정 영역에 전하가 집중되는 현상이다.",
+   "post": 221
+  },
+  {
+   "ko": "국부 압력",
+   "en": "local pressure",
+   "alt": [],
+   "def": "표면 입자의 순간 탈착이나 증발로 특정 부근에서 높아지는 압력이다.",
+   "post": 195
+  },
+  {
+   "ko": "국부 전기장",
+   "en": "local electric field",
+   "alt": [],
+   "def": "뾰족한 형상이나 퇴적물 때문에 특정 위치에 집중되는 전기장.",
+   "post": 737
+  },
+  {
+   "ko": "국소 열평형",
+   "en": "local thermodynamic equilibrium (LTE)",
+   "alt": [],
+   "def": "충돌이 많은 플라즈마에서 국소적으로 열평형을 가정하는 분광 해석 모델.",
+   "post": 721
+  },
+  {
+   "ko": "균형방정식",
+   "en": "balance equation",
+   "alt": [],
+   "def": "입자의 생성과 소멸이 같다고 놓는 식.",
+   "post": 479
+  },
+  {
+   "ko": "그리드 바이어스",
+   "en": "grid bias",
+   "alt": [],
+   "def": "격자 전극에 전위를 주어 하전입자의 이동을 조절하는 방식이다.",
+   "post": 163
+  },
+  {
+   "ko": "그림자 효과",
+   "en": "shadow effect",
+   "alt": [],
+   "def": "그리드 사용으로 타깃 표면에 격자 형태의 처리 흔적이 나타나는 현상이다.",
+   "post": 163
+  },
+  {
+   "ko": "극저온 공정",
+   "en": "cryo process",
+   "alt": [],
+   "def": "웨이퍼를 매우 낮은 온도로 유지해 표면 반응을 절제하는 공정.",
+   "post": 716
+  },
+  {
+   "ko": "글라이딩 아크",
+   "en": "gliding arc",
+   "alt": [],
+   "def": "전극을 따라 이동하며 늘어나는 아크 방전.",
+   "post": 727
+  },
+  {
+   "ko": "글로우 방전",
+   "en": "DC glow discharge",
+   "alt": [],
+   "def": "직류 전압으로 유지되는 기본적인 저압 방전.",
+   "post": 678
+  },
+  {
+   "ko": "금속 모드",
+   "en": "metallic mode",
+   "alt": [],
+   "def": "반응성 기체 분압이 낮아 타겟 표면에 산화물이 거의 생기지 않는 운전 상태이다.",
+   "post": 130
+  },
+  {
+   "ko": "기공",
+   "en": "pore",
+   "alt": [],
+   "def": "타깃 내부에 존재하며 돔형 스플래시의 원인 후보로 제시된 빈 공간이다.",
+   "post": 183
+  },
+  {
+   "ko": "기생 캐패시턴스",
+   "en": "parasitic capacitance",
+   "alt": [],
+   "def": "배선·접지 등에서 의도치 않게 생기는 캐패시턴스.",
+   "post": 622
+  },
+  {
+   "ko": "기생 플라즈마",
+   "en": "parasitic plasma",
+   "alt": [],
+   "def": "의도한 방전 영역이 아닌 챔버 벽 근처에 따로 생기는 플라즈마.",
+   "post": 641
+  },
+  {
+   "ko": "기저 압력",
+   "en": "base pressure",
+   "alt": [],
+   "def": "가스를 넣기 전 챔버가 도달한 진공 압력",
+   "post": 867
+  },
+  {
+   "ko": "기체 유량",
+   "en": "gas flow rate",
+   "alt": [],
+   "def": "일정 시간 동안 유입되는 기체의 양이다.",
+   "post": 219
+  },
+  {
+   "ko": "기포층",
+   "en": "bubble layer",
+   "alt": [],
+   "def": "전극 표면에 생겨 절연 공간을 만들고 방전이 일어나는 얇은 기체 층.",
+   "post": 518
+  },
+  {
+   "ko": "끊어진 결합",
+   "en": "dangling bond",
+   "alt": [],
+   "def": "이온 충돌 등으로 표면에 생긴, 짝을 이루지 못한 결합 자리.",
+   "post": 703
+  },
+  {
+   "ko": "네온사인",
+   "en": "neon sign",
+   "alt": [],
+   "def": "본문에서 일상적으로 플라즈마를 관찰할 수 있는 방전 장치로 제시한 조명이다.",
+   "post": 182
+  },
+  {
+   "ko": "노치 필터",
+   "en": "notch filter",
+   "alt": [],
+   "def": "특정 주파수에서 높은 임피던스를 형성해 그 성분을 억제하는 회로이다.",
+   "post": 104
+  },
+  {
+   "ko": "노칭",
+   "en": "notching",
+   "alt": [],
+   "def": "식각 하부 측면에서 비정상적으로 식각이 일어나는 현상",
+   "post": 864
+  },
+  {
+   "ko": "다운스트림 챔버",
+   "en": "downstream chamber",
+   "alt": [],
+   "def": "원격 소스에서 만들어진 라디칼이 확산되어 타깃을 처리하는 공간.",
+   "post": 724
+  },
+  {
+   "ko": "단차 피복",
+   "en": "step coverage",
+   "alt": [],
+   "def": "단차가 있는 표면에 막이 고르게 덮이는 정도.",
+   "post": 625
+  },
+  {
+   "ko": "대기압 플라즈마 제트",
+   "en": "APPJ (atmospheric pressure plasma jet)",
+   "alt": [],
+   "def": "대기압에서 제트 형태로 플라즈마를 뿜어내는 장치.",
+   "post": 494
+  },
+  {
+   "ko": "대기압 플라즈마 제트",
+   "en": "atmospheric pressure plasma jet (APPJ)",
+   "alt": [],
+   "def": "상압에서 고밀도 라디칼을 만들어 분사하는 플라즈마 소스.",
+   "post": 734
+  },
+  {
+   "ko": "더미",
+   "en": "dummy",
+   "alt": [],
+   "def": "이 글에서 Idle 상태에 사용하는 대체 부하/웨이퍼 성격의 것.",
+   "post": 455
+  },
+  {
+   "ko": "더미 공정",
+   "en": "dummy run",
+   "alt": [],
+   "def": "공정 안정화를 위해 제품 없이 돌리는 공정.",
+   "post": 605
+  },
+  {
+   "ko": "더미 로드",
+   "en": "dummy load",
+   "alt": [],
+   "def": "처리 대상 외에 빈 자리에 놓아 전극면 조건을 맞추는 보조 자재.",
+   "post": 739
+  },
+  {
+   "ko": "더미 타깃",
+   "en": "dummy target",
+   "alt": [],
+   "def": "장비 성능 평가를 위해 실제 시료 대신 넣는 대상.",
+   "post": 742
+  },
+  {
+   "ko": "동심 구 전극",
+   "en": null,
+   "alt": [],
+   "def": "중심을 공유하는 두 구를 전극으로 써서 균일한 방사형 전기장을 만드는 구조.",
+   "post": 651
+  },
+  {
+   "ko": "동적 임피던스",
+   "en": "dynamic impedance",
+   "alt": [],
+   "def": "조건에 따라 능동적으로 변하는 플라즈마 부하 임피던스.",
+   "post": 626
+  },
+  {
+   "ko": "동축 케이블",
+   "en": "Coaxial cable",
+   "alt": [],
+   "def": "중심 도선 주위를 접지 도체가 둘러싸 전자기파를 차폐하는 케이블이다.",
+   "post": 295
+  },
+  {
+   "ko": "동특성",
+   "en": "dynamic characteristics",
+   "alt": [],
+   "def": "플라즈마가 켜진 뒤 시간에 따라 변하는 특성.",
+   "post": 686
+  },
+  {
+   "ko": "듀얼 매처",
+   "en": "dual matcher",
+   "alt": [],
+   "def": "HF와 LF 두 주파수 전력을 정합시키는 매처이다.",
+   "post": 917
+  },
+  {
+   "ko": "등가회로",
+   "en": "equivalent circuit",
+   "alt": [],
+   "def": "플라즈마를 저항·축전기 등으로 표현한 회로 모델",
+   "post": 425
+  },
+  {
+   "ko": "등방적 확산",
+   "en": "isotropic diffusion",
+   "alt": [],
+   "def": "특정 방향을 우선하지 않고 플라즈마가 퍼지는 거동이다.",
+   "post": 274
+  },
+  {
+   "ko": "디척",
+   "en": "dechuck",
+   "alt": [],
+   "def": "플라즈마로 ESC의 웨이퍼 고정력을 해제하는 단계.",
+   "post": 476
+  },
+  {
+   "ko": "디커플드 플라즈마",
+   "en": "decoupled plasma",
+   "alt": [],
+   "def": "이온 밀도와 이온 에너지를 분리해 제어하는 ICP 방식.",
+   "post": 674
+  },
+  {
+   "ko": "램프 운전",
+   "en": "ramp",
+   "alt": [],
+   "def": "전력을 한 번에 켜지 않고 시간에 따라 점진적으로 올리는 운전 방식.",
+   "post": 696
+  },
+  {
+   "ko": "램핑",
+   "en": "ramping",
+   "alt": [],
+   "def": "전력을 서서히 올리며 인가하는 운전 방식.",
+   "post": 656
+  },
+  {
+   "ko": "레이스 트랙",
+   "en": "race track",
+   "alt": [],
+   "def": "반경 방향 자기장이 큰 위치에서 이온 생성과 충돌이 집중되어 타겟이 깊게 침식되는 부분이다.",
+   "post": 195
+  },
+  {
+   "ko": "레이저 구속 플라즈마",
+   "en": "laser confinement plasma",
+   "alt": [],
+   "def": "핵융합에 필요한 밀도와 온도를 얻도록 레이저로 압축한 플라즈마다.",
+   "post": 174
+  },
+  {
+   "ko": "로고스키 코일",
+   "en": "Rogowski coil",
+   "alt": [],
+   "def": "플라즈마 전류의 자기장을 유도 기전력으로 재는 코일.",
+   "post": 463
+  },
+  {
+   "ko": "로드 커패시터",
+   "en": "load capacitor",
+   "alt": [],
+   "def": "등가 저항을 50옴에 맞추는 매처 가변 커패시터.",
+   "post": 622
+  },
+  {
+   "ko": "로터",
+   "en": "rotor",
+   "alt": [],
+   "def": "TMP 내부에서 고속 회전하는 부품.",
+   "post": 283
+  },
+  {
+   "ko": "리사주 곡선",
+   "en": "Q-V Lissajous curve",
+   "alt": [],
+   "def": "인가 전압과 축적 전하량의 관계를 그려 방전 특성을 분석하는 곡선이다.",
+   "post": 245
+  },
+  {
+   "ko": "마그네트론 스퍼터",
+   "en": "magnetron sputter",
+   "alt": [],
+   "def": "타겟 위 자기장으로 전자를 가두어 플라즈마를 타겟 앞에 집중시키는 스퍼터링.",
+   "post": 253
+  },
+  {
+   "ko": "마이크로 트렌치",
+   "en": "micro-trench",
+   "alt": [],
+   "def": "식각 중 패턴 바닥 가장자리에 생기는 홈 모양의 프로파일 왜곡.",
+   "post": 551
+  },
+  {
+   "ko": "맥스웰 분포",
+   "en": "Maxwell distribution",
+   "alt": [],
+   "def": "열평형 상태 입자의 에너지·속도 분포.",
+   "post": 581
+  },
+  {
+   "ko": "먼지 플라즈마",
+   "en": "dust plasma",
+   "alt": [],
+   "def": "먼지 입자의 대전과 운동 및 파동 상호작용을 함께 다루는 플라즈마 연구 대상이다.",
+   "post": 164
+  },
+  {
+   "ko": "모노실란",
+   "en": "monosilane (SiH4)",
+   "alt": [],
+   "def": "실리콘 박막 증착에 쓰이는 원료 가스",
+   "post": 405
+  },
+  {
+   "ko": "몰비",
+   "en": "molar ratio",
+   "alt": [],
+   "def": "혼합 가스를 구성하는 입자 수 기준의 비율.",
+   "post": 594
+  },
+  {
+   "ko": "무성 방전",
+   "en": "silent discharge",
+   "alt": [],
+   "def": "이 글에서는 유전체 장벽 방전의 다른 이름으로 사용된다.",
+   "post": 103
+  },
+  {
+   "ko": "무충돌 쉬스 / 충돌 쉬스",
+   "en": "collisionless / collisional sheath",
+   "alt": [],
+   "def": "이온의 평균자유행로가 쉬스 두께보다 긴 경우와 짧은 경우를 구분하는 분류이다.",
+   "post": 321
+  },
+  {
+   "ko": "물리 흡착",
+   "en": "physisorption",
+   "alt": [],
+   "def": "약한 물리적 결합으로 표면에 붙는 흡착.",
+   "post": 632
+  },
+  {
+   "ko": "물리적 스퍼터링",
+   "en": "physical sputtering",
+   "alt": [],
+   "def": "입사 입자의 충돌로 표면 물질을 떼어내는 작용.",
+   "post": 482
+  },
+  {
+   "ko": "바이어스",
+   "en": "Bias",
+   "alt": [],
+   "def": "플라즈마와 타겟의 전위차를 조절하여 입사 이온 에너지를 바꾸는 전기적 조건이다.",
+   "post": 332
+  },
+  {
+   "ko": "바이어스 전압",
+   "en": "bias voltage",
+   "alt": [],
+   "def": "탐침에 걸어 주는 기준 전압.",
+   "post": 507
+  },
+  {
+   "ko": "박막",
+   "en": "thin film",
+   "alt": [],
+   "def": "처리 대상 표면에 입자가 침착하여 형성한 얇은 물질 층이다.",
+   "post": 114
+  },
+  {
+   "ko": "박막 경화",
+   "en": "Film hardening",
+   "alt": [],
+   "def": "플라즈마 입자나 자외선에 노출된 막이 단단해지는 현상이다.",
+   "post": 294
+  },
+  {
+   "ko": "박막 응력",
+   "en": "film stress",
+   "alt": [],
+   "def": "증착된 박막 내부에 생기는 응력",
+   "post": 424
+  },
+  {
+   "ko": "박막 코팅",
+   "en": "film coating",
+   "alt": [],
+   "def": "물질이 표면에 쌓여 막을 형성하는 과정이다.",
+   "post": 144
+  },
+  {
+   "ko": "반사파",
+   "en": "reflected wave",
+   "alt": [],
+   "def": "임피던스 불일치로 되돌아오는 파동이며 플라즈마 생성 장애를 의미.",
+   "post": 820
+  },
+  {
+   "ko": "반응 상수",
+   "en": "reaction rate coefficient",
+   "alt": [],
+   "def": "충돌 단면적과 속도의 곱을 평균한 값",
+   "post": 407
+  },
+  {
+   "ko": "반응률",
+   "en": "reaction rate",
+   "alt": [],
+   "def": "두 입자 밀도의 곱에 반응 상수를 곱해 구하는 단위 부피당 반응 빈도",
+   "post": 407
+  },
+  {
+   "ko": "반응성 이온 식각",
+   "en": "RIE (reactive ion etching)",
+   "alt": [],
+   "def": "화학 반응에 이온 에너지가 더해져 식각률이 높아지는 식각.",
+   "post": 677
+  },
+  {
+   "ko": "방사성 부산물",
+   "en": "radioactive byproduct",
+   "alt": [],
+   "def": "핵융합 과정에서 만들어져 처리나 재사용을 검토해야 하는 방사성 물질이다.",
+   "post": 233
+  },
+  {
+   "ko": "배경 전자",
+   "en": "background electron",
+   "alt": [],
+   "def": "본격적인 방전 전부터 용기 안에 소량 존재하여 이온화 시작에 참여하는 전자이다.",
+   "post": 387
+  },
+  {
+   "ko": "배기속도",
+   "en": "pumping speed",
+   "alt": [],
+   "def": "펌프가 단위 시간에 배출하는 기체 부피(리터/시간).",
+   "post": 693
+  },
+  {
+   "ko": "배플",
+   "en": "baffle",
+   "alt": [],
+   "def": "이 장치에서 플라즈마 소스와 하부 척 사이에 놓이며 여러 홀을 통해 플라즈마가 통과하는 부품이다.",
+   "post": 357
+  },
+  {
+   "ko": "베르누이 정리",
+   "en": "Bernoulli's principle",
+   "alt": [],
+   "def": "유체 흐름에서 속도와 압력의 관계를 다루는 원리로, 가스 흐름 어림에 참고하라고 안내됨.",
+   "post": 723
+  },
+  {
+   "ko": "벨자",
+   "en": "bell jar",
+   "alt": [],
+   "def": "ICP 반응기 상부의 유전체 용기",
+   "post": 410
+  },
+  {
+   "ko": "변류기",
+   "en": "current transformer",
+   "alt": [],
+   "def": "변압기 원리로 RF 전류를 측정하는 프로브",
+   "post": 417
+  },
+  {
+   "ko": "변압기 결합 플라즈마",
+   "en": "Transformer Coupled Plasma (TCP)",
+   "alt": [],
+   "def": "답변에서 ICP와 같은 생성 원리를 사용하는 변형 방식으로 설명한 플라즈마 소스이다.",
+   "post": 230
+  },
+  {
+   "ko": "변압기 결합 회로 모델",
+   "en": "TCCM (Transformer Coupled Circuit Model)",
+   "alt": [],
+   "def": "ICP를 변압기 회로로 보고 플라즈마 밀도를 예측하는 해석 모델이다.",
+   "post": 321
+  },
+  {
+   "ko": "변압기 회로 모델",
+   "en": "transformer circuit model",
+   "alt": [],
+   "def": "ICP를 변압기로 모사하는 회로 모델.",
+   "post": 834
+  },
+  {
+   "ko": "변위 전류",
+   "en": "displacement current",
+   "alt": [],
+   "def": "방전 전류를 해석할 때 측정 전류에서 분리해야 한다고 지적한 전류 성분이다.",
+   "post": 161
+  },
+  {
+   "ko": "보옴 이온 플럭스",
+   "en": "Bohm ion flux",
+   "alt": [],
+   "def": "쉬스 경계로 들어오는 이온 플럭스.",
+   "post": 771
+  },
+  {
+   "ko": "보옴 전류",
+   "en": "Bohm current",
+   "alt": [],
+   "def": "쉬스를 통해 흐르는 이온 전류.",
+   "post": 815
+  },
+  {
+   "ko": "보옴 전류 밀도",
+   "en": "Bohm current density",
+   "alt": [],
+   "def": "쉬스 경계 밀도에 이온 음속을 곱한 이온 전류 밀도",
+   "post": 425
+  },
+  {
+   "ko": "보잉",
+   "en": "bowing",
+   "alt": [],
+   "def": "패턴 상단 측벽이 둥글게 패이는 프로파일 현상이다.",
+   "post": 916
+  },
+  {
+   "ko": "복사 포획",
+   "en": "radiation trapping",
+   "alt": [],
+   "def": "방출된 광자가 같은 종에 재흡수되어 유효 방사천이율이 달라지는 현상",
+   "post": 389
+  },
+  {
+   "ko": "볼츠만 관계",
+   "en": "Boltzmann relation",
+   "alt": [],
+   "def": "밀도 차이와 전위 차이를 지수 관계로 연결하는 식.",
+   "post": 618
+  },
+  {
+   "ko": "부분 이온화",
+   "en": "partial ionization",
+   "alt": [],
+   "def": "기체 중 일부만 이온화되어 중성입자가 대부분인 상태.",
+   "post": 548
+  },
+  {
+   "ko": "부유 상태",
+   "en": "floating state",
+   "alt": [],
+   "def": "캐리어가 외부 접지와 전기적으로 분리되어 있는 상태이다.",
+   "post": 221
+  },
+  {
+   "ko": "부유 쉬스",
+   "en": "floating sheath",
+   "alt": [],
+   "def": "전류가 흐르지 않는 절연 표면 앞에 형성되는 쉬스.",
+   "post": 618
+  },
+  {
+   "ko": "부유 쉬스 전위",
+   "en": "floating sheath potential",
+   "alt": [],
+   "def": "절연된 표면에 형성되는 쉬스 전위이다.",
+   "post": 911
+  },
+  {
+   "ko": "부유 전극",
+   "en": "floating electrode",
+   "alt": [],
+   "def": "전류가 빠져나가지 못해 전하 충전으로 전위가 정해지는 전극.",
+   "post": 708
+  },
+  {
+   "ko": "부하 임피던스",
+   "en": "load impedance",
+   "alt": [],
+   "def": "전원이 바라보는 챔버와 플라즈마의 합성 임피던스",
+   "post": 404
+  },
+  {
+   "ko": "분자동역학",
+   "en": "molecular dynamics (MD)",
+   "alt": [],
+   "def": "원자 단위 운동을 시뮬레이션해 표면 반응을 연구하는 방법.",
+   "post": 738
+  },
+  {
+   "ko": "불순물",
+   "en": "impurity",
+   "alt": [],
+   "def": "전극 표면에서 떨어져 플라즈마에 유입되어 방전 상태를 바꿀 수 있는 물질이다.",
+   "post": 160
+  },
+  {
+   "ko": "비등온 플라즈마",
+   "en": "non-isothermal plasma",
+   "alt": [],
+   "def": "전자와 이온·중성입자가 서로 다른 온도를 갖는 플라즈마다.",
+   "post": 171
+  },
+  {
+   "ko": "비맥스웰 분포",
+   "en": "non-Maxwellian distribution",
+   "alt": [],
+   "def": "문턱 에너지 충돌이 잦아 맥스웰 분포에서 왜곡된 분포.",
+   "post": 446
+  },
+  {
+   "ko": "비아",
+   "en": "via",
+   "alt": [],
+   "def": "서로 다른 금속층을 연결하는 배선 공정의 구멍",
+   "post": 400
+  },
+  {
+   "ko": "비열평형 플라즈마",
+   "en": "nonthermal equilibrium plasma",
+   "alt": [],
+   "def": "입자나 운동 종류에 따라 서로 다른 특성 온도를 갖는 플라즈마이다.",
+   "post": 99
+  },
+  {
+   "ko": "비이행성 아크",
+   "en": "non-transferred arc",
+   "alt": [],
+   "def": "토치 내부의 두 전극 사이에서 플라즈마를 만들고 밖으로 분사하는 방식이다.",
+   "post": 177
+  },
+  {
+   "ko": "비접촉 진단",
+   "en": "non-contact diagnostics",
+   "alt": [],
+   "def": "플라즈마에 측정 장치를 직접 닿게 하지 않고 빛이나 마이크로파 등의 자료를 분석하는 방식이다.",
+   "post": 181
+  },
+  {
+   "ko": "사중극자 질량 분석기",
+   "en": "quadrupole mass analyzer (QMA)",
+   "alt": [],
+   "def": "사중극자 전기장에서 이온의 운동을 조절해 질량을 구분하는 분석기이다.",
+   "post": 93
+  },
+  {
+   "ko": "사중극자 질량분석기",
+   "en": "QMA (Quadrupole Mass Analyzer)",
+   "alt": [],
+   "def": "플라즈마 속 라디칼 등을 질량으로 분석하는 장치.",
+   "post": 256
+  },
+  {
+   "ko": "산사태 반응",
+   "en": "avalanche",
+   "alt": [],
+   "def": "이온화로 늘어난 전자들이 다시 이온화에 참여하여 전하 수가 연쇄적으로 증가하는 과정이다.",
+   "post": 362
+  },
+  {
+   "ko": "산소 라디칼",
+   "en": "[O]",
+   "alt": [],
+   "def": "O2 해리나 O3 분해로 생기는 산화력이 강한 산소 원자.",
+   "post": 817
+  },
+  {
+   "ko": "산소 플라즈마 세정",
+   "en": "oxygen plasma cleaning",
+   "alt": [],
+   "def": "공정 사이에 산소 플라즈마를 사용해 반응기의 고분자 부산물을 제거하는 방법이다.",
+   "post": 124
+  },
+  {
+   "ko": "산업용 플라즈마 응용",
+   "en": null,
+   "alt": [],
+   "def": "플라즈마를 제조 공정이나 표면·환경 처리의 도구로 사용하는 분야이다.",
+   "post": 101
+  },
+  {
+   "ko": "삽입식 탐침",
+   "en": "injection probe",
+   "alt": [],
+   "def": "측정 순간에만 반응기 안으로 넣었다가 빼는 탐침이다.",
+   "post": 142
+  },
+  {
+   "ko": "상온 핵융합",
+   "en": "cold fusion",
+   "alt": [],
+   "def": "상온의 전기화학 실험에서 핵융합이 일어난다는 주장으로 논의된 현상이다.",
+   "post": 211
+  },
+  {
+   "ko": "생체재료 표면 처리",
+   "en": null,
+   "alt": [],
+   "def": "생체에 삽입할 재료가 혈액이나 조직과 적절히 상호작용하도록 표면 성질을 바꾸는 처리이다.",
+   "post": 102
+  },
+  {
+   "ko": "샤워헤드",
+   "en": "SH (showerhead)",
+   "alt": [],
+   "def": "가스를 분사하면서 전극 역할도 하는 상부 구조.",
+   "post": 682
+  },
+  {
+   "ko": "샤워헤드",
+   "en": "shower head",
+   "alt": [],
+   "def": "가스를 여러 구멍으로 고르게 분사하는 부품이다.",
+   "post": 922
+  },
+  {
+   "ko": "샤워헤드-히터 갭",
+   "en": "showerhead-heater gap",
+   "alt": [],
+   "def": "가스 분사 전극과 스테이지 히터 사이 간격.",
+   "post": 470
+  },
+  {
+   "ko": "섀시 접지",
+   "en": "chassis ground",
+   "alt": [],
+   "def": "장치 외함을 기준으로 잡은 접지.",
+   "post": 250
+  },
+  {
+   "ko": "션트 커패시터",
+   "en": "shunt capacitor",
+   "alt": [],
+   "def": "매처 안에서 임피던스 정합에 쓰이는 가변 커패시터로, 총 임피던스 변화에 대한 매처의 대응 값으로 읽는다.",
+   "post": 704
+  },
+  {
+   "ko": "션트/시리즈",
+   "en": "shunt / series",
+   "alt": [],
+   "def": "매처 안의 병렬·직렬 가변 소자 값으로 초기 매칭 위치를 정한다.",
+   "post": 686
+  },
+  {
+   "ko": "소수성",
+   "en": "hydrophobicity",
+   "alt": [],
+   "def": "물이 표면에서 퍼지기보다 물방울로 맺히는 성질이다.",
+   "post": 114
+  },
+  {
+   "ko": "소스 전력",
+   "en": "source (TCP) power",
+   "alt": [],
+   "def": "전자를 가열해 플라즈마 밀도를 만드는 고주파 전력",
+   "post": 851
+  },
+  {
+   "ko": "수중 방전",
+   "en": "underwater discharge",
+   "alt": [],
+   "def": "물속에서 일으키는 플라즈마 방전",
+   "post": 426
+  },
+  {
+   "ko": "수중 플라즈마",
+   "en": "aquaplasma",
+   "alt": [],
+   "def": "물속의 강한 전기장이나 기포 내부 방전 등을 통해 형성되는 플라즈마이다.",
+   "post": 350
+  },
+  {
+   "ko": "순 전력",
+   "en": "net power",
+   "alt": [],
+   "def": "입사 전력에서 반사 전력을 뺀, 플라즈마가 실제로 받는 전력.",
+   "post": 563
+  },
+  {
+   "ko": "순방향 전력",
+   "en": "forward power",
+   "alt": [],
+   "def": "전원에서 부하 방향으로 공급하는 전력이다.",
+   "post": 272
+  },
+  {
+   "ko": "순전류",
+   "en": "net current",
+   "alt": [],
+   "def": "표면으로 들어오는 전자 전류와 이온 전류를 부호까지 고려하여 합한 값이다.",
+   "post": 185
+  },
+  {
+   "ko": "쉬라우드",
+   "en": "shroud",
+   "alt": [],
+   "def": "챔버 내벽을 보호하려고 장착하는 코팅된 내벽 부품.",
+   "post": 675
+  },
+  {
+   "ko": "쉬스 경계",
+   "en": "sheath edge",
+   "alt": [],
+   "def": "이온이 Bohm 속도에 도달하는 쉬스의 바깥 경계.",
+   "post": 687
+  },
+  {
+   "ko": "쉬스 불안정",
+   "en": "sheath instability",
+   "alt": [],
+   "def": "음이온 플라즈마에서 쉬스 근방 하전량 변화로 생기는 불안정.",
+   "post": 832
+  },
+  {
+   "ko": "쉬스 정전용량",
+   "en": "sheath capacitance",
+   "alt": [],
+   "def": "전극과 플라즈마 사이 쉬스를 커패시터로 볼 때의 전하 저장 특성이다.",
+   "post": 187
+  },
+  {
+   "ko": "스터브",
+   "en": "stub",
+   "alt": [],
+   "def": "도파관 내 삽입 깊이를 조절해 파형을 맞추는 도체 막대",
+   "post": 393
+  },
+  {
+   "ko": "스테이터",
+   "en": "stator",
+   "alt": [],
+   "def": "TMP 하우징 쪽의 고정 부품.",
+   "post": 283
+  },
+  {
+   "ko": "스트리에이션",
+   "en": "plasma striation",
+   "alt": [],
+   "def": "전극 직경 방향으로 플라즈마 밀도가 줄무늬처럼 주기적으로 나타나는 현상.",
+   "post": 767
+  },
+  {
+   "ko": "스파크",
+   "en": "spark",
+   "alt": [],
+   "def": "고전압에서 국부적으로 생기는 코로나성 방전.",
+   "post": 458
+  },
+  {
+   "ko": "스퍼터 세정",
+   "en": "sputter cleaning",
+   "alt": [],
+   "def": "이온 충돌에 의한 약한 표면 제거로 산화막이나 오염물을 줄이는 처리이다.",
+   "post": 132
+  },
+  {
+   "ko": "스퍼터 수율",
+   "en": "sputter yield",
+   "alt": [],
+   "def": "입사 이온 하나당 타깃에서 떨어져 나오는 원자 수.",
+   "post": 824
+  },
+  {
+   "ko": "스퍼터 식각",
+   "en": "sputter etching",
+   "alt": [],
+   "def": "입자의 운동량으로 물질을 물리적으로 떼어내는 식각.",
+   "post": 677
+  },
+  {
+   "ko": "스퍼터링 식각",
+   "en": "sputtering etching",
+   "alt": [],
+   "def": "무거운 이온의 충돌로 표면 원자를 물리적으로 떼어 내는 식각.",
+   "post": 717
+  },
+  {
+   "ko": "스플래시",
+   "en": "splash",
+   "alt": [],
+   "def": "본문에서 금속 스퍼터링 중 발생하며 아크나 타깃 결함과 관련지어 설명한 문제 현상이다.",
+   "post": 183
+  },
+  {
+   "ko": "스핀 편극 핵융합",
+   "en": "spin polarized fusion",
+   "alt": [],
+   "def": "핵의 스핀을 정렬해 융합 반응을 높이려는 개념",
+   "post": 414
+  },
+  {
+   "ko": "시간 분해능",
+   "en": "time resolution",
+   "alt": [],
+   "def": "빠르게 변하는 방전 현상을 시간적으로 구분하여 관찰할 수 있는 정도이다.",
+   "post": 121
+  },
+  {
+   "ko": "시간 분해능",
+   "en": "temporal resolution",
+   "alt": [],
+   "def": "짧게 발생하고 변하는 플라즈마의 상태를 시간적으로 구별해 측정하는 능력이다.",
+   "post": 173
+  },
+  {
+   "ko": "시변화 플라즈마",
+   "en": "time-varying plasma",
+   "alt": [],
+   "def": "펄스처럼 시간에 따라 특성이 변하는 플라즈마.",
+   "post": 680
+  },
+  {
+   "ko": "시안화물",
+   "en": "cyanide",
+   "alt": [],
+   "def": "C와 N이 결합한 화합물로, 절단 수조에서 검출된 대상.",
+   "post": 464
+  },
+  {
+   "ko": "식각 종",
+   "en": "etchant",
+   "alt": [],
+   "def": "식각 반응을 일으키는 활성종(F 등).",
+   "post": 634
+  },
+  {
+   "ko": "식각률",
+   "en": "ER (etch rate)",
+   "alt": [],
+   "def": "단위 시간당 식각되는 두께.",
+   "post": 460
+  },
+  {
+   "ko": "식각률",
+   "en": "etch rate (ER)",
+   "alt": [],
+   "def": "단위 시간당 식각되는 두께.",
+   "post": 502
+  },
+  {
+   "ko": "신고전 수송 이론",
+   "en": "neo-classical transport theory",
+   "alt": [],
+   "def": "고전 이론으로 설명되지 않는 플라즈마 수송을 다루는 이론",
+   "post": 399
+  },
+  {
+   "ko": "실효값",
+   "en": "rms",
+   "alt": [],
+   "def": "교류 전압·전류를 전력 계산에 쓰는 값으로 peak의 약 70%.",
+   "post": 240
+  },
+  {
+   "ko": "쌍봉 분포",
+   "en": "double-peak profile",
+   "alt": [],
+   "def": "중심이 낮고 양 옆이 높은 밀도 분포.",
+   "post": 624
+  },
+  {
+   "ko": "아벨 변환",
+   "en": "Abel inversion",
+   "alt": [],
+   "def": "선적분된 광신호에서 축대칭 발광원의 공간 분포를 복원하는 기초 방법.",
+   "post": 792
+  },
+  {
+   "ko": "아크 용접",
+   "en": "arc welding",
+   "alt": [],
+   "def": "불꽃 내부에 형성된 플라즈마를 활용하는 용접 방식이다.",
+   "post": 182
+  },
+  {
+   "ko": "아크 플라즈마",
+   "en": "arc plasma",
+   "alt": [],
+   "def": "본문에서는 높은 전도성과 큰 전류를 가지며 대기압에서 강한 가열을 일으키는 방전 상태다.",
+   "post": 177
+  },
+  {
+   "ko": "압축 응력",
+   "en": "compressive stress",
+   "alt": [],
+   "def": "막이 옆으로 늘어나려는 방향의 응력으로, 이온 충돌로 치밀해진 막에서 나타난다고 논의되었다.",
+   "post": 699
+  },
+  {
+   "ko": "애셔",
+   "en": "asher",
+   "alt": [],
+   "def": "산소 플라즈마로 포토레지스트를 제거하는 장치.",
+   "post": 633
+  },
+  {
+   "ko": "양광주",
+   "en": "positive column",
+   "alt": [],
+   "def": "전자가 퍼져 형성되는, 흔히 플라즈마라 부르는 방전 영역.",
+   "post": 254
+  },
+  {
+   "ko": "어블레이션 플라즈마",
+   "en": "ablation plasma",
+   "alt": [],
+   "def": "본문에서는 레이저로 고체를 가공할 때 펄스 형태로 발생하는 플라즈마를 가리킨다.",
+   "post": 173
+  },
+  {
+   "ko": "억제제",
+   "en": "inhibitor",
+   "alt": [],
+   "def": "식각 중 보호막을 형성해 반응을 억제하는 종(CF 계열).",
+   "post": 634
+  },
+  {
+   "ko": "에너지 균형식",
+   "en": "energy balance equation",
+   "alt": [],
+   "def": "전력 입력과 에너지 손실을 맞추는 식.",
+   "post": 773
+  },
+  {
+   "ko": "엘립소미터",
+   "en": "ellipsometer",
+   "alt": [],
+   "def": "박막의 굴절률과 두께를 광학적으로 측정하는 장비.",
+   "post": 661
+  },
+  {
+   "ko": "여기 온도",
+   "en": "excitation temperature",
+   "alt": [],
+   "def": "특정 여기 반응의 하위·상위 상태 밀도비로부터 구하는 온도.",
+   "post": 510
+  },
+  {
+   "ko": "여기 전달",
+   "en": "excitation transfer",
+   "alt": [],
+   "def": "여기된 아르곤 원자가 에너지를 질소 분자 등에 넘겨 자신은 준위가 낮아지는 반응",
+   "post": 389
+  },
+  {
+   "ko": "여기종",
+   "en": "excited species",
+   "alt": [],
+   "def": "이온화되지 않고 에너지만 들뜬 입자(예: N2*).",
+   "post": 452
+  },
+  {
+   "ko": "역률",
+   "en": "power factor",
+   "alt": [],
+   "def": "전압과 전류의 위상차에 따라 유효 전력으로 전달되는 비율.",
+   "post": 448
+  },
+  {
+   "ko": "연쇄 분기 반응",
+   "en": "chain-branching reaction",
+   "alt": [],
+   "def": "반응을 이어갈 라디칼을 늘려 폭발을 촉진하는 반응.",
+   "post": 312
+  },
+  {
+   "ko": "연쇄 종결 반응",
+   "en": "chain-breaking reaction",
+   "alt": [],
+   "def": "라디칼을 소멸시켜 반응 지속을 막는 반응.",
+   "post": 312
+  },
+  {
+   "ko": "열속도",
+   "en": "thermal velocity",
+   "alt": [],
+   "def": "입자의 열운동에 따른 특성 속도.",
+   "post": 531
+  },
+  {
+   "ko": "열용량",
+   "en": "heat capacity",
+   "alt": [],
+   "def": "이 글에서 전극과 세라믹의 가열 및 변형을 완화하기 위해 늘리는 열적 특성이다.",
+   "post": 269
+  },
+  {
+   "ko": "열적 비평형",
+   "en": "Thermal nonequilibrium",
+   "alt": [],
+   "def": "전자·이온·중성입자가 서로 다른 온도 상태를 유지하는 현상이다.",
+   "post": 292
+  },
+  {
+   "ko": "열적 평형",
+   "en": "thermal equilibrium",
+   "alt": [],
+   "def": "충돌을 통한 에너지 교환으로 입자종의 온도가 비슷해진 상태다.",
+   "post": 171
+  },
+  {
+   "ko": "열전달 방정식",
+   "en": "heat transfer equation",
+   "alt": [],
+   "def": "재료의 열 이동을 기술해 온도를 구하는 방정식",
+   "post": 885
+  },
+  {
+   "ko": "열전대",
+   "en": "thermocouple (TC)",
+   "alt": [],
+   "def": "온도에 따라 생기는 전압으로 온도를 측정하는 센서.",
+   "post": 710
+  },
+  {
+   "ko": "예방 정비",
+   "en": "PM (Preventive Maintenance)",
+   "alt": [],
+   "def": "장비 상태에 따라 부품·챔버를 정기적으로 정비하는 일.",
+   "post": 574
+  },
+  {
+   "ko": "와류",
+   "en": "vortex flow",
+   "alt": [],
+   "def": "관 벽으로 전달되는 열을 줄이기 위해 형성하도록 제안한 회전성 기체 흐름이다.",
+   "post": 172
+  },
+  {
+   "ko": "완전 이온화",
+   "en": "fully ionized",
+   "alt": [],
+   "def": "기체 입자 거의 전부가 이온화된 상태.",
+   "post": 548
+  },
+  {
+   "ko": "용량 결합",
+   "en": "capacitive coupling",
+   "alt": [],
+   "def": "축전기 구조를 통해 전위·전력을 전달·측정하는 방식.",
+   "post": 547
+  },
+  {
+   "ko": "우주 플라즈마",
+   "en": "space plasma",
+   "alt": [],
+   "def": "우주 공간에 존재하며 전자와 이온 같은 하전입자의 거동을 보이는 물질 상태다.",
+   "post": 146
+  },
+  {
+   "ko": "운동론 방정식",
+   "en": "kinetic equation",
+   "alt": [],
+   "def": "입자 분포함수 수준에서 입자 거동을 기술하는 방정식.",
+   "post": 588
+  },
+  {
+   "ko": "운반 가스",
+   "en": "carrier gas",
+   "alt": [],
+   "def": "이 글에서는 빠른 흐름으로 보조 냉각에도 활용하는 가스이다.",
+   "post": 269
+  },
+  {
+   "ko": "운전 window",
+   "en": "operating window",
+   "alt": [],
+   "def": "장치가 안정적으로 운전되는 조건 범위",
+   "post": 390
+  },
+  {
+   "ko": "원격 처리",
+   "en": "remote plasma processing",
+   "alt": [],
+   "def": "본문에서는 이온의 영향을 줄이기 위해 처리 표면을 플라즈마 소스에서 떨어뜨리는 접근을 뜻한다.",
+   "post": 175
+  },
+  {
+   "ko": "원격 플라즈마 발생기",
+   "en": "Remote Plasma Generator (RPG)",
+   "alt": [],
+   "def": "챔버 밖에서 플라즈마를 만들어 라디칼을 챔버로 공급하는 장치이다.",
+   "post": 890
+  },
+  {
+   "ko": "웨이퍼 바이어스",
+   "en": "wafer bias / DC offset",
+   "alt": [],
+   "def": "플라즈마 전하가 충전되어 웨이퍼 쪽에 생기는 DC 전위.",
+   "post": 451
+  },
+  {
+   "ko": "웨이퍼 휨",
+   "en": "warpage",
+   "alt": [],
+   "def": "웨이퍼가 평평하지 않고 휘어 있는 상태.",
+   "post": 612
+  },
+  {
+   "ko": "웨이퍼 휨",
+   "en": "wafer bow",
+   "alt": [],
+   "def": "웨이퍼가 휘어 척과 접촉이 불균일해지는 현상.",
+   "post": 638
+  },
+  {
+   "ko": "웨이퍼형 플라즈마 진단계",
+   "en": "wafer-type plasma sensor",
+   "alt": [],
+   "def": "웨이퍼 형태로 플라즈마 분포를 측정하는 진단 장치이다.",
+   "post": 896
+  },
+  {
+   "ko": "위상·크기 센서",
+   "en": "phase and magnitude sensor (PM sensor)",
+   "alt": [],
+   "def": "자동 정합에 필요한 전기 신호의 위상과 크기 정보를 제공하는 센서이다.",
+   "post": 268
+  },
+  {
+   "ko": "유기금속 화학 기상 증착",
+   "en": "MOCVD, Metal-Organic Chemical Vapor Deposition",
+   "alt": [],
+   "def": "본문에서 스퍼터링으로 만들기 어려운 금속 박막의 대안으로 제시한 증착 방법이다.",
+   "post": 156
+  },
+  {
+   "ko": "유도 결합 플라즈마 토치",
+   "en": "ICP torch, Inductively Coupled Plasma Torch",
+   "alt": [],
+   "def": "본문에서 코일과 석영관으로 구성되어 물질을 가열하는 데 사용하는 플라즈마 장치다.",
+   "post": 172
+  },
+  {
+   "ko": "유도 기전력",
+   "en": "induced electromotive force",
+   "alt": [],
+   "def": "자속이 시간에 따라 변할 때 둘레를 따라 생기는 전기장으로 ICP에서 전자를 가속한다.",
+   "post": 725
+  },
+  {
+   "ko": "유도장",
+   "en": "Induction field",
+   "alt": [],
+   "def": "유도 가열 중 형성되며 국부적으로 집중될 경우 방전 발생에 관여할 수 있는 장이다.",
+   "post": 338
+  },
+  {
+   "ko": "유전 손실",
+   "en": "dielectric loss",
+   "alt": [],
+   "def": "교류 전기장에서 유전체가 전기장 에너지를 흡수해 잃는 현상",
+   "post": 862
+  },
+  {
+   "ko": "유전상수",
+   "en": "dielectric constant",
+   "alt": [],
+   "def": "세라믹 등 재료의 전기적 특성값으로 코팅과 열처리에 민감하다.",
+   "post": 653
+  },
+  {
+   "ko": "유전율",
+   "en": "permittivity",
+   "alt": [],
+   "def": "본문에서 플라즈마와 장치의 전기적 응답 및 위상 관계를 설명하는 특성값이다.",
+   "post": 168
+  },
+  {
+   "ko": "유전체",
+   "en": "dielectric",
+   "alt": [],
+   "def": "이 글에서는 전극 앞에서 전하를 가두는 역할을 하는 절연층이다.",
+   "post": 133
+  },
+  {
+   "ko": "유체 방정식",
+   "en": "fluid equation",
+   "alt": [],
+   "def": "입자 덩어리의 평균 거동을 밀도·속도 등으로 기술하는 방정식.",
+   "post": 588
+  },
+  {
+   "ko": "유효 이온화 에너지",
+   "en": "effective ionization energy",
+   "alt": [],
+   "def": "손실분까지 보충하며 이온화 상태를 유지하는 데 필요한, 입자 이온화 에너지보다 큰 에너지.",
+   "post": 493
+  },
+  {
+   "ko": "응집",
+   "en": "aggregation/coagulation",
+   "alt": [],
+   "def": "입자들이 충돌해 뭉쳐 커지는 과정",
+   "post": 413
+  },
+  {
+   "ko": "이력 곡선",
+   "en": "hysteresis",
+   "alt": [],
+   "def": "전이 방향에 따라 경로가 달라지는 현상.",
+   "post": 454
+  },
+  {
+   "ko": "이온 flux",
+   "en": "ion flux",
+   "alt": [],
+   "def": "단위 면적·시간당 도달하는 이온 수.",
+   "post": 609
+  },
+  {
+   "ko": "이온 가둠",
+   "en": "ion trapping",
+   "alt": [],
+   "def": "주기적인 구동 중 이온이 벽으로 손실되지 않고 방전 공간에 머무르는 현상이다.",
+   "post": 138
+  },
+  {
+   "ko": "이온 렌즈",
+   "en": "ion lens",
+   "alt": [],
+   "def": "전극 전위로 이온의 에너지와 진행 방향을 조절하는 구조이다.",
+   "post": 95
+  },
+  {
+   "ko": "이온 매트릭스 쉬스",
+   "en": "ion matrix sheath",
+   "alt": [],
+   "def": "전자가 순간적으로 밀려난 뒤 이온만 남은 쉬스로, 펄스 인가 직후 거동의 출발점이다.",
+   "post": 915
+  },
+  {
+   "ko": "이온 에너지 플럭스",
+   "en": "ion energy flux",
+   "alt": [],
+   "def": "단위 시간·면적당 이온이 가져오는 에너지로, 이온 밀도와 에너지의 곱에 해당한다.",
+   "post": 670
+  },
+  {
+   "ko": "이온 이동 시간",
+   "en": "ion travelling time",
+   "alt": [],
+   "def": "이온이 쉬스를 지나 웨이퍼에 도달하는 데 걸리는 시간이다.",
+   "post": 915
+  },
+  {
+   "ko": "이온 주입",
+   "en": "ion implantation",
+   "alt": [],
+   "def": "높은 에너지의 이온을 물질 내부로 넣는 과정으로, 답변에서는 형광등의 검은 코팅과 구별한다.",
+   "post": 144
+  },
+  {
+   "ko": "이온 충돌",
+   "en": "ion bombardment",
+   "alt": [],
+   "def": "쉬스에서 가속된 이온이 막 표면에 부딪치는 현상으로, LF 전력이 커질수록 강해진다.",
+   "post": 699
+  },
+  {
+   "ko": "이온화 문턱",
+   "en": "ionization threshold",
+   "alt": [],
+   "def": "라디칼 측정에서 전자 에너지를 맞추는 기준이 되는 이온화 경계이다.",
+   "post": 193
+  },
+  {
+   "ko": "이온화 충돌",
+   "en": "ionization collision",
+   "alt": [],
+   "def": "충돌로 전달된 에너지가 중성 입자를 이온과 전자로 바꾸는 과정이다.",
+   "post": 134
+  },
+  {
+   "ko": "이중 주파수",
+   "en": "dual frequency",
+   "alt": [],
+   "def": "전자 가열용과 이온 가속용 주파수를 따로 쓰는 구성.",
+   "post": 827
+  },
+  {
+   "ko": "이중 주파수 바이어스",
+   "en": "dual frequency bias",
+   "alt": [],
+   "def": "서로 다른 두 주파수의 RF를 겹쳐 인가하는 방식.",
+   "post": 782
+  },
+  {
+   "ko": "이차 전자 방출 비율",
+   "en": "secondary electron emission yield",
+   "alt": [],
+   "def": "음극에 입사한 하전입자에 의해 표면에서 전자가 방출되는 정도이다.",
+   "post": 377
+  },
+  {
+   "ko": "이차전자 방출계수",
+   "en": "secondary electron emission coefficient",
+   "alt": [],
+   "def": "입사 이온이 전극에서 전자를 방출시키는 정도를 나타내는 재료 특성이다.",
+   "post": 228
+  },
+  {
+   "ko": "이탈 속도 분포",
+   "en": null,
+   "alt": [],
+   "def": "스퍼터링으로 표면을 떠나는 구리 원자들의 속도가 어떻게 분포하는지를 나타낸 것이다.",
+   "post": 325
+  },
+  {
+   "ko": "이행성 아크",
+   "en": "transferred arc",
+   "alt": [],
+   "def": "토치와 전극으로 연결된 모재 사이에 플라즈마를 형성하여 사용하는 방식이다.",
+   "post": 177
+  },
+  {
+   "ko": "인덕터 성분",
+   "en": "inductance (L)",
+   "alt": [],
+   "def": "전하 흐름에 위상 지연을 주는 성분으로 ICP의 대표 리액턴스.",
+   "post": 608
+  },
+  {
+   "ko": "임피던스 분석기",
+   "en": "impedance analyzer",
+   "alt": [],
+   "def": "위상과 전류 및 저항·리액턴스 등을 확인하는 장비이다.",
+   "post": 200
+  },
+  {
+   "ko": "임피던스 정합기",
+   "en": "impedance matcher",
+   "alt": [],
+   "def": "전원과 플라즈마 부하 사이의 반사를 줄이도록 조절하는 장치.",
+   "post": 659
+  },
+  {
+   "ko": "입자 균형 모델",
+   "en": "particle balance model",
+   "alt": [],
+   "def": "플라즈마 입자의 생성 수와 소멸 수가 같다고 놓고 밀도와 온도를 구하는 모델.",
+   "post": 441
+  },
+  {
+   "ko": "입자 대전",
+   "en": "particle charging",
+   "alt": [],
+   "def": "플라즈마 속 입자 표면에 전하가 축적되는 현상이다.",
+   "post": 124
+  },
+  {
+   "ko": "입자 셀 시뮬레이션",
+   "en": "PIC (particle-in-cell)",
+   "alt": [],
+   "def": "입자를 격자 위에서 추적하는 플라즈마 시뮬레이션 방법.",
+   "post": 635
+  },
+  {
+   "ko": "입자 오염",
+   "en": "particle contamination",
+   "alt": [],
+   "def": "질문에서 정합 불량과의 관련성을 확인하려는 식각 공정의 입자 발생 문제다.",
+   "post": 176
+  },
+  {
+   "ko": "자기 바이어스",
+   "en": "self bias / Vdc",
+   "alt": [],
+   "def": "플라즈마 전자·이온 전류 차이로 절연 표면에 생기는 음의 DC 전위.",
+   "post": 500
+  },
+  {
+   "ko": "자기 바이어스",
+   "en": "DC self bias",
+   "alt": [],
+   "def": "블로킹 커패시터 쪽 전극에 형성되는 직류 전위.",
+   "post": 805
+  },
+  {
+   "ko": "자기 버킷",
+   "en": "magnetic bucket",
+   "alt": [],
+   "def": "반응기 벽 주변 자석 배치로 전자 손실을 줄이고 분포 균일도를 개선하는 구조다.",
+   "post": 184
+  },
+  {
+   "ko": "자기 제한 식각",
+   "en": "self-limiting etch",
+   "alt": [],
+   "def": "라디칼 포화와 이온 에너지가 유지될 때 식각률이 더 늘지 않는 현상.",
+   "post": 826
+  },
+  {
+   "ko": "자기유체역학",
+   "en": "MHD (magnetohydrodynamics)",
+   "alt": [],
+   "def": "플라즈마를 전도성 유체로 다루는 고전적 모델",
+   "post": 399
+  },
+  {
+   "ko": "자기장 강화 반응성 이온 식각",
+   "en": "MERIE, Magnetically Enhanced Reactive Ion Etching",
+   "alt": [],
+   "def": "본문에서 기판 주변의 전기장과 자기장을 이용하여 플라즈마 밀도를 높이는 식각 방식이다.",
+   "post": 184
+  },
+  {
+   "ko": "자화",
+   "en": "magnetization",
+   "alt": [],
+   "def": "입자의 회전 반경이 장치 크기에 비해 작아 자기장이 운동에 유효하게 작용하는 상태이다.",
+   "post": 135
+  },
+  {
+   "ko": "장비 플라즈마",
+   "en": "equipment plasma",
+   "alt": [],
+   "def": "공정 관점에서 장비 의존적인 플라즈마 특성을 바라보는 게시판의 표현이다.",
+   "post": 905
+  },
+  {
+   "ko": "장비 플라즈마 데이터",
+   "en": null,
+   "alt": [],
+   "def": "장비 상태 판단 기준으로 쓰기 위해 모아 두는 플라즈마 정보(분광 스펙트럼 등)",
+   "post": 850
+  },
+  {
+   "ko": "장비 플라즈마 물리",
+   "en": "plasma reactor physics",
+   "alt": [],
+   "def": "장비 구조와 전원에 따른 플라즈마 특성 변화를 함께 보는 시각.",
+   "post": 598
+  },
+  {
+   "ko": "재현성",
+   "en": "reproducibility",
+   "alt": [],
+   "def": "다른 실험에서도 동일한 핵융합 결과를 다시 확인할 수 있는 성질이다.",
+   "post": 211
+  },
+  {
+   "ko": "저압 플라즈마 용사",
+   "en": "VPS (Vacuum Plasma Spray)",
+   "alt": [],
+   "def": "저압 분위기에서 플라즈마 제트로 코팅하는 공정.",
+   "post": 556
+  },
+  {
+   "ko": "저역 통과 필터",
+   "en": "LPF (low pass filter)",
+   "alt": [],
+   "def": "13.56MHz 아래만 통과시켜 높은 주파수 노이즈를 차단하는 필터.",
+   "post": 831
+  },
+  {
+   "ko": "저온 플라즈마",
+   "en": "low-temperature plasma",
+   "alt": [],
+   "def": "이 글에서는 전자 온도가 비교적 낮고 이온 온도는 더 낮은 산업용 플라즈마를 가리킨다.",
+   "post": 110
+  },
+  {
+   "ko": "저온 플라즈마",
+   "en": "cold plasma",
+   "alt": [],
+   "def": "본문에서는 이온과 기체가 비교적 차갑고 전자가 높은 온도를 갖는 플라즈마를 가리킨다.",
+   "post": 150
+  },
+  {
+   "ko": "적외선 레이저 흡수 분광법",
+   "en": "IRLAS, Infrared Laser Absorption Spectroscopy",
+   "alt": [],
+   "def": "분자의 적외선 흡수를 측정하여 라디칼 농도 등의 정보를 얻는 방법이다.",
+   "post": 140
+  },
+  {
+   "ko": "전공정",
+   "en": "FEOL (front-end-of-line)",
+   "alt": [],
+   "def": "트랜지스터 등 개별 소자를 만드는 IC 제조의 앞 단계",
+   "post": 400
+  },
+  {
+   "ko": "전극 면적비",
+   "en": "electrode area ratio",
+   "alt": [],
+   "def": "두 전극 쉬스 전압의 비를 결정하는 면적 비율.",
+   "post": 790
+  },
+  {
+   "ko": "전극 침식",
+   "en": "electrode erosion",
+   "alt": [],
+   "def": "전극 재료가 떨어져 나가 표면을 손상시키고 플라즈마 조성을 바꿀 수 있는 현상이다.",
+   "post": 377
+  },
+  {
+   "ko": "전기 집진",
+   "en": "electrostatic precipitation",
+   "alt": [],
+   "def": "먼지를 하전한 뒤 전기력으로 이동시켜 수집하는 방법이다.",
+   "post": 106
+  },
+  {
+   "ko": "전기분해",
+   "en": "electrolysis",
+   "alt": [],
+   "def": "전해 이온 전류로 물질이 분해되는 현상.",
+   "post": 483
+  },
+  {
+   "ko": "전기장",
+   "en": "electric field",
+   "alt": [],
+   "def": "전극 사이 전압으로 만들어져 전자를 가속시키는 장.",
+   "post": 537
+  },
+  {
+   "ko": "전기장 첨두",
+   "en": "field peak",
+   "alt": [],
+   "def": "거친 표면의 뾰족한 부분에 전기장이 모이는 현상.",
+   "post": 825
+  },
+  {
+   "ko": "전기장·압력 비",
+   "en": "E/p",
+   "alt": [],
+   "def": "전기장 E를 압력 p로 나눈 값이다.",
+   "post": 195
+  },
+  {
+   "ko": "전력 균형 모델",
+   "en": "power balance model",
+   "alt": [],
+   "def": "입력 전력과 플라즈마 생성·손실에 드는 전력의 균형으로 상태를 구하는 모델.",
+   "post": 441
+  },
+  {
+   "ko": "전력 누설",
+   "en": "power leak",
+   "alt": [],
+   "def": "공급한 전력이 플라즈마 생성에 쓰이지 않고 다른 경로로 빠져나간다고 의심한 현상이다.",
+   "post": 169
+  },
+  {
+   "ko": "전력 변환 효율",
+   "en": "power conversion efficiency",
+   "alt": [],
+   "def": "전원 전력 중 플라즈마 생성에 실제로 쓰이는 비율",
+   "post": 390
+  },
+  {
+   "ko": "전력 부하",
+   "en": "power load",
+   "alt": [],
+   "def": "전극 전류와 전압에 의해 외부 전원에 요구되는 전력이다.",
+   "post": 213
+  },
+  {
+   "ko": "전류 밀도",
+   "en": "current density",
+   "alt": [],
+   "def": "전류를 흐르는 면적으로 나눈 값.",
+   "post": 461
+  },
+  {
+   "ko": "전산 유체 역학",
+   "en": "CFD (computational fluid dynamics)",
+   "alt": [],
+   "def": "가스 유동을 수치적으로 해석하는 시뮬레이션.",
+   "post": 794
+  },
+  {
+   "ko": "전송선 손상",
+   "en": "line damage",
+   "alt": [],
+   "def": "정합이 틀어질 때 발열로 케이블·커넥터가 손상되는 현상.",
+   "post": 613
+  },
+  {
+   "ko": "전압 분배 모델",
+   "en": "voltage divider model",
+   "alt": [],
+   "def": "직렬 커패시턴스에 전압이 나뉜다고 보는 모델.",
+   "post": 447
+  },
+  {
+   "ko": "전압–전류 탐침",
+   "en": "V-I probe, Voltage–Current Probe",
+   "alt": [],
+   "def": "전원 회로의 전압과 전류 파형을 측정하여 정합 상태를 살피는 장치다.",
+   "post": 170
+  },
+  {
+   "ko": "전자 부착",
+   "en": "attachment",
+   "alt": [],
+   "def": "전자가 중성 분자에 붙어 음이온이 되는 반응",
+   "post": 407
+  },
+  {
+   "ko": "전자 에너지 분포함수",
+   "en": "EEDF/EEPF",
+   "alt": [],
+   "def": "플라즈마 전자들의 에너지별 분포",
+   "post": 874
+  },
+  {
+   "ko": "전자볼트",
+   "en": "eV, electronvolt",
+   "alt": [],
+   "def": "본문에서 입자 에너지와 온도 규모를 표현하며 1eV를 11,000K에 대응시킨 단위다.",
+   "post": 174
+  },
+  {
+   "ko": "전하 결합 소자 카메라",
+   "en": "charge-coupled device (CCD) camera",
+   "alt": [],
+   "def": "이 글에서는 플라즈마의 빛을 촬영해 공정 상태를 감시하는 카메라이다.",
+   "post": 121
+  },
+  {
+   "ko": "전하 완화 시간",
+   "en": "relaxation time",
+   "alt": [],
+   "def": "국부적인 전하 불균형이 평형에 이르기까지 필요한 시간이다.",
+   "post": 127
+  },
+  {
+   "ko": "전하 이동",
+   "en": "charge transfer (CT)",
+   "alt": [],
+   "def": "이온이 이온화 에너지가 낮은 중성종에서 전자를 가져와 이온 종류가 바뀌는 반응이다.",
+   "post": 923
+  },
+  {
+   "ko": "절연 파괴",
+   "en": "field breakdown",
+   "alt": [],
+   "def": "정전척의 간격과 재질을 평가할 때 고려하는 전기장에 의한 절연 상태의 파괴이다.",
+   "post": 280
+  },
+  {
+   "ko": "점화원",
+   "en": "ignition source",
+   "alt": [],
+   "def": "스파크나 불꽃처럼 폭발 반응을 시작시키는 요인.",
+   "post": 312
+  },
+  {
+   "ko": "접지",
+   "en": "grounding",
+   "alt": [],
+   "def": "이 글에서는 고주파 잡음 억제를 위해 전원부와 차폐막에서 확인해야 하는 전기적 연결 상태이다.",
+   "post": 123
+  },
+  {
+   "ko": "정재파 효과",
+   "en": "SWE (standing wave effect)",
+   "alt": [],
+   "def": "VHF CCP에서 중심에 hot spot이 생기는 파동 효과.",
+   "post": 835
+  },
+  {
+   "ko": "정전 탐침법",
+   "en": "electrostatic probe method",
+   "alt": [],
+   "def": "탐침을 플라즈마에 직접 접촉시켜 얻은 전기적 자료로 특성을 분석하는 방법이다.",
+   "post": 181
+  },
+  {
+   "ko": "정전척 RC",
+   "en": "chuck RC",
+   "alt": [],
+   "def": "정전척의 정전용량과 누설 저항으로 정해지는 시간 상수.",
+   "post": 571
+  },
+  {
+   "ko": "정합 시간",
+   "en": "matching time",
+   "alt": [],
+   "def": "정합기가 최적 위치로 이동해 반사가 줄기까지 걸리는 시간",
+   "post": 404
+  },
+  {
+   "ko": "정합 장치",
+   "en": "matching box",
+   "alt": [],
+   "def": "부하의 저항·리액턴스를 조절해 고주파 전원의 전력 전달 조건을 맞추는 장치이다.",
+   "post": 268
+  },
+  {
+   "ko": "정합기 샤시",
+   "en": "matcher chassis",
+   "alt": [],
+   "def": "정합기의 금속 외함.",
+   "post": 525
+  },
+  {
+   "ko": "제논",
+   "en": "xenon (Xe)",
+   "alt": [],
+   "def": "여기 후 방출하는 빛을 광학 교정과 디스플레이 발광에 활용하는 기체이다.",
+   "post": 105
+  },
+  {
+   "ko": "제동복사",
+   "en": "bremsstrahlung",
+   "alt": [],
+   "def": "하전 입자가 핵 근처에서 감속되며 내는 복사",
+   "post": 418
+  },
+  {
+   "ko": "제전",
+   "en": "static discharge / neutralization",
+   "alt": [],
+   "def": "표면에 쌓인 전하를 제거하는 일",
+   "post": 392
+  },
+  {
+   "ko": "종횡비",
+   "en": "aspect ratio",
+   "alt": [],
+   "def": "패턴의 깊이 대 폭의 비율",
+   "post": 851
+  },
+  {
+   "ko": "종횡비 의존 식각",
+   "en": "ARDE (aspect ratio dependent etching)",
+   "alt": [],
+   "def": "패턴의 종횡비에 따라 식각률이 달라지는 현상.",
+   "post": 688
+  },
+  {
+   "ko": "준안정 여기",
+   "en": "metastable excitation",
+   "alt": [],
+   "def": "준안정 상태로 입자를 들뜨게 하는 충돌 과정.",
+   "post": 809
+  },
+  {
+   "ko": "중성 기체 가열",
+   "en": "neutral gas heating",
+   "alt": [],
+   "def": "전하를 띠지 않는 기체 입자의 온도가 높아져 기판에 열적 영향을 주는 현상이다.",
+   "post": 175
+  },
+  {
+   "ko": "중성 입자",
+   "en": "neutral particle",
+   "alt": [],
+   "def": "전기적 전하가 없어 전자기장보다 충돌과 운동량에 의해 이동이 좌우되는 입자이다.",
+   "post": 129
+  },
+  {
+   "ko": "증착 균일도",
+   "en": "Deposition uniformity",
+   "alt": [],
+   "def": "증착 결과가 시편에서 얼마나 고르게 나타나는지를 뜻한다.",
+   "post": 302
+  },
+  {
+   "ko": "증착 속도",
+   "en": "D/R (deposition rate)",
+   "alt": [],
+   "def": "단위 시간당 막이 쌓이는 두께.",
+   "post": 444
+  },
+  {
+   "ko": "지구온난화지수",
+   "en": "GWP (global warming potential)",
+   "alt": [],
+   "def": "온실가스의 온난화 기여도를 나타내는 지표로, 식각 가스 대체의 배경.",
+   "post": 819
+  },
+  {
+   "ko": "지연 전기장",
+   "en": "retarding field",
+   "alt": [],
+   "def": "설정된 전위 장벽보다 에너지가 낮은 이온의 통과를 막는 전기장이다.",
+   "post": 93
+  },
+  {
+   "ko": "지연 전기장 분석기",
+   "en": "retarding field analyser",
+   "alt": [],
+   "def": "전위 장벽을 넘는 이온만 통과시켜 에너지 정보를 얻는 분석기이다.",
+   "post": 95
+  },
+  {
+   "ko": "직류 글로 방전",
+   "en": "direct-current glow discharge",
+   "alt": [],
+   "def": "직류 전압으로 전자를 가속하고 기체 이온화를 지속시키는 방전이다.",
+   "post": 117
+  },
+  {
+   "ko": "직류 오프셋",
+   "en": "direct-current offset (DC offset)",
+   "alt": [],
+   "def": "이 글에서 고주파 표면 전압에 더해지는 자기 바이어스의 직류 성분을 뜻한다.",
+   "post": 260
+  },
+  {
+   "ko": "직류 오프셋 전압",
+   "en": "DC offset voltage",
+   "alt": [],
+   "def": "RF 전압 파형에 더해지는 직류 성분",
+   "post": 870
+  },
+  {
+   "ko": "직접 액체 주입",
+   "en": "DLI, Direct Liquid Injection",
+   "alt": [],
+   "def": "본문에서 액상 단량체의 반응기 공급을 위해 소개한 장치 방식이다.",
+   "post": 152
+  },
+  {
+   "ko": "진공 자외선",
+   "en": "VUV (vacuum ultraviolet)",
+   "alt": [],
+   "def": "진공에서만 전파되는 짧은 파장의 자외선.",
+   "post": 631
+  },
+  {
+   "ko": "집중 회로 모델",
+   "en": "lumped circuit model",
+   "alt": [],
+   "def": "챔버·플라즈마를 R, L, C 소자로 근사한 모델.",
+   "post": 555
+  },
+  {
+   "ko": "집진",
+   "en": "dust collection",
+   "alt": [],
+   "def": "기체에 포함된 먼지를 모아 제거하는 과정으로, 본문에서는 전하와 전기장을 이용한다.",
+   "post": 154
+  },
+  {
+   "ko": "차단 밀도",
+   "en": "cut-off density",
+   "alt": [],
+   "def": "이 밀도를 넘으면 전자기파가 플라즈마 내부로 투과하지 못하게 되는 밀도이다.",
+   "post": 892
+  },
+  {
+   "ko": "차단 주파수",
+   "en": "cutoff frequency",
+   "alt": [],
+   "def": "도파관에서 파가 전파되기 시작하는 경계 주파수",
+   "post": 393
+  },
+  {
+   "ko": "차폐",
+   "en": "shielding",
+   "alt": [],
+   "def": "플라즈마 절단기의 잡음이 측정계에 전달되는 영향을 줄이기 위한 구조적 조치이다.",
+   "post": 123
+  },
+  {
+   "ko": "챔버 간 매칭",
+   "en": "tool-to-tool match (TTTM)",
+   "alt": [],
+   "def": "서로 다른 장비·챔버가 같은 공정 결과를 내도록 맞추는 일.",
+   "post": 701
+  },
+  {
+   "ko": "척 커패시턴스",
+   "en": "chuck capacitance",
+   "alt": [],
+   "def": "척과 웨이퍼 사이 구조가 만드는 용량으로, 충전량을 좌우한다.",
+   "post": 451
+  },
+  {
+   "ko": "척킹력",
+   "en": "chucking force",
+   "alt": [],
+   "def": "ESC가 웨이퍼를 붙잡는 힘이며 웨이퍼 하전량과 연관된다.",
+   "post": 911
+  },
+  {
+   "ko": "첫장 효과",
+   "en": "first wafer effect",
+   "alt": [],
+   "def": "세정 직후 첫 웨이퍼에 공정 결과가 달라지는 현상.",
+   "post": 565
+  },
+  {
+   "ko": "초고주파",
+   "en": "VHF (very high frequency)",
+   "alt": [],
+   "def": "이 글에서는 대략 40MHz 이상의 RF 주파수를 가리킨다.",
+   "post": 647
+  },
+  {
+   "ko": "축적 전하량",
+   "en": "accumulated charge",
+   "alt": [],
+   "def": "자기 바이어스가 형성되는 동안 웨이퍼에 남은 전자·이온 유입 전하의 차이이다.",
+   "post": 267
+  },
+  {
+   "ko": "축전 결합 / 유도 결합",
+   "en": "capacitive / inductive coupling",
+   "alt": [],
+   "def": "안테나 전압에 의한 전기장으로 가열하는 방식과, 안테나 전류의 자기장 변화가 만드는 유도 전기장으로 가열하는 방식이다.",
+   "post": 359
+  },
+  {
+   "ko": "충돌 단면적",
+   "en": "CX (cross section)",
+   "alt": [],
+   "def": "충돌 반응의 확률을 나타내는 데이터로, 에너지에 따라 달라지며 시뮬레이션 입력이 된다.",
+   "post": 809
+  },
+  {
+   "ko": "충돌 이온화",
+   "en": "impact ionization",
+   "alt": [],
+   "def": "가속된 전자와 기체 입자의 충돌로 전자가 분리되어 이온이 생기는 과정이다.",
+   "post": 145
+  },
+  {
+   "ko": "충돌 이온화",
+   "en": "collisional ionization",
+   "alt": [],
+   "def": "전자가 원자·분자와 충돌해 이온을 만드는 반응으로 플라즈마 유지의 기본 과정.",
+   "post": 788
+  },
+  {
+   "ko": "친수성",
+   "en": "hydrophilicity",
+   "alt": [],
+   "def": "물방울이 표면에 맺히기보다 넓게 퍼지는 성질이다.",
+   "post": 114
+  },
+  {
+   "ko": "친수성 처리",
+   "en": "hydrophilic treatment",
+   "alt": [],
+   "def": "표면을 물에 잘 젖게 만드는 처리",
+   "post": 432
+  },
+  {
+   "ko": "침투 깊이",
+   "en": "penetration depth",
+   "alt": [],
+   "def": "전자기파가 플라즈마 속으로 들어갈 수 있는 거리.",
+   "post": 659
+  },
+  {
+   "ko": "캐소드",
+   "en": "cathode",
+   "alt": [],
+   "def": "양이온 전류가 우세한 전극으로, 주로 power 또는 RF 바이어스 전극.",
+   "post": 705
+  },
+  {
+   "ko": "컨덕턴스",
+   "en": "conductance",
+   "alt": [],
+   "def": "진공 배관·밸브를 기체가 흐르기 쉬운 정도.",
+   "post": 764
+  },
+  {
+   "ko": "컷오프 탐침",
+   "en": "cut-off probe",
+   "alt": [],
+   "def": "주파수 응답으로 플라즈마의 전자 밀도를 재는 탐침.",
+   "post": 498
+  },
+  {
+   "ko": "쿨롱 힘",
+   "en": "Coulomb force",
+   "alt": [],
+   "def": "같은 부호의 전하 사이에서는 반발하고 반대 부호 사이에서는 끌어당기는 전기적 힘이다.",
+   "post": 119
+  },
+  {
+   "ko": "크로스토크",
+   "en": "cross talk",
+   "alt": [],
+   "def": "한 챔버의 신호가 다른 챔버에 간섭을 일으키는 현상.",
+   "post": 514
+  },
+  {
+   "ko": "타겟 전위",
+   "en": "target potential",
+   "alt": [],
+   "def": "이온이 타겟으로 가속되는지를 판단할 때 플라즈마와 비교하는 전위이다.",
+   "post": 222
+  },
+  {
+   "ko": "탄성 충돌",
+   "en": "elastic collision",
+   "alt": [],
+   "def": "에너지 손실 없이 운동량만 교환하는 충돌.",
+   "post": 504
+  },
+  {
+   "ko": "탈여기",
+   "en": "de-excitation (quenching)",
+   "alt": [],
+   "def": "충돌로 여기종이 빛을 내지 않고 에너지를 잃는 소멸 반응",
+   "post": 389
+  },
+  {
+   "ko": "탐침",
+   "en": "probe",
+   "alt": [],
+   "def": "플라즈마에 삽입해 그 상태를 조사하는 진단 수단이다.",
+   "post": 246
+  },
+  {
+   "ko": "탐침 팁",
+   "en": "probe tip",
+   "alt": [],
+   "def": "플라즈마에 노출되어 입자 전류를 수집하는 탐침 끝부분이다.",
+   "post": 100
+  },
+  {
+   "ko": "터보 펌프",
+   "en": "turbo pump",
+   "alt": [],
+   "def": "본문에서 반응성 표면처리 공정의 대안으로 제시하며 회전 날의 부식 방지를 고려하는 펌프다.",
+   "post": 180
+  },
+  {
+   "ko": "터보분자펌프",
+   "en": "Turbo Molecular Pump (TMP)",
+   "alt": [],
+   "def": "고속 회전 로터로 기체를 배기하는 고진공 펌프.",
+   "post": 283
+  },
+  {
+   "ko": "터보펌프",
+   "en": "turbomolecular pump",
+   "alt": [],
+   "def": "고속 회전 블레이드로 가스를 밀어내는 고진공 펌프.",
+   "post": 545
+  },
+  {
+   "ko": "툴 매칭",
+   "en": "tool matching",
+   "alt": [],
+   "def": "여러 장비의 공정 결과를 같게 맞추는 일",
+   "post": 861
+  },
+  {
+   "ko": "튠 커패시터",
+   "en": "tune capacitor",
+   "alt": [],
+   "def": "주로 리액턴스 성분을 보상하는 매처 가변 커패시터.",
+   "post": 622
+  },
+  {
+   "ko": "트렌치",
+   "en": "trench",
+   "alt": [],
+   "def": "표면적을 넓히기 위해 홈처럼 파는 식각 형태",
+   "post": 400
+  },
+  {
+   "ko": "파이로미터",
+   "en": "pyrometer",
+   "alt": [],
+   "def": "표면에서 나오는 복사를 이용해 접촉 없이 온도를 재는 장치.",
+   "post": 710
+  },
+  {
+   "ko": "파장",
+   "en": "wavelength",
+   "alt": [],
+   "def": "광속을 주파수로 나눈 값으로, 전기장 크기가 한 주기 변하는 거리.",
+   "post": 722
+  },
+  {
+   "ko": "파장 가변 레이저 다이오드",
+   "en": "TLD, Tunable Laser Diode",
+   "alt": [],
+   "def": "흡수 스펙트럼 측정을 위해 방출 파장을 조절하는 레이저 광원이다.",
+   "post": 140
+  },
+  {
+   "ko": "파티클",
+   "en": "particle",
+   "alt": [],
+   "def": "챔버 내에서 생성되어 웨이퍼 오염을 일으키는 미세 입자.",
+   "post": 471
+  },
+  {
+   "ko": "패러데이 차폐",
+   "en": "Faraday shielding",
+   "alt": [],
+   "def": "안테나에서 직접 발생하는 수직 전기장 성분을 차단하는 방법이다.",
+   "post": 163
+  },
+  {
+   "ko": "퍼지 가스",
+   "en": "purge gas",
+   "alt": [],
+   "def": "진공을 깨기 전 챔버를 채우는 불활성 가스.",
+   "post": 632
+  },
+  {
+   "ko": "펄스 플라즈마",
+   "en": "pulsed plasma",
+   "alt": [],
+   "def": "전력을 켜고 끄며 만드는 플라즈마로, 시간에 따른 온도·밀도 변화 연구 자료가 많다.",
+   "post": 696
+  },
+  {
+   "ko": "페닝 이온화",
+   "en": "Penning ionization",
+   "alt": [],
+   "def": "준안정 입자가 다른 입자와 충돌해 그 입자를 이온화하는 추가 이온화 경로.",
+   "post": 493
+  },
+  {
+   "ko": "평균 자유 행로",
+   "en": "collision mean free path",
+   "alt": [],
+   "def": "입자가 충돌 없이 이동하는 평균 거리.",
+   "post": 666
+  },
+  {
+   "ko": "포커스 링",
+   "en": "focus ring (edge ring)",
+   "alt": [],
+   "def": "웨이퍼 가장자리 둘레에 놓여 에지 플라즈마 조건에 영향을 주는 링.",
+   "post": 745
+  },
+  {
+   "ko": "포화 전자 전류",
+   "en": "electron saturation current",
+   "alt": [],
+   "def": "답변에서 플라즈마 전위의 전자 전류로 설명하며 밀도 계산에 사용하는 값이다.",
+   "post": 198
+  },
+  {
+   "ko": "폴리머 증착",
+   "en": "polymer deposition",
+   "alt": [],
+   "def": "식각 부산물이 차가운 벽과 전극에 흡착되어 쌓이는 현상.",
+   "post": 252
+  },
+  {
+   "ko": "표면 개질",
+   "en": "surface modification",
+   "alt": [],
+   "def": "질화 등의 처리로 물질 표면의 성질을 개선하는 과정이다.",
+   "post": 112
+  },
+  {
+   "ko": "표면 잔류 전하",
+   "en": "Memory charge",
+   "alt": [],
+   "def": "주변 부도체에 남아 이후 전기장 분포에 영향을 주는 전하이다.",
+   "post": 323
+  },
+  {
+   "ko": "표면파",
+   "en": "surface wave",
+   "alt": [],
+   "def": "유전체와 플라즈마 경계를 따라 전파되는 전자기파 모드이다.",
+   "post": 892
+  },
+  {
+   "ko": "표준 분당 세제곱센티미터",
+   "en": "Standard Cubic Centimeters per Minute (SCCM)",
+   "alt": [],
+   "def": "0°C와 1atm에서의 기체 부피를 기준으로 나타내는 분당 유량 단위이다.",
+   "post": 219
+  },
+  {
+   "ko": "표준 입방센티미터 매분",
+   "en": "sccm (standard cubic centimeter per minute)",
+   "alt": [],
+   "def": "표준 상태 기준 가스 유량 단위.",
+   "post": 591
+  },
+  {
+   "ko": "표피 효과",
+   "en": "skin effect",
+   "alt": [],
+   "def": "전자기파가 도체나 플라즈마 안으로 일정 깊이까지만 침투하는 현상",
+   "post": 839
+  },
+  {
+   "ko": "품질 계수",
+   "en": "Q factor, Quality Factor",
+   "alt": [],
+   "def": "본문에서 값이 높을수록 정합 가능한 조건이 제한되고 변화에 민감해지는 회로 특성이다.",
+   "post": 186
+  },
+  {
+   "ko": "프리코팅",
+   "en": "precoating",
+   "alt": [],
+   "def": "PM 후 챔버 내부에 미리 막을 입히는 단계.",
+   "post": 470
+  },
+  {
+   "ko": "플라즈마 강화 공정",
+   "en": "plasma enhanced process",
+   "alt": [],
+   "def": "플라즈마를 이용해 산화 같은 반응을 더 효율적으로 제어하는 공정이다.",
+   "post": 310
+  },
+  {
+   "ko": "플라즈마 강화 화학 기상 증착",
+   "en": "Plasma Enhanced Chemical Vapor Deposition (PECVD)",
+   "alt": [],
+   "def": "플라즈마의 도움으로 기체 화학물을 표면에서 반응시켜 코팅하는 기술이다.",
+   "post": 226
+  },
+  {
+   "ko": "플라즈마 강화 화학 기상 증착",
+   "en": "PECVD (Plasma Enhanced CVD)",
+   "alt": [],
+   "def": "플라즈마로 반응 에너지를 공급해 낮은 온도에서 박막을 증착하는 방식.",
+   "post": 768
+  },
+  {
+   "ko": "플라즈마 공정",
+   "en": "plasma processing",
+   "alt": [],
+   "def": "플라즈마의 경계 전위와 반응성을 활용하여 표면을 식각하거나 박막을 만드는 기술 분야다.",
+   "post": 164
+  },
+  {
+   "ko": "플라즈마 구속",
+   "en": "plasma confinement",
+   "alt": [],
+   "def": "플라즈마 입자의 손실을 줄여 가열과 온도 유지를 돕는 상태 또는 과정이다.",
+   "post": 110
+  },
+  {
+   "ko": "플라즈마 대면재료",
+   "en": "Plasma-facing material",
+   "alt": [],
+   "def": "플라즈마와 접하면서 이온 충돌과 표면 반응을 겪는 장치 재료이다.",
+   "post": 327
+  },
+  {
+   "ko": "플라즈마 램프",
+   "en": "plasma lamp",
+   "alt": [],
+   "def": "플라즈마의 발광을 조명에 이용하는 장치이다.",
+   "post": 229
+  },
+  {
+   "ko": "플라즈마 분포",
+   "en": "plasma distribution",
+   "alt": [],
+   "def": "공간상의 플라즈마 밀도 분포로, 전극 표면 온도에 영향을 줌.",
+   "post": 816
+  },
+  {
+   "ko": "플라즈마 소스 이온 주입",
+   "en": "plasma source ion implantation (PSII)",
+   "alt": [],
+   "def": "플라즈마 이온을 이용해 생체용 금속 등의 표면을 개질하는 기술이다.",
+   "post": 102
+  },
+  {
+   "ko": "플라즈마 손상",
+   "en": "plasma damage",
+   "alt": [],
+   "def": "플라즈마의 전하 축적이나 이온 입사 등으로 소자 특성이 나빠지는 현상이다.",
+   "post": 227
+  },
+  {
+   "ko": "플라즈마 시료 질량 분석기",
+   "en": "Plasma Sampling Mass Analyzer (PSM)",
+   "alt": [],
+   "def": "이 글에서 플라즈마 유래 중성종과 라디칼을 측정하는 데 사용하는 장비이다.",
+   "post": 193
+  },
+  {
+   "ko": "플라즈마 유전 특성",
+   "en": "plasma dielectric property",
+   "alt": [],
+   "def": "플라즈마를 RF에 반응하는 유전체로 볼 때의 전기적 성질.",
+   "post": 761
+  },
+  {
+   "ko": "플라즈마 유전율",
+   "en": "plasma dielectric constant",
+   "alt": [],
+   "def": "플라즈마의 전기적 응답을 나타내는 값으로, 그 성분이 플라즈마 임피던스의 속성이 된다.",
+   "post": 732
+  },
+  {
+   "ko": "플라즈마 의학",
+   "en": "plasma medicine",
+   "alt": [],
+   "def": "플라즈마를 살균·치료 등 의료에 응용하는 분야.",
+   "post": 627
+  },
+  {
+   "ko": "플라즈마 정보",
+   "en": "plasma information",
+   "alt": [],
+   "def": "플라즈마 밀도, 온도, 라디칼 밀도, 부산물, 창 오염 등 플라즈마 상태를 나타내는 데이터 묶음.",
+   "post": 742
+  },
+  {
+   "ko": "플라즈마 정보 변수",
+   "en": "plasma information variable (PI)",
+   "alt": [],
+   "def": "센서 값에서 알고리즘으로 구한 플라즈마 상태값으로, 장비 상태의 기준점으로 쓴다.",
+   "post": 701
+  },
+  {
+   "ko": "플라즈마 정보 인자",
+   "en": "PI (plasma information)",
+   "alt": [],
+   "def": "플라즈마 거동을 나타내 공정 결과 예측에 쓰는 모니터링 인자.",
+   "post": 616
+  },
+  {
+   "ko": "플라즈마 직렬 공진",
+   "en": "plasma series resonance (PSR)",
+   "alt": [],
+   "def": "쉬스 커패시턴스와 벌크 플라즈마 인덕턴스가 결합해 생기는 LC 공진.",
+   "post": 720
+  },
+  {
+   "ko": "플라즈마 진단",
+   "en": "plasma diagnostics",
+   "alt": [],
+   "def": "광진단과 전기적 진단에서 파생된 플라즈마 상태 측정법.",
+   "post": 798
+  },
+  {
+   "ko": "플라즈마 진동",
+   "en": "plasma oscillation",
+   "alt": [],
+   "def": "전하가 평형에서 벗어난 뒤 복원 전기장과 관성으로 반복해서 움직이는 현상이다.",
+   "post": 108
+  },
+  {
+   "ko": "플라즈마 추진",
+   "en": "plasma propulsion",
+   "alt": [],
+   "def": "플라즈마를 분사하고 그 반작용을 우주선의 운동에 사용하는 방식이다.",
+   "post": 207
+  },
+  {
+   "ko": "플라즈마 침지 이온 주입",
+   "en": "PI3 (Plasma Immersion Ion Implantation)",
+   "alt": [],
+   "def": "플라즈마 쉬스에서 가속된 이온을 시료에 주입하는 방식.",
+   "post": 572
+  },
+  {
+   "ko": "플라즈마 표면 처리",
+   "en": "plasma surface treatment",
+   "alt": [],
+   "def": "소재를 플라즈마에 노출하여 염색성이나 물과의 상호작용 같은 표면 특성을 바꾸는 방법이다.",
+   "post": 232
+  },
+  {
+   "ko": "플라즈마 확산",
+   "en": "plasma diffusion",
+   "alt": [],
+   "def": "전극 사이에만 국한되지 않고 플라즈마가 공간으로 퍼지는 거동이다.",
+   "post": 264
+  },
+  {
+   "ko": "플라즈마-재료 반응",
+   "en": "PMI (plasma-material interaction)",
+   "alt": [],
+   "def": "플라즈마와 재료 표면 사이의 상호작용.",
+   "post": 609
+  },
+  {
+   "ko": "플로팅",
+   "en": "floating",
+   "alt": [],
+   "def": "어느 기준 전위에도 연결되지 않은 전기적 상태.",
+   "post": 644
+  },
+  {
+   "ko": "피더",
+   "en": "feeder",
+   "alt": [],
+   "def": "RF 전력을 전극으로 전달하는 급전 구조.",
+   "post": 649
+  },
+  {
+   "ko": "피어슨 코일",
+   "en": "Pearson coil",
+   "alt": [],
+   "def": "RF 전류를 측정하는 전류 프로브",
+   "post": 859
+  },
+  {
+   "ko": "필라멘트",
+   "en": "filament",
+   "alt": [],
+   "def": "형광등 방전 시작에 필요한 열전자를 방출하며 사용 중 물질 손실을 겪는 부품이다.",
+   "post": 158
+  },
+  {
+   "ko": "하이브리드 원자로",
+   "en": "hybrid reactor",
+   "alt": [],
+   "def": "핵융합 중성자로 핵분열 생성물을 처리하는 개념의 원자로.",
+   "post": 257
+  },
+  {
+   "ko": "하전",
+   "en": "charging",
+   "alt": [],
+   "def": "플라즈마의 전자·이온이 표면에 쌓여 전하를 띠는 현상.",
+   "post": 737
+  },
+  {
+   "ko": "할로 캐소드 방전",
+   "en": "hollow cathode discharge",
+   "alt": [],
+   "def": "속이 빈 음극 구조를 이용한 글로 방전.",
+   "post": 600
+  },
+  {
+   "ko": "항복 전기장",
+   "en": "breakdown electric field",
+   "alt": [],
+   "def": "가스 방전이 시작되는 임계 전기장 Eb=Vb/d이다.",
+   "post": 894
+  },
+  {
+   "ko": "해리 이온화",
+   "en": "dissociative ionization",
+   "alt": [],
+   "def": "분자가 해리되면서 동시에 이온화되는 과정으로 전자 에너지 소모가 크다.",
+   "post": 589
+  },
+  {
+   "ko": "해리도",
+   "en": "degree of dissociation",
+   "alt": [],
+   "def": "분자 기체가 분해된 정도로, 이 실험에서는 N/N2 비와 방출광을 통해 조사하는 양이다.",
+   "post": 194
+  },
+  {
+   "ko": "핵분열",
+   "en": "nuclear fission",
+   "alt": [],
+   "def": "무거운 입자를 나누어 에너지를 얻는 과정으로 설명된 반응이다.",
+   "post": 192
+  },
+  {
+   "ko": "헌팅",
+   "en": "hunting",
+   "alt": [],
+   "def": "반사 전력이 정착하지 않고 계속 흔들리는 현상이다.",
+   "post": 919
+  },
+  {
+   "ko": "현상학 기반 진단",
+   "en": "phenomenology-based diagnostics",
+   "alt": [],
+   "def": "공정 화학을 이해하고 기여 종을 선택해 신호를 해석하는 진단 방식.",
+   "post": 769
+  },
+  {
+   "ko": "화학 흡착",
+   "en": "chemisorption",
+   "alt": [],
+   "def": "표면과 화학 결합을 이루는 강한 흡착.",
+   "post": 632
+  },
+  {
+   "ko": "화학적 식각",
+   "en": "chemical etching",
+   "alt": [],
+   "def": "반응종이 표면과 화학 반응해 물질을 제거하는 식각",
+   "post": 420
+  },
+  {
+   "ko": "확산과 반응시간 교합",
+   "en": null,
+   "alt": [],
+   "def": "입자가 공간에서 퍼지는 시간과 표면에서 반응하는 시간을 서로 맞추는 개념.",
+   "post": 643
+  },
+  {
+   "ko": "활성 산소·질소종",
+   "en": "RONS (reactive oxygen and nitrogen species)",
+   "alt": [],
+   "def": "공기 플라즈마에서 생기는 반응성 산소·질소 화학종",
+   "post": 423
+  },
+  {
+   "ko": "회전 반경",
+   "en": "gyroradius",
+   "alt": [],
+   "def": "자기장 속 하전 입자가 회전 운동할 때의 반경이다.",
+   "post": 135
+  },
+  {
+   "ko": "회전 온도",
+   "en": "rotational temperature",
+   "alt": [],
+   "def": "분자의 회전 운동에 분배된 에너지를 온도로 나타낸 값이다.",
+   "post": 99
+  },
+  {
+   "ko": "회전·진동 여기",
+   "en": "rotational and vibrational excitation",
+   "alt": [],
+   "def": "분자를 이루는 원자의 회전이나 진동 운동이 더 높은 에너지 상태로 바뀌는 현상이다.",
+   "post": 140
+  },
+  {
+   "ko": "후공정(배선)",
+   "en": "BEOL (back-end-of-line)",
+   "alt": [],
+   "def": "소자를 금속층으로 연결하는 IC 제조의 뒷 단계",
+   "post": 400
+  },
+  {
+   "ko": "후면 냉각",
+   "en": "backside cooling",
+   "alt": [],
+   "def": "기판 뒷면에 헬륨 등을 흘려 온도를 조절하는 방식.",
+   "post": 560
+  },
+  {
+   "ko": "후면 조명",
+   "en": "backlight",
+   "alt": [],
+   "def": "답변에서 무성 방전의 활용 대상으로 제시한 액정 표시장치용 광원이다.",
+   "post": 229
+  },
+  {
+   "ko": "후면 헬륨 냉각",
+   "en": "backside helium cooling",
+   "alt": [],
+   "def": "웨이퍼 뒷면에 헬륨을 흘려 온도를 조절하는 방식이다.",
+   "post": 911
+  }
+ ]
+}
