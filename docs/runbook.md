@@ -68,6 +68,9 @@ python tools/snupal_page.py prepare <export.json>        # → kb/snupal/page.js
 python tools/build_site.py           # 생성
 python tools/build_site.py --check   # 커밋된 결과물이 원본과 같은지
 python tools/check_links.py          # 내부 링크·앵커
+python tools/paper_links.py check     # 논문 링크마다 "요약" 링크가 붙었는지
+python tools/paper_links.py apply research/<보고서>.html   # 손으로 쓰는 페이지에 요약 링크 넣기
+python tools/paper_links.py oes       # OES 페이지에 반영 (oes_page.py도 저장 전에 자동)
 ```
 
 | 원본 | 결과물 |
@@ -76,6 +79,7 @@ python tools/check_links.py          # 내부 링크·앵커
 | `kb/graph/nodes.json`(id·이름·영문·분류·영역·설명·식각 관계·출처 키), `edges.json`(관계·근거 글), `sources.json`(출처 키 → 제목·URL), `types.json`(분류·영역 이름) + `tools/templates/a20_etch_knowledge_graph.html` | `research/a20_etch_knowledge_graph.html` |
 | `kb/snupal/page.json`, `topics.json` | `research/snupal_qna_knowledge.html` |
 | `kb/claims/*.json` | `research/claims_status.html` |
+| `kb/papers/papers.json` + `kb/claims/papers_summary.json`(요약 검증 상태) | `research/papers.html` (쓰인 곳은 그래프 출처·공개 페이지에서 매번 계산) |
 
 ## 5. OES 페이지 (외부 데이터 필요)
 

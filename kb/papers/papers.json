@@ -1,0 +1,913 @@
+{
+ "areas": {
+  "plasma": "플라즈마 식각 원리·화학",
+  "oes": "플라즈마 진단 · OES 파장",
+  "patterning": "멀티패터닝 · 리소그래피",
+  "selective": "선택 증착 · 자기조립",
+  "device": "소자 · 게이트 공정"
+ },
+ "papers": [
+  {
+   "id": "donnelly2013",
+   "area": "plasma",
+   "kind": "리뷰",
+   "basis": "초록",
+   "title": "Plasma etching: Yesterday, today, and tomorrow",
+   "authors": "V. M. Donnelly 외",
+   "year": 2013,
+   "venue": "J. Vac. Sci. Technol. A 31, 050825",
+   "doi": "10.1116/1.4819316",
+   "match": [
+    "10.1116/1.4819316"
+   ],
+   "summary": "플라즈마 식각의 역사와 원리를 정리한 리뷰. 1960~70년대 습식 식각을 대체하며 도입된 배경, 반응기 설계의 변화, 흡착·증발 같은 기본 원리를 설명한 뒤 Si·SiO₂·저유전막의 식각 메커니즘과 현재 집적 공정 적용 사례를 다룬다.",
+   "points": [
+    "Si·Al·SiO₂를 이방성으로 깎을 수 있게 된 것이 이후 40년 미세화를 가능하게 했다고 정리한다.",
+    "Si, SiO₂, low-k 막의 식각 메커니즘을 재료별로 자세히 설명한다.",
+    "비실리콘 소자까지 포함해 앞으로 필요한 식각 기술을 전망한다."
+   ],
+   "use": "이방성 식각·선택비·로딩 효과 같은 기본 개념과 패턴 전사 단계의 근거로 쓴다.",
+   "claim": "Donnelly·Kornblit(2013) 리뷰는 플라즈마 식각의 역사, 반응기 발전, Si·SiO₂·저유전막의 식각 메커니즘과 집적회로 공정 적용을 다룬다."
+  },
+  {
+   "id": "kanarik2015",
+   "area": "plasma",
+   "kind": "리뷰",
+   "basis": "공개 원문",
+   "title": "Overview of atomic layer etching in the semiconductor industry",
+   "authors": "K. J. Kanarik 외",
+   "year": 2015,
+   "venue": "J. Vac. Sci. Technol. A 33, 020802",
+   "doi": "10.1116/1.4913379",
+   "match": [
+    "10.1116/1.4913379"
+   ],
+   "summary": "원자층 식각(ALE)을 \"자기 제한적인 반응 단계를 순서대로 반복해 얇은 층을 걷어내는 기술\"로 정의하고, 판단 기준과 용어를 정리한 리뷰. Si ALE를 예로 들어 표면 개질 → 제거의 두 단계 메커니즘과 플라즈마 보조의 장점을 설명한다.",
+   "points": [
+    "ALE를 연속 식각의 대안이자 원자층 증착(ALD)의 짝으로 본다.",
+    "Si 외에 산화물·III–V 등 25년 넘는 연구 이력을 정리한다.",
+    "방향성(이방성) ALE가 중심이지만 등방성 ALE도 포함한다."
+   ],
+   "use": "그래프의 원자층 식각(ALE) 노드와 멀티패터닝 보고서의 정밀 식각 설명 근거.",
+   "claim": "Kanarik 외(2015)는 원자층 식각을 자기 제한적 반응 단계를 순차 반복해 얇은 층을 제거하는 기술로 정의하고, Si ALE를 사례로 메커니즘을 설명한다."
+  },
+  {
+   "id": "efremov2021",
+   "area": "plasma",
+   "kind": "리뷰",
+   "basis": "공개 원문",
+   "title": "On Relationships between Gas-Phase Chemistry and Reactive Ion Etching Kinetics for Silicon-Based Thin Films (SiC, SiO₂ and SixNy) in Multi-Component Fluorocarbon Gas Mixtures",
+   "authors": "A. M. Efremov 외",
+   "year": 2021,
+   "venue": "Materials 14, 1432",
+   "doi": "10.3390/ma14061432",
+   "match": [
+    "10.3390/ma14061432",
+    "1996-1944/14/6/1432"
+   ],
+   "summary": "CF₄·C₄F₈·CHF₃에 Ar·O₂를 섞은 다성분 플루오로카본 플라즈마에서 Si, SiC, SiO₂, SiNx의 반응성 이온 식각을 다룬 저자 그룹의 연구를 종합했다. 랑뮤어 탐침 진단과 모델 계산으로 기체 반응과 표면 반응을 함께 해석한다.",
+   "points": [
+    "입자 플럭스와 플럭스 비로 플루오로카본 고분자막 두께와 식각·중합 균형을 조절할 수 있다고 제안한다.",
+    "혼합비에 따라 식각 속도가 단조롭지 않게 변하는 원인을 설명한다."
+   ],
+   "use": "OES 페이지의 플루오로카본 식각 조합 근거 문헌.",
+   "claim": "Efremov 외(2021)는 다성분 플루오로카본 플라즈마에서 Si 계 박막의 반응성 이온 식각 연구를 종합하고, 플럭스 비로 고분자막과 식각·중합 균형을 조절하는 방안을 제시한다."
+  },
+  {
+   "id": "lim2021",
+   "area": "plasma",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Comparative study of Cl₂ + O₂ and HBr + O₂ plasma chemistries in respect to silicon reactive-ion etching process",
+   "authors": "N. Lim 외",
+   "year": 2021,
+   "venue": "Vacuum 186, 110043",
+   "doi": "10.1016/j.vacuum.2020.110043",
+   "match": [
+    "10.1016/j.vacuum.2020.110043",
+    "S0042207X20309015"
+   ],
+   "summary": "Si 식각에 쓰는 Cl₂/O₂와 HBr/O₂ 플라즈마를 진단과 모델로 비교했다. 같은 조건에서 Cl 원자 밀도가 Br보다 항상 높았고, O 원자가 반응 생성물을 덜 휘발성인 산화 할로겐 화합물로 바꿔 식각 확률을 좌우한다고 보았다.",
+   "points": [
+    "두 혼합 기체에서 혼합비를 바꾸면 전자·이온 관련 변수가 서로 반대로 변한다.",
+    "O와의 단계적 해리 반응은 할로겐 원자 생성에 큰 영향을 주지 않는다."
+   ],
+   "use": "OES 페이지의 Si 할로겐·산소 식각 조합 근거 문헌.",
+   "claim": "Lim 외(2021)는 Cl₂/O₂와 HBr/O₂ 플라즈마의 Si 식각을 비교해, Cl 원자 밀도가 Br보다 항상 높고 O 원자 플럭스가 반응 확률에 영향을 준다고 보고했다."
+  },
+  {
+   "id": "turban1989",
+   "area": "plasma",
+   "kind": "논문",
+   "basis": "서지 정보만",
+   "title": "A mechanistic study of SF₆ reactive ion etching of tungsten",
+   "authors": "G. Turban 외",
+   "year": 1989,
+   "venue": "Thin Solid Films 176, 289–308",
+   "doi": "10.1016/0040-6090(89)90102-8",
+   "match": [
+    "10.1016/0040-6090(89)90102-8",
+    "0040609089901028"
+   ],
+   "summary": "SF₆ 반응성 이온 식각으로 텅스텐(W)을 깎을 때의 반응 메커니즘을 다룬 논문. 원문과 초록을 확인하지 못해 제목·서지 정보만 확인했다.",
+   "points": [
+    "W 식각 화학으로 SF₆(F 원자)를 쓰는 조합의 고전 문헌이다."
+   ],
+   "use": "OES 페이지 W/SF₆ 식각 조합과 그래프 SF₆ 노드의 근거 문헌.",
+   "claim": "Turban 외(1989)는 Thin Solid Films에 SF₆ 반응성 이온 식각에 의한 텅스텐 식각 메커니즘 연구를 발표했다."
+  },
+  {
+   "id": "chou1986",
+   "area": "plasma",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Mechanism of microwave plasma etching of polyimides in O₂ and CF₄ gas mixtures",
+   "authors": "N. J. Chou 외",
+   "year": 1986,
+   "venue": "Microelectronic Engineering 5, 375–386",
+   "doi": "10.1016/0167-9317(86)90066-3",
+   "match": [
+    "10.1016/0167-9317(86)90066-3",
+    "0167931786900663"
+   ],
+   "summary": "O₂/CF₄ 마이크로파 플라즈마에서 폴리이미드가 깎이는 메커니즘을 현장 XPS, 적외선 분광, 질량 분석으로 조사했다. 산소 원자가 방향족 고리를 여는 것이 출발점이고, CF₄를 조금 넣으면 산소 생성과 결합 절단을 도와 식각이 빨라지지만 많이 넣으면 표면이 불소화되어 오히려 느려진다.",
+   "points": [
+    "소량 CF₄ 첨가는 식각 속도를 높이고, 과량은 반응 자리를 막아 낮춘다."
+   ],
+   "use": "그래프의 디스컴(descum)·감광성 폴리이미드 식각 노드 근거.",
+   "claim": "Chou 외(1986)는 O₂ 플라즈마에 CF₄를 소량 넣으면 폴리이미드 식각이 빨라지지만 CF₄가 많아지면 불소화로 식각이 억제된다고 보고했다."
+  },
+  {
+   "id": "osipov2020",
+   "area": "plasma",
+   "kind": "논문",
+   "basis": "공개 원문",
+   "title": "High-temperature etching of SiC in SF₆/O₂ inductively coupled plasma",
+   "authors": "A. A. Osipov 외",
+   "year": 2020,
+   "venue": "Scientific Reports 10, 19977",
+   "doi": "10.1038/s41598-020-77083-1",
+   "match": [
+    "10.1038/s41598-020-77083-1",
+    "PMC7673126"
+   ],
+   "summary": "SF₆/O₂ ICP로 SiC를 깎을 때 기판 온도를 100→300 °C로 높이면 표면 거칠기(RMS)가 153 nm에서 0.7 nm로 크게 줄어든다는 결과. 30 µm 깊이, 측벽 90°의 구조를 얻었고, 식각 속도는 150 °C 근처에서 최대(1.28 µm/min)였다. 온도별 OES도 측정했다.",
+   "points": [
+    "기판 온도가 거칠기와 식각 속도를 함께 좌우한다.",
+    "수냉(15 °C) 조건과 비교했다."
+   ],
+   "use": "OES 페이지 SiC/SF₆·O₂ 식각 조합 근거 문헌.",
+   "claim": "Osipov 외(2020)는 SF₆/O₂ ICP SiC 식각에서 기판 온도를 100에서 300 °C로 높이면 RMS 거칠기가 153 nm에서 0.7 nm로 줄었다고 보고했다."
+  },
+  {
+   "id": "park2021",
+   "area": "plasma",
+   "kind": "논문",
+   "basis": "공개 원문",
+   "title": "Surface Analysis of TMCTS-Based SiOC(H) Low-k Dielectrics in Post-Etch Strip of ACL Hardmask",
+   "authors": "M. K. Park 외",
+   "year": 2021,
+   "venue": "Materials 14, 1144",
+   "doi": "10.3390/ma14051144",
+   "match": [
+    "10.3390/ma14051144",
+    "7c4a/36f3b69772c8184a8813fde5d98be39441f0"
+   ],
+   "summary": "비정질 탄소(ACL) 하드마스크를 O₂/Ar 플라즈마로 걷어낼 때 아래 SiOC(H) 저유전막이 얼마나 변하는지 FT-IR·XPS로 분석했다. OES 센서로 제거 공정의 종말점을 잡고, 플라즈마 노출 시간에 따른 막 구조(Si–O 결합 비율) 변화를 추적했다.",
+   "points": [
+    "하드마스크 제거(strip) 과정에서도 저유전막 구조가 바뀐다.",
+    "OES로 strip 종말점을 판단했다."
+   ],
+   "use": "OES 페이지의 종말점 검출 사례(ACL strip, 288 nm 채널) 근거.",
+   "claim": "Park 외(2021)는 O₂/Ar 플라즈마로 ACL 하드마스크를 제거할 때 OES로 종말점을 잡고, 아래 SiOC(H) 저유전막의 구조 변화를 FT-IR·XPS로 분석했다."
+  },
+  {
+   "id": "kwon2021",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "공개 원문",
+   "title": "Development of Virtual Metrology Using Plasma Information Variables to Predict Si Etch Profile Processed by SF₆/O₂/Ar Capacitively Coupled Plasma",
+   "authors": "J.-W. Kwon 외",
+   "year": 2021,
+   "venue": "Materials 14, 3005",
+   "doi": "10.3390/ma14113005",
+   "match": [
+    "10.3390/ma14113005",
+    "PMC8199536"
+   ],
+   "summary": "SF₆/O₂/Ar 플라즈마로 Si를 깎으면서 OES 스펙트럼에서 뽑은 '플라즈마 정보 변수'로 식각 깊이와 bowing CD를 실시간 예측하는 가상 계측(VM)을 만들었다. 식각 깊이·bowing CD 예측은 R² 0.8 이상이었다.",
+   "points": [
+    "직사각형 단면 모델 R² 0.78, 비직사각형 모델 0.49로 단면 형상 예측은 아직 어렵다.",
+    "SiF 440 nm, F 703.7 nm/Ar 750.4 nm 같은 방출선을 변수로 썼다."
+   ],
+   "use": "그래프 SiF 방출 노드와 OES 페이지의 SiF·F actinometry 파장 근거.",
+   "claim": "Kwon 외(2021)는 OES에서 얻은 플라즈마 정보 변수로 Si 식각 깊이와 bowing 폭을 R² 0.8 이상으로 예측하는 가상 계측을 보고했다."
+  },
+  {
+   "id": "hebner2002",
+   "area": "oes",
+   "kind": "기술 보고서",
+   "basis": "초록",
+   "title": "Characterization of SF₆/Argon Plasmas for Microelectronics Applications (SAND2002-0340)",
+   "authors": "G. A. Hebner 외",
+   "year": 2002,
+   "venue": "Sandia National Laboratories 보고서",
+   "doi": "10.2172/793326",
+   "match": [
+    "10.2172/793326",
+    "osti.gov/servlets/purl/793326"
+   ],
+   "summary": "유도 결합 SF₆/Ar 플라즈마를 여러 진단법으로 측정한 데이터 보고서. 마이크로파 간섭계·레이저 광탈리로 전자·음이온 밀도를, OES와 질량 분석으로 화학종을, 바이어스 전극에서 이온 에너지 분포를 쟀다. 모델 검증용 데이터를 해석을 최소화해 모았다.",
+   "points": [
+    "F 원자 actinometry 선 쌍(F 703.7 nm / Ar 750.4 nm)을 쓴 측정이 포함된다."
+   ],
+   "use": "OES 페이지의 F 원자 actinometry 근거.",
+   "claim": "Hebner 외(2002) Sandia 보고서는 유도 결합 SF₆/Ar 플라즈마의 전자·음이온 밀도, 광방출, 화학종, 이온 에너지 분포 측정 데이터를 모았다."
+  },
+  {
+   "id": "kristof2016",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "공개 원문",
+   "title": "Diagnostics of low-pressure hydrogen discharge created in a 13.56 MHz RF plasma reactor",
+   "authors": "J. Krištof 외",
+   "year": 2016,
+   "venue": "Physica Scripta 91, 074009 (공개 사본 arXiv:1911.03319)",
+   "doi": "10.48550/arxiv.1911.03319",
+   "match": [
+    "1911.03319"
+   ],
+   "summary": "13.56 MHz RF 수소 방전(400–1000 W)을 랑뮤어 탐침과 분광으로 진단했다. 기체 온도는 CCP 모드에서 약 450 K로 일정했고 ICP 모드에서는 압력·전력과 함께 올랐다. H 원자 밀도는 Ar 또는 H₂를 기준으로 한 actinometry로 구했다.",
+   "points": [
+    "ICP 모드의 해리도가 CCP보다 약 2배 높았다.",
+    "기준 기체 선택에 따라 actinometry 결과가 달라질 수 있음을 보여 준다."
+   ],
+   "use": "OES 페이지의 H 원자 actinometry(Hα·Hβ 대 Ar) 근거.",
+   "claim": "Krištof 외(2016)는 13.56 MHz RF 수소 방전에서 Ar 또는 H₂를 기준으로 한 actinometry로 H 원자 밀도를 구했고, ICP 모드의 해리도가 CCP보다 약 2배 높았다고 보고했다."
+  },
+  {
+   "id": "nishio2022",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "공개 원문",
+   "title": "Nitrogen Atom Density Measurements in NAGDIS-T Using Vacuum Ultraviolet Absorption Spectroscopy",
+   "authors": "R. Nishio 외",
+   "year": 2022,
+   "venue": "Plasma and Fusion Research 17, 1201004",
+   "doi": "10.1585/pfr.17.1201004",
+   "match": [
+    "10.1585/pfr.17.1201004",
+    "pfr/17/0/17_1201004"
+   ],
+   "summary": "질소 플라즈마의 N 원자 밀도를 진공 자외선 흡수 분광(VUVAS)으로 측정했다. 압력과 전력이 높을수록 밀도가 커져 최대 6.2×10¹⁷ m⁻³에 이르렀고, 낮은 압력에서는 actinometry로 구한 값과 일치했다.",
+   "points": [
+    "흡수 분광과 actinometry(N 746.8 nm / Ar 750.4 nm)를 교차 확인했다."
+   ],
+   "use": "OES 페이지의 N 원자 actinometry 근거.",
+   "claim": "Nishio 외(2022)는 VUV 흡수 분광으로 N 원자 밀도를 최대 6.2×10¹⁷ m⁻³까지 측정했고, 낮은 압력에서 actinometry 값과 일치함을 확인했다."
+  },
+  {
+   "id": "alrebdi2022",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "공개 원문",
+   "title": "Vibrational Emission Study of the CN and C₂ in Nylon and ZnO/Nylon Polymer Using Laser-Induced Breakdown Spectroscopy (LIBS)",
+   "authors": "T. A. Alrebdi 외",
+   "year": 2022,
+   "venue": "Polymers 14, 3686",
+   "doi": "10.3390/polym14173686",
+   "match": [
+    "10.3390/polym14173686",
+    "48fb/3aa17dd0b53e0507d951224f54443920a7f1"
+   ],
+   "summary": "레이저 유도 플라즈마(LIBS)로 나일론과 ZnO를 섞은 나일론의 방출 스펙트럼을 분석해 CN violet 계와 C₂ Swan 계 분자 밴드를 확인했다. 분자 방출 세기가 전자 밀도, 들뜸 온도, 레이저 세기에 크게 좌우된다고 보았다.",
+   "points": [
+    "식각 논문은 아니지만 CN·C₂ 밴드의 파장 위치를 표로 제시한다."
+   ],
+   "use": "그래프 CN 방출 노드와 OES 페이지의 CN 388 nm·C₂ 516.5 nm 파장 근거.",
+   "claim": "Alrebdi 외(2022)는 LIBS로 나일론 고분자의 CN violet 계와 C₂ Swan 계 분자 방출 밴드를 분석했다."
+  },
+  {
+   "id": "kudrya2019",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Identification and Excitation Mechanisms of the Lines and Bands of Boron-Containing Components in the Optical Emission Spectra of Low-Temperature BF₃/Ar Plasmas",
+   "authors": "V. P. Kudrya",
+   "year": 2019,
+   "venue": "Russian Microelectronics 48, 37–42",
+   "doi": "10.1134/s1063739719010050",
+   "match": [
+    "10.1134/s1063739719010050",
+    "S1063739719010050"
+   ],
+   "summary": "BF₃/Ar 공정 플라즈마의 방출 스펙트럼에서 B·B⁺ 원자선과 BF 분자 밴드를 찾아 들뜸 메커니즘을 분석했다. BF 밴드는 b³Σ⁺→a³Π 전이로 310–340 nm에 있고, 다른 붕소 화합물의 방출은 보이지 않았다.",
+   "points": [
+    "붕소 도핑·BCl₃ 계 공정의 B 계열 방출 파장 참고 자료."
+   ],
+   "use": "OES 페이지의 BF 310–340 nm 파장 근거.",
+   "claim": "Kudrya(2019)는 BF₃/Ar 플라즈마에서 BF b³Σ⁺→a³Π 방출 밴드를 310–340 nm에서 확인했다."
+  },
+  {
+   "id": "gerard2019",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "공개 원문",
+   "title": "MAVEN-IUVS Observations of the CO₂⁺ UV Doublet and CO Cameron Bands in the Martian Thermosphere",
+   "authors": "J.-C. Gérard 외",
+   "year": 2019,
+   "venue": "J. Geophys. Res. Space Physics 124, 5816–5827",
+   "doi": "10.1029/2019ja026596",
+   "match": [
+    "10.1029/2019ja026596"
+   ],
+   "summary": "화성 탐사선 MAVEN의 자외선 분광기로 화성 상층 대기의 CO Cameron 밴드와 CO₂⁺ 자외선 이중선(298–299 nm 부근) 발광을 두 화성년 동안 관측하고 모델과 비교했다. 두 발광의 고도와 밝기는 강하게 연관되어 있었다.",
+   "points": [
+    "반도체 논문은 아니지만 CO₂⁺·CO 분자 밴드 위치의 근거로 쓸 수 있는 분광 자료다."
+   ],
+   "use": "OES 페이지의 CO₂⁺ 이중선(288.3·289.6 nm) 위치 근거. 식각 플라즈마가 아닌 행성 대기 관측이라는 점을 감안해야 한다.",
+   "claim": "Gérard 외(2019)는 MAVEN IUVS로 화성 상층 대기의 CO Cameron 밴드와 CO₂⁺ 자외선 이중선을 관측해 모델과 비교했다."
+  },
+  {
+   "id": "bencher2008",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "22nm half-pitch patterning by CVD spacer self alignment double patterning (SADP)",
+   "authors": "C. Bencher 외",
+   "year": 2008,
+   "venue": "Proc. SPIE 6924, 69244E",
+   "doi": "10.1117/12.772953",
+   "match": [
+    "10.1117/12.772953"
+   ],
+   "summary": "리소그래피로 만든 코어(맨드릴) 옆에 CVD 스페이서를 세우고 코어를 걷어내 선 밀도를 두 배로 만드는 SADP를 시연했다. 1.2NA ArF 액침으로 만든 템플릿에서 22 nm 선·간격을 300 mm 웨이퍼 전면 CDU 2 nm 미만(3σ), LER 2 nm 미만으로 얻었다.",
+   "points": [
+    "스페이서를 마스크로 쓰는 양성 방식(positive tone)이다.",
+    "로트 간 재현성과 두 종류 기판(STI·산화막 트렌치) 적용도 보였다."
+   ],
+   "use": "그래프의 SADP·맨드릴·스페이서·에치백 노드와 멀티패터닝 보고서의 기본 근거.",
+   "claim": "Bencher 외(2008)는 CVD 스페이서 SADP로 22 nm 선·간격을 웨이퍼 전면 CDU 2 nm 미만(3σ), LER 2 nm 미만으로 구현했다고 보고했다."
+  },
+  {
+   "id": "pieczulewski2009",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Litho-freeze-litho-etch (LFLE) enabling dual wafer flow coat/develop process and freeze CD tuning bake for >200wph immersion ArF photolithography double patterning",
+   "authors": "C. N. Pieczulewski 외",
+   "year": 2009,
+   "venue": "Proc. SPIE 7520, 75201H",
+   "doi": "10.1117/12.837221",
+   "match": [
+    "10.1117/12.837221"
+   ],
+   "summary": "더블 패터닝용 도포·현상 트랙 장비(SOKUDO DUO)에서 웨이퍼 흐름을 두 갈래로 나누면, 노광기와 연결된 상태로 리소그래피 단계마다 시간당 200장 이상을 처리할 수 있다고 공정 흐름 모델링으로 확인했다. 첫 패턴을 굳히는(freeze) LFLE 공정에서는 열판 보정으로 CD 균일도를 개선한 실험 결과를 보였다.",
+   "points": [
+    "LFLE는 첫 패턴을 화학적으로 굳혀 두 번째 노광 때 지워지지 않게 하는 방식이다.",
+    "장비 회사의 발표이며, 처리량은 실측이 아닌 모델링 값이다."
+   ],
+   "use": "그래프 LFLE 노드와 멀티패터닝 보고서의 LE 계열 설명 근거.",
+   "claim": "Pieczulewski·Rosslee(2009)는 듀얼 웨이퍼 흐름 트랙에서 LFLE 등 더블 패터닝 공정을 리소그래피 단계당 시간당 200장 이상 처리할 수 있음을 보였다."
+  },
+  {
+   "id": "brain2009",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Low-k interconnect stack with a novel self-aligned via patterning process for 32nm high volume manufacturing",
+   "authors": "R. Brain 외",
+   "year": 2009,
+   "venue": "IEEE IITC 2009, pp. 249–251",
+   "doi": "10.1109/iitc.2009.5090400",
+   "match": [
+    "10.1109/iitc.2009.5090400"
+   ],
+   "summary": "Intel 32 nm 로직의 배선 공정을 소개했다. 세 층에 더 낮은 유전율의 CDO 절연막을 쓰고, 좁은 피치에서 비아와 금속선이 붙는 문제를 막으면서 저유전막 손상을 줄이는 새 자기정렬 비아 패터닝을 도입했다.",
+   "points": [
+    "자기정렬 비아로 비아-금속 단락 문제를 다뤘다.",
+    "전원·입출력용 두꺼운 9번째 금속층을 둔다."
+   ],
+   "use": "멀티패터닝 보고서의 자기정렬 비아 설명 근거.",
+   "claim": "Brain 외(2009)는 Intel 32 nm 배선에 저유전 CDO 막과 자기정렬 비아 패터닝을 도입해 비아-금속 단락 문제를 다뤘다고 보고했다."
+  },
+  {
+   "id": "natarajan2014",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A 14nm logic technology featuring 2nd-generation FinFET, air-gapped interconnects, self-aligned double patterning and a 0.0588 µm² SRAM cell size",
+   "authors": "S. Natarajan 외",
+   "year": 2014,
+   "venue": "IEEE IEDM 2014, 3.7",
+   "doi": "10.1109/iedm.2014.7046976",
+   "match": [
+    "10.1109/iedm.2014.7046976"
+   ],
+   "summary": "Intel 14 nm 로직 공정 발표. 핵심 패터닝 층에 SADP를 쓰고, 성능이 중요한 배선 층에 에어갭을 넣었다. 핀은 폭 8 nm·높이 42 nm의 직사각형이며 4세대 HKMG를 쓴다.",
+   "points": [
+    "SRAM 셀 면적 0.0588 µm².",
+    "양산 중인 공정이라고 밝혔다."
+   ],
+   "use": "그래프 SADP 노드와 멀티패터닝 보고서의 양산 적용 사례 근거.",
+   "claim": "Natarajan 외(2014)는 Intel 14 nm 로직이 핵심 패터닝 층에 SADP를, 일부 배선 층에 에어갭을 쓰고 핀 폭 8 nm·높이 42 nm라고 보고했다."
+  },
+  {
+   "id": "auth2017",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A 10nm high performance and low-power CMOS technology featuring 3rd generation FinFET transistors, Self-Aligned Quad Patterning, contact over active gate and cobalt local interconnects",
+   "authors": "C. Auth 외",
+   "year": 2017,
+   "venue": "IEEE IEDM 2017, 29.1",
+   "doi": "10.1109/iedm.2017.8268472",
+   "match": [
+    "10.1109/iedm.2017.8268472",
+    "ieeexplore.ieee.org/document/8268472"
+   ],
+   "summary": "Intel 10 nm 로직 공정 발표. 핵심 패터닝 층에 SAQP를 쓰고, 세 국부 배선 층에 코발트를 썼다. 밀도를 위해 활성 게이트 위 자기정렬 컨택(COAG)을 도입하고 셀 경계의 더미 게이트를 없앴다.",
+   "points": [
+    "핀 폭 7 nm·높이 46 nm, 5세대 HKMG.",
+    "일함수 금속 스택 4~6종으로 문턱전압을 나눈다.",
+    "배선 12층."
+   ],
+   "use": "그래프의 Intel 10nm·SAQP·QPT 노드와 멀티패터닝 보고서의 양산 SAQP 사례 근거.",
+   "claim": "Auth 외(2017)는 Intel 10 nm 로직이 핵심 패터닝 층에 SAQP, 국부 배선에 코발트, 활성 게이트 위 컨택을 쓴다고 보고했다."
+  },
+  {
+   "id": "yu2014",
+   "area": "patterning",
+   "kind": "논문(프리프린트)",
+   "basis": "공개 원문",
+   "title": "Layout Decomposition for Quadruple Patterning Lithography and Beyond",
+   "authors": "B. Yu, D. Z. Pan",
+   "year": 2014,
+   "venue": "arXiv:1404.0321 (DAC 2014)",
+   "doi": "10.48550/arxiv.1404.0321",
+   "match": [
+    "1404.0321"
+   ],
+   "summary": "레이아웃을 네 장 이상의 마스크로 나누는(K-색칠) 문제를 반정부호 계획법(SDP)과 새 색 인코딩으로 푸는 일반 프레임워크를 제안했다. 저자들은 일반 K-패터닝 분할을 다룬 첫 연구라고 밝힌다.",
+   "points": [
+    "빠른 색 배정 기법으로 계산 시간을 크게 줄였다."
+   ],
+   "use": "그래프의 색칠(coloring) 문제 노드와 멀티패터닝 보고서의 레이아웃 분할 설명 근거.",
+   "claim": "Yu·Pan(2014)은 반정부호 계획법 기반으로 4중 이상(K-패터닝) 리소그래피의 레이아웃 분할 프레임워크를 제안했다."
+  },
+  {
+   "id": "ji2014",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Understanding the critical challenges of self-aligned octuple patterning",
+   "authors": "Yu Ji 외",
+   "year": 2014,
+   "venue": "Proc. SPIE 9052, 90521P",
+   "doi": "10.1117/12.2046094",
+   "match": [
+    "10.1117/12.2046094"
+   ],
+   "summary": "자기정렬 8중 패터닝(SAOP)의 CD 변동 통계, 비용 구조, 집적 과제, 레이아웃 분할을 분석했다. 간격(gap) 공간의 CD 균일도·목표 편차가 가장 나빠 컷 공정에 필요한 오버레이 정확도를 이 값으로 정했다.",
+   "points": [
+    "메모리 FEOL용 5마스크 양성 SAOP, 로직 BEOL용 3마스크 음성 SAOP를 제안했다.",
+    "2차원 레이아웃 분할의 어려움을 짚었다."
+   ],
+   "use": "그래프의 SAOP·비용 노드와 멀티패터닝 보고서의 SAOP 설명 근거.",
+   "claim": "Ji 외(2014)는 SAOP에서 간격 공간의 CD 균일도·목표 편차가 가장 나쁘다고 분석하고, 메모리용 5마스크 양성·로직용 3마스크 음성 SAOP를 제안했다."
+  },
+  {
+   "id": "kodama2015",
+   "area": "patterning",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Self-Aligned Double and Quadruple Patterning Aware Grid Routing Methods",
+   "authors": "C. Kodama 외",
+   "year": 2015,
+   "venue": "IEEE Trans. CAD 34, 753–765",
+   "doi": "10.1109/tcad.2015.2404878",
+   "match": [
+    "10.1109/tcad.2015.2404878"
+   ],
+   "summary": "SADP·SAQP로 만들 수 있는 레이아웃을 처음부터 생성하는 배선(routing) 방법을 제안했다. 스페이서가 절연체(SID)인 SADP·SAQP와 스페이서가 금속(SIM)인 SADP에 대해, 격자점에 2~3색을 번갈아 배정하고 단순한 연결·절단 규칙으로 배선하면 복잡한 분할 없이 맨드릴 패턴이 정해진다.",
+   "points": [
+    "SID형 SADP에서 더미 패턴 뒤집기로 불량 위험 영역을 줄였다."
+   ],
+   "use": "그래프의 SID/SIM·색칠 문제 노드와 멀티패터닝 보고서의 설계 측면 근거.",
+   "claim": "Kodama 외(2015)는 SID형 SADP·SAQP와 SIM형 SADP를 위해 격자점에 색을 번갈아 배정하는 배선 방법을 제안해 복잡한 분할 없이 맨드릴 패턴을 정했다."
+  },
+  {
+   "id": "demirkol2016",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Innovative scatterometry approach for self-aligned quadruple patterning (SAQP) process control",
+   "authors": "A. Gunay-Demirkol 외",
+   "year": 2016,
+   "venue": "Proc. SPIE 9778, 977807",
+   "doi": "10.1117/12.2220287",
+   "match": [
+    "10.1117/12.2220287"
+   ],
+   "summary": "imec N7 SAQP 공정의 여러 단계에서 산란계측(OCD)을 적용했다. 피치가 다른 계측 패드를 함께 해석하는 방법으로, 원래 신호가 약해 직접 재기 어려운 피치 워크를 최종 핀 식각 단계에서 측정해 세 트렌치 집단을 구분했다.",
+   "points": [
+    "기준 계측과 공정 실험 계획(DOE) 결과가 일치했다.",
+    "웨이퍼 내 핀 CD 불균일의 원인도 찾았다."
+   ],
+   "use": "그래프의 계측·피치 워크·OCD 노드 근거.",
+   "claim": "Demirkol 외(2016)는 피치가 다른 산란계측 패드를 병렬 해석해 N7 SAQP 핀 식각 후 피치 워크를 측정하고 세 트렌치 집단을 구분했다."
+  },
+  {
+   "id": "lorusso2016",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Line width roughness accuracy analysis during pattern transfer in self-aligned quadruple patterning process",
+   "authors": "G. F. Lorusso 외",
+   "year": 2016,
+   "venue": "Proc. SPIE 9778, 97780V",
+   "doi": "10.1117/12.2218863",
+   "match": [
+    "10.1117/12.2218863"
+   ],
+   "summary": "최종 피치 22.5 nm SAQP 공정의 단계별 패턴 전사 과정에서 LER·LWR이 어떻게 바뀌는지 분석했다. CD-SEM 설정(평균, 시야, 화소 크기)을 바꿔 가며 평면 TEM·3D AFM 기준값과 비교해 인라인 측정 조건을 찾았고, 패턴 휘어짐(wiggling)도 정량화했다.",
+   "points": [
+    "N7/N5 수준 피치에서 거칠기 측정 정확도 문제를 다룬다."
+   ],
+   "use": "그래프의 LER 노드와 패턴 전사 단계 근거.",
+   "claim": "Lorusso 외(2016)는 최종 피치 22.5 nm SAQP에서 단계별 LER·LWR 전사를 CD-SEM과 TEM·3D AFM 기준 계측으로 비교 분석했다."
+  },
+  {
+   "id": "preil2016",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Patterning challenges in the sub-10 nm era",
+   "authors": "M. E. Preil",
+   "year": 2016,
+   "venue": "Proc. SPIE 9780, 978002",
+   "doi": "10.1117/12.2222256",
+   "match": [
+    "10.1117/12.2222256"
+   ],
+   "summary": "미세화의 병목이 노광 해상도에서 '노광 이후의 패터닝'으로 옮겨 갔다는 관점의 개관 논문. CD와 오버레이를 따로 관리하던 오차 예산이 거칠기·막·식각 변동까지 합친 총 엣지 배치 오차(EPE) 예산으로 바뀌었고, 컨택·컷 배치는 한 자릿수 nm 예산을 요구한다고 정리한다.",
+   "points": [
+    "계측·식각·공정 제어·시뮬레이션 분야의 협업이 필요하다고 본다."
+   ],
+   "use": "그래프 하드마스크·SADP 노드와 멀티패터닝 보고서의 EPE 설명 근거.",
+   "claim": "Preil(2016)은 sub-10 nm 시대에 오차 예산이 CD·오버레이 분리 관리에서 총 엣지 배치 오차(EPE) 예산으로 바뀌었다고 정리했다."
+  },
+  {
+   "id": "raley2016",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Self-aligned quadruple patterning integration using spacer on spacer pitch splitting at the resist level for sub-32nm pitch applications",
+   "authors": "A. Raley 외",
+   "year": 2016,
+   "venue": "Proc. SPIE 9782, 97820F",
+   "doi": "10.1117/12.2219321",
+   "match": [
+    "10.1117/12.2219321"
+   ],
+   "summary": "비용을 줄이려고 ArF 액침 감광막 패턴을 바로 첫 맨드릴로 쓰고, 그 위에 스페이서를 두 번 쌓는(spacer-on-spacer) 방식으로 최종 피치 30 nm의 SAQP를 구현했다. 저온 ALD 막(TiO, Al₂O₃, SiO₂) 조합을 선택비·LER·CD 기준으로 비교했다.",
+   "points": [
+    "핀이나 금속층 같은 FEOL·BEOL 핵심 층에 적용 가능하다고 본다."
+   ],
+   "use": "그래프의 spacer-on-spacer·SAQP·맨드릴 제거(pull) 노드 근거.",
+   "claim": "Raley 외(2016)는 감광막을 첫 맨드릴로 쓰는 spacer-on-spacer SAQP로 최종 피치 30 nm를 구현하고 저온 ALD 막 조합을 비교했다."
+  },
+  {
+   "id": "fang2017",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "SAQP pitch walk metrology using single target metrology",
+   "authors": "F. Fang 외",
+   "year": 2017,
+   "venue": "Proc. SPIE 10145, 101452R",
+   "doi": "10.1117/12.2261620",
+   "match": [
+    "10.1117/12.2261620"
+   ],
+   "summary": "SAQP에서 생기는 세 가지 독립 간격(α·β·γ)은 반복 배열 계측으로는 서로 구분되지 않는 경우가 있다. 저자들은 제품과 비슷한 배치의 단일 타깃에 신호 응답 계측(SRM)과 CD-SEM 기준 데이터를 결합해 이 구분 문제를 풀었다.",
+   "points": [
+    "α·β·γ는 리소그래피, 두 번의 맨드릴·스페이서 식각, 두 번의 스페이서 증착이 함께 결정한다."
+   ],
+   "use": "그래프의 피치 워크·계측·OCD 노드 근거.",
+   "claim": "Fang 외(2017)는 SAQP의 독립 간격 α·β·γ를 단일 타깃에서 신호 응답 계측과 CD-SEM 기준 데이터로 구분해 측정하는 방법을 제시했다."
+  },
+  {
+   "id": "lazzarino2017",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Self-aligned block technology: a step toward further scaling",
+   "authors": "F. Lazzarino 외",
+   "year": 2017,
+   "venue": "Proc. SPIE 10149, 1014908",
+   "doi": "10.1117/12.2258028",
+   "match": [
+    "10.1117/12.2258028"
+   ],
+   "summary": "5 nm 노드용 자기정렬 블록(컷) 기술 두 가지를 비교했다. 하나는 첫 블록을 기억하고 식각 정지막 역할을 하는 스핀온 금속 함유 물질을 넣는 방식, 다른 하나는 흔한 유기 물질과 공정만 쓰는 방식이다. 16 nm 하프피치 BEOL 시험 구조로 개념을 증명했다.",
+   "points": [
+    "설계·마스크 수·EPE 예산에 대한 영향과 비용도 추정했다."
+   ],
+   "use": "그래프의 컷/블록·자기정렬 블록·선 끝(tip) 노드 근거.",
+   "claim": "Lazzarino 외(2017)는 5 nm 노드용 자기정렬 블록 집적 방식 두 가지를 비교하고 16 nm 하프피치 BEOL 구조로 개념을 증명했다."
+  },
+  {
+   "id": "yamada2017",
+   "area": "patterning",
+   "kind": "논문",
+   "basis": "공개 원문",
+   "title": "Silicon Infiltration into Functional Polymer for Nano-scale Pattern Development",
+   "authors": "K. Yamada 외",
+   "year": 2017,
+   "venue": "J. Photopolym. Sci. Technol. 30, 361–365",
+   "doi": "10.2494/photopolymer.30.361",
+   "match": [
+    "10.2494/photopolymer.30.361",
+    "photopolymer/30/3/30_361"
+   ],
+   "summary": "탄소막 두 층을 맨드릴로, 산화막을 스페이서로 쓰는 SAQP에서 두 탄소막 사이 식각 선택비가 부족한 문제를 한쪽 탄소막에 Si를 침투시켜 해결했다. 20 nm 미만 하프피치 패턴을 만들었고, 첫 탄소막 식각 후의 낮은 LER이 공정 끝까지 유지됐다.",
+   "points": [
+    "LER·국부 CD 균일도·패턴 배치 정확도를 함께 개선하려는 방식이다."
+   ],
+   "use": "그래프의 하드마스크·맨드릴·맨드릴 제거·프로파일 노드 근거.",
+   "claim": "Yamada 외(2017)는 이중 탄소 맨드릴 SAQP에서 한 탄소막에 Si를 침투시켜 선택비를 얻고 20 nm 미만 하프피치 패턴을 만들었다."
+  },
+  {
+   "id": "decoster2019",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Exploration of EUV-based self-aligned multipatterning (SAMP) options targeting pitches below 20nm",
+   "authors": "S. Decoster 외",
+   "year": 2019,
+   "venue": "Proc. SPIE, Advances in Patterning Materials and Processes XXXVI",
+   "doi": "10.1117/12.2515173",
+   "match": [
+    "10.1117/12.2515173"
+   ],
+   "summary": "20 nm 미만 피치의 선·블록 패터닝 방법을 비교했다. 16 nm 피치 격자를 ArF 액침 SAOP, EUV SADP, EUV SAQP 세 가지로 구현해 비교하고, EPE 예산을 완화하는 자기정렬 블록도 다뤘다.",
+   "points": [
+    "EPE 예산이 줄어 일반 LE 블록 방식으로는 부족하다고 본다."
+   ],
+   "use": "그래프의 EUV SADP·SALELE 노드와 멀티패터닝 보고서의 EUV 다중 패터닝 근거.",
+   "claim": "Decoster 외(2019)는 16 nm 피치 격자를 ArF 액침 SAOP, EUV SADP, EUV SAQP로 구현해 비교했다."
+  },
+  {
+   "id": "hermans2024",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Enabling 0.33NA EUV lithography patterning towards MP16 SADP semi-damascene metallization, setting the benchmark for High-NA EUV",
+   "authors": "Y. Hermans 외",
+   "year": 2024,
+   "venue": "Proc. SPIE, International Conference on EUV Lithography 2024",
+   "doi": "10.1117/12.3034200",
+   "match": [
+    "10.1117/12.3034200"
+   ],
+   "summary": "A10 노드의 금속 피치 16 nm(MP16)를 목표로, High-NA로도 직접 인쇄하기 한계에 가까운 피치를 기존 0.33NA EUV로 피치 32 코어를 만든 뒤 SADP로 반으로 줄이는 방법을 시험했다. 광원·적층 조건을 공정 창, 거칠기, 전자빔 결함으로 최적화했다.",
+   "points": [
+    "High-NA 직접 패터닝과 비교할 기준점을 만든다는 목적이다."
+   ],
+   "use": "그래프 EUV SADP 노드와 멀티패터닝 보고서의 EUV+SADP 근거.",
+   "claim": "Hermans 외(2024)는 0.33NA EUV로 피치 32 코어를 만들고 SADP로 피치 16 금속 배선을 만드는 방법을 시험했다."
+  },
+  {
+   "id": "chen2024",
+   "area": "selective",
+   "kind": "리뷰(관점)",
+   "basis": "초록",
+   "title": "Area selective deposition for bottom-up atomic-scale manufacturing",
+   "authors": "R. Chen 외",
+   "year": 2024,
+   "venue": "Int. J. Machine Tools Manuf. 199, 104173",
+   "doi": "10.1016/j.ijmachtools.2024.104173",
+   "match": [
+    "10.1016/j.ijmachtools.2024.104173"
+   ],
+   "summary": "원하는 표면에만 막을 키우는 영역 선택 증착(ASD), 특히 영역 선택 ALD의 원리를 핵 생성·성장의 열역학과 반응 속도 관점에서 정리한 관점 논문. 표면 비활성화·활성화·결함 제거 같은 선택도 향상 기법과 종합 핵 생성 모델을 소개한다.",
+   "points": [
+    "상향식(bottom-up) 원자 단위 제조 기술로서의 가능성을 강조한다."
+   ],
+   "use": "그래프 ASD 노드와 멀티패터닝 보고서의 선택 증착 근거.",
+   "claim": "Chen 외(2024)는 영역 선택 ALD의 핵 생성·성장 원리와 선택도 향상 기법을 정리하고 종합 핵 생성 모델을 소개했다."
+  },
+  {
+   "id": "liu2025",
+   "area": "selective",
+   "kind": "리뷰",
+   "basis": "초록",
+   "title": "Nanostructure fabrication by area selective deposition: a brief review",
+   "authors": "T.-L. Liu, S. F. Bent",
+   "year": 2025,
+   "venue": "Materials Horizons 12, 1711–1725",
+   "doi": "10.1039/d4mh01472c",
+   "match": [
+    "10.1039/d4mh01472c"
+   ],
+   "summary": "영역 선택 증착(ASD)의 방법과 성장·비성장 표면 사이 선택도에 영향을 주는 요인을 영역 선택 ALD를 중심으로 정리했다. 선택 CVD, 선택 스퍼터, 선택 분자선 에피택시도 다루고 응용과 과제를 짚는다.",
+   "points": [
+    "공정 단계를 줄이고 정확도를 높일 수 있는 상향식 방식으로 소개한다."
+   ],
+   "use": "그래프 ASD 노드와 멀티패터닝 보고서의 선택 증착 근거.",
+   "claim": "Liu·Bent(2025)는 영역 선택 ALD를 중심으로 ASD 방법과 선택도 요인을 정리하고 선택 CVD·스퍼터·MBE도 다뤘다."
+  },
+  {
+   "id": "lee2025",
+   "area": "selective",
+   "kind": "리뷰(관점)",
+   "basis": "공개 원문",
+   "title": "Directed self-assembly of block copolymers for high-precision patterning in the era of extreme ultraviolet lithography",
+   "authors": "K. Lee 외",
+   "year": 2025,
+   "venue": "MRS Communications 15, 1269–1288",
+   "doi": "10.1557/s43579-025-00841-7",
+   "match": [
+    "10.1557/s43579-025-00841-7"
+   ],
+   "summary": "EUV 감광막의 해상도·거칠기·처리량 사이 한계를 블록 공중합체 유도 자기조립(DSA)으로 보정하는 'EUV+DSA' 전략의 최근 진전을 정리했다. EUV 치수에 맞는 고-χ 블록 공중합체 설계, 화학적 사전 패턴, 결함·거칠기 저감, 계측, 무기 마스크로의 패턴 전사를 다룬다.",
+   "points": [
+    "DSA가 리소그래피 패턴의 불완전함과 최종 패턴 품질을 분리할 수 있다는 점을 강조한다."
+   ],
+   "use": "그래프 DSA 노드와 멀티패터닝 보고서의 DSA 근거.",
+   "claim": "Lee 외(2025)는 EUV 패턴을 블록 공중합체 DSA로 보정하는 EUV+DSA 전략의 재료·공정·계측·패턴 전사 진전을 정리했다."
+  },
+  {
+   "id": "mistry2007",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A 45nm Logic Technology with High-k+Metal Gate Transistors, Strained Silicon, 9 Cu Interconnect Layers, 193nm Dry Patterning, and 100% Pb-free Packaging",
+   "authors": "K. Mistry 외",
+   "year": 2007,
+   "venue": "IEEE IEDM 2007, pp. 247–250",
+   "doi": "10.1109/iedm.2007.4418914",
+   "match": [
+    "10.1109/iedm.2007.4418914"
+   ],
+   "summary": "Intel 45 nm 로직 공정 발표로, high-k 절연막과 금속 게이트(HKMG)를 대량 생산 공정에 처음 넣었다고 밝혔다. EOT 1.0 nm high-k, n·p용 일함수 금속 게이트, 3세대 변형 실리콘을 쓰며, 배선은 저유전막 9층 구리, 패터닝은 193 nm 건식 노광이다.",
+   "points": [
+    "153 Mb SRAM(셀 0.346 µm²)과 여러 마이크로프로세서로 수율·성능·신뢰성을 보였다.",
+    "high-k는 먼저, 금속 게이트는 더미 게이트 제거 후 만드는 방식이다(학회 보도 기준)."
+   ],
+   "use": "그래프 HKMG 노드의 근거(#50 검토).",
+   "claim": "Mistry 외(2007)는 Intel 45 nm 로직이 HKMG를 대량 생산 공정에 처음 도입했고 EOT 1.0 nm high-k와 이중 일함수 금속 게이트를 쓴다고 보고했다."
+  },
+  {
+   "id": "auth2012",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A 22nm high performance and low-power CMOS technology featuring fully-depleted tri-gate transistors, self-aligned contacts and high density MIM capacitors",
+   "authors": "C. Auth 외",
+   "year": 2012,
+   "venue": "IEEE VLSI Symposium 2012, pp. 131–132",
+   "doi": "10.1109/vlsit.2012.6242496",
+   "match": [
+    "10.1109/vlsit.2012.6242496"
+   ],
+   "summary": "Intel 22 nm 공정 발표로, 완전 공핍 트라이게이트(FinFET) 트랜지스터를 처음 넣었다고 밝혔다. 3세대 HKMG와 5세대 변형 기술을 쓰고, 컨택과 게이트의 정렬 제약을 없애기 위해 자기정렬 컨택을 도입했다.",
+   "points": [
+    "문턱 이하 기울기 약 70 mV/dec, DIBL 약 50 mV/V.",
+    "Hf 계 high-k를 쓴 고밀도 MIM 커패시터, 배선 9층."
+   ],
+   "use": "멀티패터닝 보고서의 자기정렬 컨택 설명 근거.",
+   "claim": "Auth 외(2012)는 Intel 22 nm 공정이 완전 공핍 트라이게이트 트랜지스터를 처음 도입하고 자기정렬 컨택을 쓴다고 보고했다."
+  },
+  {
+   "id": "robertson2015",
+   "area": "device",
+   "kind": "리뷰",
+   "basis": "공개 원문",
+   "title": "High-K materials and metal gates for CMOS applications",
+   "authors": "J. Robertson, R. M. Wallace",
+   "year": 2015,
+   "venue": "Mater. Sci. Eng. R 88, 1–41",
+   "doi": "10.1016/j.mser.2014.11.001",
+   "match": [
+    "10.1016/j.mser.2014.11.001"
+   ],
+   "summary": "SiO₂ 게이트 절연막을 HfO₂ 같은 high-k 산화물로 바꾸는 과정에서 생긴 재료·공정 문제를 종합한 리뷰. 재료 선택 기준, 증착(ALD), 계면층, 결함, 금속 게이트의 일함수 조절과 게이트 먼저(gate-first)·나중(gate-last) 공정 흐름을 다룬다.",
+   "points": [
+    "Hf 계열 산화물이 대표 high-k인 이유를 설명한다.",
+    "gate-last 흐름에서 금속층과 충진 금속을 다룬다."
+   ],
+   "use": "그래프 HKMG·high-k 노드의 근거(#50 검토).",
+   "claim": "Robertson·Wallace(2015) 리뷰는 HfO₂ 등 high-k 산화물과 금속 게이트의 재료 선택, 계면, 결함, 일함수 조절, gate-first·gate-last 공정을 다룬다."
+  },
+  {
+   "id": "hussain2006",
+   "area": "device",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Metal Wet Etch Issues and Effects in Dual Metal Gate Stack Integration",
+   "authors": "M. M. Hussain 외",
+   "year": 2006,
+   "venue": "J. Electrochem. Soc. 153, G389",
+   "doi": "10.1149/1.2178627",
+   "match": [
+    "10.1149/1.2178627"
+   ],
+   "summary": "n·p형에 서로 다른 일함수 금속을 쓰는 이중 금속 게이트를 만들려면 먼저 입힌 금속을 한쪽에서 습식 식각으로 지워야 한다. 이 논문은 여러 high-k·금속 막 조합에서 식각 선택비, 열 안정성, 막 사이 상호작용, 표면 상태가 이 공정을 어렵게 만드는 점을 정리했다.",
+   "points": [
+    "TiN, Ta 계 금속과 HfO₂ 등 절연막 조합의 결과를 제시한다."
+   ],
+   "use": "그래프 high-k 노드의 '금속 대 high-k 식각 선택비' 근거(#50 검토).",
+   "claim": "Hussain 외(2006)는 이중 일함수 금속 게이트 집적에서 금속 습식 식각의 선택비·열 안정성·막 상호작용 문제를 다뤘다."
+  },
+  {
+   "id": "loubet2017",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Stacked nanosheet gate-all-around transistor to enable scaling beyond FinFET",
+   "authors": "N. Loubet 외",
+   "year": 2017,
+   "venue": "IEEE VLSI Symposium 2017, T230–T231",
+   "doi": "10.23919/vlsit.2017.7998183",
+   "match": [
+    "10.23919/vlsit.2017.7998183"
+   ],
+   "summary": "수평으로 쌓은 나노시트 GAA 구조가 5 nm 노드 이후 FinFET을 대체할 후보임을 보였다고 밝힌 IBM 연구. 같은 면적에서 유효 채널 폭이 더 크고, 게이트 길이 12 nm·CPP 44/48 nm 규칙에서 좋은 정전 특성을 얻었다.",
+   "points": [
+    "좁은 시트 간격과 넓은 시트에서 일함수 금속 교체와 다중 문턱전압을 시연했다.",
+    "긴 채널 소자의 시트 들러붙음(stiction)을 없앴고, 벌크 기판에서 절연 분리도 보였다."
+   ],
+   "use": "그래프 HKMG·일함수 금속 노드의 근거(#50 검토).",
+   "claim": "Loubet 외(2017)는 적층 나노시트 GAA가 FinFET 후속 후보임을 보이고, 일함수 금속 교체와 다중 문턱전압을 시연했다."
+  },
+  {
+   "id": "durfee2021",
+   "area": "device",
+   "kind": "발표 초록",
+   "basis": "공개 초록",
+   "title": "Selective Work Function Metal Etch Enabling Multi-Vt Patterning for High Performance Stacked Nanosheet Devices",
+   "authors": "C. Durfee 외",
+   "year": 2021,
+   "venue": "AVS 67th International Symposium",
+   "doi": null,
+   "url": "https://www.avssymposium.org/AVS2021/Sessions/Schedule/70511",
+   "match": [
+    "avssymposium.org/AVS2021/Sessions/Schedule/70511"
+   ],
+   "summary": "적층 나노시트에서 문턱전압을 나누려면 시트 사이에 끼인 희생 pFET 일함수 금속을 지워야 하는데, FinFET용 습식 식각으로는 넓은 시트(폭 100 nm)에서 다 지워지지 않고 좁은 시트(폭 20 nm)에서는 선택비가 부족했다. 저자들은 넓은 시트에서 시트 간격 9→5 nm까지 아래 HfO₂를 손상하지 않고 희생 금속을 완전히 제거하는 고선택비 기상(건식) 식각을 보고했다.",
+   "points": [
+    "건식 식각 시료의 Vt·절연 파괴·BTI가 직접 증착 시료와 비슷했다.",
+    "습식 식각 시료는 넓은 시트에서 잔류 금속 때문에 특성이 나빠졌다.",
+    "피어리뷰 논문이 아닌 학회 발표 초록이다."
+   ],
+   "use": "그래프 일함수 금속·high-k·게이트 금속 리세스 노드의 근거(#50 검토).",
+   "claim": "Durfee 외(2021)는 적층 나노시트에서 시트 간격 9에서 5 nm까지 아래 HfO₂ 손상 없이 pFET 일함수 금속을 완전히 제거하는 고선택비 건식 식각을 보고했다."
+  },
+  {
+   "id": "yang2023a",
+   "area": "device",
+   "kind": "논문",
+   "basis": "공개 원문",
+   "title": "Impact of Stress and Dimension on Nanosheet Deformation during Channel Release of Gate-All-Around Device",
+   "authors": "J. Yang 외",
+   "year": 2023,
+   "venue": "Micromachines 14, 611",
+   "doi": "10.3390/mi14030611",
+   "match": [
+    "10.3390/mi14030611",
+    "PMC10058282"
+   ],
+   "summary": "GAA 소자에서 희생층을 걷어내 시트를 띄우는(채널 릴리스) 동안 나노시트가 휘는 현상을 제작 실험과 시뮬레이션으로 분석했다. 소스·드레인이 채널에 주는 응력이 변형에 중요한 역할을 하고, 그 정도는 소스·드레인 크기와 시트 길이에 따라 달라진다. 변형되면 금속 게이트 일함수 제어가 어려워진다.",
+   "points": [
+    "소스·드레인 크기와 채널 길이를 맞추면 고르게 쌓인 시트를 만들 수 있었다.",
+    "시트를 띄운 뒤 HfO₂·TiN을 ALD로 입혔다."
+   ],
+   "use": "그래프 ALD 노드의 '시트 둘레에 high-k·금속 ALD' 사례 근거(#50 검토).",
+   "claim": "Yang 외(2023, Micromachines 14, 611)는 GAA 채널 릴리스 중 나노시트 변형의 주원인이 소스·드레인이 주는 응력임을 실험과 시뮬레이션으로 보였다."
+  },
+  {
+   "id": "yang2023b",
+   "area": "device",
+   "kind": "논문(시뮬레이션)",
+   "basis": "공개 원문",
+   "title": "A Novel Scheme for Full Bottom Dielectric Isolation in Stacked Si Nanosheet Gate-All-Around Transistors",
+   "authors": "J. Yang 외",
+   "year": 2023,
+   "venue": "Micromachines 14, 1107",
+   "doi": "10.3390/mi14061107",
+   "match": [
+    "10.3390/mi14061107",
+    "PMC10302010"
+   ],
+   "summary": "나노시트 아래 기생 채널을 막는 바닥 절연 분리(BDI)를 소스·드레인 에피 성장 뒤에 만드는 'Full BDI-last' 방식을 TCAD 시뮬레이션으로 제안했다. PMOS에서 에피 전에 만드는 방식보다 구동 전류가 4.78배 컸는데, SiGe 소스·드레인의 압축 응력이 더 커졌기 때문으로 설명한다. 링 발진기는 같은 전력에서 속도가 빨라졌다.",
+   "points": [
+    "기존 펀치스루 저지층(PTS)보다 단채널 특성과 기생 용량 면에서 유리하다고 본다.",
+    "실제 제작이 아닌 시뮬레이션 결과다."
+   ],
+   "use": "그래프 BDI 노드 근거.",
+   "claim": "Yang 외(2023, Micromachines 14, 1107)는 TCAD 시뮬레이션에서 Full BDI-last 방식의 구동 전류가 Full BDI-first보다 4.78배 크다고 보고했다."
+  }
+ ]
+}

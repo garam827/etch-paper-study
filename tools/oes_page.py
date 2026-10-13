@@ -219,5 +219,8 @@ render();
 </body>
 </html>
 """
+sys.path.insert(0, str(ROOT / "tools"))
+import paper_links  # noqa: E402  레퍼런스 논문 요약 링크
+page = paper_links.link_oes(page)
 (ROOT / "research/oes_etch_chemistry.html").write_text(page, encoding="utf-8")
 print("ok", len(items), "combos", len(VER), "lines", n_ok, "ok", len(CV), "verified")

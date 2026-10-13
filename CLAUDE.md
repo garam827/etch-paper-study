@@ -100,9 +100,10 @@ history.html·history/ 단계 페이지, history_img의 스크린샷, 기타 공
 - 첫 화면 `index.html`(목차·학습 경로·검색)은 **생성 파일**이다. 새 결과물은 `kb/pages.json`에 항목(영역·태그·날짜)을 추가하고, 필요하면 학습 경로에도 넣은 뒤 build 한다. 결과물 페이지에는 `← 목차` 링크를 넣는다.
 - 작업이 끝나면 기록(현재 단계 페이지 + history.html 첫 화면) 갱신 → 커밋 → `git push`로 사이트를 업데이트한다. 푸시 전 `python tools/build_site.py --check`와 `python tools/check_links.py`가 통과해야 하고(GitHub Actions `site-check`도 같은 검사), 푸시 후 Pages 빌드 완료와 실제 페이지(200)를 확인한다.
 - 절대 커밋 금지: `.env`(API 키). `.gitignore`로 막혀 있지만, 커밋 전에 올라갈 파일에 키·IP·계정정보가 없는지 매번 검사한다.
-- **원본과 결과물 (2026-10-13)**: 목차·지식 그래프·질의응답·검증 현황 페이지는 `kb/`가 원본이다. 결과물 HTML을 직접 고치지 말고 `kb/`(또는 `tools/templates/`)를 고친 뒤 `python tools/build_site.py`로 만든다. 커밋 전 `python tools/build_site.py --check`가 통과해야 한다.
+- **원본과 결과물 (2026-10-13)**: 목차·지식 그래프·질의응답·검증 현황·논문 요약 페이지는 `kb/`가 원본이다. 결과물 HTML을 직접 고치지 말고 `kb/`(또는 `tools/templates/`)를 고친 뒤 `python tools/build_site.py`로 만든다. 커밋 전 `python tools/build_site.py --check`가 통과해야 한다.
   - 파일 구성은 `docs/runbook.md` §4. 노드 id는 "한 개념 = 한 id"로 쓰고 바꾸지 않는다(링크 `#앵커`가 걸려 있음).
   - 구조 이관과 내용 수정은 따로 커밋한다.
+- **레퍼런스 논문 요약 (2026-10-13, #51)**: 결과물에 논문을 새로 인용하면 `kb/papers/papers.json`에 요약(재서술, 근거 범위 표시)을 추가하고, 핵심 문장을 `ledger/papers_summary.json`으로 검증(gate) → `claims_export.py` → build 한다. 손으로 쓰는 페이지는 `python tools/paper_links.py apply <페이지>`로 "요약" 링크를 붙인다(그래프·OES는 생성 도구가 자동). 푸시 전 `python tools/paper_links.py check`(CI에도 있음).
 - OES 페이지는 별도 비공개 저장소 데이터가 필요해 build에 들어가지 않는다(사용자 결정 2026-10-13, 도구는 `docs/runbook.md` §5). 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
 - 원본 리서치(`research/*_raw.md`)와 실행 로그(`research/*_log.txt`)는 공개하지 않는다 (로컬 보관).
 - 사이트 주소에는 GitHub 계정명이 들어가므로, history에는 `<계정>.github.io/etch-paper-study/`처럼 가려서 적는다.

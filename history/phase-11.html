@@ -280,6 +280,71 @@
       </section>
     </article>
 
+    <article class="entry" id="e51">
+      <div class="entry-head">
+        <span class="no">#51</span>
+        <h2>레퍼런스 논문 요약 페이지와 "요약" 링크 연결</h2>
+        <time>2026-10-13 11:27</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>이 프로젝트에서 레퍼런스로 삼은 논문들에 대해 요약본을 만든 뒤 참고하는 링크 연결 가능해?</blockquote>
+        <blockquote>논문 먼저.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>가능 여부를 먼저 답했다. 대상(DOI 기준 약 29편, 웹 자료 447개, 특허 16건)을 세어 만드는 방식(<code>kb/papers</code> 원본 → 요약 페이지 생성 → 기존 논문 링크 옆 "요약" 연결 → CI 점검)과 조건(유료 논문은 초록 기준, 재서술, 핵심 문장 독립 검증)을 제안했고, 범위는 "논문 먼저"로 정해졌다.</li>
+          <li>요약도 사실 주장이므로 각 요약의 핵심 문장을 기존 검증 절차(장부 → 독립 검증 → gate)로 확인하고, 요약마다 검증 상태와 "근거 범위"(공개 원문 / 초록 / 서지 정보만)를 붙인다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>11:29</time> 공개 페이지와 그래프 출처에서 논문 링크를 모았다. DOI 링크 27편에 더해, DOI 없이 저널·PMC·arXiv·J-STAGE·ScienceDirect 주소로 걸린 논문 14편과 기술 보고서 1편이 나왔다. NIST 스펙트럼 표는 논문이 아닌 데이터베이스라 제외했다. 주소만 있던 것은 PMC ID 변환, 제목 검색으로 DOI를 찾았다. <b>합계 43편</b>.</li>
+          <li><time>11:32</time> OpenAlex에서 초록·공개 원문 여부를, 초록이 없던 4편은 웹 검색으로 찾았다. 1편(Turban 1989)은 초록을 찾지 못해 "서지 정보만"으로 표시했다. 초록은 비공개 작업 폴더에만 두고 공개 결과물에는 옮기지 않았다.</li>
+          <li><time>11:36</time> 요약 원본 <code>kb/papers/papers.json</code>을 썼다. 논문마다 영역(5개), 종류, 근거 범위, 2~3문장 요약, 핵심 결과, "이 프로젝트에서" 쓰인 이유, 검증용 핵심 문장. 처음에 권·쪽 번호 일부를 기억으로 적었는데 Crossref와 대조해 보니 <b>틀린 것이 있었다</b>(SPIE 권 번호 2건, 쪽 1건 등). 모두 Crossref 값으로 바꿨다.</li>
+          <li><time>11:38</time> 장부 <code>ledger/papers_summary.json</code>(비공개)에 핵심 문장 43개를 올렸다. lint 오류 0. 작성 과정을 모르는 <code>claim-verifier</code> 4개에 blind 입력만 11·11·11·10개씩 넘겼다.</li>
+          <li><time>11:40</time> 그동안 도구를 만들었다.<br>
+            · <code>tools/paper_links.py</code>: 논문 주소 인식, "요약" 링크 넣기(apply), OES 페이지 반영(oes), 빠진 곳 검사(check).<br>
+            · <code>tools/papers_page.py</code>: 요약 페이지 생성. 쓰인 곳(그래프 노드·페이지)은 원본에 적지 않고 매번 계산.<br>
+            · <code>build_site.py</code>에 요약 페이지·검색 항목(논문 43개)·검증 현황 절을 추가하고, 그래프 출처 목록에 "요약" 링크를 넣었다.</li>
+          <li><time>11:44</time> 검증 결과를 기록했다. gate: <b>채택 39, 조건부 채택 4, 보류·제외 0</b>. 지적에 맞춰 요약 문장을 고쳤다.<br>
+            · Pieczulewski 2009: 시간당 200장은 실측이 아니라 모델링 값, 장비 회사 발표.<br>
+            · Durfee 2021: 지운 금속은 희생 pFET 일함수 금속, 완전 제거는 넓은 시트 기준, 학회 발표 초록.<br>
+            · Yang 2023(채널 릴리스): 소스·드레인 응력이 "주원인"이 아니라 "중요한 역할".<br>
+            · Yang 2023(BDI): 구동 전류 4.78배는 PMOS만.<br>
+            · 그 밖에 Kwon 2021의 "bowing 폭"을 원문대로 "bowing CD"로, Gunay-Demirkol 저자명, Krištof의 저널 정보를 고쳤다.</li>
+          <li><time>11:46</time> 연결: DPT·QPT 보고서 23곳, OES 페이지(정적 표 + 조합 표 출처 4종), 그래프 노드 출처 70곳에 "요약" 링크가 붙었다. OES 페이지는 원래 생성 입력(검증 메모)이 이 세션에 없어 다시 만들지 않고 같은 처리를 결과물에 적용했고, <code>oes_page.py</code>도 저장 전에 같은 처리를 하도록 고쳤다. 검증 근거 링크만 있는 검증 현황 페이지는 대상에서 뺐다.</li>
+          <li><time>11:47</time> 목차(<code>kb/pages.json</code>)에 "레퍼런스 논문 요약"을 추가하고, CI에 <code>paper_links.py check</code> 단계를 넣었다. 규칙(<code>CLAUDE.md</code>)과 <code>docs/runbook.md</code>에 "새 논문을 인용하면 요약 추가 → 검증 → build"를 적었다. <code>build_site.py --check</code> 일치, 링크 검사 28개 페이지 문제 0, 요약 연결 빠진 곳 0.</li>
+          <li><time>11:49</time> 기록 단계를 jev에게 물었다(11단계 / 새 12단계 / 9단계). jev는 11단계를 골랐다(확률 0.84, 신뢰도 0.76).</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 레퍼런스 논문 43편의 요약 페이지를 만들고, 그래프·보고서·OES 표의 논문 링크에서 요약으로, 요약에서 다시 쓰인 노드·페이지로 오갈 수 있게 했다.</p>
+        <ul>
+          <li>영역: 플라즈마 식각 원리·화학 8 · 진단·OES 7 · 멀티패터닝 17 · 선택 증착·자기조립 3 · 소자·게이트 8.</li>
+          <li>근거 범위: 초록 26 · 공개 원문 15 · 공개 초록 1 · 서지 정보만 1. 유료 논문 요약은 초록 기준이라 세부 수치는 원문 확인이 필요하다.</li>
+          <li>검증: 핵심 문장 43개 중 채택 39, 조건부 4(조건은 요약 카드에 "읽을 때 주의"로 표시).</li>
+          <li>특허 16건·회사 발표 등 논문이 아닌 출처는 이번 범위에서 뺐다.</li>
+        </ul>
+        <p><a href="../research/papers.html">레퍼런스 논문 요약 열기 →</a></p>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261013_114828_papers_page.png" alt="논문 요약 페이지">
+          <figcaption>history_img/20261013_114828_papers_page.png — 레퍼런스 논문 요약: 검색, 영역 5개, 카드마다 근거 범위·검증 상태·요약·쓰인 곳</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261013_115000_graph_summary_link.png" alt="그래프 요약 링크">
+          <figcaption>history_img/20261013_115000_graph_summary_link.png — 지식 그래프 SAQP 노드: 논문 출처 옆 "요약" 링크</figcaption>
+        </figure>
+      </section>
+    </article>
+
 
   </div>
 

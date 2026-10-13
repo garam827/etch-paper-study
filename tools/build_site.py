@@ -8,6 +8,8 @@
       → research/a20_etch_knowledge_graph.html
   kb/pages.json + tools/templates/index.html → index.html (목차·학습 경로·검색)
   kb/snupal/{page,topics}.json → research/snupal_qna_knowledge.html   (tools/snupal_page.py)
+  kb/papers/papers.json (+ kb/claims/papers_summary.json) → research/papers.html   (tools/papers_page.py)
+  kb/claims/*.json → research/claims_status.html
   OES 페이지는 별도 비공개 저장소 데이터가 필요해 여기서 만들지 않는다 → tools/oes_page.py (CLAUDE.md 참고)
 그 밖의 페이지(보고서·노트·3D·기록)는 HTML 자체가 원본이다.
 """
@@ -17,6 +19,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
+import paper_links  # noqa: E402
+import papers_page  # noqa: E402
 import snupal_page  # noqa: E402
 
 KB = ROOT / "kb"
@@ -57,6 +61,7 @@ def check_graph(types, nodes, edges, src):
 def build_graph():
     types, nodes, edges, src = load("graph/types.json"), load("graph/nodes.json"), load("graph/edges.json"), load("graph/sources.json")
     errs = check_graph(types, nodes, edges, src)
+    find = paper_links.matcher()
     if errs:
         raise SystemExit("그래프 원본 오류:\n  " + "\n  ".join(errs))
     blocks = {
@@ -68,6 +73,7 @@ def build_graph():
         "EDGE_SRC": js_obj({f'{x["from"]}>{x["to"]}': x["posts"] for x in edges if x.get("posts")}, False),
         "AREA_LABEL": js_obj(types["area_labels"], False),
         "AREA": js_obj({n["id"]: n["area"] for n in nodes}, False),
+        "PAPERS": js_obj({k: pid for k, v in src.items() if (pid := find(v["url"]))}, False),
     }
     page = (ROOT / "tools/templates/a20_etch_knowledge_graph.html").read_text(encoding="utf-8")
     for k, v in blocks.items():
@@ -108,6 +114,9 @@ def build_index():
              "u": f'research/a20_etch_knowledge_graph.html#{n["id"]}', "c": "용어 · 지식 그래프",
              "d": n["desc"][:90] + ("…" if len(n["desc"]) > 90 else ""), "p": 1,
              "k": " ".join([n["name"], n["en"] or ""]).lower()} for n in nodes]
+    idx += [{"t": f'{p["title"]} ({p["authors"]}, {p["year"]})', "u": f'research/papers.html#{p["id"]}', "c": "논문 요약",
+             "d": p["summary"][:90] + ("…" if len(p["summary"]) > 90 else ""), "p": 2,
+             "k": " ".join([p["title"], p["authors"], str(p["year"])]).lower()} for p in load("papers/papers.json")["papers"]]
     blob = json.dumps(idx, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page = (ROOT / "tools/templates/index.html").read_text(encoding="utf-8")
     for k, v in {"__TOC__": toc, "__PATH__": path, "__SECTIONS__": "".join(secs).rstrip("\n"), "__INDEX__": blob}.items():
@@ -121,7 +130,8 @@ def build_claims():
     sets = [json.loads(p.read_text(encoding="utf-8")) for p in sorted((KB / "claims").glob("*.json"))]
     claims = [c for s in sets for c in s["claims"]]
     PAGE = {"a20": ("Apple A20 (TSMC 2nm) 식각 공정 보고서", "tsmc_n2_a20_etch_report.html"),
-            "graph": ("식각 지식 그래프 · 용어집", "a20_etch_knowledge_graph.html")}
+            "graph": ("식각 지식 그래프 · 용어집", "a20_etch_knowledge_graph.html"),
+            "papers": ("레퍼런스 논문 요약", "papers.html")}
     DEC = {"adopt": ("채택", "ok"), "conditional": ("조건부 채택", "cond"), "hold": ("보류", "hold"), "reject": ("제외", "rej")}
     VER = {"supported": "지지", "partially_supported": "부분 지지", "refuted": "반박", "conflicting": "충돌", "insufficient": "확인 불가"}
     n = {k: sum(c["decision"] == k for c in claims) for k in DEC}
@@ -175,7 +185,7 @@ def build_claims():
 <div class="wrap">
   <h1>핵심 주장 검증 현황</h1>
   <p class="sub"><a href="../index.html">← 목차</a> · <a href="semi_research_system.html">리서치 검증 체계</a></p>
-  <p>초기 결과물(A20 보고서, 지식 그래프)에서 결론을 좌우하는 수치·날짜·비교 주장과, 출처를 다시 검토한 그래프 노드(HKMG 게이트 등)의 설명 주장 {len(claims)}개를, 작성 과정을 모르는 검증 에이전트가 원문과 다시 대조했다. 채택 여부는 규칙(gate)이 정한다.</p>
+  <p>초기 결과물(A20 보고서, 지식 그래프)에서 결론을 좌우하는 수치·날짜·비교 주장, 출처를 다시 검토한 그래프 노드(HKMG 게이트 등)의 설명 주장, 레퍼런스 논문 요약의 핵심 문장 {len(claims)}개를, 작성 과정을 모르는 검증 에이전트가 원문과 다시 대조했다. 채택 여부는 규칙(gate)이 정한다.</p>
   <div class="grid">
     <div class="kpi"><b>{len(claims)}</b><span>검증한 주장</span></div>
     <div class="kpi"><b>{n["adopt"]}</b><span>채택</span></div>
@@ -197,6 +207,7 @@ TARGETS = {
     "research/claims_status.html": build_claims,
     "research/a20_etch_knowledge_graph.html": build_graph,
     "research/snupal_qna_knowledge.html": snupal_page.render,
+    "research/papers.html": papers_page.render,
 }
 
 if __name__ == "__main__":

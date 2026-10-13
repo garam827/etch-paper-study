@@ -15,3 +15,5 @@ jobs:
         run: python tools/build_site.py --check
       - name: 내부 링크·앵커
         run: python tools/check_links.py
+      - name: 논문 링크마다 요약 연결
+        run: python tools/paper_links.py check

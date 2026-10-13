@@ -1,0 +1,665 @@
+{
+ "topic": "레퍼런스 논문 요약 검증",
+ "claims": [
+  {
+   "id": "P-donnelly2013",
+   "page": "papers",
+   "statement": "Donnelly·Kornblit(2013) 리뷰는 플라즈마 식각의 역사, 반응기 발전, Si·SiO₂·저유전막의 식각 메커니즘과 집적회로 공정 적용을 다룬다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Bibliography matches: Donnelly & Kornblit, JVST A, 2013.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4819316"
+   ]
+  },
+  {
+   "id": "P-kanarik2015",
+   "page": "papers",
+   "statement": "Kanarik 외(2015)는 원자층 식각을 자기 제한적 반응 단계를 순차 반복해 얇은 층을 제거하는 기술로 정의하고, Si ALE를 사례로 메커니즘을 설명한다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Kanarik, Lill, Hudson et al. (Lam Research), JVST A, 2015.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4913379"
+   ]
+  },
+  {
+   "id": "P-efremov2021",
+   "page": "papers",
+   "statement": "Efremov 외(2021)는 다성분 플루오로카본 플라즈마에서 Si 계 박막의 반응성 이온 식각 연구를 종합하고, 플럭스 비로 고분자막과 식각·중합 균형을 조절하는 방안을 제시한다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Efremov, Lee, Kwon, Materials 2021. Covers SiC, SiO2, SixNy and Si in CF4/C4F8/CHF3 + Ar/O2. The conclusions propose fluxes and flux-to-flux ratios (e.g., Γpol/ΓF) for controlling polymer thickness and the etching/polymerization balance.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.3390/ma14061432",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC7999134/"
+   ]
+  },
+  {
+   "id": "P-lim2021",
+   "page": "papers",
+   "statement": "Lim 외(2021)는 Cl₂/O₂와 HBr/O₂ 플라즈마의 Si 식각을 비교해, Cl 원자 밀도가 Br보다 항상 높고 O 원자 플럭스가 반응 확률에 영향을 준다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Lim, Efremov, Kwon, Vacuum 186 (2021). The ScienceDirect page did not load (redirect only).",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.vacuum.2020.110043",
+    "https://api.openalex.org/works/doi:10.1016/j.vacuum.2020.110043"
+   ]
+  },
+  {
+   "id": "P-turban1989",
+   "page": "papers",
+   "statement": "Turban 외(1989)는 Thin Solid Films에 SF₆ 반응성 이온 식각에 의한 텅스텐 식각 메커니즘 연구를 발표했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Title: A mechanistic study of SF6 reactive ion etching of tungsten. Turban, Coulon, Mutsukura, Thin Solid Films 1989. Verification is limited to bibliographic data.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1016/0040-6090(89)90102-8"
+   ]
+  },
+  {
+   "id": "P-chou1986",
+   "page": "papers",
+   "statement": "Chou 외(1986)는 O₂ 플라즈마에 CF₄를 소량 넣으면 폴리이미드 식각이 빨라지지만 CF₄가 많아지면 불소화로 식각이 억제된다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Microelectronic Engineering 5:375-386 (1986). Microwave plasma. The publisher abstract was not opened directly.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1016/0167-9317(86)90066-3",
+    "https://researcher.draco.res.ibm.com/publications/mechanism-of-microwave-plasma-etching-of-polyimides-in-olessinfgreater2lessinfgreater-and-cflessinfgreater4lessinfgreater-gas-mixtures"
+   ]
+  },
+  {
+   "id": "P-osipov2020",
+   "page": "papers",
+   "statement": "Osipov 외(2020)는 SF₆/O₂ ICP SiC 식각에서 기판 온도를 100에서 300 °C로 높이면 RMS 거칠기가 153 nm에서 0.7 nm로 줄었다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The temperature is the substrate holder temperature. Etch rate peaks at 1.28 µm/min near 150 °C.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1038/s41598-020-77083-1"
+   ]
+  },
+  {
+   "id": "P-park2021",
+   "page": "papers",
+   "statement": "Park 외(2021)는 O₂/Ar 플라즈마로 ACL 하드마스크를 제거할 때 OES로 종말점을 잡고, 아래 SiOC(H) 저유전막의 구조 변화를 FT-IR·XPS로 분석했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Park, Song, Kim, Hong (Myongji Univ.), Materials 14(5):1144, 2021. TMCTS-based SiOC(H).",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.3390/ma14051144",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7957736/"
+   ]
+  },
+  {
+   "id": "P-kwon2021",
+   "page": "papers",
+   "statement": "Kwon 외(2021)는 OES에서 얻은 플라즈마 정보 변수로 Si 식각 깊이와 bowing 폭을 R² 0.8 이상으로 예측하는 가상 계측을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Condition: SF6/O2/Ar CCP. CD also reached R² ≥ 0.8. Profile-area models gave only 0.78 and 0.49. The abstract says 'bowing', not specifically bowing width.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.3390/ma14113005"
+   ]
+  },
+  {
+   "id": "P-hebner2002",
+   "page": "papers",
+   "statement": "Hebner 외(2002) Sandia 보고서는 유도 결합 SF₆/Ar 플라즈마의 전자·음이온 밀도, 광방출, 화학종, 이온 에너지 분포 측정 데이터를 모았다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Hebner, Abraham, Woodworth, Sandia report SAND2002-0340 (2002). Species were measured by mass spectrometry. IEDs were measured at the rf-biased electrode.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://www.osti.gov/biblio/793326"
+   ]
+  },
+  {
+   "id": "P-kristof2016",
+   "page": "papers",
+   "statement": "Krištof 외(2016)는 13.56 MHz RF 수소 방전에서 Ar 또는 H₂를 기준으로 한 actinometry로 H 원자 밀도를 구했고, ICP 모드의 해리도가 CCP보다 약 2배 높았다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Published in Physica Scripta in 2016. The DOI given is the arXiv posting from 2019. The abstract calls the ICP dissociation degree 'slightly higher (a factor 2)'. Conditions: 1-17 Pa, 400-1000 W.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://arxiv.org/abs/1911.03319"
+   ]
+  },
+  {
+   "id": "P-nishio2022",
+   "page": "papers",
+   "statement": "Nishio 외(2022)는 VUV 흡수 분광으로 N 원자 밀도를 최대 6.2×10¹⁷ m⁻³까지 측정했고, 낮은 압력에서 actinometry 값과 일치함을 확인했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Bibliography OK: Nishio, Kajita, Tanaka, Asaoka, Tsutsumi, Hori, Ohno, Plasma Fusion Res. 17 (2022). Measured in NAGDIS-T, with gas pressure above 1.5 mTorr and discharge power above 500 W. The abstract does not give the exact low-pressure threshold for agreement with actinometry.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://www.jstage.jst.go.jp/article/pfr/17/0/17_1201004/_article"
+   ]
+  },
+  {
+   "id": "P-alrebdi2022",
+   "page": "papers",
+   "statement": "Alrebdi 외(2022)는 LIBS로 나일론 고분자의 CN violet 계와 C₂ Swan 계 분자 방출 밴드를 분석했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Title: Vibrational Emission Study of the CN and C2 in Nylon and ZnO/Nylon Polymer Using LIBS (Polymers 2022, Alrebdi et al.). The study also analyzed ZnO-doped nylon. The bands were CN violet B2Σ+–X2Σ+ and C2 Swan d3Πg–a3Πu, excited with a 532 nm Nd:YAG laser. I could not open the publisher page directly, so I confirmed the abstract from the index.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9460295/"
+   ]
+  },
+  {
+   "id": "P-kudrya2019",
+   "page": "papers",
+   "statement": "Kudrya(2019)는 BF₃/Ar 플라즈마에서 BF b³Σ⁺→a³Π 방출 밴드를 310–340 nm에서 확인했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Sole author is V.P. Kudrya (Institute of Physics and Technology, RAS), Russian Microelectronics 2019. The bands are b3Σ+(v=0–2)→a3Π transitions. I saw the abstract only through a secondary index, not the publisher page.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://journal-vniispk.ru/1063-7397/article/view/187080"
+   ]
+  },
+  {
+   "id": "P-gerard2019",
+   "page": "papers",
+   "statement": "Gérard 외(2019)는 MAVEN IUVS로 화성 상층 대기의 CO Cameron 밴드와 CO₂⁺ 자외선 이중선을 관측해 모델과 비교했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors: Gérard, Gkouvelis, Ritter, Hubert, Jain, Schneider (2019). The data cover two Martian years. The CO2+ UVD lies at 298–299 nm. The model uses MAVEN EUVM solar flux and MCD 5.3.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1029/2019JA026596"
+   ]
+  },
+  {
+   "id": "P-bencher2008",
+   "page": "papers",
+   "statement": "Bencher 외(2008)는 CVD 스페이서 SADP로 22 nm 선·간격을 웨이퍼 전면 CDU 2 nm 미만(3σ), LER 2 nm 미만으로 구현했다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors: Bencher, Chen, Dai (Applied Materials), Montgomery, Huli (SUNY Albany), SPIE Advanced Lithography 2008. Tested on 300 mm wafers, with the template patterned by 1.2NA 193 nm immersion lithography. This is an equipment vendor's own report.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.772953"
+   ]
+  },
+  {
+   "id": "P-pieczulewski2009",
+   "page": "papers",
+   "statement": "Pieczulewski·Rosslee(2009)는 듀얼 웨이퍼 흐름 트랙에서 LFLE 등 더블 패터닝 공정을 리소그래피 단계당 시간당 200장 이상 처리할 수 있음을 보였다.",
+   "risk": "low",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "State that the >200 wph per litho pass figure comes from modeling ('modeled and confirmed'), not measured production throughput. Also note it is a vendor (SOKUDO DUO track) report.",
+   "note": "Title includes '>200wph immersion ArF photolithography double patterning'. The LFLE experiment used JSR materials on an ASML scanner at IMEC, and its result was a CDU improvement.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.837221",
+    "https://www.nikonprecision.com/newsletter/fall_2009/article_06.html"
+   ]
+  },
+  {
+   "id": "P-brain2009",
+   "page": "papers",
+   "statement": "Brain 외(2009)는 Intel 32 nm 배선에 저유전 CDO 막과 자기정렬 비아 패터닝을 도입해 비아-금속 단락 문제를 다뤘다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "R. Brain et al., IITC 2009, 32 nm HVM. The abstract also describes a thick metal-9 layer and Pb-free compatibility.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/iitc.2009.5090400"
+   ]
+  },
+  {
+   "id": "P-natarajan2014",
+   "page": "papers",
+   "statement": "Natarajan 외(2014)는 Intel 14 nm 로직이 핵심 패터닝 층에 SADP를, 일부 배선 층에 에어갭을 쓰고 핀 폭 8 nm·높이 42 nm라고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The air gaps are at 'performance-critical layers'. These are Intel's own reported values.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/iedm.2014.7046976"
+   ]
+  },
+  {
+   "id": "P-auth2017",
+   "page": "papers",
+   "statement": "Auth 외(2017)는 Intel 10 nm 로직이 핵심 패터닝 층에 SAQP, 국부 배선에 코발트, 활성 게이트 위 컨택을 쓴다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Cobalt is used in 3 local interconnect levels. Fins are 7 nm wide and 46 nm high.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/iedm.2017.8268472"
+   ]
+  },
+  {
+   "id": "P-yu2014",
+   "page": "papers",
+   "statement": "Yu·Pan(2014)은 반정부호 계획법 기반으로 4중 이상(K-패터닝) 리소그래피의 레이아웃 분할 프레임워크를 제안했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Bei Yu and David Z. Pan, published at DAC 2014.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://arxiv.org/abs/1404.0321"
+   ]
+  },
+  {
+   "id": "P-ji2014",
+   "page": "papers",
+   "statement": "Ji 외(2014)는 SAOP에서 간격 공간의 CD 균일도·목표 편차가 가장 나쁘다고 분석하고, 메모리용 5마스크 양성·로직용 3마스크 음성 SAOP를 제안했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "OpenAlex gives Yu Ji as first author, so 'Ji et al.' is correct. Semantic Scholar lists the name in reverse order ('Ji Yu'). Co-authors: Xiao, Kang, Chen. Memory is FEOL and logic is BEOL.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2046094"
+   ]
+  },
+  {
+   "id": "P-kodama2015",
+   "page": "papers",
+   "statement": "Kodama 외(2015)는 SID형 SADP·SAQP와 SIM형 SADP를 위해 격자점에 색을 번갈아 배정하는 배선 방법을 제안해 복잡한 분할 없이 맨드릴 패턴을 정했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Bibliography checks out: Kodama, Ichikawa, Nakayama, Nakajima, Nojima, Kotani, Ihara, Takahashi; IEEE TCAD 34(5):753-765, 2015. The publisher abstract could only be read through a search snippet.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.crossref.org/works/10.1109/tcad.2015.2404878",
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/tcad.2015.2404878",
+    "https://ieeexplore.ieee.org/document/7045535/"
+   ]
+  },
+  {
+   "id": "P-demirkol2016",
+   "page": "papers",
+   "statement": "Demirkol 외(2016)는 피치가 다른 산란계측 패드를 병렬 해석해 N7 SAQP 핀 식각 후 피치 워크를 측정하고 세 트렌치 집단을 구분했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The first author is Gunay-Demirkol (Anil Gunay-Demirkol). Bibliography: SPIE Proc. 9778 (Metrology, Inspection, and Process Control XXX), 2016.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2220287",
+    "https://www.imec-int.com/en/articles/nova-and-imec-developed-innovative-scatterometry-approach-for-self-aligned-quadruple-patterning-saqp-process-control"
+   ]
+  },
+  {
+   "id": "P-lorusso2016",
+   "page": "papers",
+   "statement": "Lorusso 외(2016)는 최종 피치 22.5 nm SAQP에서 단계별 LER·LWR 전사를 CD-SEM과 TEM·3D AFM 기준 계측으로 비교 분석했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract describes the process as SAQP for N7/N5 targeting a 22.5 nm final pitch. It also covers CD-SEM settings (averaging, FOV, pixel size) and pattern wiggling.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2218863",
+    "https://imec-publications.be/entities/publication/8dad9635-221f-41b6-868a-d5878078a68a/full"
+   ]
+  },
+  {
+   "id": "P-preil2016",
+   "page": "papers",
+   "statement": "Preil(2016)은 sub-10 nm 시대에 오차 예산이 CD·오버레이 분리 관리에서 총 엣지 배치 오차(EPE) 예산으로 바뀌었다고 정리했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Sole author Moshe E. Preil (GlobalFoundries), SPIE 2016. The abstract says the EPE budget also covers roughness, film and etch variations, and that contact/cut mask edge placement is tightened to single-digit EPE budgets.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2222256"
+   ]
+  },
+  {
+   "id": "P-raley2016",
+   "page": "papers",
+   "statement": "Raley 외(2016)는 감광막을 첫 맨드릴로 쓰는 spacer-on-spacer SAQP로 최종 피치 30 nm를 구현하고 저온 ALD 막 조합을 비교했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Title: 'SAQP integration using spacer on spacer pitch splitting at the resist level for sub-32nm pitch applications'. Raley et al. (TEL), 2016. The low-temperature ALD films compared are TiO2, Al2O3 and SiO2. The abstract gives the final pitch as about 30 nm.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2219321"
+   ]
+  },
+  {
+   "id": "P-fang2017",
+   "page": "papers",
+   "statement": "Fang 외(2017)는 SAQP의 독립 간격 α·β·γ를 단일 타깃에서 신호 응답 계측과 CD-SEM 기준 데이터로 구분해 측정하는 방법을 제시했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Title: 'SAQP pitch walk metrology using single target metrology'. Fang, Herrera, Kagalwala, Camp, Vaid, Pandev, Zach, 2017. The abstract calls the reference data SEM; the claim's 'CD-SEM' is a minor wording difference.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2261620"
+   ]
+  },
+  {
+   "id": "P-lazzarino2017",
+   "page": "papers",
+   "statement": "Lazzarino 외(2017)는 5 nm 노드용 자기정렬 블록 집적 방식 두 가지를 비교하고 16 nm 하프피치 BEOL 구조로 개념을 증명했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Title: 'Self-aligned block technology: a step toward further scaling'. Lazzarino et al. (imec/TEL), 2017. The two approaches use (1) a spin-on metal-based material and (2) organic materials. The paper also includes a cost estimate.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2258028"
+   ]
+  },
+  {
+   "id": "P-yamada2017",
+   "page": "papers",
+   "statement": "Yamada 외(2017)는 이중 탄소 맨드릴 SAQP에서 한 탄소막에 Si를 침투시켜 선택비를 얻고 20 nm 미만 하프피치 패턴을 만들었다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Title: 'Silicon Infiltration into Functional Polymer for Nano-scale Pattern Development'. Yamada et al., 2017. The spacers are silicon oxide.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.2494/photopolymer.30.361"
+   ]
+  },
+  {
+   "id": "P-decoster2019",
+   "page": "papers",
+   "statement": "Decoster 외(2019)는 16 nm 피치 격자를 ArF 액침 SAOP, EUV SADP, EUV SAQP로 구현해 비교했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Title: 'Exploration of EUV-based SAMP options targeting pitches below 20nm'. Decoster, Lazzarino et al., 2019. The paper also covers a self-aligned LELE block approach in mixed mode.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2515173"
+   ]
+  },
+  {
+   "id": "P-hermans2024",
+   "page": "papers",
+   "statement": "Hermans 외(2024)는 0.33NA EUV로 피치 32 코어를 만들고 SADP로 피치 16 금속 배선을 만드는 방법을 시험했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Title: 'Enabling 0.33NA EUV lithography patterning towards MP16 SADP semi-damascene metallization...'. Hermans, Decoster et al. (imec), 2024. The target is the A10 node with semi-damascene metallization. The work covers litho optimization (source, stack, process window, defects) and CDU after the full SADP flow.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.3034200"
+   ]
+  },
+  {
+   "id": "P-chen2024",
+   "page": "papers",
+   "statement": "Chen 외(2024)는 영역 선택 ALD의 핵 생성·성장 원리와 선택도 향상 기법을 정리하고 종합 핵 생성 모델을 소개했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Title: 'Area selective deposition for bottom-up atomic-scale manufacturing'. Chen, Gu, Cao, Zhang; Int. J. Mach. Tools Manuf. 199:104173 (2024). The paper names the model a 'comprehensive area selective deposition nucleation model'. Selectivity-enhancement techniques listed: surface passivation, activation, deactivation, defect elimination. The abstract was confirmed only through a search snippet.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1016/j.ijmachtools.2024.104173",
+    "https://www.ivysci.com/articles/3607718__Area_Selective_Deposition_for_Bottomup_AtomicScale_Manufacturing"
+   ]
+  },
+  {
+   "id": "P-liu2025",
+   "page": "papers",
+   "statement": "Liu·Bent(2025)는 영역 선택 ALD를 중심으로 ASD 방법과 선택도 요인을 정리하고 선택 CVD·스퍼터·MBE도 다뤘다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Direct fetch of the RSC page returned 403, so I read the abstract through a search snippet.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.crossref.org/works/10.1039/d4mh01472c",
+    "https://pubs.rsc.org/en/content/articlelanding/2025/mh/d4mh01472c"
+   ]
+  },
+  {
+   "id": "P-lee2025",
+   "page": "papers",
+   "statement": "Lee 외(2025)는 EUV 패턴을 블록 공중합체 DSA로 보정하는 EUV+DSA 전략의 재료·공정·계측·패턴 전사 진전을 정리했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The Springer page needs login. The authors are K. Lee, K.H. Kim, E. Vargo, G.S.W. Craig, R. Ruiz and P.F. Nealey.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.crossref.org/works/10.1557/s43579-025-00841-7"
+   ]
+  },
+  {
+   "id": "P-mistry2007",
+   "page": "papers",
+   "statement": "Mistry 외(2007)는 Intel 45 nm 로직이 HKMG를 대량 생산 공정에 처음 도입했고 EOT 1.0 nm high-k와 이중 일함수 금속 게이트를 쓴다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The original wording is 'dual band edge workfunction metal gates'. IEEE Xplore did not render.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.crossref.org/works/10.1109/iedm.2007.4418914",
+    "https://synapsesocial.com/papers/W2001894083"
+   ]
+  },
+  {
+   "id": "P-auth2012",
+   "page": "papers",
+   "statement": "Auth 외(2012)는 Intel 22 nm 공정이 완전 공핍 트라이게이트 트랜지스터를 처음 도입하고 자기정렬 컨택을 쓴다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The DOI page (IEEE) did not render, so I used secondary copies. The title includes 'Self-Aligned Contacts and High Density MIM Capacitors'.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://docs.ampnuts.ru/eevblog.docs/_Metrology/auth2012.pdf",
+    "https://archive.vlsisymposium.org/12web/technology/tec_pdf/session15.htm"
+   ]
+  },
+  {
+   "id": "P-robertson2015",
+   "page": "papers",
+   "statement": "Robertson·Wallace(2015) 리뷰는 HfO₂ 등 high-k 산화물과 금속 게이트의 재료 선택, 계면, 결함, 일함수 조절, gate-first·gate-last 공정을 다룬다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The Elsevier DOI redirect did not resolve. The bibliographic details are Mater. Sci. Eng. R 88, 1-41 (2015).",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://www.repository.cam.ac.uk/handle/1810/246441"
+   ]
+  },
+  {
+   "id": "P-hussain2006",
+   "page": "papers",
+   "statement": "Hussain 외(2006)는 이중 일함수 금속 게이트 집적에서 금속 습식 식각의 선택비·열 안정성·막 상호작용 문제를 다뤘다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.crossref.org/works/10.1149/1.2178627",
+    "https://sindex.sdl.edu.sa/esploro/outputs/journalArticle/Metal-wet-etch-issues-and-effects/9945133908331"
+   ]
+  },
+  {
+   "id": "P-loubet2017",
+   "page": "papers",
+   "statement": "Loubet 외(2017)는 적층 나노시트 GAA가 FinFET 후속 후보임을 보이고, 일함수 금속 교체와 다중 문턱전압을 시연했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The original specifies the 5 nm node and beyond (Lg=12 nm, 44/48 nm CPP). Adding this would be more precise.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://research.ibm.com/publications/stacked-nanosheet-gate-all-around-transistor-to-enable-scaling-beyond-finfet"
+   ]
+  },
+  {
+   "id": "P-durfee2021",
+   "page": "papers",
+   "statement": "Durfee 외(2021)는 적층 나노시트에서 시트 간격 9에서 5 nm까지 아래 HfO₂ 손상 없이 pFET 일함수 금속을 완전히 제거하는 고선택비 건식 식각을 보고했다.",
+   "risk": "low",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Say that the metal is a sacrificial pFET WFM. Say that complete removal was reported for wide nanosheets (W_NS=100 nm), with Tsus from 9 to 5 nm. Say that the source is a conference presentation abstract (AVS 67, 2021), not a peer-reviewed paper.",
+   "note": "No DOI.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://www.avssymposium.org/AVS2021/Sessions/Schedule/70511"
+   ]
+  },
+  {
+   "id": "P-yang2023a",
+   "page": "papers",
+   "statement": "Yang 외(2023, Micromachines 14, 611)는 GAA 채널 릴리스 중 나노시트 변형의 주원인이 소스·드레인이 주는 응력임을 실험과 시뮬레이션으로 보였다.",
+   "risk": "low",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Replace 'main cause' with the original's wording: S/D stress 'plays an important role'. Add that the effect depends on dimensions such as nanosheet length and S/D size.",
+   "note": "The bibliographic details match (Micromachines 14(3):611, 2023, J. Yang et al.).",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://api.crossref.org/works/10.3390/mi14030611",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10058282/"
+   ]
+  },
+  {
+   "id": "P-yang2023b",
+   "page": "papers",
+   "statement": "Yang 외(2023, Micromachines 14, 1107)는 TCAD 시뮬레이션에서 Full BDI-last 방식의 구동 전류가 Full BDI-first보다 4.78배 크다고 보고했다.",
+   "risk": "low",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Add that the 4.78x applies to PMOS only. Add that the gain comes from higher compressive stress in the SiGe S/D, enabled by the bottom Si layer epitaxy start surface in Full BDI_Last.",
+   "note": "The bibliographic details match (Micromachines 14(6):1107, 2023). The MDPI page returned 403.",
+   "reviewed": "2026-10-13",
+   "checked": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10302010/"
+   ]
+  }
+ ]
+}
