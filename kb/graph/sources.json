@@ -1938,5 +1938,33 @@
  "tsmcdpt": {
   "title": "TSMC (2012) — DPT 설계 reference flow 발표",
   "url": "https://pr.tsmc.com/schinese/news/1745"
+ },
+ "hkmg_mistry07": {
+  "title": "Mistry 외, A 45nm Logic Technology with High-k+Metal Gate Transistors… (IEDM 2007, Intel)",
+  "url": "https://doi.org/10.1109/IEDM.2007.4418914"
+ },
+ "hkmg_robertson15": {
+  "title": "Robertson·Wallace, High-K materials and metal gates for CMOS applications (Mater. Sci. Eng. R 2015, 리뷰)",
+  "url": "https://doi.org/10.1016/j.mser.2014.11.001"
+ },
+ "hkmg_yang23": {
+  "title": "Yang 외, Impact of Stress and Dimension on Nanosheet Deformation during Channel Release of GAA Device (Micromachines 2023, 공개 원문)",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10058282/"
+ },
+ "hkmg_loubet17": {
+  "title": "Loubet 외, Stacked nanosheet gate-all-around transistor to enable scaling beyond FinFET (VLSI 2017, IBM)",
+  "url": "https://doi.org/10.23919/VLSIT.2017.7998183"
+ },
+ "hkmg_durfee21": {
+  "title": "Durfee 외, Selective Work Function Metal Etch Enabling Multi-Vt Patterning for Stacked Nanosheet Devices (AVS 2021 발표 초록, IBM)",
+  "url": "https://www.avssymposium.org/AVS2021/Sessions/Schedule/70511"
+ },
+ "hkmg_hussain06": {
+  "title": "Hussain 외, Metal Wet Etch Issues and Effects in Dual Metal Gate Stack Integration (J. Electrochem. Soc. 2006)",
+  "url": "https://doi.org/10.1149/1.2178627"
+ },
+ "hkmg_us9070711": {
+  "title": "GlobalFoundries 특허 US9070711B2 (게이트 리세스·캡과 자기정렬 컨택 개구 식각)",
+  "url": "https://patents.google.com/patent/US9070711B2/en"
  }
 }

@@ -200,6 +200,85 @@
       </section>
     </article>
 
+    <article class="entry" id="e50">
+      <div class="entry-head">
+        <span class="no">#50</span>
+        <h2>지식 그래프 HKMG 노드의 논문·출처 적절성 검토</h2>
+        <time>2026-10-13 10:42</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>식각 지식 그래프 중 HKMG의 논문 및 출처의 적절성 검토</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>HKMG 게이트 노드에 달린 출처가 각 설명 문장을 실제로 뒷받침하는지 확인한다. 같은 출처를 쓰는 주변 노드(high-k 절연막, 일함수 금속, ALD, 게이트 금속 선택 제거·리세스)도 함께 본다.</li>
+          <li>맞지 않으면 1차 근거(논문·리뷰)를 찾고, 문장을 근거 범위에 맞게 좁힌다. 그다음 기존 검증 절차(장부 → 독립 검증 → gate)를 거쳐 그래프 원본(<code>kb/graph/</code>)에 반영한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>10:43</time> 현재 상태를 확인했다. HKMG·high-k·일함수 금속·ALD 노드의 출처는 장비 회사의 ALD 제품 소개 페이지(s14) <b>하나뿐</b>이었다. 게이트 금속 선택 제거·리세스 노드도 같은 페이지와 원자층 식각 일반 해설(s15)만 출처로 갖고 있었다.</li>
+          <li><time>10:45</time> s14 본문을 확인했다. "FinFET·GAA용 ALD 장비가 HKMG 일함수 금속·다이폴층을 증착한다"는 내용만 있었다. 다음 내용은 이 페이지가 뒷받침하지 않는다.<br>
+            · 대체 게이트(RMG) 방식, 충진 금속<br>
+            · high-k로 Hf 계열을 쓴다는 점<br>
+            · 일함수 금속 선택 제거·리세스 식각과 high-k 보호<br>
+            s15도 원자층 식각 일반론이었고 게이트 금속 리세스는 다루지 않았다. <b>판단: 출처가 부적절함.</b> 제품 페이지는 "ALD 장비가 쓰인다"는 보조 근거로만 남기기로 했다.</li>
+          <li><time>10:46</time> 후보 출처를 따로 모았다. 두 경로는 서로의 결과를 보지 않았다.<br>
+            · <code>paper-scout</code> 에이전트: 중립 질문만 주었고 31개 후보를 받았다.<br>
+            · astra(high, 백그라운드): 문장 6개(A–F)별로 1차 근거와 지지 범위를 물었다.<br>
+            · <code>lit_search.py</code>: 메타데이터를 검색했다.<br>
+            두 경로가 같은 핵심 문헌을 꼽았다: Intel 45nm IEDM 2007(Mistry 외), Robertson·Wallace 리뷰(2015), IBM 적층 나노시트 VLSI 2017(Loubet 외). astra 지적 반영:<br>
+            · Intel 45nm은 "high-k 먼저, 금속 게이트 나중" 방식이다.<br>
+            · HKMG가 곧 RMG인 것은 아니다.<br>
+            · 일함수 금속 제거는 multi-Vt를 만드는 여러 방법 중 하나다.</li>
+          <li><time>10:50</time> 장부 <code>ledger/hkmg_review.json</code>(비공개)에 주장 10개(H01–H10)를 범위를 좁혀 적었다. lint 오류 0. <code>check_refs</code>로 DOI 9개가 실재함을 확인했다(제품 페이지는 403).</li>
+          <li><time>10:51</time> 작성 과정을 모르는 <code>claim-verifier</code> 2개에 blind 입력만 5개씩 넘겼다. 검증자는 doi 원문(IEEE·Elsevier)을 대부분 열지 못해 초록·공개 사본·2차 자료로 판정했다. 그 외 지적:<br>
+            · H01: 인용 근거가 충진 금속을 명시하지 않는다.<br>
+            · H06: 습식 식각이 어려운 원인으로 원문이 든 것은 "시트 간격이 좁아서"가 아니라 "넓은 시트에서 시트 사이에 끼인 금속의 높은 종횡비"다.<br>
+            · H07: IEDM 2017 원문은 열지 못했고, 같은 회사 특허로만 확인됐다.<br>
+            · H09: 인용한 두 근거로는 확인되지 않아 특허로 확인했고, 근거 교체를 권고했다.</li>
+          <li><time>10:52</time> gate 결과: <b>채택 5(H02·H03·H04·H05·H08), 조건부 채택 5(H01·H06·H07·H09·H10), 보류·제외 0</b>.</li>
+          <li><time>10:53</time> 그래프 원본을 고쳤다(<code>kb/graph/nodes.json</code>·<code>sources.json</code>).<br>
+            · HKMG: 충진 금속을 "보통"으로 한정했다. RMG 형성과 Intel 45nm(2007) 양산 첫 보고의 방식을 적었다. 식각 관점에서는 "시트 사이 리세스"라는 잘못 섞인 표현을 "시트 사이 = 일함수 금속 선택 제거, 게이트 위쪽 = 리세스 후 절연 캡"으로 나눴다. 출처는 논문 3개로 바꿨다.<br>
+            · high-k: Hf 계열 예시와 "금속 대 high-k 식각 선택비" 요구를 적고 논문 출처를 붙였다.<br>
+            · 일함수 금속: 선택 제거 후 다른 금속으로 교체, 그리고 습식 제거의 어려움을 적었다. 원인은 검증자 지적대로 시트 간격으로 단정하지 않았다.<br>
+            · ALD: 시트 둘레·사이에 HfO2·TiN을 입힌 사례 논문을 추가했다.<br>
+            · 게이트 금속 선택 제거·리세스: 절연 캡(SiN 등)을 적고 검증자가 확인한 특허를 출처로 바꿨다. 자기정렬 컨택 노드에도 같은 특허를 추가했다.<br>
+            · H07(시트 간격이 문턱전압에 영향)은 같은 회사 근거뿐이라 그래프에 넣지 않았다.</li>
+          <li><time>10:54</time> <code>claims_export.py</code>로 공개용 상태(<code>kb/claims/hkmg_review.json</code>)를 만들었다. 검증 현황 페이지(주장 26 → 36)와 그래프 안내 문구를 고친 뒤 build했다. <code>build_site.py --check</code>는 일치, 링크 검사는 27개 페이지 문제 0.</li>
+          <li><time>10:56</time> 기록 단계를 jev에게 물었다(9단계 / 11단계 / 새 12단계). jev는 11단계를 골랐다(확률 0.56, 새 단계 0.42, 신뢰도 0.34). 그대로 따랐다.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> HKMG 노드의 기존 출처는 설명의 대부분을 뒷받침하지 못했다(장비 제품 페이지 1개). 이 노드와 주변 4개 노드의 출처를 논문·리뷰 중심으로 바꾸고 문장을 근거 범위로 좁혔다.</p>
+        <ul>
+          <li>새 출처 7개:<br>
+            · Intel IEDM 2007, Robertson·Wallace 2015 리뷰, IBM VLSI 2017<br>
+            · AVS 2021 초록, J. Electrochem. Soc. 2006, Micromachines 2023<br>
+            · SAC 캡 특허 1건</li>
+          <li>검증: 주장 10개 중 채택 5, 조건부 5. 조건부 주장은 조건을 문장에 넣었고, 근거가 약한 1개는 그래프에 넣지 않았다.</li>
+          <li>남은 한계: IEEE·Elsevier 원문은 유료여서 일부 판정은 초록·공개 사본 기준이다. 일함수 금속 제거 관련 나노시트 근거는 IBM 계열에 몰려 있다.</li>
+        </ul>
+        <p><a href="../research/a20_etch_knowledge_graph.html#hkmg">HKMG 노드 열기 →</a> · <a href="../research/claims_status.html#H01">검증 현황(H01–H10) →</a></p>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261013_105510_hkmg_node_sources.png" alt="HKMG 노드">
+          <figcaption>history_img/20261013_105510_hkmg_node_sources.png — 고친 HKMG 노드: 설명·식각 관점과 논문 출처 3개</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261013_105830_hkmg_claims.png" alt="HKMG 검증 현황">
+          <figcaption>history_img/20261013_105830_hkmg_claims.png — 검증 현황의 H01–H10: 채택 5·조건부 5, 조건과 확인한 출처</figcaption>
+        </figure>
+      </section>
+    </article>
+
 
   </div>
 
