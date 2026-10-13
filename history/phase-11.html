@@ -321,6 +321,7 @@
           <li><time>11:46</time> 연결: DPT·QPT 보고서 23곳, OES 페이지(정적 표 + 조합 표 출처 4종), 그래프 노드 출처 70곳에 "요약" 링크가 붙었다. OES 페이지는 원래 생성 입력(검증 메모)이 이 세션에 없어 다시 만들지 않고 같은 처리를 결과물에 적용했고, <code>oes_page.py</code>도 저장 전에 같은 처리를 하도록 고쳤다. 검증 근거 링크만 있는 검증 현황 페이지는 대상에서 뺐다.</li>
           <li><time>11:47</time> 목차(<code>kb/pages.json</code>)에 "레퍼런스 논문 요약"을 추가하고, CI에 <code>paper_links.py check</code> 단계를 넣었다. 규칙(<code>CLAUDE.md</code>)과 <code>docs/runbook.md</code>에 "새 논문을 인용하면 요약 추가 → 검증 → build"를 적었다. <code>build_site.py --check</code> 일치, 링크 검사 28개 페이지 문제 0, 요약 연결 빠진 곳 0.</li>
           <li><time>11:49</time> 기록 단계를 jev에게 물었다(11단계 / 새 12단계 / 9단계). jev는 11단계를 골랐다(확률 0.84, 신뢰도 0.76).</li>
+          <li><time>11:51</time> 커밋·푸시 → GitHub Actions <code>site-check</code> 통과(새 단계 "논문 링크마다 요약 연결" 포함), Pages 빌드 완료. <code>&lt;계정&gt;.github.io/etch-paper-study/</code>의 요약 페이지(카드 43개 확인)·그래프·DPT·QPT 보고서·OES·목차·11단계 기록 모두 200 확인.</li>
         </ol>
       </section>
 
