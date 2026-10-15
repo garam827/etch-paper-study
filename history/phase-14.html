@@ -154,6 +154,7 @@
             · 실행마다 그래프 내용이 달라졌다. 화학종 이름을 길이로만 정렬해서 같은 길이일 때 순서가 무작위였다. 정렬 기준을 고정하자 세 번 연속 결과가 같았다.</li>
           <li><time>21:40</time> 브라우저로 네 기능을 확인했다(SiN+CH3F 레시피, 337.1 nm 피크, "SiO2→Si 종말점·CO 483 nm" 검색, CF2 노드). 레시피 결과에서 반올림 뒤 중복으로 보이던 파장을 하나로 합쳤다.</li>
           <li><time>21:42</time> 결과: <code>build_site.py --check</code> 일치, 링크 32개 페이지 문제 0, 요약 연결 빠진 곳 0, 그래프 검사 오류 0·시험 21/21. 규칙(<code>CLAUDE.md</code>)과 절차서(§5)를 갱신했다.</li>
+          <li><time>21:52</time> 커밋하려다 <code>.gitignore</code>의 <code>source/</code> 규칙(최상위 원문 PDF 폴더용)이 <code>kb/oes/source/</code>까지 막는 것을 발견했다. 규칙은 그대로 두고 폴더 이름을 <code>kb/oes/app/</code>으로 바꿨다. 커밋·푸시 → <code>site-check</code>(OES 그래프 검사 포함)·Pages 성공. 그래프 페이지·graph.json·cards.jsonl·OES 페이지·기록·스크린샷 모두 200 확인.</li>
         </ol>
       </section>
       <section class="blk res">
