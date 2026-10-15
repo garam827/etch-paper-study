@@ -263,6 +263,148 @@
     "https://api.openalex.org/works/doi:10.1016/j.mseb.2020.114696",
     "https://hal.univ-grenoble-alpes.fr/hal-01891237"
    ]
+  },
+  {
+   "id": "OE18",
+   "page": "oes",
+   "statement": "Choe 외(1998)는 Cl2 유도결합 플라즈마로 Ge를 식각했고(540 W, −40 V에서 3.5 µm/min), 정상상태 발광 스펙트럼에서 Ge 원자 방출과 GeCl 밴드(약 339·350 nm)를 관측했다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The PDF text extraction shows '240 V'. That is the AIP minus-sign glyph lost in extraction. The OpenAlex abstract token is '−40', so −40 V is correct. The Fig. 3 spectrum was taken at 18 mTorr, 500 W, bright mode, 0 V dc bias. Those are not the 540 W etch-rate conditions. The sentence does not tie the spectrum to 540 W, so this is acceptable. Bandheads are at about 339.27 nm (A, second subsystem) and 350.15 nm (first subsystem). Weak B→X GeCl bands appear at 289–310 nm.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://www.columbia.edu/~iph1/Download/89.%20ChoeJVSTA16-3266-1998.pdf",
+    "https://api.openalex.org/works/doi:10.1116/1.581532"
+   ]
+  },
+  {
+   "id": "OE19",
+   "page": "oes",
+   "statement": "Kim 외(2013)는 O2/COS 플라즈마 OES에서 CS 관련 방출(약 257 nm)과 O·CO 방출을 구분했고, COS를 더할수록 O·CO 신호는 줄고 CS 관련 신호는 늘었다고 보고했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "State that this is a two-condition comparison of O2 plasma with and without COS (10 sccm), in the Fig. 1 condition. Remove the dose-dependence wording 'COS를 더할수록' (the more COS is added). Optionally add the broadband S-related emission at 290–540 nm.",
+   "note": "Fig. 3 shows only the with/without-COS difference. With COS, the 257 nm carbon-sulfide signal rises and the O (777, 844 nm) and CO (483, 519, 561, 662 nm) peaks fall.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://swb.skku.edu/_res/pnpl/etc/2013-05.pdf"
+   ]
+  },
+  {
+   "id": "OE20",
+   "page": "oes",
+   "statement": "Shin 외(2013)는 염소 계열 플라즈마에서 TaN·TiN 블랭킷 막의 식각 시간을 N2 (C→B) 337 nm 밴드 헤드 발광으로 판정했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The etch time was taken as the FWHM of the N2 (C3Πu→B3Πg) 337 nm signal. The signal decays to background at end-point, and the rate comes from the film thickness measured by TEM.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://www.chee.uh.edu/sites/chbe/files/faculty/node/selective-etch-tin_tan_2013.pdf",
+    "https://api.openalex.org/works/doi:10.1116/1.4801883",
+    "https://inis.iaea.org/records/bharm-ec431"
+   ]
+  },
+  {
+   "id": "OE21",
+   "page": "oes",
+   "statement": "Kaler 외(2016)는 CH3F/O2 플라즈마 빔의 질량분석에서 H2·HF·CO·CO2를 검출했고, 플라즈마를 켠 조건에서 CH3F는 검출되지 않을 만큼 해리됐다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "With the plasma on, the source reports strong H2, HF, CO and CO2 peaks (H2 about 50 times background) and no CH3F. Beam source conditions: 300 W, 10 mTorr, 10 sccm. A precise wording would be 'CH3F not detected' rather than 'fully dissociated'.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://www.chee.uh.edu/sites/chbe/files/faculty/node/kaler_plasma_beams_jvst_2016.pdf"
+   ]
+  },
+  {
+   "id": "OE22",
+   "page": "oes",
+   "statement": "Hsu 외(2006)는 Ru를 Ar/O2/Cl2 플라즈마로 식각할 때 하류에서 RuO4를 적외선 흡수(FTIR)로 검출했고, 질량분석에서 RuOxCly 이온을 관측했다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Full text was not opened. The abstract says that, with Cl2 added, RuO4 was detected downstream by FTIR in the pump foreline and RuOxCly ions were detected in the plasma. In Ar/O2 without Cl2, no RuO4 was seen. The mixture was Ar/O2/Cl2.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.2121751",
+    "https://collaborate.princeton.edu/en/publications/etching-of-ruthenium-coatings-in-o-sub2sub-and-cl-sub2sub-contain/",
+    "https://www2.avs.org/symposium2004/Papers/Paper_PS2-TuM4.html"
+   ]
+  },
+  {
+   "id": "OE23",
+   "page": "oes",
+   "statement": "Picard·Turban(1985)은 SF6·SF6/O2 플라즈마로 Mo를 식각하며 질량분석으로 MoFn⁺와 MoOFm⁺ 이온을 관측했다고 보고했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Say the conditions: r.f. SF6-O2 plasma at 0.2 Torr. The ion species are from the abstract only. Make clear the abstract measured MoF_n+ by mass spectroscopy alongside WF_n+ and WOF_m+.",
+   "note": "In the retrieved abstract text, the second Mo ion appears as 'MoF+m', not 'MoOF+m'. It is listed in parallel with WOF+m, so MoOF+m is likely, but this extraction cannot confirm it. The full text is paywalled.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://link.springer.com/article/10.1007/BF00566008",
+    "https://api.openalex.org/works/doi:10.1007/BF00566008"
+   ]
+  },
+  {
+   "id": "OE24",
+   "page": "oes",
+   "statement": "Kofuji 외(2017)는 이온 조사 없는 고압 NF3 플라즈마의 반응 율속 식각으로 깊은 트렌치 안 W를 균일하게 측면 식각했고, 웨이퍼 온도가 높을수록 식각 속도가 늘었다고 보고했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Replace 'etch rate increased with temperature' with what the abstract says: higher wafer temperature lowered the threshold pressure and widened the reaction-limited etching region. In that region the etch rate was nearly constant and independent of NF3 pressure. The context was 3D NAND deep trenches.",
+   "note": "Full text is paywalled; the full text might show a rate-temperature dependence that was not checked.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.7567/JJAP.56.06HB05"
+   ]
+  },
+  {
+   "id": "OE25",
+   "page": "oes",
+   "statement": "Stueber 외(2007)는 원격 H2/N2 방전으로 193 nm 감광막을 제거했고, 제거 속도는 온도에 크게 의존하며 N2 비율이 높을수록 초저유전막 손상이 커졌다고 보고했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Describe the process as remote (downstream ICP) H2- and D2-based discharges with additives such as N2, at substrate temperature 200-300 C. Say that damage rose with temperature and additive injection, and that high N2 fractions caused the most damage in general, with the exact amount depending on the ULK material.",
+   "note": "In the OpenAlex abstract, the strip-rate sentence reads as 'strongly depend on processing time', which looks garbled. The publisher page returned 403. A temperature dependence of ashing rate (activation energy about 0.4 eV) appears only in the related AVS 2006 abstract.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.2769360",
+    "https://www2.avs.org/symposium2006/Papers/Paper_PS1-FrM2.html"
+   ]
+  },
+  {
+   "id": "OE26",
+   "page": "oes",
+   "statement": "Oh 외(2014)는 다운플로 NF3/NH3 건식 세정에서 SiO2가 (NH4)2SiF6 부산물을 거쳐 제거되며, 이 부산물은 승화 단계로 없앤다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract says intermediate species form (NH4)2SiF6 on SiO2, and that a by-product sublimation step follows the reaction.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/06138.0001ecst"
+   ]
   }
  ]
 }

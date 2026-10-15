@@ -1373,6 +1373,98 @@
     "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.mseb.2020.114696",
     "https://api.openalex.org/works/doi:10.1016/j.mseb.2020.114696"
    ]
+  },
+  {
+   "id": "P-choe1998",
+   "page": "papers",
+   "statement": "Choe 외(1998)는 Cl2 ICP로 Ge를 식각하며 LD-LIF로 GeCl을 검출해 표면 염소 덮임을 쟀고, 이온 에너지가 16에서 116 eV로 늘 때 이온당 식각 수율이 1에서 3 원자로 늘었다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Measured chlorine coverage was about 2e15 Cl/cm2. It was roughly independent of rf power and ion energy. The 16–116 eV range corresponds to a 0 to −100 V bias.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.581532",
+    "https://www.columbia.edu/~iph1/Download/89.%20ChoeJVSTA16-3266-1998.pdf"
+   ]
+  },
+  {
+   "id": "P-shin2013",
+   "page": "papers",
+   "statement": "Shin 외(2013)는 염소 계열 플라즈마에서 TiN·TaN 식각 시간을 N2 337 nm 밴드 헤드 발광으로 판정하고, 소량 O2 첨가로 TiN:TaN 선택비가 크게 바뀐다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "In Cl2/He, adding less than 1% O2 (window about 0.3–0.7%) gives high TiN:TaN selectivity, against less than 2:1 without O2. In HCl/He, adding less than 0.3% O2 reverses the selectivity to up to 10:1 for TaN over TiN. 'Changes greatly' is accurate, though it hides the fact that the direction depends on the chemistry.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4801883",
+    "https://www.chee.uh.edu/sites/chbe/files/faculty/node/selective-etch-tin_tan_2013.pdf"
+   ]
+  },
+  {
+   "id": "P-picard1985",
+   "page": "papers",
+   "statement": "Picard·Turban(1985)은 SF6·SF6/O2 플라즈마로 W·Mo·Ta·Si를 식각하며 반응 생성물을 분석했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The study used an r.f. plasma at 0.2 Torr.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://link.springer.com/article/10.1007/BF00566008"
+   ]
+  },
+  {
+   "id": "P-kofuji2017",
+   "page": "papers",
+   "statement": "Kofuji 외(2017)는 이온 조사 없는 고압 NF3 플라즈마의 반응 율속 식각으로 깊은 트렌치 안 W를 균일하게 측면 식각했고, 웨이퍼 온도가 높을수록 식각 속도가 늘었다고 보고했다.",
+   "risk": "low",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Say that higher wafer temperature lowered the threshold pressure and widened the reaction-limited region, rather than that it raised the etch rate. The etch rate in the reaction-limited region was nearly constant with NF3 pressure.",
+   "note": "The statement is the same as OE24.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.7567/JJAP.56.06HB05"
+   ]
+  },
+  {
+   "id": "P-stueber2007",
+   "page": "papers",
+   "statement": "Stueber 외(2007)는 원격 H2·D2 기반 방전으로 193 nm 감광막을 제거하며 ULK 손상을 조사했고, H2/N2에서 N2 비율이 높을수록 손상이 커졌다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Per the abstract, N2-related damage is 'in general' and depends on the material and the mixing ratio.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.2769360"
+   ]
+  },
+  {
+   "id": "P-oh2014",
+   "page": "papers",
+   "statement": "Oh 외(2014)는 다운플로 NF3/NH3 건식 세정에서 (NH4)2SiF6 부산물 승화 전 SiO2 표면 변화가 NF3:NH3 비와 플라즈마 전력에 따라 달라진다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/06138.0001ecst"
+   ]
   }
  ]
 }

@@ -64,7 +64,7 @@ DECL = {"adopt": ("채택", "adopt"), "conditional": ("조건부", "cond"), "hol
 ex_dec = Counter()
 for x in (EX["items"] if EX else []):
     f = EX["films"][x["film"]]
-    c = EXS.get("OE" + x["id"][3:], {})
+    c = EXS.get(x.get("claim", "OE" + x["id"][3:]), {})
     d = c.get("decision")
     if d in ("hold", "reject"):
         continue  # 검증을 통과하지 못한 조합은 싣지 않는다

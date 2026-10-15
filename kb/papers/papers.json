@@ -1877,6 +1877,128 @@
    "points": [],
    "use": "OES 식각 화학 조합 보완(#54)의 출처: 막질×기체 조합 근거.",
    "claim": "Raynal 외(2020)는 SiGe 에피 재성장 전 표면 세정으로 습식 세정과 Siconi(NF3/NH3 원격 플라즈마) 세정 순서를 비교했다."
+  },
+  {
+   "id": "choe1998",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Laser-induced thermal desorption analysis of the surface during Ge etching in a Cl2 inductively coupled plasma",
+   "authors": "J. Y. Choe, I. P. Herman, V. M. Donnelly",
+   "year": 1998,
+   "venue": "J. Vac. Sci. Technol. A 16(6), 3266–3273",
+   "doi": "10.1116/1.581532",
+   "match": [
+    "10.1116/1.581532"
+   ],
+   "summary": "Cl2 유도결합 플라즈마로 Ge를 식각하면서, 레이저 탈착-레이저 유도 형광(LD-LIF)으로 GeCl을 검출해 표면 염소 덮임을 실시간으로 잰 연구. 540 W, −40 V 바이어스에서 식각 속도는 3.5 µm/min이었다.",
+   "points": [
+    "표면 염소 덮임은 rf 전력·이온 에너지에 거의 무관했고, 이온 에너지 16→116 eV에서 이온당 식각 수율은 1→3 원자로 늘었다.",
+    "식각 속도와 흡착층 염소량은 웨이퍼로 오는 이온 전류가 정하는 것으로 보였다."
+   ],
+   "use": "OES 식각 화학 조합 보완(#54)의 출처: 막질×기체 조합 근거.",
+   "claim": "Choe 외(1998)는 Cl2 ICP로 Ge를 식각하며 LD-LIF로 GeCl을 검출해 표면 염소 덮임을 쟀고, 이온 에너지가 16에서 116 eV로 늘 때 이온당 식각 수율이 1에서 3 원자로 늘었다고 보고했다."
+  },
+  {
+   "id": "shin2013",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Selective etching of TiN over TaN and vice versa in chlorine-containing plasmas",
+   "authors": "H. Shin 외 (Donnelly 그룹)",
+   "year": 2013,
+   "venue": "J. Vac. Sci. Technol. A 31(3), 031305",
+   "doi": "10.1116/1.4801883",
+   "match": [
+    "10.1116/1.4801883"
+   ],
+   "summary": "염소 계열 플라즈마의 등방성 조건에서 PVD TiN과 TaN 사이 식각 선택비를 조사한 연구. 블랭킷 막의 식각 시간은 N2 (C→B) 337 nm 밴드 헤드 발광으로 실시간 판정했다.",
+   "points": [
+    "Cl2/He·HCl/He에서는 선택비가 낮았다(2:1 미만).",
+    "Cl2/He에 O2를 1% 미만 더하면 TiN이 TaN보다 매우 선택적으로 식각됐고, HCl/He에 O2를 조금 더하면 반대로 TaN:TiN 10:1이었다."
+   ],
+   "use": "OES 식각 화학 조합 보완(#54)의 출처: 막질×기체 조합 근거.",
+   "claim": "Shin 외(2013)는 염소 계열 플라즈마에서 TiN·TaN 식각 시간을 N2 337 nm 밴드 헤드 발광으로 판정하고, 소량 O2 첨가로 TiN:TaN 선택비가 크게 바뀐다고 보고했다."
+  },
+  {
+   "id": "picard1985",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "서지 정보만",
+   "title": "Plasma etching of refractory metals (W, Mo, Ta) and silicon in SF6 and SF6-O2. An analysis of the reaction products",
+   "authors": "A. Picard, G. Turban",
+   "year": 1985,
+   "venue": "Plasma Chemistry and Plasma Processing 5(4), 333–351",
+   "doi": "10.1007/bf00566008",
+   "match": [
+    "10.1007/bf00566008"
+   ],
+   "summary": "SF6·SF6/O2 플라즈마로 고융점 금속(W, Mo, Ta)과 Si를 식각하며 반응 생성물을 분석한 연구. 초록을 확인하지 못해 서지 정보로 정리했다.",
+   "points": [],
+   "use": "OES 식각 화학 조합 보완(#54)의 출처: 막질×기체 조합 근거.",
+   "claim": "Picard·Turban(1985)은 SF6·SF6/O2 플라즈마로 W·Mo·Ta·Si를 식각하며 반응 생성물을 분석했다."
+  },
+  {
+   "id": "kofuji2017",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Uniform lateral etching of tungsten in deep trenches utilizing reaction-limited NF3 plasma process",
+   "authors": "N. Kofuji, M. Mori, T. Nishida",
+   "year": 2017,
+   "venue": "Jpn. J. Appl. Phys. 56(6S2), 06HB05",
+   "doi": "10.7567/jjap.56.06hb05",
+   "match": [
+    "10.7567/jjap.56.06hb05"
+   ],
+   "summary": "3D NAND 제조에 필요한 깊은 트렌치 안 W의 균일한 측면 식각을 위해, 이온 조사 없이 높은 압력에서 NF3 플라즈마로 반응 율속 식각을 구현한 연구. 이 영역에서는 식각 속도가 NF3 압력에 거의 무관했다.",
+   "points": [
+    "웨이퍼 온도가 높을수록 반응 율속이 되는 문턱 압력이 낮아졌다(초록 기준).",
+    "F 라디칼 농도가 낮은 깊은 트렌치 안에서도 균일한 측면 식각이 가능했다."
+   ],
+   "use": "OES 식각 화학 조합 보완(#54)의 출처: 막질×기체 조합 근거.",
+   "claim": "Kofuji 외(2017)는 이온 조사 없는 고압 NF3 플라즈마의 반응 율속 식각으로 깊은 트렌치 안 W를 균일하게 측면 식각했고, 웨이퍼 온도가 높을수록 식각 속도가 늘었다고 보고했다."
+  },
+  {
+   "id": "stueber2007",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "On the photoresist stripping and damage of ultralow k dielectric materials using remote H2- and D2-based discharges",
+   "authors": "G. J. Stueber 외 (Oehrlein 그룹)",
+   "year": 2007,
+   "venue": "J. Vac. Sci. Technol. B 25(5), 1593–1602",
+   "doi": "10.1116/1.2769360",
+   "match": [
+    "10.1116/1.2769360"
+   ],
+   "summary": "ICP 원격(다운스트림) H2·D2 기반 방전으로 193 nm 감광막을 제거하면서 초저유전(ULK) 막이 받는 손상을 조사한 연구. 감광막 제거 속도는 공정 온도에 크게, 첨가 가스 종류에는 약하게 의존했다.",
+   "points": [
+    "다공성이 큰 ULK에는 수소가 전부 침투했고, 탄소가 많은 막에서는 침투 영역의 탄소가 크게 빠졌다(SIMS).",
+    "온도와 Ar·He·N2 첨가에 따라 손상이 커졌고, H2/N2에서 N2 비율이 높을수록 손상이 가장 컸다."
+   ],
+   "use": "OES 식각 화학 조합 보완(#54)의 출처: 막질×기체 조합 근거.",
+   "claim": "Stueber 외(2007)는 원격 H2·D2 기반 방전으로 193 nm 감광막을 제거하며 ULK 손상을 조사했고, H2/N2에서 N2 비율이 높을수록 손상이 커졌다고 보고했다."
+  },
+  {
+   "id": "oh2014",
+   "area": "oes",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "NF3/NH3 Dry Cleaning Mechanism Inspired by Chemical and Physical Surface Modification of Si, SiO2, and Si3N4",
+   "authors": "H. J. Oh 외",
+   "year": 2014,
+   "venue": "ECS Transactions 61(38), 1–8",
+   "doi": "10.1149/06138.0001ecst",
+   "match": [
+    "10.1149/06138.0001ecst"
+   ],
+   "summary": "다운플로 플라즈마 방식의 NF3/NH3 건식 세정 기구를 Si·SiO2·Si3N4 표면 변화로 조사한 연구. (NH4)2SiF6 부산물을 승화시키기 전 단계에서 SiO2 표면이 NF3:NH3 비와 플라즈마 전력에 따라 크게 달라졌다.",
+   "points": [
+    "조건에 따라 서로 다른 중간 생성물을 거쳐 (NH4)2SiF6가 생기는 경쟁 경로가 있다고 제안했다."
+   ],
+   "use": "OES 식각 화학 조합 보완(#54)의 출처: 막질×기체 조합 근거.",
+   "claim": "Oh 외(2014)는 다운플로 NF3/NH3 건식 세정에서 (NH4)2SiF6 부산물 승화 전 SiO2 표면 변화가 NF3:NH3 비와 플라즈마 전력에 따라 달라진다고 보고했다."
   }
  ]
 }
