@@ -60,7 +60,7 @@
   <header>
     <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
     <h1>10단계 · OES 식각 화학 데이터 병합</h1>
-    <p class="phase-desc">항목 #46–#47 · 2026-10-11 22:03 ~ 23:23 · 별도로 만든 OES 분석 앱의 식각 화학·파장 데이터를 검증해 이 사이트에 합친다.</p>
+    <p class="phase-desc">항목 #46–#47, #54 · 2026-10-11 22:03 ~ 10-15 17:30 · 별도로 만든 OES 분석 앱의 식각 화학·파장 데이터를 검증해 이 사이트에 합친다.</p>
   </header>
   <nav class="pager" aria-label="단계 이동"><a href="phase-9.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><span class="cur" aria-current="page">10. OES 식각 화학 데이터 병합</span><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><span class="sep">|</span><a href="phase-11.html">다음 단계 →</a></nav>
 
@@ -198,6 +198,101 @@
         </figure>
       </section>
     </article>
+
+    <!-- ===== 항목 #54 ===== -->
+    <article class="entry" id="e54">
+      <div class="entry-head">
+        <span class="no">#54</span>
+        <h2>OES 식각 화학 조합 보완 — 막질×기체 17개 추가</h2>
+        <time>2026-10-15 17:12</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>OES 관련 데이터 조합
+더 다양한 막질 ETCHANT 조합 필요</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>대상은 <a href="../research/oes_etch_chemistry.html">식각 화학 조합 · OES 파장</a> 페이지의 막질×공급 기체 조합 67개다. 이 조합은 별도 비공개 앱(OES Assistant)의 데이터에서 온 것이다.</li>
+          <li>로직·메모리 공정에서 많이 쓰지만 빠진 조합이 있었다.<br>
+            · 막질: SiGe(GAA 채널 릴리스), Ge, Mo·Ru·TaN(차세대 배선·게이트 금속), ITO, Ga2O3<br>
+            · 화학: 원격 NF3 계열(질화막 등방성 식각, Siconi 세정), C4F6(고종횡비 컨택), CH3F/O2(질화막 스페이서), O2/COS(탄소 하드마스크), N2/H2(유기 low-k)</li>
+          <li>문제가 하나 있었다. OES 페이지 생성기(<code>tools/oes_page.py</code>)는 #47 때의 파장·조합 검증 결과 파일이 있어야 돌아가는데, 이 세션에는 그 파일이 없었다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>17:12</time> 현재 페이지의 표에서 파장 검증 40선(40선 일치)과 조합 표본 검증 10건을 역으로 뽑아 비공개 <code>data/oes/</code>에 복원했다. 생성기를 다시 돌린 결과가 기존 페이지와 한 글자도 다르지 않음을 확인했다. 이로써 생성 경로가 복원됐다.</li>
+          <li><time>17:13</time> astra(high, 백그라운드)에 후보 15개의 출처와 OES 관측 화학종 조사를 맡겼다. 같은 시각 jev에게 물었다.<br>
+            · 저장 위치: 이 사이트 원본에 따로 둔다(0.77)<br>
+            · 범위: 출처가 확인되는 것 전부(0.71)<br>
+            · 기록 단계: 10단계에 이어서(0.75)<br>
+            모두 따랐다. 비공개 앱 데이터는 건드리지 않았다.</li>
+          <li><time>17:14</time> <code>lit_search.py</code> 15개 질의로 후보를 찾고 OpenAlex로 초록을 확인했다. W/NF3 후보는 확인한 초록이 NF3 자체를 명시하지 않아 뺐다. 출처 15편, 조합 17개를 골랐다.<br>
+            · SiO2: C4F6/O2/Ar, Siconi NF3/NH3<br>
+            · Si3N4: CH3F/O2, 원격 NF3/O2, 원격 NH3/NF3<br>
+            · SiGe: CF4/O2, CF4/N2<br>
+            · Ge: Cl2/N2<br>
+            · 비정질 탄소: O2/COS<br>
+            · 유기 low-k: N2/H2<br>
+            · SiCOH: C4F8/Ar/N2<br>
+            · Ta·TaN: Cl2/Ar<br>
+            · Ru: O2/Cl2<br>
+            · Mo: Cl2/O2, HBr/O2<br>
+            · ITO: CH4/H2/Ar<br>
+            · Ga2O3: BCl3/Ar</li>
+          <li><time>17:16</time> 원본 <code>kb/oes/combos_extra.json</code>(공개)을 새로 만들었다. 조합마다 막질, 기체, 방식(원격·이온 차단 방식 추가), 출처, 화학종 후보, 출처의 핵심 결과를 적었다.<br>
+            · 화학종 후보 중 출처가 직접 측정한 것만 "문헌 보고"로 표시했다. 예: NF3/O2 원격의 F·NO, Ru의 O·RuO4, N2/H2의 H·N·NH3. 나머지는 공급 가스와 막 원소에서 나온 추론이다.<br>
+            · 고체 염((NH4)2SiF6 등)은 기상 발광 대상이 아니라고 적었다.</li>
+          <li><time>17:18</time> 장부 2개를 만들었다.<br>
+            · <code>ledger/oes_extra.json</code>: 조합마다 "출처가 이 막질을 이 기체로 식각했고 핵심 결과가 이렇다"는 문장 17개<br>
+            · <code>ledger/papers_summary.json</code>: 출처 논문 15편의 요약 문장(#51 규칙)<br>
+            처음에 일부 논문의 근거를 "공개 원문"으로 적었다. 실제로 본 것은 초록이나 서지 정보뿐이어서 바로 고쳤다. lint 오류 0, DOI 15개 실재. 검증자 4개에 34문장을 출처별로 묶어 넘겼다.</li>
+          <li><time>17:20</time> 그동안 생성기를 고쳤다. <code>kb/oes/combos_extra.json</code>과 그 검증 상태(<code>kb/claims/oes_extra.json</code>)를 읽어 조합 표에 합치고, 조합마다 "출처 검증" 표시를 단다. 보류·제외된 조합은 싣지 않는다. 검증 현황 페이지에 OES 보완 절을 추가했고, 목차 설명은 조합 84개로 고쳤다.</li>
+          <li><time>17:24</time> 검증 결과(gate):<br>
+            · 조합 17개: <b>채택 14, 조건부 3</b><br>
+            · 논문 요약 17편: 채택 14, 조건부 3<br>
+            조건부 지적은 그대로 반영했다.<br>
+            · Cho 2012: 막 두께는 "1nm 미만"이 아니라 "약 10Å"으로 적는다.<br>
+            · Hua 2003: 선택비 저하는 초록에서 정지막 전반으로만 말한다.<br>
+            · Raynal 2020: 습식과 Siconi를 비교한 것이 아니라, 습식 산화막 뒤 Siconi를 잇는 한 묶음의 순서를 평가했다. 일반 지식으로 덧붙였던 "염 승화" 설명은 뺐다.<br>
+            Ta·TaN과 ITO는 초록이 없어 제목 수준까지만 적었다.</li>
+          <li><time>17:25</time> OES 페이지를 다시 만들었다(조합 67 → 84). 새 출처 15편의 "요약" 링크도 자동으로 붙었다. 이어서 build했다.<br>
+            · 검증 현황: 주장 182개<br>
+            · 논문 요약: 90편<br>
+            링크 검사와 요약 연결 검사(빠진 곳 0)를 통과했다.</li>
+          <li><time>17:26</time> 스크린샷 2장을 찍었다(<code>?q=EX-</code> 필터, 검증 현황 OE 절).</li>
+          <li><time>17:28</time> astra 조사는 이 시점까지 끝나지 않았다. 출처 선택은 직접 문헌 검색과 독립 검증만으로 진행했고, astra 결과가 오면 이번 출처와 비교해 차이를 이 항목에 덧붙이기로 했다.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 식각 화학 조합이 67개에서 84개가 됐다. 새 막질 SiGe·Ge·Mo·Ru·Ta/TaN·ITO·Ga2O3·유기 low-k를 넣었고, 기존 막질(SiO2·Si3N4·SiCOH·비정질 탄소)에는 원격 NF3 계열·C4F6·CH3F/O2·O2/COS·C4F8/N2 화학을 더했다. 보완 조합은 모두 출처 1편과 핵심 결과 한 문장으로 묶어 독립 검증을 받았다(채택 14, 조건부 3).</p>
+        <ul>
+          <li>원래 앱 데이터(비공개 저장소)는 바꾸지 않았다. 보완분은 이 사이트 원본 <code>kb/oes/</code>에 따로 두고 페이지를 만들 때 합친다.</li>
+          <li>생성기 입력(#47 검증 결과)을 현재 페이지에서 복원해, 앞으로 OES 페이지를 다시 만들 수 있게 됐다(비공개 <code>data/oes/</code>).</li>
+          <li>남은 한계:<br>
+            · 화학종 후보는 대부분 추론이고, 출처가 직접 측정한 것은 일부다.<br>
+            · Ta·TaN과 ITO 조합은 출처 제목 수준의 근거다.</li>
+        </ul>
+        <p><a href="../research/oes_etch_chemistry.html?q=EX-">보완 조합 보기 →</a> · <a href="../research/claims_status.html#OE01">검증 현황(OE01–OE17) →</a></p>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261015_172612_oes_extra_combos.png" alt="보완 조합 표">
+          <figcaption>history_img/20261015_172612_oes_extra_combos.png — 조합 표(84개) 중 보완 조합 EX-01–EX-09: 화학종 후보(✦ 기준 파장, ✧ 보완 위치, 초록 테두리 문헌 보고), 출처·요약 링크, 출처 검증 표시</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261015_172612_oes_extra_claims.png" alt="OES 보완 검증 현황">
+          <figcaption>history_img/20261015_172612_oes_extra_claims.png — 검증 현황의 OE01–OE06: 조건부 1(막 두께 표현)과 채택</figcaption>
+        </figure>
+      </section>
+    </article>
+
 
   </div>
 

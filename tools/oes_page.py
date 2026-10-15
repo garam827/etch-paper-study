@@ -6,6 +6,7 @@
   앱 코드·.env·worker는 읽지 않는다.
 - 파장검증.json: [species, nm, source_id, 원문일치(bool), medium, kind] 목록 (NIST 표·논문 원문 대조 결과).
 - 조합검증.json: {claim_id: {"combo": id, "verdict": ..., "notes": ...}} (표본 독립 검증, 선택).
+- kb/oes/combos_extra.json(이 사이트에서 따로 조사·검증한 막질×기체 조합, #54)과 그 검증 상태 kb/claims/oes_extra.json이 있으면 조합 표에 합친다.
 - tools/oes_supplement.json이 있으면 보완 절(원자선·분자 방출·종말점·actinometry·겹침)을 덧붙인다 (tools/oes_supplement_build.py).
 출력: research/oes_etch_chemistry.html
 """
@@ -32,7 +33,10 @@ SUP = json.load(open(SUPP_F, encoding="utf-8")) if SUPP_F.exists() else None
 DEC = {"adopt": ("채택", "adopt"), "conditional": ("조건부", "cond")}
 supp_species = set(SUP["atomic"]) | {m["sp"] for m in SUP["mol"]} if SUP else set()
 
-sources = {**K["sources"], **SP["sources"]}
+EX_F, EXS_F = ROOT / "kb/oes/combos_extra.json", ROOT / "kb/claims/oes_extra.json"
+EX = json.load(open(EX_F, encoding="utf-8")) if EX_F.exists() else None
+EXS = {c["id"]: c for c in json.load(open(EXS_F, encoding="utf-8"))["claims"]} if EX and EXS_F.exists() else {}
+sources = {**K["sources"], **SP["sources"], **(EX["sources"] if EX else {})}
 ok = {(v[0], v[1]): v[3] for v in VER}
 n_ok = sum(v[3] for v in VER)
 
@@ -54,9 +58,25 @@ for x in K["items"]:
                   "basis": BASIS.get(x["basis"], x["basis"]), "src": x["sources"], "prod": x.get("products", []),
                   "res": x.get("residues", []), "note": x.get("note", ""), "sp": sp,
                   "v": combo_verdict.get(x["id"], {}).get("verdict")})
+n_base = len(items)
+EV = {"feed": "provided_feed", "rep": "reported_in_reference", "": "chemical_inference"}
+DECL = {"adopt": ("채택", "adopt"), "conditional": ("조건부", "cond"), "hold": ("보류", "hold"), "reject": ("제외", "reject")}
+ex_dec = Counter()
+for x in (EX["items"] if EX else []):
+    f = EX["films"][x["film"]]
+    c = EXS.get("OE" + x["id"][3:], {})
+    d = c.get("decision")
+    if d in ("hold", "reject"):
+        continue  # 검증을 통과하지 못한 조합은 싣지 않는다
+    ex_dec[d or "미검증"] += 1
+    sp = [{"f": s, "e": EV[k], "w": s in SP["species"], "w2": s not in SP["species"] and s in supp_species} for s, k in x["sp"]]
+    items.append({"id": x["id"], "film": f["name"], "fam": f["family_label"], "gas": x["gases"],
+                  "mode": K["modes"].get(x["mode"]) or EX["modes"][x["mode"]], "basis": "보완 조사(2026-10-15)",
+                  "src": x["src"], "prod": [], "res": [], "note": x["note"], "sp": sp, "v": None,
+                  "d": list(DECL[d]) if d else None})
+ev = Counter(s["e"] for i in items for s in i["sp"])
 src_js = {k: [v["title"], v["url"]] for k, v in sources.items()}
 fams = sorted(set(i["fam"] for i in items))
-ev = Counter(s["evidence"] for x in K["items"] for s in x["species"])
 
 # 3) 표본 검증 표
 cv_rows = ""
@@ -153,7 +173,7 @@ page = f"""<!doctype html>
 <body>
 <div class="wrap">
   <h1>식각 화학 조합 · OES 기준 파장</h1>
-  <p class="sub" style="margin-top:6px"><a href="../index.html">← 목차</a> · 2026-10-11 · 별도 프로젝트 “OES Assistant”의 데이터(버전 {e(K["version"])}, 파장 {e(SP["version"])})를 읽기 전용으로 옮김</p>
+  <p class="sub" style="margin-top:6px"><a href="../index.html">← 목차</a> · 2026-10-11 (조합 보완 2026-10-15) · 별도 프로젝트 “OES Assistant”의 데이터(버전 {e(K["version"])}, 파장 {e(SP["version"])})를 읽기 전용으로 옮김</p>
   <p>막질과 공급 가스 조합 {len(items)}개마다 <b>생성될 수 있는 화학종 후보</b>와, 그중 출처가 확인된 <b>OES 기준 파장</b>을 정리했다. 원래 앱은 레시피를 넣으면 언어 모델이 후보를 추론하는 서버 프로그램이고, 여기에는 그 앱이 기준으로 쓰는 정리된 데이터만 옮겼다(모델 호출 없음). 용어는 <a href="a20_etch_knowledge_graph.html">지식 그래프</a>의 광방출 분광(OES)·Actinometry 노드와 연결된다.</p>
 
   <div class="card">
@@ -172,6 +192,7 @@ page = f"""<!doctype html>
 
 {supp_html}
   <h2 id="combos">막질 × 기체 조합 ({len(items)}개)</h2>
+  {f'<p>OES Assistant 원본 {n_base}개에 이 사이트에서 따로 조사한 <b>보완 조합 {len(items) - n_base}개</b>(ID <code>EX-</code>, 2026-10-15)를 더했다. 보완 조합은 막질·기체·핵심 결과를 출처 1편과 한 문장으로 묶어 독립 검증 에이전트가 원문과 대조했다(조합별 “출처 검증” 표시). 화학종 후보 중 출처가 직접 측정한 것만 <span class="sp rep">문헌 보고</span>이고, 나머지는 공급 가스와 막 원소로부터의 추론이다.</p>' if EX else ''}
   <div class="bar">
     <input id="q" type="search" placeholder="막질·기체·화학종 검색 (예: SiO2, HBr, CF2)">
     <select id="fam"><option value="">모든 막질 계열</option>{"".join(f'<option>{e(f)}</option>' for f in fams)}</select>
@@ -186,6 +207,7 @@ page = f"""<!doctype html>
   <ul>
     <li><b>기준 파장</b>: {len(VER)}개 전부 원문 표·논문과 대조 → {n_ok}개 일치.</li>
     <li><b>조합의 출처</b>: 출처마다 1개씩 뽑은 표본 {len(CV)}개를 독립 검증 에이전트(웹 원문만 보고 작성 과정은 모름)가 원문과 대조했다{": " + ", ".join(f"{VERD.get(k, (k,))[0]} {n}" for k, n in cv_count.items()) if CV else " (진행 중)"}. 검증 대상은 “출처가 이 막질을 이 기체로 식각하는 예를 제시한다”까지이며, 화학종 후보(대부분 추론)는 검증 대상이 아니다.</li>
+    {f'<li><b>보완 조합</b>({len(items) - n_base}개): 조합마다 출처의 핵심 결과 한 문장을 독립 검증 → ' + ", ".join(f"{DECL[k][0] if k in DECL else k} {n}" for k, n in ex_dec.items()) + '. 주장별 상태는 <a href="claims_status.html">검증 현황</a>.</li>' if EX else ''}
   </ul>
   {'<div class="tbl"><table><thead><tr><th>주장</th><th>조합</th><th>막질 · 기체</th><th>판정</th><th>검증자 메모</th></tr></thead><tbody>' + cv_rows + '</tbody></table></div>' if CV else ''}
 
@@ -209,7 +231,8 @@ function render() {{
     + `<td>${{x.gas.map(esc).join(" + ")}}<div class="note">${{esc(x.mode)}}</div></td>`
     + `<td>${{x.sp.map(s => `<span class="sp ${{cls[s.e] || ""}}${{s.w ? " w" : ""}}${{s.w2 ? " w2" : ""}}">${{esc(s.f)}}</span>`).join("")}}${{x.note ? `<div class="note">${{esc(x.note)}}</div>` : ""}}</td>`
     + `<td>${{esc(x.basis)}}<div>${{x.src.map(s => SRC[s] ? `<a href="${{esc(SRC[s][1])}}" target="_blank" rel="noopener">${{esc(SRC[s][0])}}</a>` : esc(s)).join("<br>")}}</div>`
-    + `${{x.v ? `<span class="tag ${{VERD[x.v][1]}}">표본 검증: ${{VERD[x.v][0]}}</span>` : ""}}</td></tr>`).join("");
+    + `${{x.v ? `<span class="tag ${{VERD[x.v][1]}}">표본 검증: ${{VERD[x.v][0]}}</span>` : ""}}`
+    + `${{x.d ? `<span class="tag ${{x.d[1]}}">출처 검증: ${{x.d[0]}}</span>` : ""}}</td></tr>`).join("");
 }}
 document.getElementById("q").addEventListener("input", render);
 document.getElementById("fam").addEventListener("change", render);

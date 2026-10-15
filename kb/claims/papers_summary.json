@@ -1144,6 +1144,235 @@
    "checked": [
     "https://api.openalex.org/works/doi:10.1109/tsm.2009.2039250"
    ]
+  },
+  {
+   "id": "P-cho2012",
+   "page": "papers",
+   "statement": "Cho 외(2012)는 C4F6/O2/Ar 플라즈마에서 SiO2 표면 플루오로카본 막이 1nm보다 얇아 물리 스퍼터링 기여가 크고, CH2F2 첨가 시 막이 두꺼워져 스퍼터링이 억제됨을 보고했다.",
+   "risk": "low",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Write the film thickness as about 10 Å (≈1 nm), which allows ions to penetrate. 'Less than 1 nm' is not confirmed.",
+   "note": "The finding that sputtering is suppressed when CH2F2 is added matches the abstract: thicker film, smaller ion energy transfer depth, lower etch yield at all angles.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4732127",
+    "https://pure.skku.edu/en/publications/angular-dependences-of-sio-sub2sub-etch-rates-in-c-sub4subf-sub6s/"
+   ]
+  },
+  {
+   "id": "P-kaler2016",
+   "page": "papers",
+   "statement": "Kaler 외(2016)는 CH3F/O2·CH3F/CO2 플라즈마 빔으로 SiN·Si를 식각해 O2 비율에 따른 고분자 막 두께 변화와 SiN 식각 속도 최대점(약 50% O2)을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "With CO2 the corresponding values were a transition near 75% and an etch-rate peak near 73%. Conditions: 300 W, 10 mTorr.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4949261"
+   ]
+  },
+  {
+   "id": "P-kastenmeier1998",
+   "page": "papers",
+   "statement": "Kastenmeier 외(1998)는 NF3/O2 원격 플라즈마에서 O2 첨가가 Si3N4 식각 속도를 크게 높이고, 질량분석으로 NO는 검출되지만 NFx는 검출되지 않았다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The enhancement is significant at O2/NF3 ≥0.3.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.581309"
+   ]
+  },
+  {
+   "id": "P-posseme2016",
+   "page": "papers",
+   "statement": "Possémé 외(2016)는 H2·He 플라즈마로 개질한 SiN 층을 NH3/NF3 원격 플라즈마와 어닐로 선택 제거하는 방법을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The title states selective removal.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4963072"
+   ]
+  },
+  {
+   "id": "P-kim2025",
+   "page": "papers",
+   "statement": "Kim 외(2025)는 SiGe/Si 다층의 SiGe 선택 식각에서 CF4/N2가 CF4/O2보다 선택비가 좋고, O2 첨가는 표면 산화로 SiGe 식각 속도를 낮춘다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Same source as OE05 and OE06.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12472007/",
+    "https://api.openalex.org/works/doi:10.3390/ma18184417"
+   ]
+  },
+  {
+   "id": "P-monget1998",
+   "page": "papers",
+   "statement": "Monget 외(1998)는 poly-Si/poly-Ge 게이트 식각에서 Cl2·HBr+O2는 형상을 변형시키고 Cl2/N2는 측벽 GeNx 보호층으로 이방성을 준다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The anisotropy comes from a multistep Cl2/N2 process.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.590094"
+   ]
+  },
+  {
+   "id": "P-kim2013",
+   "page": "papers",
+   "statement": "Kim 외(2013)는 O2 + 5% COS로 비정질 탄소 홀을 식각하면 탄소-황 측벽 보호층으로 형상이 더 이방성이 되고 위/아래 개구비가 약 37% 좋아진다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The holes are 50 nm amorphous carbon holes. As with OE08, the abstract does not name the passivation layer as carbon-sulfur.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4780122"
+   ]
+  },
+  {
+   "id": "P-nagai2003",
+   "page": "papers",
+   "statement": "Nagai 외(2003)는 N2/H2·N2/NH3 UHF 플라즈마로 유기 low-k 막을 식각하며 H·N 라디칼 밀도를 측정하고, H/N 밀도 비로 식각 속도와 형상을 조절할 수 있음을 보였다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract also says the substrate temperature determined the optimal conditions for an anisotropic profile and high etch rate.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.1588351"
+   ]
+  },
+  {
+   "id": "P-hua2003",
+   "page": "papers",
+   "statement": "Hua 외(2003)는 C4F8/Ar에 N2를 더하면 플루오로카본 표면층이 얇아져 OSG의 Si3N4·SiC 대비 선택비가 떨어진다고 보고했다.",
+   "risk": "low",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "The selectivity loss applies to C4F8/Ar/N2 and is stated in general terms. The abstract does not state it separately for Si3N4 and SiC, and it notes that the effect of N incorporation differs for SiC. Adding N2 without Ar makes the FC layer thicker.",
+   "note": "Same evidence as OE10.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.1598973"
+   ]
+  },
+  {
+   "id": "P-shin2005",
+   "page": "papers",
+   "statement": "Shin 외(2005)는 Cl2/Ar 유도결합 플라즈마에서 Ta와 TaN의 식각 특성을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "No abstract was available, so the verdict rests on the title only.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1016/j.tsf.2005.08.019"
+   ]
+  },
+  {
+   "id": "P-hsu2006",
+   "page": "papers",
+   "statement": "Hsu 외(2006)는 O2 플라즈마의 Ru 식각 속도가 산소 라디칼 밀도와 맞고, Cl2를 더하면 식각 속도가 크게 늘며 하류에서 RuO4가 검출된다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The match with oxygen radical density is from the Ar/O2 plasma case.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.2121751"
+   ]
+  },
+  {
+   "id": "P-luere2011",
+   "page": "papers",
+   "statement": "Luere 외(2011)는 SF6/Ar·HBr/O2·Cl2/O2 플라즈마가 휘발성 Mo 화합물로 Mo를 자발 식각하고, HBr/O2가 게이트 스택 패터닝에 가장 유망하다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "I rebuilt the word positions in the inverted index. They confirm that the 'most promising for patterning' sentence names HBr/O2. An automated summary had said SF6/CH2F2/Ar instead, and that was wrong.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.3533939"
+   ]
+  },
+  {
+   "id": "P-kim2007",
+   "page": "papers",
+   "statement": "Kim 외(2007)는 CH4/H2/Ar 유도결합 플라즈마로 감광막 마스크의 ITO를 식각하는 조건을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Only the title is available; the specific conditions in the full text were not checked. Year is 2007 online, 2008 in the print issue.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.crossref.org/works/10.1016/j.tsf.2007.08.021",
+    "https://api.openalex.org/works/doi:10.1016/j.tsf.2007.08.021"
+   ]
+  },
+  {
+   "id": "P-shah2017",
+   "page": "papers",
+   "statement": "Shah·Bhattacharya(2017)는 β-Ga2O3가 염소계·BCl3계에서만 의미 있게 식각되며 BCl3/Ar에서 144 nm/min으로 Cl2/Ar(19 nm/min)보다 빨랐다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Tested in an ICP-RIE on Sn-doped (-201) substrates.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4983078"
+   ]
+  },
+  {
+   "id": "P-raynal2020",
+   "page": "papers",
+   "statement": "Raynal 외(2020)는 SiGe 에피 재성장 전 표면 세정으로 습식 세정과 Siconi(NF3/NH3 원격 플라즈마) 세정 순서를 비교했다.",
+   "risk": "low",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "The sentence should say the paper looks at a wet chemical oxide followed by NH3/NF3 remote-plasma Siconi, used together as one sequence. It measures the effect on Si0.60Ge0.40 regrowth (oxygen removal, roughness) and proposes an optimized process sequence. Calling it a 'comparison of wet vs Siconi orders' goes further than the abstract.",
+   "note": "The title, 'WET and Siconi cleaning sequences', fits the claim's wording loosely.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.mseb.2020.114696",
+    "https://api.openalex.org/works/doi:10.1016/j.mseb.2020.114696"
+   ]
   }
  ]
 }

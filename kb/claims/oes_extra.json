@@ -1,0 +1,268 @@
+{
+ "topic": "OES 식각 화학 조합 보완(막질×기체 17개)",
+ "claims": [
+  {
+   "id": "OE01",
+   "page": "oes",
+   "statement": "Cho 외(2012)는 C4F6/O2/Ar 플라즈마로 SiO2를 식각했고, 이때 SiO2 표면 플루오로카본 막이 1nm보다 얇아 물리 스퍼터링 기여가 크며 CH2F2를 더하면 막이 두꺼워진다고 보고했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Write the film thickness as about 10 Å (≈1 nm), thin enough for ions to pass through. The source does not confirm 'less than 1 nm'. The physical sputtering conclusion came from an angle-resolved Faraday cage measurement (NEY maximum 1.74 at 70°).",
+   "note": "Author and year match (Cho S.-W. et al., 2012, JVST A). The visible abstract reads '(10 Å)'. A '<' sign may have been lost in conversion, but I could not confirm it.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4732127",
+    "https://pure.skku.edu/en/publications/angular-dependences-of-sio-sub2sub-etch-rates-in-c-sub4subf-sub6s/"
+   ]
+  },
+  {
+   "id": "OE02",
+   "page": "oes",
+   "statement": "Kaler 외(2016)는 CH3F/O2 플라즈마(빔)로 SiN을 식각했고, O2 비율이 약 48%를 넘으면 고분자 막이 단층 두께로 줄며 SiN 식각 속도는 O2 약 50% 근처에서 최대였다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The source conditions are a beam extracted from an ICP at 300 W and 10 mTorr. The film was SiNx (non-stoichiometric). The 'monolayer' wording is confirmed only in a search snippet, a secondary source.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4949261",
+    "https://www.chee.uh.edu/sites/chbe/files/faculty/node/kaler_plasma_beams_jvst_2016.pdf"
+   ]
+  },
+  {
+   "id": "OE03",
+   "page": "oes",
+   "statement": "Kastenmeier 외(1998)는 NF3/O2 원격 플라즈마로 Si3N4·SiO2를 식각했고, O2/NF3 0.3 이상에서 Si3N4 식각 속도가 크게 늘며 질량분석에서 NO는 검출되고 NFx는 검출되지 않았다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The source uses the afterglow of a microwave discharge (remote). SiO2 is less affected by the O2 ratio.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.581309"
+   ]
+  },
+  {
+   "id": "OE04",
+   "page": "oes",
+   "statement": "Possémé 외(2016)는 H2·He 플라즈마로 개질한 SiN 층을 NH3/NF3 원격 플라즈마와 이후 어닐로 제거하는 방법을 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Earlier work removed the H2/He-modified layer with an HF wet clean. This paper replaces that step with NH3/NF3 remote plasma plus anneal. The target is SiN spacer etching for FDSOI.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4963072"
+   ]
+  },
+  {
+   "id": "OE05",
+   "page": "oes",
+   "statement": "Kim 외(2025)는 SiGe/Si 다층의 SiGe를 CF4/O2 플라즈마로 식각했고, O2를 더하면 표면 산화로 SiGe 식각 속도가 순수 CF4보다 줄었다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The authors and year match (Jihye Kim et al., 2025). The paper says adding O2 lowered the SiGe etch rate below pure CF4 through surface oxidation (SiOxFy passivation). The experiments were run in ICP-RIE with a non-conducting roof that blocks ions, so radicals dominate.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12472007/",
+    "https://api.openalex.org/works/doi:10.3390/ma18184417",
+    "https://doi.org/10.3390/ma18184417"
+   ]
+  },
+  {
+   "id": "OE06",
+   "page": "oes",
+   "statement": "Kim 외(2025)는 SiGe/Si 다층의 SiGe 선택 식각에서 CF4/N2가 CF4/O2보다 선택비·형상이 좋았고, N2가 많을 때 Si 표면의 Si–N 결합이 Si 식각을 막았다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract says CF4/N2 gave better etch selectivity and profile than CF4/O2, with selectivity up to 37:1 under the roof (radical-dominant) condition. Under high N2 flow, XPS found Si-N bonds that suppressed fluorine-radical etching of Si. One caution: the OpenAlex abstract, as the summarizer reconstructed it, said CF4/O2 beat 'pure CF4'. That looks like a summarizer error, and the PMC full text is the authority here.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12472007/",
+    "https://api.openalex.org/works/doi:10.3390/ma18184417"
+   ]
+  },
+  {
+   "id": "OE07",
+   "page": "oes",
+   "statement": "Monget 외(1998)는 poly-Si/poly-Ge 게이트를 Cl2/N2 다단계로 식각해 측벽에 GeNx 보호층을 만들며 이방성 형상을 얻었고, Cl2·HBr+O2에서는 형상이 변형됐다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The gates were 0.18 um oxide-masked poly-Si/poly-Ge, etched in high-density plasma. Cl2 and HBr+O2 badly deformed the poly-Si/poly-Ge profiles, while poly-Si-only gates stayed anisotropic. A multistep Cl2/N2 process gave anisotropic profiles with high selectivity to oxide, and XPS found a thin GeNx passivation layer on the sidewalls. The authors and year match.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.590094"
+   ]
+  },
+  {
+   "id": "OE08",
+   "page": "oes",
+   "statement": "Kim 외(2013)는 O2 + 5% COS로 비정질 탄소층을 식각해 탄소-황 계열 측벽 보호층으로 형상이 더 이방성이 되고 위/아래 개구비가 약 37% 좋아졌다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract says the 50 nm ACL hole etched in O2 + 5% COS was more anisotropic and its top/bottom opening ratio improved by about 37%, which it links to a sidewall passivation layer. It does not say 'carbon-sulfur' in so many words. The paper title and the COS additive make the C-S passivation reading reasonable, but the abstract alone does not state that composition.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4780122"
+   ]
+  },
+  {
+   "id": "OE09",
+   "page": "oes",
+   "statement": "Nagai 외(2003)는 N2/H2 플라즈마로 유기 low-k 막을 식각하며 H·N 라디칼 밀도를 측정했고, N 밀도가 H보다 한 자릿수 낮았다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors and year match (Nagai et al., 2003, JAP). The study used 500 MHz UHF plasma with N2/H2 and N2/NH3. Semantic Scholar's abstract is publisher-elided, and doi.org was not opened.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.1588351"
+   ]
+  },
+  {
+   "id": "OE10",
+   "page": "oes",
+   "statement": "Hua 외(2003)는 C4F8/Ar/N2 플라즈마로 유기실리케이트 유리(OSG)를 식각했고, C4F8/Ar에 N2를 더하면 플루오로카본 표면층이 얇아져 Si3N4·SiC 대비 선택비가 떨어졌다고 보고했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "The abstract describes the selectivity loss in C4F8/Ar/N2 discharges only in general terms. It does not give a separate result for Si3N4 and for SiC. It also says N incorporation affects etchant supply for Si3N4/OSG but not for SiC. The sentence should say the abstract reports selectivity loss for OSG over the etch-stop layers (Si3N4, SiC) in general terms, without stating the two separately. Also, adding N2 to C4F8 without Ar does the opposite and makes the FC layer thicker.",
+   "note": "Authors and year match. The OpenAlex inverted index is partly garbled, but the main sentences are readable.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.1598973"
+   ]
+  },
+  {
+   "id": "OE11",
+   "page": "oes",
+   "statement": "Shin 외(2005)는 Cl2/Ar 유도결합 플라즈마로 Ta와 TaN을 식각한 특성을 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "OpenAlex has no abstract (null). The verdict rests on the title, 'Etching characteristics of Ta and TaN using Cl2/Ar inductively coupled plasma'. The claim says no more than the title does.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1016/j.tsf.2005.08.019"
+   ]
+  },
+  {
+   "id": "OE12",
+   "page": "oes",
+   "statement": "Hsu 외(2006)는 O2·Cl2 플라즈마로 Ru를 식각했고, Cl2를 더하면 식각 속도가 크게 늘며 하류에서 RuO4가 검출되고 Ar/O2만 쓸 때는 RuO4가 보이지 않았다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors and year match. Note that 'downstream' means the foreline, and the plasma was an ICP.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.2121751"
+   ]
+  },
+  {
+   "id": "OE13",
+   "page": "oes",
+   "statement": "Luere 외(2011)는 Cl2/O2 플라즈마가 휘발성 MoOxCly를 만들어 Mo를 자발적으로 식각하며, O2 농도와 바이어스로 Mo:HfO2 선택비를 조절할 수 있다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are O. Luere, E. Pargon, L. Vallier, O. Joubert (2011), as cited. Publisher page (AIP) returned 403. Semantic Scholar's DOI record wrongly maps to Le Gouil 2007, so do not use it.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.3533939"
+   ]
+  },
+  {
+   "id": "OE14",
+   "page": "oes",
+   "statement": "Luere 외(2011)는 HBr/O2 플라즈마가 Mo를 자발 식각하고, 게이트 스택 패터닝에서 측벽에 재퇴적·산화된 MoOBrx가 이방성을 만든다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract adds that O2 in the plasma controls how thick the passivation layer is.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.3533939"
+   ]
+  },
+  {
+   "id": "OE15",
+   "page": "oes",
+   "statement": "Kim 외(2007)는 CH4/H2/Ar 유도결합 플라즈마로 감광막 마스크의 ITO를 식각한 결과를 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "No abstract was available (OpenAlex abstract is null, Crossref has none). The judgment rests on the title: CH4/H2/Ar ICP etching of ITO with a photoresist mask, with infinitely high selectivity. Year: OpenAlex gives 2007 (online), but the print issue is vol. 516, 2008. Citing it as 2007 is acceptable; 2008 would also be correct.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.crossref.org/works/10.1016/j.tsf.2007.08.021",
+    "https://api.openalex.org/works/doi:10.1016/j.tsf.2007.08.021"
+   ]
+  },
+  {
+   "id": "OE16",
+   "page": "oes",
+   "statement": "Shah·Bhattacharya(2017)는 β-Ga2O3를 BCl3/Ar ICP-RIE로 144 nm/min에 식각했고, 이는 Cl2/Ar(19 nm/min)보다 빨랐으며 불소계·O2/Ar로는 의미 있는 식각 속도가 나오지 않았다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The sample was Sn-doped (-201) beta-Ga2O3. The 144 nm/min rate is the best condition, which also gave a smooth surface. The gases tested were SF6/Ar, CHF3/Ar, O2/Ar, BCl3/Ar and Cl2/Ar.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4983078"
+   ]
+  },
+  {
+   "id": "OE17",
+   "page": "oes",
+   "statement": "Raynal 외(2020)는 SiGe 에피 재성장 전 표면 산화막 제거를 위해 Siconi(NF3/NH3 원격 플라즈마) 건식 세정을 습식 세정과 비교했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "The paper studies a combined sequence: a wet chemical oxide is formed first, then a standard NH3/NF3 remote-plasma Siconi step follows. Its effect on Si0.60Ge0.40 epi regrowth is judged by oxygen removal and morphology. The sentence should say this. It should not call it a head-to-head comparison of 'Siconi dry clean vs wet clean'.",
+   "note": "The direct comparison of HF-last with Siconi is in the 2018 Microelectronic Engineering paper. The 2020 abstract proposes an optimized process sequence.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.mseb.2020.114696",
+    "https://api.openalex.org/works/doi:10.1016/j.mseb.2020.114696",
+    "https://hal.univ-grenoble-alpes.fr/hal-01891237"
+   ]
+  }
+ ]
+}

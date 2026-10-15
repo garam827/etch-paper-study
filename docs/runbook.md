@@ -85,6 +85,8 @@ python tools/paper_links.py oes       # OES 페이지에 반영 (oes_page.py도 
 
 ```bash
 python tools/oes_page.py <oes_assistant 폴더> <파장검증.json> [조합검증.json]   # → research/oes_etch_chemistry.html
+# 예: python tools/oes_page.py merge_src/oes_assistant data/oes/wavelength_verify.json data/oes/combo_verify.json
+#     (data/oes/는 #54에서 현재 페이지로부터 복원한 #47 검증 결과, 비공개. kb/oes/combos_extra.json 보완 조합을 자동으로 합친다)
 python tools/oes_supplement_build.py <NIST 추출.json> ledger/oes_supplement.json <검증메모.json>  # → tools/oes_supplement.json
 ```
 

@@ -1,0 +1,1045 @@
+{
+ "note": "OES 식각 화학 조합 보완 (#54, 2026-10-15). 원래 OES Assistant 데이터(67개)는 건드리지 않고, 이 사이트에서 따로 조사·검증한 조합을 페이지 생성 때 합친다. 화학종 후보: feed=공급 가스, rep=출처가 측정·보고, 나머지는 원소 공급원에 기초한 추론.",
+ "modes": {
+  "remote": "원격(다운스트림) 플라즈마",
+  "radical": "이온 차단(라디칼 위주)"
+ },
+ "films": {
+  "sige": {
+   "name": "SiGe · silicon germanium",
+   "family_label": "실리콘"
+  },
+  "ge": {
+   "name": "Ge · poly-germanium",
+   "family_label": "실리콘"
+  },
+  "mo": {
+   "name": "Mo · molybdenum",
+   "family_label": "금속·금속질화막"
+  },
+  "ru": {
+   "name": "Ru · ruthenium",
+   "family_label": "금속·금속질화막"
+  },
+  "tan": {
+   "name": "Ta / TaN · tantalum (nitride)",
+   "family_label": "금속·금속질화막"
+  },
+  "ito": {
+   "name": "ITO · indium tin oxide",
+   "family_label": "화합물 반도체"
+  },
+  "ga2o3": {
+   "name": "Ga2O3 · gallium oxide",
+   "family_label": "화합물 반도체"
+  },
+  "olk": {
+   "name": "Organic low-k · polymer dielectric",
+   "family_label": "탄소·유기막"
+  },
+  "sio2": {
+   "name": "SiO2 · silicon dioxide",
+   "family_label": "절연막"
+  },
+  "sin": {
+   "name": "Si3N4 / SiNx · silicon nitride",
+   "family_label": "절연막"
+  },
+  "osg": {
+   "name": "SiCOH · organosilicate low-k",
+   "family_label": "절연막"
+  },
+  "acl": {
+   "name": "C · amorphous carbon hard mask",
+   "family_label": "탄소·유기막"
+  }
+ },
+ "sources": {
+  "x_cho2012": {
+   "title": "Cho 외 (2012) · Angular dependences of SiO2 etch rates in C4F6/O2/Ar and C4F6/CH2F2/O2/Ar plasmas (JVST A)",
+   "url": "https://doi.org/10.1116/1.4732127",
+   "kind": "research",
+   "scope": "C4F6/O2/Ar(+CH2F2)에서 SiO2 식각 수율의 이온 입사각 의존. 플루오로카본 막 두께와 물리 스퍼터링 기여."
+  },
+  "x_kaler2016": {
+   "title": "Kaler 외 (2016) · Silicon nitride and silicon etching by CH3F/O2 and CH3F/CO2 plasma beams (JVST A)",
+   "url": "https://doi.org/10.1116/1.4949261",
+   "kind": "research",
+   "scope": "CH3F/O2·CH3F/CO2 ICP 빔으로 SiN·Si 식각, O2 비율에 따른 고분자 막 두께와 SiN 식각 속도."
+  },
+  "x_kastenmeier1998": {
+   "title": "Kastenmeier 외 (1998) · Remote plasma etching of silicon nitride and silicon dioxide using NF3/O2 gas mixtures (JVST A)",
+   "url": "https://doi.org/10.1116/1.581309",
+   "kind": "research",
+   "scope": "NF3·NF3/O2 마이크로파 방전의 잔광(원격)에서 Si3N4·SiO2 식각. Ar actinometry와 질량분석."
+  },
+  "x_posseme2016": {
+   "title": "Possémé 외 (2016) · Thin layer etching of silicon nitride: selective removal using NH3/NF3 remote plasma (JVST A)",
+   "url": "https://doi.org/10.1116/1.4963072",
+   "kind": "research",
+   "scope": "H2·He 플라즈마로 개질한 SiN 층을 NH3/NF3 원격 플라즈마 + 어닐로 제거(스페이서 식각)."
+  },
+  "x_kim2025": {
+   "title": "Kim 외 (2025) · Selective etching of multi-stacked epitaxial Si1-xGex on Si using CF4/N2 and CF4/O2 plasma (Materials)",
+   "url": "https://doi.org/10.3390/ma18184417",
+   "kind": "research",
+   "scope": "SiGe/Si 다층에서 SiGe 선택 식각. 시료 위 절연판으로 이온을 막아 라디칼 기여를 분리."
+  },
+  "x_monget1998": {
+   "title": "Monget 외 (1998) · Germanium etching in high density plasmas for 0.18 μm CMOS gate patterning (JVST B)",
+   "url": "https://doi.org/10.1116/1.590094",
+   "kind": "research",
+   "scope": "poly-Si/poly-Ge 게이트 식각. Cl2·HBr·O2에서 형상 변형, Cl2/N2에서 GeNx 측벽 보호."
+  },
+  "x_kim2013": {
+   "title": "Kim 외 (2013) · Etching characteristics of amorphous carbon layer in oxygen plasma with carbonyl sulfide (JVST A)",
+   "url": "https://doi.org/10.1116/1.4780122",
+   "kind": "research",
+   "scope": "O2 + 5% COS로 비정질 탄소(ACL) 홀 식각, 황 관련 측벽 보호층."
+  },
+  "x_nagai2003": {
+   "title": "Nagai 외 (2003) · Etching organic low dielectric film in UHF plasma using N2/H2 and N2/NH3 gases (JAP)",
+   "url": "https://doi.org/10.1063/1.1588351",
+   "kind": "research",
+   "scope": "N2/H2·N2/NH3 UHF 플라즈마로 유기 low-k 식각. H·N 라디칼 절대 밀도(VUV 흡수)와 NH3(적외선 흡수) 측정."
+  },
+  "x_hua2003": {
+   "title": "Hua 외 (2003) · C4F8/N2 and C4F8/Ar/N2 plasmas for selective organosilicate glass etching over Si3N4 and SiC (JVST A)",
+   "url": "https://doi.org/10.1116/1.1598973",
+   "kind": "research",
+   "scope": "N2 첨가가 OSG·Si3N4·SiC 식각 속도와 플루오로카본 표면층에 주는 영향."
+  },
+  "x_shin2005": {
+   "title": "Shin 외 (2005) · Etching characteristics of Ta and TaN using Cl2/Ar inductively coupled plasma (Thin Solid Films)",
+   "url": "https://doi.org/10.1016/j.tsf.2005.08.019",
+   "kind": "research",
+   "scope": "Cl2/Ar ICP에서 Ta·TaN 식각 특성."
+  },
+  "x_hsu2006": {
+   "title": "Hsu·Coburn·Graves (2006) · Etching of ruthenium coatings in O2- and Cl2-containing plasmas (JVST A)",
+   "url": "https://doi.org/10.1116/1.2121751",
+   "kind": "research",
+   "scope": "O2·Cl2 ICP에서 Ru 식각, 벽 퇴적과 휘발 생성물(RuO4) 경쟁. 여러 in-situ 진단."
+  },
+  "x_luere2011": {
+   "title": "Luere 외 (2011) · Poly-Si/TiN/Mo/HfO2 gate stack etching in high-density plasmas (JVST B)",
+   "url": "https://doi.org/10.1116/1.3533939",
+   "kind": "research",
+   "scope": "Mo 층 식각: SF6/Ar·HBr/O2·Cl2/O2는 휘발성 MoFx·MoOxCly·MoOxBry로 자발 식각."
+  },
+  "x_kim2007": {
+   "title": "Kim 외 (2007) · CH4/H2/Ar ICP etching of indium tin oxide with photoresist mask (Thin Solid Films)",
+   "url": "https://doi.org/10.1016/j.tsf.2007.08.021",
+   "kind": "research",
+   "scope": "CH4/H2/Ar ICP로 ITO 식각, 감광막 대비 선택비."
+  },
+  "x_shah2017": {
+   "title": "Shah·Bhattacharya (2017) · ICP-RIE of β-Ga2O3: plasma chemistry and temperature (JVST A)",
+   "url": "https://doi.org/10.1116/1.4983078",
+   "kind": "research",
+   "scope": "SF6·CHF3·O2·BCl3·Cl2(+Ar) 비교, BCl3/Ar에서 144 nm/min."
+  },
+  "x_raynal2020": {
+   "title": "Raynal 외 (2020) · WET and Siconi cleaning sequences for SiGe epitaxial regrowth (Mater. Sci. Eng. B)",
+   "url": "https://doi.org/10.1016/j.mseb.2020.114696",
+   "kind": "research",
+   "scope": "에피 재성장 전 세정: 습식 화학 산화막 형성 뒤 Siconi(NF3/NH3 원격 플라즈마)를 잇는 순서를 Si0.6Ge0.4 재성장으로 평가."
+  }
+ },
+ "items": [
+  {
+   "id": "EX-01",
+   "film": "sio2",
+   "gases": [
+    "C4F6",
+    "O2",
+    "Ar"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_cho2012"
+   ],
+   "sp": [
+    [
+     "C4F6",
+     "feed"
+    ],
+    [
+     "O2",
+     "feed"
+    ],
+    [
+     "Ar",
+     "feed"
+    ],
+    [
+     "CF",
+     ""
+    ],
+    [
+     "CF2",
+     ""
+    ],
+    [
+     "F",
+     ""
+    ],
+    [
+     "O",
+     ""
+    ],
+    [
+     "Ar+",
+     ""
+    ],
+    [
+     "SiF4",
+     ""
+    ],
+    [
+     "SiF",
+     ""
+    ],
+    [
+     "CO",
+     ""
+    ],
+    [
+     "CO2",
+     ""
+    ],
+    [
+     "COF2",
+     ""
+    ]
+   ],
+   "note": "고종횡비 컨택(HARC) 산화막 식각 계열. 표면 플루오로카본 막이 약 10Å(1nm) 정도로 얇아 이온이 뚫고 들어가며, 각도별 식각 수율(70°에서 최대)로 보아 물리 스퍼터링 기여가 컸다. CH2F2를 더하면 막이 두꺼워진다(출처)."
+  },
+  {
+   "id": "EX-02",
+   "film": "sin",
+   "gases": [
+    "CH3F",
+    "O2"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_kaler2016"
+   ],
+   "sp": [
+    [
+     "CH3F",
+     "feed"
+    ],
+    [
+     "O2",
+     "feed"
+    ],
+    [
+     "F",
+     ""
+    ],
+    [
+     "H",
+     ""
+    ],
+    [
+     "O",
+     ""
+    ],
+    [
+     "CH",
+     ""
+    ],
+    [
+     "CF",
+     ""
+    ],
+    [
+     "CO",
+     ""
+    ],
+    [
+     "HF",
+     ""
+    ],
+    [
+     "SiF4",
+     ""
+    ],
+    [
+     "N2",
+     ""
+    ],
+    [
+     "CN",
+     ""
+    ],
+    [
+     "NO",
+     ""
+    ]
+   ],
+   "note": "질화막 스페이서 계열. O2가 적으면 하이드로플루오로카본 고분자가 쌓이고, 약 48% O2 이상에서 단층 두께로 줄며 SiN 식각 속도는 50% 근처에서 최대(플라즈마 빔 실험)."
+  },
+  {
+   "id": "EX-03",
+   "film": "sin",
+   "gases": [
+    "NF3",
+    "O2"
+   ],
+   "mode": "remote",
+   "src": [
+    "x_kastenmeier1998"
+   ],
+   "sp": [
+    [
+     "NF3",
+     "feed"
+    ],
+    [
+     "O2",
+     "feed"
+    ],
+    [
+     "F",
+     "rep"
+    ],
+    [
+     "O",
+     ""
+    ],
+    [
+     "NO",
+     "rep"
+    ],
+    [
+     "N2",
+     ""
+    ],
+    [
+     "SiF4",
+     ""
+    ],
+    [
+     "FNO",
+     ""
+    ]
+   ],
+   "note": "원격 등방성 식각. O2/NF3 0.3 이상에서 Si3N4 식각 속도가 크게 늘고 SiO2는 덜 변한다. 질량분석에서 NO 검출, NFx는 미검출(거의 완전 해리). F는 Ar actinometry로 추적."
+  },
+  {
+   "id": "EX-04",
+   "film": "sin",
+   "gases": [
+    "NH3",
+    "NF3"
+   ],
+   "mode": "remote",
+   "src": [
+    "x_posseme2016"
+   ],
+   "sp": [
+    [
+     "NH3",
+     "feed"
+    ],
+    [
+     "NF3",
+     "feed"
+    ],
+    [
+     "F",
+     ""
+    ],
+    [
+     "H",
+     ""
+    ],
+    [
+     "HF",
+     ""
+    ],
+    [
+     "NH4F",
+     ""
+    ],
+    [
+     "(NH4)2SiF6",
+     ""
+    ],
+    [
+     "N2",
+     ""
+    ]
+   ],
+   "note": "H2·He로 미리 개질한 SiN 얇은 층만 제거하는 단계(이후 어닐). 생성 염은 고체 표면층 후보로, 기상 발광 대상이 아니다."
+  },
+  {
+   "id": "EX-05",
+   "film": "sige",
+   "gases": [
+    "CF4",
+    "O2"
+   ],
+   "mode": "radical",
+   "src": [
+    "x_kim2025"
+   ],
+   "sp": [
+    [
+     "CF4",
+     "feed"
+    ],
+    [
+     "O2",
+     "feed"
+    ],
+    [
+     "F",
+     ""
+    ],
+    [
+     "CF2",
+     ""
+    ],
+    [
+     "CF",
+     ""
+    ],
+    [
+     "O",
+     ""
+    ],
+    [
+     "CO",
+     ""
+    ],
+    [
+     "GeF4",
+     ""
+    ],
+    [
+     "SiF4",
+     ""
+    ],
+    [
+     "GeF",
+     ""
+    ],
+    [
+     "SiF",
+     ""
+    ]
+   ],
+   "note": "GAA·3D-DRAM용 SiGe/Si 다층의 SiGe 선택 식각. O2를 더하면 표면 산화로 SiGe 식각 속도가 순수 CF4보다 줄었다(출처)."
+  },
+  {
+   "id": "EX-06",
+   "film": "sige",
+   "gases": [
+    "CF4",
+    "N2"
+   ],
+   "mode": "radical",
+   "src": [
+    "x_kim2025"
+   ],
+   "sp": [
+    [
+     "CF4",
+     "feed"
+    ],
+    [
+     "N2",
+     "feed"
+    ],
+    [
+     "F",
+     ""
+    ],
+    [
+     "CF2",
+     ""
+    ],
+    [
+     "CF",
+     ""
+    ],
+    [
+     "N",
+     ""
+    ],
+    [
+     "CN",
+     ""
+    ],
+    [
+     "GeF4",
+     ""
+    ],
+    [
+     "SiF4",
+     ""
+    ],
+    [
+     "GeF",
+     ""
+    ]
+   ],
+   "note": "같은 연구에서 CF4/N2가 CF4/O2보다 선택비·형상이 좋았다. N2 유량이 많으면 Si 표면의 Si–N 결합이 F 식각을 막고 SiGe 표면의 GeFx가 늘었다(XPS)."
+  },
+  {
+   "id": "EX-07",
+   "film": "ge",
+   "gases": [
+    "Cl2",
+    "N2"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_monget1998"
+   ],
+   "sp": [
+    [
+     "Cl2",
+     "feed"
+    ],
+    [
+     "N2",
+     "feed"
+    ],
+    [
+     "Cl",
+     ""
+    ],
+    [
+     "Cl2+",
+     ""
+    ],
+    [
+     "N",
+     ""
+    ],
+    [
+     "GeCl4",
+     ""
+    ],
+    [
+     "GeCl",
+     ""
+    ],
+    [
+     "SiCl4",
+     ""
+    ],
+    [
+     "SiCl2",
+     ""
+    ]
+   ],
+   "note": "poly-Si/poly-Ge 게이트. Cl2·HBr+O2(폴리실리콘용)에서는 형상이 변형됐고, Cl2/N2 다단계로 측벽에 얇은 GeNx 보호층을 만들어 이방성을 얻었다."
+  },
+  {
+   "id": "EX-08",
+   "film": "acl",
+   "gases": [
+    "O2",
+    "COS"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_kim2013"
+   ],
+   "sp": [
+    [
+     "O2",
+     "feed"
+    ],
+    [
+     "COS",
+     "feed"
+    ],
+    [
+     "O",
+     ""
+    ],
+    [
+     "CO",
+     ""
+    ],
+    [
+     "S",
+     ""
+    ],
+    [
+     "CS",
+     ""
+    ],
+    [
+     "SO",
+     ""
+    ],
+    [
+     "CO2",
+     ""
+    ],
+    [
+     "SO2",
+     ""
+    ]
+   ],
+   "note": "HARC 산화막용 ACL 마스크 홀 식각. O2 + 5% COS에서 탄소-황 계열 측벽 보호층으로 형상이 더 이방성이 되고 위/아래 개구비가 약 37% 좋아졌다."
+  },
+  {
+   "id": "EX-09",
+   "film": "olk",
+   "gases": [
+    "N2",
+    "H2"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_nagai2003"
+   ],
+   "sp": [
+    [
+     "N2",
+     "feed"
+    ],
+    [
+     "H2",
+     "feed"
+    ],
+    [
+     "H",
+     "rep"
+    ],
+    [
+     "N",
+     "rep"
+    ],
+    [
+     "NH3",
+     "rep"
+    ],
+    [
+     "HCN",
+     ""
+    ],
+    [
+     "CN",
+     ""
+    ],
+    [
+     "CH",
+     ""
+    ],
+    [
+     "C2",
+     ""
+    ]
+   ],
+   "note": "H·N 라디칼 절대 밀도(VUV 흡수)와 NH3 밀도(적외선 흡수)를 측정했다. N 밀도는 H보다 한 자릿수 낮았고, H/N 밀도 비로 식각 속도와 형상을 조절할 수 있었다(UHF 500 MHz)."
+  },
+  {
+   "id": "EX-10",
+   "film": "osg",
+   "gases": [
+    "C4F8",
+    "Ar",
+    "N2"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_hua2003"
+   ],
+   "sp": [
+    [
+     "C4F8",
+     "feed"
+    ],
+    [
+     "Ar",
+     "feed"
+    ],
+    [
+     "N2",
+     "feed"
+    ],
+    [
+     "CF",
+     ""
+    ],
+    [
+     "CF2",
+     ""
+    ],
+    [
+     "F",
+     ""
+    ],
+    [
+     "N",
+     ""
+    ],
+    [
+     "CN",
+     ""
+    ],
+    [
+     "SiF4",
+     ""
+    ],
+    [
+     "CO",
+     ""
+    ],
+    [
+     "Ar+",
+     ""
+    ]
+   ],
+   "note": "식각 정지막(Si3N4·SiC) 대비 OSG 선택 식각 연구. C4F8/Ar에 N2를 더하면 표면 플루오로카본층이 얇아져 선택비가 떨어졌다(초록은 정지막별로 나누어 말하지 않음). Ar 없는 C4F8/N2에서는 질소가 섞인 두꺼운 막이 생겼다."
+  },
+  {
+   "id": "EX-11",
+   "film": "tan",
+   "gases": [
+    "Cl2",
+    "Ar"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_shin2005"
+   ],
+   "sp": [
+    [
+     "Cl2",
+     "feed"
+    ],
+    [
+     "Ar",
+     "feed"
+    ],
+    [
+     "Cl",
+     ""
+    ],
+    [
+     "Cl+",
+     ""
+    ],
+    [
+     "Cl2+",
+     ""
+    ],
+    [
+     "Ar+",
+     ""
+    ],
+    [
+     "TaCl5",
+     ""
+    ],
+    [
+     "TaCl",
+     ""
+    ],
+    [
+     "N2",
+     ""
+    ]
+   ],
+   "note": "Ta·TaN 금속 게이트·배리어 계열. 생성물 후보는 염화물 추론이다."
+  },
+  {
+   "id": "EX-12",
+   "film": "ru",
+   "gases": [
+    "O2",
+    "Cl2"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_hsu2006"
+   ],
+   "sp": [
+    [
+     "O2",
+     "feed"
+    ],
+    [
+     "Cl2",
+     "feed"
+    ],
+    [
+     "O",
+     "rep"
+    ],
+    [
+     "Cl",
+     ""
+    ],
+    [
+     "RuO4",
+     "rep"
+    ],
+    [
+     "RuO3",
+     ""
+    ],
+    [
+     "ClO",
+     ""
+    ]
+   ],
+   "note": "Ar/O2만 쓰면 벽 퇴적이 생기고 배기 쪽에서 RuO4가 보이지 않았다. Cl2를 더하면 식각 속도가 크게 늘고 하류에서 RuO4가 검출됐다. 식각 속도는 O 라디칼 밀도와 잘 맞았다."
+  },
+  {
+   "id": "EX-13",
+   "film": "mo",
+   "gases": [
+    "Cl2",
+    "O2"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_luere2011"
+   ],
+   "sp": [
+    [
+     "Cl2",
+     "feed"
+    ],
+    [
+     "O2",
+     "feed"
+    ],
+    [
+     "Cl",
+     ""
+    ],
+    [
+     "O",
+     ""
+    ],
+    [
+     "MoOCl4",
+     ""
+    ],
+    [
+     "MoO2Cl2",
+     ""
+    ],
+    [
+     "MoCl5",
+     ""
+    ]
+   ],
+   "note": "휘발성 MoOxCly로 자발 식각. O2 농도와 바이어스로 Mo:HfO2 선택비를 조절할 수 있다(출처). 생성물 화학식은 MoOxCly 계열의 추론 예시."
+  },
+  {
+   "id": "EX-14",
+   "film": "mo",
+   "gases": [
+    "HBr",
+    "O2"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_luere2011"
+   ],
+   "sp": [
+    [
+     "HBr",
+     "feed"
+    ],
+    [
+     "O2",
+     "feed"
+    ],
+    [
+     "Br",
+     ""
+    ],
+    [
+     "H",
+     ""
+    ],
+    [
+     "O",
+     ""
+    ],
+    [
+     "MoOBr4",
+     ""
+    ],
+    [
+     "MoO2Br2",
+     ""
+    ]
+   ],
+   "note": "게이트 스택 패터닝에서 가장 유망했던 화학. 측벽에 재퇴적·산화된 MoOBrx가 이방성을 만들고 O2 농도가 보호층 두께를 정한다(출처)."
+  },
+  {
+   "id": "EX-15",
+   "film": "ito",
+   "gases": [
+    "CH4",
+    "H2",
+    "Ar"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_kim2007"
+   ],
+   "sp": [
+    [
+     "CH4",
+     "feed"
+    ],
+    [
+     "H2",
+     "feed"
+    ],
+    [
+     "Ar",
+     "feed"
+    ],
+    [
+     "H",
+     ""
+    ],
+    [
+     "CH",
+     ""
+    ],
+    [
+     "CH3",
+     ""
+    ],
+    [
+     "Ar+",
+     ""
+    ],
+    [
+     "In(CH3)3",
+     ""
+    ],
+    [
+     "Sn(CH3)4",
+     ""
+    ],
+    [
+     "H2O",
+     ""
+    ],
+    [
+     "C2",
+     ""
+    ]
+   ],
+   "note": "메탄계 유기금속 생성물로 In·Sn을 제거하는 계열. 생성물은 추론 예시."
+  },
+  {
+   "id": "EX-16",
+   "film": "ga2o3",
+   "gases": [
+    "BCl3",
+    "Ar"
+   ],
+   "mode": "continuous",
+   "src": [
+    "x_shah2017"
+   ],
+   "sp": [
+    [
+     "BCl3",
+     "feed"
+    ],
+    [
+     "Ar",
+     "feed"
+    ],
+    [
+     "Cl",
+     ""
+    ],
+    [
+     "BCl",
+     ""
+    ],
+    [
+     "BCl2",
+     ""
+    ],
+    [
+     "Ar+",
+     ""
+    ],
+    [
+     "GaCl",
+     ""
+    ],
+    [
+     "GaCl3",
+     ""
+    ],
+    [
+     "BOCl",
+     ""
+    ]
+   ],
+   "note": "불소계·O2/Ar로는 거의 식각되지 않고 염소계에서만 의미 있는 속도. BCl3/Ar에서 144 nm/min으로 Cl2/Ar(19 nm/min)보다 빨랐고, 거동은 GaN보다 Al2O3에 가깝다(출처)."
+  },
+  {
+   "id": "EX-17",
+   "film": "sio2",
+   "gases": [
+    "NF3",
+    "NH3"
+   ],
+   "mode": "remote",
+   "src": [
+    "x_raynal2020"
+   ],
+   "sp": [
+    [
+     "NF3",
+     "feed"
+    ],
+    [
+     "NH3",
+     "feed"
+    ],
+    [
+     "F",
+     ""
+    ],
+    [
+     "H",
+     ""
+    ],
+    [
+     "HF",
+     ""
+    ],
+    [
+     "NH4F",
+     ""
+    ],
+    [
+     "(NH4)2SiF6",
+     ""
+    ],
+    [
+     "N2",
+     ""
+    ]
+   ],
+   "note": "Siconi형 자연산화막 제거(에피 재성장 전 세정). 출처는 습식 화학 산화막 형성 뒤 NH3/NF3 원격 플라즈마(Siconi)를 잇는 한 묶음의 세정 순서를 Si0.6Ge0.4 재성장 전처리로 평가했다(산소 제거·표면 거칠기)."
+  }
+ ]
+}
