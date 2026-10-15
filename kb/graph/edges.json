@@ -3339,5 +3339,55 @@
   "from": "oes_al",
   "to": "oes",
   "label": "측정 선"
+ },
+ {
+  "from": "hcb",
+  "to": "cu",
+  "label": "구성"
+ },
+ {
+  "from": "hcb",
+  "to": "sicn",
+  "label": "구성"
+ },
+ {
+  "from": "hcb",
+  "to": "bump",
+  "label": "범프 없이 대체"
+ },
+ {
+  "from": "hcb",
+  "to": "s_hcbpad",
+  "label": "공정"
+ },
+ {
+  "from": "s_hcbpad",
+  "to": "s_hcbbond",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_hcbpad",
+  "to": "cmp",
+  "label": "사용"
+ },
+ {
+  "from": "s_hcbpad",
+  "to": "i_bondvoid",
+  "label": "위험"
+ },
+ {
+  "from": "s_hcbbond",
+  "to": "i_bondvoid",
+  "label": "위험"
+ },
+ {
+  "from": "e_plasmadice",
+  "to": "i_bondvoid",
+  "label": "입자 줄임 (D2W)"
+ },
+ {
+  "from": "s_dicing",
+  "to": "hcb",
+  "label": "D2W 다이 준비"
  }
 ]

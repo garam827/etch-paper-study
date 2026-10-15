@@ -1966,5 +1966,73 @@
  "hkmg_us9070711": {
   "title": "GlobalFoundries 특허 US9070711B2 (게이트 리세스·캡과 자기정렬 컨택 개구 식각)",
   "url": "https://patents.google.com/patent/US9070711B2/en"
+ },
+ "hcb_kagawa16": {
+  "title": "Kagawa 외, Novel stacked CMOS image sensor with advanced Cu2Cu hybrid bonding (IEDM 2016, Sony)",
+  "url": "https://doi.org/10.1109/iedm.2016.7838375"
+ },
+ "hcb_wuu22": {
+  "title": "Wuu 외, 3D V-Cache: Hybrid-Bonded 64MB Stacked Cache for a 7nm x86-64 CPU (ISSCC 2022, AMD)",
+  "url": "https://doi.org/10.1109/isscc42614.2022.9731565"
+ },
+ "hcb_chen19": {
+  "title": "Chen 외, System on Integrated Chips (SoIC) for 3D Heterogeneous Integration (ECTC 2019, TSMC)",
+  "url": "https://doi.org/10.1109/ectc.2019.00095"
+ },
+ "hcb_tsmc_ar22": {
+  "title": "TSMC — 2022 Annual Report (SoIC CoW 양산, 회사 보고)",
+  "url": "https://investor.tsmc.com/static/annualReports/2022/english/index.html"
+ },
+ "hcb_lee24": {
+  "title": "Lee 외, A study on D2W Hybrid Cu bonding Technology for HBM Multi-die Stacking (ECTC 2024, Samsung)",
+  "url": "https://doi.org/10.1109/ectc51529.2024.00021"
+ },
+ "hcb_samsung26": {
+  "title": "Samsung — HBM4E 공개, NVIDIA GTC 2026 (HCB 언급, 2026-03 보도자료)",
+  "url": "https://semiconductor.samsung.com/news-events/news/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026/"
+ },
+ "hcb_zhou23": {
+  "title": "Zhou 외, Critical Challenges with Copper Hybrid Bonding for Chip-to-Wafer Memory Stacking (ECTC 2023, Micron)",
+  "url": "https://doi.org/10.1109/ectc51909.2023.00063"
+ },
+ "hcb_lin24": {
+  "title": "Lin 외, Direct D2W Hybrid Bonding Using Plasma Diced Dies, Pitch Down to 2 µm (ECTC 2024, imec)",
+  "url": "https://doi.org/10.1109/ectc51529.2024.00015"
+ },
+ "hcb_ma23": {
+  "title": "Ma 외, 0.5 µm Pitch W2W Hybrid Bonding with SiCN Bonding Interface (ECTC 2023)",
+  "url": "https://doi.org/10.1109/ectc51909.2023.00190"
+ },
+ "hcb_iacovo21": {
+  "title": "Iacovo 외, Bonding activation sequences for Cu/SiCN wafer level hybrid bonding (ECTC 2021, imec)",
+  "url": "https://doi.org/10.1109/ectc32696.2021.00330"
+ },
+ "hcb_beyne17": {
+  "title": "Beyne 외, Sub 2μm pitch Cu/SiCN hybrid W2W bonding (IEDM 2017, imec)",
+  "url": "https://doi.org/10.1109/iedm.2017.8268486"
+ },
+ "hcb_chew24": {
+  "title": "Chew 외, W2W hybrid bonding at 400-nm interconnect pitch (Nat. Rev. Electr. Eng. 2024, imec)",
+  "url": "https://doi.org/10.1038/s44287-024-00019-8"
+ },
+ "hcb_huang23": {
+  "title": "Huang 외, Cu thermocompression and Cu/dielectric hybrid bonding for 3D ICs (Nanomaterials 2023, 리뷰)",
+  "url": "https://doi.org/10.3390/nano13172490"
+ },
+ "hcb_moreau22": {
+  "title": "Moreau 외, Review—Hybrid Bonding-Based Interconnects: robustness and reliability (ECS JSS 2022)",
+  "url": "https://doi.org/10.1149/2162-8777/ac4ffe"
+ },
+ "hcb_cheem26": {
+  "title": "Cheemalamarri 외, Void-free Cu/dielectric hybrid bonding with ultrathin metal passivation (Commun. Eng. 2026)",
+  "url": "https://doi.org/10.1038/s44172-026-00649-w"
+ },
+ "hcb_nakayama24": {
+  "title": "Nakayama 외, Minimizing Recess of Cu Pad on Hybrid Bonding with SiCN via CMP (ECS JSS 2024)",
+  "url": "https://doi.org/10.1149/2162-8777/ad5fb7"
+ },
+ "hcb_ji22": {
+  "title": "Ji 외, Cu CMP Dishing Control for Fine Pitch W2W Hybrid Bonding (EPTC 2022)",
+  "url": "https://doi.org/10.1109/eptc56328.2022.10013244"
  }
 }

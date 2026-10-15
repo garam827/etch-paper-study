@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>12단계 · 패키징·본딩 리서치</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>12단계 · 패키징·본딩 리서치</h1>
+    <p class="phase-desc">항목 #52 · 2026-10-15 15:20 ~ · 3D 적층·하이브리드 본딩 같은 패키징 공정을 식각·플라즈마 관점에서 조사해 지식 그래프에 넣는다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-11.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><span class="cur" aria-current="page">12. 패키징·본딩 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #52 ===== -->
+    <article class="entry" id="e52">
+      <div class="entry-head">
+        <span class="no">#52</span>
+        <h2>지식 그래프에 HCB(하이브리드 Cu 본딩) 내용 추가</h2>
+        <time>2026-10-15 15:20</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>HCB 내용 추가</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>저장소에는 "HCB"라는 말이 없다. 반도체에서 HCB는 보통 <b>Hybrid Copper Bonding</b>(Cu/절연막 하이브리드 본딩)이다. 이 뜻으로 보고, 식각 지식 그래프의 BEOL·패키징 영역(RDL·범프·다이싱·플라즈마 다이싱·Cu·CMP 노드가 있는 곳)에 넣는다. 이 해석은 나중에 근거로 확인됐다(삼성 계열 ECTC 2024 논문과 2026-03 삼성 발표가 이 기술을 "HCB"라고 부른다).</li>
+          <li>식각 관점에서 볼 곳은 다음과 같다: 본딩 패드 다마신 식각, CMP가 남기는 Cu 디싱·돌출, 접합 전 플라즈마 활성화, D2W의 다이싱 입자와 플라즈마 다이싱.</li>
+          <li>새 사실이므로 검증 절차(장부 → 독립 검증 → gate)를 거쳐 채택·조건부 주장만 그래프에 넣는다. 새로 인용하는 논문은 #51 규칙대로 요약도 만든다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>15:20</time> 범위와 기록 단계를 jev에게 물었다.<br>
+            · 범위(4개 선택지): "그래프에 HCB 노드와 관련 공정·식각 노드 몇 개를 출처와 함께 추가"를 골랐다(확률 0.96, 신뢰도 0.95). 그대로 따랐다.<br>
+            · 기록 단계: 새 12단계를 골랐다(0.59, 11단계 0.41, 신뢰도 0.18). 신뢰도는 낮지만, 구조 재정비와 성격이 다른 리서치라 새 단계(12. 패키징·본딩 리서치)를 만들었다.<br>
+            · "뜻을 먼저 사용자에게 확인해야 하는가": 0.32로 낮아 바로 진행했다.</li>
+          <li><time>15:21</time> 후보 출처를 따로 모았다.<br>
+            · astra(high, 백그라운드): 정의·공정 흐름, 식각·플라즈마 단계, 피치, 산업 적용(날짜 종류 구분)을 물었다.<br>
+            · <code>lit_search.py</code>: 7개 질의(활성화, D2W 플라즈마 다이싱, Cu 리세스·팽창, 미세 피치 W2W, SiCN, CIS, HBM)로 메타데이터를 찾았다.<br>
+            · Crossref: 대표 논문(Sony IEDM 2016, AMD ISSCC 2022, TSMC SoIC ECTC 2019, imec 400nm 등)의 DOI를 찾았다.<br>
+            · OpenAlex: 초록을 확인했다.</li>
+          <li><time>15:27</time> 장부 <code>ledger/hcb.json</code>(비공개)에 주장 16개(B01–B16)를 적었다.<br>
+            · lint 1차: 수치 4개에 적용 조건이 없다는 경고가 나와 "연구 시험 구조", "회사 자체 발표" 같은 조건을 붙였다(경고 0).<br>
+            · <code>check_refs</code>: DOI 14개 모두 실재.<br>
+            · 작성 과정을 모르는 <code>claim-verifier</code> 4개에 blind 입력만 4개씩 넘겼다. 이때 검증 요청문 하나에 출처 이름표를 잘못 옮겨 적었다(DOI는 맞음). 검증자가 이를 지적했고, 판정은 DOI 기준이라 영향이 없었다.</li>
+          <li><time>15:29</time> astra 결과를 받았다. 식각과 직접 닿는 근거를 더 가져왔다.<br>
+            · 패드 단일 다마신 순서(Commun. Eng. 2026 공개 원문)<br>
+            · Cu 리세스 5nm 미만 요구(ECS JSS 2024)<br>
+            · imec 비대칭 패드(IEDM 2017)<br>
+            · 삼성 2026-03 발표의 "HCB" 용어<br>
+            · TSMC 2022 연례보고서의 SoIC CoW 양산<br>
+            astra 지적 반영: "Cu 패드를 둘 다 오목하게"는 너무 좁다(한쪽을 살짝 튀어나오게 하는 방식도 있음). 플라즈마 다이싱은 입자를 줄이지만 "입자 0"을 보인 것은 아니다. 감광막 플라즈마 제거를 descum이나 접합 활성화로 부르면 안 된다. 주장 5개(B17–B21)를 추가하고 검증자 1개에 넘겼다.</li>
+          <li><time>15:31</time> 1차 gate 결과(B01–B16): 채택 9, 조건부 7. 검증자 지적은 세 가지였다.<br>
+            · B03(Sony 양산 보고): 검증자가 초록을 열지 못했다. 또 "자체 개발"은 외부 기술(DBI) 라이선스 보도와 충돌한다.<br>
+            · B05(SoIC): "로직-로직·메모리-로직" 표현을 초록에서 찾지 못했다.<br>
+            · B09(어닐 중 Cu 팽창으로 접합): 1µm 미만 피치·저온에서는 Cu 표면 확산(bulge-out)이 주도한다는 2026 발표가 있다.<br>
+            세 문장을 고치고(B03에는 초록 위치를 적음) 새 검증자에게 다시 넘겼다. 다시 검증한 결과 세 개 모두 지지였다.</li>
+          <li><time>15:33</time> 검증자 판정에 따라 B17–B19도 조건부가 됐다. 그래프 문장에 조건을 그대로 넣었다.<br>
+            · B17: O2 플라즈마는 감광막 제거에만 쓰였고 세정은 습식(RCA-1)이었다. CMP 전에 열처리가 있었다.<br>
+            · B18: 1.44µm 피치는 검증자가 원문으로 확인하지 못했다. 그래서 그래프에는 제목에 있는 "2µm 미만"만 썼다.<br>
+            · B19: 리세스 5nm 미만은 그 연구가 목표로 한 값이 아니라, 1µm 미만 피치 접합에 필요하다고 논문이 제시한 요구 조건이다.<br>
+            최종 gate: <b>주장 21개 — 채택 12, 조건부 채택 9, 보류·제외 0</b>. 조건부 9개 중 6개는 "회사 자체 보고·단일 출처"라는 이유였다(Sony·AMD·삼성·Micron·TSMC).</li>
+          <li><time>15:33</time> #51 규칙대로 새로 인용하는 논문 15편의 요약을 <code>kb/papers/papers.json</code>에 썼다. 새 영역은 "패키징 · 하이브리드 본딩"이다. 핵심 문장 15개를 검증자 2개에 넘긴 결과는 <b>채택 14, 조건부 1(Ji 2022: 디싱 균일성은 슬러리 영향의 하나가 아니라 연구 목표)</b>이다. 레퍼런스 논문은 43편에서 58편이 됐다.</li>
+          <li><time>15:35</time> 그래프 원본(<code>kb/graph/</code>)에 노드 5개, 관계 10개, 출처 17개를 추가했다.<br>
+            · 노드: HCB(하이브리드 Cu 본딩), 본딩 패드 형성(다마신·CMP), 표면 활성화·접합·어닐, SiCN(본딩 절연막), 본딩 보이드·입자<br>
+            · 관계: Cu·SiCN 구성, 범프 없이 대체, 공정 순서, CMP 사용, 위험, 플라즈마 다이싱 → 입자 줄임(D2W), 박막화·다이싱 → D2W 다이 준비<br>
+            그래프에는 채택·조건부 주장만 넣었다. 회사 보고는 "회사 자체 보고"로 표시했다. 검증자가 열지 못한 리뷰(JEDS 2026)와 시뮬레이션 논문은 출처에서 뺐다.</li>
+          <li><time>15:36</time> 공개 상태를 내보냈다(<code>claims_export.py</code> → <code>kb/claims/hcb.json</code>). 그래프 안내 문구와 검증 현황 소개를 고친 뒤 build했다.<br>
+            · 검증 현황: 주장 115개<br>
+            · 그래프: 노드 259개, 관계 561개<br>
+            · 논문 요약: 58편<br>
+            점검 결과: <code>build_site.py --check</code> 일치, 링크 검사 28개 페이지 문제 0, <code>paper_links.py check</code> 빠진 곳 0.</li>
+          <li><time>15:37</time> 로컬 서버에서 스크린샷을 찍었다. 요약 페이지와 검증 현황은 <code>#앵커</code> 주소로 찍으면 빈 화면이 나왔다(#51 때와 같음). 대상 앞 내용을 지우는 캡처용 사본을 비공개 작업 폴더에 만들어 다시 찍었다.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 식각 지식 그래프의 BEOL·패키징 영역에 HCB와 관련 노드 4개를 추가했다. 접합 품질을 좌우하는 패드 다마신·CMP, 플라즈마 활성화, 다이싱 입자·플라즈마 다이싱을 기존 Cu·CMP·범프·다이싱 노드와 연결했다.</p>
+        <ul>
+          <li>검증:<br>
+            · 그래프 설명 주장 21개: 채택 12, 조건부 9<br>
+            · 새 논문 요약 15편: 채택 14, 조건부 1<br>
+            고쳐서 다시 검증한 주장은 3개였다.</li>
+          <li>적용 사례는 모두 회사가 스스로 보고한 것이라 그렇게 표시했다: Sony(2016 양산 보고), AMD 3D V-Cache(2022), TSMC SoIC(2022 CoW 양산), 삼성 HCB(2024 16단 시연, 2026 계획). 삼성 발표는 계획이며 출하 근거가 아니다.</li>
+          <li>남은 한계:<br>
+            · IEEE 원문은 대부분 유료여서 초록 기준으로 판정했다.<br>
+            · 패드 식각의 가스 조건은 공개 논문에 없다.<br>
+            · imec 2017의 1.44µm 피치는 초록에는 있지만 검증자가 확인하지 못해 그래프에 쓰지 않았다.</li>
+        </ul>
+        <p><a href="../research/a20_etch_knowledge_graph.html#hcb">HCB 노드 열기 →</a> · <a href="../research/claims_status.html#B01">검증 현황(B01–B21) →</a> · <a href="../research/papers.html#a-packaging">논문 요약: 패키징 →</a></p>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261015_153717_hcb_node.png" alt="HCB 노드">
+          <figcaption>history_img/20261015_153717_hcb_node.png — 그래프의 HCB 노드: 설명·식각 관점과 연결된 Cu·SiCN·범프·본딩 패드·다이싱 노드</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261015_153818_hcb_papers.png" alt="패키징 논문 요약">
+          <figcaption>history_img/20261015_153818_hcb_papers.png — 논문 요약 페이지의 새 영역 "패키징 · 하이브리드 본딩"(근거 범위·검증 배지·쓰인 곳)</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261015_153818_hcb_claims.png" alt="HCB 검증 현황">
+          <figcaption>history_img/20261015_153818_hcb_claims.png — 검증 현황의 B01–B07: 채택·조건부 판정과 이유</figcaption>
+        </figure>
+      </section>
+    </article>
+
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-11.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><span class="cur" aria-current="page">12. 패키징·본딩 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>

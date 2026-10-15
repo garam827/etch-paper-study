@@ -660,6 +660,234 @@
    "checked": [
     "https://pmc.ncbi.nlm.nih.gov/articles/PMC10302010/"
    ]
+  },
+  {
+   "id": "P-kagawa2016",
+   "page": "papers",
+   "statement": "Kagawa 외(2016)는 Cu2Cu 하이브리드 본딩을 도입한 적층형 이면조사 CMOS 이미지 센서를 양산했다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors (Y. Kagawa et al.), year (2016) and venue (IEDM) match. The mass-production statement is the authors' own report, and the claim correctly frames it as reported.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/iedm.2016.7838375"
+   ]
+  },
+  {
+   "id": "P-wuu2022",
+   "page": "papers",
+   "statement": "Wuu 외(2022)는 7nm x86-64 CPU 위에 64MB 캐시를 하이브리드 본딩으로 쌓아 L3를 32MB에서 96MB로 늘린 3D V-Cache를 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors (John Wuu et al.), year (2022) and venue (ISSCC) match. The 32MB-to-96MB L3 figure is for Zen3.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/isscc42614.2022.9731565"
+   ]
+  },
+  {
+   "id": "P-chen2019",
+   "page": "papers",
+   "statement": "Chen 외(2019)는 SoIC를 검증된 다이를 3D로 쌓는 이종 집적 플랫폼으로 소개하고 본딩 피치가 10µm 미만 규칙에서 시작한다고 밝혔다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors (Ming-Fa Chen et al.), year (2019) and venue (ECTC) match.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ectc.2019.00095"
+   ]
+  },
+  {
+   "id": "P-lee2024",
+   "page": "papers",
+   "statement": "Lee 외(2024)는 HBM용 D2W 하이브리드 구리 본딩(HCB)에서 디싱이 큰 패드는 미접합, 돌출이 큰 패드는 계면 보이드를 보였고 16단 HBM 적층을 시연했다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors (Hyeonmin Lee et al.), year (2024) and venue (ECTC) match. The word positions in the index confirm the order: un-bonded pads at high dishing, interface voids at high protrusion pads.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ectc51529.2024.00021",
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ectc51529.2024.00021"
+   ]
+  },
+  {
+   "id": "P-zhou2023",
+   "page": "papers",
+   "statement": "Zhou 외(2023)는 메모리 칩-웨이퍼 하이브리드 본딩에서 다이싱 입자와 수 시간 적층 동안의 플라즈마 활성화 효과 유지를 핵심 난제로 꼽았다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors (Wei Zhou et al.), year (2023) and venue (ECTC) match. The abstract also names the thermal-budget limit of the organic WSS as a challenge. The claim does not say the list is exhaustive.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ectc51909.2023.00063",
+    "https://api.openalex.org/works/doi:10.1109/ectc51909.2023.00063"
+   ]
+  },
+  {
+   "id": "P-lin2024",
+   "page": "papers",
+   "statement": "Lin 외(2024)는 플라즈마 다이싱한 다이와 캐리어 기반 준비 흐름으로 3µm·2µm 피치 D2W 하이브리드 본딩에서 양호한 Kelvin·데이지 체인 수율을 얻었다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The first author is Ye Lin (family name Lin; OpenAlex lists the name as 'Lin Ye'). Year (2024) and venue (ECTC) match. 'Kelvin·데이지 체인' matches the abstract's 'Kelvin daisy chain' yields.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ectc51529.2024.00015",
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ectc51529.2024.00015"
+   ]
+  },
+  {
+   "id": "P-ma2023",
+   "page": "papers",
+   "statement": "Ma 외(2023)는 SiCN 접합층으로 0.5µm 피치 W2W 하이브리드 본딩을 보이고, CMP 표면 형상 제어를 가장 중요한 요인으로 꼽았다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors (Kai Ma et al.), year (2023) and venue (ECTC) match. The abstract names Cu/SiCN surface topography control as the most crucial factor, and says repeatable, tunable CMP dishing control is critical. The claim's 'CMP 표면 형상 제어' is a fair compression; strictly, it could read 'Cu/SiCN 표면 형상(CMP) 제어'.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ectc51909.2023.00190"
+   ]
+  },
+  {
+   "id": "P-iacovo2021",
+   "page": "papers",
+   "statement": "Iacovo 외(2021)는 Cu/SiCN 하이브리드 본딩 전 활성화 순서를 비교해 N2 플라즈마가 CuOx를 줄이고 약한 패시베이션 효과를 보였다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors (Serena Iacovo et al.), year (2021) and venue (ECTC) match. The study is at wafer level (W2W).",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ectc32696.2021.00330"
+   ]
+  },
+  {
+   "id": "P-beyne2017",
+   "page": "papers",
+   "statement": "Beyne 외(2017)는 크기가 다른 위·아래 Cu 패드와 SiCN끼리 접합으로 2µm 미만 피치의 W2W 하이브리드 본딩을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors (Beyne, Kim, Peng et al., imec), 2017 and IEDM all match. The abstract also gives the 250°C anneal, bonding energy above 2 J/m², and a CMP that leaves top pads slightly protruding and bottom pads recessed.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/iedm.2017.8268486"
+   ]
+  },
+  {
+   "id": "P-chew2024",
+   "page": "papers",
+   "statement": "Chew 외(2024)는 400nm 연결 피치의 웨이퍼-웨이퍼 하이브리드 본딩을 소개했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors Chew, De Vos and Beyne; 2024; Nat. Rev. Electr. Eng. 1(2):71-72, a two-page short article. No abstract is available and the body was not checked, so I could not confirm any details beyond the title.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1038/s44287-024-00019-8"
+   ]
+  },
+  {
+   "id": "P-huang2023",
+   "page": "papers",
+   "statement": "Huang 외(2023)는 저온 Cu-Cu 접합 기법과 Cu/SiO2·Cu/SiCN·Cu/고분자 하이브리드 본딩을 정리했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors Huang, Lin, Hsiung, Hung and Chen (K.-N.); 2023; journal Nanomaterials. All match.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.3390/nano13172490"
+   ]
+  },
+  {
+   "id": "P-moreau2022",
+   "page": "papers",
+   "statement": "Moreau 외(2022)는 하이브리드 본딩 연결이 제조 문제가 해결되면 1µm보다 큰 피치에서 일반 BEOL 배선처럼 견고하다고 정리했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "This is a review of reliability results from six organizations. It looks at moisture, thermomechanical stress, electromigration, Cu diffusion and dielectric breakdown.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/2162-8777/ac4ffe"
+   ]
+  },
+  {
+   "id": "P-cheemalamarri2026",
+   "page": "papers",
+   "statement": "Cheemalamarri 외(2026)는 Cu 패드에 얇은 Ti 보호막을 선택적으로 입혀 250°C 이하 열처리로 보이드 없는 Cu/SiO2 하이브리드 본딩을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract gives the anneal as ≤250°C for 1-2 hours. Adding the 1-2 h to the claim would make it more precise, but it is not required.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1038/s44172-026-00649-w"
+   ]
+  },
+  {
+   "id": "P-nakayama2024",
+   "page": "papers",
+   "statement": "Nakayama 외(2024)는 SiCN 하이브리드 본딩에서 Cu·배리어·SiCN을 함께 연마하며 제거 속도를 맞추는 CMP를 연구했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The title says non-selective CMP, with the aim of keeping Cu pad recess under 5nm. Removal rates were controlled through slurry dilution and oxidizer concentration. Authors Nakayama, ..., Inoue; 2024; ECS JSS. All match.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/2162-8777/ad5fb7"
+   ]
+  },
+  {
+   "id": "P-ji2022",
+   "page": "papers",
+   "statement": "Ji 외(2022)는 W2W 하이브리드 본딩에서 슬러리 선택이 Cu 디싱 균일성·Cu 돌출·절연막 가장자리 둥글어짐에 영향을 준다고 보고했다.",
+   "risk": "low",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "The problems the abstract attributes to an unsuitable slurry are a non-uniform CMP removal rate, Cu protrusion, and rounding at the dielectric edge, which shrinks the bonding contact area. Cu dishing uniformity is the paper's overall goal, not one of the listed slurry effects. A more accurate wording: 'an unsuitable slurry causes non-uniform removal rate, Cu protrusion and dielectric edge rounding, and slurry adjustment controls dishing.'",
+   "note": "Authors Ji, Chen and Chui; 2022; IEEE EPTC. All match.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/eptc56328.2022.10013244"
+   ]
   }
  ]
 }

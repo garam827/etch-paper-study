@@ -4,7 +4,8 @@
   "oes": "플라즈마 진단 · OES 파장",
   "patterning": "멀티패터닝 · 리소그래피",
   "selective": "선택 증착 · 자기조립",
-  "device": "소자 · 게이트 공정"
+  "device": "소자 · 게이트 공정",
+  "packaging": "패키징 · 하이브리드 본딩"
  },
  "papers": [
   {
@@ -908,6 +909,316 @@
    ],
    "use": "그래프 BDI 노드 근거.",
    "claim": "Yang 외(2023, Micromachines 14, 1107)는 TCAD 시뮬레이션에서 Full BDI-last 방식의 구동 전류가 Full BDI-first보다 4.78배 크다고 보고했다."
+  },
+  {
+   "id": "kagawa2016",
+   "area": "packaging",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Novel stacked CMOS image sensor with advanced Cu2Cu hybrid bonding",
+   "authors": "Y. Kagawa 외 (Sony)",
+   "year": 2016,
+   "venue": "IEEE IEDM 2016, 8.4.1–8.4.4",
+   "doi": "10.1109/iedm.2016.7838375",
+   "match": [
+    "10.1109/iedm.2016.7838375"
+   ],
+   "summary": "Sony 연구진이 Cu 패드끼리 직접 잇는 Cu2Cu 하이브리드 본딩을 넣은 적층형 이면조사 CMOS 이미지 센서를 양산했다고 밝힌 발표. 전기 시험에서 연결성과 신뢰성이 좋았고 센서 성능도 양호했다고 보고했다.",
+   "points": [
+    "하이브리드 본딩이 양산 제품에 쓰인 초기 사례로 자주 인용된다.",
+    "회사가 직접 쓴 보고다(양산 시작 시점은 초록에 없음)."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Kagawa 외(2016)는 Cu2Cu 하이브리드 본딩을 도입한 적층형 이면조사 CMOS 이미지 센서를 양산했다고 보고했다."
+  },
+  {
+   "id": "wuu2022",
+   "area": "packaging",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "3D V-Cache: the Implementation of a Hybrid-Bonded 64MB Stacked Cache for a 7nm x86-64 CPU",
+   "authors": "J. Wuu 외 (AMD)",
+   "year": 2022,
+   "venue": "IEEE ISSCC 2022, 428–429",
+   "doi": "10.1109/isscc42614.2022.9731565",
+   "match": [
+    "10.1109/isscc42614.2022.9731565"
+   ],
+   "summary": "AMD가 7nm CPU 위에 64MB 캐시 다이를 하이브리드 본딩으로 쌓은 3D V-Cache의 구현을 설명한 논문. 마이크로범프 방식보다 대역폭·전력 면에서 유리하다고 밝히고, L3 캐시를 32MB에서 96MB로 늘렸다고 보고했다.",
+   "points": [
+    "본딩 기술 구성, 설계, 시험 설계(DFT) 영향과 측정 성능을 다룬다.",
+    "회사가 직접 쓴 제품 논문이다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Wuu 외(2022)는 7nm x86-64 CPU 위에 64MB 캐시를 하이브리드 본딩으로 쌓아 L3를 32MB에서 96MB로 늘린 3D V-Cache를 보고했다."
+  },
+  {
+   "id": "chen2019",
+   "area": "packaging",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "System on Integrated Chips (SoIC™) for 3D Heterogeneous Integration",
+   "authors": "M.-F. Chen 외 (TSMC)",
+   "year": 2019,
+   "venue": "IEEE ECTC 2019",
+   "doi": "10.1109/ectc.2019.00095",
+   "match": [
+    "10.1109/ectc.2019.00095"
+   ],
+   "summary": "TSMC가 크기·기능·공정이 서로 다른 검증된 다이(KGD)를 하나의 시스템 칩처럼 3D로 쌓는 SoIC 플랫폼을 소개한 발표. 전공정 방식으로 만들어 InFO·CoWoS 같은 후공정 패키지와 결합할 수 있고, 본딩 피치가 10µm 미만 규칙에서 시작한다고 밝혔다.",
+   "points": [
+    "열·전력 공급·수율을 3D 패키징의 세 가지 과제로 꼽는다.",
+    "회사 자체 발표다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Chen 외(2019)는 SoIC를 검증된 다이를 3D로 쌓는 이종 집적 플랫폼으로 소개하고 본딩 피치가 10µm 미만 규칙에서 시작한다고 밝혔다."
+  },
+  {
+   "id": "lee2024",
+   "area": "packaging",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A study on D2W Hybrid Cu bonding Technology for HBM Multi-die Stacking",
+   "authors": "H. Lee 외 (Samsung)",
+   "year": 2024,
+   "venue": "IEEE ECTC 2024, 76–80",
+   "doi": "10.1109/ectc51529.2024.00021",
+   "match": [
+    "10.1109/ectc51529.2024.00021"
+   ],
+   "summary": "HBM 다이 적층용 하이브리드 구리 본딩(HCB)에서 CMP 후 Cu 패드 디싱이 어떻게 변하는지 원자힘현미경으로 추적한 연구. 디싱이 크면 패드가 붙지 않고 돌출이 크면 계면 보이드가 생겼다. 웨이퍼 지지·박막화·세정·열처리를 거치며 디싱이 크게 바뀌는 점을 반영해 디싱 목표를 맞췄다고 보고했다.",
+   "points": [
+    "이 기술을 'HCB'라고 부르는 대표적 출처다.",
+    "HCB를 적용한 16단 HBM 적층을 시연했다고 밝혔다(회사 시연, 양산 근거 아님)."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Lee 외(2024)는 HBM용 D2W 하이브리드 구리 본딩(HCB)에서 디싱이 큰 패드는 미접합, 돌출이 큰 패드는 계면 보이드를 보였고 16단 HBM 적층을 시연했다고 보고했다."
+  },
+  {
+   "id": "zhou2023",
+   "area": "packaging",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Critical Challenges with Copper Hybrid Bonding for Chip-to-Wafer Memory Stacking",
+   "authors": "W. H. Zhou 외 (Micron)",
+   "year": 2023,
+   "venue": "IEEE ECTC 2023, 336–341",
+   "doi": "10.1109/ectc51909.2023.00063",
+   "match": [
+    "10.1109/ectc51909.2023.00063"
+   ],
+   "summary": "HBM 같은 메모리를 칩-웨이퍼 방식으로 하이브리드 본딩할 때의 난제를 정리한 연구. 다이싱에서 생기는 입자, 수 시간 걸리는 적층 동안의 플라즈마 활성화 효과 유지, 유기 접착제 기반 웨이퍼 지지가 막는 열처리 온도를 꼽았다.",
+   "points": [
+    "저온 어닐 조건에서 다공성 접합층과 그 계면을 따른 Cu 이동을 관찰했다.",
+    "유기 접착제 대신 얇은 무기막 지지로 바꿔 CMP 디싱 균일성도 좋아졌다고 보고했다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Zhou 외(2023)는 메모리 칩-웨이퍼 하이브리드 본딩에서 다이싱 입자와 수 시간 적층 동안의 플라즈마 활성화 효과 유지를 핵심 난제로 꼽았다."
+  },
+  {
+   "id": "lin2024",
+   "area": "packaging",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Direct Die-to-Wafer Hybrid Bonding Using Plasma Diced Dies and Bond Pad Pitch Scaling Down to 2 µm",
+   "authors": "Y. Lin 외 (imec)",
+   "year": 2024,
+   "venue": "IEEE ECTC 2024, 40–44",
+   "doi": "10.1109/ectc51529.2024.00015",
+   "match": [
+    "10.1109/ectc51529.2024.00015"
+   ],
+   "summary": "플라즈마 다이싱한 다이로 다이-웨이퍼(D2W) 하이브리드 본딩을 진행한 imec 연구. 박막화·플라즈마 다이싱·표면 활성화·픽앤플레이스를 모두 캐리어 웨이퍼 위에서 해 접합면 결함을 줄이고 얇은 다이를 다룰 수 있게 했다. 3µm·2µm 피치 시험 구조에서 양호한 전기 수율을 얻었다.",
+   "points": [
+    "플라즈마 다이싱으로 다이 모서리를 깎은 모양도 만들 수 있고, 가장자리·측벽이 깨끗했다.",
+    "수율(Kelvin·데이지 체인)은 연구 시험 구조 기준이다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Lin 외(2024)는 플라즈마 다이싱한 다이와 캐리어 기반 준비 흐름으로 3µm·2µm 피치 D2W 하이브리드 본딩에서 양호한 Kelvin·데이지 체인 수율을 얻었다."
+  },
+  {
+   "id": "ma2023",
+   "area": "packaging",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "0.5 µm Pitch Wafer-to-wafer Hybrid Bonding with SiCN Bonding Interface for Advanced Memory",
+   "authors": "K. Ma 외 (Applied Materials)",
+   "year": 2023,
+   "venue": "IEEE ECTC 2023, 1110–1114",
+   "doi": "10.1109/ectc51909.2023.00190",
+   "match": [
+    "10.1109/ectc51909.2023.00190"
+   ],
+   "summary": "SiCN을 접합층으로 쓴 0.5µm 피치 웨이퍼-웨이퍼 하이브리드 본딩 통합 흐름을 보인 연구. 6층 시험 구조로 피치·패드 크기·Cu 면적 비율을 바꿔 보았고, 200–350°C 어닐에서 접합 에너지가 hermetic TEOS보다 높은 SiCN 조성을 골랐다.",
+   "points": [
+    "리소·식각·Cu/SiCN CMP·가장자리 트림·박막화 단위 공정을 개발했다.",
+    "CMP로 만드는 Cu/SiCN 표면 형상 제어를 접합 품질의 가장 중요한 요인으로 꼽았다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Ma 외(2023)는 SiCN 접합층으로 0.5µm 피치 W2W 하이브리드 본딩을 보이고, CMP 표면 형상 제어를 가장 중요한 요인으로 꼽았다."
+  },
+  {
+   "id": "iacovo2021",
+   "area": "packaging",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Characterization of bonding activation sequences to enable ultra-low Cu/SiCN wafer level hybrid bonding",
+   "authors": "S. Iacovo 외 (imec·EVG)",
+   "year": 2021,
+   "venue": "IEEE ECTC 2021, 2097–2104",
+   "doi": "10.1109/ectc32696.2021.00330",
+   "match": [
+    "10.1109/ectc32696.2021.00330"
+   ],
+   "summary": "Cu/SiCN 웨이퍼 하이브리드 본딩의 열처리 온도를 낮추려고 접합 전 세정(DI수·구연산)과 플라즈마 처리 순서를 비교한 연구. N2 플라즈마는 Cu 산화물을 줄이고 약한 패시베이션 효과를 보였다. 구연산은 Cu 산화물 제거에는 좋지만 절연막에 잔여물을 남길 수 있었다.",
+   "points": [
+    "XPS·TEM·OES·접합 강도 시험 등으로 표면 상태를 확인했다.",
+    "SiCN끼리 접합을 평가하는 지표와 결합 기구 해석을 제안했다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Iacovo 외(2021)는 Cu/SiCN 하이브리드 본딩 전 활성화 순서를 비교해 N2 플라즈마가 CuOx를 줄이고 약한 패시베이션 효과를 보였다고 보고했다."
+  },
+  {
+   "id": "beyne2017",
+   "area": "packaging",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Scalable, sub 2μm pitch, Cu/SiCN to Cu/SiCN hybrid wafer-to-wafer bonding technology",
+   "authors": "E. Beyne 외 (imec)",
+   "year": 2017,
+   "venue": "IEEE IEDM 2017, 32.4.1–32.4.4",
+   "doi": "10.1109/iedm.2017.8268486",
+   "match": [
+    "10.1109/iedm.2017.8268486"
+   ],
+   "summary": "SiCN끼리의 절연막 접합과 크기가 다른 위·아래 Cu 패드를 결합한 웨이퍼-웨이퍼 하이브리드 본딩을 제안한 imec 연구. 위 패드는 살짝 튀어나오고 아래 패드는 살짝 오목하게 만드는 CMP를 썼고, 패드 크기 차이로 정렬 오차를 흡수했다.",
+   "points": [
+    "초록 기준: SiCN 접합 에너지가 250°C 어닐에서 2 J/m² 이상, Cu-Cu 접합은 350°C 어닐 후 양호했다.",
+    "초록 기준: 1.44µm 피치에서 저항·수율 결과를 얻었고, 0.72µm 피치는 접합 가능성만 보였다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Beyne 외(2017)는 크기가 다른 위·아래 Cu 패드와 SiCN끼리 접합으로 2µm 미만 피치의 W2W 하이브리드 본딩을 보고했다."
+  },
+  {
+   "id": "chew2024",
+   "area": "packaging",
+   "kind": "리뷰(관점)",
+   "basis": "서지 정보만",
+   "title": "Wafer-to-wafer hybrid bonding at 400-nm interconnect pitch",
+   "authors": "S. A. Chew, J. De Vos, E. Beyne (imec)",
+   "year": 2024,
+   "venue": "Nature Reviews Electrical Engineering 1(2), 71–72",
+   "doi": "10.1038/s44287-024-00019-8",
+   "match": [
+    "10.1038/s44287-024-00019-8"
+   ],
+   "summary": "imec 연구진이 400nm 연결 피치의 웨이퍼-웨이퍼 하이브리드 본딩 결과를 소개한 두 쪽짜리 글. 초록이 없어 서지 정보와 imec 공개 자료로만 내용을 확인했다.",
+   "points": [
+    "연구 시연이며 양산 결과가 아니다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Chew 외(2024)는 400nm 연결 피치의 웨이퍼-웨이퍼 하이브리드 본딩을 소개했다."
+  },
+  {
+   "id": "huang2023",
+   "area": "packaging",
+   "kind": "리뷰",
+   "basis": "초록",
+   "title": "Cu-Based Thermocompression Bonding and Cu/Dielectric Hybrid Bonding for Three-Dimensional Integrated Circuits (3D ICs) Application",
+   "authors": "Y.-C. Huang 외",
+   "year": 2023,
+   "venue": "Nanomaterials 13(17), 2490",
+   "doi": "10.3390/nano13172490",
+   "match": [
+    "10.3390/nano13172490"
+   ],
+   "summary": "Cu 산화 때문에 높아지는 Cu-Cu 접합 온도를 낮추는 방법(표면 전처리·활성화·구조 변경·결정 방향 제어)을 정리한 리뷰. 미세 피치에서 Cu 기둥 접합의 한계를 넘기 위한 Cu/SiO2·Cu/SiCN·Cu/고분자 하이브리드 본딩을 다룬다.",
+   "points": [
+    "CMP 없이 평탄한 금속/고분자 하이브리드 본딩 방식도 제안한다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Huang 외(2023)는 저온 Cu-Cu 접합 기법과 Cu/SiO2·Cu/SiCN·Cu/고분자 하이브리드 본딩을 정리했다."
+  },
+  {
+   "id": "moreau2022",
+   "area": "packaging",
+   "kind": "리뷰",
+   "basis": "초록",
+   "title": "Review—Hybrid Bonding-Based Interconnects: A Status on the Last Robustness and Reliability Achievements",
+   "authors": "S. Moreau 외 (CEA-Leti)",
+   "year": 2022,
+   "venue": "ECS J. Solid State Sci. Technol. 11, 024001",
+   "doi": "10.1149/2162-8777/ac4ffe",
+   "match": [
+    "10.1149/2162-8777/ac4ffe"
+   ],
+   "summary": "하이브리드 본딩(Cu-Cu, Cu/SiO2 본딩) 연결의 지난 6년간 인증·신뢰성 결과를 정리한 리뷰. 수분 침투·열기계 응력·전자이동·Cu 확산·절연 파괴를 다섯 가지 위협으로 든다. 표면 준비·정렬 같은 제조 문제가 풀리면 1µm보다 큰 피치에서는 일반 BEOL 배선처럼 견고하다고 결론지었다.",
+   "points": [
+    "발표 자료 대부분은 통과/실패 인증 결과이고, 심층 연구는 전자이동과 Cu 확산에 몰려 있다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Moreau 외(2022)는 하이브리드 본딩 연결이 제조 문제가 해결되면 1µm보다 큰 피치에서 일반 BEOL 배선처럼 견고하다고 정리했다."
+  },
+  {
+   "id": "cheemalamarri2026",
+   "area": "packaging",
+   "kind": "논문",
+   "basis": "공개 원문",
+   "title": "Void-free Cu/dielectric hybrid bonding at low-temperature enabled by ultrathin metal passivation engineering for 3D-IC applications",
+   "authors": "H. K. Cheemalamarri 외 (A*STAR IME)",
+   "year": 2026,
+   "venue": "Communications Engineering 5, 104",
+   "doi": "10.1038/s44172-026-00649-w",
+   "match": [
+    "10.1038/s44172-026-00649-w"
+   ],
+   "summary": "Cu 패드 위에만 얇은 Ti 보호막을 선택적으로 입혀 Cu 산화와 표면 불균일을 막고, 250°C 이하·1–2시간 열처리로 보이드 없는 Cu/SiO2 하이브리드 본딩을 얻은 연구. 다마신 공정과 호환되게 설계했다.",
+   "points": [
+    "보호막이 있어도 계면을 가로지른 Cu 확산과 접촉 저항 개선을 확인했다.",
+    "패드는 단일 다마신으로 만들었다: 산화막 건식 식각 → O2 플라즈마로 감광막 제거 → 습식 세정 → 배리어·Cu 시드 → 도금 → 열처리 → CMP(식각 가스는 미공개)."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Cheemalamarri 외(2026)는 Cu 패드에 얇은 Ti 보호막을 선택적으로 입혀 250°C 이하 열처리로 보이드 없는 Cu/SiO2 하이브리드 본딩을 보고했다."
+  },
+  {
+   "id": "nakayama2024",
+   "area": "packaging",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Minimizing Recess of Cu Pad on Hybrid Bonding with SiCN via Non-selective Chemical Mechanical Polishing and Post-cleaning Steps",
+   "authors": "K. Nakayama 외",
+   "year": 2024,
+   "venue": "ECS J. Solid State Sci. Technol. 13, 074009",
+   "doi": "10.1149/2162-8777/ad5fb7",
+   "match": [
+    "10.1149/2162-8777/ad5fb7"
+   ],
+   "summary": "SiCN 접합층 하이브리드 본딩에서 Cu·배리어·SiCN을 함께 연마하는 CMP를 연구했다. Cu 패드 리세스를 5nm 미만으로 맞춰야 한다는 요구에서 출발해, 슬러리와 산화제를 묽혀 세 재료의 제거 속도 차이(선택비)를 줄였다.",
+   "points": [
+    "리세스 5nm 미만은 1µm 미만 피치 접합의 요구 조건으로 제시된 값이다.",
+    "SiCN은 접합 강도가 높고 보이드를 억제하며 Cu 확산 방지막 역할도 해 SiO2 대안으로 꼽힌다.",
+    "세정 중 생긴 Cu 보호층은 플라즈마 활성화로 제거됐다."
+   ],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Nakayama 외(2024)는 SiCN 하이브리드 본딩에서 Cu·배리어·SiCN을 함께 연마하며 제거 속도를 맞추는 CMP를 연구했다."
+  },
+  {
+   "id": "ji2022",
+   "area": "packaging",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Cu CMP Dishing Control for Fine Pitch Wafer-to-Wafer (W2W) Hybrid Bonding",
+   "authors": "H. M. Ji, G. G. Chen, K. J. Chui",
+   "year": 2022,
+   "venue": "IEEE EPTC 2022",
+   "doi": "10.1109/eptc56328.2022.10013244",
+   "match": [
+    "10.1109/eptc56328.2022.10013244"
+   ],
+   "summary": "웨이퍼 전체에서 Cu CMP 디싱을 고르게 맞추는 것이 W2W 하이브리드 본딩 성공의 열쇠라는 관점에서 슬러리 구성을 바꿔 본 연구. 맞지 않는 슬러리는 웨이퍼 내 제거량 편차, Cu 돌출, 절연막 가장자리 둥글어짐(접촉 면적 감소)을 일으켰다.",
+   "points": [],
+   "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
+   "claim": "Ji 외(2022)는 W2W 하이브리드 본딩에서 슬러리 선택이 Cu 디싱 균일성·Cu 돌출·절연막 가장자리 둥글어짐에 영향을 준다고 보고했다."
   }
  ]
 }

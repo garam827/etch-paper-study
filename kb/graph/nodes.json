@@ -3546,5 +3546,83 @@
    "oes_us6472329",
    "oes_page"
   ]
+ },
+ {
+  "id": "hcb",
+  "name": "HCB (하이브리드 Cu 본딩)",
+  "en": "Hybrid Copper Bonding (Cu/dielectric hybrid bonding)",
+  "type": "structure",
+  "area": "beol",
+  "desc": "솔더·범프 없이 마주 보는 두 칩(웨이퍼)의 Cu 패드끼리, 그 둘레 절연막(SiO2·SiCN 등)끼리를 함께 직접 붙이는 3D 적층 연결. 마이크로범프보다 촘촘한 연결로 확장할 수 있다. 웨이퍼-웨이퍼(W2W)와 다이-웨이퍼(D2W) 방식이 있다. 적용 사례(모두 회사 자체 보고): Sony 적층 CMOS 이미지 센서 양산 보고(IEDM 2016), AMD 3D V-Cache(ISSCC 2022, L3 32→96MB), TSMC SoIC(본딩 피치 10µm 미만 규칙, 2022년 CoW 양산). 'HCB'라는 이름은 삼성이 HBM 적층에 쓴다(ECTC 2024 16단 시연, 2026-03 발표에서 16단 이상 차세대 HBM 계획). 연구 피치는 imec W2W 400nm(2024)까지 보고됐다.",
+  "etch": "식각보다 접합면 품질이 핵심이다. 패드는 다마신(절연막 건식 식각 → Cu 채움 → CMP)으로 만들고, CMP가 남기는 Cu 디싱·돌출과 절연막 평탄도가 접합을 좌우한다. 접합 전에는 세정과 플라즈마 활성화를 하고, D2W는 입자를 줄이려고 플라즈마 다이싱을 쓰기도 한다.",
+  "src": [
+   "hcb_moreau22",
+   "hcb_huang23",
+   "hcb_kagawa16",
+   "hcb_wuu22",
+   "hcb_chen19",
+   "hcb_tsmc_ar22",
+   "hcb_lee24",
+   "hcb_samsung26",
+   "hcb_chew24"
+  ]
+ },
+ {
+  "id": "s_hcbpad",
+  "name": "본딩 패드 형성 (다마신·CMP)",
+  "en": "Bond pad damascene & CMP",
+  "type": "step",
+  "area": "beol",
+  "desc": "맨 위 절연막에 패드 자리를 식각하고 Cu를 채운 뒤 CMP로 평탄화한다. 한 연구 예(2026)의 순서: 산화막 건식 식각 → O2 플라즈마로 감광막 제거 → 습식 세정 → 배리어·Cu 시드 → 전기도금 → 열처리 → CMP. 1µm 미만 피치에서는 Cu 패드 리세스를 5nm 미만으로 맞춰야 한다는 요구가 제시된다(SiCN CMP 연구, 2024).",
+  "etch": "절연막 패드 개구 식각(식각 가스는 해당 논문에 미공개)과 감광막 플라즈마 제거. CMP 후 Cu 디싱 정도와 절연막 평탄도가 접합 품질의 핵심 요인이다. HBM용 D2W 연구(삼성 단일 출처)에서는 디싱이 큰 패드가 붙지 않았고, 돌출이 큰 패드에서는 계면 보이드가 생겼다.",
+  "src": [
+   "hcb_cheem26",
+   "hcb_nakayama24",
+   "hcb_ma23",
+   "hcb_lee24",
+   "hcb_ji22"
+  ]
+ },
+ {
+  "id": "s_hcbbond",
+  "name": "표면 활성화·접합·어닐",
+  "en": "Surface activation, bonding & anneal",
+  "type": "step",
+  "area": "beol",
+  "desc": "접합 전 세정과 플라즈마 처리(활성화)로 절연막 접합 에너지를 높이고 필요한 어닐 온도를 낮춘다. 마이크로미터급 피치에서는 보통 절연막끼리 먼저 붙고, 어닐 중 Cu가 절연막보다 크게 팽창해 살짝 오목한 Cu 패드끼리 맞닿으며 접합된다(1µm 미만 피치·저온에서는 다른 기구가 주도할 수 있음). imec은 위 패드를 작게, 아래 패드를 크게 만들어 정렬 오차를 흡수했다(IEDM 2017, 2µm 미만 피치).",
+  "etch": "플라즈마 활성화는 깎는 식각이 아니라 표면 처리다. Cu/SiCN 연구(ECTC 2021)에서 N2 플라즈마는 Cu 산화물을 줄이고 약한 패시베이션 효과를 보였다. 칩-웨이퍼 적층은 수 시간 걸려 활성화 효과의 유지가 중요하다.",
+  "src": [
+   "hcb_iacovo21",
+   "hcb_zhou23",
+   "hcb_beyne17"
+  ]
+ },
+ {
+  "id": "sicn",
+  "name": "SiCN (본딩 절연막)",
+  "en": "SiCN bonding dielectric",
+  "type": "material",
+  "area": "beol",
+  "desc": "하이브리드 본딩 접합층으로 SiO2(TEOS) 대신 쓰는 절연막. 0.5µm 피치 W2W 연구(ECTC 2023)에서 200–350°C 어닐 조건에서 접합 에너지가 hermetic TEOS보다 높은 조성을 골랐다.",
+  "etch": "패드 자리 식각과 Cu/SiCN 동시 CMP의 대상이다. 접합 전 플라즈마 처리로 활성화한다.",
+  "src": [
+   "hcb_ma23",
+   "hcb_nakayama24",
+   "hcb_iacovo21"
+  ]
+ },
+ {
+  "id": "i_bondvoid",
+  "name": "본딩 보이드·입자",
+  "en": "Bonding voids & particles",
+  "type": "issue",
+  "area": "beol",
+  "desc": "접합면의 입자, Cu 돌출·디싱 불량이 계면 보이드와 미접합을 만든다. 칩-웨이퍼 메모리 적층에서는 웨이퍼를 다이로 자를 때 생기는 많은 입자가 하이브리드 본딩을 해친다(Micron 단일 출처, ECTC 2023).",
+  "etch": "플라즈마 다이싱과 캐리어 웨이퍼 위 다이 준비로 접합면 결함을 줄이는 흐름이 있다. imec(ECTC 2024)은 이 방식으로 3µm·2µm 피치 D2W 시험 구조에서 양호한 전기 수율을 얻었다(입자 0을 보인 것은 아님).",
+  "src": [
+   "hcb_zhou23",
+   "hcb_lin24",
+   "hcb_lee24"
+  ]
  }
 ]

@@ -1,0 +1,341 @@
+{
+ "topic": "식각 지식 그래프 HCB(하이브리드 Cu 본딩) 노드 추가",
+ "claims": [
+  {
+   "id": "B17",
+   "page": "graph",
+   "statement": "하이브리드 본딩 패드를 단일 다마신으로 만드는 한 공정 예(Communications Engineering, 2026)는 절연막을 리소그래피로 정의해 건식 식각하고, O2 플라즈마로 감광막을 제거·세정한 뒤 배리어·Cu 시드 증착, Cu 전기도금, CMP 순으로 진행했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Say the photoresist was removed by O2 plasma strip and the wafers were then cleaned with RCA-1 (wet). The O2 plasma did not do the cleaning. Optionally note: the dielectric was TEOS oxide on a SiN etch stop; the barrier was Ti and the seed was PVD Cu; there was a 150 C / 30 min anneal before CMP; the etch gas is not disclosed.",
+   "note": "nature.com redirected to a login page, so I read the full text through Europe PMC (PMC13237021). The paper itself uses the phrase 'conventional single-damascene process'.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.crossref.org/works/10.1038/s44172-026-00649-w",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13237021/fullTextXML"
+   ]
+  },
+  {
+   "id": "B18",
+   "page": "graph",
+   "statement": "imec은 IEDM 2017에서 Cu/SiCN 웨이퍼-웨이퍼 하이브리드 본딩을 1.44µm 피치로 보고했고, 작은 위쪽 패드를 더 큰 아래쪽 패드에 맞붙이는 비대칭 패드 구조를 썼다.",
+   "risk": "high",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Unless the full text confirms 1.44 µm, write the pitch as 'sub-2 µm' (the wording in the title). The asymmetric pad is supported: the top pad is smaller than the bottom pad to avoid Cu-dielectric contact. The top Cu protrudes slightly and the bottom Cu is recessed.",
+   "note": "Several searches never turned up the 1.44 µm figure in any accessible source. A separate January 2017 imec/EVG news item reports 1.8 µm, so be careful not to mix the two up.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://doi.org/10.1109/IEDM.2017.8268486",
+    "https://imec-publications.be/handle/20.500.12860/27845?show=full",
+    "https://patents.google.com/patent/US11769750"
+   ]
+  },
+  {
+   "id": "B19",
+   "page": "graph",
+   "statement": "SiCN 하이브리드 본딩용 CMP 연구(ECS J. Solid State Sci. Technol., 2024)는 미세 피치 접합을 위해 Cu 패드 리세스를 5nm 미만으로 줄이는 것을 목표로 했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Add the pitch condition: the paper says a recess under 5 nm is needed for hybrid bonding at pitch below 1 µm. Present this as a stated requirement that motivates the study, not as a target the study reported reaching. The study's actual work was tuning simultaneous Cu/barrier/SiCN CMP removal rates (Cu:SiCN selectivity 1:1.5).",
+   "note": "",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://iopscience.iop.org/article/10.1149/2162-8777/ad5fb7"
+   ]
+  },
+  {
+   "id": "B20",
+   "page": "graph",
+   "statement": "삼성전자는 2026년 3월 NVIDIA GTC 2026 관련 발표에서 하이브리드 구리 본딩(HCB) 기술이 16단 이상 차세대 HBM을 가능하게 할 것이라고 밝혔다.",
+   "risk": "high",
+   "decision": "conditional",
+   "reason": "고위험 주장인데 독립 근거 계보 1개 (단일 출처 표시)",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The wording is forward-looking ('will enable'), so this is a plan, not a shipment. The same sentence also claims more than 20% lower thermal resistance than TCB.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://semiconductor.samsung.com/news-events/news/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026/"
+   ]
+  },
+  {
+   "id": "B21",
+   "page": "graph",
+   "statement": "TSMC는 2022년 연례보고서에서 SoIC 칩-온-웨이퍼(CoW)가 로직 웨이퍼 위에 SRAM 칩을 적층하는 방식으로 양산에 들어갔다고 밝혔다.",
+   "risk": "high",
+   "decision": "conditional",
+   "reason": "고위험 주장인데 독립 근거 계보 1개 (단일 출처 표시)",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "This is the company's own report and states an actual event (volume production in 2022). It does not independently name the customer or product.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://investor.tsmc.com/static/annualReports/2022/english/index.html"
+   ]
+  },
+  {
+   "id": "B01",
+   "page": "graph",
+   "statement": "하이브리드 본딩(Cu/절연막 하이브리드 본딩)은 솔더를 쓰지 않고, 마주 보는 두 표면의 Cu 패드끼리와 그 둘레 절연막(SiO2·SiCN 등)끼리를 함께 직접 접합하는 3D 적층 연결 방식이다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Huang 2023 also covers Cu/polymer hybrid bonding, so the dielectric is not limited to inorganic films. The wording 'SiO2·SiCN 등' already allows for that. The lu26 source could not be opened.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://iopscience.iop.org/article/10.1149/2162-8777/ac4ffe",
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.3390/nano13172490?fields=title,abstract"
+   ]
+  },
+  {
+   "id": "B02",
+   "page": "graph",
+   "statement": "하이브리드 본딩은 마이크로범프(uBump) 방식보다 더 높은 칩 간 연결 밀도로 확장할 수 있는 연결 방식으로 제시된다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The >15x number is AMD's own figure for its product. The claim gives no number and only says hybrid bonding is presented as a higher-density option, so this is fine.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://doi.org/10.1109/ISSCC42614.2022.9731565"
+   ]
+  },
+  {
+   "id": "B03",
+   "page": "graph",
+   "statement": "Sony 연구진은 IEDM 2016 논문 초록에서 Cu-Cu(Cu2Cu) 하이브리드 본딩을 도입한 적층형 이면조사 CMOS 이미지 센서를 양산했다고 밝혔다.",
+   "risk": "high",
+   "decision": "conditional",
+   "reason": "고위험 주장인데 독립 근거 계보 1개 (단일 출처 표시)",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Title: 'Novel stacked CMOS image sensor with advanced Cu2Cu hybrid bonding'. Sentence 1 of the abstract says they successfully mass-produced stacked back-illuminated CIS (BI-CIS). Sentence 2 says they introduced Cu2Cu hybrid bonding. The mass-production claim is the company's own statement in the paper. I did not separately check the Sony affiliation; it is consistent with the OpenAlex summary.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2016.7838375"
+   ]
+  },
+  {
+   "id": "B04",
+   "page": "graph",
+   "statement": "AMD는 ISSCC 2022에서 7nm x86-64 CPU 위에 64MB 캐시 다이를 하이브리드 본딩으로 붙인 3D V-Cache를 발표했고, 이로써 L3 캐시가 32MB에서 96MB로 늘었다고 보고했다.",
+   "risk": "high",
+   "decision": "conditional",
+   "reason": "고위험 주장인데 독립 근거 계보 1개 (단일 출처 표시)",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract says hybrid bonding takes Zen3's on-die L3 from 32MB to 96MB. The title gives a 64MB stacked cache on a 7nm x86-64 CPU. This is a company's own paper. ISSCC 2022 was held in February 2022.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://doi.org/10.1109/ISSCC42614.2022.9731565"
+   ]
+  },
+  {
+   "id": "B05",
+   "page": "graph",
+   "statement": "TSMC 연구진은 ECTC 2019 논문에서 SoIC를 서로 다른 칩(KGD)을 3D로 쌓는 이종 집적 플랫폼으로 소개하고, 본딩 피치가 10µm 미만 규칙에서 시작한다고 밝혔다(회사 자체 발표).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "All authors are TSMC R&D, so the 'company's own announcement' label is correct. The abstract describes SoIC as a 3D chiplet stacking platform for heterogeneous integration of known good dies that differ in size, function and node. It says the bond pitch starts from a sub-10 µm rule. Venue: ECTC 2019, publication date 2019-05.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ECTC.2019.00095"
+   ]
+  },
+  {
+   "id": "B06",
+   "page": "graph",
+   "statement": "하이브리드 본딩의 Cu/절연막 접합면은 CMP로 만들며, Cu 패드의 디싱(오목) 정도와 절연막 표면 평탄도 제어가 접합 품질을 좌우하는 핵심 요인으로 보고된다.",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Ma23 calls Cu/SiCN surface topography control by CMP the most crucial factor for good bonding (SiCN <2 Å RMS). Lee24 tunes the Cu pad dishing target after CMP. Ji22 links CMP dishing, Cu protrusion and dielectric edge rounding to less contact area. IEEE full text was not reachable; this rests on the abstracts.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ECTC51909.2023.00190?fields=title,abstract",
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ECTC51529.2024.00021?fields=title,abstract",
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/EPTC56328.2022.10013244?fields=title,abstract,authors"
+   ]
+  },
+  {
+   "id": "B07",
+   "page": "graph",
+   "statement": "HBM용 다이-웨이퍼(D2W) 하이브리드 Cu 본딩 연구(ECTC 2024)에서 디싱이 큰 패드에서는 Cu-Cu 미접합이, 돌출이 큰 패드에서는 계면 보이드가 관찰됐다.",
+   "risk": "high",
+   "decision": "conditional",
+   "reason": "고위험 주장인데 독립 근거 계보 1개 (단일 출처 표시)",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Abstract wording: un-bonded Cu-Cu pads were seen at high-dishing pads, and interface voids at high-protrusion pads. Title: 'A study on D2W Hybrid Cu bonding Technology for HBM Multi-die Stacking'. ECTC 2024 ran May 28-31, 2024, so the 2024-05 date fits. Only one source exists (the claim is about this paper itself).",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ECTC51529.2024.00021?fields=title,abstract",
+    "https://api.crossref.org/works/10.1109/ECTC51529.2024.00021"
+   ]
+  },
+  {
+   "id": "B08",
+   "page": "graph",
+   "statement": "같은 ECTC 2024 연구는 이 기술을 HCB(hybrid copper bonding)라고 부르고, HCB를 적용한 16단(16H) HBM 적층을 시연했다고 보고했다.",
+   "risk": "high",
+   "decision": "conditional",
+   "reason": "고위험 주장인데 독립 근거 계보 1개 (단일 출처 표시)",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Abstract uses the term 'Hybrid copper bonding technology (HCB)' and says they demonstrated 16H HBM with HCB applied. This is the company's own demonstration claim and was not independently verified; it is not a mass-production claim. Samsung also used the HCB/16H wording at ECTC 2023 (secondary).",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ECTC51529.2024.00021?fields=title,abstract",
+    "https://chipscalereview.com/wp-content/uploads/flipbook/38/files/basic-html/page48.html"
+   ]
+  },
+  {
+   "id": "B09",
+   "page": "graph",
+   "statement": "마이크로미터급 피치의 하이브리드 본딩에서는 보통 절연막끼리를 먼저 접합한 뒤, 어닐하는 동안 Cu가 주변 절연막보다 크게 열팽창해 CMP로 살짝 오목하게 남긴 Cu 패드끼리 맞닿으며 Cu-Cu 접합이 이루어진다(1µm 미만 피치·저온 어닐에서는 다른 기구가 주도할 수 있음).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Of the cited sources, the abstracts I could reach do not state the mechanism directly: microrel22 shows metadata only and huang23 is unrelated at the abstract level. The full claim is supported by independent sources. A*STAR says: room-temperature dielectric bonding first, then annealing, and Cu expansion must exceed the CMP dishing. The IEEE talk says micron-scale pitch is driven mainly by elastic expansion, while at sub-micron pitch and low temperature, surface-diffusion bulge-out dominates. Recommendation: add the A*STAR paper and the bulge-out source to the evidence_locators.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1016/j.microrel.2022.114716",
+    "https://api.openalex.org/works/doi:10.1109/JEDS.2026.3697973",
+    "https://oar.a-star.edu.sg/communities-collections/articles/20534",
+    "https://ieeetv.ieee.org/node/240476"
+   ]
+  },
+  {
+   "id": "B10",
+   "page": "graph",
+   "statement": "하이브리드 본딩 전 세정과 플라즈마 처리로 이루어진 활성화 단계는 상온 접합 때 절연막 접합 에너지를 높이고 필요한 어닐 온도를 낮추는 데 쓰인다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The given sources (the Iacovo abstract) directly back the 'lower anneal temperature / thermal budget' part. The 'higher bond energy at room-temperature bonding' part comes mostly from the wider plasma-activated bonding literature. Iacovo also uses activation to reduce CuOx on the pads, so the claim's focus on the dielectric is a narrowing, not an error.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ECTC32696.2021.00330?fields=title,abstract",
+    "https://imec-publications.be/handle/20.500.12860/37432",
+    "https://pubs.rsc.org/en/content/articlehtml/2018/ra/c7ra08854j"
+   ]
+  },
+  {
+   "id": "B11",
+   "page": "graph",
+   "statement": "Cu/SiCN 웨이퍼 하이브리드 본딩 연구(ECTC 2021)에서 접합 전 N2 플라즈마 처리는 Cu 표면 산화물(CuOx)을 줄이고 약한 패시베이션 효과를 보였다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract says nitrogen plasma helps reduce CuOx and that a mild passivation effect of the surface was observed. Same abstract: citric acid was more clearly effective at reducing CuOx on Cu pads. The study is W2W Cu/SiCN. The conference ran June 1-July 4, 2021, so the 2021-06 date is consistent.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ECTC32696.2021.00330?fields=title,abstract",
+    "https://api.crossref.org/works/10.1109/ECTC32696.2021.00330"
+   ]
+  },
+  {
+   "id": "B12",
+   "page": "graph",
+   "statement": "0.5µm 피치 웨이퍼-웨이퍼(W2W) 하이브리드 본딩 연구(ECTC 2023)는 접합층으로 SiCN을 썼고, 접합 후 어닐 200–350°C에서 접합 에너지가 hermetic TEOS보다 높은 SiCN 조성을 골랐다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract supports these points: a six-level test vehicle, SiCN as the bonding layer, and SiCN compositions screened for bond energy above hermetic TEOS at 200-350°C. The test patterns spanned 0.5-1.2 μm pitch, so 0.5 μm is the tightest pitch shown, on 300 mm wafers. The 'via-to-via' condition in scope was not confirmed in the abstract (it mentions via sizes of 200-600 nm). The 200-350°C range is where the bond energy was compared, not a stated process window. Presented June 2, 2023, inside the May 30-Jun 2 conference, so the 2023-05 month label is slightly off.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ECTC51909.2023.00190?fields=title,abstract",
+    "https://api.crossref.org/works/10.1109/ECTC51909.2023.00190",
+    "https://siliconsemiconductor.net/article/116768/EVG_highlights_innovations_at_ECTC_2023"
+   ]
+  },
+  {
+   "id": "B13",
+   "page": "graph",
+   "statement": "칩-웨이퍼(C2W) 방식으로 메모리를 적층할 때는 웨이퍼를 개별 칩으로 다이싱하는 과정에서 많은 입자가 생겨 하이브리드 본딩을 해친다고 보고됐다.",
+   "risk": "high",
+   "decision": "conditional",
+   "reason": "고위험 주장인데 독립 근거 계보 1개 (단일 출처 표시)",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Paper: 'Critical Challenges with Copper Hybrid Bonding for Chip-to-Wafer Memory Stacking' (Micron). The context is HBM-type memory C2W stacking. The particle statement is the authors' framing of a challenge, not a quantified measurement.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ECTC51909.2023.00063?fields=title,abstract",
+    "https://api.crossref.org/works/10.1109/ECTC51909.2023.00063"
+   ]
+  },
+  {
+   "id": "B14",
+   "page": "graph",
+   "statement": "칩-웨이퍼 적층은 웨이퍼-웨이퍼 접합(수 초)과 달리 수 시간이 걸려, 플라즈마 활성화 효과가 오래 유지되는 것이 중요하다고 보고됐다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Hours vs. seconds is a qualitative contrast drawn in the abstract, not a measured figure. 'Plasma lasting effect will be key' is how the source phrases it.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ECTC51909.2023.00063?fields=title,abstract"
+   ]
+  },
+  {
+   "id": "B15",
+   "page": "graph",
+   "statement": "imec 연구(ECTC 2024)는 박막화·플라즈마 다이싱·표면 활성화·픽앤플레이스를 캐리어 웨이퍼 위에서 진행하는 D2W 하이브리드 본딩 흐름으로 3µm·2µm 피치 시험 구조에서 양호한 Kelvin·데이지 체인 수율을 얻었다.",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The evidence_locator source_id is 'zhou23', but this DOI resolves to Lin et al. (imec) 2024. The ledger source_id label looks wrong and should be fixed to something like lin24. The imec press release gives 2 µm pitch figures of Kelvin >85% and daisy chain >70%, with <350 nm overlay. Those are numbers the company announced, not something verified independently.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/ECTC51529.2024.00015?fields=title,abstract",
+    "https://api.crossref.org/works/10.1109/ECTC51529.2024.00015",
+    "https://www.eejournal.com/industry_news/imec-demonstrates-die-to-wafer-hybrid-bonding-with-a-cu-interconnect-pad-pitch-of-2%C2%B5m"
+   ]
+  },
+  {
+   "id": "B16",
+   "page": "graph",
+   "statement": "imec 연구진은 400nm 연결 피치의 웨이퍼-웨이퍼 하이브리드 본딩을 보고했다(Nature Reviews Electrical Engineering, 2024).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The NREE piece is a 2-page editorial or highlight summarizing imec's IEDM 2023 results. It is a research demonstration, not mass production, and the claim already states this. Vol 1 Issue 2 fits February 2024.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://imec-publications.be/entities/publication/f62fac48-2c8a-400a-88b7-6a955ca7addc/full",
+    "https://www.imec-int.com/en/articles/wafer-wafer-hybrid-bonding-pushing-boundaries-400nm-interconnect-pitch",
+    "https://doi.org/10.1038/s44287-024-00019-8"
+   ]
+  }
+ ]
+}
