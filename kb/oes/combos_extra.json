@@ -7,59 +7,121 @@
  "films": {
   "sige": {
    "name": "SiGe · silicon germanium",
-   "family_label": "실리콘"
+   "family_label": "실리콘",
+   "elements": [
+    "Si",
+    "Ge"
+   ]
   },
   "ge": {
    "name": "Ge · poly-germanium",
-   "family_label": "실리콘"
+   "family_label": "실리콘",
+   "elements": [
+    "Ge"
+   ]
   },
   "mo": {
    "name": "Mo · molybdenum",
-   "family_label": "금속·금속질화막"
+   "family_label": "금속·금속질화막",
+   "elements": [
+    "Mo"
+   ]
   },
   "ru": {
    "name": "Ru · ruthenium",
-   "family_label": "금속·금속질화막"
+   "family_label": "금속·금속질화막",
+   "elements": [
+    "Ru"
+   ]
   },
   "tan": {
    "name": "Ta / TaN · tantalum (nitride)",
-   "family_label": "금속·금속질화막"
+   "family_label": "금속·금속질화막",
+   "elements": [
+    "Ta",
+    "N"
+   ]
   },
   "ito": {
    "name": "ITO · indium tin oxide",
-   "family_label": "화합물 반도체"
+   "family_label": "화합물 반도체",
+   "elements": [
+    "In",
+    "Sn",
+    "O"
+   ]
   },
   "ga2o3": {
    "name": "Ga2O3 · gallium oxide",
-   "family_label": "화합물 반도체"
+   "family_label": "화합물 반도체",
+   "elements": [
+    "Ga",
+    "O"
+   ]
   },
   "olk": {
    "name": "Organic low-k · polymer dielectric",
-   "family_label": "탄소·유기막"
+   "family_label": "탄소·유기막",
+   "elements": [
+    "C",
+    "H",
+    "O"
+   ]
   },
   "sio2": {
    "name": "SiO2 · silicon dioxide",
-   "family_label": "절연막"
+   "family_label": "절연막",
+   "elements": [
+    "Si",
+    "O"
+   ],
+   "same_as": "sio2"
   },
   "sin": {
    "name": "Si3N4 / SiNx · silicon nitride",
-   "family_label": "절연막"
+   "family_label": "절연막",
+   "elements": [
+    "Si",
+    "N"
+   ],
+   "same_as": "sin"
   },
   "osg": {
    "name": "SiCOH · organosilicate low-k",
-   "family_label": "절연막"
+   "family_label": "절연막",
+   "elements": [
+    "Si",
+    "C",
+    "O",
+    "H"
+   ],
+   "same_as": "lowk"
   },
   "acl": {
    "name": "C · amorphous carbon hard mask",
-   "family_label": "탄소·유기막"
+   "family_label": "탄소·유기막",
+   "elements": [
+    "C"
+   ],
+   "same_as": "carbon"
   },
   "pr": {
    "name": "Photoresist · 193 nm resist",
-   "family_label": "탄소·유기막"
+   "family_label": "탄소·유기막",
+   "elements": [
+    "C",
+    "H",
+    "O"
+   ],
+   "same_as": "pr"
   },
   "w": {
    "name": "W · tungsten",
-   "family_label": "금속·금속질화막"
+   "family_label": "금속·금속질화막",
+   "elements": [
+    "W"
+   ],
+   "same_as": "w"
   }
  },
  "sources": {
@@ -587,17 +649,9 @@
     [
      "GeCl",
      ""
-    ],
-    [
-     "SiCl4",
-     ""
-    ],
-    [
-     "SiCl2",
-     ""
     ]
    ],
-   "note": "poly-Si/poly-Ge 게이트. Cl2·HBr+O2(폴리실리콘용)에서는 형상이 변형됐고, Cl2/N2 다단계로 측벽에 얇은 GeNx 보호층을 만들어 이방성을 얻었다.",
+   "note": "poly-Si/poly-Ge 게이트. Cl2·HBr+O2(폴리실리콘용)에서는 형상이 변형됐고, Cl2/N2 다단계로 측벽에 얇은 GeNx 보호층을 만들어 이방성을 얻었다. (원 연구는 poly-Si/poly-Ge 적층이지만, 이 조합은 Ge 막질만 다루므로 Si 생성물은 뺐다.)",
    "claim": "OE07"
   },
   {

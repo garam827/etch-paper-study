@@ -17,3 +17,5 @@ jobs:
         run: python tools/check_links.py
       - name: 논문 링크마다 요약 연결
         run: python tools/paper_links.py check
+      - name: OES 지식 그래프 스키마·시험 문항
+        run: python tools/oes_graph.py check

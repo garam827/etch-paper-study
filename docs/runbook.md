@@ -80,15 +80,19 @@ python tools/paper_links.py oes       # OES 페이지에 반영 (oes_page.py도 
 | `kb/snupal/page.json`, `topics.json` | `research/snupal_qna_knowledge.html` |
 | `kb/claims/*.json` | `research/claims_status.html` |
 | `kb/papers/papers.json` + `kb/claims/papers_summary.json`(요약 검증 상태) | `research/papers.html` (쓰인 곳은 그래프 출처·공개 페이지에서 매번 계산) |
+| `kb/oes/` + `tools/oes_supplement.json` + `kb/claims/oes_*.json` | `research/oes_etch_chemistry.html`, `research/oes_knowledge_graph.html`, `research/oes_kg/{graph.json,cards.jsonl}` |
 
-## 5. OES 페이지 (외부 데이터 필요)
+## 5. OES 페이지·지식 그래프 (kb/oes → build)
 
 ```bash
-python tools/oes_page.py <oes_assistant 폴더> <파장검증.json> [조합검증.json]   # → research/oes_etch_chemistry.html
-# 예: python tools/oes_page.py merge_src/oes_assistant data/oes/wavelength_verify.json data/oes/combo_verify.json
-#     (data/oes/는 #54에서 현재 페이지로부터 복원한 #47 검증 결과, 비공개. kb/oes/combos_extra.json 보완 조합을 자동으로 합친다)
+python tools/build_site.py            # OES 페이지·OES 지식 그래프·graph.json·cards.jsonl 포함
+python tools/oes_graph.py stats       # 노드·관계 수, 원소 보존 경고, 자동 계산한 가까운 선
+python tools/oes_graph.py check       # 스키마·링크 형식·시험 문항(kb/oes/graph_tests.json), CI에도 있음
 python tools/oes_supplement_build.py <NIST 추출.json> ledger/oes_supplement.json <검증메모.json>  # → tools/oes_supplement.json
 ```
+
+- 앱 데이터 갱신: `merge_src/oes_assistant/data/{etch_knowledge,spectra}.json`을 보안 패턴(메일·IP·경로·키·내부 주소)으로 검사한 뒤 `kb/oes/app/`에 사본을 만든다(`parameters`·`search_text` 제외).
+- 옛 방식(`python tools/oes_page.py <앱 폴더> <파장검증.json> [조합검증.json]`)도 남아 있다.
 
 ## 6. 이력 정리 (강제 푸시)
 

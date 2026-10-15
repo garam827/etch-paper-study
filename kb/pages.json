@@ -37,7 +37,8 @@
   {
    "title": "식각 화학 · OES",
    "pages": [
-    "research/oes_etch_chemistry.html"
+    "research/oes_etch_chemistry.html",
+    "research/oes_knowledge_graph.html"
    ]
   },
   {
@@ -94,6 +95,21 @@
    "date": "2026-10-13",
    "go": "해설 보기 →",
    "keywords": []
+  },
+  {
+   "href": "research/oes_knowledge_graph.html",
+   "title": "OES 지식 그래프 · 근거 검색",
+   "desc": "OES 식각 화학 데이터를 막질 → 조합 → 화학종 → 방출선·밴드 → 용도(종말점·actinometry)로 잇는 지식 그래프(노드·관계마다 근거 수준·출처·검증 판정). 레시피 → 화학종·파장, 관측 피크 → 후보(± 허용오차), 근거 검색(RAG 검색 단계, 언어 모델 없음), 노드 탐색. graph.json·cards.jsonl 내려받기.",
+   "section": "kb",
+   "tags": [
+    "식각",
+    "OES",
+    "지식 그래프"
+   ],
+   "etch_tag": "식각",
+   "date": "2026-10-15",
+   "go": "그래프 열기 →",
+   "keywords": ["RAG", "GraphRAG", "종말점", "actinometry"]
   },
   {
    "href": "research/oes_etch_chemistry.html",

@@ -1,0 +1,238 @@
+[
+ {
+  "id": "T01",
+  "q": "recipe",
+  "ask": "SiO2를 C4F8/O2/Ar로 식각하면 CF2·CO를 보고 CF2에 파장 근거가 있나",
+  "film": "SiO2",
+  "gases": [
+   "C4F8",
+   "O2",
+   "Ar"
+  ],
+  "expect_species": [
+   "CF2",
+   "CO"
+  ],
+  "expect_with_emission": [
+   "CF2",
+   "CO"
+  ]
+ },
+ {
+  "id": "T02",
+  "q": "recipe",
+  "ask": "Si3N4를 CH3F/O2로: HF·CO 측정 근거",
+  "film": "Si3N4",
+  "gases": [
+   "CH3F",
+   "O2"
+  ],
+  "expect_species": [
+   "HF",
+   "CO",
+   "H2"
+  ]
+ },
+ {
+  "id": "T03",
+  "q": "recipe",
+  "ask": "Ge를 Cl2로: GeCl 파장",
+  "film": "Ge",
+  "gases": [
+   "Cl2"
+  ],
+  "expect_species": [
+   "GeCl"
+  ],
+  "expect_with_emission": [
+   "GeCl"
+  ]
+ },
+ {
+  "id": "T04",
+  "q": "recipe",
+  "ask": "Ru를 O2/Cl2로: RuO4",
+  "film": "Ru",
+  "gases": [
+   "O2",
+   "Cl2"
+  ],
+  "expect_species": [
+   "RuO4"
+  ]
+ },
+ {
+  "id": "T05",
+  "q": "recipe",
+  "ask": "Al을 Cl2/BCl3로: AlCl·BCl 파장",
+  "film": "Al",
+  "gases": [
+   "Cl2",
+   "BCl3"
+  ],
+  "expect_species": [
+   "AlCl",
+   "BCl"
+  ],
+  "expect_with_emission": [
+   "AlCl",
+   "BCl"
+  ]
+ },
+ {
+  "id": "T06",
+  "q": "recipe",
+  "ask": "SiGe를 CF4/N2로",
+  "film": "SiGe",
+  "gases": [
+   "CF4",
+   "N2"
+  ],
+  "expect_species": [
+   "GeF4",
+   "CN"
+  ]
+ },
+ {
+  "id": "T07",
+  "q": "peak",
+  "ask": "440 nm 피크 → SiF",
+  "nm": 440.0,
+  "tol": 1.0,
+  "expect_species": [
+   "SiF"
+  ]
+ },
+ {
+  "id": "T08",
+  "q": "peak",
+  "ask": "387 nm → CN",
+  "nm": 387.5,
+  "tol": 1.0,
+  "expect_species": [
+   "CN"
+  ]
+ },
+ {
+  "id": "T09",
+  "q": "peak",
+  "ask": "703.7 nm → F",
+  "nm": 703.7,
+  "tol": 0.5,
+  "expect_species": [
+   "F"
+  ]
+ },
+ {
+  "id": "T10",
+  "q": "peak",
+  "ask": "750.4 nm → Ar",
+  "nm": 750.4,
+  "tol": 0.5,
+  "expect_species": [
+   "Ar"
+  ]
+ },
+ {
+  "id": "T11",
+  "q": "peak",
+  "ask": "337 nm → N2 (그리고 GaCl 겹침 주의)",
+  "nm": 337.1,
+  "tol": 0.5,
+  "expect_species": [
+   "N2"
+  ]
+ },
+ {
+  "id": "T12",
+  "q": "peak",
+  "ask": "602.6 nm → O2+ 제1음성대",
+  "nm": 602.6,
+  "tol": 0.5,
+  "expect_species": [
+   "O2+"
+  ]
+ },
+ {
+  "id": "T13",
+  "q": "peak",
+  "ask": "350.2 nm → GeCl (조합 출처 측정)",
+  "nm": 350.2,
+  "tol": 0.5,
+  "expect_species": [
+   "GeCl"
+  ]
+ },
+ {
+  "id": "T14",
+  "q": "peak",
+  "ask": "777.2 nm → O, SiF 겹침 목록",
+  "nm": 777.2,
+  "tol": 0.5,
+  "expect_species": [
+   "O"
+  ]
+ },
+ {
+  "id": "T15",
+  "q": "epd",
+  "ask": "SiO2→Si 종말점 신호",
+  "film": "SiO₂ → Si",
+  "expect_in_signal": [
+   "CO"
+  ]
+ },
+ {
+  "id": "T16",
+  "q": "epd",
+  "ask": "W 에치백 종말점",
+  "film": "W 에치백",
+  "expect_in_signal": [
+   "F",
+   "704"
+  ]
+ },
+ {
+  "id": "T17",
+  "q": "epd",
+  "ask": "TiN·TaN 종말점",
+  "film": "TiN",
+  "expect_in_signal": [
+   "337"
+  ]
+ },
+ {
+  "id": "T18",
+  "q": "actinometry",
+  "ask": "O actinometry 선 쌍",
+  "target": "O",
+  "expect_in_pair": [
+   "844.6",
+   "750.4"
+  ]
+ },
+ {
+  "id": "T19",
+  "q": "actinometry",
+  "ask": "F actinometry 선 쌍",
+  "target": "F",
+  "expect_in_pair": [
+   "703.7",
+   "750.4"
+  ]
+ },
+ {
+  "id": "T20",
+  "q": "sources",
+  "ask": "EX-12 근거 출처는 Hsu 2006",
+  "node": "combo:EX-12",
+  "expect_url_part": "10.1116/1.2121751"
+ },
+ {
+  "id": "T21",
+  "q": "sources",
+  "ask": "SiF 440 근거 출처(Kwon 2021)",
+  "node": "em:SiF:M01",
+  "expect_url_part": "PMC8199536"
+ }
+]

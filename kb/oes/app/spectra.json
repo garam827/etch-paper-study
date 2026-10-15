@@ -1,0 +1,177 @@
+{
+ "version": "2026-09-09.1",
+ "sources": {
+  "kim2015": {
+   "title": "G.-H. Kim et al. · Trans. Electr. Electron. Mater. 16(2), 90–94 (2015)",
+   "url": "https://oak.go.kr/repository/journal/15707/E1TEAO_2015_v16n2_90.pdf",
+   "note": "C4F8/O2/Ar 및 CH2F2 첨가 플라즈마의 CF 247.5, CF2 251.9, CO 483.1 nm 진단 위치. 밴드 전체 범위가 아니며 다른 화학계로의 적용은 확인 필요."
+  },
+  "nist_al": {
+   "title": "NIST - Strong Lines of Aluminum",
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/aluminumtable2.htm",
+   "note": "Neutral atomic lines (I). Air wavelengths converted from Angstrom to nm (divide by 10). Selected lines/components, not an exhaustive list."
+  },
+  "nist_ar": {
+   "title": "NIST · Strong Lines of Argon",
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/argontable2.htm",
+   "note": "Ar I는 중성, Ar II는 1가 양이온. Air Å → nm."
+  },
+  "nist_cl": {
+   "title": "NIST · Strong Lines of Chlorine",
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/chlorinetable2_a.htm",
+   "note": "Cl I 중성 원자. Air Å → nm."
+  },
+  "nist_f": {
+   "title": "NIST · Strong Lines of Fluorine",
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/fluorinetable2.htm",
+   "note": "F I 중성 원자. Air Å를 10으로 나누어 nm로 변환."
+  },
+  "nist_h": {
+   "title": "NIST - Strong Lines of Hydrogen",
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/hydrogentable2.htm",
+   "note": "Neutral atomic lines (I). Air wavelengths converted from Angstrom to nm (divide by 10). Selected lines/components, not an exhaustive list."
+  },
+  "nist_n": {
+   "title": "NIST - Strong Lines of Nitrogen",
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/nitrogentable2.htm",
+   "note": "Neutral atomic lines (I). Air wavelengths converted from Angstrom to nm (divide by 10). Selected lines/components, not an exhaustive list."
+  },
+  "nist_o": {
+   "title": "NIST · Strong Lines of Oxygen",
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/oxygentable2.htm",
+   "note": "O I 중성 원자. Air Å → nm. 777/844 nm 다중선은 개별 성분을 표시."
+  },
+  "nist_si": {
+   "title": "NIST - Strong Lines of Silicon",
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/silicontable2.htm",
+   "note": "Neutral atomic lines (I). Air wavelengths converted from Angstrom to nm (divide by 10). Selected lines/components, not an exhaustive list."
+  }
+ },
+ "species": {
+  "Al": {
+   "wavelengths_nm": [
+    308.2153,
+    309.271,
+    394.4006,
+    396.152
+   ],
+   "kind": "atomic_line",
+   "medium": "air",
+   "source_id": "nist_al"
+  },
+  "Ar+": {
+   "wavelengths_nm": [
+    476.4865,
+    480.602,
+    487.9864
+   ],
+   "kind": "ionic_line",
+   "medium": "air",
+   "source_id": "nist_ar"
+  },
+  "Ar": {
+   "wavelengths_nm": [
+    696.5431,
+    706.7218,
+    750.3869,
+    763.5106,
+    811.5311
+   ],
+   "kind": "atomic_line",
+   "medium": "air",
+   "source_id": "nist_ar"
+  },
+  "CF": {
+   "wavelengths_nm": [
+    247.5
+   ],
+   "kind": "molecular_diagnostic",
+   "medium": "unspecified",
+   "source_id": "kim2015"
+  },
+  "CF2": {
+   "wavelengths_nm": [
+    251.9
+   ],
+   "kind": "molecular_diagnostic",
+   "medium": "unspecified",
+   "source_id": "kim2015"
+  },
+  "Cl": {
+   "wavelengths_nm": [
+    725.662,
+    754.7072,
+    774.497,
+    837.594
+   ],
+   "kind": "atomic_line",
+   "medium": "air",
+   "source_id": "nist_cl"
+  },
+  "CO": {
+   "wavelengths_nm": [
+    483.1
+   ],
+   "kind": "molecular_diagnostic",
+   "medium": "unspecified",
+   "source_id": "kim2015"
+  },
+  "F": {
+   "wavelengths_nm": [
+    685.603,
+    703.7469,
+    712.789
+   ],
+   "kind": "atomic_line",
+   "medium": "air",
+   "source_id": "nist_f"
+  },
+  "H": {
+   "wavelengths_nm": [
+    434.0462,
+    486.12786,
+    486.13615,
+    656.2711,
+    656.28518
+   ],
+   "kind": "atomic_line",
+   "medium": "air",
+   "source_id": "nist_h"
+  },
+  "N": {
+   "wavelengths_nm": [
+    742.364,
+    744.229,
+    746.831
+   ],
+   "kind": "atomic_line",
+   "medium": "air",
+   "source_id": "nist_n"
+  },
+  "O": {
+   "wavelengths_nm": [
+    777.194,
+    777.417,
+    777.539,
+    844.625,
+    844.636,
+    844.676
+   ],
+   "kind": "atomic_line",
+   "medium": "air",
+   "source_id": "nist_o"
+  },
+  "Si": {
+   "wavelengths_nm": [
+    251.6112,
+    251.9202,
+    288.15771,
+    390.5523
+   ],
+   "kind": "atomic_line",
+   "medium": "air",
+   "source_id": "nist_si"
+  }
+ },
+ "_snapshot": "OES Assistant spectra.json의 공개 사본(2026-10-15, #57)."
+}

@@ -60,7 +60,7 @@
   <header>
     <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
     <h1>14단계 · OES 지식 구조화</h1>
-    <p class="phase-desc">항목 #56 · 2026-10-15 21:26 ~ · OES 식각 화학 데이터(조합·화학종·방출선·용도·근거)를 지식 그래프와 RAG로 구조화한다.</p>
+    <p class="phase-desc">항목 #56–#57 · 2026-10-15 21:26 ~ 21:42 · OES 식각 화학 데이터(조합·화학종·방출선·용도·근거)를 지식 그래프와 RAG로 구조화한다.</p>
   </header>
   <nav class="pager" aria-label="단계 이동"><a href="phase-13.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><span class="cur" aria-current="page">14. OES 지식 구조화</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
 
@@ -104,6 +104,73 @@
         <p><span class="tag">답변</span> 설계안만 제시했다(구현 없음). 사용자가 정할 것: 1단계(원본 통합) 착수 여부, 그래프에 비공개 앱 조합 67개를 그대로 넣을지, RAG를 이 사이트와 비공개 앱 중 어디에 둘지. 결과물이 없어 스크린샷은 없다.</p>
       </section>
     </article>
+
+    <!-- ===== 항목 #57 ===== -->
+    <article class="entry" id="e57">
+      <div class="entry-head">
+        <span class="no">#57</span>
+        <h2>OES 지식 그래프·근거 검색 구현 (보안 검토 포함)</h2>
+        <time>2026-10-15 21:32</time>
+      </div>
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>비공개 앱 조합에 보안상 문제되는 정보가 없다면 넣는다. RAG 또한 보안 문제 검토하고 양호 시 이 사이트에 둔다.</blockquote>
+      </section>
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>#56 설계의 결정 두 가지에 대한 답이다. (1) 비공개 앱 조합 67개를 그래프 원본에 넣을지, (2) RAG를 어디에 둘지. 둘 다 보안 검토가 조건이다.</li>
+          <li>검토가 양호하면 설계의 1–4단계를 진행한다: 원본 통합 → 보기·질의 → RAG 카드 내보내기 → 시험 문항.</li>
+        </ul>
+      </section>
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>21:32</time> <b>앱 데이터 보안 검토</b>(<code>etch_knowledge.json</code>·<code>spectra.json</code>).<br>
+            · 모든 문자열에 메일·IP·Windows/홈 경로·키·토큰·비밀번호·localhost·내부 주소 패턴을 걸었다. 걸린 것 0건.<br>
+            · 링크 도메인은 모두 공개 학술·장비사·NIST였다.<br>
+            · 아직 공개하지 않았던 필드도 확인했다. 공정 조건(압력·전력·온도)은 67개 모두 비어 있었다(null). 잔류물·막 메모·근거 범위·생성 경로는 일반 화학 정보였다.<br>
+            · 판단: 양호. 빈 공정 조건과 검색용 파생 문자열만 빼고 <code>kb/oes/app/</code>에 공개 사본을 만들었다. 챗 설정·위키 색인 등 앱의 다른 파일은 넣지 않았다.</li>
+          <li><time>21:32</time> <b>RAG 보안 검토</b>. 이 저장소에는 서버(worker)가 없고 사이트는 GitHub Pages 정적 페이지다.<br>
+            · 언어 모델 생성 단계를 넣으려면 API 키가 브라우저에 노출되므로 두지 않았다. 사이트에는 검색 단계(그래프 질의 + 근거 카드 순위)까지만 둔다.<br>
+            · 페이지는 외부 요청·저장소·eval을 쓰지 않는다. 동적으로 넣는 값은 모두 escape하고, 질의에서 만드는 정규식도 escape했다.<br>
+            · 링크가 모두 http(s)로 시작하는지를 그래프 검사에 넣었다.<br>
+            · 판단: 양호. 사이트에 둔다.</li>
+          <li><time>21:33</time> #47 검증 결과(<code>data/oes/</code>, #54에서 복원)도 <code>kb/oes/verify/</code>로 옮겼다. OES 페이지 생성기가 기본값으로 <code>kb/oes/</code>를 읽게 바꿨다. 생성 결과는 원래 페이지와 바이트 단위로 같았다. 이로써 OES 페이지가 다른 결과물처럼 build·CI 대상이 됐다(이전에는 비공개 데이터가 있어야 만들 수 있었다).</li>
+          <li><time>21:35</time> 그래프 변환기 <code>tools/oes_graph.py</code>를 만들었다. 원본 다섯 곳을 노드·관계 하나로 합친다.<br>
+            · 결과: 조합 88, 막질 37, 공급 가스 19, 화학종 164, 방출 근거 64, 용도 20, 검증 주장 28, 출처 107, 원소 30. 관계 2,023개<br>
+            · 관계마다 근거 수준(공급/추론/출처 측정)과 판정을 단다.<br>
+            · 0.5 nm 안의 서로 다른 화학종 선은 "가까운 선(자동 계산)" 32쌍으로 따로 표시했다(검증 목록 아님).</li>
+          <li><time>21:35</time> 원소 보존 검사(추론 후보의 원소는 막질·공급 가스 원소 안에 있어야 함)가 실제 오류 1건을 잡았다. #54에서 추가한 EX-07(Ge, Cl2/N2) 후보에 SiCl4·SiCl2가 있었다. 원 연구가 poly-Si/poly-Ge 적층이라 섞여 들어간 것이어서 Ge 막질 조합에서 뺐다. 다시 검사하니 경고 0.</li>
+          <li><time>21:36</time> 시험 문항 21개(<code>kb/oes/graph_tests.json</code>)를 만들었다. 레시피→화학종·파장 6, 피크→후보 8, 종말점 3, actinometry 2, 출처 추적 2. 21/21 통과. CI에 <code>python tools/oes_graph.py check</code>를 추가했다.</li>
+          <li><time>21:37</time> 페이지 <code>research/oes_knowledge_graph.html</code>를 만들었다. 데이터를 내장하고 기능 네 가지를 넣었다.<br>
+            · 레시피 → 화학종·파장<br>
+            · 피크 → 후보(± 허용오차, 여러 화학종이 걸리면 경고)<br>
+            · 근거 검색(질문에서 개체·파장을 찾아 그래프로 좁힌 뒤 BM25로 카드 순위)<br>
+            · 노드 탐색(속성·관계·출처, 1단계 관계 그림)<br>
+            <code>research/oes_kg/graph.json</code>과 <code>cards.jsonl</code>(노드 하나당 카드 한 줄, 근거 포함)을 내려받을 수 있게 했다. 목차에도 넣었다.</li>
+          <li><time>21:38</time> build 문제 두 가지를 고쳤다.<br>
+            · 목차가 새 페이지보다 먼저 만들어져 "없는 페이지" 오류가 났다. 목차와 논문 요약(쓰인 곳을 다른 결과물에서 계산)을 build 순서 뒤로 옮겼다.<br>
+            · 실행마다 그래프 내용이 달라졌다. 화학종 이름을 길이로만 정렬해서 같은 길이일 때 순서가 무작위였다. 정렬 기준을 고정하자 세 번 연속 결과가 같았다.</li>
+          <li><time>21:40</time> 브라우저로 네 기능을 확인했다(SiN+CH3F 레시피, 337.1 nm 피크, "SiO2→Si 종말점·CO 483 nm" 검색, CF2 노드). 레시피 결과에서 반올림 뒤 중복으로 보이던 파장을 하나로 합쳤다.</li>
+          <li><time>21:42</time> 결과: <code>build_site.py --check</code> 일치, 링크 32개 페이지 문제 0, 요약 연결 빠진 곳 0, 그래프 검사 오류 0·시험 21/21. 규칙(<code>CLAUDE.md</code>)과 절차서(§5)를 갱신했다.</li>
+        </ol>
+      </section>
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 앱 조합과 RAG 모두 보안 검토가 양호해 사이트에 넣었다. OES 데이터가 하나의 지식 그래프가 됐고, 그 위에 질의 도구와 근거 검색(검색 단계)이 생겼다. OES 페이지도 이제 build와 CI가 관리한다.</p>
+        <ul>
+          <li>언어 모델이 답을 쓰는 생성 단계는 정적 사이트에 두지 않았다(키 노출). 필요하면 서버 쪽(예: 비공개 OES Assistant 앱)에서 <code>cards.jsonl</code>을 근거로 쓰면 된다.</li>
+          <li>남은 한계: 화학종 후보 대부분은 추론이다. 자동 계산한 가까운 선은 검증 목록이 아니다. 근거 검색의 개체 인식은 사전 일치 방식이라 표현이 많이 다르면 놓칠 수 있다.</li>
+        </ul>
+        <p><a href="../research/oes_knowledge_graph.html">OES 지식 그래프 열기 →</a></p>
+        <figure><img loading="lazy" decoding="async" src="../history_img/20261015_214003_oes_kg_recipe.png" alt="레시피"><figcaption>history_img/20261015_214003_oes_kg_recipe.png — 레시피 → 화학종·파장 (SiN + CH3F): 근거 수준별 화학종과 파장, 출처</figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="../history_img/20261015_214003_oes_kg_peak.png" alt="피크"><figcaption>history_img/20261015_214003_oes_kg_peak.png — 피크 → 후보 (337.1 ± 0.5 nm): N2·GaCl·BF 등 여러 화학종 경고와 근거</figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="../history_img/20261015_214003_oes_kg_search.png" alt="근거 검색"><figcaption>history_img/20261015_214003_oes_kg_search.png — 근거 검색: "SiO2→Si 종말점·CO 483 nm" → 종말점 카드(CO 483 nm ↓)가 첫 번째</figcaption></figure>
+        <figure><img loading="lazy" decoding="async" src="../history_img/20261015_214003_oes_kg_explore.png" alt="노드 탐색"><figcaption>history_img/20261015_214003_oes_kg_explore.png — 노드 탐색: CF2의 원소·방출·생성 후보 조합(추론/출처 측정)과 관계 그림</figcaption></figure>
+      </section>
+    </article>
+
 
   </div>
 

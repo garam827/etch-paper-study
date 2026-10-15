@@ -17,11 +17,17 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-src = Path(sys.argv[1])
-K = json.load(open(src / "data/etch_knowledge.json", encoding="utf-8"))
-SP = json.load(open(src / "data/spectra.json", encoding="utf-8"))
-VER = json.load(open(sys.argv[2], encoding="utf-8"))
-CV = json.load(open(sys.argv[3], encoding="utf-8")) if len(sys.argv) > 3 else {}
+if __name__ == "__main__" and len(sys.argv) > 2:  # 옛 방식: 앱 폴더와 검증 파일을 직접 지정
+    src = Path(sys.argv[1])
+    K = json.load(open(src / "data/etch_knowledge.json", encoding="utf-8"))
+    SP = json.load(open(src / "data/spectra.json", encoding="utf-8"))
+    VER = json.load(open(sys.argv[2], encoding="utf-8"))
+    CV = json.load(open(sys.argv[3], encoding="utf-8")) if len(sys.argv) > 3 else {}
+else:  # 기본: kb/oes/ 공개 사본 (#57) — build_site.py가 이 경로로 만든다
+    K = json.load(open(ROOT / "kb/oes/app/etch_knowledge.json", encoding="utf-8"))
+    SP = json.load(open(ROOT / "kb/oes/app/spectra.json", encoding="utf-8"))
+    VER = json.load(open(ROOT / "kb/oes/verify/wavelength_verify.json", encoding="utf-8"))
+    CV = json.load(open(ROOT / "kb/oes/verify/combo_verify.json", encoding="utf-8"))
 e = html.escape
 
 KIND = {"atomic_line": "원자선", "ionic_line": "이온선", "molecular_band": "분자 진단 위치", "molecular_diagnostic": "분자 진단 위치"}
@@ -288,5 +294,12 @@ render();
 sys.path.insert(0, str(ROOT / "tools"))
 import paper_links  # noqa: E402  레퍼런스 논문 요약 링크
 page = paper_links.link_oes(page)
-(ROOT / "research/oes_etch_chemistry.html").write_text(page, encoding="utf-8")
-print("ok", len(items), "combos", len(VER), "lines", n_ok, "ok", len(CV), "verified")
+
+
+def render():
+    return page
+
+
+if __name__ == "__main__":
+    (ROOT / "research/oes_etch_chemistry.html").write_text(page, encoding="utf-8")
+    print("ok", len(items), "combos", len(VER), "lines", n_ok, "ok", len(CV), "verified")

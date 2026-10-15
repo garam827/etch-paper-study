@@ -10,7 +10,8 @@
   kb/snupal/{page,topics}.json → research/snupal_qna_knowledge.html   (tools/snupal_page.py)
   kb/papers/papers.json (+ kb/claims/papers_summary.json) → research/papers.html   (tools/papers_page.py)
   kb/claims/*.json → research/claims_status.html
-  OES 페이지는 별도 비공개 저장소 데이터가 필요해 여기서 만들지 않는다 → tools/oes_page.py (CLAUDE.md 참고)
+  kb/oes/ (앱 데이터 공개 사본·보완 조합·보완 밴드·검증) + tools/oes_supplement.json
+      → research/oes_etch_chemistry.html (tools/oes_page.py), research/oes_knowledge_graph.html·oes_kg/{graph.json,cards.jsonl} (tools/oes_graph.py)
 그 밖의 페이지(보고서·노트·3D·기록)는 HTML 자체가 원본이다.
 """
 import json
@@ -20,6 +21,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 import paper_links  # noqa: E402
+import oes_graph  # noqa: E402
+import oes_page  # noqa: E402
 import papers_page  # noqa: E402
 import snupal_page  # noqa: E402
 
@@ -204,11 +207,15 @@ def build_claims():
 
 
 TARGETS = {
-    "index.html": build_index,
     "research/claims_status.html": build_claims,
     "research/a20_etch_knowledge_graph.html": build_graph,
     "research/snupal_qna_knowledge.html": snupal_page.render,
-    "research/papers.html": papers_page.render,
+    "research/oes_etch_chemistry.html": oes_page.render,
+    "research/oes_knowledge_graph.html": oes_graph.render_page,
+    "research/oes_kg/graph.json": oes_graph.render_json,
+    "research/oes_kg/cards.jsonl": oes_graph.render_cards,
+    "research/papers.html": papers_page.render,  # 쓰인 곳을 다른 결과물에서 계산하므로 뒤쪽
+    "index.html": build_index,  # 목차는 다른 결과물이 있어야 검사를 통과하므로 마지막
 }
 
 if __name__ == "__main__":
@@ -221,6 +228,7 @@ if __name__ == "__main__":
             if not out.exists() or out.read_text(encoding="utf-8") != page:
                 stale.append(rel)
         else:
+            out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(page, encoding="utf-8")
             print("written", rel)
     if check:
