@@ -445,6 +445,18 @@ def render_cards():
     return "".join(json.dumps(c, ensure_ascii=False, separators=(",", ":")) + "\n" for c in cards(build()))
 
 
+def render_manifest():
+    """DB 미러링용 manifest (#mirror): 파일 SHA-256·크기·개수·대표 질의. 내용만으로 정해져 build가 결정적이다."""
+    gj, cj = render_json().encode("utf-8"), render_cards().encode("utf-8")
+    g = json.loads(gj)
+    files = {n: {"sha256": hashlib.sha256(b).hexdigest(), "bytes": len(b)} for n, b in (("graph.json", gj), ("cards.jsonl", cj))}
+    man = {"schema_version": "1", "version": hashlib.sha256(gj + cj).hexdigest()[:16], "generated_from": g["meta"]["generated_from"],
+           "files": files, "counts": {"nodes": len(g["nodes"]), "edges": len(g["edges"]), "cards": cj.count(b"\n")},
+           "smoke": [[483.1, "CO"], [750.4, "Ar"], [282.0, "SiCl"]],
+           "mirror_tool": "../../mirror/oes_kg_mirror.py"}
+    return json.dumps(man, ensure_ascii=False, indent=1) + "\n"
+
+
 def render_page():
     g = build()
     tpl = (ROOT / "tools/templates/oes_knowledge_graph.html").read_text(encoding="utf-8")

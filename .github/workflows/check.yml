@@ -19,3 +19,34 @@ jobs:
         run: python tools/paper_links.py check
       - name: OES 지식 그래프 스키마·시험 문항
         run: python tools/oes_graph.py check
+  mirror:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: ci-only
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGURL: postgresql://postgres:ci-only@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 미러 SQLite 동기화·재동기화·질의
+        run: |
+          python mirror/oes_kg_mirror.py sync --source research/oes_kg --sqlite /tmp/m/oes_kg.sqlite
+          python mirror/oes_kg_mirror.py sync --source research/oes_kg --sqlite /tmp/m/oes_kg.sqlite
+          python mirror/oes_kg_mirror.py query --sqlite /tmp/m/oes_kg.sqlite peak 282 --tol 0.3 | grep -q SiCl
+      - name: 미러 PostgreSQL 적재 2회(교체·보관 경로)와 질의
+        run: |
+          python mirror/oes_kg_mirror.py pg-sql --source research/oes_kg --out /tmp/load.sql
+          psql "$PGURL" -v ON_ERROR_STOP=1 -q -f /tmp/load.sql
+          psql "$PGURL" -v ON_ERROR_STOP=1 -q -f /tmp/load.sql
+          test "$(psql "$PGURL" -tAc "SELECT count(*) FROM oes_kg.node")" = "$(python -c "import json;print(json.load(open('research/oes_kg/manifest.json'))['counts']['nodes'])")"
+          psql "$PGURL" -tAc "SELECT count(*) FROM oes_kg_prev.node" | grep -qv '^0$'
+          psql "$PGURL" -tAc "SELECT species FROM oes_kg.emission_point WHERE nm BETWEEN 281.7 AND 282.3" | grep -q SiCl
+          psql "$PGURL" -tAc "SELECT id FROM oes_kg.card, plainto_tsquery('simple','SiOClx SF6') q WHERE tsv @@ q LIMIT 1" | grep -q .

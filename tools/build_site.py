@@ -214,6 +214,7 @@ TARGETS = {
     "research/oes_knowledge_graph.html": oes_graph.render_page,
     "research/oes_kg/graph.json": oes_graph.render_json,
     "research/oes_kg/cards.jsonl": oes_graph.render_cards,
+    "research/oes_kg/manifest.json": oes_graph.render_manifest,
     "research/papers.html": papers_page.render,  # 쓰인 곳을 다른 결과물에서 계산하므로 뒤쪽
     "index.html": build_index,  # 목차는 다른 결과물이 있어야 검사를 통과하므로 마지막
 }
@@ -229,7 +230,7 @@ if __name__ == "__main__":
                 stale.append(rel)
         else:
             out.parent.mkdir(parents=True, exist_ok=True)
-            out.write_text(page, encoding="utf-8")
+            out.write_text(page, encoding="utf-8", newline="")  # LF 고정: manifest SHA-256이 저장소·Pages·로컬에서 같아야 한다
             print("written", rel)
     if check:
         print("최신 아님: " + ", ".join(stale) if stale else "모든 생성 결과가 최신")

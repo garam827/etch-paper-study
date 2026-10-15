@@ -1,0 +1,35 @@
+{
+ "schema_version": "1",
+ "version": "4120881e9e3a9f79",
+ "generated_from": "kb/oes (#57)",
+ "files": {
+  "graph.json": {
+   "sha256": "96a8f9b98e337a3919e5a019eb1e31f5332f7bea3234393caad04c7e70e7960b",
+   "bytes": 278062
+  },
+  "cards.jsonl": {
+   "sha256": "5fdd9f5e0a4565c58a3fa817e4a40a9b54fb984bdd749dfdeb64f314a0126147",
+   "bytes": 337366
+  }
+ },
+ "counts": {
+  "nodes": 625,
+  "edges": 2132,
+  "cards": 595
+ },
+ "smoke": [
+  [
+   483.1,
+   "CO"
+  ],
+  [
+   750.4,
+   "Ar"
+  ],
+  [
+   282.0,
+   "SiCl"
+  ]
+ ],
+ "mirror_tool": "../../mirror/oes_kg_mirror.py"
+}
