@@ -20,7 +20,7 @@
   7. 패터닝 기술 리서치 (#25–#30)
   8. 플라즈마 식각 기초 문헌 학습 (#31–#38)
   9. 리서치 검증 체계 구축 (#39–)
-  10. OES 식각 화학 데이터 병합 (#46–#47, #54)
+  10. OES 식각 화학 데이터 병합 (#46–#47, #54–#55)
   11. 사이트 구조 재정비 (#48–#51)
   12. 패키징·본딩 리서치 (#52)
   13. 공정 제어(APC) 리서치 (#53–)
@@ -106,7 +106,7 @@ history.html·history/ 단계 페이지, history_img의 스크린샷, 기타 공
   - 파일 구성은 `docs/runbook.md` §4. 노드 id는 "한 개념 = 한 id"로 쓰고 바꾸지 않는다(링크 `#앵커`가 걸려 있음).
   - 구조 이관과 내용 수정은 따로 커밋한다.
 - **레퍼런스 논문 요약 (2026-10-13, #51)**: 결과물에 논문을 새로 인용하면 `kb/papers/papers.json`에 요약(재서술, 근거 범위 표시)을 추가하고, 핵심 문장을 `ledger/papers_summary.json`으로 검증(gate) → `claims_export.py` → build 한다. 손으로 쓰는 페이지는 `python tools/paper_links.py apply <페이지>`로 "요약" 링크를 붙인다(그래프·OES는 생성 도구가 자동). 푸시 전 `python tools/paper_links.py check`(CI에도 있음).
-- OES 페이지는 별도 비공개 저장소 데이터가 필요해 build에 들어가지 않는다(사용자 결정 2026-10-13, 도구는 `docs/runbook.md` §5). 보완 조합은 `kb/oes/combos_extra.json`(공개 원본, 검증 상태 `kb/claims/oes_extra.json`)에 두고 생성 때 합친다. 원래 앱 데이터는 고치지 않는다(#54). 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
+- OES 페이지는 별도 비공개 저장소 데이터가 필요해 build에 들어가지 않는다(사용자 결정 2026-10-13, 도구는 `docs/runbook.md` §5). 보완 조합은 `kb/oes/combos_extra.json`(공개 원본, 검증 상태 `kb/claims/oes_extra.json`)에 두고 생성 때 합친다. 원래 앱 데이터는 고치지 않는다(#54). 조합별 파장 표시용 보완 원자선·분자 밴드는 `kb/oes/bands_extra.json`(분자는 `ledger/oes_bands.json` 검증 채택분, #55). 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
 - 원본 리서치(`research/*_raw.md`)와 실행 로그(`research/*_log.txt`)는 공개하지 않는다 (로컬 보관).
 - 사이트 주소에는 GitHub 계정명이 들어가므로, history에는 `<계정>.github.io/etch-paper-study/`처럼 가려서 적는다.
 

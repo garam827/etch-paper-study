@@ -1,0 +1,281 @@
+{
+ "note": "조합별 OES 파장 표시 보완(#55, 2026-10-15). atomic: NIST 원소별 강한 선 표(공기 중 파장)에서 200–900 nm 중성 원자선 상대 세기 상위 4개(1 nm 안 중복 제외)를 기계적으로 뽑음(tools/oes_supplement.json과 같은 규칙). mol: 분자 밴드 위치(독립 검증 채택·조건부만).",
+ "atomic": {
+  "Ge": {
+   "lines": [
+    {
+     "nm": 201.907,
+     "A_text": "2019.068",
+     "int": 700
+    },
+    {
+     "nm": 204.171,
+     "A_text": "2041.712",
+     "int": 900
+    },
+    {
+     "nm": 206.866,
+     "A_text": "2068.656",
+     "int": 1000
+    },
+    {
+     "nm": 209.426,
+     "A_text": "2094.258",
+     "int": 800
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/germaniumtable2.htm",
+   "spectrum": "Ge I"
+  },
+  "Mo": {
+   "lines": [
+    {
+     "nm": 313.259,
+     "A_text": "3132.594",
+     "int": 500
+    },
+    {
+     "nm": 379.825,
+     "A_text": "3798.252",
+     "int": 1000
+    },
+    {
+     "nm": 386.41,
+     "A_text": "3864.104",
+     "int": 1000
+    },
+    {
+     "nm": 390.295,
+     "A_text": "3902.953",
+     "int": 700
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/molybdenumtable2.htm",
+   "spectrum": "Mo I"
+  },
+  "Ru": {
+   "lines": [
+    {
+     "nm": 349.894,
+     "A_text": "3498.944",
+     "int": 800
+    },
+    {
+     "nm": 372.803,
+     "A_text": "3728.026",
+     "int": 1000
+    },
+    {
+     "nm": 379.89,
+     "A_text": "3798.899",
+     "int": 700
+    },
+    {
+     "nm": 419.989,
+     "A_text": "4199.892",
+     "int": 700
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/rutheniumtable2.htm",
+   "spectrum": "Ru I"
+  },
+  "Ta": {
+   "lines": [
+    {
+     "nm": 265.327,
+     "A_text": "2653.27",
+     "int": 1000
+    },
+    {
+     "nm": 271.467,
+     "A_text": "2714.67",
+     "int": 1000
+    },
+    {
+     "nm": 285.098,
+     "A_text": "2850.98",
+     "int": 700
+    },
+    {
+     "nm": 293.355,
+     "A_text": "2933.55",
+     "int": 700
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/tantalumtable2.htm",
+   "spectrum": "Ta I"
+  },
+  "Au": {
+   "lines": [
+    {
+     "nm": 201.2,
+     "A_text": "2012.00",
+     "int": 1000
+    },
+    {
+     "nm": 242.795,
+     "A_text": "2427.95",
+     "int": 250
+    },
+    {
+     "nm": 267.595,
+     "A_text": "2675.954",
+     "int": 300
+    },
+    {
+     "nm": 312.278,
+     "A_text": "3122.784",
+     "int": 150
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/goldtable2.htm",
+   "spectrum": "Au I"
+  },
+  "Pt": {
+   "lines": [
+    {
+     "nm": 299.796,
+     "A_text": "2997.9622",
+     "int": 600
+    },
+    {
+     "nm": 304.263,
+     "A_text": "3042.6318",
+     "int": 800
+    },
+    {
+     "nm": 306.471,
+     "A_text": "3064.7110",
+     "int": 1000
+    },
+    {
+     "nm": 340.813,
+     "A_text": "3408.1308",
+     "int": 900
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/platinumtable2.htm",
+   "spectrum": "Pt I"
+  },
+  "Sn": {
+   "lines": [
+    {
+     "nm": 235.485,
+     "A_text": "2354.850",
+     "int": 700
+    },
+    {
+     "nm": 242.95,
+     "A_text": "2429.495",
+     "int": 700
+    },
+    {
+     "nm": 283.998,
+     "A_text": "2839.976",
+     "int": 1000
+    },
+    {
+     "nm": 286.332,
+     "A_text": "2863.315",
+     "int": 700
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/tintable2.htm",
+   "spectrum": "Sn I"
+  },
+  "Zr": {
+   "lines": [
+    {
+     "nm": 360.119,
+     "A_text": "3601.191",
+     "int": 1000
+    },
+    {
+     "nm": 386.387,
+     "A_text": "3863.872",
+     "int": 800
+    },
+    {
+     "nm": 389.032,
+     "A_text": "3890.316",
+     "int": 800
+    },
+    {
+     "nm": 468.78,
+     "A_text": "4687.799",
+     "int": 700
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/zirconiumtable2.htm",
+   "spectrum": "Zr I"
+  },
+  "P": {
+   "lines": [
+    {
+     "nm": 213.618,
+     "A_text": "2136.182",
+     "int": 400
+    },
+    {
+     "nm": 214.915,
+     "A_text": "2149.145",
+     "int": 400
+    },
+    {
+     "nm": 253.561,
+     "A_text": "2535.606",
+     "int": 500
+    },
+    {
+     "nm": 255.325,
+     "A_text": "2553.253",
+     "int": 400
+    }
+   ],
+   "url": "https://physics.nist.gov/PhysRefData/Handbook/Tables/phosphorustable2.htm",
+   "spectrum": "P I"
+  }
+ },
+ "mol": [
+  {
+   "id": "OB01",
+   "decision": "adopt",
+   "sp": "NO",
+   "nm": "≈236 (γ (0,1), 230–237 적분)",
+   "tr": "A²Σ⁺→X²Π (γ)",
+   "cond": "저압 N2/O2 ICP",
+   "url": "https://doi.org/10.1088/1361-6595/adcbd3",
+   "title": "Schücke 외 (2025) · NO densities and UV emission over the E–H transition in a low-pressure ICP (PSST)"
+  },
+  {
+   "id": "OB04",
+   "decision": "adopt",
+   "sp": "S2",
+   "nm": "≈242–461 (B–X 계, 선목록 범위)",
+   "tr": "B³Σᵤ⁻→X³Σg⁻",
+   "cond": "분광 선목록(식각 감시 파장은 미확인)",
+   "url": "https://doi.org/10.1093/mnras/stae246",
+   "title": "Gomez 외 (2024) · HITRAN-formatted UV line list of S2 (MNRAS)"
+  },
+  {
+   "id": "OB05",
+   "decision": "adopt",
+   "sp": "O2+",
+   "nm": "529.5 · 563.2 · 602.6 · 641.9 · 685.6 (밴드 헤드)",
+   "tr": "b⁴Σg⁻→a⁴Πᵤ (제1음성대)",
+   "cond": "저압 산소 방전",
+   "url": "https://doi.org/10.1098/rsta.1938.0014",
+   "title": "Nevin (1938) · Rotational analysis of the first negative band spectrum of oxygen (Phil. Trans. A)"
+  },
+  {
+   "id": "OB07",
+   "decision": "adopt",
+   "sp": "SO",
+   "nm": "≈240–400 (B–X 계)",
+   "tr": "B³Σ⁻→X³Σ⁻",
+   "cond": "실험실 밴드 스펙트럼(식각 감시 파장은 미확인)",
+   "url": "https://doi.org/10.1103/PhysRev.41.167",
+   "title": "Martin (1932) · The band spectrum of sulphur monoxide (Phys. Rev.)"
+  }
+ ]
+}

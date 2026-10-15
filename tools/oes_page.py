@@ -32,6 +32,21 @@ SUPP_F = ROOT / "tools/oes_supplement.json"
 SUP = json.load(open(SUPP_F, encoding="utf-8")) if SUPP_F.exists() else None
 DEC = {"adopt": ("채택", "adopt"), "conditional": ("조건부", "cond")}
 supp_species = set(SUP["atomic"]) | {m["sp"] for m in SUP["mol"]} if SUP else set()
+BX_F = ROOT / "kb/oes/bands_extra.json"
+BX = json.load(open(BX_F, encoding="utf-8")) if BX_F.exists() else {"atomic": {}, "mol": []}
+supp_species |= set(BX["atomic"]) | {m["sp"] for m in BX["mol"]}
+
+# 화학종 → 관련 OES 파장 (조합 표의 "관련 OES 파장" 열)
+def _f(w): return f"{w:.1f}"
+def _j(ws): return " · ".join(dict.fromkeys(_f(w) for w in ws))  # 소수 첫째 자리에서 겹치는 선은 한 번만
+WL = {}
+for name, s in SP["species"].items():
+    WL.setdefault(name, []).append(["v", _j(s["wavelengths_nm"]), "기준 파장"])
+for src_atomic in ([SUP["atomic"]] if SUP else []) + [BX["atomic"]]:
+    for name, v in src_atomic.items():
+        WL.setdefault(name, []).append(["s", _j(l["nm"] for l in v["lines"]), v["spectrum"] + " NIST 강한 선"])
+for m in (SUP["mol"] if SUP else []) + BX["mol"]:
+    WL.setdefault(m["sp"], []).append(["s", m["nm"], m.get("tr", "")])
 
 EX_F, EXS_F = ROOT / "kb/oes/combos_extra.json", ROOT / "kb/claims/oes_extra.json"
 EX = json.load(open(EX_F, encoding="utf-8")) if EX_F.exists() else None
@@ -58,6 +73,14 @@ for x in K["items"]:
                   "basis": BASIS.get(x["basis"], x["basis"]), "src": x["sources"], "prod": x.get("products", []),
                   "res": x.get("residues", []), "note": x.get("note", ""), "sp": sp,
                   "v": combo_verdict.get(x["id"], {}).get("verdict")})
+def wl_of(forms, extra=None):
+    out, none = [], []
+    for f in dict.fromkeys(forms):
+        rows = [r for r in (extra or {}).get(f, [])] + WL.get(f, [])
+        (out.append([f, rows]) if rows else none.append(f))
+    return out, none
+for i in items:
+    i["wl"], i["nowl"] = wl_of([s["f"] for s in i["sp"]])
 n_base = len(items)
 EV = {"feed": "provided_feed", "rep": "reported_in_reference", "": "chemical_inference"}
 DECL = {"adopt": ("채택", "adopt"), "conditional": ("조건부", "cond"), "hold": ("보류", "hold"), "reject": ("제외", "reject")}
@@ -74,6 +97,7 @@ for x in (EX["items"] if EX else []):
                   "mode": K["modes"].get(x["mode"]) or EX["modes"][x["mode"]], "basis": "보완 조사(2026-10-15)",
                   "src": x["src"], "prod": [], "res": [], "note": x["note"], "sp": sp, "v": None,
                   "d": list(DECL[d]) if d else None})
+    items[-1]["wl"], items[-1]["nowl"] = wl_of([s for s, _ in x["sp"]], {k: [["r", v, "이 조합 출처 측정"]] for k, v in x.get("wl", {}).items()})
 ev = Counter(s["e"] for i in items for s in i["sp"])
 src_js = {k: [v["title"], v["url"]] for k, v in sources.items()}
 fams = sorted(set(i["fam"] for i in items))
@@ -133,6 +157,20 @@ if SUP:
   <p class="note">위 기준 목록의 CF₂ 251.9 nm와 Si 251.92 nm(NIST)도 같은 경우다.</p>
 """
 
+bx_html = ""
+if BX["atomic"] or BX["mol"]:
+    bxa = "".join(f'<tr><td><b>{e(k)}</b></td><td>{e(v["spectrum"])}</td><td class="num">{" · ".join(format(l["nm"], ".3f") for l in v["lines"])}</td>'
+                  f'<td><a href="{e(v["url"])}" target="_blank" rel="noopener">NIST · Strong Lines</a></td></tr>' for k, v in sorted(BX["atomic"].items()))
+    bxm = "".join(f'<tr><td><b>{e(m["sp"])}</b></td><td class="num">{e(m["nm"])}</td><td>{e(m["tr"])}</td><td>{e(m["cond"])}</td>'
+                  f'<td><span class="tag {DECL[m["decision"]][1]}">{DECL[m["decision"]][0]}</span> <code>{e(m["id"])}</code></td>'
+                  f'<td><a href="{e(m["url"])}" target="_blank" rel="noopener">{e(m["title"])}</a></td></tr>' for m in BX["mol"])
+    bx_html = f"""
+  <h3 id="supp-bands">조합별 파장 표시를 위한 보완 (2026-10-15)</h3>
+  <p class="note">조합 표의 화학종 중 근거 있는 파장이 없던 것을 채우려고 보탰다. 원자선은 위와 같은 규칙(NIST 강한 선 표, 공기 중, 200–900 nm 중성 원자선 상대 세기 상위 4개)으로 기계적으로 뽑았고, 분자 밴드는 출처 1편과 문장 하나로 묶어 독립 검증을 받은 것(채택·조건부)만 실었다. 분광 선목록·고전 분광 문헌에서 온 범위는 식각 장비에서 실제 감시에 쓰는 위치와 다를 수 있다.</p>
+  {'<div class="tbl"><table><thead><tr><th>화학종</th><th>스펙트럼</th><th>파장 (nm, 공기)</th><th>출처</th></tr></thead><tbody>' + bxa + '</tbody></table></div>' if bxa else ''}
+  {'<div class="tbl"><table><thead><tr><th>화학종</th><th>위치 (nm)</th><th>전이</th><th>조건</th><th>판정</th><th>출처</th></tr></thead><tbody>' + bxm + '</tbody></table></div>' if bxm else ''}
+"""
+
 page = f"""<!doctype html>
 <html lang="ko">
 <head>
@@ -164,6 +202,8 @@ page = f"""<!doctype html>
   .sp.w::after {{ content:" ✦"; color:#7c3aed; }}
   .sp.w2::after {{ content:" ✧"; color:#0891b2; }}
   h3 {{ font-size:17px; margin:26px 0 8px; }}
+  td.wl {{ font-size:12.5px; min-width:190px; }} td.wl div {{ margin:1px 0; }}
+  .wv {{ font-variant-numeric:tabular-nums; white-space:nowrap; }} .wv.v {{ color:#6d28d9; }} .wv.s {{ color:#0e7490; }} .wv.r {{ color:#166534; font-weight:600; }}
   .bar {{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:8px 0 10px; }}
   input, select {{ font:inherit; padding:6px 10px; border:1px solid var(--line); border-radius:8px; background:#fff; }}
   input {{ flex:1 1 240px; }}
@@ -190,16 +230,17 @@ page = f"""<!doctype html>
   </table></div>
   <p class="note">원자선은 그 원자(여기 상태)의 방출이고 모분자 전체를 특정하지 않는다. 기준 목록에 없다고 발광이 없다는 뜻은 아니다. 가까운 선은 분광기 분해능에 따라 겹칠 수 있다(예: CF₂ 251.9 nm와 Si 251.92 nm).</p>
 
-{supp_html}
+{supp_html}{bx_html}
   <h2 id="combos">막질 × 기체 조합 ({len(items)}개)</h2>
   {f'<p>OES Assistant 원본 {n_base}개에 이 사이트에서 따로 조사한 <b>보완 조합 {len(items) - n_base}개</b>(ID <code>EX-</code>, 2026-10-15)를 더했다. 보완 조합은 막질·기체·핵심 결과를 출처 1편과 한 문장으로 묶어 독립 검증 에이전트가 원문과 대조했다(조합별 “출처 검증” 표시). 화학종 후보 중 출처가 직접 측정한 것만 <span class="sp rep">문헌 보고</span>이고, 나머지는 공급 가스와 막 원소로부터의 추론이다.</p>' if EX else ''}
+  <p class="note"><b>관련 OES 파장</b> 열: 조합의 화학종 후보마다 이 페이지에 근거가 있는 위치를 모았다. <span class="wv v">보라</span>=위 기준 파장(원문 대조 완료), <span class="wv s">청록</span>=보완 원자선(NIST 강한 선 상위 4개)·분자 방출 위치(독립 검증), <span class="wv r">초록</span>=그 조합의 출처가 직접 측정한 값. 값에 마우스를 올리면 종류가 보인다. “기준 없음”은 이 페이지에 근거 있는 발광 위치가 없다는 뜻이며 발광하지 않는다는 뜻은 아니다. 원자선은 그 원자의 방출일 뿐 어느 모분자에서 왔는지는 알려 주지 않는다.</p>
   <div class="bar">
     <input id="q" type="search" placeholder="막질·기체·화학종 검색 (예: SiO2, HBr, CF2)">
     <select id="fam"><option value="">모든 막질 계열</option>{"".join(f'<option>{e(f)}</option>' for f in fams)}</select>
     <span class="note" id="cnt"></span>
   </div>
   <div class="tbl"><table>
-    <thead><tr><th>ID</th><th>막질</th><th>기체 · 방식</th><th>화학종 후보</th><th>근거</th></tr></thead>
+    <thead><tr><th>ID</th><th>막질</th><th>기체 · 방식</th><th>화학종 후보</th><th>관련 OES 파장 (nm)</th><th>근거</th></tr></thead>
     <tbody id="rows"></tbody>
   </table></div>
 
@@ -230,6 +271,8 @@ function render() {{
   document.getElementById("rows").innerHTML = out.map(x => `<tr id="${{x.id}}"><td>${{x.id}}</td><td>${{esc(x.film)}}<div class="note">${{esc(x.fam)}}</div></td>`
     + `<td>${{x.gas.map(esc).join(" + ")}}<div class="note">${{esc(x.mode)}}</div></td>`
     + `<td>${{x.sp.map(s => `<span class="sp ${{cls[s.e] || ""}}${{s.w ? " w" : ""}}${{s.w2 ? " w2" : ""}}">${{esc(s.f)}}</span>`).join("")}}${{x.note ? `<div class="note">${{esc(x.note)}}</div>` : ""}}</td>`
+    + `<td class="wl">${{x.wl.map(w => `<div><b>${{esc(w[0])}}</b> ${{w[1].map(r => `<span class="wv ${{r[0]}}" title="${{esc(r[2])}}">${{esc(r[1])}}</span>`).join(" ")}}</div>`).join("")}}`
+    + `${{x.nowl.length ? `<div class="note">기준 없음: ${{x.nowl.map(esc).join(", ")}}</div>` : ""}}</td>`
     + `<td>${{esc(x.basis)}}<div>${{x.src.map(s => SRC[s] ? `<a href="${{esc(SRC[s][1])}}" target="_blank" rel="noopener">${{esc(SRC[s][0])}}</a>` : esc(s)).join("<br>")}}</div>`
     + `${{x.v ? `<span class="tag ${{VERD[x.v][1]}}">표본 검증: ${{VERD[x.v][0]}}</span>` : ""}}`
     + `${{x.d ? `<span class="tag ${{x.d[1]}}">출처 검증: ${{x.d[0]}}</span>` : ""}}</td></tr>`).join("");

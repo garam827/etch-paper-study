@@ -1,0 +1,114 @@
+{
+ "topic": "OES 조합별 파장 표시 보완 — 분자 밴드 위치",
+ "claims": [
+  {
+   "id": "OB01",
+   "page": "oes",
+   "statement": "Schücke 외(2025)는 저압 N2/O2 유도결합 플라즈마에서 NO(A) 자외선 방출(γ계, A²Σ⁺→X²Π)을 광방출 분광으로 측정했고, 약 236 nm의 γ(0,1) 밴드 부근 230–237 nm 구간을 적분해 썼다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The device is a low-pressure double ICP with 80% N2 / 20% O2 at 10-35 Pa. The upper integration limit is 237.15 nm.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://iopscience.iop.org/article/10.1088/1361-6595/adcbd3",
+    "https://api.openalex.org/works/doi:10.1088/1361-6595/adcbd3"
+   ]
+  },
+  {
+   "id": "OB02",
+   "page": "oes",
+   "statement": "Puliyalil 외(2016)는 여러 반응성 RF 플라즈마로 페놀계 고분자 복합체를 식각하며 광방출 스펙트럼에서 약 336 nm의 NH(A³Π→X³Σ⁻) 방출을 관측했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Keep the NH(A-X) ~336 nm observation pending until the full text (OES figure) is checked. If kept, state that the plasma was inductively coupled and the gases were H2, N2, O2 and NH3 (NH emission is expected mainly in the NH3 or N2/H-containing case).",
+   "note": "The publisher full text and PDF returned 403, and Semantic Scholar and OpenAlex do not carry the full abstract. NH A-X at about 336 nm is a standard assignment but could not be confirmed in this paper.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1039/C6RA15923K",
+    "https://pubs.rsc.org/en/content/articlehtml/2016/ra/c6ra15923k"
+   ]
+  },
+  {
+   "id": "OB03",
+   "page": "oes",
+   "statement": "Bruno 외(1986)는 SiCl4 RF 플라즈마 환원(Si 막 증착) 연구에서 광방출로 SiCl 밴드를 관측했고, 그 위치는 약 281–282 nm와 287–299 nm 구간이다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "The SiCl band positions (~281-282 nm, 287-299 nm) are not confirmed from this paper. Either cite them to a spectroscopic reference or mark them unverified. The plasma is SiCl4 in H2/Ar mixtures, studied by OES plus laser interferometry.",
+   "note": "Paywalled with no abstract in OpenAlex or Semantic Scholar. The abstract mentions SiClx species by OES but gives no band wavelengths.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1007/BF00571271",
+    "https://link.springer.com/article/10.1007/BF00571271"
+   ]
+  },
+  {
+   "id": "OB04",
+   "page": "oes",
+   "statement": "Gomez 외(2024)는 S2의 B³Σᵤ⁻–X³Σg⁻ 전이(와 B″–X 상호작용)를 포함한 자외선 선목록을 제공했고, 그 범위는 대략 242–461 nm에 걸친다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The range is given in wavenumbers (21,700-41,300 cm-1). Converting gives about 242-461 nm. This is an astrophysical HITRAN-format line list, not an etch-monitoring source.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1093/mnras/stae246"
+   ]
+  },
+  {
+   "id": "OB05",
+   "page": "oes",
+   "statement": "Nevin(1938)은 저압 산소 방전에서 O2⁺ 제1음성대의 밴드 헤드를 685.6(0,2)·641.9(0,1)·602.6(0,0)·563.2(1,0)·529.5(2,0) nm로 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The original gives the heads in angstroms: 6856 (0,2), 6419 (0,1), 6026 (0,0), 5632 (1,0), 5295 (2,0). Converted to nm, they match the claim exactly. The original also says the bands appear in the glow of a low-pressure discharge through oxygen and are attributed to O2+.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1098/rsta.1938.0014"
+   ]
+  },
+  {
+   "id": "OB06",
+   "page": "oes",
+   "statement": "Farley 외(2011)는 수소 플라즈마 진단에 H2 Fulcher-α 밴드(d³Πᵤ→a³Σg⁺)를 쓰며, (0,0)–(3,3) Q1 선은 약 601.8·612.3·622.6·632.9 nm로 600–640 nm 구간에 있다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "The wavelengths 601.8, 612.3, 622.6 and 632.9 nm could not be confirmed in the accessible Farley text. Either cite them to a separate spectroscopic table (e.g., a Dieke-type H2 line list) or remove them from the Farley attribution. Also check the values against that table: as I recall it, (2,2)Q1 is about 622.5 nm and (1,1)Q1 is about 612.2 nm, so 622.6 and 612.3 may be rounded wrong.",
+   "note": "Confirmed: Farley et al. fit Fulcher-α Q-branch emission to measure H2 rotational temperature in plasmas. The d3Πu→a3Σg+ transition designation and the roughly 600–630+ nm range appear in other sources. The PDF could not be read, so the line wavelengths in Farley could not be checked.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://bp-pub.pppl.gov/pub_report/2010/PPPL-4548-abs.html",
+    "https://ar5iv.arxiv.org/html/2302.08587"
+   ]
+  },
+  {
+   "id": "OB07",
+   "page": "oes",
+   "statement": "Martin(1932)은 SO의 밴드 스펙트럼이 240–400 nm 구간에 있으며 ³Σ–³Σ 전자 전이로 분석된다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract gives the SO spectrum region as 2400–4000 Å (240–400 nm) and assigns the bands to a 3Σ→3Σ electronic transition. The bands analyzed were (0,4)–(0,9) and (1,4).",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1103/PhysRev.41.167"
+   ]
+  }
+ ]
+}

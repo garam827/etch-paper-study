@@ -1465,6 +1465,66 @@
    "checked": [
     "https://api.openalex.org/works/doi:10.1149/06138.0001ecst"
    ]
+  },
+  {
+   "id": "P-schucke2025",
+   "page": "papers",
+   "statement": "Schücke 외(2025)는 저압 N2/O2 유도결합 플라즈마에서 NO(A) 자외선 방출(γ계, A²Σ⁺→X²Π)을 광방출 분광으로 측정했고, 약 236 nm의 γ(0,1) 밴드 부근 230–237 nm 구간을 적분해 썼다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Same sentence as OB01, same judgment.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://iopscience.iop.org/article/10.1088/1361-6595/adcbd3"
+   ]
+  },
+  {
+   "id": "P-gomez2024",
+   "page": "papers",
+   "statement": "Gomez 외(2024)는 S2의 B³Σᵤ⁻–X³Σg⁻ 전이(와 B″–X 상호작용)를 포함한 자외선 선목록을 제공했고, 그 범위는 대략 242–461 nm에 걸친다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Same sentence as OB04, same judgment.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1093/mnras/stae246"
+   ]
+  },
+  {
+   "id": "P-nevin1938",
+   "page": "papers",
+   "statement": "Nevin(1938)은 저압 산소 방전에서 O2⁺ 제1음성대의 밴드 헤드를 685.6(0,2)·641.9(0,1)·602.6(0,0)·563.2(1,0)·529.5(2,0) nm로 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The sentence is identical to OB05, so the judgment is the same.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1098/rsta.1938.0014"
+   ]
+  },
+  {
+   "id": "P-martin1932",
+   "page": "papers",
+   "statement": "Martin(1932)은 SO의 밴드 스펙트럼이 240–400 nm 구간에 있으며 ³Σ–³Σ 전자 전이로 분석된다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The sentence is identical to OB07, so the judgment is the same.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1103/PhysRev.41.167"
+   ]
   }
  ]
 }

@@ -60,7 +60,7 @@
   <header>
     <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
     <h1>10단계 · OES 식각 화학 데이터 병합</h1>
-    <p class="phase-desc">항목 #46–#47, #54 · 2026-10-11 22:03 ~ 10-15 17:36 · 별도로 만든 OES 분석 앱의 식각 화학·파장 데이터를 검증해 이 사이트에 합친다.</p>
+    <p class="phase-desc">항목 #46–#47, #54–#55 · 2026-10-11 22:03 ~ 10-15 20:35 · 별도로 만든 OES 분석 앱의 식각 화학·파장 데이터를 검증해 이 사이트에 합친다.</p>
   </header>
   <nav class="pager" aria-label="단계 이동"><a href="phase-9.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><span class="cur" aria-current="page">10. OES 식각 화학 데이터 병합</span><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><span class="sep">|</span><a href="phase-11.html">다음 단계 →</a></nav>
 
@@ -274,7 +274,7 @@
             · 논문 요약: 채택 5, 조건부 1<br>
             새 조합 4개: Ge/Cl2(GeCl 약 339·350 nm 관측), Mo/SF6+O2(질량분석 MoFn⁺), W/NF3(3D NAND 측면 식각), 감광막/원격 H2+N2<br>
             기존 조합 5개 근거 보강: ACL의 CS 257 nm·O·CO(COS 유무 두 조건 비교), TaN의 N2 337 nm 종말점, CH3F/O2 빔 질량분석의 H2·HF·CO·CO2, Ru의 RuO4 적외선 검출, Siconi의 (NH4)2SiF6 승화<br>
-            조건부 지적은 설명에 반영했다. MoOFm⁺는 확정되지 않아 추론으로 남겼고, W의 온도 효과는 "문턱 압력 감소"로 고쳤다. 최종 조합은 88개(보완 21개)다.
+            조건부 지적은 설명에 반영했다. MoOFm⁺는 확정되지 않아 추론으로 남겼고, W의 온도 효과는 "문턱 압력 감소"로 고쳤다. 최종 조합은 88개(보완 21개)다.<br>2차분 커밋·푸시 → <code>site-check</code>·Pages 성공, OES 페이지 200 확인(다음 지시 시작 시점인 20:13에 확인).
             <figure><img loading="lazy" decoding="async" src="../history_img/20261015_173457_oes_extra_round2.png" alt="2차 보완"><figcaption>history_img/20261015_173457_oes_extra_round2.png — 2차 보완 뒤 조합 표(88개): TaN의 N2 337 nm, Ru의 RuO4 등 출처 측정 화학종 표시</figcaption></figure></li>
         </ol>
       </section>
@@ -300,6 +300,71 @@
         </figure>
       </section>
     </article>
+
+    <!-- ===== 항목 #55 ===== -->
+    <article class="entry" id="e55">
+      <div class="entry-head">
+        <span class="no">#55</span>
+        <h2>조합별 화학종과 관련 OES 파장 대역 표시</h2>
+        <time>2026-10-15 20:13</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>각각의 조합에사 출현하는 화학종들과 이와 관련된 OES 파장 대역</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>조합 표에는 화학종 후보와 "기준 파장 있음(✦)·보완 위치 있음(✧)" 표시만 있었고, 실제 파장은 위쪽 별도 표에서 찾아야 했다. 조합마다 각 화학종의 관련 파장을 한 칸에 모아 보여 준다.</li>
+          <li>근거 없는 화학종이 102종(등장 478건)이었다. 상당수는 안정 분자·이온·고체 생성물이다. 발광 감시에 쓰일 만한 것만 근거를 찾아 채운다. 원자는 NIST 표에서 기계적으로 뽑고, 분자 밴드는 독립 검증을 받는다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>20:13</time> 직전 배포(#54 2차분)의 CI·Pages 성공과 페이지 200을 확인했다. 조합 88개의 화학종 중 근거 있는 파장이 없는 것을 집계했다.</li>
+          <li><time>20:15</time> 원자선: NIST 원소별 강한 선 표(robots 제한 없음)에서 Ge·Mo·Ru·Ta·Au·Pt·Sn·Zr·P 9종을 #47과 같은 규칙으로 뽑았다(공기 중, 200–900 nm 중성 원자선 상대 세기 상위 4개, 1 nm 안 중복 제외). 기본 요청이 403으로 막혀 요청 헤더를 바꿔 받았다. Ge I 28선 중 200–900 nm 21선이 모두 파싱됐는지 확인했다.</li>
+          <li><time>20:17</time> 생성기(<code>tools/oes_page.py</code>)에 조합 표의 "관련 OES 파장" 열을 추가했다. 화학종마다 근거 종류를 색으로 나눴다.<br>
+            · 보라: 기준 파장(원문 대조 완료)<br>
+            · 청록: 보완 원자선·분자 위치<br>
+            · 초록: 그 조합의 출처가 직접 측정한 값. Ge/Cl2의 GeCl 339.3·350.2 nm, O2/COS의 CS ≈257·O·CO, TaN의 N2 337 nm<br>
+            근거가 없는 화학종은 "기준 없음"으로 따로 적었다.</li>
+          <li><time>20:13–20:21</time> astra(high)로 분자 밴드 조사를 시작했는데, 사용 한도에 걸려 중단됐다. 20:21에 범위를 좁혀 다시 실행해 결과를 받았다.</li>
+          <li><time>20:24</time> 조합에 실제로 나오는 분자 7종을 장부 <code>ledger/oes_bands.json</code>에 올리고, 출처 논문 요약을 함께 독립 검증했다.<br>
+            · 대상: NO γ, NH, SiCl, S2, O2⁺, H2 Fulcher-α, SO<br>
+            · gate: <b>채택 4</b>(NO 약 236 nm, S2 242–461 nm, O2⁺ 제1음성대 529.5·563.2·602.6·641.9·685.6 nm, SO 240–400 nm), <b>조건부 3</b>(NH, SiCl, H2)<br>
+            조건부 3개는 핵심인 파장 값이 출처에서 확인되지 않았다는 지적이었다. 그래서 gate 판정과 별개로 페이지에 싣지 않았고, 그 출처 논문 요약 3편도 넣지 않았다.</li>
+          <li><time>20:29</time> 범례 초안에 "안정 분자는 특징적 방출이 약하다"는 일반론을 적었다. 검증하지 않은 문장이라 지웠다. 소수 첫째 자리로 반올림하면 겹치는 선(O 777 nm 세 선 등)은 한 번만 보이게 했다.</li>
+          <li><time>20:31</time> build·점검 결과:<br>
+            · 검증 현황: 주장 208개<br>
+            · 논문 요약: 100편<br>
+            · 링크 검사 문제 0, 요약 연결 빠진 곳 0<br>
+            조합 표에서 근거 있는 파장이 붙은 화학종은 532건에서 558건으로 늘었다.</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 조합 88개마다 화학종 후보와 관련 OES 파장을 한 행에서 볼 수 있다. 원자선 9종과 분자 밴드 4종을 보탰고, 근거가 없는 화학종은 "기준 없음"으로 구분했다.</p>
+        <ul>
+          <li>남은 빈칸: SiF4·CF3·CF3⁺·BCl2·금속 염화물처럼 감시용 발광 근거를 찾지 않은 안정 분자·이온이 대부분이다. NH(약 336 nm)·SiCl(281–299 nm)·H2 Fulcher(600–640 nm)는 출처에서 값을 확인하지 못해 넣지 않았다.</li>
+          <li>분광 선목록·고전 분광 문헌의 범위(S2, SO, O2⁺)는 식각 장비에서 실제로 감시하는 위치와 다를 수 있다고 페이지에 적었다.</li>
+        </ul>
+        <p><a href="../research/oes_etch_chemistry.html#combos">조합 표 열기 →</a> · <a href="../research/oes_etch_chemistry.html#supp-bands">보완 원자선·분자 밴드 →</a></p>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261015_203116_oes_combo_wl.png" alt="조합별 OES 파장">
+          <figcaption>history_img/20261015_203116_oes_combo_wl.png — 조합 표의 "관련 OES 파장" 열(SiO2 검색): 화학종별 파장과 "기준 없음"</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261015_203116_oes_bands.png" alt="보완 원자선·분자 밴드">
+          <figcaption>history_img/20261015_203116_oes_bands.png — 보완 원자선 9종(NIST)과 분자 밴드 4종(채택)</figcaption>
+        </figure>
+      </section>
+    </article>
+
 
 
   </div>

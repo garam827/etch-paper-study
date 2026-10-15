@@ -1999,6 +1999,78 @@
    ],
    "use": "OES 식각 화학 조합 보완(#54)의 출처: 막질×기체 조합 근거.",
    "claim": "Oh 외(2014)는 다운플로 NF3/NH3 건식 세정에서 (NH4)2SiF6 부산물 승화 전 SiO2 표면 변화가 NF3:NH3 비와 플라즈마 전력에 따라 달라진다고 보고했다."
+  },
+  {
+   "id": "schucke2025",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "NO densities and UV emission over the E–H mode transition in a low-pressure inductively coupled plasma device",
+   "authors": "L. Schücke 외",
+   "year": 2025,
+   "venue": "Plasma Sources Sci. Technol. 34(4), 045015",
+   "doi": "10.1088/1361-6595/adcbd3",
+   "match": [
+    "10.1088/1361-6595/adcbd3"
+   ],
+   "summary": "저압 이중 유도결합 플라즈마에서 N2/O2 혼합 가스의 NO(A) 자외선 방출, NO 바닥 상태 밀도(LIF), 전자 밀도·온도를 E–H 모드 전이 전후로 잰 연구. 기체 온도와 자외선 방출은 광방출 분광으로 측정했다.",
+   "points": [],
+   "use": "OES 조합 표의 분자 밴드 위치 근거(#55): NO.",
+   "claim": "Schücke 외(2025)는 저압 N2/O2 유도결합 플라즈마에서 NO(A) 자외선 방출(γ계, A²Σ⁺→X²Π)을 광방출 분광으로 측정했고, 약 236 nm의 γ(0,1) 밴드 부근 230–237 nm 구간을 적분해 썼다."
+  },
+  {
+   "id": "gomez2024",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "A HITRAN-formatted UV line list of S2-containing transitions involving X3Σg-, B3Σu-, and B″3Πu electronic states",
+   "authors": "F. M. Gomez, R. J. Hargreaves, I. E. Gordon",
+   "year": 2024,
+   "venue": "MNRAS 528(2), 3823–3832",
+   "doi": "10.1093/mnras/stae246",
+   "match": [
+    "10.1093/mnras/stae246"
+   ],
+   "summary": "S2의 B–X 전이(v′=0–27)와 B″–X 전이를 포함한 자외선 선목록을 문헌 분광 상수와 PGOPHER로 만든 연구. 혜성·이오 화산 기체 같은 천체 관측용이다.",
+   "points": [],
+   "use": "OES 조합 표의 분자 밴드 위치 근거(#55): S2.",
+   "claim": "Gomez 외(2024)는 S2의 B³Σᵤ⁻–X³Σg⁻ 전이(와 B″–X 상호작용)를 포함한 자외선 선목록을 제공했고, 그 범위는 대략 242–461 nm에 걸친다."
+  },
+  {
+   "id": "nevin1938",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Rotational analysis of the first negative band spectrum of oxygen",
+   "authors": "T. E. Nevin",
+   "year": 1938,
+   "venue": "Phil. Trans. R. Soc. A 237(783), 471–507",
+   "doi": "10.1098/rsta.1938.0014",
+   "match": [
+    "10.1098/rsta.1938.0014"
+   ],
+   "summary": "저압 산소 방전의 음글로우에서 나오는 O2⁺ 제1음성대의 회전 구조를 분석한 고전 연구. 밴드 헤드 위치를 685.6(0,2)·641.9(0,1)·602.6(0,0)·563.2(1,0)·529.5(2,0) nm로 제시했다.",
+   "points": [],
+   "use": "OES 조합 표의 분자 밴드 위치 근거(#55): O2+.",
+   "claim": "Nevin(1938)은 저압 산소 방전에서 O2⁺ 제1음성대의 밴드 헤드를 685.6(0,2)·641.9(0,1)·602.6(0,0)·563.2(1,0)·529.5(2,0) nm로 보고했다."
+  },
+  {
+   "id": "martin1932",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "The Band Spectrum of Sulphur Monoxide",
+   "authors": "E. V. Martin",
+   "year": 1932,
+   "venue": "Phys. Rev. 41(2), 167–193",
+   "doi": "10.1103/physrev.41.167",
+   "match": [
+    "10.1103/physrev.41.167"
+   ],
+   "summary": "240–400 nm에 있는 SO 밴드 스펙트럼을 고분해능으로 찍어 7개 밴드의 회전 구조를 분석하고 ³Σ–³Σ 전이로 배정한 고전 연구.",
+   "points": [],
+   "use": "OES 조합 표의 분자 밴드 위치 근거(#55): SO.",
+   "claim": "Martin(1932)은 SO의 밴드 스펙트럼이 240–400 nm 구간에 있으며 ³Σ–³Σ 전자 전이로 분석된다고 보고했다."
   }
  ]
 }
