@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15단계 · 챔버 conditioning·aging OES</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>15단계 · 챔버 conditioning·aging OES</h1>
+    <p class="phase-desc">항목 #59 · 2026-10-15 21:59 ~ 22:23 · 식각 챔버 conditioning·시즈닝·aging 동안의 OES를 지식 그래프에 넣는다(벽 상태 → 재결합·방출 → 화학종 → 방출선).</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-14.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><a href="phase-14.html">14. OES 지식 구조화</a><span class="cur" aria-current="page">15. 챔버 conditioning·aging OES</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #59 ===== -->
+    <article class="entry" id="e59">
+      <div class="entry-head">
+        <span class="no">#59</span>
+        <h2>챔버 conditioning·aging OES에 지식 그래프 적용 — 벽 상태 축 추가</h2>
+        <time>2026-10-15 21:59</time>
+      </div>
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>Etch Chamber Conditioning을 위한 Aging 과정에서 발생하는 OES에 대해서도 위 그래프 적용이 가능한가? 불가하다면 다른 지식 조사 후 추가</blockquote>
+      </section>
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>지금 그래프는 "막질 → 조합 → 화학종 → 방출선"이다. conditioning·aging 중 OES 변화는 막이 아니라 <b>챔버 벽 피막</b>이 라디칼을 얼마나 잃게 하는지(재결합 계수 γ), 벽에서 무엇이 다시 나오는지, 세정·시즈닝 단계가 벽을 어떻게 바꾸는지로 정해진다. 그래프에는 벽 상태·단계·시간 축이 없다.</li>
+          <li>결론: <b>부분 적용</b>. 화학종·방출선 노드는 그대로 쓰고, 벽 상태와 단계 노드, 형성·제거·영향 관계를 조사해 붙인다.</li>
+        </ul>
+      </section>
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>21:59</time> 그래프를 검색했다. conditioning·벽·시즈닝 개념은 없었다. 식각 지식 그래프에만 "챔버 벽 상태 변화(i_aging)" 노드가 있었다.</li>
+          <li><time>22:00</time> 자문.
+            <ul>
+              <li><b>astra(high, 백그라운드)</b>: 벽 피막·재결합·세정 종말점·시즈닝 판정 근거 20행을 받았다. 수치는 모두 원문 초록으로 다시 확인했다.</li>
+              <li><b>jev</b>
+                <ul>
+                  <li>적용 가능성: "부분 적용(확장 필요)"(1.0).</li>
+                  <li>방식: "같은 그래프에 벽 상태·단계 노드와 관계를 추가하고 i_aging과 연결"(0.98). 그대로 반영했다.</li>
+                  <li>기록 단계: "새 15단계"(0.61, 확신 낮음). 그대로 따랐다.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><time>22:02</time> 문헌 검색(<code>lit_search.py</code>, 8개 질의)을 하고, 핵심 문헌 20편의 초록을 OpenAlex로 읽었다. 주요 문헌은 다음과 같다.
+            <ul>
+              <li>Ullal·Aydil: SiOClx 피막, SF6 세정 종말점(F·SiF).</li>
+              <li>Cunge·Sadeghi·Joubert: 벽 피막별 Cl 재결합 계수, AlFx 제거, 탄소 피막.</li>
+              <li>Donnelly 그룹: 이트리아 벽, 회전 벽 측정.</li>
+              <li>Kota·Coburn·Graves: F·Br 재결합.</li>
+              <li>Miyata: 플루오로카본 벽의 메모리 효과.</li>
+              <li>Baek(2014): OES 기반 시즈닝 최적화.</li>
+              <li>특허 2건: TSMC(SiClx 280.4·282 nm 포화로 시즈닝 완료), TEL(가상계측 안정화로 판정).</li>
+            </ul>
+          </li>
+          <li><time>22:05</time> 장부 <code>ledger/oes_conditioning.json</code>에 주장 21개(CD01–CD21)를 썼다. lint 오류 0, 출처 실재 19/19.</li>
+          <li><time>22:08</time> 독립 검증(claim-verifier)을 두 묶음으로 나눠 맡겼다.
+            <ul>
+              <li><b>실수 1건</b>: 첫 요청에 blind 내용 대신 자리표시 글자만 넣었다. 검증자가 판정하지 않고 돌려보냈고, 그 결과는 기록하지 않고 버렸다. 실제 내용으로 다시 맡겼다.</li>
+              <li><b>결과</b>: 지지 19, 부분 1(CD08: "Y2O3 벽 회복"이 초록에 명시되지 않음), 근거 부족 1(CD13: NF3 세정 중 SiF·F/Ar·O/Ar 시간 변화 수치가 초록에 없고 본문이 막혀 있음).</li>
+              <li><b>CD20 문구 수정</b>: "반복"을 "웨이퍼 한 장의 시계열"로 고쳐 재검증했고, 지지를 받았다.</li>
+              <li><b>CD08 재검증</b>: 다시 부분 판정이었다(AlFx 제거는 Al2O3 벽, YFx 제거는 Y2O3 벽으로 짝지어야 함). 조건부로 두었고, 그래프에는 AlFx 부분만 쓴다.</li>
+            </ul>
+          </li>
+          <li><time>22:12</time> gate 결과는 <b>채택 12 · 조건부 8 · 보류 1(CD13)</b>이다. 보류된 CD13의 파장·시간 수치는 그래프에 넣지 않았다.</li>
+          <li><time>22:14</time> 그래프 변환기(<code>tools/oes_graph.py</code>)에 8번째 단계를 추가했다. 원본은 <code>kb/oes/conditioning.json</code>이다.
+            <ul>
+              <li><b>새 노드</b>: 벽 상태 13, 단계 10.</li>
+              <li><b>새 관계</b>: 형성, 제거, 처리, 벽→화학종 영향(γ 값 포함), 감시 신호의 단계.</li>
+              <li><b>감시 신호</b>: 용도 노드 4개(SF6 세정 종말점 F·SiF, OES 기반 시즈닝 최적화, SiClx 포화, VM 안정화).</li>
+              <li><b>파장 근거</b>: SiCl 280.4·282 nm.</li>
+              <li><b>연결</b>: 벽 노드는 식각 지식 그래프의 i_aging으로 이어진다.</li>
+              <li><b>질의 함수</b>: <code>Q.conditioning</code>을 만들고, 시험 문항 CT-01–06을 추가했다(전체 27/27 통과).</li>
+              <li><b>정리</b>: 같은 개념이 두 노드로 나뉜 "탄소(CCl) 피막"은 "탄소 피막"으로 합쳤다.</li>
+            </ul>
+          </li>
+          <li><time>22:16</time> 지식 그래프 페이지에 "챔버 conditioning" 탭을 만들었다.
+            <ul>
+              <li>벽 상태별 표: 만드는 단계, 지우는 단계, 화학종에 주는 영향을 주장 ID·판정과 함께 보인다.</li>
+              <li>감시 신호 카드.</li>
+              <li>읽는 법: γ는 측정 방법이 달라 같은 논문 안에서만 비교하고, 시즈닝 문턱값은 장비마다 다르다.</li>
+            </ul>
+            근거 검색과 노드 탐색도 새 유형을 다룬다. 목차 항목 설명·키워드도 고쳤다.
+          </li>
+          <li><time>22:18</time> 새로 인용한 문헌 19편(논문 17·특허 2)의 요약을 <code>kb/papers/papers.json</code>에 넣었다. 핵심 문장 P- 19개는 따로 검증했다: 19개 모두 지지 → 채택 19.</li>
+          <li><time>22:23</time> build·검사를 모두 통과했다: <code>build_site.py --check</code>, <code>check_links.py</code>(문제 0), <code>paper_links.py check</code>(빠진 곳 0), <code>oes_graph.py check</code>(스키마 오류 0, 27/27). 이어서 새 15단계를 만들었다.</li>
+        </ol>
+      </section>
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">답</span> 그대로는 <b>부분 적용</b>이다. 화학종·방출선 근거는 재사용할 수 있지만, conditioning OES를 정하는 벽 상태(재결합)·단계 축이 없었다. 조사해 그 축을 같은 그래프에 추가했다.</p>
+        <p><b>할 수 있게 된 것</b></p>
+        <ul>
+          <li>어떤 벽 피막을 무엇이 만들고 지우는지 찾는다.</li>
+          <li>그 피막이 Cl·F·O·CFx를 어떻게 바꾸는지 γ와 함께 본다.</li>
+          <li>세정·시즈닝 완료를 볼 신호(F·SiF, SiClx 280.4·282 nm 포화, 정규화 OES, VM)와 출처를 찾는다.</li>
+        </ul>
+        <p><b>아직 없는 것</b></p>
+        <ul>
+          <li>장비별 시즈닝 문턱값·RF 시간 기준.</li>
+          <li>실제 OES 시계열.</li>
+          <li>CD13처럼 본문에서만 확인되는 시간 변화 수치.</li>
+        </ul>
+        <p>"챔버 conditioning" 탭:</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261015_221954_oes_kg_conditioning.png" alt="OES 지식 그래프의 챔버 conditioning 탭: 벽 상태별 형성·제거 단계와 화학종 영향, 감시 신호 카드">
+      </section>
+    </article>
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-14.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><a href="phase-14.html">14. OES 지식 구조화</a><span class="cur" aria-current="page">15. 챔버 conditioning·aging OES</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>

@@ -24,7 +24,8 @@
   11. 사이트 구조 재정비 (#48–#51)
   12. 패키징·본딩 리서치 (#52)
   13. 공정 제어(APC) 리서치 (#53)
-  14. OES 지식 구조화 (#56–)
+  14. OES 지식 구조화 (#56–#58)
+  15. 챔버 conditioning·aging OES (#59–)
   - (비공개) SNU PAL 질의응답 지식화 (#40–#45) — 공개 단계 목록에 없음, `data/history_private/snupal_history.html`
 
 ### 새 항목 추가 방법
@@ -107,7 +108,7 @@ history.html·history/ 단계 페이지, history_img의 스크린샷, 기타 공
   - 파일 구성은 `docs/runbook.md` §4. 노드 id는 "한 개념 = 한 id"로 쓰고 바꾸지 않는다(링크 `#앵커`가 걸려 있음).
   - 구조 이관과 내용 수정은 따로 커밋한다.
 - **레퍼런스 논문 요약 (2026-10-13, #51)**: 결과물에 논문을 새로 인용하면 `kb/papers/papers.json`에 요약(재서술, 근거 범위 표시)을 추가하고, 핵심 문장을 `ledger/papers_summary.json`으로 검증(gate) → `claims_export.py` → build 한다. 손으로 쓰는 페이지는 `python tools/paper_links.py apply <페이지>`로 "요약" 링크를 붙인다(그래프·OES는 생성 도구가 자동). 푸시 전 `python tools/paper_links.py check`(CI에도 있음).
-- **OES 데이터·지식 그래프 (2026-10-15, #57)**: OES 페이지와 OES 지식 그래프(`research/oes_knowledge_graph.html`, `research/oes_kg/{graph.json,cards.jsonl}`)도 build가 만든다. 원본은 `kb/oes/`(앱 데이터 공개 사본 `app/`·검증 `verify/`·보완 조합 `combos_extra.json`·보완 밴드 `bands_extra.json`·시험 문항 `graph_tests.json`)와 `tools/oes_supplement.json`. 앱 데이터는 보안 검토(메일·IP·경로·키·내부 주소 없음, 빈 공정 조건 제외) 뒤 공개 사본으로 넣었고, 원래 앱 데이터는 고치지 않는다. 앱 데이터가 바뀌면 같은 검토를 거쳐 사본을 갱신한다. 푸시 전 `python tools/oes_graph.py check`(스키마·원소 보존·링크 형식·시험 문항, CI에도 있음). 근거 검색은 정적 사이트라 언어 모델 생성 없이 검색 단계까지만 둔다(API 키를 클라이언트에 두지 않는다). 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
+- **OES 데이터·지식 그래프 (2026-10-15, #57)**: OES 페이지와 OES 지식 그래프(`research/oes_knowledge_graph.html`, `research/oes_kg/{graph.json,cards.jsonl}`)도 build가 만든다. 원본은 `kb/oes/`(앱 데이터 공개 사본 `app/`·검증 `verify/`·보완 조합 `combos_extra.json`·보완 밴드 `bands_extra.json`·챔버 conditioning·시즈닝·aging(벽 상태·단계·재결합·감시 신호, 장부 `ledger/oes_conditioning.json`) `conditioning.json`·시험 문항 `graph_tests.json`)와 `tools/oes_supplement.json`. 앱 데이터는 보안 검토(메일·IP·경로·키·내부 주소 없음, 빈 공정 조건 제외) 뒤 공개 사본으로 넣었고, 원래 앱 데이터는 고치지 않는다. 앱 데이터가 바뀌면 같은 검토를 거쳐 사본을 갱신한다. 푸시 전 `python tools/oes_graph.py check`(스키마·원소 보존·링크 형식·시험 문항, CI에도 있음). 근거 검색은 정적 사이트라 언어 모델 생성 없이 검색 단계까지만 둔다(API 키를 클라이언트에 두지 않는다). 원래 앱 저장소의 복사본(`merge_src/`)은 커밋하지 않는다(.env 등 비밀 포함).
 - 원본 리서치(`research/*_raw.md`)와 실행 로그(`research/*_log.txt`)는 공개하지 않는다 (로컬 보관).
 - 사이트 주소에는 GitHub 계정명이 들어가므로, history에는 `<계정>.github.io/etch-paper-study/`처럼 가려서 적는다.
 

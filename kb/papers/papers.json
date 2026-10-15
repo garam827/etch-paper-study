@@ -2071,6 +2071,348 @@
    "points": [],
    "use": "OES 조합 표의 분자 밴드 위치 근거(#55): SO.",
    "claim": "Martin(1932)은 SO의 밴드 스펙트럼이 240–400 nm 구간에 있으며 ³Σ–³Σ 전자 전이로 분석된다고 보고했다."
+  },
+  {
+   "id": "ullal2002a",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Maintaining reproducible plasma reactor wall conditions: SF6 plasma cleaning of films deposited on chamber walls during Cl2/O2 plasma etching of Si",
+   "authors": "Saurabh J. Ullal, Harmeet Singh, John E. Daugherty, Vahid Vahedi 외",
+   "year": 2002,
+   "venue": "Journal of Vacuum Science & Technology A Vacuum Surfaces and Films 20(4), 1195–1201",
+   "doi": "10.1116/1.1479733",
+   "match": [
+    "10.1116/1.1479733"
+   ],
+   "summary": "Cl2/O2 Si 식각 뒤 반응기 벽에 남는 실리콘 옥시클로라이드 막을 SF6 플라즈마로 지우는 과정을 벽 적외선 분광과 플라즈마 진단으로 따라간 연구. F가 막에 들어가 Cl을 밀어내며 막이 지워지고, 세정 끝은 반응기 평균 F·SiF 방출로 가장 쉽게 판정되며, 덜 지우면 막에 남은 F가 다음 식각 때 빠져나온다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Ullal 외(2002a)는 Cl2/O2 Si 식각 중 반응기 벽에 쌓인 실리콘 옥시클로라이드 막을 SF6 플라즈마로 제거할 때 F가 막에 들어가 Cl을 대체하며 식각되고, 세정 끝은 반응기 평균 F·SiF 방출로 가장 쉽게 판정된다고 보고했다."
+  },
+  {
+   "id": "ullal2002b",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Effect of chamber wall conditions on Cl and Cl2 concentrations in an inductively coupled plasma reactor",
+   "authors": "Saurabh J. Ullal, Anna R. Godfrey Alig, Erik A. Edelberg, Linda B. Braly 외",
+   "year": 2002,
+   "venue": "Journal of Vacuum Science & Technology A Vacuum Surfaces and Films 20(1), 43–52",
+   "doi": "10.1116/1.1421602",
+   "match": [
+    "10.1116/1.1421602"
+   ],
+   "summary": "Cl2 ICP에서 벽 상태가 Cl·Cl2 농도를 어떻게 바꾸는지 OES actinometry와 벽 표면 탐침으로 측정한 연구. 석영 창이 깎여 벽에 SiO2 막이 쌓이면 Cl 재결합이 줄어 Cl 농도가 크게 오르고, SF6/O2 플라즈마로 막을 지우면 깨끗한 양극산화 Al 벽으로 돌아온다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Ullal 외(2002b)는 Cl2 플라즈마에 오래 노출되면 석영 창 스퍼터링으로 벽이 얇은 SiO2 막으로 덮여 Cl 재결합 확률이 낮아지고 Cl 농도(OES actinometry)가 높아지며, SF6/O2 플라즈마가 이 막을 제거해 깨끗한 양극산화 Al 벽으로 되돌린다고 보고했다."
+  },
+  {
+   "id": "ullal2003",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Relation between the ion flux, gas phase composition, and wall conditions in chlorine plasma etching of silicon",
+   "authors": "Saurabh J. Ullal, Tae Won Kim, Vahid Vahedi, Eray S. Aydil",
+   "year": 2003,
+   "venue": "Journal of Vacuum Science & Technology A Vacuum Surfaces and Films 21(3), 589–595",
+   "doi": "10.1116/1.1562176",
+   "match": [
+    "10.1116/1.1562176"
+   ],
+   "summary": "Cl2 플라즈마 Si 식각에서 벽에 유리질 실리콘 옥시클로라이드가 쌓이는 동안 기상 조성과 이온 플럭스가 함께 변하는 과도 현상을 여러 진단으로 추적한 연구. 피막이 쌓이는 시간은 Si 식각 때 수 분, 웨이퍼 없이 석영만 깎일 때 수 시간이다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Ullal 외(2003)는 Si와 O를 포함한 화학종이 있으면 벽이 유리질 실리콘 옥시클로라이드로 덮이고(Si 식각 시 수 분, 웨이퍼 없는 Cl2 플라즈마에서는 수 시간), 그에 따라 기상 SiClx·Cl 농도와 이온 플럭스가 늘어난다고 보고했다."
+  },
+  {
+   "id": "cunge2007a",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Influence of the reactor wall composition on radicals' densities and total pressure in Cl2 inductively coupled plasmas: I. Without silicon etching",
+   "authors": "G. Cunge, N. Sadeghi, R. Ramos",
+   "year": 2007,
+   "venue": "Journal of Applied Physics 102(9)",
+   "doi": "10.1063/1.2803880",
+   "match": [
+    "10.1063/1.2803880"
+   ],
+   "summary": "웨이퍼 없는 산업용 Cl2 ICP에서 벽 피막(SiOCl·AlF·CCl·TiOCl)을 바꿔 가며 Cl2 밀도를 레이저 흡수로 재고 Cl 몰분율을 구한 연구. 0차원 모델로 얻은 Cl 재결합 계수는 SiOCl에서 약 0.005, 나머지에서 약 0.3이다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Cunge 외(2007, I)는 같은 Cl2 ICP 조건에서도 벽 피막(SiOCl, AlF, CCl, TiOCl)에 따라 Cl 몰분율이 크게 달라지며, Cl 재결합 계수가 SiOCl에서 약 0.005, 나머지 세 피막에서 약 0.3이라고 보고했다."
+  },
+  {
+   "id": "cunge2007b",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Influence of the reactor wall composition on radicals’ densities and total pressure in Cl2 inductively coupled plasmas: II. During silicon etching",
+   "authors": "G. Cunge, N. Sadeghi, R. Ramos",
+   "year": 2007,
+   "venue": "Journal of Applied Physics 102(9)",
+   "doi": "10.1063/1.2803881",
+   "match": [
+    "10.1063/1.2803881"
+   ],
+   "summary": "같은 반응기에서 Si 웨이퍼를 식각할 때 벽 피막이 Cl·SiClx·SiCl4 농도에 주는 영향을 흡수 분광·질량 분석으로 잰 후속 연구. 벽에 붙은 Si가 Cl에 다시 식각되어 SiCl4로 돌아오는 재순환이 Cl 손실에 크게 기여하고, 석영 창에서 나온 O가 Si를 벽에 고정한다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Cunge 외(2007, II)는 Si 식각 중 벽에 붙은 SiClx가 Cl 원자에 식각되어 SiCl4로 플라즈마에 되돌아가며, 석영 창에서 나온 O가 Si를 SiOCl 형태로 벽에 고정한다고 보고했다."
+  },
+  {
+   "id": "cunge2010",
+   "area": "oes",
+   "kind": "리뷰",
+   "basis": "초록",
+   "title": "Radical surface interactions in industrial silicon plasma etch reactors",
+   "authors": "G. Cunge, D. Vempaire, R. Ramos, Michel Touzeau 외",
+   "year": 2010,
+   "venue": "Plasma Sources Science and Technology 19(3), 034017",
+   "doi": "10.1088/0963-0252/19/3/034017",
+   "match": [
+    "10.1088/0963-0252/19/3/034017"
+   ],
+   "summary": "산업용 Si 식각 반응기에서 라디칼과 벽의 상호작용을 정리한 리뷰. Cl2/O2 식각 중 Al2O3 벽이 SiOCl로 덮이고, Cl 재결합 계수가 SiOCl에서 약 0.007, 깨끗한(AlF3) 벽에서 약 0.1이라 Cl2/Cl 비가 벽 화학에 좌우되며, 웨이퍼마다 세정·conditioning하는 전략을 논한다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Cunge 외(2010)는 Cl2/O2 Si 식각에서 Al2O3 벽이 얇은 SiOCl 층으로 덮이고, Cl 재결합 계수가 SiOCl에서 약 0.007, 깨끗한(AlF3) 벽에서 약 0.1이어서 Cl2/Cl 비가 주로 벽 화학으로 정해지며, 이것이 Cl2/O2 공정의 드리프트를 설명한다고 정리했다."
+  },
+  {
+   "id": "ramos2007a",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "공개 초록",
+   "title": "Cleaning aluminum fluoride coatings from plasma reactor walls in SiCl4/Cl2plasmas",
+   "authors": "R. Ramos, G. Cunge, Bernard Pelissier, O. Joubert",
+   "year": 2007,
+   "venue": "Plasma Sources Science and Technology 16(4), 711–715",
+   "doi": "10.1088/0963-0252/16/4/004",
+   "match": [
+    "10.1088/0963-0252/16/4/004"
+   ],
+   "summary": "불소계 세정(SF6 등)에 노출된 Al2O3 벽에 쌓여 드리프트와 입자를 일으키는 AlFx를 SiCl4/Cl2 플라즈마로 제거할 수 있음을 벽 XPS 분석으로 보인 연구. YFx와 다른 금속 불화물·산화물도 같은 방식으로 지워진다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Ramos 외(2007)는 SF6 같은 불소계 세정에 노출된 Al2O3 벽에 AlFx가 생겨 드리프트와 입자를 일으키며, SiCl4/Cl2 플라즈마가 벽의 AlFx와 YFx 피막을 제거한다고 보고했다."
+  },
+  {
+   "id": "ramos2007b",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "공개 초록",
+   "title": "On the interest of carbon-coated plasma reactor for advanced gate stack etching processes",
+   "authors": "R. Ramos, G. Cunge, O. Joubert",
+   "year": 2007,
+   "venue": "Journal of Vacuum Science & Technology A Vacuum Surfaces and Films 25(2), 290–303",
+   "doi": "10.1116/1.2464126",
+   "match": [
+    "10.1116/1.2464126"
+   ],
+   "summary": "웨이퍼 사이에 반응기 벽을 탄소 피막으로 덮는 전략이 게이트 스택 식각에 주는 영향을 본 연구. 탄소 벽은 이온 전류를 유지한 채 Cl·O 라디칼 밀도를 낮춰 이온 대 중성 플럭스 비를 높이며, 식각 속도는 느려지지만 이방성 형상을 얻기 쉽다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Ramos 외(2007, JVST A)는 탄소로 덮은 벽이 같은 이온 전류에서 반응성 라디칼(Cl, O) 밀도를 낮춰 웨이퍼로 가는 이온 대 중성 플럭스 비를 높인다고 보고했다."
+  },
+  {
+   "id": "ramos2008",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Plasma reactor dry cleaning strategy after TiN, TaN and HfO2 etching processes",
+   "authors": "R. Ramos, G. Cunge, O. Joubert",
+   "year": 2008,
+   "venue": "Journal of Vacuum Science & Technology B Microelectronics and Nanometer Structures Processing Measurement and Phenomena 26(1), 181–188",
+   "doi": "10.1116/1.2830637",
+   "match": [
+    "10.1116/1.2830637"
+   ],
+   "summary": "TiN·TaN·HfO2 금속 게이트 식각 뒤 벽 피막을 XPS로 분석하고 세정 화학을 비교한 연구. 벽은 SiOClx–금속 산화물–HfBClx 복합 층으로 덮이며, Cl2 플라즈마 다음 SF6/O2 플라즈마의 2단계 세정이 대부분 필요하다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Ramos 외(2008)는 게이트 스택 식각 뒤 벽이 SiOClx–금속 산화물–HfBClx 복합 층으로 덮이며, Cl2 플라즈마 후 SF6/O2 플라즈마의 2단계 세정이 대부분의 경우 필요하다고 보고했다."
+  },
+  {
+   "id": "khare2012",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Cl atom recombination on silicon oxy-chloride layers deposited on chamber walls in chlorine–oxygen plasmas",
+   "authors": "Rohit Khare, Ashutosh K. Srivastava, Vincent M. Donnelly",
+   "year": 2012,
+   "venue": "Journal of Vacuum Science & Technology A Vacuum Surfaces and Films 30(5)",
+   "doi": "10.1116/1.4742322",
+   "match": [
+    "10.1116/1.4742322"
+   ],
+   "summary": "Cl2/O2 ICP에서 벽에 쌓인 실리콘 옥시클로라이드 층의 Cl 원자 재결합을 회전 벽(spinning wall) 방법으로 잰 연구. 산소가 적은 Si 염화물 층에서는 재결합이 검출 한계 아래였고, 산소가 늘면 재결합이 커진다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Khare 외(2012)는 Cl2 ICP에서 벽에 쌓인 실리콘 옥시클로라이드 층의 Cl 재결합이 층의 산소 함량에 따라 달라지며, 산소가 적은 Si 염화물 층에서는 Langmuir–Hinshelwood Cl 재결합이 검출 한계 아래였다고 보고했다."
+  },
+  {
+   "id": "ma2017",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Y2O3 wall interactions in Cl2 etching and NF3 cleaning plasmas",
+   "authors": "Tianyu Ma, Tyler List, Vincent M. Donnelly",
+   "year": 2017,
+   "venue": "Journal of Vacuum Science & Technology A Vacuum Surfaces and Films 35(3)",
+   "doi": "10.1116/1.4978552",
+   "match": [
+    "10.1116/1.4978552"
+   ],
+   "summary": "Y2O3로 코팅한 챔버에서 NF3/Ar 세정과 Cl2 Si 식각을 번갈아 하며 여러 화학종의 OES와 actinometry, 랭뮤어 탐침, XPS로 벽 상호작용을 본 연구. 세정 직후 불소화된 이트리아는 Cl을 많이 잃게 하지만, 식각이 진행되며 SiClx가 표면 F를 떼어 내고 Si·Cl을 쌓아 재결합이 줄어든다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Ma 외(2017)는 Y2O3 코팅 챔버의 NF3/Ar 세정과 Cl2 Si 식각 동안 Cl·O·F·Si·SiClx·SiF·N2 방출과 Xe·Ar actinometry를 기록했고, 처음 불소화된 이트리아 표면은 Cl 손실 확률이 높으나 식각이 진행되며 SiClx가 표면 F를 떼어 내고 Si·Cl을 쌓아 재결합이 낮아진다고 보고했다."
+  },
+  {
+   "id": "ma2018",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Comparisons of NF3 plasma-cleaned Y2O3, YOF, and YF3 chamber coatings during silicon etching in Cl2 plasmas",
+   "authors": "Tianyu Ma, Tyler List, Vincent M. Donnelly",
+   "year": 2018,
+   "venue": "Journal of Vacuum Science & Technology A Vacuum Surfaces and Films 36(3)",
+   "doi": "10.1116/1.5026777",
+   "match": [
+    "10.1116/1.5026777"
+   ],
+   "summary": "NF3 세정한 Y2O3·YOF·YF3 코팅이 Cl2 Si 식각 중 기상 화학종에 주는 영향을 OES로 비교한 연구. 세 재질 차이는 작았지만 YF3에서 SiClx 방출이 덜 안정했고, 바이어스를 건 짧은 Cl2/O2/Ar 전처리로 YOF 코팅의 드리프트를 줄였다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Ma 외(2018)는 NF3/Ar 세정을 번갈아 한 Y2O3·YOF·YF3 코팅에서 Cl2/Ar Si 식각 중 SiClx 방출이 YF3에서 덜 안정했고, Cl2/O2/Ar는 시간에 따라 더 일정한 Cl 밀도를 주었으며, 바이어스를 건 짧은 Cl2/O2/Ar 전처리가 YOF 코팅의 드리프트를 줄였다고 보고했다."
+  },
+  {
+   "id": "ma2019",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Recombination coefficients for Cl on plasma-conditioned yttrium oxide chamber wall surfaces",
+   "authors": "Tianyu Ma, Tyler List, Priyanka Arora, Vincent M. Donnelly",
+   "year": 2019,
+   "venue": "Journal of Applied Physics 125(2)",
+   "doi": "10.1063/1.5045483",
+   "match": [
+    "10.1063/1.5045483"
+   ],
+   "summary": "전력을 변조한 Cl2 ICP에서 Cl/Xe 방출 비의 시간 변화로 이트리아 벽의 Cl 재결합 계수를 구한 연구. NF3 세정 직후 0.20, Cl2 장시간 노출 중 0.11, 바이어스 Si 식각 중 0.055–0.070으로 벽 이력에 따라 달라진다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Ma 외(2019)는 Cl/Xe 방출 비(740–920 nm)로 이트리아 벽의 Cl 재결합 계수를 구했고, Cl2 ICP에서 NF3 세정 직후 0.20, Cl2 장시간 노출 중 0.11, 바이어스 Si 식각 중 0.055–0.070이었다."
+  },
+  {
+   "id": "kota1999",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Heterogeneous recombination of atomic bromine and fluorine",
+   "authors": "Gowri P. Kota, J. W. Coburn, David B. Graves",
+   "year": 1999,
+   "venue": "Journal of Vacuum Science & Technology A Vacuum Surfaces and Films 17(1), 282–290",
+   "doi": "10.1116/1.581582",
+   "match": [
+    "10.1116/1.581582"
+   ],
+   "summary": "여러 반응기 재질 표면에서 Br·F 원자의 재결합 계수를 온도별로 측정한 연구. 상온에서 F는 모든 표면에서 0.05 이하로 낮고, Br은 재질에 따라 0.05 미만부터 0.4 초과까지 크게 다르다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Kota 외(1999)는 상온에서 F 원자 재결합 계수가 c-Si·석영·감광막·양극산화 Al·poly-Si·WSix·W·스테인리스강 모두에서 0.05 이하였고, Br은 표면에 따라 <0.05에서 >0.4까지 달랐다고 보고했다."
+  },
+  {
+   "id": "stafford2010",
+   "area": "oes",
+   "kind": "리뷰",
+   "basis": "공개 초록",
+   "title": "Experimental and modeling study of O and Cl atoms surface recombination reactions in O2 and Cl2 plasmas",
+   "authors": "Luc Stafford, Joydeep Guha, Rohit Khare, Stefano Mattei 외",
+   "year": 2010,
+   "venue": "Pure and Applied Chemistry 82(6), 1301–1315",
+   "doi": "10.1351/pac-con-09-11-02",
+   "match": [
+    "10.1351/pac-con-09-11-02"
+   ],
+   "summary": "O2·Cl2 플라즈마에서 O·Cl 원자의 벽 재결합을 회전 벽 실험과 모델로 정리한 리뷰. 재결합 확률은 플라즈마 노출에 따른 표면 conditioning으로 바뀌고, Cl2 플라즈마에서는 Cl/Cl2 밀도비에도 의존한다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Stafford 외(2010)는 O·Cl 원자의 벽 재결합 확률이 플라즈마 노출에 따른 표면 conditioning으로 바뀌고, Cl2 플라즈마에서는 Cl/Cl2 밀도비에도 의존한다고 정리했다."
+  },
+  {
+   "id": "miyata1996",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "CFX radical generation by plasma interaction with fluorocarbon films on the reactor wall",
+   "authors": "Koji Miyata, Masaru Hori, Toshio Goto",
+   "year": 1996,
+   "venue": "Journal of Vacuum Science & Technology A Vacuum Surfaces and Films 14(4), 2083–2087",
+   "doi": "10.1116/1.580084",
+   "match": [
+    "10.1116/1.580084"
+   ],
+   "summary": "C4F8 계열 ECR 플라즈마로 벽에 쌓인 플루오로카본 막에 Ar 플라즈마를 쬐면 CFx 라디칼이 다시 나온다는 것을 적외선 흡수로 확인한 연구. 벽이 다음 공정의 라디칼 공급원이 되는 메모리 효과의 근거다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Miyata 외(1996)는 C4F8 계열 ECR 식각 플라즈마로 벽에 쌓인 플루오로카본 막이 이후 Ar 플라즈마에 노출되면 CFx(x=1–3) 라디칼을 내놓으며, Ar 플라즈마 중 CF3 밀도가 C4F8 플라즈마와 같은 크기였다고 보고했다."
+  },
+  {
+   "id": "baek2014",
+   "area": "oes",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Systematic procedure to optimize chamber seasoning conditions with optical emission spectroscopy in plasma etching",
+   "authors": "Kye Hyun Baek, Sang Wook Park, Geum Jung Seong, Gyung Jin Min 외",
+   "year": 2014,
+   "venue": "Journal of Vacuum Science & Technology B Nanotechnology and Microelectronics Materials Processing Measurement and Phenomena 32(2)",
+   "doi": "10.1116/1.4865909",
+   "match": [
+    "10.1116/1.4865909"
+   ],
+   "summary": "습식 세정 뒤 챔버 시즈닝 조건을 자체 배경 정규화한 OES와 계산 최적화로 체계적으로 정하는 절차를 제안한 양산 사례 연구. 습식 세정 뒤 식각 속도 드리프트를 겪던 장비가 양산 기준 Si 식각 속도로 돌아왔다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Baek 외(2014)는 습식 세정 뒤 시즈닝 조건을 자체 배경 정규화한 OES와 계산 최적화로 정하는 절차를 제안했고, 습식 세정 뒤 식각 속도 드리프트를 겪던 장비의 Si 식각 속도를 양산 값 37.8 Å/s로 되돌렸다고 보고했다."
+  },
+  {
+   "id": "us6267121",
+   "area": "oes",
+   "kind": "특허",
+   "basis": "공개 원문",
+   "title": "Process to season and determine condition of a high density plasma etcher (US6267121B1)",
+   "authors": "TSMC (출원인)",
+   "year": 2001,
+   "venue": "미국 특허",
+   "match": [
+    "https://patents.google.com/patent/US6267121B1/en"
+   ],
+   "summary": "블랭크 Si 웨이퍼 한 장으로 Cl2/O2 시즈닝을 하면서 SiClx 방출(280.4·282 nm)이 더 이상 늘지 않는 시점을 시즈닝 완료로 보는 방법(TSMC). 여러 장의 웨이퍼를 쓰던 기존 방법보다 짧다.",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "TSMC 특허 US6267121B1은 블랭크 Si 웨이퍼 한 장으로 Cl2/O2 시즈닝을 하면서 SiClx 방출(280.4·282 nm)이 더 이상 늘지 않고 포화되는 시점을 챔버 conditioning 완료 지표로 쓴다.",
+   "url": "https://patents.google.com/patent/US6267121B1/en"
+  },
+  {
+   "id": "us12032355",
+   "area": "oes",
+   "kind": "특허",
+   "basis": "공개 원문",
+   "title": "Virtual metrology model based seasoning optimization (US12032355B2)",
+   "authors": "Tokyo Electron (출원인)",
+   "year": 2024,
+   "venue": "미국 특허",
+   "match": [
+    "https://patents.google.com/patent/US12032355B2/en"
+   ],
+   "summary": "시즈닝을 반복하면서 장비 데이터(OES 포함 가능)로 가상계측 모델이 예측한 제품 변수(예: CD)가 안정되면 시즈닝을 끝내는 방법(Tokyo Electron).",
+   "points": [],
+   "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
+   "claim": "Tokyo Electron 특허 US12032355B2는 시즈닝 반복 중 가상계측(VM)으로 예측한 제품 변수(예: CD)가 안정되는 것을 시즈닝 완료 기준으로 정의하며, OES를 모델 입력으로 쓸 수 있다.",
+   "url": "https://patents.google.com/patent/US12032355B2/en"
   }
  ]
 }

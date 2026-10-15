@@ -1,0 +1,341 @@
+{
+ "note": "챔버 conditioning·시즈닝·aging 지식 (#59). 각 항목은 ledger/oes_conditioning.json의 검증 주장(claim)에 묶인다. 그래프 변환기(tools/oes_graph.py)가 벽 상태·단계·용도 노드로 바꾼다.",
+ "sources": {
+  "ullal2002a": {
+   "title": "Ullal 외 (2002a) · SF6 plasma cleaning of wall films (JVST A)",
+   "url": "https://doi.org/10.1116/1.1479733",
+   "kind": "research"
+  },
+  "ullal2002b": {
+   "title": "Ullal 외 (2002b) · Wall conditions and Cl/Cl2 concentrations (JVST A)",
+   "url": "https://doi.org/10.1116/1.1421602",
+   "kind": "research"
+  },
+  "ullal2003": {
+   "title": "Ullal 외 (2003) · Ion flux, gas composition and wall conditions (JVST A)",
+   "url": "https://doi.org/10.1116/1.1562176",
+   "kind": "research"
+  },
+  "cunge2007a": {
+   "title": "Cunge·Sadeghi·Ramos (2007) I · Wall composition and radical densities (JAP)",
+   "url": "https://doi.org/10.1063/1.2803880",
+   "kind": "research"
+  },
+  "cunge2007b": {
+   "title": "Cunge·Sadeghi·Ramos (2007) II · During Si etching (JAP)",
+   "url": "https://doi.org/10.1063/1.2803881",
+   "kind": "research"
+  },
+  "cunge2010": {
+   "title": "Cunge 외 (2010) · Radical–surface interactions in Si etch reactors (PSST)",
+   "url": "https://doi.org/10.1088/0963-0252/19/3/034017",
+   "kind": "research"
+  },
+  "ramos2007a": {
+   "title": "Ramos 외 (2007) · Cleaning AlF coatings in SiCl4/Cl2 (PSST)",
+   "url": "https://doi.org/10.1088/0963-0252/16/4/004",
+   "kind": "research"
+  },
+  "ramos2007b": {
+   "title": "Ramos·Cunge·Joubert (2007) · Carbon-coated reactor (JVST A)",
+   "url": "https://doi.org/10.1116/1.2464126",
+   "kind": "research"
+  },
+  "ramos2008": {
+   "title": "Ramos·Cunge·Joubert (2008) · Dry cleaning after TiN/TaN/HfO2 etch (JVST B)",
+   "url": "https://doi.org/10.1116/1.2830637",
+   "kind": "research"
+  },
+  "khare2012": {
+   "title": "Khare·Srivastava·Donnelly (2012) · Cl recombination on SiOCl (JVST A)",
+   "url": "https://doi.org/10.1116/1.4742322",
+   "kind": "research"
+  },
+  "ma2017": {
+   "title": "Ma·List·Donnelly (2017) · Y2O3 walls in Cl2 etch and NF3 clean (JVST A)",
+   "url": "https://doi.org/10.1116/1.4978552",
+   "kind": "research"
+  },
+  "ma2018": {
+   "title": "Ma·List·Donnelly (2018) · Y2O3/YOF/YF3 coatings (JVST A)",
+   "url": "https://doi.org/10.1116/1.5026777",
+   "kind": "research"
+  },
+  "ma2019": {
+   "title": "Ma 외 (2019) · Cl recombination on conditioned yttria (JAP)",
+   "url": "https://doi.org/10.1063/1.5045483",
+   "kind": "research"
+  },
+  "kota1999": {
+   "title": "Kota·Coburn·Graves (1999) · Br and F recombination (JVST A)",
+   "url": "https://doi.org/10.1116/1.581582",
+   "kind": "research"
+  },
+  "stafford2010": {
+   "title": "Stafford 외 (2010) · O and Cl surface recombination (Pure Appl. Chem.)",
+   "url": "https://doi.org/10.1351/pac-con-09-11-02",
+   "kind": "research"
+  },
+  "miyata1996": {
+   "title": "Miyata·Hori·Goto (1996) · CFx from wall fluorocarbon films (JVST A)",
+   "url": "https://doi.org/10.1116/1.580084",
+   "kind": "research"
+  },
+  "baek2014": {
+   "title": "Baek 외 (2014) · Seasoning optimization with OES (JVST B)",
+   "url": "https://doi.org/10.1116/1.4865909",
+   "kind": "research"
+  },
+  "us6267121": {
+   "title": "TSMC 특허 US6267121B1 (시즈닝 중 SiClx 방출 포화)",
+   "url": "https://patents.google.com/patent/US6267121B1/en",
+   "kind": "patent"
+  },
+  "us12032355": {
+   "title": "Tokyo Electron 특허 US12032355B2 (VM 예측값 안정화로 시즈닝 완료 판정)",
+   "url": "https://patents.google.com/patent/US12032355B2/en",
+   "kind": "patent"
+  }
+ },
+ "facts": [
+  {
+   "claim": "CD01",
+   "src": "ullal2002a",
+   "type": "removes",
+   "step": "SF6 세정",
+   "wall": "SiOClx 피막",
+   "monitor": {
+    "label": "벽 세정 종말점 (SiOClx 제거)",
+    "signal": "F·SiF 방출 (반응기 평균)",
+    "species": [
+     "F",
+     "SiF"
+    ]
+   }
+  },
+  {
+   "claim": "CD02",
+   "src": "ullal2002a",
+   "type": "risk",
+   "wall": "SiOClx 피막",
+   "label": "불완전 세정 시 잔류 F 방출",
+   "species": [
+    "F"
+   ]
+  },
+  {
+   "claim": "CD03",
+   "src": "ullal2002b",
+   "type": "affects",
+   "wall": "SiO2·SiOClx 피막",
+   "species": "Cl",
+   "effect": "재결합 감소 → Cl 증가",
+   "removes_by": "SF6/O2 세정"
+  },
+  {
+   "claim": "CD04",
+   "src": "ullal2003",
+   "type": "forms",
+   "process": "Cl2 Si 식각",
+   "wall": "SiOClx 피막",
+   "species": [
+    "SiCl",
+    "SiCl2",
+    "Cl"
+   ],
+   "effect": "피막 형성 동안 SiClx·Cl 증가(재결합 감소)"
+  },
+  {
+   "claim": "CD05",
+   "src": "cunge2007a",
+   "type": "gamma",
+   "species": "Cl",
+   "values": {
+    "SiOClx 피막": "≈0.005",
+    "AlFx 피막": "≈0.3",
+    "탄소 피막": "≈0.3",
+    "TiOClx 피막": "≈0.3"
+   }
+  },
+  {
+   "claim": "CD06",
+   "src": "cunge2007b",
+   "type": "forms",
+   "process": "Cl2 Si 식각",
+   "wall": "SiOClx 피막",
+   "species": [
+    "SiCl4",
+    "O"
+   ],
+   "effect": "벽 Si 재순환(SiCl4), O가 SiOCl로 고정"
+  },
+  {
+   "claim": "CD07",
+   "src": "cunge2010",
+   "type": "gamma",
+   "species": "Cl",
+   "values": {
+    "SiOClx 피막": "≈0.007",
+    "AlFx 피막": "≈0.1"
+   },
+   "drift": true
+  },
+  {
+   "claim": "CD08",
+   "src": "ramos2007a",
+   "type": "removes",
+   "step": "SiCl4/Cl2 세정",
+   "wall": "AlFx 피막",
+   "also_forms_by": "SF6 세정"
+  },
+  {
+   "claim": "CD09",
+   "src": "ramos2008",
+   "type": "removes2",
+   "wall": "복합 층 (SiOClx–MO–HfBClx)",
+   "steps": [
+    "Cl2 세정",
+    "SF6/O2 세정"
+   ]
+  },
+  {
+   "claim": "CD10",
+   "src": "ramos2007b",
+   "type": "affects",
+   "wall": "탄소 피막",
+   "species": [
+    "Cl",
+    "O"
+   ],
+   "effect": "라디칼 밀도 감소"
+  },
+  {
+   "claim": "CD11",
+   "src": "khare2012",
+   "type": "affects",
+   "wall": "SiOClx 피막",
+   "species": "Cl",
+   "effect": "O 함량에 따라 재결합 변화(저산소 층은 매우 낮음)"
+  },
+  {
+   "claim": "CD12",
+   "src": "ma2017",
+   "type": "affects",
+   "wall": "YFx(불소화 Y2O3) 표면",
+   "species": "Cl",
+   "effect": "세정 직후 높은 재결합 → 식각 진행에 따라 감소",
+   "forms_by": "NF3/Ar 세정"
+  },
+  {
+   "claim": "CD13",
+   "src": "ma2017",
+   "type": "monitor",
+   "step": "NF3/Ar 세정",
+   "label": "NF3/Ar 세정 중 OES 변화 (Y2O3 챔버)",
+   "signal": "SiF 436.8·440.1 감쇠 · F/Ar 703.7/750.4 ≈1.5분 포화 · O/Ar 844.6/750.4 상승 후 ≈1/10",
+   "species": [
+    "SiF",
+    "F",
+    "O",
+    "Ar"
+   ],
+   "wl": {
+    "SiF": "436.8 · 440.1",
+    "F": "703.7",
+    "O": "844.6",
+    "Ar": "750.4"
+   }
+  },
+  {
+   "claim": "CD14",
+   "src": "ma2019",
+   "type": "gamma",
+   "species": "Cl",
+   "values": {
+    "YFx(불소화 Y2O3) 표면": "0.20 (NF3 세정 직후)",
+    "Y2O3 (Cl2 장시간 노출)": "0.11",
+    "Y2O3 (Si 식각 중)": "0.055–0.070"
+   },
+   "method": "Cl/Xe actinometry 740–920 nm",
+   "wl_range": {
+    "Cl": "740–920"
+   }
+  },
+  {
+   "claim": "CD15",
+   "src": "ma2018",
+   "type": "step_effect",
+   "step": "Cl2/O2/Ar 전처리(바이어스)",
+   "wall": "YOF 코팅",
+   "effect": "표면 F 제거 → 드리프트 감소",
+   "species": [
+    "SiCl",
+    "Cl"
+   ]
+  },
+  {
+   "claim": "CD16",
+   "src": "kota1999",
+   "type": "gamma",
+   "species": "F",
+   "values": {
+    "여러 벽 재질(상온)": "≤0.05"
+   }
+  },
+  {
+   "claim": "CD17",
+   "src": "stafford2010",
+   "type": "affects",
+   "wall": "양극산화 Al·스테인리스강 벽",
+   "species": [
+    "O",
+    "Cl"
+   ],
+   "effect": "노출 이력에 따라 재결합 확률 변화"
+  },
+  {
+   "claim": "CD18",
+   "src": "miyata1996",
+   "type": "source_from_wall",
+   "wall": "플루오로카본 피막",
+   "species": [
+    "CF",
+    "CF2",
+    "CF3"
+   ],
+   "effect": "다른 공정에서도 CFx 방출(메모리 효과)"
+  },
+  {
+   "claim": "CD19",
+   "src": "baek2014",
+   "type": "monitor",
+   "step": "습식 세정 뒤 시즈닝",
+   "label": "OES 기반 시즈닝 최적화 (자체 배경 정규화)",
+   "signal": "정규화한 OES 스펙트럼(선택 파장 미공개)",
+   "species": []
+  },
+  {
+   "claim": "CD20",
+   "src": "us6267121",
+   "type": "monitor",
+   "step": "Cl2/O2 시즈닝(Si 웨이퍼)",
+   "label": "시즈닝 완료 지표: SiClx 방출 포화",
+   "signal": "SiClx 280.4·282 nm 포화",
+   "species": [
+    "SiCl"
+   ],
+   "wl": {
+    "SiCl": "280.4 · 282"
+   }
+  },
+  {
+   "claim": "CD21",
+   "src": "us12032355",
+   "type": "monitor",
+   "step": "시즈닝 반복",
+   "label": "시즈닝 완료: VM 예측값 안정화",
+   "signal": "VM 예측 CD 등(입력에 OES 가능)",
+   "species": []
+  }
+ ]
+}

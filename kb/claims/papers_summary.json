@@ -1525,6 +1525,292 @@
    "checked": [
     "https://api.openalex.org/works/doi:10.1103/PhysRev.41.167"
    ]
+  },
+  {
+   "id": "P-ullal2002a",
+   "page": "papers",
+   "statement": "Ullal 외(2002a)는 Cl2/O2 Si 식각 중 반응기 벽에 쌓인 실리콘 옥시클로라이드 막을 SF6 플라즈마로 제거할 때 F가 막에 들어가 Cl을 대체하며 식각되고, 세정 끝은 반응기 평균 F·SiF 방출로 가장 쉽게 판정된다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract covers the oxychloride film from Cl2/O2 Si etch, its removal by SF6, F replacing Cl as the film is etched, and the end of cleaning being easiest to detect from reactor-averaged F and SiF emission.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.1479733"
+   ]
+  },
+  {
+   "id": "P-ullal2002b",
+   "page": "papers",
+   "statement": "Ullal 외(2002b)는 Cl2 플라즈마에 오래 노출되면 석영 창 스퍼터링으로 벽이 얇은 SiO2 막으로 덮여 Cl 재결합 확률이 낮아지고 Cl 농도(OES actinometry)가 높아지며, SF6/O2 플라즈마가 이 막을 제거해 깨끗한 양극산화 Al 벽으로 되돌린다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The abstract reports OES actinometry, and an SiO2 film from ion-sputtered quartz forming after long exposure, which lowers Cl recombination and raises Cl. It also says SF6/O2 restores the clean anodized-Al state.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.1421602"
+   ]
+  },
+  {
+   "id": "P-ullal2003",
+   "page": "papers",
+   "statement": "Ullal 외(2003)는 Si와 O를 포함한 화학종이 있으면 벽이 유리질 실리콘 옥시클로라이드로 덮이고(Si 식각 시 수 분, 웨이퍼 없는 Cl2 플라즈마에서는 수 시간), 그에 따라 기상 SiClx·Cl 농도와 이온 플럭스가 늘어난다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Film formation takes a few minutes during Si etching (high concentration of etch products) and hours with no wafer present (Si and O only from slow etching of the quartz window). SiClx, Cl and total ion flux all rise as the film forms.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.1562176"
+   ]
+  },
+  {
+   "id": "P-cunge2007a",
+   "page": "papers",
+   "statement": "Cunge 외(2007, I)는 같은 Cl2 ICP 조건에서도 벽 피막(SiOCl, AlF, CCl, TiOCl)에 따라 Cl 몰분율이 크게 달라지며, Cl 재결합 계수가 SiOCl에서 약 0.005, 나머지 세 피막에서 약 0.3이라고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Measured in a waferless reactor (without Si etching) and extracted with a zero-dimensional model: gamma_rec is 0.005 on SiOCl (stated without 'about') and about 0.3 on the other coatings. Example given: 80% Cl at 100 W in the SiOCl reactor versus 40% at 900 W with AlF walls.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.2803880"
+   ]
+  },
+  {
+   "id": "P-cunge2007b",
+   "page": "papers",
+   "statement": "Cunge 외(2007, II)는 Si 식각 중 벽에 붙은 SiClx가 Cl 원자에 식각되어 SiCl4로 플라즈마에 되돌아가며, 석영 창에서 나온 O가 Si를 SiOCl 형태로 벽에 고정한다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "SiClx stuck on the walls is etched by Cl and recycled as SiCl4. O from the quartz roof window fixes Si on the walls as SiOCl. The OpenAlex reconstruction is partly garbled, but both points are clear.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.2803881"
+   ]
+  },
+  {
+   "id": "P-cunge2010",
+   "page": "papers",
+   "statement": "Cunge 외(2010)는 Cl2/O2 Si 식각에서 Al2O3 벽이 얇은 SiOCl 층으로 덮이고, Cl 재결합 계수가 SiOCl에서 약 0.007, 깨끗한(AlF3) 벽에서 약 0.1이어서 Cl2/Cl 비가 주로 벽 화학으로 정해지며, 이것이 Cl2/O2 공정의 드리프트를 설명한다고 정리했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Confirmed: about 0.007 on SiOCl, about 0.1 on clean AlF3 walls, and drift in Cl2/O2 plasmas. The OpenAlex token dump is noisy. The ratio was read as Cl2/Cl from token positions (Cl, 2 at 164-165) plus the search snippet. Both sources are copies of the same abstract, so they do not confirm each other independently.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1088/0963-0252/19/3/034017",
+    "https://hal.archives-ouvertes.fr/hal-01005939"
+   ]
+  },
+  {
+   "id": "P-ramos2007a",
+   "page": "papers",
+   "statement": "Ramos 외(2007)는 SF6 같은 불소계 세정에 노출된 Al2O3 벽에 AlFx가 생겨 드리프트와 입자를 일으키며, SiCl4/Cl2 플라즈마가 벽의 AlFx와 YFx 피막을 제거한다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "AlFx forms on Al2O3 exposed to F plasmas such as SF6 cleaning, causing drift and particles. SiCl4/Cl2 plasmas clear AlFx and YFx, confirmed by XPS.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1088/0963-0252/16/4/004"
+   ]
+  },
+  {
+   "id": "P-ramos2007b",
+   "page": "papers",
+   "statement": "Ramos 외(2007, JVST A)는 탄소로 덮은 벽이 같은 이온 전류에서 반응성 라디칼(Cl, O) 밀도를 낮춰 웨이퍼로 가는 이온 대 중성 플럭스 비를 높인다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The ion-to-neutral flux ratio is higher than in clean or SiOClx-coated reactors because carbon loads reactive radical densities at the same ion current. Lower Cl and O densities are each mentioned.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.2464126"
+   ]
+  },
+  {
+   "id": "P-ramos2008",
+   "page": "papers",
+   "statement": "Ramos 외(2008)는 게이트 스택 식각 뒤 벽이 SiOClx–금속 산화물–HfBClx 복합 층으로 덮이며, Cl2 플라즈마 후 SF6/O2 플라즈마의 2단계 세정이 대부분의 경우 필요하다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "A SiOClx-MO-HfBClx layer forms after a full gate-stack etch (TiN, TaN, HfO2). A two-step strategy, Cl2 plasma first and then SF6/O2, is required in most cases.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.2830637"
+   ]
+  },
+  {
+   "id": "P-khare2012",
+   "page": "papers",
+   "statement": "Khare 외(2012)는 Cl2 ICP에서 벽에 쌓인 실리콘 옥시클로라이드 층의 Cl 재결합이 층의 산소 함량에 따라 달라지며, 산소가 적은 Si 염화물 층에서는 Langmuir–Hinshelwood Cl 재결합이 검출 한계 아래였다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Spinning-wall measurement. On the low-oxygen Si chloride layer (Si:O:Cl about 1:0.38:0.38), LH Cl2 desorption was below the detection limit. Recombination is attributed mainly to chlorinated O sites, so it depends on oxygen content.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4742322"
+   ]
+  },
+  {
+   "id": "P-ma2017",
+   "page": "papers",
+   "statement": "Ma 외(2017)는 Y2O3 코팅 챔버의 NF3/Ar 세정과 Cl2 Si 식각 동안 Cl·O·F·Si·SiClx·SiF·N2 방출과 Xe·Ar actinometry를 기록했고, 처음 불소화된 이트리아 표면은 Cl 손실 확률이 높으나 식각이 진행되며 SiClx가 표면 F를 떼어 내고 Si·Cl을 쌓아 재결합이 낮아진다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Emissions listed: Cl, O, F, Si, SiClx (x=1-3), SiF and N2, plus Xe and Ar for actinometry. The OpenAlex reconstruction of 'SiClx abstracts F, deposits Si and Cl' was fragmentary; the 'deposits Si and Cl' wording comes from the search snippet.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4978552"
+   ]
+  },
+  {
+   "id": "P-ma2018",
+   "page": "papers",
+   "statement": "Ma 외(2018)는 NF3/Ar 세정을 번갈아 한 Y2O3·YOF·YF3 코팅에서 Cl2/Ar Si 식각 중 SiClx 방출이 YF3에서 덜 안정했고, Cl2/O2/Ar는 시간에 따라 더 일정한 Cl 밀도를 주었으며, 바이어스를 건 짧은 Cl2/O2/Ar 전처리가 YOF 코팅의 드리프트를 줄였다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Raw tokens confirm the pretreatment: a Cl2/O2/Ar plasma briefly run with substrate bias. The abstract also notes an upward SiClx drift for all three materials, even with Cl2/O2/Ar.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.5026777"
+   ]
+  },
+  {
+   "id": "P-ma2019",
+   "page": "papers",
+   "statement": "Ma 외(2019)는 Cl/Xe 방출 비(740–920 nm)로 이트리아 벽의 Cl 재결합 계수를 구했고, Cl2 ICP에서 NF3 세정 직후 0.20, Cl2 장시간 노출 중 0.11, 바이어스 Si 식각 중 0.055–0.070이었다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Cl2 ICP values 0.20, 0.11 and 0.055-0.070, from the time-resolved Cl/Xe ratio and a 0D afterglow model. Cl2/5% O2 gives different values (0.28, 0.17, 0.030), so the claim's figures are for pure Cl2 only.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.5045483"
+   ]
+  },
+  {
+   "id": "P-kota1999",
+   "page": "papers",
+   "statement": "Kota 외(1999)는 상온에서 F 원자 재결합 계수가 c-Si·석영·감광막·양극산화 Al·poly-Si·WSix·W·스테인리스강 모두에서 0.05 이하였고, Br은 표면에 따라 <0.05에서 >0.4까지 달랐다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "At room temperature, gamma_F is no greater than 0.05 on all 8 surfaces. gamma_Br ranges from below 0.05 (c-Si, quartz, PR) to above 0.4 (W).",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.581582"
+   ]
+  },
+  {
+   "id": "P-stafford2010",
+   "page": "papers",
+   "statement": "Stafford 외(2010)는 O·Cl 원자의 벽 재결합 확률이 플라즈마 노출에 따른 표면 conditioning으로 바뀌고, Cl2 플라즈마에서는 Cl/Cl2 밀도비에도 의존한다고 정리했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Gamma can vary after plasma exposure through conditioning. In Cl2, gamma depends on the Cl-to-Cl2 density ratio. Measured on anodized Al and stainless steel.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1351/pac-con-09-11-02"
+   ]
+  },
+  {
+   "id": "P-miyata1996",
+   "page": "papers",
+   "statement": "Miyata 외(1996)는 C4F8 계열 ECR 식각 플라즈마로 벽에 쌓인 플루오로카본 막이 이후 Ar 플라즈마에 노출되면 CFx(x=1–3) 라디칼을 내놓으며, Ar 플라즈마 중 CF3 밀도가 C4F8 플라즈마와 같은 크기였다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Films were deposited in ECR C4F8 and C4F8/H2 plasmas, then exposed to an ECR Ar plasma. CFx was measured by IR diode laser absorption. CF3 in the Ar plasma was the same order of magnitude as in C4F8.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.580084"
+   ]
+  },
+  {
+   "id": "P-baek2014",
+   "page": "papers",
+   "statement": "Baek 외(2014)는 습식 세정 뒤 시즈닝 조건을 자체 배경 정규화한 OES와 계산 최적화로 정하는 절차를 제안했고, 습식 세정 뒤 식각 속도 드리프트를 겪던 장비의 Si 식각 속도를 양산 값 37.8 Å/s로 되돌렸다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Method: OES self-background normalization plus computational optimization. A reactor with severe etch-rate drift after wet clean returned to production-ready status, with Si etch rate matched to 37.8 A/s, in a manufacturing environment. This is an industry self-report.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.4865909"
+   ]
+  },
+  {
+   "id": "P-us6267121",
+   "page": "papers",
+   "statement": "TSMC 특허 US6267121B1은 블랭크 Si 웨이퍼 한 장으로 Cl2/O2 시즈닝을 하면서 SiClx 방출(280.4·282 nm)이 더 이상 늘지 않고 포화되는 시점을 챔버 conditioning 완료 지표로 쓴다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "A single blank Si wafer with about 90% Cl2 and 10% O2. SiClx emission is monitored at 280.4 and 282 nm, and seasoning is complete when the intensities stop increasing (about 100 s), versus 12 wafers in the prior method. This is the patent's own claim.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://patents.google.com/patent/US6267121B1/en"
+   ]
+  },
+  {
+   "id": "P-us12032355",
+   "page": "papers",
+   "statement": "Tokyo Electron 특허 US12032355B2는 시즈닝 반복 중 가상계측(VM)으로 예측한 제품 변수(예: CD)가 안정되는 것을 시즈닝 완료 기준으로 정의하며, OES를 모델 입력으로 쓸 수 있다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The assignee is Tokyo Electron. The endpoint is when the VM-estimated product parameter (e.g., CD) stabilizes. OES data is listed among the possible monitoring data.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://patents.google.com/patent/US12032355B2/en"
+   ]
   }
  ]
 }

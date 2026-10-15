@@ -9,6 +9,7 @@
   kb/oes/combos_extra.json   보완 조합(#54) · kb/claims/oes_extra.json 그 검증 상태
   kb/oes/bands_extra.json    보완 원자선·분자 밴드(#55) · kb/claims/oes_bands.json
   tools/oes_supplement.json  보완 원자선·분자 방출·종말점·actinometry·가까운 선(#47)
+  kb/oes/conditioning.json   챔버 conditioning·시즈닝·aging: 벽 상태·단계·재결합·감시 신호(#59) · kb/claims/oes_conditioning.json
 결과물(build_site.py가 만든다): research/oes_knowledge_graph.html, research/oes_kg/graph.json, research/oes_kg/cards.jsonl
 
 수치 질의(파장 ± 허용오차)는 임베딩이 아니라 숫자 비교로 결정적으로 푼다. RAG 카드는 노드 단위이고 근거(주장 ID·출처)를 함께 싣는다.
@@ -240,7 +241,81 @@ def build():
         if tgt:
             edge("claim:" + cid, tgt["id"], "supports")
 
-    # 8) 자동 계산: 서로 다른 화학종의 점 파장이 0.5 nm 안 (분해능 주의, 검증 아님)
+    # 8) 챔버 conditioning·시즈닝·aging (#59): 벽 상태 → (재결합·방출) → 화학종 → 방출선
+    #    막질 축과 별개로, 벽 피막을 만들고 지우는 단계와 그 동안의 OES 신호를 잇는다.
+    CO = _load("kb/oes/conditioning.json", {"facts": [], "sources": {}})
+    CS = {c["id"]: c for c in (_load("kb/claims/oes_conditioning.json", {"claims": []}) or {"claims": []})["claims"]}
+    for k, v in CO.get("sources", {}).items():
+        src_node(k, v["title"], v["url"], v.get("kind", ""))
+
+    def wall(w):
+        return node("wall:" + w, "wall", w, kg="a20_etch_knowledge_graph.html#i_aging")
+
+    def step(s):
+        return node("step:" + s, "step", s)
+
+    for f in CO.get("facts", []):
+        cid = f["claim"]
+        cl = CS.get(cid, {})
+        d = cl.get("decision")
+        if d in ("hold", "reject"):
+            continue
+        cn = node("claim:" + cid, "claim", cid, statement=cl.get("statement", ""), decision=d, conditions=cl.get("conditions", ""))
+        edge(cn, "src:" + f["src"], "cites")
+        touched, t = [], f["type"]
+        sps = f.get("species", [])
+        sps = [sps] if isinstance(sps, str) else sps
+        if t in ("removes", "removes2"):
+            for s in f.get("steps") or [f["step"]]:
+                edge(step(s), wall(f["wall"]), "removes", claim=cid)
+                touched.append("step:" + s)
+            touched.append("wall:" + f["wall"])
+            if f.get("also_forms_by"):
+                edge(step(f["also_forms_by"]), wall(f["wall"]), "forms", claim=cid)
+        elif t == "forms":
+            edge(step(f["process"]), wall(f["wall"]), "forms", claim=cid)
+            touched += ["step:" + f["process"], "wall:" + f["wall"]]
+            for s in sps:
+                edge(wall(f["wall"]), species(s), "affects", effect=f.get("effect", ""), claim=cid)
+        elif t in ("affects", "source_from_wall", "risk"):
+            for s in sps:
+                edge(wall(f["wall"]), species(s), "affects", effect=f.get("effect", f.get("label", "")), claim=cid)
+            touched.append("wall:" + f["wall"])
+            if f.get("removes_by"):
+                edge(step(f["removes_by"]), wall(f["wall"]), "removes", claim=cid)
+            if f.get("forms_by"):
+                edge(step(f["forms_by"]), wall(f["wall"]), "forms", claim=cid)
+        elif t == "gamma":
+            for w, val in f["values"].items():
+                edge(wall(w), species(f["species"]), "affects", effect=f"재결합 계수 γ = {val}", gamma=val, claim=cid)
+                touched.append("wall:" + w)
+        elif t == "step_effect":
+            edge(step(f["step"]), wall(f["wall"]), "treats", effect=f.get("effect", ""), claim=cid)
+            touched += ["step:" + f["step"], "wall:" + f["wall"]]
+            for s in sps:
+                edge("step:" + f["step"], species(s), "involves", claim=cid)
+        if "monitor" in f or t == "monitor":
+            m = f.get("monitor", f)
+            u = node("use:" + cid, "use", m["label"], use="conditioning", claim=cid, decision=d, signal=m["signal"],
+                     cond=f.get("step", ""), points=parse_nm(m["signal"])[0])
+            for s in m.get("species", []):
+                edge(u, species(s), "involves")
+            if f.get("step"):
+                edge(u, step(f["step"]), "during")
+            edge(u, "src:" + f["src"], "cites")
+            touched.append(u)
+        for key, field in (("wl", "points"), ("wl_range", "ranges")):
+            for sp_, txt in f.get(key, {}).items():
+                pts, rng = parse_nm(txt)
+                em = node(f"em:{sp_}:{cid}", "emission", f"{sp_} {txt}", species=sp_, text=txt, points=pts, ranges=rng,
+                          tier="cond", claim=cid, decision=d, note="챔버 conditioning 문헌이 사용한 위치")
+                edge(species(sp_), em, "emits")
+                edge(em, "src:" + f["src"], "cites")
+                touched.append(em)
+        for x in dict.fromkeys(touched):
+            edge(cn, x, "supports")
+
+    # 9) 자동 계산: 서로 다른 화학종의 점 파장이 0.5 nm 안 (분해능 주의, 검증 아님)
     pts = sorted((p, n["species"], n["id"]) for n in nodes.values() if n["type"] == "emission" for p in n.get("points", []))
     near = set()
     for i, (p, s, nid) in enumerate(pts):
@@ -306,12 +381,27 @@ class Q:
     def sources(self, nid):
         return [self.n[e["t"]] for e in self.out.get(nid, []) if e["rel"] == "cites"]
 
+    def conditioning(self, term):
+        """벽 상태 이름(부분 일치) → 만드는 단계·지우는 단계·화학종 영향, 그리고 conditioning 감시 신호."""
+        tq, res = term.lower(), []
+        for w in (x for x in self.g["nodes"] if x["type"] == "wall" and term.lower() in x["label"].lower()):
+            ins = self.inn.get(w["id"], [])
+            res.append({"wall": w["label"],
+                        "formed_by": [self.n[e["s"]]["label"] for e in ins if e["rel"] == "forms"],
+                        "removed_by": [self.n[e["s"]]["label"] for e in ins if e["rel"] == "removes"],
+                        "affects": [(self.n[e["t"]]["label"], e.get("effect", "")) for e in self.out.get(w["id"], []) if e["rel"] == "affects"]})
+        mons = [u for u in self.g["nodes"] if u["type"] == "use" and u["use"] == "conditioning"
+                and (tq in u["label"].lower() or tq in u["signal"].lower() or tq in u.get("cond", "").lower())]
+        return res, mons
+
 
 # ---------- RAG 카드 ----------
 REL_KO = {"etches": "식각 대상", "feeds": "공급 가스", "may_produce": "생성 후보", "has_element": "원소", "emits": "방출",
-          "cites": "출처", "supports": "근거 주장", "involves": "관련 화학종", "near": "가까운 선(자동 계산)"}
+          "cites": "출처", "supports": "근거 주장", "involves": "관련 화학종", "near": "가까운 선(자동 계산)",
+          "forms": "벽 피막 형성", "removes": "벽 피막 제거", "affects": "벽이 화학종에 주는 영향", "treats": "벽 처리", "during": "단계"}
 TYPE_KO = {"combo": "막질×기체 조합", "film": "막질", "gas": "공급 가스", "species": "화학종", "emission": "방출선·밴드",
-           "use": "용도(종말점·actinometry·가까운 선)", "claim": "검증 주장", "source": "출처", "element": "원소"}
+           "use": "용도(종말점·actinometry·가까운 선·conditioning 감시)", "claim": "검증 주장", "source": "출처", "element": "원소",
+           "wall": "챔버 벽 상태", "step": "시즈닝·세정·식각 단계"}
 
 
 def cards(g):
@@ -326,7 +416,7 @@ def cards(g):
             if other.startswith("el:") and n["type"] != "species":
                 continue
             o = q.n[other]
-            tag = f"{REL_KO.get(e['rel'], e['rel'])}{'('+e['evidence']+')' if e.get('evidence') else ''}"
+            tag = f"{REL_KO.get(e['rel'], e['rel'])}{'('+e['evidence']+')' if e.get('evidence') else ''}{' — '+e['effect'] if e.get('effect') else ''}"
             nb.append((tag, o["label"], other))
         props = []
         for k in ("film_name", "gases", "mode", "note", "text", "transition", "cond", "signal", "statement", "conditions", "kind", "medium"):
@@ -362,7 +452,7 @@ def render_page():
     data = json.dumps(g, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     cds = json.dumps([{k: x[k] for k in ("id", "text", "citations")} for x in cards(g)], ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page = tpl.replace("__GRAPH__", data).replace("__CARDS__", cds)
-    for k in ("combo", "film", "gas", "species", "emission", "use", "claim", "source"):
+    for k in ("combo", "film", "gas", "species", "emission", "use", "claim", "source", "wall", "step"):
         page = page.replace(f"__N_{k.upper()}__", str(c.get(k, 0)))
     return page.replace("__N_EDGES__", str(g["meta"]["edges"]))
 
@@ -408,6 +498,10 @@ def check(g, verbose=False):
         elif k == "actinometry":
             pair = " ".join(u["signal"] for u in q.actinometry(t["target"]))
             ok_ = all(s in pair for s in t["expect_in_pair"])
+        elif k == "conditioning":
+            walls, mons = q.conditioning(t["term"])
+            blob = json.dumps([walls, [m["signal"] + " " + m["label"] for m in mons]], ensure_ascii=False)
+            ok_ = bool(walls or mons) and all(s in blob for s in t["expect"])
         elif k == "sources":
             ok_ = any(t["expect_url_part"] in s.get("url", "") for s in q.sources(t["node"]))
         else:

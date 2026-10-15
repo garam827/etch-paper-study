@@ -31,7 +31,7 @@
   .chip.feed { background:#f3f4f6; color:#4b5563; } .chip.reported { border-color:#16a34a; color:#166534; } .chip.em::after { content:" ✦"; color:#7c3aed; }
   .tag { display:inline-block; font-size:12px; font-weight:700; padding:0 8px; border-radius:999px; white-space:nowrap; }
   .adopt { background:var(--ok-bg); color:var(--ok); } .conditional { background:var(--cd-bg); color:var(--cd); } .none { background:#f3f4f6; color:#4b5563; }
-  .t-ref { color:#6d28d9; } .t-supp { color:#0e7490; } .t-combo { color:#166534; font-weight:600; }
+  .t-ref { color:#6d28d9; } .t-supp { color:#0e7490; } .t-combo { color:#166534; font-weight:600; } .t-cond { color:#b45309; font-weight:600; }
   pre.cardtext { white-space:pre-wrap; font:13px/1.55 "Pretendard","Malgun Gothic",system-ui,sans-serif; margin:6px 0; }
   #cy { width:100%; height:420px; border:1px solid var(--line); border-radius:12px; background:#fff; }
   .grid2 { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap:14px; }
@@ -44,7 +44,7 @@
 <div class="wrap">
   <h1>OES 지식 그래프 · 근거 검색</h1>
   <p class="sub"><a href="../index.html">← 목차</a> · 2026-10-15 · 원본 데이터 표: <a href="oes_etch_chemistry.html">식각 화학 조합 · OES 파장</a></p>
-  <p>OES 식각 화학 데이터를 <b>막질 → 조합 → 화학종 → 방출선·밴드 → 용도(종말점·actinometry)</b>로 이어지는 그래프 하나로 합쳤다. 모든 관계에는 근거 수준(공급 가스 / 추론 / 출처 측정)과 출처·검증 판정이 붙어 있다. 노드 __N_COMBO__ 조합 · __N_FILM__ 막질 · __N_GAS__ 공급 가스 · __N_SPECIES__ 화학종 · __N_EMISSION__ 방출 근거 · __N_USE__ 용도 · __N_CLAIM__ 검증 주장 · __N_SOURCE__ 출처, 관계 __N_EDGES__개.</p>
+  <p>OES 식각 화학 데이터를 <b>막질 → 조합 → 화학종 → 방출선·밴드 → 용도(종말점·actinometry)</b>로 이어지는 그래프 하나로 합쳤다. 챔버 conditioning·시즈닝·aging은 막질 축과 별개인 <b>단계 → 챔버 벽 상태 → (재결합·방출) → 화학종 → 방출선</b> 축으로 같은 그래프에 들어 있다. 모든 관계에는 근거 수준(공급 가스 / 추론 / 출처 측정)과 출처·검증 판정이 붙어 있다. 노드 __N_COMBO__ 조합 · __N_FILM__ 막질 · __N_GAS__ 공급 가스 · __N_SPECIES__ 화학종 · __N_EMISSION__ 방출 근거 · __N_USE__ 용도 · __N_CLAIM__ 검증 주장 · __N_SOURCE__ 출처 · __N_WALL__ 벽 상태 · __N_STEP__ 단계, 관계 __N_EDGES__개.</p>
   <div class="card note">
     <b>읽는 법</b> — 파장 질의는 숫자 비교(± 허용오차)로 결정적으로 푼다. “근거 검색”은 RAG의 검색 단계까지만 한다. 질문에서 막질·기체·화학종·파장을 찾아 그래프로 범위를 좁힌 뒤 근거 카드를 순위대로 보여 주며, 문장을 지어내는 언어 모델은 쓰지 않는다(정적 사이트에 API 키를 둘 수 없어서). 화학종 후보는 대부분 추론이고 실제 검출·세기를 뜻하지 않는다. 가까운 선 관계 중 “자동 계산”은 0.5 nm 안에 든 서로 다른 화학종 선을 기계적으로 짝지은 것이며 검증된 겹침 목록이 아니다.
     · 내려받기: <a href="oes_kg/graph.json">graph.json</a>(노드·관계) · <a href="oes_kg/cards.jsonl">cards.jsonl</a>(RAG 카드, 노드 하나당 한 줄)
@@ -53,6 +53,7 @@
   <div class="tabs" role="tablist">
     <button data-p="recipe" class="on">레시피 → 화학종·파장</button>
     <button data-p="peak">피크 → 후보</button>
+    <button data-p="cond">챔버 conditioning</button>
     <button data-p="search">근거 검색 (RAG)</button>
     <button data-p="explore">노드 탐색</button>
   </div>
@@ -73,6 +74,14 @@
       <label>허용오차 ± <select id="k-tol"><option>0.3</option><option selected>0.5</option><option>1</option><option>2</option><option>5</option></select> nm</label>
     </div>
     <div id="k-out"></div>
+  </section>
+
+  <section id="p-cond" class="pane">
+    <div class="card note"><b>막질 그래프와 무엇이 다른가</b> — 식각 종말점은 “어떤 막의 원소가 기상에 나오는가”로 신호를 고르지만, conditioning·aging 중의 OES 변화는 대부분 <b>벽 피막이 라디칼을 얼마나 잃게 하는가(재결합 계수 γ)</b>와 <b>벽에서 다시 나오는 화학종</b>이 정한다. 그래서 화학종·방출선 노드는 그대로 쓰고, 그 앞에 벽 상태와 단계(세정·시즈닝·식각)를 붙였다. γ 값은 측정 방법·조건이 서로 달라 직접 비교하지 말고 같은 논문 안의 상대 비교로 읽는다. 시즈닝 완료 문턱값이나 RF 시간 기준은 장비마다 달라 여기에 없다. 개념 설명: <a href="a20_etch_knowledge_graph.html#i_aging">식각 지식 그래프 · 챔버 벽 상태 변화</a></div>
+    <h3>벽 상태별: 만드는 단계 · 지우는 단계 · 화학종에 주는 영향</h3>
+    <div id="c-walls"></div>
+    <h3>conditioning 감시 신호</h3>
+    <div id="c-mons"></div>
   </section>
 
   <section id="p-search" class="pane">
@@ -96,9 +105,9 @@ G.nodes.forEach(n => N[n.id] = n);
 G.edges.forEach(e => { (OUT[e.s] ||= []).push(e); (IN[e.t] ||= []).push(e); });
 const DEC = {adopt:["채택","adopt"], conditional:["조건부","conditional"]};
 const decTag = d => d ? `<span class="tag ${(DEC[d]||["","none"])[1]}">${esc((DEC[d]||[d])[0])}</span>` : "";
-const REL = {etches:"식각 대상", feeds:"공급 가스", may_produce:"생성 후보", has_element:"원소", emits:"방출", cites:"출처", supports:"근거 주장", involves:"관련 화학종", near:"가까운 선(자동 계산)"};
-const TYPE = {combo:"조합", film:"막질", gas:"공급 가스", species:"화학종", emission:"방출선·밴드", use:"용도", claim:"검증 주장", source:"출처", element:"원소"};
-const COLOR = {combo:"#2563eb", film:"#ca8a04", gas:"#4b5563", species:"#0891b2", emission:"#7c3aed", use:"#dc2626", claim:"#16a34a", source:"#9ca3af", element:"#d1d5db"};
+const REL = {forms:"벽 피막 형성", removes:"벽 피막 제거", affects:"벽이 화학종에 주는 영향", treats:"벽 처리", during:"단계", etches:"식각 대상", feeds:"공급 가스", may_produce:"생성 후보", has_element:"원소", emits:"방출", cites:"출처", supports:"근거 주장", involves:"관련 화학종", near:"가까운 선(자동 계산)"};
+const TYPE = {combo:"조합", film:"막질", gas:"공급 가스", species:"화학종", emission:"방출선·밴드", use:"용도", claim:"검증 주장", source:"출처", element:"원소", wall:"챔버 벽 상태", step:"시즈닝·세정·식각 단계"};
+const COLOR = {combo:"#2563eb", film:"#ca8a04", gas:"#4b5563", species:"#0891b2", emission:"#7c3aed", use:"#dc2626", claim:"#16a34a", source:"#9ca3af", element:"#d1d5db", wall:"#b45309", step:"#0f766e"};
 const emis = sp => (OUT["sp:"+sp]||[]).filter(e => e.rel==="emits").map(e => N[e.t]);
 const nmText = m => m.text || [...new Set((m.points||[]).map(p => (+p).toFixed(1))), ...(m.ranges||[]).map(r => r[0]+"–"+r[1])].join(" · ");
 const link = id => `<a class="go" data-id="${esc(id)}">${esc(N[id] ? N[id].label : id)}</a>`;
@@ -157,7 +166,7 @@ function peak() {
   document.getElementById("k-out").innerHTML = (sps.length > 1 ? `<p class="warn">⚠ 허용오차 안에 화학종 ${sps.length}개(${esc(sps.join(", "))}) — 분광기 분해능과 다른 선(같은 화학종의 다른 선, actinometry 기준선)으로 구분해야 한다.</p>` : "")
     + `<div class="tbl"><table><thead><tr><th>Δ (nm)</th><th>화학종</th><th>근거 위치</th><th>종류</th><th>판정</th><th>이 화학종이 후보인 조합</th><th>출처</th></tr></thead><tbody>`
     + hits.map(([d, m]) => { const cs = (IN["sp:"+m.species]||[]).filter(e => e.rel==="may_produce").map(e => e.s);
-        return `<tr><td>${d.toFixed(2)}</td><td>${link("sp:"+m.species)}</td><td class="t-${esc(m.tier)}">${esc(nmText(m))}</td><td>${esc({ref:"기준 파장",supp:"보완",combo:"조합 출처 측정"}[m.tier])}${m.transition ? "<br><span class='note'>"+esc(m.transition)+"</span>" : ""}</td>
+        return `<tr><td>${d.toFixed(2)}</td><td>${link("sp:"+m.species)}</td><td class="t-${esc(m.tier)}">${esc(nmText(m))}</td><td>${esc({ref:"기준 파장",supp:"보완",combo:"조합 출처 측정",cond:"conditioning 문헌"}[m.tier])}${m.transition ? "<br><span class='note'>"+esc(m.transition)+"</span>" : ""}</td>
         <td>${decTag(m.decision) || (m.verified ? '<span class="tag adopt">원문 대조</span>' : "")}</td><td>${cs.length} ${cs.slice(0, 8).map(link).join(" ")}${cs.length > 8 ? " …" : ""}</td><td style="font-size:13px">${srcLinks(m.id)}</td></tr>`; }).join("")
     + `</tbody></table></div>` + (hits.length ? "" : `<p class="note">이 범위에 근거 있는 위치가 없다. 허용오차를 넓혀 보거나, 근거가 없는 화학종일 수 있다.</p>`);
 }
@@ -168,7 +177,7 @@ const TOK = s => (String(s).toLowerCase().match(/[a-z0-9가-힣₀-₉+]+/g) || 
 const DF = {}; const CT = CARDS.map(c => { const t = TOK(c.text); new Set(t).forEach(w => DF[w] = (DF[w]||0)+1); return t; });
 const AVG = CT.reduce((a,t) => a + t.length, 0) / CT.length;
 const ENT = [];
-G.nodes.forEach(n => { if (["film","gas","species","combo","use","claim"].includes(n.type)) {
+G.nodes.forEach(n => { if (["film","gas","species","combo","use","claim","wall","step"].includes(n.type)) {
   [n.label, ...(n.aliases||[])].forEach(a => { if (a && a.length >= 2) ENT.push([a, n.id]); });
   if (n.type==="film") ENT.push([n.label.split(" · ")[0], n.id]);
   if (n.type==="use" && n.film_text) ENT.push([n.film_text, n.id]);
@@ -208,13 +217,13 @@ function openNode(id) {
   document.getElementById("e-q").value = n.label;
   const groups = {};
   [...(OUT[id]||[]).map(e => [e, e.t]), ...(IN[id]||[]).map(e => [e, e.s])].forEach(([e, o]) => {
-    const k = REL[e.rel] + (e.evidence ? ` (${{feed:"공급",inferred:"추론",reported:"출처 측정"}[e.evidence]})` : "");
+    const k = REL[e.rel] + (e.effect ? ` — ${e.effect}` : "") + (e.evidence ? ` (${{feed:"공급",inferred:"추론",reported:"출처 측정"}[e.evidence]})` : "");
     (groups[k] ||= []).push(o);
   });
   const props = ["film_name","gases","mode","note","text","transition","cond","signal","statement","conditions","kind","medium","spectrum"].filter(k => n[k]).map(k => `<div><span class="note">${esc(k)}</span> ${esc(Array.isArray(n[k]) ? n[k].join(" + ") : n[k])}</div>`).join("");
   document.getElementById("e-card").innerHTML = `<div class="card"><div class="note">${esc(TYPE[n.type])} · <code>${esc(n.id)}</code> ${decTag(n.decision)}${n.verified ? ' <span class="tag adopt">원문 대조</span>' : ""}</div>
     <h3 style="margin:4px 0 8px">${esc(n.label)}</h3>${props}${(n.points||[]).length ? `<div><span class="note">파장 nm</span> ${esc(n.points.join(", "))}</div>` : ""}${(n.ranges||[]).length ? `<div><span class="note">구간 nm</span> ${esc(n.ranges.map(r => r.join("–")).join(", "))}</div>` : ""}
-    ${n.url ? `<div><a href="${esc(n.url)}" target="_blank" rel="noopener">원문 열기</a></div>` : ""}
+    ${n.url ? `<div><a href="${esc(n.url)}" target="_blank" rel="noopener">원문 열기</a></div>` : ""}${n.kg ? `<div><a href="${esc(n.kg)}">개념: 챔버 벽 상태 변화 (식각 지식 그래프)</a></div>` : ""}
     ${Object.entries(groups).map(([k, ids]) => `<div class="nb" style="margin-top:8px"><b style="font-size:13px">${esc(k)}</b> <span class="note">${ids.length}</span><br>${ids.slice(0, 60).map(link).join(" · ")}${ids.length > 60 ? " …" : ""}</div>`).join("")}</div>`;
   const nb = [...new Set([...(OUT[id]||[]).map(e => e.t), ...(IN[id]||[]).map(e => e.s)])].filter(x => !x.startsWith("el:") || n.type==="species").slice(0, 60);
   const els = [{data:{id, label:n.label, color:COLOR[n.type], big:1}}, ...nb.map(x => ({data:{id:x, label:N[x].label.slice(0, 28), color:COLOR[N[x].type]}})),
@@ -229,6 +238,21 @@ function openNode(id) {
   history.replaceState(null, "", "#node=" + encodeURIComponent(id));
 }
 document.getElementById("e-q").onchange = ev => { const v = ev.target.value; const n = G.nodes.find(x => x.label===v) || G.nodes.find(x => x.label.toLowerCase().startsWith(v.toLowerCase())); if (n) openNode(n.id); };
+
+// 챔버 conditioning
+const claimOf = e => e.claim ? link("claim:"+e.claim) + " " + decTag((N["claim:"+e.claim]||{}).decision) : "";
+document.getElementById("c-walls").innerHTML = `<div class="tbl"><table><thead><tr><th>벽 상태</th><th>만드는 단계</th><th>지우는·처리 단계</th><th>화학종에 주는 영향</th></tr></thead><tbody>` +
+  G.nodes.filter(n => n.type==="wall").map(w => {
+    const ins = IN[w.id]||[], outs = (OUT[w.id]||[]).filter(e => e.rel==="affects");
+    const li = es => es.map(e => `<div>${link(e.s)} <span class="note">${claimOf(e)}</span>${e.effect ? " <span class='note'>"+esc(e.effect)+"</span>" : ""}</div>`).join("");
+    return `<tr><td>${link(w.id)}</td><td>${li(ins.filter(e => e.rel==="forms"))}</td><td>${li(ins.filter(e => e.rel==="removes" || e.rel==="treats"))}</td>
+      <td>${outs.map(e => `<div>${link(e.t)}: ${esc(e.effect)} <span class="note">${claimOf(e)}</span></div>`).join("")}</td></tr>`; }).join("") + `</tbody></table></div>`;
+document.getElementById("c-mons").innerHTML = G.nodes.filter(n => n.type==="use" && n.use==="conditioning").map(u => {
+  const sp = (OUT[u.id]||[]).filter(e => e.rel==="involves").map(e => e.t);
+  const st = (OUT[u.id]||[]).filter(e => e.rel==="during").map(e => e.t);
+  const wl = sp.map(s => { const ms = emis(N[s].label); return ms.length ? `<div><b>${esc(N[s].label)}</b> ${ms.map(m => `<span class="t-${esc(m.tier)}" title="${esc(m.label)}">${esc(nmText(m))}</span>`).join(" · ")}</div>` : ""; }).join("");
+  return `<div class="card"><b>${link(u.id)}</b> ${decTag(u.decision)} <span class="note">${st.map(link).join(" ")}</span><div>${esc(u.signal)}</div>
+    <div style="font-size:13px;margin-top:6px">${wl || '<span class="note">특정 화학종 없음(스펙트럼 전체·가상계측)</span>'}</div><div class="note" style="margin-top:6px">출처: ${srcLinks(u.id)}</div></div>`; }).join("");
 
 recipe(); peak();
 const h = decodeURIComponent(location.hash.replace(/^#node=/, ""));

@@ -234,5 +234,65 @@
   "ask": "SiF 440 근거 출처(Kwon 2021)",
   "node": "em:SiF:M01",
   "expect_url_part": "PMC8199536"
+ },
+ {
+  "id": "CT-01",
+  "q": "conditioning",
+  "ask": "SiOClx 벽 피막은 무엇으로 지우고 Cl에 어떤 영향을 주나",
+  "term": "SiOClx",
+  "expect": [
+   "SF6 세정",
+   "Cl",
+   "0.005"
+  ]
+ },
+ {
+  "id": "CT-02",
+  "q": "conditioning",
+  "ask": "SF6 세정 종말점 신호",
+  "term": "SF6 세정",
+  "expect": [
+   "SiF",
+   "F"
+  ]
+ },
+ {
+  "id": "CT-03",
+  "q": "conditioning",
+  "ask": "AlFx 벽 피막 제거",
+  "term": "AlFx",
+  "expect": [
+   "SiCl4/Cl2 세정",
+   "SF6 세정"
+  ]
+ },
+ {
+  "id": "CT-04",
+  "q": "conditioning",
+  "ask": "시즈닝 완료를 OES로 판정",
+  "term": "시즈닝",
+  "expect": [
+   "SiClx 280.4"
+  ]
+ },
+ {
+  "id": "CT-05",
+  "q": "peak",
+  "ask": "282 nm 피크(시즈닝 감시)",
+  "nm": 282.0,
+  "tol": 0.5,
+  "expect_species": [
+   "SiCl"
+  ]
+ },
+ {
+  "id": "CT-06",
+  "q": "conditioning",
+  "ask": "이트리아 벽의 Cl 재결합",
+  "term": "Y2O3",
+  "expect": [
+   "0.20",
+   "Cl"
+  ]
  }
 ]
