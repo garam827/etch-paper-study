@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14단계 · OES 지식 구조화</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>14단계 · OES 지식 구조화</h1>
+    <p class="phase-desc">항목 #56 · 2026-10-15 21:26 ~ · OES 식각 화학 데이터(조합·화학종·방출선·용도·근거)를 지식 그래프와 RAG로 구조화한다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-13.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><span class="cur" aria-current="page">14. OES 지식 구조화</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #56 ===== -->
+    <article class="entry" id="e56">
+      <div class="entry-head">
+        <span class="no">#56</span>
+        <h2>OES 데이터셋을 지식 그래프·RAG로 구조화하는 방법 (설계 질문)</h2>
+        <time>2026-10-15 21:26</time>
+      </div>
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>OES 관련 전체 데이터셋을 좀 더 짜임새 있게 Knowledge Graph 혹은 Knowledge RaG 형태로 표현하려면 어떻게 해야할까?</blockquote>
+      </section>
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>구현 지시가 아니라 방법을 묻는 질문이다. 현재 데이터의 구성을 세고, 구조 선택은 jev에게 물어 설계안으로 답한다.</li>
+          <li>현재 데이터: 조합 88, 막질 38, 공급 가스 19, 화학종 146, 조합-화학종 연결 1,010, 기준선 40, 보완 원자선 25원소, 분자 방출 22, 종말점 사례 11, actinometry 6쌍, 가까운 선 3, 출처 46. 원본이 다섯 곳에 흩어져 있다(비공개 앱 데이터, combos_extra, bands_extra, oes_supplement, 검증 결과).</li>
+        </ul>
+      </section>
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>21:26</time> 생성된 OES 페이지와 원본 파일에서 데이터 구성을 셌다.</li>
+          <li><time>21:26</time> jev에게 세 가지를 물었다.<br>
+            · 구조: 지식 그래프를 단일 원본으로 두고 RAG는 그래프 이웃을 검색 범위로 쓰는 하이브리드(GraphRAG). 파장 매칭 같은 수치 질의는 결정적으로 처리한다(1.0).<br>
+            · 이번 응답: 설계안만 답하고 구현은 사용자 결정 뒤에(1.0).<br>
+            · 기록 단계: 새 14단계(0.81).<br>
+            모두 따랐다.</li>
+          <li><time>21:28</time> 설계안을 답했다.<br>
+            · 스키마: 막질·가스·조합·화학종·방출선·용도·주장·출처 노드. 관계마다 근거 수준(공급/추론/측정)과 검증 판정을 단다.<br>
+            · 그래프가 답해야 할 질문 5가지: 레시피→파장, 피크→후보(±오차, 겹침 경고), 경계→종말점 신호 방향, actinometry 쌍, 근거 추적.<br>
+            · RAG: 노드 카드 단위 문서, 개체 추출 → 그래프로 범위 좁힘 → 텍스트 검색, 모든 문장에 주장 ID를 단다.<br>
+            · 4단계 계획: 원본 통합 → 보기·질의 도구 → RAG 내보내기 → 평가 문항 회귀 시험. 일반 임베딩 RAG만 쓰지 않는 이유(수치 질의, 근거 분리)도 적었다.</li>
+        </ol>
+      </section>
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">답변</span> 설계안만 제시했다(구현 없음). 사용자가 정할 것: 1단계(원본 통합) 착수 여부, 그래프에 비공개 앱 조합 67개를 그대로 넣을지, RAG를 이 사이트와 비공개 앱 중 어디에 둘지. 결과물이 없어 스크린샷은 없다.</p>
+      </section>
+    </article>
+
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-13.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><span class="cur" aria-current="page">14. OES 지식 구조화</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>
