@@ -5,7 +5,8 @@
   "patterning": "멀티패터닝 · 리소그래피",
   "selective": "선택 증착 · 자기조립",
   "device": "소자 · 게이트 공정",
-  "packaging": "패키징 · 하이브리드 본딩"
+  "packaging": "패키징 · 하이브리드 본딩",
+  "control": "공정 제어 · APC"
  },
  "papers": [
   {
@@ -1219,6 +1220,359 @@
    "points": [],
    "use": "그래프 HCB(하이브리드 Cu 본딩) 관련 노드의 근거(#52).",
    "claim": "Ji 외(2022)는 W2W 하이브리드 본딩에서 슬러리 선택이 Cu 디싱 균일성·Cu 돌출·절연막 가장자리 둥글어짐에 영향을 준다고 보고했다."
+  },
+  {
+   "id": "elchemali2003",
+   "area": "control",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Critical dimension control of a plasma etch process by integrating feedforward and feedback run-to-run control",
+   "authors": "C. El Chemali 외",
+   "year": 2003,
+   "venue": "J. Vac. Sci. Technol. B 21(6), 2304–2312",
+   "doi": "10.1116/1.1615983",
+   "match": [
+    "10.1116/1.1615983"
+   ],
+   "summary": "레지스트 트림 시간을 런마다 조정하는 피드포워드/피드백(FF/FB) run-to-run 제어기를 설계한 연구. 리소그래피 후 레지스트 CD를 피드포워드로 넣어 모델로 트림 시간을 정하고, 식각 후 폴리실리콘 CD를 피드백으로 넣어 트림 중 O2 유량 외란을 보상한다(피드백의 구체적 방식은 초록에 없음).",
+   "points": [
+    "Lam Research 식각 장비로 시뮬레이션·실험해 CD의 선형 드리프트와 시프트가 줄었다.",
+    "피드포워드만 쓸 때보다 피드백을 결합한 쪽의 목표 이탈이 작았다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "El Chemali 외(2003)는 리소 후 레지스트 CD(피드포워드)와 식각 후 폴리실리콘 CD(피드백)로 레지스트 트림 시간을 조정하는 FF/FB run-to-run 제어기를 설계해 식각 장비 실험으로 검증했다."
+  },
+  {
+   "id": "butler1994",
+   "area": "control",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Supervisory run-to-run control of polysilicon gate etch using in situ ellipsometry",
+   "authors": "S. W. Butler, J. A. Stefani",
+   "year": 1994,
+   "venue": "IEEE Trans. Semicond. Manuf. 7(2), 193–201",
+   "doi": "10.1109/66.286855",
+   "match": [
+    "10.1109/66.286855"
+   ],
+   "summary": "장비 노화로 결과가 흘러가는 폴리실리콘 게이트 식각에 in-situ 엘립소미터와 run-to-run 감독 제어기(predictor corrector control, PCC)를 붙인 초기 연구. 한 지점의 엘립소메트리로 균일도를 예측하는 모델을 쓰고, 웨이퍼마다 목표 평균 식각 속도와 균일도를 맞추는 레시피를 계산했다.",
+   "points": [
+    "200장 실험에서 식각 속도의 표준편차가 36% 줄었다.",
+    "식각 속도 제어가 선폭 변화 제어에도 도움이 될 수 있다고 봤다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Butler·Stefani(1994)는 폴리실리콘 게이트 식각에 in-situ 엘립소미터와 run-to-run 감독 제어기(PCC)를 적용해 200장 실험에서 식각 속도 표준편차를 36% 줄였다."
+  },
+  {
+   "id": "sachs1995",
+   "area": "control",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Run by run process control: combining SPC and feedback control",
+   "authors": "E. Sachs, A. Hu, A. Ingolfsson",
+   "year": 1995,
+   "venue": "IEEE Trans. Semicond. Manuf. 8(1), 26–43",
+   "doi": "10.1109/66.350755",
+   "match": [
+    "10.1109/66.350755"
+   ],
+   "summary": "공정이 정상적으로 겪는 갑작스러운 변화(shift)와 점진적 변화(drift)를 다루려고 SPC와 피드백 제어를 결합한 run-by-run 제어기를 제안한 연구. 정비 같은 급변에는 빠른 모드, 반응기 내부 퇴적 같은 서서히 변하는 쪽에는 점진 모드로 대응하고, 둘 중 무엇을 쓸지는 일반화된 SPC가 정한다.",
+   "points": [
+    "실리콘 에피 공정에 적용했다(식각이 아님).",
+    "급변 뒤 3런 안에 회복, 점진 모드는 과거 데이터 대비 변동을 2.7배 줄였다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Sachs 외(1995)는 SPC와 피드백 제어를 결합해 shift에 빠르게, drift에 점진적으로 적응하는 run-by-run 제어기를 제안하고 실리콘 에피 공정에 적용했다."
+  },
+  {
+   "id": "delcastillo1997",
+   "area": "control",
+   "kind": "리뷰",
+   "basis": "초록",
+   "title": "Run-to-Run Process Control: Literature Review and Extensions",
+   "authors": "E. Del Castillo, A. M. Hurwitz",
+   "year": 1997,
+   "venue": "Journal of Quality Technology 29(2), 184–196",
+   "doi": "10.1080/00224065.1997.11979749",
+   "match": [
+    "10.1080/00224065.1997.11979749"
+   ],
+   "summary": "반도체 공정에 쓰이던 run-to-run 제어 기법을 통계와 제어공학 양쪽 관점에서 정리한 리뷰. 이 기법들이 응답 표면, SPC, 피드백 제어를 결합한다고 설명하고, 단일 입출력(SISO)에서 자기 조정(self-tuning) 제어기를 제안한다.",
+   "points": [
+    "제안한 제어기는 shift뿐 아니라 추세(drift)·자기상관이 있는 경우도 보상한다.",
+    "입력 변동을 줄이려고 출력에 관리도를 붙여 불감대(deadband)로 쓴다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Del Castillo·Hurwitz(1997)는 반도체 run-to-run 제어 기법을 응답 표면·SPC·피드백 제어의 결합으로 정리하고 자기 조정 제어기를 제안했다."
+  },
+  {
+   "id": "patel2000",
+   "area": "control",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Adaptive optimization of run-to-run controllers: the EWMA example",
+   "authors": "N. S. Patel, S. T. Jenkins",
+   "year": 2000,
+   "venue": "IEEE Trans. Semicond. Manuf. 13(1), 97–107",
+   "doi": "10.1109/66.827349",
+   "match": [
+    "10.1109/66.827349"
+   ],
+   "summary": "EWMA 제어기의 이득을 안정성 조건 안에서 재귀적으로 최적화하는 방법을 제안한 연구. 사전 정보가 거의 없는 상태에서 출력의 점근 평균제곱오차를 줄이는 것이 목표이며, 스텝과 드리프트 외란을 모두 다룬다.",
+   "points": [
+    "생성되는 이득 수열은 항상 안정한 시스템을 주고, 준최적 값으로 수렴한다.",
+    "모델 불확실성으로 확장하고, 시뮬레이션과 제조 적용 데이터를 제시했다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Patel·Jenkins(2000)는 스텝·드리프트 외란에서 EWMA run-to-run 제어기의 이득을 안정성 조건 안에서 재귀적으로 최적화하는 방법을 제안했다."
+  },
+  {
+   "id": "good2006",
+   "area": "control",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "On the Stability of MIMO EWMA Run-to-Run Controllers With Metrology Delay",
+   "authors": "R. P. Good, S. J. Qin",
+   "year": 2006,
+   "venue": "IEEE Trans. Semicond. Manuf. 19(1), 78–86",
+   "doi": "10.1109/tsm.2005.863211",
+   "match": [
+    "10.1109/tsm.2005.863211"
+   ],
+   "summary": "제품을 다음 공정에 넘기기 전에 계측하기 어려워 생기는 계측 지연이 부정확한 모델과 겹치면 run-to-run 폐루프가 불안정해질 수 있다는 점을 다룬 연구. 다입력·다출력(MIMO) EWMA 제어기의 안정 조건을 일반화된 Routh-Hurwitz 기준으로 유도했다.",
+   "points": [
+    "지연 길이와 무관한 충분조건: 모델 불일치 행렬의 고유값이 모두 복소평면 (1,0) 중심 단위원 안에 있으면 안정하다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Good·Qin(2006)은 계측 지연이 있는 MIMO EWMA run-to-run 제어기의 안정 조건을 유도하고, 지연 길이와 무관한 충분조건을 제시했다."
+  },
+  {
+   "id": "ruegsegger1998",
+   "area": "control",
+   "kind": "학회 논문",
+   "basis": "공개 초록",
+   "title": "Optimal feedforward recipe adjustment for CD control in semiconductor patterning",
+   "authors": "S. Ruegsegger 외",
+   "year": 1998,
+   "venue": "AIP Conference Proceedings 449, 573–577",
+   "doi": "10.1063/1.56845",
+   "match": [
+    "10.1063/1.56845"
+   ],
+   "summary": "공정 간 피드포워드로 식각 후 CD의 런 간 변동·재작업·폐기를 줄일 수 있지만, 측정 노이즈가 잘못된 제어 동작을 부를 수 있다는 점을 다룬 연구. 센서 정확도에 대한 신뢰도에 맞춰 제어기를 덜 민감하게(detune) 만들어 SEM 노이즈를 걸러내는 확률 기반 방법을 제안했다.",
+   "points": [
+    "산업 게이트 식각 데이터로 시뮬레이션했다(실제 적용 결과는 아님)."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Ruegsegger 외(1998)는 측정 노이즈에 대응해 센서 신뢰도에 따라 피드포워드 레시피 조정 제어기를 detune하는 방법을 제안하고 게이트 식각 데이터로 시뮬레이션했다."
+  },
+  {
+   "id": "sendelbach2006",
+   "area": "control",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Integrated scatterometry in high-volume manufacturing for polysilicon gate etch control",
+   "authors": "M. Sendelbach 외 (IBM)",
+   "year": 2006,
+   "venue": "Proc. SPIE 6152, 61520F",
+   "doi": "10.1117/12.659946",
+   "match": [
+    "10.1117/12.659946"
+   ],
+   "summary": "IBM이 90nm SOI 마이크로프로세서용 300mm 팹의 폴리실리콘 게이트 식각 장비에 통합 스캐터로메트리를 붙여 게이트 선폭을 제어한 사례. 장비 기반 APC 방법, 샘플링 전략, 처리량, 스캐터로메트리 모델을 설명한다.",
+   "points": [
+    "스캐터로메트리 값은 식각 전후 CD-SEM, 전기 측정과 잘 맞았다.",
+    "양산에 피드포워드·피드백 제어를 적용한 뒤 선폭 분포가 개선됐다고 보고했다(회사 자체 보고, 초록에 수치 없음)."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Sendelbach 외(2006)는 IBM 300mm 팹의 폴리실리콘 게이트 식각에 통합 스캐터로메트리와 장비 기반 APC를 적용해 피드포워드·피드백 제어 후 선폭 분포가 개선됐다고 보고했다."
+  },
+  {
+   "id": "zhang2007",
+   "area": "control",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Across-wafer CD uniformity control through lithography and etch process: experimental verification",
+   "authors": "Q. Zhang 외",
+   "year": 2007,
+   "venue": "Proc. SPIE 6518, 65182C",
+   "doi": "10.1117/12.711232",
+   "match": [
+    "10.1117/12.711232"
+   ],
+   "summary": "로트·웨이퍼 단위 run-to-run 제어를 넘어 웨이퍼 안(다이 간) CD 변동을 줄이려고, 다중 존 PEB 열판의 온도 프로파일을 조정해 리소·식각의 계통적 CD 변동을 함께 보상하는 모델 기반 방법을 실험으로 검증했다.",
+   "points": [
+    "무선 온도 센서 웨이퍼로 열판 존 오프셋과 온도 프로파일의 관계 모델을 만들었다.",
+    "식각 후 CD 분포와 식각 바이어스 분포를 분리해 반영했고, 검증 실험에서 식각 후 CD의 계통적 분포(signature)가 40% 줄었다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Zhang 외(2007)는 다중 존 PEB 온도 프로파일로 리소·식각의 계통적 웨이퍼 내 CD 변동을 보상해 검증 실험에서 식각 후 CD의 계통적 분포를 40% 줄였다."
+  },
+  {
+   "id": "lee2019",
+   "area": "control",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Across-wafer sub-1 nm critical dimension uniformity control by etch tool correction",
+   "authors": "C.-W. Lee",
+   "year": 2019,
+   "venue": "Proc. SPIE (Advanced Etch Technology for Nanopatterning VIII)",
+   "doi": "10.1117/12.2519383",
+   "match": [
+    "10.1117/12.2519383"
+   ],
+   "summary": "7nm 이후 노드에서 CDU 요구가 1nm 미만으로 내려간 상황에서, Lam Research 식각 장비의 Hydra 균일도 시스템으로 웨이퍼 내 CDU를 보정한 7nm FEOL 로직 적용 보고. 다중 존 ESC 튜닝으로 반경 방향 성분을 줄인 뒤 남은 국부 불균일을 보정했다.",
+   "points": [
+    "기준(3σ < 1nm) 대비 CDU가 60% 개선됐고, 식각 후 CDU가 EUV 현상 후 목표 CDU와 비슷해졌다.",
+    "장비 회사 관련 보고다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Lee(2019)는 다중 존 ESC 튜닝 뒤 Hydra 균일도 시스템으로 국부 불균일을 보정해 7nm FEOL 식각의 웨이퍼 내 CDU를 기준 대비 60% 개선했다고 보고했다."
+  },
+  {
+   "id": "ren2020",
+   "area": "control",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Advanced process control loop for SAQP pitch walk with combined lithography, deposition and etch actuators",
+   "authors": "H. Ren 외",
+   "year": 2020,
+   "venue": "Proc. SPIE (Metrology, Inspection, and Process Control XXXIV)",
+   "doi": "10.1117/12.2552911",
+   "match": [
+    "10.1117/12.2552911"
+   ],
+   "summary": "5nm FEOL 로직 공정에서 SAQP 피치 워킹을 리소·증착·식각 액추에이터를 함께 쓰는 APC 루프로 다룬 연구. 웨이퍼 데이터로 맞춘 피치 워킹 예측 모델에 후속 층 오버레이에 의한 EPE 성분을 더해 최종 결함 확률을 예측하고 최적 제어 루프를 골랐다.",
+   "points": [
+    "피치 워킹을 방치하면 매개변수 수율 저하나 핀 손실 결함이 생길 수 있다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Ren 외(2020)는 5nm FEOL SAQP 피치 워킹을 리소·증착·식각 액추에이터를 결합한 APC 루프로 제어하고 예측 모델에 EPE 성분을 넣었다."
+  },
+  {
+   "id": "umeda2019",
+   "area": "control",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Advanced Process Control Using Virtual Metrology to Cope With Etcher Condition Change",
+   "authors": "S. Umeda 외",
+   "year": 2019,
+   "venue": "IEEE Trans. Semicond. Manuf. 32(4), 423–427",
+   "doi": "10.1109/tsm.2019.2938546",
+   "match": [
+    "10.1109/tsm.2019.2938546"
+   ],
+   "summary": "장비 데이터로 CD를 예측하는 가상계측(VM)을 쓰는 플라즈마 식각 APC에서, 식각 장비 상태가 바뀌어 CD와 장비 데이터의 상관이 달라지면 예측이 나빠지는 문제를 다룬 연구. 로트 묶음별 로컬 VM 모델 여럿과 전체 데이터 기반 전역 모델을 만들어 최적 모델을 고르는 APC를 제안했다.",
+   "points": [
+    "실제 식각 장비 실험 데이터 기반 시뮬레이션으로 예측 정확도 개선을 보였다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Umeda 외(2019)는 식각 장비 상태 변화에 대응해 여러 VM 모델 중 최적 모델을 고르는 VM 기반 APC를 제안하고 장비 데이터 기반 시뮬레이션으로 보였다."
+  },
+  {
+   "id": "kota2003",
+   "area": "control",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Advanced process control for poly-Si gate etching using integrated CD metrology",
+   "authors": "G. P. Kota 외 (Lam Research·KLA-Tencor·AMD)",
+   "year": 2003,
+   "venue": "Proc. SPIE 5044, 90–96",
+   "doi": "10.1117/12.487635",
+   "match": [
+    "10.1117/12.487635"
+   ],
+   "summary": "KLA-Tencor의 스캐터로메트리 CD 계측기(iSpectra SCD)를 Lam 2300 Versys Star 실리콘 식각 장비에 통합한 피드포워드 제어 보고. 식각 전 CD를 장비로 보내 트림 시간을 바꿔 목표 CD를 맞췄다.",
+   "points": [
+    "처음 25nm였던 CD 산포를 1nm 이내로 맞췄다고 보고했다(장비 회사 자체 보고, 3σ 기준인지는 초록에 없음).",
+    "통합 계측이 사이클 타임 단축과 웨이퍼 단위 APC를 가능하게 한다고 설명한다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Kota 외(2003)는 Lam 식각 장비에 통합한 스캐터로메트리 CD 측정으로 트림 시간을 조정하는 피드포워드 제어를 적용해 25nm였던 CD 산포를 1nm 이내로 맞췄다고 보고했다."
+  },
+  {
+   "id": "mui2004",
+   "area": "control",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "In-tool process control for advanced patterning based on integrated metrology",
+   "authors": "D. S. L. Mui 외 (Applied Materials)",
+   "year": 2004,
+   "venue": "Proc. SPIE 5378",
+   "doi": "10.1117/12.537444",
+   "match": [
+    "10.1117/12.537444"
+   ],
+   "summary": "통합 계측을 갖춘 Applied Materials Transforma Closed Loop 식각 시스템으로 게이트 식각에서 실시간 피드포워드·피드백 측정을 구현했다고 밝힌 보고. 로직·SRAM은 게이트 CD, DRAM 딥 트렌치는 식각 깊이가 핵심 제어 변수라고 설명한다.",
+   "points": [
+    "그전까지 팹은 대부분 독립형 계측 장비로 웨이퍼 값을 모았다고 설명한다.",
+    "장비 회사 자체 보고다(세부 수치는 초록에 없음)."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Mui 외(2004)는 통합 계측 식각 시스템(Transforma Closed Loop)으로 게이트 식각에서 실시간 피드포워드·피드백 측정을 구현했다고 보고했다."
+  },
+  {
+   "id": "williams2005",
+   "area": "control",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Improvements in Polysilicon Etch Bias and Transistor Gate Control With Module Level APC Methodologies",
+   "authors": "D. A. Williams 외 (Intel)",
+   "year": 2005,
+   "venue": "IEEE Trans. Semicond. Manuf. 18(4), 522–527",
+   "doi": "10.1109/tsm.2005.858490",
+   "match": [
+    "10.1109/tsm.2005.858490"
+   ],
+   "summary": "0.13µm 폴리실리콘 게이트 패터닝에서 노광 장비와 식각 장비를 피드포워드·피드백 루프로 함께 제어한 모듈 단위 APC 적용 보고. 이전에는 리소·식각 장비 변동을 사람이 감시하며 수동 오프셋으로 보정했다.",
+   "points": [
+    "게이트 CD 3σ가 12% 개선됐고, 소자 성능·수율 개선과 엔지니어 수작업 감소로 이어졌다고 보고했다(제조사 자체 보고).",
+    "12%는 리소·식각 결합 제어 전체의 효과로, 피드포워드만의 기여는 따로 나와 있지 않다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Williams 외(2005)는 0.13µm 폴리실리콘 패터닝에서 노광·식각 장비를 피드포워드·피드백으로 함께 제어해 게이트 CD 3σ가 12% 개선됐다고 보고했다."
+  },
+  {
+   "id": "wang2005",
+   "area": "control",
+   "kind": "논문",
+   "basis": "초록",
+   "title": "Recursive Least Squares Estimation for Run-to-Run Control With Metrology Delay and Its Application to STI Etch Process",
+   "authors": "J. Wang 외",
+   "year": 2005,
+   "venue": "IEEE Trans. Semicond. Manuf. 18(2), 309–319",
+   "doi": "10.1109/tsm.2005.846819",
+   "match": [
+    "10.1109/tsm.2005.846819"
+   ],
+   "summary": "EWMA·이중 EWMA·내부 모델 제어(IMC) 필터와 함께 재귀최소제곱(RLS)을 run-to-run 추정에 쓰는 방법을 다룬 연구. 계측 지연과 측정 노이즈가 있는 드리프트 공정에서 이 제어기들의 성능을 비교하고, 시간에 따라 변하는 드리프트의 지연 처리 방법을 제안했다.",
+   "points": [
+    "EWMA형과 RLS형 추정의 관계를 분석하고 시뮬레이션으로 확인했다.",
+    "STI 식각 공정을 산업 사례로 들었다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Wang 외(2005)는 계측 지연·노이즈가 있는 드리프트 공정에서 EWMA·RtR-IMC·RLS 기반 run-to-run 제어기를 비교하고 STI 식각을 산업 사례로 들었다."
+  },
+  {
+   "id": "ringwood2010",
+   "area": "control",
+   "kind": "리뷰",
+   "basis": "초록",
+   "title": "Estimation and Control in Semiconductor Etch: Practice and Possibilities",
+   "authors": "J. V. Ringwood 외",
+   "year": 2010,
+   "venue": "IEEE Trans. Semicond. Manuf. 23(1), 87–98",
+   "doi": "10.1109/tsm.2009.2039250",
+   "match": [
+    "10.1109/tsm.2009.2039250"
+   ],
+   "summary": "반도체 식각이 대체로 경험으로 만든 레시피를 지키는 개루프 공정이라는 현실에서 출발해, 식각을 일정하게 유지하기 어려운 기술적 이유와 쓸 수 있는 추정·제어 기법을 정리한 리뷰.",
+   "points": [
+    "잔류물 축적과 일정하지 않은 예방 정비가 드리프트와 계단형 변화를 만든다.",
+    "폐루프 제어를 하려면 어떤 측정 수단을 쓸 수 있는지가 중요하다고 본다."
+   ],
+   "use": "그래프 APC·Run-to-Run·피드포워드 노드의 근거(#53).",
+   "claim": "Ringwood 외(2010)는 식각이 대체로 개루프 레시피 공정이며 잔류물 축적과 일정하지 않은 예방 정비가 드리프트와 계단형 변화를 만든다고 정리하고 추정·제어 기법을 검토했다."
   }
  ]
 }

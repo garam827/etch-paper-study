@@ -3389,5 +3389,85 @@
   "from": "s_dicing",
   "to": "hcb",
   "label": "D2W 다이 준비"
+ },
+ {
+  "from": "apc",
+  "to": "r2r",
+  "label": "중심 기법"
+ },
+ {
+  "from": "r2r",
+  "to": "ewma",
+  "label": "대표 알고리즘"
+ },
+ {
+  "from": "r2r",
+  "to": "ff_ctrl",
+  "label": "구성"
+ },
+ {
+  "from": "r2r",
+  "to": "fb_ctrl",
+  "label": "구성"
+ },
+ {
+  "from": "ff_ctrl",
+  "to": "e_trim",
+  "label": "조정 대상(트림 시간)"
+ },
+ {
+  "from": "ocd",
+  "to": "ff_ctrl",
+  "label": "앞 공정 CD 측정"
+ },
+ {
+  "from": "ocd",
+  "to": "fb_ctrl",
+  "label": "식각 후 CD 측정"
+ },
+ {
+  "from": "p_process_drift",
+  "to": "fb_ctrl",
+  "label": "보상 대상"
+ },
+ {
+  "from": "i_aging",
+  "to": "fb_ctrl",
+  "label": "보상 대상"
+ },
+ {
+  "from": "p_virtual_metrology",
+  "to": "apc",
+  "label": "예측값 제공"
+ },
+ {
+  "from": "p_fault_detection_an",
+  "to": "apc",
+  "label": "함께 운용"
+ },
+ {
+  "from": "apc",
+  "to": "wiw_ctrl",
+  "label": "웨이퍼 내 확장"
+ },
+ {
+  "from": "p_electrostatic_chuc",
+  "to": "wiw_ctrl",
+  "label": "다중 존 온도 손잡이"
+ },
+ {
+  "from": "apc",
+  "to": "i_pitchwalk",
+  "label": "리소·증착·식각 결합 제어"
+ },
+ {
+  "from": "s_mandrel",
+  "to": "e_trim",
+  "label": "CD trim"
+ },
+ {
+  "from": "ewma",
+  "to": "i_metro",
+  "label": "계측 지연·노이즈 영향"
  }
 ]

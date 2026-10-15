@@ -68,7 +68,7 @@
     <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-05 (10-06 용어 18개 추가, 10-07 DPT·QPT 용어 44개와 용어별 논문·출처 추가, 10-08 플라즈마 식각 원리 용어 54개 추가·영역 간 연결 검토, 10-10 SNU PAL 질의응답 용어 65개 병합, 10-11 식각 기체·OES 파장·종말점 신호 9개 추가) · 근거: <a href="tsmc_n2_a20_etch_report.html">A20 식각 중심 보고서</a> · <a href="dpt_qpt_report.html">DPT·QPT 보고서</a> · <a href="plasma_etch_principles.html">플라즈마 식각 원리 노트</a> · 노드를 클릭하면 설명과 연결 관계가 오른쪽에 나옵니다.</p>
   </header>
 
-  <p class="sub" style="margin:6px 0 0">2026-10-13 다시 검증: 제품·공정 용어의 핵심 수치·날짜 주장 14개 — 채택 7, 조건부 채택 7. HKMG 게이트·high-k·일함수 금속 노드는 출처를 논문 중심으로 바꾸고 설명 주장 10개를 검증(채택 5, 조건부 채택 5, H01–H10). 2026-10-15 HCB(하이브리드 Cu 본딩)·본딩 패드·활성화·SiCN·본딩 보이드 노드를 추가하고 설명 주장 21개를 검증(채택 12, 조건부 채택 9, B01–B21). 주장별 상태는 <a href="claims_status.html">검증 현황</a>. 논문 출처 옆 <b>요약</b>은 <a href="papers.html">레퍼런스 논문 요약</a>으로 연결된다.</p>
+  <p class="sub" style="margin:6px 0 0">2026-10-13 다시 검증: 제품·공정 용어의 핵심 수치·날짜 주장 14개 — 채택 7, 조건부 채택 7. HKMG 게이트·high-k·일함수 금속 노드는 출처를 논문 중심으로 바꾸고 설명 주장 10개를 검증(채택 5, 조건부 채택 5, H01–H10). 2026-10-15 HCB(하이브리드 Cu 본딩)·본딩 패드·활성화·SiCN·본딩 보이드 노드를 추가하고 설명 주장 21개를 검증(채택 12, 조건부 채택 9, B01–B21). 같은 날 공정 제어(APC) 영역을 새로 만들어 APC·Run-to-Run·EWMA·피드포워드·피드백·웨이퍼 내 균일도 제어·CD 트림 식각 노드를 추가하고 주장 18개를 검증(채택 9, 조건부 채택 9, AP01–AP18). 주장별 상태는 <a href="claims_status.html">검증 현황</a>. 논문 출처 옆 <b>요약</b>은 <a href="papers.html">레퍼런스 논문 요약</a>으로 연결된다.</p>
   <div class="toolbar" id="filters"></div>
   <div class="toolbar">
     <input id="q" type="search" placeholder="용어·출처 검색 (예: 채널 릴리스, SAQP, IEDM)">
@@ -85,7 +85,7 @@
   <p class="legend-edges">관계 종류: <b>다음 단계</b> (공정 순서) · <b>사용</b> (기술/장비) · <b>제거</b> (식각 대상) · <b>형성</b> (만들어지는 구조) · <b>보존해야 함</b> (선택비 대상) · <b>위험</b> (결함/과제) · <b>검출</b> (테스트) · <b>구성</b> (구조의 재료/일부)</p>
 
   <h2 id="bridges">영역 간 연결 검토 (2026-10-08)</h2>
-  <p class="note">그래프는 네 묶음에서 자랐다 — A20·GAA 소자, BEOL·패키징, 패터닝(DPT·QPT), 플라즈마 원리. 묶음 안쪽은 촘촘한데 묶음 사이 다리가 적어, 노트에 근거가 있는 관계를 중심으로 다리를 보강했다. 노트에 직접 근거가 없는 업계 일반 지식 3개는 관계 이름에 "(일반 지식)"을 붙였다. 위의 <b>영역 간 연결 강조</b> 버튼으로 다리만 볼 수 있다.</p>
+  <p class="note">그래프는 네 묶음에서 자랐다 — A20·GAA 소자, BEOL·패키징, 패터닝(DPT·QPT), 플라즈마 원리. 묶음 안쪽은 촘촘한데 묶음 사이 다리가 적어, 노트에 근거가 있는 관계를 중심으로 다리를 보강했다. 노트에 직접 근거가 없는 업계 일반 지식 3개는 관계 이름에 "(일반 지식)"을 붙였다. 2026-10-15에 다섯 번째 묶음 공정 제어(APC)가 생겼고, OCD·가상계측·FDC·드리프트·정전척·피치 워킹 노드와 이어 두었다. 위의 <b>영역 간 연결 강조</b> 버튼으로 다리만 볼 수 있다.</p>
   <div class="bridge-grid">
     <div class="tbl"><table class="mini"><thead><tr><th>영역 쌍</th><th>전</th><th>후</th></tr></thead><tbody><tr><td>BEOL·패키징 ↔ 패터닝(DPT·QPT)</td><td class="n">2</td><td class="n"><b>5</b></td></tr><tr><td>BEOL·패키징 ↔ 플라즈마 원리</td><td class="n">4</td><td class="n"><b>8</b></td></tr><tr><td>패터닝(DPT·QPT) ↔ 플라즈마 원리</td><td class="n">6</td><td class="n"><b>10</b></td></tr><tr><td>A20·GAA 소자 ↔ 패터닝(DPT·QPT)</td><td class="n">16</td><td class="n"><b>25</b></td></tr><tr><td>A20·GAA 소자 ↔ 플라즈마 원리</td><td class="n">13</td><td class="n"><b>20</b></td></tr><tr><td>BEOL·패키징 ↔ A20·GAA 소자</td><td class="n">24</td><td class="n"><b>27</b></td></tr></tbody></table>
       <p class="note">연결이 하나뿐인 용어: 34개 → 11개 · 관계 302 → 345개</p></div>

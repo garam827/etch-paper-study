@@ -888,6 +888,262 @@
    "checked": [
     "https://api.openalex.org/works/doi:10.1109/eptc56328.2022.10013244"
    ]
+  },
+  {
+   "id": "P-elchemali2003",
+   "page": "papers",
+   "statement": "El Chemali 외(2003)는 리소 후 레지스트 CD(피드포워드)와 식각 후 폴리실리콘 CD(피드백)로 레지스트 트림 시간을 조정하는 FF/FB run-to-run 제어기를 설계해 식각 장비 실험으로 검증했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are El Chemali, Freudenberg, Hankinson, Collison, and Ni, published in 2003, so they match. Feedforward uses the CD measured after lithography. Feedback uses the CD measured after the main etch. The controller adjusts resist trim time to counter oxygen-flow disturbances. It was validated in simulation and on Lam Research equipment.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.1615983"
+   ]
+  },
+  {
+   "id": "P-butler1994",
+   "page": "papers",
+   "statement": "Butler·Stefani(1994)는 폴리실리콘 게이트 식각에 in-situ 엘립소미터와 run-to-run 감독 제어기(PCC)를 적용해 200장 실험에서 식각 속도 표준편차를 36% 줄였다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Butler and Stefani of TI, published in 1994. PCC stands for predictor-corrector controller.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/66.286855"
+   ]
+  },
+  {
+   "id": "P-sachs1995",
+   "page": "papers",
+   "statement": "Sachs 외(1995)는 SPC와 피드백 제어를 결합해 shift에 빠르게, drift에 점진적으로 적응하는 run-by-run 제어기를 제안하고 실리콘 에피 공정에 적용했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Sachs, Hu, and Ingolfsson, published in 1995. The paper has a rapid mode for shifts and a gradual mode for drifts, with generalized SPC choosing between them. It was applied to silicon epitaxy in a barrel reactor.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/66.350755"
+   ]
+  },
+  {
+   "id": "P-delcastillo1997",
+   "page": "papers",
+   "statement": "Del Castillo·Hurwitz(1997)는 반도체 run-to-run 제어 기법을 응답 표면·SPC·피드백 제어의 결합으로 정리하고 자기 조정 제어기를 제안했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Del Castillo and Hurwitz, published in 1997. The paper is a review, limited to SISO systems, and proposes two self-tuning controllers that handle trends and autocorrelation.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1080/00224065.1997.11979749"
+   ]
+  },
+  {
+   "id": "P-patel2000",
+   "page": "papers",
+   "statement": "Patel·Jenkins(2000)는 스텝·드리프트 외란에서 EWMA run-to-run 제어기의 이득을 안정성 조건 안에서 재귀적으로 최적화하는 방법을 제안했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Patel and Jenkins, published in 2000. The method minimizes asymptotic MSE. The gain sequence is always stable and converges to a suboptimal value. It was validated in simulation and with manufacturing data.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/66.827349"
+   ]
+  },
+  {
+   "id": "P-good2006",
+   "page": "papers",
+   "statement": "Good·Qin(2006)은 계측 지연이 있는 MIMO EWMA run-to-run 제어기의 안정 조건을 유도하고, 지연 길이와 무관한 충분조건을 제시했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Good and Qin, published in 2006. The paper derives necessary and sufficient conditions using a generalized Routh-Hurwitz criterion. If every eigenvalue of the model-mismatch matrix lies inside the unit circle centered at (1,0), the loop is stable regardless of delay length.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/tsm.2005.863211"
+   ]
+  },
+  {
+   "id": "P-ruegsegger1998",
+   "page": "papers",
+   "statement": "Ruegsegger 외(1998)는 측정 노이즈에 대응해 센서 신뢰도에 따라 피드포워드 레시피 조정 제어기를 detune하는 방법을 제안하고 게이트 식각 데이터로 시뮬레이션했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Ruegsegger, Wagner, Freudenberg and Grimard; the year is 1998. Both match. The noise in the original is from SEM measurements. The abstract does not use the word 'simulation' directly. It says the strategy was demonstrated on industrial gate-etch data, which is consistent with the claim.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.56845"
+   ]
+  },
+  {
+   "id": "P-sendelbach2006",
+   "page": "papers",
+   "statement": "Sendelbach 외(2006)는 IBM 300mm 팹의 폴리실리콘 게이트 식각에 통합 스캐터로메트리와 장비 기반 APC를 적용해 피드포워드·피드백 제어 후 선폭 분포가 개선됐다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Sendelbach, Munoz, Bandy, Prager and Funk; the year is 2006. Both match. The original specifies 90nm-node SOI microprocessors, which the claim leaves out. That omission does not change the meaning.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.659946"
+   ]
+  },
+  {
+   "id": "P-zhang2007",
+   "page": "papers",
+   "statement": "Zhang 외(2007)는 다중 존 PEB 온도 프로파일로 리소·식각의 계통적 웨이퍼 내 CD 변동을 보상해 검증 실험에서 식각 후 CD의 계통적 분포를 40% 줄였다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Zhang, Tang, Cain, Hui, Hsieh, Maccrae, Singh, Poolla and Spanos; the year is 2007. Both match. The OpenAlex abstract text is partly garbled, but its last sentence says post-etch CD was reduced 40% in the verification experiment. The original is framed around the 65nm node.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.711232"
+   ]
+  },
+  {
+   "id": "P-lee2019",
+   "page": "papers",
+   "statement": "Lee(2019)는 다중 존 ESC 튜닝 뒤 Hydra 균일도 시스템으로 국부 불균일을 보정해 7nm FEOL 식각의 웨이퍼 내 CDU를 기준 대비 60% 개선했다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "The single author is Chang-Woo Lee of Lam Research; the year is 2019. Both match. This is a vendor's own report on its own tool. The original reads 'improved by 60% compared to baseline performance of 3σ < 1 nm', and it is ambiguous whether 3σ<1nm describes the baseline or the result.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1117/12.2519383?fields=title,year,authors,abstract",
+    "https://api.openalex.org/works/doi:10.1117/12.2519383"
+   ]
+  },
+  {
+   "id": "P-ren2020",
+   "page": "papers",
+   "statement": "Ren 외(2020)는 5nm FEOL SAQP 피치 워킹을 리소·증착·식각 액추에이터를 결합한 APC 루프로 제어하고 예측 모델에 EPE 성분을 넣었다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Ren, Mani, Han, Li, Chen and Van den Heuvel; the year is 2020. Both match.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2552911"
+   ]
+  },
+  {
+   "id": "P-umeda2019",
+   "page": "papers",
+   "statement": "Umeda 외(2019)는 식각 장비 상태 변화에 대응해 여러 VM 모델 중 최적 모델을 고르는 VM 기반 APC를 제안하고 장비 데이터 기반 시뮬레이션으로 보였다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Umeda, Nogi, Shiraishi and Kagoshima; the year is 2019. Both match. The candidate models consist of local models built per lot plus one global model.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/tsm.2019.2938546"
+   ]
+  },
+  {
+   "id": "P-kota2003",
+   "page": "papers",
+   "statement": "Kota 외(2003)는 Lam 식각 장비에 통합한 스캐터로메트리 CD 측정으로 트림 시간을 조정하는 피드포워드 제어를 적용해 25nm였던 CD 산포를 1nm 이내로 맞췄다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Kota, Luque, Vahedi, Khathuria, Dziura, Levy, and the year is 2003, so both match. The setup integrates KLA-Tencor iSpectra SCD with a Lam 2300 Versys Star. Pre-etch CD sets the trim time, and CD spread went from 25 nm to within 1 nm.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.487635"
+   ]
+  },
+  {
+   "id": "P-mui2004",
+   "page": "papers",
+   "statement": "Mui 외(2004)는 통합 계측 식각 시스템(Transforma Closed Loop)으로 게이트 식각에서 실시간 피드포워드·피드백 측정을 구현했다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Mui, Sasano, Liu, Yamartino, Skumanich, and the year is 2004, so both match. The abstract describes a fully integrated Transforma Closed Loop etch system. It does real-time feedforward and feedback measurement for CD and gate etch depth control, and the abstract claims this was a first. The abstract does not show results data.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.537444"
+   ]
+  },
+  {
+   "id": "P-williams2005",
+   "page": "papers",
+   "statement": "Williams 외(2005)는 0.13µm 폴리실리콘 패터닝에서 노광·식각 장비를 피드포워드·피드백으로 함께 제어해 게이트 CD 3σ가 12% 개선됐다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Williams, Locander, Herrera, Garza, Parker, and the year is 2005, so both match. The paper applies feedforward and feedback APC to scanner and etch tools on a 0.13 um poly patterning process. It reports a 12% improvement in gate CD 3-sigma.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/tsm.2005.858490"
+   ]
+  },
+  {
+   "id": "P-wang2005",
+   "page": "papers",
+   "statement": "Wang 외(2005)는 계측 지연·노이즈가 있는 드리프트 공정에서 EWMA·RtR-IMC·RLS 기반 run-to-run 제어기를 비교하고 STI 식각을 산업 사례로 들었다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors and the 2005 year match. The paper compares EWMA, RtR-IMC and RLS controllers under metrology delay on a noisy process with deterministic drift, and uses STI etch as the industrial example. The paper's main contribution is RLS estimation, but the claim's wording is still accurate.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/tsm.2005.846819"
+   ]
+  },
+  {
+   "id": "P-ringwood2010",
+   "page": "papers",
+   "statement": "Ringwood 외(2010)는 식각이 대체로 개루프 레시피 공정이며 잔류물 축적과 일정하지 않은 예방 정비가 드리프트와 계단형 변화를 만든다고 정리하고 추정·제어 기법을 검토했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "Authors are Ringwood, Lynn, Bacelli, Ma, Ragnoli, McLoone, and the year is 2010, so both match. The abstract says etch is largely open-loop and runs on recipes. It says residue buildup and difficulty keeping preventative maintenance consistent cause drifts and step changes. It also reviews estimation and control techniques.",
+   "reviewed": "2026-10-15",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/tsm.2009.2039250"
+   ]
   }
  ]
 }

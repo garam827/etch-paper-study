@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13단계 · 공정 제어(APC) 리서치</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>13단계 · 공정 제어(APC) 리서치</h1>
+    <p class="phase-desc">항목 #53 · 2026-10-15 16:28 ~ 16:50 · 식각 결과를 목표에 맞추는 공정 제어(APC·Run-to-Run·피드포워드·피드백)를 조사해 지식 그래프에 넣는다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-12.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><span class="cur" aria-current="page">13. 공정 제어(APC) 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #53 ===== -->
+    <article class="entry" id="e53">
+      <div class="entry-head">
+        <span class="no">#53</span>
+        <h2>식각 APC 내용 추가 — 피드포워드 중심</h2>
+        <time>2026-10-15 16:28</time>
+      </div>
+
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>ETCH APC 관련 내용 추가.
+특히 Feedforward 내용 필요.</blockquote>
+      </section>
+
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>그래프에는 이미 가상계측(VM), 고장 검출(FDC), 공정 드리프트, 챔버 벽 상태 변화, OCD·CD-SEM, 종말점 노드가 있었다. 대부분 SNU PAL 질의응답이 근거다. 그런데 이 신호들로 레시피를 실제로 고치는 <b>제어</b>(APC·Run-to-Run·피드포워드·피드백) 개념은 없었다.</li>
+          <li>피드포워드를 가장 자세히 다룬다. 앞 공정 측정값(리소 후 CD)이 무엇을 바꾸는지(트림 시간), 왜 피드백과 함께 쓰는지, 노이즈·계측 지연 같은 위험이 무엇인지, 실제 적용 수치가 어떤지를 담는다.</li>
+          <li>새 사실이므로 검증 절차(장부 → 독립 검증 → gate)를 거치고, 새로 인용하는 논문은 #51 규칙대로 요약한다.</li>
+        </ul>
+      </section>
+
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>16:28</time> 기존 그래프에서 관련 노드와 연결을 확인했다(VM·FDC·드리프트·OCD·종말점·ESC·맨드릴 트림).</li>
+          <li><time>16:29</time> astra(high, 백그라운드)에 정의, 식각 피드포워드 사례와 수치, 피드백·드리프트, 웨이퍼 내 다중 존 제어, 위험(계측 지연·EWMA 이득·혼합 제품·FF/FB 상호작용)을 물었다. 같은 시각 jev에게 범위와 단계를 물었다.<br>
+            · 범위: "그래프에 노드 5~7개 추가, 기존 VM·FDC·OCD·드리프트·패터닝 노드와 연결, 피드포워드를 가장 자세히"(확률 0.99, 신뢰도 0.98)<br>
+            · 단계: 새 13단계(0.91, 신뢰도 0.82)<br>
+            둘 다 따랐다.</li>
+          <li><time>16:30</time> <code>lit_search.py</code> 7개 질의(R2R 리뷰, 식각 CD 피드포워드, EWMA 안정성, 게이트 CD, VM 기반 APC, 통합 계측 트림, 웨이퍼 내 균일도)로 후보를 찾았다. OpenAlex로 초록을 확인했다. 핵심 근거는 El Chemali 외(JVST B 2003)다. 리소 후 레지스트 CD를 피드포워드로, 식각 후 폴리 CD를 피드백으로 써서 레지스트 트림 시간을 조정한다.</li>
+          <li><time>16:33</time> 장부 <code>ledger/apc.json</code>(비공개)에 주장 13개(AP01–AP13)를 적었다. lint 오류 0, DOI 12개 실재. 작성 과정을 모르는 <code>claim-verifier</code> 4개에 blind 입력만 넘겼다.</li>
+          <li><time>16:36</time> 1차 gate: 채택 6, 조건부 7. 지적은 두 가지였다.<br>
+            · AP03(Butler·Stefani 1994): 36%는 "목표 대비"가 아니라 식각 속도 표준편차의 감소다. 그래프와 요약에서 "목표 대비"를 뺐다.<br>
+            · AP06(El Chemali): 검증자가 "피드백이 모델을 갱신한다"를 초록에서 찾지 못했다. 그런데 이 문장은 초록 4번째 문장에 실제로 있다. 그래서 위치를 장부에 적어 다른 검증자에게 다시 넘겼고, 지지 판정을 받았다.</li>
+          <li><time>16:38</time> astra 결과를 받았다. 피드포워드 실측 사례를 더 찾았다.<br>
+            · Kota 외(SPIE 2003, Lam·KLA-Tencor·AMD): 식각 장비에 통합한 스캐터로메트리로 트림 시간을 조정해 CD 산포를 25nm에서 1nm 이내로 줄였다.<br>
+            · Mui 외(SPIE 2004, Applied Materials): 통합 계측 식각 시스템으로 실시간 FF·FB를 구현했다.<br>
+            · Williams 외(IEEE TSM 2005, Intel): 노광·식각 결합 FF·FB로 게이트 CD 3σ가 12% 개선됐다.<br>
+            · Wang 외(2005): STI 식각, 계측 지연이 있는 R2R 추정을 다뤘다.<br>
+            · Ringwood 외(2010) 리뷰: 식각은 대체로 개루프이고, 잔류물과 정비 편차가 드리프트를 만든다.<br>
+            astra 지적 반영:<br>
+            · 수치들은 서로 다른 지표(목표 근접, 들어온 산포 대비, 결합 루프 3σ)라 서로 비교하지 않는다.<br>
+            · 막두께→식각 시간, 하드마스크 단독 트림, SADP/SAQP 맨드릴 트림의 피드포워드 실측 결과는 찾지 못했다. 그래서 그래프에 넣지 않았다.<br>
+            · Mui의 3σ 수치(9.0→3.1nm 등)는 초록에 없어 쓰지 않았다.<br>
+            주장 5개(AP14–AP18)를 추가해 검증했고, 모두 지지였다.</li>
+          <li><time>16:39</time> 최종 gate: <b>주장 18개 — 채택 9, 조건부 채택 9, 보류·제외 0</b>. 조건부 9개 중 8개는 "결론을 좌우하는 수치·사례인데 근거가 1곳"이라는 이유다. 대부분 장비 회사나 제조사의 자체 보고다. 이 사정을 그래프 문장에 그대로 적었다.</li>
+          <li><time>16:40</time> 새로 인용하는 논문 17편의 요약을 새 영역 "공정 제어 · APC"로 <code>kb/papers/papers.json</code>에 썼다. 핵심 문장을 검증자 3개에 넘긴 결과는 <b>17편 모두 채택</b>이었다. 레퍼런스 논문은 58편에서 75편이 됐다.</li>
+          <li><time>16:40</time> 그래프 원본에 새 영역 "공정 제어(APC)"를 만들었다(<code>types.json</code>). 노드 7개, 관계 16개, 출처 17개를 추가했다.<br>
+            · 노드: APC, Run-to-Run 제어, EWMA 제어기, 피드포워드 제어, 피드백 제어, 웨이퍼 내 균일도 제어(다중 존), CD 트림 식각(패터닝 영역)<br>
+            · 관계: OCD → FF(앞 공정 CD 측정)·FB(식각 후 CD 측정), FF → CD 트림 식각(트림 시간), 드리프트·챔버 벽 상태 → FB(보상 대상), VM → APC(예측값), FDC ↔ APC, 정전척 → 웨이퍼 내 제어(다중 존 온도), APC → 피치 워킹(리소·증착·식각 결합 제어), 맨드릴 식각 → CD 트림<br>
+            · 웨이퍼 내 제어에는 리소 쪽 손잡이(다중 존 PEB)로 식각의 계통적 분포를 미리 상쇄한 사례(SPIE 2007, 계통적 분포 40% 감소)를 넣었다. 장비 쪽 사례(다중 존 ESC + 국부 보정, CDU 60% 개선, Lam 보고)도 넣었다. 다만 Lam 초록의 "3σ &lt; 1nm"이 기준값인지 결과인지 모호하다는 검증자 지적을 그대로 적었다.</li>
+          <li><time>16:41</time> 공개 상태를 내보내고 build했다(<code>kb/claims/apc.json</code>).<br>
+            · 검증 현황: 주장 150개<br>
+            · 그래프: 노드 266개, 관계 577개<br>
+            · 논문 요약: 75편<br>
+            그래프 안내 문구와 "영역 간 연결" 설명에 다섯 번째 묶음을 적었다. 링크 검사와 요약 연결 검사(빠진 곳 0)를 통과했다.</li>
+          <li><time>16:42</time> 로컬 서버에서 스크린샷 3장을 찍었다(요약 페이지·검증 현황은 #52와 같은 캡처용 사본 방식).</li>
+        </ol>
+      </section>
+
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 식각 지식 그래프에 다섯 번째 영역 <b>공정 제어(APC)</b>를 만들고 노드 7개를 넣었다. 기존 계측·진단 노드(OCD·VM·FDC·드리프트·정전척)가 실제로 레시피를 고치는 제어로 이어지도록 연결했다.</p>
+        <ul>
+          <li><b>피드포워드</b> 노드에 담은 내용:<br>
+            · 정의와 대표 구조: 리소 후 CD → 레지스트 트림 시간 → 식각 후 CD 모델<br>
+            · 피드백과 결합하는 이유: 식각 장비 쪽 외란은 FF로 못 잡는다<br>
+            · 측정 노이즈 위험과 대응: 신뢰도에 따른 detune<br>
+            · 실측 사례: 25nm→1nm(Lam·KLA), 게이트 CD 3σ 12%(Intel), IBM 양산 적용. 모두 회사 자체 보고로 표시했다.</li>
+          <li>검증:<br>
+            · 그래프 주장 18개: 채택 9, 조건부 9<br>
+            · 새 논문 요약 17편: 모두 채택<br>
+            · 검증자가 초록 문장을 놓친 1건(AP06)은 위치를 적어 다시 검증했다.</li>
+          <li>남은 한계:<br>
+            · 대부분 초록 기준이다.<br>
+            · 막두께→식각 시간, 하드마스크·맨드릴 트림의 피드포워드는 공개 실측 근거를 찾지 못해 넣지 않았다.<br>
+            · SEMI E133(APC 시스템 인터페이스 표준)은 공개 설명만 있어 이번에는 출처로 쓰지 않았다.</li>
+        </ul>
+        <p><a href="../research/a20_etch_knowledge_graph.html#ff_ctrl">피드포워드 노드 열기 →</a> · <a href="../research/claims_status.html#AP01">검증 현황(AP01–AP18) →</a> · <a href="../research/papers.html#a-control">논문 요약: 공정 제어 →</a></p>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261015_164149_apc_ff_node.png" alt="피드포워드 노드">
+          <figcaption>history_img/20261015_164149_apc_ff_node.png — 그래프의 피드포워드 제어 노드: R2R·OCD·CD 트림 식각과의 연결, 설명과 식각 관점</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261015_164246_apc_papers.png" alt="공정 제어 논문 요약">
+          <figcaption>history_img/20261015_164246_apc_papers.png — 논문 요약 페이지의 새 영역 "공정 제어 · APC"</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="../history_img/20261015_164246_apc_claims.png" alt="APC 검증 현황">
+          <figcaption>history_img/20261015_164246_apc_claims.png — 검증 현황의 AP01–AP06: 채택·조건부 판정과 조건</figcaption>
+        </figure>
+      </section>
+    </article>
+
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-12.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><span class="cur" aria-current="page">13. 공정 제어(APC) 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>

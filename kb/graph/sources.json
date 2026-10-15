@@ -2034,5 +2034,73 @@
  "hcb_ji22": {
   "title": "Ji 외, Cu CMP Dishing Control for Fine Pitch W2W Hybrid Bonding (EPTC 2022)",
   "url": "https://doi.org/10.1109/eptc56328.2022.10013244"
+ },
+ "apc_delcastillo97": {
+  "title": "Del Castillo·Hurwitz, Run-to-Run Process Control: Literature Review and Extensions (J. Qual. Technol. 1997)",
+  "url": "https://doi.org/10.1080/00224065.1997.11979749"
+ },
+ "apc_sachs95": {
+  "title": "Sachs 외, Run by run process control: combining SPC and feedback control (IEEE TSM 1995)",
+  "url": "https://doi.org/10.1109/66.350755"
+ },
+ "apc_butler94": {
+  "title": "Butler·Stefani, Supervisory run-to-run control of polysilicon gate etch using in situ ellipsometry (IEEE TSM 1994)",
+  "url": "https://doi.org/10.1109/66.286855"
+ },
+ "apc_patel00": {
+  "title": "Patel·Jenkins, Adaptive optimization of run-to-run controllers: the EWMA example (IEEE TSM 2000)",
+  "url": "https://doi.org/10.1109/66.827349"
+ },
+ "apc_good06": {
+  "title": "Good·Qin, Stability of MIMO EWMA Run-to-Run Controllers With Metrology Delay (IEEE TSM 2006)",
+  "url": "https://doi.org/10.1109/tsm.2005.863211"
+ },
+ "apc_elchemali03": {
+  "title": "El Chemali 외, CD control of a plasma etch process by integrating feedforward and feedback R2R control (JVST B 2003)",
+  "url": "https://doi.org/10.1116/1.1615983"
+ },
+ "apc_ruegsegger98": {
+  "title": "Ruegsegger 외, Optimal feedforward recipe adjustment for CD control in semiconductor patterning (AIP 1998)",
+  "url": "https://doi.org/10.1063/1.56845"
+ },
+ "apc_sendelbach06": {
+  "title": "Sendelbach 외, Integrated scatterometry in HVM for polysilicon gate etch control (SPIE 2006, IBM)",
+  "url": "https://doi.org/10.1117/12.659946"
+ },
+ "apc_zhang07": {
+  "title": "Zhang 외, Across-wafer CD uniformity control through lithography and etch process (SPIE 2007)",
+  "url": "https://doi.org/10.1117/12.711232"
+ },
+ "apc_lee19": {
+  "title": "Lee, Across-wafer sub-1 nm CDU control by etch tool correction (SPIE 2019, Lam Research)",
+  "url": "https://doi.org/10.1117/12.2519383"
+ },
+ "apc_ren20": {
+  "title": "Ren 외, APC loop for SAQP pitch walk with combined litho, deposition and etch actuators (SPIE 2020)",
+  "url": "https://doi.org/10.1117/12.2552911"
+ },
+ "apc_umeda19": {
+  "title": "Umeda 외, APC Using Virtual Metrology to Cope With Etcher Condition Change (IEEE TSM 2019)",
+  "url": "https://doi.org/10.1109/tsm.2019.2938546"
+ },
+ "apc_kota03": {
+  "title": "Kota 외, APC for poly-Si gate etching using integrated CD metrology (SPIE 2003, Lam·KLA-Tencor·AMD)",
+  "url": "https://doi.org/10.1117/12.487635"
+ },
+ "apc_mui04": {
+  "title": "Mui 외, In-tool process control for advanced patterning based on integrated metrology (SPIE 2004, Applied Materials)",
+  "url": "https://doi.org/10.1117/12.537444"
+ },
+ "apc_williams05": {
+  "title": "Williams 외, Polysilicon etch bias and gate control with module level APC (IEEE TSM 2005)",
+  "url": "https://doi.org/10.1109/tsm.2005.858490"
+ },
+ "apc_wang05": {
+  "title": "Wang 외, RLS estimation for R2R control with metrology delay, STI etch (IEEE TSM 2005)",
+  "url": "https://doi.org/10.1109/tsm.2005.846819"
+ },
+ "apc_ringwood10": {
+  "title": "Ringwood 외, Estimation and Control in Semiconductor Etch: Practice and Possibilities (IEEE TSM 2010)",
+  "url": "https://doi.org/10.1109/tsm.2009.2039250"
  }
 }
