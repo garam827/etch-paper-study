@@ -3549,5 +3549,85 @@
   "from": "s_gaterecess",
   "to": "tialc",
   "label": "선택 식각(N2/H2 연구)"
+ },
+ {
+  "from": "i_arde",
+  "to": "i_loading",
+  "label": "구분(패턴 밀도 의존은 마이크로로딩)"
+ },
+ {
+  "from": "i_inv_lag",
+  "to": "i_arde",
+  "label": "반대 경향"
+ },
+ {
+  "from": "i_arde",
+  "to": "fluxlimit",
+  "label": "원인 후보(이온·중성 수송)"
+ },
+ {
+  "from": "i_arde",
+  "to": "eshading",
+  "label": "원인 후보(표면 대전)"
+ },
+ {
+  "from": "i_arde",
+  "to": "e_overetch",
+  "label": "오버 에치를 길게 만듦"
+ },
+ {
+  "from": "e_overetch",
+  "to": "endpoint",
+  "label": "종말점 뒤 진행"
+ },
+ {
+  "from": "e_overetch",
+  "to": "i_notch",
+  "label": "이 단계에서 발생"
+ },
+ {
+  "from": "i_microtrench",
+  "to": "e_aniso",
+  "label": "바닥 결함"
+ },
+ {
+  "from": "i_bowing",
+  "to": "i_twisting",
+  "label": "비대칭 네킹 → 트위스팅"
+ },
+ {
+  "from": "i_bowing",
+  "to": "s_contact",
+  "label": "고종횡비 컨택에서 발생"
+ },
+ {
+  "from": "i_twisting",
+  "to": "eshading",
+  "label": "원인 후보(확률적 대전)"
+ },
+ {
+  "from": "e_bosch",
+  "to": "e_aniso",
+  "label": "깊은 Si 이방성 식각 방법"
+ },
+ {
+  "from": "e_cryo",
+  "to": "e_aniso",
+  "label": "깊은 Si 이방성 식각 방법"
+ },
+ {
+  "from": "e_cryo",
+  "to": "sf6",
+  "label": "식각 기체"
+ },
+ {
+  "from": "e_bosch",
+  "to": "e_cryo",
+  "label": "비교(교대 vs 연속 보호)"
+ },
+ {
+  "from": "i_arde",
+  "to": "i_twisting",
+  "label": "고종횡비 식각의 과제"
  }
 ]

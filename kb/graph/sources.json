@@ -2210,5 +2210,77 @@
  "rmg_yang20": {
   "title": "Yang 외, Key process approach for 5 nm logic flow (J. Microelectron. Manuf. 2020, 시뮬레이션)",
   "url": "https://doi.org/10.33079/jomm.20030103"
+ },
+ "eb_gottscho92": {
+  "title": "Gottscho 외, Microscopic uniformity in plasma etching (JVST B 1992, 리뷰)",
+  "url": "https://doi.org/10.1116/1.586180"
+ },
+ "eb_doemling96": {
+  "title": "Doemling 외, Inverse RIE lag for SiO2 etching in ICP (APL 1996)",
+  "url": "https://doi.org/10.1063/1.116772"
+ },
+ "eb_westerheim95": {
+  "title": "Westerheim 외, Substrate bias effects in HAR SiO2 contact etching in ICP (JVST A 1995)",
+  "url": "https://doi.org/10.1116/1.579841"
+ },
+ "eb_leezhou91": {
+  "title": "Lee·Zhou, Feature-size dependence of etch rate in RIE (JES 1991)",
+  "url": "https://doi.org/10.1149/1.2085991"
+ },
+ "eb_hedlund94": {
+  "title": "Hedlund 외, Microloading effect in reactive ion etching (JVST A 1994)",
+  "url": "https://doi.org/10.1116/1.578990"
+ },
+ "eb_kinoshita96": {
+  "title": "Kinoshita 외, Notching as an example of charging in uniform high density plasmas (JVST B 1996)",
+  "url": "https://doi.org/10.1116/1.588431"
+ },
+ "eb_hwang97": {
+  "title": "Hwang·Giapis, On the origin of the notching effect (JVST B 1997)",
+  "url": "https://doi.org/10.1116/1.589258"
+ },
+ "eb_dalton93": {
+  "title": "Dalton 외, Microtrench formation in polysilicon etching over thin gate oxide (JES 1993)",
+  "url": "https://doi.org/10.1149/1.2220831"
+ },
+ "eb_lee10": {
+  "title": "Lee 외, Sidewall necking and bowing in HAR contact hole etching (JES 2010)",
+  "url": "https://doi.org/10.1149/1.3276511"
+ },
+ "eb_miyake09": {
+  "title": "Miyake 외, Mask and necking deformation effects on bowing and twisting (JJAP 2009)",
+  "url": "https://doi.org/10.1143/jjap.48.08he01"
+ },
+ "eb_wang10": {
+  "title": "Wang·Kushner, HEE fluxes in dc-augmented CCPs II: twisting in HAR etching (JAP 2010)",
+  "url": "https://doi.org/10.1063/1.3290873"
+ },
+ "eb_huang19": {
+  "title": "Huang 외, HAR SiO2 etching in Ar/C4F8/O2: computational investigation (JVST A 2019)",
+  "url": "https://doi.org/10.1116/1.5090606"
+ },
+ "eb_huang20": {
+  "title": "Huang 외, Pattern dependent profile distortion in HAR SiO2 etching (JVST A 2020)",
+  "url": "https://doi.org/10.1116/1.5132800"
+ },
+ "eb_arts22": {
+  "title": "Arts 외, Foundations of atomic-level plasma processing in nanoelectronics (PSST 2022, 리뷰)",
+  "url": "https://doi.org/10.1088/1361-6595/ac95bc"
+ },
+ "eb_tachi88": {
+  "title": "Tachi 외, Low-temperature RIE and microwave plasma etching of silicon (APL 1988)",
+  "url": "https://doi.org/10.1063/1.99382"
+ },
+ "eb_dussart14": {
+  "title": "Dussart 외, Plasma cryogenic etching of silicon (J. Phys. D 2014, 리뷰)",
+  "url": "https://doi.org/10.1088/0022-3727/47/12/123001"
+ },
+ "eb_bosch_us5501893": {
+  "title": "Robert Bosch GmbH 특허 US5501893A, Method of anisotropically etching silicon",
+  "url": "https://patents.google.com/patent/US5501893A/en"
+ },
+ "eb_tillocher21": {
+  "title": "Tillocher 외, Comparison between Bosch and STiGer processes (Micromachines 2021)",
+  "url": "https://doi.org/10.3390/mi12101143"
  }
 }

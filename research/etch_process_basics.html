@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>식각 공정 기초</title>
+<style>
+  :root {
+    --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb;
+    --accent:#2563eb; --etch:#dc2626; --etch-bg:#fef2f2;
+    --ok:#166534; --ok-bg:#dcfce7; --na:#4b5563; --na-bg:#f3f4f6;
+  }
+  * { box-sizing:border-box; }
+  html { color-scheme: light; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.7 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; }
+  .wrap { max-width:980px; margin:0 auto; padding:40px 16px 80px; }
+  h1 { font-size:28px; margin:0 0 6px; line-height:1.3; text-wrap:balance; }
+  h2 { font-size:21px; margin:48px 0 14px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  h3 { font-size:17px; margin:0 0 6px; }
+  p { max-width:78ch; }
+  a { color:var(--accent); }
+  .sub { color:var(--muted); margin:0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:12px 0; }
+  .card > :first-child { margin-top:0; } .card > :last-child { margin-bottom:0; }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:12px; }
+  .grid2 .card { margin:0; }
+  .tag { display:inline-block; font-size:12px; font-weight:600; padding:1px 8px; border-radius:999px; margin-right:4px; white-space:nowrap; }
+  .t-ok { background:var(--ok-bg); color:var(--ok); }
+  .t-na { background:var(--na-bg); color:var(--na); }
+  .t-etch { background:var(--etch-bg); color:var(--etch); }
+  table { border-collapse:collapse; width:100%; font-size:14px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#f3f6fb; white-space:nowrap; }
+  .tbl { overflow-x:auto; border-radius:10px; }
+  .diagram { overflow-x:auto; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px; margin:12px 0; }
+  .diagram svg { display:block; min-width:680px; width:100%; height:auto; font-family:"Malgun Gothic",system-ui,sans-serif; }
+  .diagram figcaption { font-size:13px; color:var(--muted); margin-top:6px; }
+  .note { font-size:13px; color:var(--muted); }
+  .callout { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px 16px; margin:12px 0; }
+  .warn { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:12px 16px; margin:12px 0; }
+  .cid { font-size:12px; font-weight:700; font-family:Consolas,monospace; text-decoration:none; background:#eef2ff; color:#3730a3; padding:0 6px; border-radius:6px; white-space:nowrap; }
+  .toc { columns:2 260px; column-gap:28px; margin:0; padding-left:20px; }
+  ol.src { font-size:13px; padding-left:22px; word-break:break-all; }
+  ol.src li { margin-bottom:3px; }
+  dl.def { display:grid; grid-template-columns:150px 1fr; gap:6px 14px; margin:0; }
+  dl.def dt { font-weight:700; }
+  dl.def dd { margin:0; }
+  @media (max-width:560px){ dl.def { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-26</p>
+  <h1>식각 공정 기초 — 지표·레시피 단계·패턴 의존성·프로파일 결함</h1>
+  <p class="sub">플라즈마가 <i>왜</i> 깎는지는 <a href="plasma_etch_principles.html">플라즈마 식각의 원리</a> 노트에 있다. 이 페이지는 그 다음 단계로, 공정 엔지니어가 식각 결과를 <b>어떻게 재고, 무엇이 틀어지는지</b>를 정리한다.</p>
+
+  <div class="callout">
+    <b>읽는 법</b> — <span class="cid">E01</span> 같은 표시는 원문과 대조해 검증한 주장이다(<a href="claims_status.html#E01">검증 현황</a>에서 조건·출처 확인).
+    <span class="tag t-na">일반 정의</span> 표시는 교과서·업계에서 널리 쓰는 정의를 정리한 것으로, 회사·장비마다 계산 방식이 다를 수 있다.
+    근거는 대부분 논문 초록 수준이라 세부 조건은 원문을 확인해야 한다.
+  </div>
+
+  <h2>목차</h2>
+  <ol class="toc">
+    <li><a href="#metrics">식각을 평가하는 지표</a></li>
+    <li><a href="#recipe">레시피 단계: 브레이크스루 → 메인 → 오버 에치</a></li>
+    <li><a href="#pattern">패턴이 식각 속도를 바꾼다: 로딩·마이크로로딩·ARDE</a></li>
+    <li><a href="#profile">프로파일 결함 도감</a></li>
+    <li><a href="#har">고종횡비(HAR) 식각</a></li>
+    <li><a href="#deepsi">깊은 Si 식각: Bosch 공정과 극저온 식각</a></li>
+    <li><a href="#more">더 보기 · 출처</a></li>
+  </ol>
+
+  <h2 id="metrics">1. 식각을 평가하는 지표</h2>
+  <div class="card">
+    <dl class="def">
+      <dt>식각 속도</dt><dd>단위 시간에 깎인 두께(nm/min 등). 같은 레시피라도 노출 면적·패턴 크기·웨이퍼 위치·챔버 상태에 따라 달라진다(아래 3장). <span class="tag t-na">일반 정의</span></dd>
+      <dt>선택비</dt><dd>깎을 막의 식각 속도 ÷ 남겨야 할 막(마스크·아래층)의 식각 속도. 마스크 선택비와 하부층 선택비를 구분해 말한다. <span class="tag t-na">일반 정의</span></dd>
+      <dt>균일도</dt><dd>여러 지점 식각량의 흩어짐. 표준편차÷평균(1σ %), (최대−최소)÷(2×평균) 등 계산식이 회사마다 달라 숫자를 비교할 때 식을 확인해야 한다. <span class="tag t-na">일반 정의</span> 업계 리뷰는 균일도를 <b>미시적</b>(국부 치수 변화), <b>거시적</b>(웨이퍼 끝단 등), <b>반복</b>(웨이퍼 간·로트 간·챔버 간)으로 나눠 다룬다 <a class="cid" href="claims_status.html#E15">E15</a>.</dd>
+      <dt>이방성</dt><dd>세로 식각 속도 대비 가로 식각 속도가 얼마나 작은가. 1 − (가로 속도 ÷ 세로 속도)로 정의하면 가로 식각이 없을 때 1이 된다 <a class="cid" href="claims_status.html#E21">E21</a>. 이온 방향성과 측벽 보호막이 만든다(<a href="plasma_etch_principles.html">원리 노트</a> 1부).</dd>
+      <dt>CD 바이어스</dt><dd>식각 후 선폭(CD) − 식각 전 마스크 선폭. 양수면 넓어짐, 음수면 좁아짐. <span class="tag t-na">일반 정의</span></dd>
+      <dt>측벽 각도</dt><dd>측벽이 바닥과 이루는 각(90°에 가까울수록 수직). 테이퍼·보잉 같은 형상 결함과 함께 본다. <span class="tag t-na">일반 정의</span></dd>
+    </dl>
+  </div>
+
+  <h2 id="recipe">2. 레시피 단계: 브레이크스루 → 메인 → 오버 에치</h2>
+  <p>한 번의 식각은 보통 여러 단계로 나뉜다. 표면의 얇은 자연산화막 등을 먼저 뚫는 <b>브레이크스루</b>, 막의 대부분을 깎는 <b>메인 식각</b>, 웨이퍼 전체에서 남은 부분을 마저 걷어내는 <b>오버 에치(과식각)</b>다. 메인 식각은 보통 <a href="oes_etch_chemistry.html">OES</a> 신호 변화로 <b>종말점</b>을 잡고 멈춘다. <span class="tag t-na">일반 정의</span></p>
+  <figure class="diagram">
+    <svg viewBox="0 0 760 210" role="img" aria-label="레시피 단계와 종말점 신호">
+      <rect x="40" y="30" width="80" height="44" fill="#e0e7ff" stroke="#6366f1"/>
+      <text x="80" y="57" text-anchor="middle" font-size="13" font-weight="700" fill="#3730a3">브레이크스루</text>
+      <rect x="120" y="30" width="400" height="44" fill="#fee2e2" stroke="#dc2626"/>
+      <text x="320" y="57" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b">메인 식각 — 막 대부분 제거</text>
+      <rect x="520" y="30" width="180" height="44" fill="#fef3c7" stroke="#d97706"/>
+      <text x="610" y="57" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">오버 에치</text>
+      <line x1="40" y1="180" x2="720" y2="180" stroke="#9ca3af"/>
+      <text x="725" y="184" font-size="11" fill="#6b7280">시간</text>
+      <text x="40" y="104" font-size="11" fill="#6b7280">OES 신호 (예: 식각 생성물 방출선)</text>
+      <path d="M40 160 L120 160 L130 120 L470 118 C490 118 500 150 520 165 L700 166" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+      <line x1="510" y1="84" x2="510" y2="180" stroke="#2563eb" stroke-dasharray="4 4"/>
+      <text x="505" y="200" text-anchor="end" font-size="11.5" fill="#1d4ed8">종말점 검출 → 오버 에치로 전환</text>
+    </svg>
+    <figcaption>개념도. 생성물 방출선은 깎을 막이 사라지면 줄어든다. 어떤 선을 볼지는 <a href="oes_etch_chemistry.html">식각 화학 조합 · OES 기준 파장</a> 참고.</figcaption>
+  </figure>
+  <p>오버 에치가 필요한 이유는 웨이퍼 안에서 식각이 고르게 끝나지 않기 때문이다. 미시적으로 불균일하면 "덜 뚫려 잃는 칩"과 "과식각 손상으로 잃는 칩" 사이의 트레이드오프가 커진다 <a class="cid" href="claims_status.html#E03">E03</a>. 그래서 오버 에치 단계는 아래층 대비 선택비가 높은 조건으로 바꾸는 경우가 많다 <span class="tag t-na">일반 정의</span>. 노칭 같은 대전 결함도 주로 이 단계에서 드러난다(4장).</p>
+
+  <h2 id="pattern">3. 패턴이 식각 속도를 바꾼다: 로딩·마이크로로딩·ARDE</h2>
+  <p>같은 챔버, 같은 레시피인데도 <b>무엇을 얼마나 깎느냐</b>에 따라 식각 속도가 달라진다. 용어가 문헌마다 섞여 쓰이므로, 여기서는 Gottscho 외(1992) 리뷰의 정의를 따른다 <a class="cid" href="claims_status.html#E01">E01</a>.</p>
+  <figure class="diagram">
+    <svg viewBox="0 0 760 250" role="img" aria-label="ARDE와 마이크로로딩 비교">
+      <text x="185" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">ARDE (RIE lag) — 좁을수록 느림</text>
+      <rect x="20" y="40" width="330" height="170" fill="#e5e7eb"/>
+      <rect x="20" y="40" width="330" height="14" fill="#374151"/>
+      <rect x="45" y="40" width="90" height="140" fill="#fff"/>
+      <rect x="165" y="40" width="50" height="110" fill="#fff"/>
+      <rect x="245" y="40" width="22" height="80" fill="#fff"/>
+      <rect x="295" y="40" width="10" height="55" fill="#fff"/>
+      <text x="90" y="198" text-anchor="middle" font-size="11" fill="#374151">넓은 홈</text>
+      <text x="282" y="198" text-anchor="middle" font-size="11" fill="#374151">좁은 홈(종횡비↑)</text>
+      <text x="185" y="236" text-anchor="middle" font-size="11.5" fill="#6b7280">원인 후보: 이온·중성 입자 수송, 표면 대전 (E02)</text>
+      <text x="575" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">마이크로로딩 — 조밀할수록 느림</text>
+      <rect x="410" y="40" width="330" height="170" fill="#e5e7eb"/>
+      <rect x="410" y="40" width="330" height="14" fill="#374151"/>
+      <rect x="440" y="40" width="30" height="130" fill="#fff"/>
+      <rect x="560" y="40" width="30" height="100" fill="#fff"/>
+      <rect x="610" y="40" width="30" height="100" fill="#fff"/>
+      <rect x="660" y="40" width="30" height="100" fill="#fff"/>
+      <rect x="710" y="40" width="20" height="14" fill="#374151"/>
+      <text x="455" y="198" text-anchor="middle" font-size="11" fill="#374151">고립 패턴</text>
+      <text x="625" y="198" text-anchor="middle" font-size="11" fill="#374151">조밀 패턴(같은 폭)</text>
+      <text x="575" y="236" text-anchor="middle" font-size="11.5" fill="#6b7280">국부적인 반응물 고갈 = 로딩 효과와 같은 원리 (E01)</text>
+    </svg>
+    <figcaption>개념도(깊이 차이는 과장). 회색 = 깎을 막, 검정 = 마스크.</figcaption>
+  </figure>
+  <div class="grid2">
+    <div class="card">
+      <h3>로딩과 마이크로로딩</h3>
+      <p>노출된 식각 면적이 크면 식각종이 많이 소모되어 식각 속도가 떨어진다(로딩 효과). 국부 패턴 밀도 때문에 같은 일이 좁은 영역에서 일어나는 것이 마이크로로딩이며, 리뷰는 둘이 형식상 같은 현상(반응물 고갈)이라고 보였다 <a class="cid" href="claims_status.html#E01">E01</a>. Si 실험에서는 압력을 낮추거나 기체 유량을 늘리면 마이크로로딩이 줄었다 <a class="cid" href="claims_status.html#E24">E24</a>.</p>
+    </div>
+    <div class="card">
+      <h3>종횡비 의존 식각(ARDE, RIE lag)</h3>
+      <p>구멍·홈이 깊고 좁을수록(종횡비 = 깊이÷폭) 바닥까지 가는 이온·중성 입자가 줄어 식각이 느려진다. 예: CF3Br/SF6로 폭 0.4–2.5 µm Si 트렌치를 깎으면 좁을수록 평균 식각 속도가 줄었다 <a class="cid" href="claims_status.html#E23">E23</a>. 리뷰는 원인 후보를 이온 수송, 중성 입자 수송, 표면 대전과 관련된 네 가지 메커니즘으로 좁혔다 <a class="cid" href="claims_status.html#E02">E02</a>.</p>
+    </div>
+    <div class="card">
+      <h3>역 RIE lag</h3>
+      <p>반대로 좁은 구조가 더 빨리 깎이기도 한다. 6–20 mTorr ICP의 SiO2 식각에서 구조 폭이 좁을수록 식각 속도가 커지는 역 RIE lag가 관찰되었다. 저자들은 등방적으로 움직이는 중성 입자 플럭스가 이온보다 종횡비에 더 민감하다는 모델로 설명했다 <a class="cid" href="claims_status.html#E04">E04</a>. 같은 장비에서도 조건에 따라 뒤집힌다: C2F6 ICP의 0.5 µm 미만 SiO2 컨택 식각에서 바이어스가 높으면 정상 RIE lag, 낮으면 역 RIE lag였다 <a class="cid" href="claims_status.html#E22">E22</a>.</p>
+    </div>
+    <div class="card">
+      <h3>그래서 무엇이 문제인가</h3>
+      <p>패턴마다 식각이 끝나는 시점이 다르면 오버 에치가 길어지고, 그만큼 먼저 끝난 곳의 아래층이 손상된다. 리뷰는 이런 미시적 불균일이 "덜 뚫려 잃는 칩"과 "과식각 손상으로 잃는 칩" 사이의 트레이드오프에 영향을 준다고 지적한다 <a class="cid" href="claims_status.html#E03">E03</a>.</p>
+    </div>
+  </div>
+
+  <h2 id="profile">4. 프로파일 결함 도감</h2>
+  <figure class="diagram">
+    <svg viewBox="0 0 900 240" role="img" aria-label="프로파일 결함 여섯 가지 단면">
+      <g font-size="12.5" font-weight="700" fill="#1f2937" text-anchor="middle">
+        <text x="75" y="20">이상적</text><text x="225" y="20">언더컷</text><text x="375" y="20">네킹 + 보잉</text>
+        <text x="525" y="20">노칭</text><text x="675" y="20">마이크로트렌치</text><text x="825" y="20">트위스팅·기울어짐</text>
+      </g>
+      <!-- 1 ideal -->
+      <rect x="15" y="40" width="120" height="160" fill="#e5e7eb"/><rect x="15" y="40" width="120" height="12" fill="#374151"/>
+      <rect x="60" y="40" width="30" height="140" fill="#fff"/>
+      <!-- 2 undercut -->
+      <rect x="165" y="40" width="120" height="160" fill="#e5e7eb"/>
+      <rect x="210" y="40" width="30" height="14" fill="#fff"/><path d="M195 52 Q195 120 205 180 L245 180 Q255 120 255 52 Z" fill="#fff"/>
+      <rect x="165" y="40" width="45" height="12" fill="#374151"/><rect x="240" y="40" width="45" height="12" fill="#374151"/>
+      <!-- 3 necking bowing -->
+      <rect x="315" y="40" width="120" height="160" fill="#e5e7eb"/>
+      <rect x="360" y="40" width="30" height="14" fill="#fff"/><path d="M360 52 L364 70 Q345 110 358 180 L392 180 Q405 110 386 70 L390 52 Z" fill="#fff"/>
+      <rect x="315" y="40" width="45" height="12" fill="#374151"/><rect x="390" y="40" width="45" height="12" fill="#374151"/>
+      <path d="M362 70 L364 66 M388 70 L386 66" stroke="#2563eb" stroke-width="3"/>
+      <text x="375" y="214" text-anchor="middle" font-size="10.5" fill="#6b7280">위: 좁아짐(네킹)·중간: 불룩(보잉)</text>
+      <!-- 4 notching: poly lines on insulator -->
+      <rect x="465" y="170" width="120" height="30" fill="#bfdbfe"/>
+      <rect x="480" y="60" width="35" height="110" fill="#e5e7eb"/><rect x="480" y="52" width="35" height="8" fill="#374151"/>
+      <rect x="540" y="60" width="35" height="110" fill="#e5e7eb"/><rect x="540" y="52" width="35" height="8" fill="#374151"/>
+      <path d="M575 150 Q565 160 575 170 Z" fill="#fff" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="525" y="214" text-anchor="middle" font-size="10.5" fill="#6b7280">절연막 위 바깥 라인 발치</text>
+      <!-- 5 microtrench -->
+      <rect x="615" y="40" width="120" height="125" fill="#e5e7eb"/><rect x="615" y="165" width="120" height="8" fill="#bfdbfe"/><rect x="615" y="173" width="120" height="27" fill="#d1d5db"/>
+      <rect x="615" y="40" width="40" height="12" fill="#374151"/><rect x="695" y="40" width="40" height="12" fill="#374151"/>
+      <rect x="655" y="40" width="40" height="125" fill="#fff"/>
+      <path d="M660 165 L663 183 L667 165 Z M683 165 L687 183 L690 165 Z" fill="#fff" stroke="#dc2626" stroke-width="1.2"/>
+      <text x="675" y="214" text-anchor="middle" font-size="10.5" fill="#6b7280">바닥, 측벽에서 조금 떨어진 곳</text>
+      <!-- 6 twisting -->
+      <rect x="765" y="40" width="120" height="160" fill="#e5e7eb"/><rect x="765" y="40" width="120" height="12" fill="#374151"/>
+      <path d="M790 40 L802 40 Q800 110 788 190 L778 190 Q790 110 790 40 Z" fill="#fff"/>
+      <path d="M820 40 L832 40 Q834 120 826 190 L816 190 Q822 120 820 40 Z" fill="#fff"/>
+      <path d="M850 40 L862 40 Q866 110 878 190 L868 190 Q854 110 850 40 Z" fill="#fff"/>
+      <text x="825" y="214" text-anchor="middle" font-size="10.5" fill="#6b7280">홀마다 다른 방향으로 휨</text>
+    </svg>
+    <figcaption>개념도. 회색 = 깎을 막, 검정 = 마스크, 파랑 = 절연막·식각 정지층, 빨강 테두리 = 결함 위치.</figcaption>
+  </figure>
+  <div class="tbl"><table>
+    <thead><tr><th>결함</th><th>모양</th><th>보고된 원인</th><th>근거</th></tr></thead>
+    <tbody>
+      <tr><td>언더컷</td><td>마스크 아래로 측벽이 파고듦</td><td>측면 식각(화학 식각 우세, 측벽 보호 부족). 고종횡비 식각에서는 레지스트가 일찍 닳으면 CD를 지키기 어렵다.</td><td><a class="cid" href="claims_status.html#E12">E12</a> <a class="cid" href="claims_status.html#E17">E17</a></td></tr>
+      <tr><td>네킹·보잉</td><td>입구 아래가 좁아지고(네킹), 그 아래가 불룩(보잉)</td><td>네킹 위치의 두꺼운 CFx 막이 위쪽을 보호하고 그 아래가 옆으로 깎임. 마스크 경사면에서 스퍼터된 입자의 재증착 → 네킹, 경사면에서 반사된 이온 → 보잉(C4F6 계열 SiO2 컨택 홀). 마스크 테이퍼 각이 작을수록 보잉이 나빠짐.</td><td><a class="cid" href="claims_status.html#E08">E08</a> <a class="cid" href="claims_status.html#E09">E09</a></td></tr>
+      <tr><td>노칭</td><td>절연막 위 라인 발치가 옆으로 파임</td><td>이온은 수직, 전자는 등방성이라 좁은 공간 바닥이 양으로 대전되고, 넓은 공간 옆 바깥 라인으로 이온이 휨(과식각 중, 균일 플라즈마 가정 시뮬레이션). 노출된 절연막의 과도 대전이 크게 좌우.</td><td><a class="cid" href="claims_status.html#E05">E05</a> <a class="cid" href="claims_status.html#E06">E06</a></td></tr>
+      <tr><td>마이크로트렌치</td><td>바닥에 생기는 작은 홈</td><td>얇은 게이트 산화막이 국부적으로 뚫려 아래 Si가 빠르게 깎임. 위치는 레지스트·측벽 각도에 따라 바뀌었고 측벽 산란 이온 플럭스의 피크와 비슷하게 움직임. SiO2 컨택 식각에서는 바이어스가 높을수록 깊어짐.</td><td><a class="cid" href="claims_status.html#E07">E07</a> <a class="cid" href="claims_status.html#E22">E22</a></td></tr>
+      <tr><td>트위스팅·기울어짐</td><td>고종횡비 홀이 수직에서 벗어남</td><td>이온이 통계적으로 들어오며 생기는 확률적 대전(무작위). 축대칭이 아닌 네킹이 바닥 이온 플럭스를 한쪽으로 치우치게 함. 비대칭 패턴에서는 조밀→성긴 방향 수평 전기장으로 한쪽으로 기움.</td><td><a class="cid" href="claims_status.html#E10">E10</a> <a class="cid" href="claims_status.html#E09">E09</a> <a class="cid" href="claims_status.html#E13">E13</a></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">테이퍼(깊이에 따라 폭이 변하는 측벽)와 노칭은 <a href="a20_etch_knowledge_graph.html#i_notch">지식 그래프</a>에도 있다. 대전의 물리는 <a href="a20_etch_knowledge_graph.html#eshading">전자 차폐 효과</a>와 원리 노트 9절 참고.</p>
+
+  <h2 id="har">5. 고종횡비(HAR) 식각</h2>
+  <p>3D NAND 같은 메모리의 고종횡비 컨택 홀처럼 종횡비가 수십~100에 이르는 구조에서는 위의 문제가 한꺼번에 커진다. 리뷰도 깊이에 따른 식각 속도 저하, 바닥 대전, 휨·보잉·트위스팅을 HAR 식각의 과제로 함께 다룬다 <a class="cid" href="claims_status.html#E26">E26</a>.</p>
+  <div class="grid2">
+    <div class="card"><h3>깊어질수록 느려진다</h3><p>종횡비 80까지의 SiO2 식각 시뮬레이션(Ar/C4F8/O2, 3주파 CCP)에서, 웨이퍼에 오는 중성 라디칼은 이온보다 1–2 자릿수 많았다. 하지만 깊어질수록 바닥에 닿는 에너지 입자와 전달 전력이 줄어 순간 식각 속도가 떨어졌다(ARDE) <a class="cid" href="claims_status.html#E11">E11</a>.</p></div>
+    <div class="card"><h3>마스크가 버텨야 한다</h3><p>레지스트 식각 속도는 종횡비와 무관하므로, 깊게 팔수록 마스크가 상대적으로 더 닳는다. 언더컷·보잉 없이 CD를 지키려면 높은 SiO2 대 레지스트 선택비와 끝까지 남는 최소 마스크 두께가 필요하다 <a class="cid" href="claims_status.html#E12">E12</a>.</p></div>
+    <div class="card"><h3>대전이 모양을 비튼다</h3><p>무작위 대전은 홀마다 다른 방향의 트위스팅을 만든다 <a class="cid" href="claims_status.html#E10">E10</a>. 패턴이 비대칭이면 조밀한 쪽에서 성긴 쪽으로 향하는 전기장 때문에 한쪽으로 체계적으로 기운다 <a class="cid" href="claims_status.html#E13">E13</a>.</p></div>
+  </div>
+
+  <h2 id="deepsi">6. 깊은 Si 식각: Bosch 공정과 극저온 식각</h2>
+  <figure class="diagram">
+    <svg viewBox="0 0 760 240" role="img" aria-label="Bosch 공정과 극저온 식각 비교">
+      <text x="185" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">Bosch 공정 — 식각과 보호막을 번갈아</text>
+      <rect x="40" y="40" width="290" height="170" fill="#e5e7eb"/>
+      <rect x="40" y="40" width="110" height="12" fill="#374151"/><rect x="220" y="40" width="110" height="12" fill="#374151"/>
+      <rect x="150" y="40" width="70" height="14" fill="#fff"/><path d="M150 52 Q140 66 150 80 Q140 94 150 108 Q140 122 150 136 Q140 150 150 164 Q140 178 150 192 L220 192 Q230 178 220 164 Q230 150 220 136 Q230 122 220 108 Q230 94 220 80 Q230 66 220 52 Z" fill="#fff" stroke="#16a34a" stroke-width="2"/>
+      <text x="185" y="230" text-anchor="middle" font-size="11.5" fill="#6b7280">초록 = 고분자 보호막, 물결 = 반복 흔적(측벽 거칠기)</text>
+      <text x="575" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">극저온 식각 — 차가운 웨이퍼</text>
+      <rect x="430" y="40" width="290" height="170" fill="#e5e7eb"/>
+      <rect x="430" y="40" width="110" height="12" fill="#374151"/><rect x="610" y="40" width="110" height="12" fill="#374151"/>
+      <rect x="540" y="40" width="70" height="152" fill="#fff"/>
+      <line x1="541" y1="52" x2="541" y2="192" stroke="#0891b2" stroke-width="3"/><line x1="609" y1="52" x2="609" y2="192" stroke="#0891b2" stroke-width="3"/>
+      <rect x="430" y="212" width="290" height="10" fill="#93c5fd"/>
+      <text x="575" y="236" text-anchor="middle" font-size="11.5" fill="#6b7280">청록 = 얇은 SiOxFy 보호층, 파랑 = 저온 척</text>
+    </svg>
+    <figcaption>개념도.</figcaption>
+  </figure>
+  <div class="grid2">
+    <div class="card"><h3>Bosch 공정 (DRIE)</h3><p>Si를 이방성으로 깎는 단계와, 플라즈마의 고분자 형성 물질로 방금 드러난 면을 덮어 일시적 식각 정지층을 만드는 단계를 번갈아 반복한다. 특허는 이 방식으로 높은 마스크 선택비와 매우 높은 이방성을 얻는다고 적는다 <a class="cid" href="claims_status.html#E16">E16</a>. 보통 SF6 식각과 C4F8 패시베이션을 교대하며, 식각 주기마다 생긴 오목한 자국이 이어져 측벽에 스캘럽(물결 요철)이 남고 식각 단계를 줄이면 작아진다고 설명된다(배경 설명). 같은 연구는 시간 교대형 극저온 공정(STiGer) 실험에서 식각 단계가 길수록 스캘럽이 커지고 주기가 짧을수록 측벽 거칠기가 줄어드는 것을 보였고, Bosch에서 알려진 경향과 비슷하다고 했다 <a class="cid" href="claims_status.html#E25">E25</a> <span class="tag t-na">조건부</span>.</p></div>
+    <div class="card"><h3>극저온 식각</h3><p>웨이퍼를 −100 °C 아래로 식혀 SF6 플라즈마로 Si를 깎으면 측면 식각이 거의 없는 고이방성 식각이 된다. 1988년 보고에서는 −130~−100 °C에서 레지스트 대비 선택비 약 30, 식각 속도 약 500 nm/min(RIE)·1000 nm/min(마이크로파)였다 <a class="cid" href="claims_status.html#E14">E14</a>. 리뷰는 표준 극저온 식각의 SiOxFy 보호층 형성과 주요 결함(언더컷, 보잉, 결정 방향 의존 식각)을 정리한다 <a class="cid" href="claims_status.html#E17">E17</a>.</p></div>
+  </div>
+  <p>메타렌즈 제작 비교에서는 두 방법 모두 효율 약 39%를 냈고, 최적화하지 않은 Bosch 공정의 측벽 거칠기도 어느 정도 허용된다는 결론이었다 <a class="cid" href="claims_status.html#E18">E18</a>. 두 방법은 MEMS·TSV 같은 깊은 Si 구조에 주로 쓰이며, 로직 미세 패턴 식각과는 조건이 다르다. <span class="tag t-na">일반 정의</span></p>
+
+  <h2 id="more">7. 더 보기 · 출처</h2>
+  <ul>
+    <li>왜 이온이 수직으로 오고 측벽 보호막이 이방성을 만드는지: <a href="plasma_etch_principles.html">플라즈마 식각의 원리</a></li>
+    <li>종말점·식각 생성물 방출선: <a href="oes_etch_chemistry.html">식각 화학 조합 · OES 기준 파장</a>, <a href="oes_knowledge_graph.html">OES 지식 그래프</a></li>
+    <li>용어 사이 관계: <a href="a20_etch_knowledge_graph.html#i_arde">지식 그래프의 ARDE 노드</a>부터</li>
+    <li>실제 공정에서 이 결함들이 어디서 나오는지: <a href="tsmc_n2_a20_etch_report.html">A20 식각 보고서</a>, <a href="dpt_qpt_report.html">DPT·QPT 보고서</a></li>
+  </ul>
+  <ol class="src">
+    <li>Gottscho, Jurgensen, Vitkavage, Microscopic uniformity in plasma etching, J. Vac. Sci. Technol. B 10, 2133 (1992) — <a href="https://doi.org/10.1116/1.586180">doi:10.1116/1.586180</a> <a class="psum" href="papers.html#gottscho1992" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Doemling, Rueger, Oehrlein, Observation of inverse RIE lag for SiO2 etching in ICP, Appl. Phys. Lett. 68, 10 (1996) — <a href="https://doi.org/10.1063/1.116772">doi:10.1063/1.116772</a> <a class="psum" href="papers.html#doemling1996" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Kinoshita, Hane, McVittie, Notching as an example of charging in uniform high density plasmas, JVST B 14, 560 (1996) — <a href="https://doi.org/10.1116/1.588431">doi:10.1116/1.588431</a> <a class="psum" href="papers.html#kinoshita1996" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Hwang, Giapis, On the origin of the notching effect during etching in uniform high density plasmas, JVST B 15, 70 (1997) — <a href="https://doi.org/10.1116/1.589258">doi:10.1116/1.589258</a> <a class="psum" href="papers.html#hwang1997" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Dalton, Arnold, Sawin 외, Microtrench formation in polysilicon plasma etching over thin gate oxide, J. Electrochem. Soc. 140, 2395 (1993) — <a href="https://doi.org/10.1149/1.2220831">doi:10.1149/1.2220831</a> <a class="psum" href="papers.html#dalton1993" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Lee 외, Mechanism of sidewall necking and bowing in HAR contact hole etching, J. Electrochem. Soc. 157, D142 (2010) — <a href="https://doi.org/10.1149/1.3276511">doi:10.1149/1.3276511</a> <a class="psum" href="papers.html#lee2010" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Miyake 외, Effects of mask and necking deformation on bowing and twisting in HARC etching, Jpn. J. Appl. Phys. 48, 08HE01 (2009) — <a href="https://doi.org/10.1143/jjap.48.08he01">doi:10.1143/jjap.48.08he01</a> <a class="psum" href="papers.html#miyake2009" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Wang, Kushner, High energy electron fluxes in dc-augmented CCPs II: twisting in HAR etching, J. Appl. Phys. 107, 023309 (2010) — <a href="https://doi.org/10.1063/1.3290873">doi:10.1063/1.3290873</a> <a class="psum" href="papers.html#wang2010" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Huang 외, Plasma etching of HAR features in SiO2 using Ar/C4F8/O2: a computational investigation, JVST A 37, 031304 (2019) — <a href="https://doi.org/10.1116/1.5090606">doi:10.1116/1.5090606</a> <a class="psum" href="papers.html#huang2019" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Huang 외, Pattern dependent profile distortion during plasma etching of HAR features in SiO2, JVST A 38, 023001 (2020) — <a href="https://doi.org/10.1116/1.5132800">doi:10.1116/1.5132800</a> <a class="psum" href="papers.html#huang2020" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Tachi, Tsujimoto, Okudaira, Low-temperature reactive ion etching and microwave plasma etching of silicon, Appl. Phys. Lett. 52, 616 (1988) — <a href="https://doi.org/10.1063/1.99382">doi:10.1063/1.99382</a> <a class="psum" href="papers.html#tachi1988" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Lee, Kanarik, Gottscho, The grand challenges of plasma etching: a manufacturing perspective, J. Phys. D 47, 273001 (2014) — <a href="https://doi.org/10.1088/0022-3727/47/27/273001">doi:10.1088/0022-3727/47/27/273001</a> <a class="psum" href="papers.html#lee2014" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Dussart 외, Plasma cryogenic etching of silicon: from the early days to today's advanced technologies, J. Phys. D 47, 123001 (2014) — <a href="https://doi.org/10.1088/0022-3727/47/12/123001">doi:10.1088/0022-3727/47/12/123001</a> <a class="psum" href="papers.html#dussart2014" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Baracu 외, Metasurface fabrication by cryogenic and Bosch deep reactive ion etching, Micromachines 12, 501 (2021) — <a href="https://doi.org/10.3390/mi12050501">doi:10.3390/mi12050501</a> <a class="psum" href="papers.html#baracu2021" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Westerheim 외, Substrate bias effects in HAR SiO2 contact etching using an ICP reactor, JVST A 13, 853 (1995) — <a href="https://doi.org/10.1116/1.579841">doi:10.1116/1.579841</a> <a class="psum" href="papers.html#westerheim1995" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Lee, Zhou, Feature-size dependence of etch rate in reactive ion etching, J. Electrochem. Soc. 138, 2439 (1991) — <a href="https://doi.org/10.1149/1.2085991">doi:10.1149/1.2085991</a> <a class="psum" href="papers.html#leezhou1991" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Hedlund, Blom, Berg, Microloading effect in reactive ion etching, JVST A 12, 1962 (1994) — <a href="https://doi.org/10.1116/1.578990">doi:10.1116/1.578990</a> <a class="psum" href="papers.html#hedlund1994" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Huff, Recent advances in RIE and applications of high-aspect-ratio microfabrication, Micromachines 12, 991 (2021) — <a href="https://doi.org/10.3390/mi12080991">doi:10.3390/mi12080991</a> <a class="psum" href="papers.html#huff2021" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Tillocher 외, Comparison between Bosch and STiGer processes for deep silicon etching, Micromachines 12, 1143 (2021) — <a href="https://doi.org/10.3390/mi12101143">doi:10.3390/mi12101143</a> <a class="psum" href="papers.html#tillocher2021" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Arts 외, Foundations of atomic-level plasma processing in nanoelectronics, Plasma Sources Sci. Technol. 31, 103002 (2022) — <a href="https://doi.org/10.1088/1361-6595/ac95bc">doi:10.1088/1361-6595/ac95bc</a> <a class="psum" href="papers.html#arts2022" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Robert Bosch GmbH, US5501893A, Method of anisotropically etching silicon (1996) — <a href="https://patents.google.com/patent/US5501893A/en">Google Patents</a> <a class="psum" href="papers.html#bosch_us5501893" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+  </ol>
+</div>
+</body>
+</html>

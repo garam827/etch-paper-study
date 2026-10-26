@@ -1,0 +1,402 @@
+{
+ "topic": "식각 공정 기초(지표·ARDE·프로파일 결함·HAR·저온 식각) 학습 페이지",
+ "claims": [
+  {
+   "id": "E01",
+   "page": "basics",
+   "statement": "Gottscho 외(JVST B 1992) 리뷰는 종횡비에 따라 식각 속도가 달라지는 종횡비 의존 식각(ARDE)과, 패턴 밀도에 따라 달라지는 마이크로로딩을 구분해 정의했고, 마이크로로딩은 반응물이 과도한 식각 면적 때문에 고갈되는 일반 로딩 효과와 형식상 같다고 보였다.",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-1--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.586180",
+    "https://samcointl.com/?p=6542",
+    "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/8518282"
+   ]
+  },
+  {
+   "id": "E02",
+   "page": "basics",
+   "statement": "같은 리뷰는 차원 분석으로 ARDE의 원인 후보를 이온 수송, 중성 입자 수송, 표면 대전과 관련된 네 가지 메커니즘으로 좁혔다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-1--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.586180"
+   ]
+  },
+  {
+   "id": "E03",
+   "page": "basics",
+   "statement": "같은 리뷰는 미시적으로 불균일한 식각이 '덜 뚫려 잃는 칩'과 '과식각 손상으로 잃는 칩' 사이의 트레이드오프에 영향을 준다고 지적했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-1--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.586180"
+   ]
+  },
+  {
+   "id": "E04",
+   "page": "basics",
+   "statement": "6–20 mTorr 유도결합 고밀도 플라즈마의 SiO2 식각에서 구조 폭이 좁아질수록 식각 속도가 오히려 커지는 역 RIE lag가 관찰되었고, 저자들은 등방 속도 분포 때문에 중성 입자 플럭스가 이온 플럭스보다 종횡비에 더 강하게 의존한다는 모델(고압 조건 단면과 일치)로 설명했다(Doemling 외, APL 1996, 저자들의 해석).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-4--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.116772"
+   ]
+  },
+  {
+   "id": "E05",
+   "page": "basics",
+   "statement": "고밀도 플라즈마의 폴리 Si 과식각 단계에서 생기는 노칭(바닥 근처 측벽의 국부 식각)은, 이온과 전자의 방향성 차이로 고종횡비 공간 바닥이 양으로 대전되고 넓은 공간 옆 바깥쪽 라인으로 이온이 휘어 생긴다는 시뮬레이션 결과가 있다(Kinoshita 외, JVST B 1996).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-1--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.588431",
+    "https://pure.ewha.ac.kr/en/publications/on-the-link-between-electron-shadowing-and-charging-damage-2/"
+   ]
+  },
+  {
+   "id": "E06",
+   "page": "basics",
+   "statement": "2차원 몬테카를로 시뮬레이션(Hwang·Giapis, JVST B 1997)은 노출된 절연막 표면의 과도 대전이 과식각 중 측벽 노칭을 크게 좌우하고, 이온 산란의 기여는 작지만 실험 노치 형상을 맞추는 데 필요하다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-2--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.589258"
+   ]
+  },
+  {
+   "id": "E07",
+   "page": "basics",
+   "statement": "마이크로트렌치는 식각 구조 바닥에 생기는 작은 홈으로, 얇은 게이트 산화막 위 폴리 Si 식각에서 산화막이 국부적으로 뚫리고 아래 Si가 빠르게 깎여 생기며 측벽에서 조금 떨어진 곳에 나타났다; 그 위치는 레지스트·폴리 측벽의 두께와 각도에 따라 달라졌고, 측벽 산란 이온 시뮬레이션의 플럭스 피크 위치와 비슷하게 변했다(Dalton 외, JES 1993).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-4--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/1.2220831"
+   ]
+  },
+  {
+   "id": "E08",
+   "page": "basics",
+   "statement": "C4F6/CH2F2/O2/Ar 플라즈마의 고종횡비 SiO2 컨택 홀 식각 연구(Lee 외, JES 2010)에서 보잉은 네킹이 마스크/SiO2 경계 아래로 내려간 뒤 나타났고, 네킹 위치의 두꺼운 CFx 막이 위쪽 측벽을 보호하는 것과 그 아래 측면 식각이 함께 작용한 결과로 설명되었다; 패러데이 케이지 실험에서는 마스크 경사면에서 스퍼터된 입자의 재증착이 네킹에, 경사면에서 반사된 이온이 보잉에 기여했다.",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-4--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/1.3276511"
+   ]
+  },
+  {
+   "id": "E09",
+   "page": "basics",
+   "statement": "고종횡비 컨택 홀 식각에서 마스크 테이퍼 각이 작을수록 보잉과 마스크 선택비가 나빠졌고, 축대칭이 아닌 네킹은 홀 바닥 이온 플럭스의 불균형을 만들어 트위스팅을 일으킨다고 보고되었다(Miyake 외, JJAP 2009).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-2--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1143/jjap.48.08he01"
+   ]
+  },
+  {
+   "id": "E10",
+   "page": "basics",
+   "statement": "트위스팅은 고종횡비 홀·트렌치가 무작위로 수직에서 벗어나는 현상이며, 원인 후보 중 하나는 이온이 통계적으로 들어오며 생기는 확률적 대전이라고 설명된다(Wang·Kushner, JAP 2010, 시뮬레이션).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-2--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.3290873"
+   ]
+  },
+  {
+   "id": "E11",
+   "page": "basics",
+   "statement": "종횡비 80까지의 SiO2 고종횡비 식각 시뮬레이션(Huang 외, JVST A 2019, Ar/C4F8/O2 3주파 CCP)에서 웨이퍼로 오는 중성 라디칼 플럭스는 이온 플럭스보다 1–2 자릿수 컸고, 종횡비가 커질수록 에너지 입자 플럭스와 전달 전력이 줄어 순간 식각 속도가 떨어졌다(ARDE).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-3--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.5090606",
+    "https://api.crossref.org/works/10.1116/1.5090606"
+   ]
+  },
+  {
+   "id": "E12",
+   "page": "basics",
+   "statement": "같은 시뮬레이션에서 레지스트 식각 속도는 종횡비와 무관하므로, 언더컷·보잉 없이 CD를 유지하려면 높은 SiO2 대 레지스트 선택비와 식각 끝까지 남는 최소 레지스트 두께가 필요하다고 정리했다(Huang 외 2019).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-3--",
+   "checked": [
+    "https://api.crossref.org/works/10.1116/1.5090606"
+   ]
+  },
+  {
+   "id": "E13",
+   "page": "basics",
+   "statement": "비대칭 패턴에서는 조밀한(더 양으로 대전된) 영역에서 성긴 영역으로 향하는 수평 전기장이 생겨 고종횡비 구조가 한쪽으로 체계적으로 기울고, 대칭 패턴에서는 평균적으로 체계적 기울기 없이 무작위로 기운다는 시뮬레이션 결과가 있다(Huang 외, JVST A 2020).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-3--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.5132800"
+   ]
+  },
+  {
+   "id": "E14",
+   "page": "basics",
+   "statement": "−130~−100°C 저온 웨이퍼에서 SF6 플라즈마로 Si를 식각하면 측면 식각이 거의 없는 고이방성 식각이 되었고, 유기 레지스트 대비 선택비 30, 식각 속도는 반응성 이온 식각 500 nm/min·마이크로파 플라즈마 1000 nm/min였다(Tachi 외, APL 1988).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-3--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.99382"
+   ]
+  },
+  {
+   "id": "E15",
+   "page": "basics",
+   "statement": "Lam Research 저자들의 리뷰(Lee·Kanarik·Gottscho, J. Phys. D 2014)는 식각 균일도를 미시적 균일도(국부 치수 변화), 거시적 균일도(웨이퍼 끝단 성능 등), 반복 균일도(웨이퍼 간·로트 간·챔버 간)로 나눠 다룬다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-3--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1088/0022-3727/47/27/273001"
+   ]
+  },
+  {
+   "id": "E16",
+   "page": "basics",
+   "statement": "Bosch 특허 US5501893(Robert Bosch GmbH)은 반응성 기체로 Si를 이방성 식각하는 단계와, 플라즈마 속 고분자 형성 물질을 앞 단계에서 드러난 면에 입혀 일시적 식각 정지층을 만드는 중합 단계를 번갈아 반복하는 Si 이방성 플라즈마 식각법을 청구하며, 높은 마스크 선택비와 매우 높은 이방성을 얻는다고 적는다.",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-5--",
+   "checked": [
+    "https://patents.google.com/patent/US5501893A/en",
+    "https://api.openalex.org/works/doi:10.1063/1.3474652",
+    "https://www.isit.fraunhofer.de/en/technology/micro-manufacturing-processes/processes-on-wafer-level/drie.html"
+   ]
+  },
+  {
+   "id": "E17",
+   "page": "basics",
+   "statement": "Si 극저온 식각 리뷰(Dussart 외, J. Phys. D 2014)는 이 방법이 일본 연구진이 처음 도입했다고 정리하고, 표준 극저온 식각의 SiOxFy 패시베이션층 형성 메커니즘과 주요 결함(언더컷, 보잉, 결정 방향 의존 식각)을 다룬다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-5--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1088/0022-3727/47/12/123001"
+   ]
+  },
+  {
+   "id": "E18",
+   "page": "basics",
+   "statement": "메타표면 나노구조 제작 연구(Baracu 외, Micromachines 2021)는 Bosch와 극저온 DRIE를 고종횡비 메타표면 제작의 산업적으로 의미 있는 최선의 후보로 소개하고, Si 메타렌즈 효율이 극저온 약 39%(파장 1.50 µm)·Bosch 약 39%(1.45 µm)로 Si 기판 위 Si 기둥의 이론값 약 61%보다 낮았으며, 최적화하지 않은 Bosch 공정의 큰 측벽 거칠기에도 효율이 적정해 그 거칠기는 어느 정도 허용된다고 결론지었다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-8--",
+   "checked": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8145705/"
+   ]
+  },
+  {
+   "id": "E19",
+   "page": "basics",
+   "statement": "Donnelly·Kornblit 리뷰(JVST A 2013)는 웨이퍼 내 식각 불균일도를 3σ÷평균 방식과 (최대−최소)÷(2×평균) 방식의 식으로 제시하며, 공간적 분포는 정규분포가 아닐 수 있어 3σ 표기를 그대로 99.7% 포함 확률로 해석하면 안 된다고 지적한다.",
+   "risk": "medium",
+   "decision": "hold",
+   "reason": "근거 부족",
+   "verdict": "insufficient",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-6--",
+   "checked": []
+  },
+  {
+   "id": "E20",
+   "page": "basics",
+   "statement": "같은 리뷰는 폴리 Si 게이트 식각의 대표 순서를 자연산화막을 뚫는 브레이크스루(비교적 높은 바이어스의 Cl2 계열), 막 대부분을 깎는 메인 식각(Cl2/HBr에 소량 O2 등), 남은 폴리를 제거하면서 아래 산화막을 보호하려고 바이어스를 낮추고 화학을 바꾸는 오버 에치로 설명한다.",
+   "risk": "high",
+   "decision": "hold",
+   "reason": "근거 부족",
+   "verdict": "insufficient",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-6--",
+   "checked": [
+    "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/7141505",
+    "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/7186661",
+    "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/7446050"
+   ]
+  },
+  {
+   "id": "E21",
+   "page": "basics",
+   "statement": "고종횡비 미세가공 RIE 리뷰(Huff, Micromachines 2021)는 이방성을 1 − (가로 식각 속도 ÷ 세로 식각 속도)로 정의하고, 가로 식각이 없는 이상적 경우 1이 된다고 설명한다(가로·세로 속도가 같은 등방성은 이 식에서 0이 되는데, 이는 식에서 따라 나오는 값이다).",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-8--",
+   "checked": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8400956/"
+   ]
+  },
+  {
+   "id": "E22",
+   "page": "basics",
+   "statement": "C2F6 ICP로 0.5 µm 미만 SiO2 컨택 홀을 식각한 연구(Westerheim 외, JVST A 1995)에서 높은 바이어스에서는 정상 RIE lag, 낮은 바이어스에서는 역 RIE lag가 나타났고, 바이어스를 높이면 마이크로트렌칭도 깊어졌다.",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-6--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.579841"
+   ]
+  },
+  {
+   "id": "E23",
+   "page": "basics",
+   "statement": "폭 0.4–2.5 µm Si 트렌치 식각(Lee·Zhou, JES 1991)에서 폭이 좁을수록 평균 식각 속도가 줄었다(정상 RIE lag).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-7--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/1.2085991"
+   ]
+  },
+  {
+   "id": "E24",
+   "page": "basics",
+   "statement": "Si/SiO2 마스크 패턴 실험(Hedlund 외, JVST A 1994)은 마이크로로딩을 국부 반응종 고갈로 설명했고, 압력을 낮추거나 기체 유량을 늘리면 마이크로로딩이 줄었다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-7--",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.578990"
+   ]
+  },
+  {
+   "id": "E25",
+   "page": "basics",
+   "statement": "Bosch와 STiGer(시간 교대 극저온) 공정을 실험으로 비교한 연구(Tillocher 외, Micromachines 2021)는 Bosch 공정을 SF6 식각 단계와 C4F8 패시베이션 단계의 시간 교대로 설명하고, 각 식각 주기의 등방성 공동이 이어져 측벽에 스캘럽이 생기며 식각 단계가 길수록 스캘럽이 커지고 주기가 짧을수록 측벽 거칠기가 줄어든다고 보고했다.",
+   "risk": "medium",
+   "decision": "conditional",
+   "reason": "부분 지지 — 조건을 문장에 넣어야 함",
+   "verdict": "partially_supported",
+   "conditions": "Bosch 공정 설명(SF6 식각과 C4F8 패시베이션의 교대, 등방성 공동이 쌓여 생기는 스캘럽, 식각 단계를 줄이면 리플이 작아짐)은 서론의 배경 설명이다. '식각 단계가 길수록 스캘럽 증가'(§3.1)와 '주기가 짧을수록 측벽 결함 감소'(§3.3)는 이 연구가 STiGer 공정 실험으로 보인 결과이고, Bosch에 대해서는 기존 보고와 비슷하다고만 언급한다. 따라서 Bosch에 대한 이 연구의 실험 보고처럼 쓰면 안 되고, 'STiGer 실험 결과, Bosch에서 알려진 경향과 유사'로 한정해야 한다.",
+   "note": "",
+   "reviewed": "eb-8--",
+   "checked": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8537062/"
+   ]
+  },
+  {
+   "id": "E26",
+   "page": "basics",
+   "statement": "원자 수준 플라즈마 공정 리뷰(Arts 외, Plasma Sources Sci. Technol. 2022)의 고종횡비 식각 절은 3D NAND 같은 고종횡비 컨택 홀 식각의 과제로 깊이에 따른 식각 속도 저하(ARDE), 바닥 대전, 휨·보잉·트위스팅을 함께 다루며, 설명을 단순화하려고 SiO2 단일층만 고려한다고 밝힌다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "eb-8--",
+   "checked": [
+    "https://iopscience.iop.org/article/10.1088/1361-6595/ac95bc",
+    "https://api.openalex.org/works/doi:10.1088/1361-6595/ac95bc"
+   ]
+  }
+ ]
+}

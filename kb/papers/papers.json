@@ -2953,6 +2953,445 @@
    ],
    "use": "그래프 일함수 금속·게이트 금속 선택 제거 노드의 근거(#60).",
    "claim": "Bao 외(2024)는 선택적 층 감소(SLR) 공정과 이중 다이폴로 2nm 나노시트에서 4쌍의 문턱전압을 구현했다고 보고했다."
+  },
+  {
+   "id": "gottscho1992",
+   "area": "plasma",
+   "kind": "리뷰",
+   "basis": "초록",
+   "title": "Microscopic uniformity in plasma etching",
+   "authors": "R. A. Gottscho, C. W. Jurgensen, D. J. Vitkavage (AT&T Bell Labs)",
+   "year": 1992,
+   "venue": "J. Vac. Sci. Technol. B 10, 2133",
+   "doi": "10.1116/1.586180",
+   "match": [
+    "10.1116/1.586180"
+   ],
+   "summary": "종횡비·패턴 밀도에 따라 식각 속도가 달라지는 '미시적 불균일'을 정리한 리뷰. 종횡비 의존 식각(ARDE)과 마이크로로딩을 구분해 정의하고, 마이크로로딩은 반응물 고갈로 생기는 일반 로딩 효과와 형식상 같다고 보였다.",
+   "points": [
+    "차원 분석으로 ARDE 원인 후보를 이온 수송·중성 입자 수송·표면 대전 관련 네 가지로 좁혔다.",
+    "미시적 불균일은 '덜 뚫린 칩'과 '과식각 손상 칩' 사이의 트레이드오프에 영향을 준다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Gottscho 외(1992)는 ARDE와 마이크로로딩을 구분해 정의하고, 마이크로로딩이 반응물 고갈에 의한 일반 로딩 효과와 형식상 같다고 보였다."
+  },
+  {
+   "id": "doemling1996",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Observation of inverse reactive ion etching lag for silicon dioxide etching in inductively coupled plasmas",
+   "authors": "M. F. Doemling, N. R. Rueger, G. S. Oehrlein",
+   "year": 1996,
+   "venue": "Appl. Phys. Lett. 68, 10",
+   "doi": "10.1063/1.116772",
+   "match": [
+    "10.1063/1.116772"
+   ],
+   "summary": "6–20 mTorr 유도결합 고밀도 플라즈마의 SiO2 식각에서 구조 폭이 좁을수록 식각 속도가 커지는 역 RIE lag를 주로 관찰했다.",
+   "points": [
+    "저자들은 등방 속도 분포 때문에 중성 입자 플럭스가 이온보다 종횡비에 더 민감하다는 모델로 설명했고, 모델은 고압 조건 단면과 맞았다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Doemling 외(1996)는 6–20 mTorr ICP의 SiO2 식각에서 좁은 구조일수록 식각이 빠른 역 RIE lag를 관찰했다."
+  },
+  {
+   "id": "kinoshita1996",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Notching as an example of charging in uniform high density plasmas",
+   "authors": "T. Kinoshita, M. Hane, J. P. McVittie",
+   "year": 1996,
+   "venue": "J. Vac. Sci. Technol. B 14, 560",
+   "doi": "10.1116/1.588431",
+   "match": [
+    "10.1116/1.588431"
+   ],
+   "summary": "균일한 고밀도 플라즈마에서도 이온과 전자의 방향성 차이로 표면이 대전되어 폴리 Si 과식각 중 노칭이 생긴다는 수치 시뮬레이션.",
+   "points": [
+    "고종횡비 공간 바닥이 크게 양으로 대전되고, 넓은 공간 옆 바깥 라인으로 이온이 휘어 그 발치가 파인다.",
+    "시뮬레이터는 기존 ECR 식각기 노칭 결과로 검증했다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Kinoshita 외(1996)는 균일 고밀도 플라즈마에서 이온·전자 방향성 차이로 생긴 대전이 과식각 중 바깥 라인 발치의 노칭을 만든다는 시뮬레이션을 보고했다."
+  },
+  {
+   "id": "hwang1997",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "On the origin of the notching effect during etching in uniform high density plasmas",
+   "authors": "G. S. Hwang, K. P. Giapis",
+   "year": 1997,
+   "venue": "J. Vac. Sci. Technol. B 15, 70",
+   "doi": "10.1116/1.589258",
+   "match": [
+    "10.1116/1.589258"
+   ],
+   "summary": "절연막 위 폴리 Si 구조의 과식각 단계에서 프로파일 변화를 2차원 몬테카를로로 계산했다. 노출된 절연막 표면의 과도 대전이 측벽 노칭을 크게 좌우한다.",
+   "points": [
+    "이온 산란의 기여는 작지만 실험 노치 형상을 맞추는 데 필요했다.",
+    "라인 연결 상태와 열린 영역 폭에 따른 노치 깊이 변화도 재현했다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Hwang·Giapis(1997)는 몬테카를로 시뮬레이션으로 노출된 절연막의 과도 대전이 과식각 중 노칭을 크게 좌우한다고 보고했다."
+  },
+  {
+   "id": "dalton1993",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Microtrench Formation in Polysilicon Plasma Etching over Thin Gate Oxide",
+   "authors": "T. J. Dalton, J. C. Arnold, H. H. Sawin 외",
+   "year": 1993,
+   "venue": "J. Electrochem. Soc. 140, 2395",
+   "doi": "10.1149/1.2220831",
+   "match": [
+    "10.1149/1.2220831"
+   ],
+   "summary": "얇은 게이트 산화막 위 폴리 Si 식각에서 생기는 마이크로트렌치(바닥의 작은 홈)를 관찰·모델링했다. 산화막이 국부적으로 뚫려 아래 Si가 빠르게 깎이며, 측벽에서 조금 떨어진 곳에 나타났다.",
+   "points": [
+    "위치는 레지스트·폴리 측벽의 두께와 각도에 따라 바뀌었다.",
+    "측벽 산란 이온 시뮬레이션의 플럭스 피크와 비슷하게 움직였다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Dalton 외(1993)는 얇은 게이트 산화막 위 폴리 Si 식각에서 산화막이 국부적으로 뚫려 생기는 마이크로트렌치를 보고했다."
+  },
+  {
+   "id": "lee2010",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Mechanism of Sidewall Necking and Bowing in the Plasma Etching of High Aspect-Ratio Contact Holes",
+   "authors": "J.-K. Lee 외",
+   "year": 2010,
+   "venue": "J. Electrochem. Soc. 157, D142",
+   "doi": "10.1149/1.3276511",
+   "match": [
+    "10.1149/1.3276511"
+   ],
+   "summary": "C4F6/CH2F2/O2/Ar 플라즈마의 고종횡비 SiO2 컨택 홀 식각에서 네킹과 보잉이 시간에 따라 어떻게 생기는지 추적했다. 보잉은 네킹이 마스크/SiO2 경계 아래로 내려간 뒤 나타났다.",
+   "points": [
+    "네킹 위치의 두꺼운 CFx 막이 위쪽을 보호하고 그 아래가 옆으로 깎인 결과로 설명한다.",
+    "패러데이 케이지 실험: 마스크 경사면에서 스퍼터된 입자의 재증착 → 네킹, 반사된 이온 → 보잉."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Lee 외(2010)는 고종횡비 SiO2 컨택 홀에서 보잉이 네킹 아래 측면 식각으로 생기고, 마스크 경사면의 재증착·반사 이온이 각각 네킹·보잉에 기여한다고 보고했다."
+  },
+  {
+   "id": "miyake2009",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Effects of Mask and Necking Deformation on Bowing and Twisting in High-Aspect-Ratio Contact Hole Etching",
+   "authors": "M. Miyake 외 (Hitachi)",
+   "year": 2009,
+   "venue": "Jpn. J. Appl. Phys. 48, 08HE01",
+   "doi": "10.1143/jjap.48.08he01",
+   "match": [
+    "10.1143/jjap.48.08he01"
+   ],
+   "summary": "마스크 특성이 고종횡비 컨택 홀 형상에 주는 영향. 마스크 테이퍼 각이 작을수록 보잉과 마스크 선택비가 나빠졌다.",
+   "points": [
+    "축대칭이 아닌 네킹은 홀 바닥 이온 플럭스의 불균형을 만들어 트위스팅을 일으킨다(계산).",
+    "수직이고 변형 없는 마스크가 중요하다고 결론짓는다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Miyake 외(2009)는 마스크 테이퍼 각이 작을수록 보잉이 나빠지고, 비대칭 네킹이 트위스팅을 일으킨다고 보고했다."
+  },
+  {
+   "id": "wang2010",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "High energy electron fluxes in dc-augmented capacitively coupled plasmas. II. Effects on twisting in high aspect ratio etching of dielectrics",
+   "authors": "M. Wang, M. J. Kushner",
+   "year": 2010,
+   "venue": "J. Appl. Phys. 107, 023309",
+   "doi": "10.1063/1.3290873",
+   "match": [
+    "10.1063/1.3290873"
+   ],
+   "summary": "트위스팅(고종횡비 홀·트렌치가 무작위로 수직에서 벗어나는 현상)의 원인 후보로 확률적 대전을 들고, dc 보강 CCP의 고에너지 전자가 구조 안으로 들어가 양전하를 일부 중화해 트위스팅을 줄일 수 있음을 계산했다.",
+   "points": [
+    "Ar/C4F8/O2 SiO2 식각 시뮬레이션 결과다.",
+    "RF 바이어스를 높이면 이온 특성도 함께 바뀌어 개선 효과가 단정적이지 않다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Wang·Kushner(2010)는 트위스팅을 확률적 대전과 연결하고, dc 보강 CCP의 고에너지 전자가 이를 줄일 수 있음을 시뮬레이션으로 보였다."
+  },
+  {
+   "id": "huang2019",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Plasma etching of high aspect ratio features in SiO2 using Ar/C4F8/O2 mixtures: A computational investigation",
+   "authors": "S. Huang 외 (Kushner 그룹·Samsung)",
+   "year": 2019,
+   "venue": "J. Vac. Sci. Technol. A 37, 031304",
+   "doi": "10.1116/1.5090606",
+   "match": [
+    "10.1116/1.5090606"
+   ],
+   "summary": "3주파 CCP의 Ar/C4F8/O2로 종횡비 80까지 SiO2를 식각하는 반응기·형상 통합 시뮬레이션. 중성 라디칼 플럭스가 이온보다 1–2 자릿수 컸고, 깊어질수록 에너지 입자 플럭스와 전달 전력이 줄어 식각 속도가 떨어졌다(ARDE).",
+   "points": [
+    "종횡비가 커질수록 물리적 스퍼터링의 비중이 커진다.",
+    "레지스트 식각 속도는 종횡비와 무관하므로 CD 유지에 높은 선택비와 최소 마스크 두께가 필요하다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Huang 외(2019)는 종횡비 80까지의 SiO2 식각 시뮬레이션에서 깊어질수록 에너지 입자 플럭스가 줄어 식각 속도가 떨어진다(ARDE)고 보고했다."
+  },
+  {
+   "id": "huang2020",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Pattern dependent profile distortion during plasma etching of high aspect ratio features in SiO2",
+   "authors": "S. Huang 외",
+   "year": 2020,
+   "venue": "J. Vac. Sci. Technol. A 38, 023001",
+   "doi": "10.1116/1.5132800",
+   "match": [
+    "10.1116/1.5132800"
+   ],
+   "summary": "종횡비 100 이상 구조의 트위스팅·기울어짐·표면 거칠어짐을 패턴 의존성과 확률적 플럭스로 계산했다.",
+   "points": [
+    "대칭 패턴은 무작위로 기울지만 평균적인 체계적 기울기는 없다.",
+    "비대칭 패턴은 조밀(더 양으로 대전)→성긴 방향의 수평 전기장으로 체계적으로 기운다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Huang 외(2020)는 비대칭 패턴에서 조밀한 쪽에서 성긴 쪽으로 향하는 전기장 때문에 고종횡비 구조가 체계적으로 기운다는 시뮬레이션을 보고했다."
+  },
+  {
+   "id": "tachi1988",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Low-temperature reactive ion etching and microwave plasma etching of silicon",
+   "authors": "S. Tachi, K. Tsujimoto, S. Okudaira (Hitachi)",
+   "year": 1988,
+   "venue": "Appl. Phys. Lett. 52, 616",
+   "doi": "10.1063/1.99382",
+   "match": [
+    "10.1063/1.99382"
+   ],
+   "summary": "웨이퍼를 −130~−100 °C로 식혀 SF6 플라즈마로 Si를 식각하는 저온 식각을 처음 보고한 논문. 폭 변화가 매우 작은 고이방성 식각을 얻었다.",
+   "points": [
+    "유기 레지스트 대비 선택비 약 30, 식각 속도 약 500 nm/min(RIE)·1000 nm/min(마이크로파 플라즈마).",
+    "온도가 낮을수록 측면 식각이 줄고 유기 마스크의 내성이 커진다고 결론지었다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Tachi 외(1988)는 웨이퍼 온도 −130~−100 °C의 SF6 플라즈마로 Si를 고이방성 식각해 유기 레지스트 대비 선택비 약 30, 식각 속도 약 500 nm/min(반응성 이온 식각)·1000 nm/min(마이크로파 플라즈마 식각)을 얻었다."
+  },
+  {
+   "id": "lee2014",
+   "area": "plasma",
+   "kind": "리뷰",
+   "basis": "초록",
+   "title": "The grand challenges of plasma etching: a manufacturing perspective",
+   "authors": "C. G. N. Lee, K. J. Kanarik, R. A. Gottscho (Lam Research)",
+   "year": 2014,
+   "venue": "J. Phys. D 47, 273001",
+   "doi": "10.1088/0022-3727/47/27/273001",
+   "match": [
+    "10.1088/0022-3727/47/27/273001"
+   ],
+   "summary": "양산 관점의 식각 과제를 균일도, 결함, 표면 정밀도, 휘발성이 낮은 재료의 네 영역으로 정리한 리뷰.",
+   "points": [
+    "균일도를 미시적(국부 치수 변화)·거시적(웨이퍼 끝단)·반복(웨이퍼·로트·챔버 간)으로 나눠 다룬다.",
+    "원자층 식각과 DRAM·NAND용 비휘발성 재료 식각도 다룬다(장비 회사 저자)."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Lee·Kanarik·Gottscho(2014)는 식각 균일도를 미시적·거시적·반복 균일도로 나눠 다룬다."
+  },
+  {
+   "id": "dussart2014",
+   "area": "plasma",
+   "kind": "리뷰",
+   "basis": "초록",
+   "title": "Plasma cryogenic etching of silicon: from the early days to today's advanced technologies",
+   "authors": "R. Dussart 외",
+   "year": 2014,
+   "venue": "J. Phys. D 47, 123001",
+   "doi": "10.1088/0022-3727/47/12/123001",
+   "match": [
+    "10.1088/0022-3727/47/12/123001"
+   ],
+   "summary": "Si 극저온 식각의 역사와 메커니즘을 정리한 리뷰. 일본 연구진이 처음 도입했다고 쓰고, 표준 극저온 식각의 SiOxFy 패시베이션층 형성을 여러 실시간 분석으로 살핀다.",
+   "points": [
+    "주요 결함으로 언더컷, 보잉, 결정 방향 의존 식각을 다룬다.",
+    "STiGer 같은 대체 공정과 20 nm 미만 구조·저유전막 극저온 식각도 소개한다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Dussart 외(2014)는 Si 극저온 식각의 SiOxFy 패시베이션 메커니즘과 주요 결함(언더컷·보잉·결정 방향 의존 식각)을 정리했다."
+  },
+  {
+   "id": "baracu2021",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "공개 원문",
+   "title": "Metasurface Fabrication by Cryogenic and Bosch Deep Reactive Ion Etching",
+   "authors": "A. M. Baracu 외",
+   "year": 2021,
+   "venue": "Micromachines 12, 501",
+   "doi": "10.3390/mi12050501",
+   "match": [
+    "10.3390/mi12050501"
+   ],
+   "summary": "Si 메타렌즈를 극저온 DRIE와 Bosch DRIE로 각각 만들어 비교했다. 두 방법을 고종횡비 메타표면 제작의 산업적으로 의미 있는 최선의 후보로 소개한다.",
+   "points": [
+    "효율은 극저온 약 39%(1.50 µm), Bosch 약 39%(1.45 µm), 이론값 약 61%.",
+    "최적화하지 않은 Bosch 공정의 측벽 거칠기도 어느 정도 허용된다고 결론지었다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Baracu 외(2021)는 UV 나노임프린트로 패터닝한 Si 메타렌즈를 극저온·Bosch DRIE로 만들어 효율 약 39%(극저온 1.50 µm, Bosch 1.45 µm, 이론 약 61%)를 얻었고, 최적화하지 않은 Bosch 공정의 측벽 거칠기도 어느 정도 허용된다고 결론지었다."
+  },
+  {
+   "id": "bosch_us5501893",
+   "area": "plasma",
+   "kind": "특허",
+   "basis": "특허 원문",
+   "title": "Method of anisotropically etching silicon (US5501893A)",
+   "authors": "F. Laermer, A. Schilp (Robert Bosch GmbH)",
+   "year": 1996,
+   "venue": "US Patent 5,501,893",
+   "url": "https://patents.google.com/patent/US5501893A/en",
+   "match": [
+    "us5501893"
+   ],
+   "summary": "Bosch 공정의 원 특허. 반응성 기체로 Si를 이방성 식각하는 단계와, 고분자 형성 물질을 드러난 면에 입혀 일시적 식각 정지층을 만드는 중합 단계를 번갈아 반복한다.",
+   "points": [
+    "높은 마스크 선택비와 매우 높은 이방성을 얻는다고 적는다.",
+    "특허 청구항이며, 실제 장비별 조건은 별도 문헌을 봐야 한다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Bosch 특허 US5501893은 Si 이방성 식각 단계와 고분자 패시베이션 단계를 번갈아 반복하는 식각법을 청구한다."
+  },
+  {
+   "id": "huff2021",
+   "area": "plasma",
+   "kind": "리뷰",
+   "basis": "공개 원문",
+   "title": "Recent Advances in Reactive Ion Etching and Applications of High-Aspect-Ratio Microfabrication",
+   "authors": "M. A. Huff",
+   "year": 2021,
+   "venue": "Micromachines 12, 991",
+   "doi": "10.3390/mi12080991",
+   "match": [
+    "10.3390/mi12080991"
+   ],
+   "summary": "고종횡비 미세가공용 반응성 이온 식각(RIE)의 발전을 정리한 리뷰. ICP 기반 DRIE가 깊은 식각을 가능하게 한 과정을 다룬다.",
+   "points": [
+    "§4에서 이방성을 1 − (가로 식각 속도 ÷ 세로 식각 속도)로 정의하고, 가로 식각이 없으면 1이 된다고 설명한다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Huff(2021)는 이방성을 1 − (가로 식각 속도 ÷ 세로 식각 속도)로 정의한다."
+  },
+  {
+   "id": "westerheim1995",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Substrate bias effects in high-aspect-ratio SiO2 contact etching using an inductively coupled plasma reactor",
+   "authors": "A. C. Westerheim 외",
+   "year": 1995,
+   "venue": "J. Vac. Sci. Technol. A 13, 853",
+   "doi": "10.1116/1.579841",
+   "match": [
+    "10.1116/1.579841"
+   ],
+   "summary": "C2F6 ICP로 0.5 µm 미만 SiO2 컨택을 식각하며 기판 바이어스의 영향을 조사했다. 바이어스가 높으면 정상 RIE lag, 낮으면 역 RIE lag가 나타났다.",
+   "points": [
+    "바이어스가 높을수록 측벽이 더 수직이 되고 마이크로트렌치가 깊어졌다.",
+    "마이크로트렌치 형상은 측벽에서의 이온 정반사와 맞았다(형상 모델링)."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Westerheim 외(1995)는 C2F6 ICP의 0.5 µm 미만 SiO2 컨택 식각에서 바이어스가 높으면 정상 RIE lag, 낮으면 역 RIE lag가 나타났고, rf 바이어스가 높을수록 측벽이 수직에 가까워지고 마이크로트렌치가 깊어졌다고 보고했다."
+  },
+  {
+   "id": "leezhou1991",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Feature-Size Dependence of Etch Rate in Reactive Ion Etching",
+   "authors": "Y. H. Lee, Z. H. Zhou (IBM)",
+   "year": 1991,
+   "venue": "J. Electrochem. Soc. 138, 2439",
+   "doi": "10.1149/1.2085991",
+   "match": [
+    "10.1149/1.2085991"
+   ],
+   "summary": "CF3Br/SF6 플라즈마로 폭 0.4–2.5 µm Si 트렌치를 식각하면 폭이 좁을수록 평균 식각 속도가 줄었다(RIE lag).",
+   "points": [
+    "작은 패러데이 컵 측정에서 이온 전류 손실은 주로 구멍 지름만큼의 깊이 안에서 일어났다.",
+    "트렌치 모양이 전기장을 흐트러뜨려 좁은 트렌치에서 이온 손실이 커진다는 시뮬레이션을 제시한다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Lee·Zhou(1991)는 폭 0.4–2.5 µm Si 트렌치에서 폭이 좁을수록 평균 식각 속도가 줄어드는 RIE lag를 보고했다."
+  },
+  {
+   "id": "hedlund1994",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Microloading effect in reactive ion etching",
+   "authors": "C. Hedlund, H.-O. Blom, S. Berg",
+   "year": 1994,
+   "venue": "J. Vac. Sci. Technol. A 12, 1962",
+   "doi": "10.1116/1.578990",
+   "match": [
+    "10.1116/1.578990"
+   ],
+   "summary": "SiO2로 패턴한 Si 웨이퍼로 마이크로로딩을 조사했다. 넓은 노출 영역 근처의 좁은 라인 식각 속도를 거리별로 재어, 국부 반응종 고갈의 영향을 살폈다.",
+   "points": [
+    "압력을 낮추거나 기체 유량을 늘리면 마이크로로딩이 줄었다.",
+    "마이크로로딩은 다른 패턴 의존 불균일에 비해 작았다(10% 미만)."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Hedlund 외(1994)는 마이크로로딩을 국부 반응종 고갈로 설명하고, 압력을 낮추거나 유량을 늘리면 줄어든다고 보고했다."
+  },
+  {
+   "id": "tillocher2021",
+   "area": "plasma",
+   "kind": "학술지 논문",
+   "basis": "공개 원문",
+   "title": "Comparison between Bosch and STiGer Processes for Deep Silicon Etching",
+   "authors": "T. Tillocher 외",
+   "year": 2021,
+   "venue": "Micromachines 12, 1143",
+   "doi": "10.3390/mi12101143",
+   "match": [
+    "10.3390/mi12101143"
+   ],
+   "summary": "Bosch 공정과 시간 교대형 극저온 공정(STiGer: SF6 식각 + SiF4/O2 패시베이션)을 비교한 연구. STiGer가 Bosch와 같은 수준의 형상·성능을 얻을 수 있음을 보였다.",
+   "points": [
+    "STiGer는 고분자 없는 패시베이션이라 챔버 세정 빈도가 줄어 처리량에 유리하다.",
+    "STiGer 실험에서 식각 단계가 길수록 스캘럽이 커지고, 주기가 짧을수록 측벽 거칠기가 줄었다(Bosch에서 알려진 경향과 유사)."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Tillocher 외(2021)는 시간 교대형 극저온 공정 STiGer가 Bosch 공정과 같은 수준의 형상·성능을 얻을 수 있음을 보였다."
+  },
+  {
+   "id": "arts2022",
+   "area": "plasma",
+   "kind": "리뷰",
+   "basis": "공개 원문",
+   "title": "Foundations of atomic-level plasma processing in nanoelectronics",
+   "authors": "K. Arts 외",
+   "year": 2022,
+   "venue": "Plasma Sources Sci. Technol. 31, 103002",
+   "doi": "10.1088/1361-6595/ac95bc",
+   "match": [
+    "10.1088/1361-6595/ac95bc"
+   ],
+   "summary": "원자 수준 플라즈마 공정(RIE·고종횡비 식각·플라즈마 ALE·플라즈마 ALD)의 표면 반응을 정리한 리뷰.",
+   "points": [
+    "§2.2 고종횡비 식각: 3D NAND 같은 컨택 홀에서 깊이에 따른 식각 속도 저하, 바닥 대전, 휨·보잉·트위스팅을 다룬다(SiO2 단일층으로 단순화).",
+    "ALE·ALD에서 이온과 라디칼의 역할을 다룬다."
+   ],
+   "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
+   "claim": "Arts 외(2022)는 고종횡비 컨택 홀 식각의 과제로 ARDE, 바닥 대전, 휨·보잉·트위스팅을 함께 다룬다."
   }
  ]
 }

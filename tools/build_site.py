@@ -134,6 +134,7 @@ def build_claims():
     claims = [c for s in sets for c in s["claims"]]
     PAGE = {"a20": ("Apple A20 (TSMC 2nm) 식각 공정 보고서", "tsmc_n2_a20_etch_report.html"),
             "graph": ("식각 지식 그래프 · 용어집", "a20_etch_knowledge_graph.html"),
+            "basics": ("식각 공정 기초 — 지표·패턴 의존성·프로파일 결함", "etch_process_basics.html"),
             "papers": ("레퍼런스 논문 요약", "papers.html"),
             "oes": ("식각 화학 조합 · OES 파장 (보완 조합)", "oes_etch_chemistry.html")}
     DEC = {"adopt": ("채택", "ok"), "conditional": ("조건부 채택", "cond"), "hold": ("보류", "hold"), "reject": ("제외", "rej")}
@@ -189,7 +190,7 @@ def build_claims():
 <div class="wrap">
   <h1>핵심 주장 검증 현황</h1>
   <p class="sub"><a href="../index.html">← 목차</a> · <a href="semi_research_system.html">리서치 검증 체계</a></p>
-  <p>초기 결과물(A20 보고서, 지식 그래프)에서 결론을 좌우하는 수치·날짜·비교 주장, 출처를 다시 검토하거나 새로 넣은 그래프 노드(HKMG 게이트, HCB 하이브리드 Cu 본딩, APC·피드포워드 제어, RMG 대체 금속 게이트 등)의 설명 주장, OES 보완 조합(막질×기체)의 출처 문장, 레퍼런스 논문 요약의 핵심 문장 {len(claims)}개를, 작성 과정을 모르는 검증 에이전트가 원문과 다시 대조했다. 채택 여부는 규칙(gate)이 정한다.</p>
+  <p>초기 결과물(A20 보고서, 지식 그래프)에서 결론을 좌우하는 수치·날짜·비교 주장, 출처를 다시 검토하거나 새로 넣은 그래프 노드(HKMG 게이트, HCB 하이브리드 Cu 본딩, APC·피드포워드 제어, RMG 대체 금속 게이트 등)의 설명 주장, 식각 공정 기초 페이지의 주장, OES 보완 조합(막질×기체)의 출처 문장, 레퍼런스 논문 요약의 핵심 문장 {len(claims)}개를, 작성 과정을 모르는 검증 에이전트가 원문과 다시 대조했다. 채택 여부는 규칙(gate)이 정한다.</p>
   <div class="grid">
     <div class="kpi"><b>{len(claims)}</b><span>검증한 주장</span></div>
     <div class="kpi"><b>{n["adopt"]}</b><span>채택</span></div>

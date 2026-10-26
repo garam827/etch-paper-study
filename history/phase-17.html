@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>17단계 · 식각 공정 기초 보충</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>17단계 · 식각 공정 기초 보충</h1>
+    <p class="phase-desc">항목 #61 · 2026-10-26 22:27 ~ 23:05 · 플라즈마 물리 노트와 공정 리서치 사이를 잇는 공정 수준 기초(지표·레시피 단계·패턴 의존성·프로파일 결함·고종횡비·깊은 Si 식각)를 근거와 함께 보충한다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-16.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><a href="phase-14.html">14. OES 지식 구조화</a><a href="phase-15.html">15. 챔버 conditioning·aging OES</a><a href="phase-16.html">16. RMG(대체 금속 게이트) 공정 리서치</a><span class="cur" aria-current="page">17. 식각 공정 기초 보충</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #61 ===== -->
+    <article class="entry" id="e61">
+      <div class="entry-head">
+        <span class="no">#61</span>
+        <h2>식각 공정 기초 보충 — 지표·패턴 의존성·프로파일 결함 페이지</h2>
+        <time>2026-10-26 22:27</time>
+      </div>
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>완료되면,
+
+식각 공정에 대한 기초 내용 보충할 거 있으면 해줘.
+
+그리고 web에서 전체 구성 개선할 것 있는지도 검토해줘.</blockquote>
+        <p>(#60 작업 중에 받은 지시다. 두 번째 문장인 사이트 전체 구성 검토는 다음 항목 #62에 기록한다.)</p>
+      </section>
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>기초 원리 쪽에는 Lieberman 교과서 노트(플라즈마 물리 중심, 49절)와 질의응답 해설이 있다. 사이트와 그래프를 검색해 보니, 공정 엔지니어가 결과를 재고 문제를 진단할 때 쓰는 기초가 거의 없었다.
+            <ul>
+              <li>ARDE·RIE lag, 마이크로트렌치, 트위스팅: 0건.</li>
+              <li>보잉·Bosch·극저온 식각: 다른 노드 설명에 한두 번 언급되는 정도.</li>
+              <li>식각 지표의 정의, 레시피 단계 구조: 정리된 곳이 없음.</li>
+            </ul>
+          </li>
+          <li>보충할 것: 식각 지표 정의, 레시피 단계(브레이크스루 → 메인 → 오버 에치), 로딩·마이크로로딩·ARDE·역 RIE lag, 프로파일 결함(언더컷·네킹·보잉·노칭·마이크로트렌치·트위스팅), 고종횡비 식각, Bosch·극저온 식각.</li>
+        </ul>
+      </section>
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>22:27</time> 기존 내용을 점검했다. 그래프 노드 274개와 원리 노트 49절에서 위 용어를 검색했다.</li>
+          <li><time>22:28</time> 자문.
+            <ul>
+              <li><b>astra(high, 백그라운드)</b>: 위 7개 주제의 출처와 근거 범위를 물었다.</li>
+              <li><b>jev</b>
+                <ul>
+                  <li>형태: "새 학습 페이지를 기초 원리 섹션에 만들고 핵심 용어는 그래프 노드로도 추가"(1.0).</li>
+                  <li>순서: "기초 보충 먼저, 그 다음 구성 검토"(0.89).</li>
+                  <li>구성 검토의 기록 단계: "11단계에 이어 붙임"(0.89).</li>
+                  <li>기초 보충의 기록 단계: 판단이 거의 갈렸다(16단계 0.44, 8단계·새 단계 각 0.28, 신뢰도 0.16). 16단계는 'RMG 공정 리서치'라 내용과 맞지 않아, 새 17단계를 만들었다. jev의 최다 답을 따르지 않은 판단이다.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><time>22:30</time> OpenAlex로 피인용이 많은 고전 문헌을 찾아 초록을 읽었다.
+            <ul>
+              <li>ARDE: Gottscho 1992. 역 RIE lag: Doemling 1996.</li>
+              <li>노칭: Kinoshita 1996, Hwang·Giapis 1997. 마이크로트렌치: Dalton 1993.</li>
+              <li>네킹·보잉: Lee 2010, Miyake 2009. 트위스팅: Wang·Kushner 2010.</li>
+              <li>HAR 식각: Huang 2019·2020. 극저온 식각: Tachi 1988.</li>
+              <li>균일도 구분: Lee·Kanarik·Gottscho 2014.</li>
+            </ul>
+          </li>
+          <li><time>22:36</time> 장부 <code>ledger/etch_basics.json</code>(비공개)에 1차 주장 15개(E01–E15)를 적었다. lint 오류 0, DOI 12개 실재. 검증자 3개의 결과는 채택 12, 조건부 3이었다.
+            <ul>
+              <li>E04: 초록에 없는 '주로'·해석이 섞였다는 지적을 받았다.</li>
+              <li>E07: 이온 산란과 홈의 인과를 원문보다 강하게 썼다(원문은 상관)는 지적을 받았다.</li>
+              <li>E08: 보잉의 다른 요인과 발생 시점이 빠졌다는 지적을 받았다.</li>
+            </ul>
+            세 주장을 고쳐 재검증했고 모두 채택됐다. E04를 고칠 때 출처 없는 다른 모델 이야기를 넣었다가, 장부에 근거가 없어 검증 전에 뺐다.</li>
+          <li><time>22:40</time> 깊은 Si 식각 주장 3개(E16–E18)를 넣었다: Bosch 특허 원문, 극저온 식각 리뷰, Bosch·극저온 메타렌즈 비교.
+            <ul>
+              <li>E16: 검증자가 독립 출처 2곳을 더 찾아 채택됐다.</li>
+              <li>E18: 원문 결론("거칠기는 어느 정도 허용, 효율 적정")을 빠뜨려 부정적 뉘앙스가 됐다는 지적을 받았다. 고친 뒤 채택됐다.</li>
+            </ul>
+          </li>
+          <li><time>22:44</time> astra 결과를 받아 주장 8개(E19–E26)를 추가했다: 균일도 식, 레시피 단계, 이방성 정의, 바이어스에 따른 정상·역 lag 전환, 정상 RIE lag 예, 마이크로로딩 실험, Bosch 스캘럽, HAR 리뷰.
+            <ul>
+              <li>Donnelly·Kornblit 리뷰 본문을 근거로 한 2개(E19 균일도 식, E20 레시피 단계)는 검증자가 본문을 열지 못해 보류됐다. 작성자가 받은 PDF 문장을 넘기면 독립 검증이 아니게 되므로 넘기지 않았다. 페이지에서는 이 두 내용을 '일반 정의'로만 표시했다.</li>
+              <li>E25: 스캘럽 경향의 실험 근거가 Bosch가 아니라 STiGer 실험이라는 지적을 받았다. 조건부로 남기고, 페이지 문장에 그 조건을 그대로 적었다.</li>
+              <li>E26: 논문 성격(원자 수준 공정 리뷰의 한 절)과 위치 표기를 고쳐 채택됐다.</li>
+            </ul>
+          </li>
+          <li><time>22:47</time> 최종 gate: 주장 26개 — <b>채택 23, 조건부 1, 보류 2</b>.</li>
+          <li><time>22:30–22:55</time> 새 페이지 <code>research/etch_process_basics.html</code>를 썼다.
+            <ul>
+              <li>7개 장과 그림 4개(레시피 단계·종말점, ARDE와 마이크로로딩, 프로파일 결함 6종 단면, Bosch와 극저온 비교)로 구성했다.</li>
+              <li>각 문장 옆에 주장 ID를 달아 검증 현황으로 연결했다. 검증되지 않은 일반 정의에는 '일반 정의' 표시를 붙였다.</li>
+              <li>렌더링 확인 중 그림 5개에서 마스크 개구부가 회색으로 남은 것을 고쳤다.</li>
+              <li>주장 범위를 넘는 문장 2개를 지웠다. 하나는 역 lag의 증착 해석이고, 다른 하나는 E03에 없는 비용 이야기다.</li>
+            </ul>
+          </li>
+          <li><time>22:48</time> 그 밖의 반영.
+            <ul>
+              <li>인용 논문·특허 21편의 요약을 썼다. 검증 결과 18편은 바로 채택됐고, 조건이 빠진 3편(Tachi·Baracu·Westerheim)은 조건을 넣어 재검증한 뒤 채택됐다.</li>
+              <li>그래프에 노드 8개를 추가했다: ARDE, 역 RIE lag, 마이크로트렌치, 보잉·네킹, 트위스팅·기울어짐, Bosch 공정, 극저온 식각, 오버 에치.</li>
+              <li>로딩 효과·노칭 노드를 보강하고 관계 16개를 추가했다.</li>
+              <li>목차의 기초 원리 섹션과 학습 경로 1단계("플라즈마 원리 · 식각 기초")에 페이지를 넣었다. 검증 현황에는 "식각 공정 기초" 묶음을 새로 만들었다.</li>
+            </ul>
+          </li>
+          <li><time>22:55</time> build 결과: 그래프 노드 282개·관계 609개, 논문 요약 166편, 검증 현황 356개(채택 287·조건부 63·보류 6). <code>--check</code>, 링크(35쪽 0건), 요약 연결, OES 그래프 검사 모두 통과.</li>
+        </ol>
+      </section>
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 플라즈마 물리 노트와 공정 리서치 사이를 잇는 <b>식각 공정 기초</b> 페이지를 만들었다. 다음을 근거와 함께 한 곳에 모았다.</p>
+        <ul>
+          <li>식각을 어떻게 재는가: 지표.</li>
+          <li>왜 패턴마다 다르게 깎이는가: 로딩, 마이크로로딩, ARDE, 역 lag.</li>
+          <li>어떤 모양으로 틀어지는가: 프로파일 결함 도감.</li>
+          <li>깊게 팔 때의 과제: 고종횡비 식각, Bosch·극저온 식각.</li>
+        </ul>
+        <p><b>남은 한계</b></p>
+        <ul>
+          <li>근거는 대부분 초록 수준이다.</li>
+          <li>균일도 계산식과 레시피 단계 구조는 공개 원문 근거를 독립 검증하지 못해 '일반 정의'로만 실었다.</li>
+          <li>푸팅은 문헌마다 뜻이 달라(노칭과 같은 뜻으로 쓰는 예가 있음) 별도 결함으로 넣지 않았다.</li>
+        </ul>
+        <p><a href="../research/etch_process_basics.html">식각 공정 기초 열기 →</a> · <a href="../research/a20_etch_knowledge_graph.html#i_arde">그래프 ARDE 노드 →</a> · <a href="../research/claims_status.html#E01">검증 현황(E01–E26)</a></p>
+        <p>페이지 첫 화면(지표·레시피 단계):</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261026_225340_basics_top.png" alt="식각 공정 기초 페이지 첫 화면: 읽는 법, 목차, 식각 지표 정의">
+        <p>3장 패턴 의존성과 4장 프로파일 결함 도감(캡처용 사본에서 두 장만 표시):</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261026_225340_basics_pattern_profile.png" alt="ARDE·마이크로로딩 그림과 설명 카드, 프로파일 결함 여섯 가지 단면과 원인 표">
+        <p>그래프의 새 ARDE 노드:</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261026_225340_basics_arde_node.png" alt="식각 지식 그래프의 종횡비 의존 식각(ARDE·RIE lag) 노드와 연결">
+      </section>
+    </article>
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-16.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><a href="phase-14.html">14. OES 지식 구조화</a><a href="phase-15.html">15. 챔버 conditioning·aging OES</a><a href="phase-16.html">16. RMG(대체 금속 게이트) 공정 리서치</a><span class="cur" aria-current="page">17. 식각 공정 기초 보충</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>
