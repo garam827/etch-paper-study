@@ -2413,6 +2413,546 @@
    "use": "OES 지식 그래프의 챔버 conditioning·시즈닝·aging 축(#59).",
    "claim": "Tokyo Electron 특허 US12032355B2는 시즈닝 반복 중 가상계측(VM)으로 예측한 제품 변수(예: CD)가 안정되는 것을 시즈닝 완료 기준으로 정의하며, OES를 모델 입력으로 쓸 수 있다.",
    "url": "https://patents.google.com/patent/US12032355B2/en"
+  },
+  {
+   "id": "hwang2012",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A Hybrid Dry-Wet Approach for Removal of a Dummy Polysilicon Gate in a Replacement Metal Gate Scheme",
+   "authors": "G. Y. Hwang 외",
+   "year": 2012,
+   "venue": "Solid State Phenomena 187, 57",
+   "doi": "10.4028/www.scientific.net/ssp.187.57",
+   "match": [
+    "10.4028/www.scientific.net/ssp.187.57"
+   ],
+   "summary": "대체 금속 게이트(RMG)에서 더미 폴리 Si 게이트를 제거하는 방법으로 건식과 습식을 섞은 방식을 다룬다. 배경으로, 45nm부터 HKMG가 도입되었고 2012년 시점에 업계 대부분이 더미 게이트를 나중에 금속으로 바꾸는 게이트 라스트로 모였다고 정리한다.",
+   "points": [
+    "더미 폴리 제거에는 플라즈마 건식과 액상 습식이 쓰인다.",
+    "초록 기준 요약(본문 수치 미확인)."
+   ],
+   "use": "그래프 RMG 공정·더미 게이트 제거 노드의 근거(#60).",
+   "claim": "Hwang 외(2012)는 2012년 시점 업계 대부분이 게이트 라스트로 모였고, 더미 폴리 제거에 플라즈마 건식과 습식 식각이 쓰인다고 서술했다."
+  },
+  {
+   "id": "kim2016",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Metal Flake Defect and Its Formation Mechanism during Replacement Metal Gate CMP Process",
+   "authors": "H. J. Kim 외",
+   "year": 2016,
+   "venue": "ECS J. Solid State Sci. Technol. 5",
+   "doi": "10.1149/2.0311610jss",
+   "match": [
+    "10.1149/2.0311610jss"
+   ],
+   "summary": "RMG 형성에 들어가는 CMP 세 단계(게이트 폴리 CMP, 폴리 오픈 CMP, 금속 게이트 CMP)와 금속 게이트 CMP 후 금속 플레이크 결함의 생성 원인을 다룬다.",
+   "points": [
+    "RMG는 게이트 식각·열 공정 손상을 피하고 일함수 물질을 안정하게 유지한다는 장점을 든다.",
+    "세 CMP 단계의 상호작용이 웨이퍼 전체 게이트 높이 균일도를 정한다.",
+    "금속 플레이크는 게이트 누설 경로를 만드는 가장 심각한 결함이다."
+   ],
+   "use": "그래프 폴리 오픈 CMP·금속 게이트 CMP·금속 플레이크 노드의 근거(#60).",
+   "claim": "Kim 외(2016)는 RMG 형성에 CMP 세 단계가 관여하고, 금속 게이트 CMP 후 금속 플레이크가 게이트 누설을 일으키는 가장 심각한 결함이라고 보고했다."
+  },
+  {
+   "id": "dysard2010",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "CMP Solutions for the Integration of High-K Metal Gate Technologies",
+   "authors": "J. M. Dysard 외",
+   "year": 2010,
+   "venue": "ECS Trans. 33(10)",
+   "doi": "10.1149/1.3489048",
+   "match": [
+    "10.1149/1.3489048"
+   ],
+   "summary": "대체 게이트 방식 HKMG에 필요한 새 CMP 단계와 슬러리(폴리 오픈 연마, Al CMP, 개선된 W CMP)를 소개한다. 저자는 슬러리 회사 소속이다.",
+   "points": [
+    "평탄도와 결함 요구가 까다로워 새 슬러리가 필요하다고 설명한다.",
+    "회사 저자의 기술 소개다."
+   ],
+   "use": "그래프 폴리 오픈 CMP·금속 게이트 CMP 노드의 근거(#60).",
+   "claim": "Dysard 외(2010)는 대체 게이트 HKMG에 폴리 오픈 연마, Al CMP, 개선된 W CMP 같은 새 CMP 단계와 슬러리가 필요하다고 보고했다."
+  },
+  {
+   "id": "suhard2011",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Development of a Wet Silicon Removal Process for Replacement Metal Gate and Sacrificial Fin",
+   "authors": "S. Suhard 외 (imec)",
+   "year": 2011,
+   "venue": "ECS Trans. 41(5)",
+   "doi": "10.1149/1.3630826",
+   "match": [
+    "10.1149/1.3630826"
+   ],
+   "summary": "RMG 게이트 라스트 흐름에서 폴리 Si를 TMAH로 선택 제거하는 공정 개발. 폴리 잔류가 전혀 허용되지 않아 온도 70°C, 농도 5%로 조건을 맞추고 잔류 원인을 조사했다.",
+   "points": [
+    "잔류 원인 후보: 붕소 주입 조건, 아래 막(SiON·SiO2·TiN)이 폴리 결정 방향에 주는 영향.",
+    "TiN 위 비정질 Si 제거(희생 핀)에서는 건식보다 TiN에 대한 선택성이 좋았다."
+   ],
+   "use": "그래프 더미 게이트 제거·더미 폴리 잔류 노드의 근거(#60).",
+   "claim": "Suhard 외(2011)는 RMG의 폴리 Si 제거용 TMAH 공정을 70°C·5% 조건으로 개발했고, 이 용도에서는 폴리 잔류가 허용되지 않는다고 보고했다."
+  },
+  {
+   "id": "young2011",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Dummy Poly Silicon Gate Removal by Wet Chemical Etching",
+   "authors": "T. Young 외",
+   "year": 2011,
+   "venue": "ECS Trans. 34(1), 361",
+   "doi": "10.1149/1.3567604",
+   "match": [
+    "10.1149/1.3567604"
+   ],
+   "summary": "게이트 라스트(high-k first·high-k last 모두)에서 필수인 더미 폴리 Si 게이트 제거를 TMAH 습식 식각으로 한 예비 실험. 제거 속도가 습식 조건에 매우 민감했다.",
+   "points": [
+    "최적화 조건에서 SiO2·Si3N4·HfSiON 대비 높은 선택비를 얻었다.",
+    "CD 약 70nm 게이트 트렌치를 폴리 잔류 없이 만들었다."
+   ],
+   "use": "그래프 더미 게이트 제거 노드의 근거(#60).",
+   "claim": "Young 외(2011)는 TMAH 더미 폴리 제거에서 제거 속도가 조건에 민감했고, 최적화로 SiO2·Si3N4·HfSiON 대비 고선택비와 잔류 없는 약 70nm 트렌치를 얻었다고 보고했다."
+  },
+  {
+   "id": "ji2017",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Dummy Poly Gate Removal Scheme at FinFET",
+   "authors": "S. Ji 외 (SMIC)",
+   "year": 2017,
+   "venue": "ECS Trans. 75(33), 15",
+   "doi": "10.1149/07533.0015ecst",
+   "match": [
+    "10.1149/07533.0015ecst"
+   ],
+   "summary": "FinFET의 더미 폴리 게이트 제거 방식. n/p 영역 폴리를 동시에 제거하며, 보통은 플라즈마 손상을 줄이려 일부 건식·일부 습식으로 한다. 이 논문은 핀 상부·채널 손상을 피하는 약한 전건식 제거를 제시한다.",
+   "points": [
+    "14nm 이후 식각 공정의 새 과제로 더미 게이트 제거를 든다.",
+    "회사 연구진의 공정 소개(초록 기준)."
+   ],
+   "use": "그래프 더미 게이트 제거 노드의 근거(#60).",
+   "claim": "Ji 외(2017)는 FinFET에서 n/p 더미 폴리를 동시에 제거하고, 통상 부분 건식+부분 습식 대신 핀·채널 손상을 피하는 약한 전건식 제거를 제시했다."
+  },
+  {
+   "id": "ji2016",
+   "area": "device",
+   "kind": "학회 초록",
+   "basis": "초록",
+   "title": "Dummy Poly Gate Removal Scheme at Finfet (meeting abstract)",
+   "authors": "S. Ji 외 (SMIC)",
+   "year": 2016,
+   "venue": "ECS Meeting Abstracts MA2016-02, 1501",
+   "doi": "10.1149/ma2016-02/17/1501",
+   "match": [
+    "10.1149/ma2016-02/17/1501"
+   ],
+   "summary": "같은 연구의 학회 초록. high-k first/게이트 라스트(더미 폴리 제거) 방식이 문턱전압을 더 잘 제어할 수 있어 널리 채택되었다고 배경을 설명한다.",
+   "points": [
+    "건식·습식 모두 폴리를 제거할 수 있지만 3D 구조에서는 각각 한계가 있다고 적는다."
+   ],
+   "use": "그래프 RMG 공정 노드의 근거(#60).",
+   "claim": "Ji 외(2016)는 high-k first/게이트 라스트 방식이 문턱전압을 더 잘 제어할 수 있어 널리 채택되었다고 서술했다."
+  },
+  {
+   "id": "togo2014",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Advanced RMG module to improve AC/DC performance for 14nm FinFETs and beyond",
+   "authors": "M. Togo 외 (GlobalFoundries)",
+   "year": 2014,
+   "venue": "Symp. VLSI Technology 2014",
+   "doi": "10.1109/vlsit.2014.6894392",
+   "match": [
+    "10.1109/vlsit.2014.6894392"
+   ],
+   "summary": "14nm FinFET용 RMG 모듈. STI 산화막 추가 리세스로 온 전류를 늘리고, W 선택 식각으로 일함수 금속을 리세스해 게이트–컨택 정전용량을 줄이며, 일함수 조정 처리로 다중 VT를 구현했다.",
+   "points": [
+    "게이트–컨택 간격이 늘어 AC 성능과 수율이 좋아졌다(회사 자체 보고).",
+    "일함수 조정 처리와 일함수 금속 최적화로 성능 손해 없이 넓은 VT 범위."
+   ],
+   "use": "그래프 게이트 금속 선택 제거·리세스 노드의 근거(#60).",
+   "claim": "Togo 외(2014)는 14nm FinFET RMG에서 W 선택 식각으로 일함수 금속을 리세스해 게이트–컨택 정전용량을 줄이고 AC 성능과 수율을 개선했다고 보고했다."
+  },
+  {
+   "id": "mennell2018",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Structural characterization of tantalum nitride films as wet etch stop layer in advanced multiwork function metal gate MOSFETs",
+   "authors": "P. Mennell 외",
+   "year": 2018,
+   "venue": "J. Vac. Sci. Technol. B 36",
+   "doi": "10.1116/1.5044633",
+   "match": [
+    "10.1116/1.5044633"
+   ],
+   "summary": "다중 일함수 금속 게이트 패터닝에서 TaN/TiN 이중층의 TaN을 습식 식각 정지층으로 쓰는 구조를 분석했다. TiN을 선택 습식 식각할 때 HfO2가 약액에 노출되어 손상·깎이는 것을 TaN이 막는다.",
+   "points": [
+    "트렌치 폭이 줄어 이중층을 얇게 유지해야 해 두께 모니터링이 어렵다.",
+    "XPS·HRTEM·X선 반사율로 오프라인·인라인 계측을 구성했다."
+   ],
+   "use": "그래프 TaN 식각 정지층 노드의 근거(#60).",
+   "claim": "Mennell 외(2018)는 다중 일함수 금속 게이트 패터닝에서 TiN 선택 습식 식각 때 TaN 식각 정지층이 HfO2의 약액 노출을 막는다고 설명했다."
+  },
+  {
+   "id": "ji2020",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "The Metal Gate Cut Process Development",
+   "authors": "S. Ji 외 (SMIC)",
+   "year": 2020,
+   "venue": "ECS Trans. 98(3), 107",
+   "doi": "10.1149/09803.0107ecst",
+   "match": [
+    "10.1149/09803.0107ecst"
+   ],
+   "summary": "FinFET 7nm 이후의 금속 게이트 컷(MGC) 공정 개발. SiP/SiGe 에피 성장 환경을 좋게 하고 수율·전기 성능을 높일 수 있어 널리 채택될 것으로 본다(저자 전망).",
+   "points": [
+    "리소그래피 한계를 넘기 위해 CD를 크게 줄이는 식각이 필요하다."
+   ],
+   "use": "그래프 금속 게이트 컷 노드의 근거(#60).",
+   "claim": "Ji 외(2020)는 금속 게이트 컷이 에피 성장 환경·수율·성능 면에서 유리해 7nm 이후 널리 채택될 것으로 보고, CD를 크게 줄이는 식각이 필요하다고 보고했다."
+  },
+  {
+   "id": "han2017",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Effect of Reactive Ion Etch on the Polishing Selectivity during Silicon Nitride Chemical Mechanical Polishing for Sub-10 nm Logic Device",
+   "authors": "J.-H. Han 외 (GlobalFoundries)",
+   "year": 2017,
+   "venue": "ECS J. Solid State Sci. Technol. 6",
+   "doi": "10.1149/2.0021704jss",
+   "match": [
+    "10.1149/2.0021704jss"
+   ],
+   "summary": "sub-10nm 로직 RMG에서 자기정렬 컨택(SAC)용 SiN 캡을 금속 게이트 위에 만드는 SiN CMP. 블랭킷 웨이퍼에서 SiN:산화막 선택비 30:1 이상이던 슬러리가 패턴 웨이퍼에서는 3:1 미만이었다.",
+   "points": [
+    "선택비 저하의 원인으로 앞선 반응성 이온 식각(RIE)이 산화막을 바꾼 영향을 분석한다."
+   ],
+   "use": "그래프 게이트 금속 선택 제거·리세스(SAC 캡) 노드의 근거(#60).",
+   "claim": "Han 외(2017)는 RMG의 SiN 캡 CMP에서 SiN:산화막 선택비가 블랭킷 웨이퍼 30:1 이상, 패턴 웨이퍼 3:1 미만이었다고 보고했다."
+  },
+  {
+   "id": "veloso2014",
+   "area": "device",
+   "kind": "학회 논문(초청)",
+   "basis": "초록",
+   "title": "Replacement Metal Gate/High-k Last Technology for Aggressively Scaled Planar and FinFET-Based Devices",
+   "authors": "A. Veloso 외 (imec)",
+   "year": 2014,
+   "venue": "ECS Trans. 61(2), 225",
+   "doi": "10.1149/06102.0225ecst",
+   "match": [
+    "10.1149/06102.0225ecst"
+   ],
+   "summary": "RMG·high-k last 평면·FinFET 소자. 게이트 스택 안의 확산을 제어하는 일함수 조절로 좁은 핀(W_fin≥5nm) 3중 게이트 FinFET에서 500mV 넘는 ΔVT를 EOT·누설 손해 없이 얻었다.",
+   "points": [
+    "이동도·신뢰성·잡음·기생 게이트 저항 개선도 보고한다.",
+    "high-k 증착 후 열처리·SF6 플라즈마 처리 영향을 평가했다."
+   ],
+   "use": "그래프 RMG 공정 노드(high-k last)의 근거(#60).",
+   "claim": "Veloso 외(2014)는 RMG·high-k last FinFET에서 확산 제어 일함수 조절로 500mV 넘는 ΔVT를 EOT·누설 손해 없이 얻었다고 보고했다."
+  },
+  {
+   "id": "yamaguchi2018",
+   "area": "device",
+   "kind": "박사논문",
+   "basis": "초록",
+   "title": "Threshold voltage control technology in metal/high-k pFET consisting of high germanium content SiGe channel and fixed charge/oxygen vacancy control in gate stack",
+   "authors": "S. Yamaguchi (도쿄공대)",
+   "year": 2018,
+   "venue": "도쿄공업대학 박사논문",
+   "url": "http://t2r2.star.titech.ac.jp/cgi-bin/publicationinfo.cgi?q_publication_content_number=CTT100770128",
+   "match": [
+    "CTT100770128"
+   ],
+   "summary": "고 Ge SiGe 채널 pFET의 문턱전압 제어 연구. 배경으로, 게이트 퍼스트에서는 활성화 어닐의 높은 열 예산 때문에 pFET 실효 일함수가 미드갭 쪽으로 이동해 낮은 VT를 얻기 어렵고, 게이트 라스트(RMG)는 고온 처리 뒤 스택을 만들어 이를 피한다고 설명한다.",
+   "points": [
+    "게이트 퍼스트와 게이트 라스트의 차이를 열 예산 관점에서 설명하는 배경 서술."
+   ],
+   "use": "그래프 RMG 공정 노드(게이트 퍼스트 비교)의 근거(#60).",
+   "claim": "Yamaguchi(2018)는 게이트 퍼스트에서는 활성화 어닐 열 예산 때문에 pFET 실효 일함수가 미드갭 쪽으로 이동하고, 게이트 라스트는 이를 피한다고 설명했다."
+  },
+  {
+   "id": "koo2024",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Abnormal Silicon Etching Behaviors in Nanometer-Sized Channels",
+   "authors": "K. Koo 외 (KAIST)",
+   "year": 2024,
+   "venue": "Nano Letters 24",
+   "doi": "10.1021/acs.nanolett.4c00326",
+   "match": [
+    "10.1021/acs.nanolett.4c00326"
+   ],
+   "summary": "수 nm 폭 공간에서 더미 게이트 Si를 TMAH로 습식 식각할 때 일어나는 현상을 액상 TEM, 3차원 전자 토모그래피, 제1원리 계산으로 직접 관찰했다.",
+   "points": [
+    "반응 억제, 벗겨지지 않음(unstripping), 확률적 식각처럼 거시 규모에서 보이지 않던 거동을 보고한다.",
+    "기존 가설(전기 이중층, 기포 갇힘, 젖음성, 불용성 중간체 석출)을 배경으로 든다."
+   ],
+   "use": "그래프 더미 게이트 제거·더미 폴리 잔류 노드의 근거(#60).",
+   "claim": "Koo 외(2024)는 나노 규모 TMAH Si 식각에서 반응 억제, unstripping, 확률적 식각 같은 거시 규모와 다른 거동을 직접 관찰했다고 보고했다."
+  },
+  {
+   "id": "nguyen2024",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Nonhalogen Dry Etching of Metal Carbide TiAlC by Low-Pressure N2/H2 Plasma at Room Temperature",
+   "authors": "T.-T.-N. Nguyen 외 (나고야대·Hitachi High-Tech)",
+   "year": 2024,
+   "venue": "ACS Appl. Mater. Interfaces",
+   "doi": "10.1021/acsami.4c11025",
+   "match": [
+    "10.1021/acsami.4c11025"
+   ],
+   "summary": "금속 게이트 재료로 제안된 TiAlC(부산물 휘발성이 낮아 식각이 어려움)를 할로젠 없이 N2/H2 용량결합 플라즈마(수 Pa, 20°C)로 3 nm/min 식각했다. 순수 N2나 순수 H2로는 식각되지 않았다.",
+   "points": [
+    "식각 후 표면 거칠기 0.40 nm rms(초기 0.44 nm).",
+    "OES로 NH 336 nm 선을 확인했고, 메틸화·아민화 금속 같은 휘발성 생성물 경로를 제안한다."
+   ],
+   "use": "그래프 TiAlC 노드의 근거(#60).",
+   "claim": "Nguyen 외(2024)는 TiAlC를 수 Pa·20°C N2/H2 플라즈마로 3 nm/min 식각했고 순수 N2·H2로는 식각되지 않았다고 보고했다."
+  },
+  {
+   "id": "nguyen2025",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Selective dry etching of TiAlC over TiN using nonhalogen N2/H2 plasma",
+   "authors": "T.-T.-N. Nguyen 외 (나고야대·Hitachi High-Tech)",
+   "year": 2025,
+   "venue": "Appl. Surf. Sci.",
+   "doi": "10.1016/j.apsusc.2025.162665",
+   "match": [
+    "10.1016/j.apsusc.2025.162665"
+   ],
+   "summary": "일함수 금속으로 쓰이는 TiAlC와 TiN 사이의 첫 선택 건식 식각 보고. N2/H2 플라즈마에서 기판 온도가 높을수록(최대 50°C), 바이어스 전력이 낮을수록 선택비가 높았다.",
+   "points": [
+    "바이어스가 낮아 화학 식각이 우세한 영역에서 공정 창을 찾았다.",
+    "TiAlC 쪽 개질층(C–N·N–H 결합)이 TiN 쪽보다 휘발성이 높다는 메커니즘을 제안한다."
+   ],
+   "use": "그래프 TiAlC·게이트 금속 선택 제거 노드의 근거(#60).",
+   "claim": "Nguyen 외(2025)는 N2/H2 플라즈마로 TiN 대비 TiAlC를 선택 식각했고, 높은 기판 온도·낮은 바이어스에서 선택비가 높았다고 보고했다."
+  },
+  {
+   "id": "chen2008",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A cost effective 32nm high-K/metal gate CMOS technology for low power applications with single-metal/gate-first process",
+   "authors": "X. Chen 외 (IBM 제휴: Freescale·Chartered·Infineon·Samsung)",
+   "year": 2008,
+   "venue": "Symp. VLSI Technology 2008",
+   "doi": "10.1109/VLSIT.2008.4588573",
+   "match": [
+    "10.1109/vlsit.2008.4588573"
+   ],
+   "summary": "IBM 제휴 연구진의 32nm HKMG 저전력 CMOS 플랫폼. 단일 금속·게이트 퍼스트 공정으로 비용을 낮췄다고 소개한다. 0.157 µm² SRAM 셀, 1 nA/µm 누설·1.1 V에서 NMOS/PMOS 구동 전류 1000/575 µA/µm.",
+   "points": [
+    "SiON·폴리 대비 링 오실레이터 지연 30% 감소, Tinv 축소로 Vt 불일치 40% 감소를 보고한다.",
+    "발표 자체는 양산 근거가 아니다(회사 공동 연구 보고)."
+   ],
+   "use": "그래프 RMG 공정 노드(게이트 퍼스트 비교)의 근거(#60).",
+   "claim": "Chen 외(2008)는 단일 금속·게이트 퍼스트 공정의 저비용 32nm HKMG 저전력 CMOS 기술을 발표했다."
+  },
+  {
+   "id": "packan2009",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "High performance 32nm logic technology featuring 2nd generation high-k + metal gate transistors",
+   "authors": "P. Packan 외 (Intel)",
+   "year": 2009,
+   "venue": "IEEE IEDM 2009",
+   "doi": "10.1109/IEDM.2009.5424253",
+   "match": [
+    "10.1109/iedm.2009.5424253"
+   ],
+   "summary": "Intel 32nm 고성능 로직 공정. 2세대 HKMG 트랜지스터가 32·28nm 공정 중 가장 좁은 게이트 피치에서 기록적인 구동 전류를 낸다고 보고한다(1.0 V, 100 nA/µm 누설에서 NMOS Idsat 1.62 mA/µm, PMOS 1.37 mA/µm).",
+   "points": [
+    "SRAM 셀·어레이 크기가 Vccmin에 주는 영향도 보고한다.",
+    "초록은 high-k 형성 순서(first/last)를 말하지 않는다."
+   ],
+   "use": "그래프 RMG 공정 노드(Intel 32nm 2세대 HKMG)의 근거(#60).",
+   "claim": "Packan 외(2009)는 Intel 32nm 로직의 2세대 HKMG 트랜지스터가 1.0 V·누설 100 nA/µm에서 NMOS 1.62 mA/µm, PMOS 1.37 mA/µm Idsat을 낸다고 보고했다."
+  },
+  {
+   "id": "shin2022",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Study on wet etching of dummy polysilicon in narrow pattern gap using alkaline solution",
+   "authors": "Shin 외 (성균관대)",
+   "year": 2022,
+   "venue": "Mater. Sci. Semicond. Process. 143, 106561",
+   "doi": "10.1016/j.mssp.2022.106561",
+   "match": [
+    "10.1016/j.mssp.2022.106561"
+   ],
+   "summary": "좁은 패턴 간격의 더미 폴리 Si를 알칼리 용액으로 습식 식각하는 연구. 6 wt%·70°C·100 rpm 조건에서 폴리 Si 식각 속도가 TMAH 1,744 Å/min, NH4OH 217 Å/min였다.",
+   "points": [
+    "첨가제를 넣으면 폴리 Si 식각 속도는 23%, SiO2 식각 속도는 43% 줄어 선택비 쪽으로 유리해진다.",
+    "시험 구조와 100 rpm의 의미는 초록으로 확인되지 않는다."
+   ],
+   "use": "그래프 더미 게이트 제거 노드의 근거(#60).",
+   "claim": "Shin 외(2022)는 6 wt%·70°C·100 rpm에서 폴리 Si 식각 속도가 TMAH 1,744 Å/min, NH4OH 217 Å/min였고, 첨가제를 넣으면 폴리 Si 식각 속도가 23%, SiO2 식각 속도가 43% 줄었다고 보고했다."
+  },
+  {
+   "id": "cui2013",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Evaluation of TaN as the Wet Etch Stop Layer during the 22nm HKMG Gate Last CMOS Integrations",
+   "authors": "Cui 외",
+   "year": 2013,
+   "venue": "ECS Trans. 58(6), 111",
+   "doi": "10.1149/05806.0111ecst",
+   "match": [
+    "10.1149/05806.0111ecst"
+   ],
+   "summary": "22nm HKMG 게이트 라스트 통합에서 PVD·ALD TaN을 습식 식각 정지층으로 평가. APM(암모니아·과산화수소 혼합액)으로 TiN·Ti를 제거할 때 TaN 대비 선택비가 최소 5.6이었다.",
+   "points": [
+    "PVD TaN은 막 속 질소 함량이 내약품성을 크게 좌우한다.",
+    "TiN·Ti와 함께 있으면 TaN 두께 손실이 커진다. nMOS 쪽에서는 ALD TaN이 1 nm를 넘지 않아야 한다(MOS 커패시터 C–V)."
+   ],
+   "use": "그래프 TaN 식각 정지층 노드의 근거(#60).",
+   "claim": "Cui 외(2013)는 22nm HKMG 게이트 라스트에서 APM으로 TiN·Ti를 제거할 때 TaN 식각 정지층 대비 선택비가 최소 5.6이었다고 보고했다."
+  },
+  {
+   "id": "xu2010",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "High K Metal Gate Aluminum CMP Challenges and Solutions",
+   "authors": "Xu 외 (Applied Materials)",
+   "year": 2010,
+   "venue": "ECS Trans. 33(10), 69",
+   "doi": "10.1149/1.3489047",
+   "match": [
+    "10.1149/1.3489047"
+   ],
+   "summary": "RMG Al CMP에서 게이트 높이를 정밀하고 균일하게 맞추는 것이 첫째 과제라고 보고, 실시간 프로파일 제어와 레이저 종말점 검출을 결합해 웨이퍼 내·웨이퍼 간 게이트 높이 균일도 요구를 맞췄다.",
+   "points": [
+    "소모품 선택과 공정 최적화로 결함을 20배 줄였다고 보고한다(회사 자체 보고)."
+   ],
+   "use": "그래프 금속 게이트 CMP 노드의 근거(#60).",
+   "claim": "Xu 외(2010)는 RMG Al CMP에서 실시간 프로파일 제어와 레이저 종말점을 결합해 게이트 높이 균일도 요구를 맞췄다고 보고했다."
+  },
+  {
+   "id": "shinoda2019",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Rapid thermal-cyclic atomic-layer etching of titanium nitride in CHF3/O2 downstream plasma",
+   "authors": "K. Shinoda 외 (Hitachi 등)",
+   "year": 2019,
+   "venue": "J. Phys. D 52, 475106",
+   "doi": "10.1088/1361-6463/ab3cf3",
+   "match": [
+    "10.1088/1361-6463/ab3cf3"
+   ],
+   "summary": "300 mm 장치에서 CHF3/O2 다운스트림 플라즈마로 표면을 개질하고 적외선 가열로 탈착하는 TiN 등방성 원자층 식각. 사이클당 식각량은 약 0.6 nm에서 포화했다.",
+   "points": [
+    "개질층은 (NH4)xTiFy 같은 암모늄염으로 잠정 판단했고, 110°C 가열 후 사라짐을 XPS로 확인했다.",
+    "같은 방식이 Si3N4 등방성 ALE에도 쓰였다."
+   ],
+   "use": "그래프 게이트 금속 선택 제거·리세스 노드의 근거(#60).",
+   "claim": "Shinoda 외(2019)는 CHF3/O2 다운스트림 플라즈마와 적외선 가열로 TiN 등방성 ALE를 하여 사이클당 약 0.6 nm 포화를 보였다."
+  },
+  {
+   "id": "shinoda2022",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Plasma-assisted thermal-cyclic atomic-layer etching of tungsten and control of its selectivity to titanium nitride",
+   "authors": "K. Shinoda 외 (Hitachi 등)",
+   "year": 2022,
+   "venue": "J. Vac. Sci. Technol. B 40",
+   "doi": "10.1116/6.0001660",
+   "match": [
+    "10.1116/6.0001660"
+   ],
+   "summary": "W 원자층 식각에서 적외선 가열 시간을 바꿔 TiN에 대한 선택성을 '매우 선택적'과 '비선택적' 사이에서 조절했다. −22°C 라디칼 노출로 WFx 계열 개질층을 만들고, 이것이 TiN 개질층보다 낮은 온도에서 휘발한다.",
+   "points": [
+    "CH2F2/O2/Ar 플라즈마와 적외선 가열의 순환 식각(300 mm 장치)에서 가열이 짧으면 W만, 길면 W와 TiN을 함께 식각했다."
+   ],
+   "use": "그래프 게이트 금속 선택 제거·리세스 노드의 근거(#60).",
+   "claim": "Shinoda 외(2022)는 W 원자층 식각에서 적외선 가열 시간을 바꿔 TiN 대비 선택적·비선택적 식각을 고를 수 있음을 보였다."
+  },
+  {
+   "id": "greene2019",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Gate-Cut-Last in RMG to Enable Gate Extension Scaling and Parasitic Capacitance Reduction",
+   "authors": "A. Greene 외 (IBM·GlobalFoundries)",
+   "year": 2019,
+   "venue": "Symp. VLSI Technology 2019",
+   "doi": "10.23919/VLSIT.2019.8776493",
+   "match": [
+    "10.23919/vlsit.2019.8776493"
+   ],
+   "summary": "RMG 모듈 안에서 금속 게이트를 자르는 '게이트 컷 라스트'를 처음 보고했다. 끝 핀 너머 게이트 연장 길이를 줄여 기생 커패시턴스·누설·성능 편차를 낮춘다.",
+   "points": [
+    "기존 게이트 컷 방식과 소자·회로·신뢰성 결과를 비교한다(회사 공동 연구 보고)."
+   ],
+   "use": "그래프 금속 게이트 컷 노드의 근거(#60).",
+   "claim": "Greene 외(2019)는 RMG 안의 게이트 컷 라스트로 게이트 연장 길이를 줄여 기생 커패시턴스를 낮췄다고 보고했다."
+  },
+  {
+   "id": "yang2020",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "공개 원문",
+   "title": "Key Process Approach Recommendation for 5 nm Logic Process Flow with EUV Photolithography",
+   "authors": "Yang 외 (상하이 IC R&D 센터)",
+   "year": 2020,
+   "venue": "J. Microelectron. Manuf. 3, 20030103",
+   "doi": "10.33079/jomm.20030103",
+   "match": [
+    "10.33079/jomm.20030103"
+   ],
+   "summary": "5nm 로직 공정(핀 피치 22~27 nm, CPP 48~55 nm)의 주요 공정 고리별 장단점을 3D 공정 시뮬레이션으로 비교했다. 더미 폴리 컷 대 금속 게이트 컷, 자기정렬 컨택 대 비자기정렬 컨택 등을 다룬다.",
+   "points": [
+    "더미 폴리 단계에서 자르면 절연 기둥과 끝 핀 사이가 10 nm 미만이 되어 약 6 nm 일함수 금속을 양쪽 측벽에 입힐 공간이 없다며 금속 게이트 컷을 권고한다.",
+    "시뮬레이션·설계 가정이며 웨이퍼 실측이 아니다."
+   ],
+   "use": "그래프 금속 게이트 컷 노드의 근거(#60).",
+   "claim": "Yang 외(2020)는 시뮬레이션에서 더미 폴리 컷은 끝 핀과의 간격이 10 nm 미만이 되어 일함수 금속을 채우기 어렵다며 금속 게이트 컷을 권고했다."
+  },
+  {
+   "id": "bao2024",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Advanced Multi-Vt Enabled by Selective Layer Reductions for 2nm Nanosheet Technology and Beyond",
+   "authors": "R. Bao 외 (IBM·Rapidus)",
+   "year": 2024,
+   "venue": "IEEE IEDM 2024",
+   "doi": "10.1109/IEDM50854.2024.10873425",
+   "match": [
+    "10.1109/iedm50854.2024.10873425"
+   ],
+   "summary": "2nm 나노시트에서 다중 문턱전압을 만드는 새 방법. SLR1(선택적 층 감소 1)은 시트 사이가 막힌 구조 위 얇은 층 패터닝의 언더컷을 해결해 n/p 경계를 제어하고, SLR2는 두꺼운 일함수 금속의 n/p 경계를 제어한다.",
+   "points": [
+    "얇은 층 통합의 플라즈마 손상을 해결하는 새 식각 공정도 개발했다고 적는다.",
+    "개선된 이중 다이폴과 결합해 4쌍의 Vt를 구현(회사 자체 보고)."
+   ],
+   "use": "그래프 일함수 금속·게이트 금속 선택 제거 노드의 근거(#60).",
+   "claim": "Bao 외(2024)는 선택적 층 감소(SLR) 공정과 이중 다이폴로 2nm 나노시트에서 4쌍의 문턱전압을 구현했다고 보고했다."
   }
  ]
 }

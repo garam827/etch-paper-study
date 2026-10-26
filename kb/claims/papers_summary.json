@@ -1811,6 +1811,398 @@
    "checked": [
     "https://patents.google.com/patent/US12032355B2/en"
    ]
+  },
+  {
+   "id": "P-hwang2012",
+   "page": "papers",
+   "statement": "Hwang 외(2012)는 2012년 시점 업계 대부분이 게이트 라스트로 모였고, 더미 폴리 제거에 플라즈마 건식과 습식 식각이 쓰인다고 서술했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--1",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.4028/www.scientific.net/ssp.187.57"
+   ]
+  },
+  {
+   "id": "P-kim2016",
+   "page": "papers",
+   "statement": "Kim 외(2016)는 RMG 형성에 CMP 세 단계가 관여하고, 금속 게이트 CMP 후 금속 플레이크가 게이트 누설을 일으키는 가장 심각한 결함이라고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--1",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/2.0311610jss"
+   ]
+  },
+  {
+   "id": "P-dysard2010",
+   "page": "papers",
+   "statement": "Dysard 외(2010)는 대체 게이트 HKMG에 폴리 오픈 연마, Al CMP, 개선된 W CMP 같은 새 CMP 단계와 슬러리가 필요하다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--1",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/1.3489048"
+   ]
+  },
+  {
+   "id": "P-suhard2011",
+   "page": "papers",
+   "statement": "Suhard 외(2011)는 RMG의 폴리 Si 제거용 TMAH 공정을 70°C·5% 조건으로 개발했고, 이 용도에서는 폴리 잔류가 허용되지 않는다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--1",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/1.3630826"
+   ]
+  },
+  {
+   "id": "P-young2011",
+   "page": "papers",
+   "statement": "Young 외(2011)는 TMAH 더미 폴리 제거에서 제거 속도가 조건에 민감했고, 최적화로 SiO2·Si3N4·HfSiON 대비 고선택비와 잔류 없는 약 70nm 트렌치를 얻었다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--1",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/1.3567604"
+   ]
+  },
+  {
+   "id": "P-ji2017",
+   "page": "papers",
+   "statement": "Ji 외(2017)는 FinFET에서 n/p 더미 폴리를 동시에 제거하고, 통상 부분 건식+부분 습식 대신 핀·채널 손상을 피하는 약한 전건식 제거를 제시했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--1",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/07533.0015ecst"
+   ]
+  },
+  {
+   "id": "P-ji2016",
+   "page": "papers",
+   "statement": "Ji 외(2016)는 high-k first/게이트 라스트 방식이 문턱전압을 더 잘 제어할 수 있어 널리 채택되었다고 서술했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--1",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/ma2016-02/17/1501"
+   ]
+  },
+  {
+   "id": "P-togo2014",
+   "page": "papers",
+   "statement": "Togo 외(2014)는 14nm FinFET RMG에서 W 선택 식각으로 일함수 금속을 리세스해 게이트–컨택 정전용량을 줄이고 AC 성능과 수율을 개선했다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--1",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/vlsit.2014.6894392"
+   ]
+  },
+  {
+   "id": "P-mennell2018",
+   "page": "papers",
+   "statement": "Mennell 외(2018)는 다중 일함수 금속 게이트 패터닝에서 TiN 선택 습식 식각 때 TaN 식각 정지층이 HfO2의 약액 노출을 막는다고 설명했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--2",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/1.5044633"
+   ]
+  },
+  {
+   "id": "P-ji2020",
+   "page": "papers",
+   "statement": "Ji 외(2020)는 금속 게이트 컷이 에피 성장 환경·수율·성능 면에서 유리해 7nm 이후 널리 채택될 것으로 보고, CD를 크게 줄이는 식각이 필요하다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--2",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/09803.0107ecst"
+   ]
+  },
+  {
+   "id": "P-han2017",
+   "page": "papers",
+   "statement": "Han 외(2017)는 RMG의 SiN 캡 CMP에서 SiN:산화막 선택비가 블랭킷 웨이퍼 30:1 이상, 패턴 웨이퍼 3:1 미만이었다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--2",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/2.0021704jss"
+   ]
+  },
+  {
+   "id": "P-veloso2014",
+   "page": "papers",
+   "statement": "Veloso 외(2014)는 RMG·high-k last FinFET에서 확산 제어 일함수 조절로 500mV 넘는 ΔVT를 EOT·누설 손해 없이 얻었다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--2",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/06102.0225ecst"
+   ]
+  },
+  {
+   "id": "P-yamaguchi2018",
+   "page": "papers",
+   "statement": "Yamaguchi(2018)는 게이트 퍼스트에서는 활성화 어닐 열 예산 때문에 pFET 실효 일함수가 미드갭 쪽으로 이동하고, 게이트 라스트는 이를 피한다고 설명했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--2",
+   "checked": [
+    "https://api.openalex.org/works?search=Threshold voltage control technology in metal/high-k pFET consisting of high germanium content SiGe channel"
+   ]
+  },
+  {
+   "id": "P-koo2024",
+   "page": "papers",
+   "statement": "Koo 외(2024)는 나노 규모 TMAH Si 식각에서 반응 억제, unstripping, 확률적 식각 같은 거시 규모와 다른 거동을 직접 관찰했다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--2",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1021/acs.nanolett.4c00326"
+   ]
+  },
+  {
+   "id": "P-nguyen2024",
+   "page": "papers",
+   "statement": "Nguyen 외(2024)는 TiAlC를 수 Pa·20°C N2/H2 플라즈마로 3 nm/min 식각했고 순수 N2·H2로는 식각되지 않았다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--2",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1021/acsami.4c11025",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11450688"
+   ]
+  },
+  {
+   "id": "P-nguyen2025",
+   "page": "papers",
+   "statement": "Nguyen 외(2025)는 N2/H2 플라즈마로 TiN 대비 TiAlC를 선택 식각했고, 높은 기판 온도·낮은 바이어스에서 선택비가 높았다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--2",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1016/j.apsusc.2025.162665"
+   ]
+  },
+  {
+   "id": "P-chen2008",
+   "page": "papers",
+   "statement": "Chen 외(2008)는 단일 금속·게이트 퍼스트 공정의 저비용 32nm HKMG 저전력 CMOS 기술을 발표했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--3",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/VLSIT.2008.4588573"
+   ]
+  },
+  {
+   "id": "P-packan2009",
+   "page": "papers",
+   "statement": "Packan 외(2009)는 Intel 32nm 로직의 2세대 HKMG 트랜지스터가 1.0 V·누설 100 nA/µm에서 NMOS 1.62 mA/µm, PMOS 1.37 mA/µm Idsat을 낸다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--4",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2009.5424253"
+   ]
+  },
+  {
+   "id": "P-shin2022",
+   "page": "papers",
+   "statement": "Shin 외(2022)는 6 wt%·70°C·100 rpm에서 폴리 Si 식각 속도가 TMAH 1,744 Å/min, NH4OH 217 Å/min였고, 첨가제를 넣으면 폴리 Si 식각 속도가 23%, SiO2 식각 속도가 43% 줄었다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--4",
+   "checked": [
+    "https://pure.skku.edu/en/publications/study-on-wet-etching-of-dummy-polysilicon-in-narrow-pattern-gap-u/"
+   ]
+  },
+  {
+   "id": "P-cui2013",
+   "page": "papers",
+   "statement": "Cui 외(2013)는 22nm HKMG 게이트 라스트에서 APM으로 TiN·Ti를 제거할 때 TaN 식각 정지층 대비 선택비가 최소 5.6이었다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--3",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/05806.0111ecst"
+   ]
+  },
+  {
+   "id": "P-xu2010",
+   "page": "papers",
+   "statement": "Xu 외(2010)는 RMG Al CMP에서 실시간 프로파일 제어와 레이저 종말점을 결합해 게이트 높이 균일도 요구를 맞췄다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--3",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/1.3489047"
+   ]
+  },
+  {
+   "id": "P-shinoda2019",
+   "page": "papers",
+   "statement": "Shinoda 외(2019)는 CHF3/O2 다운스트림 플라즈마와 적외선 가열로 TiN 등방성 ALE를 하여 사이클당 약 0.6 nm 포화를 보였다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--3",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1088/1361-6463/ab3cf3"
+   ]
+  },
+  {
+   "id": "P-shinoda2022",
+   "page": "papers",
+   "statement": "Shinoda 외(2022)는 W 원자층 식각에서 적외선 가열 시간을 바꿔 TiN 대비 선택적·비선택적 식각을 고를 수 있음을 보였다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--3",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/6.0001660"
+   ]
+  },
+  {
+   "id": "P-greene2019",
+   "page": "papers",
+   "statement": "Greene 외(2019)는 RMG 안의 게이트 컷 라스트로 게이트 연장 길이를 줄여 기생 커패시턴스를 낮췄다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--3",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.23919/VLSIT.2019.8776493"
+   ]
+  },
+  {
+   "id": "P-yang2020",
+   "page": "papers",
+   "statement": "Yang 외(2020)는 시뮬레이션에서 더미 폴리 컷은 끝 핀과의 간격이 10 nm 미만이 되어 일함수 금속을 채우기 어렵다며 금속 게이트 컷을 권고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--3",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.33079/jomm.20030103",
+    "http://www.jommpublish.com/p/48/"
+   ]
+  },
+  {
+   "id": "P-bao2024",
+   "page": "papers",
+   "statement": "Bao 외(2024)는 선택적 층 감소(SLR) 공정과 이중 다이폴로 2nm 나노시트에서 4쌍의 문턱전압을 구현했다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-r-mg--3",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM50854.2024.10873425"
+   ]
   }
  ]
 }

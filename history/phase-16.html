@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16단계 · RMG(대체 금속 게이트) 공정 리서치</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>16단계 · RMG(대체 금속 게이트) 공정 리서치</h1>
+    <p class="phase-desc">항목 #60 · 2026-10-26 20:26 ~ 22:30 · 게이트 라스트 HKMG(RMG) 공정을 식각 관점에서 조사해 지식 그래프에 넣는다(더미 폴리 제거 중심).</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-15.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><a href="phase-14.html">14. OES 지식 구조화</a><a href="phase-15.html">15. 챔버 conditioning·aging OES</a><span class="cur" aria-current="page">16. RMG(대체 금속 게이트) 공정 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #60 ===== -->
+    <article class="entry" id="e60">
+      <div class="entry-head">
+        <span class="no">#60</span>
+        <h2>RMG(대체 금속 게이트) 공정 조사·지식 그래프 추가</h2>
+        <time>2026-10-26 20:26</time>
+      </div>
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>RMG 공정 관련 내용 조사 및 추가.</blockquote>
+        <p>(작업 중 추가 지시 "완료되면, 식각 공정에 대한 기초 내용 보충할 거 있으면 해줘. 그리고 web에서 전체 구성 개선할 것 있는지도 검토해줘."는 다음 항목에 기록한다.)</p>
+      </section>
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>RMG는 Replacement Metal Gate, 즉 더미 폴리 게이트로 트랜지스터를 만든 뒤 더미를 걷어내고 금속 게이트로 바꾸는 게이트 라스트 HKMG 공정이다.</li>
+          <li>그래프에는 이미 HKMG 게이트·high-k·일함수 금속·더미 게이트·더미 게이트 제거·게이트 금속 리세스 노드와 주장 10개(H01–H10, 주로 GAA 관점)가 있었다. 빠진 것은 게이트 퍼스트/라스트·high-k first/last 비교, 폴리 오픈 CMP, 더미 폴리 제거 화학과 과제, 금속 게이트 CMP, 일함수 금속 패터닝의 식각 정지층, 게이트 금속 리세스 화학, 게이트 컷이다.</li>
+          <li>새 사실이므로 검증 절차(장부 → 독립 검증 → gate)를 거치고, 새로 인용하는 논문은 요약을 만든다.</li>
+        </ul>
+      </section>
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>20:26</time> 자문.
+            <ul>
+              <li><b>astra(high, 백그라운드)</b>: 게이트 퍼스트/라스트, RMG 흐름, 더미 폴리 제거, 일함수 금속 패터닝, 금속 CMP·리세스, 게이트 컷, GAA 차이를 물었다. 약 1시간 뒤 결과를 받았다.</li>
+              <li><b>jev</b>
+                <ul>
+                  <li>형태: "기존 그래프 GAA 영역에 노드 6~9개 추가, 별도 페이지 없음"(0.50, 신뢰도 0.33 — 낮음).</li>
+                  <li>기록 단계: "새 16단계"(0.95).</li>
+                  <li>가장 깊게 다룰 부분: "더미 폴리 제거 식각"(0.51, 신뢰도 0.35).</li>
+                  <li>셋 다 따랐다.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><time>20:30</time> <code>lit_search.py</code> 8개 질의와 OpenAlex 검색 7개로 후보를 찾고, 핵심 논문의 초록을 읽었다. 출판사(ECS) PDF는 봇 차단으로 받지 못해 근거는 대부분 초록 수준이다.</li>
+          <li><time>약 20:55</time> 장부 <code>ledger/rmg.json</code>(비공개)에 1차 주장 17개(R01–R17)를 적었다. lint 오류 0, DOI 13개 실재. 작성 과정을 모르는 <code>claim-verifier</code> 4개에 blind 입력만 넘겼다. 결과는 채택 16, 조건부 1이었다. R01은 검증자가 "45nm는 HKMG 도입 시점이고, 게이트 라스트 수렴은 2012년 논문 시점의 서술"이라고 지적해 문장을 고쳐 다시 검증했다.</li>
+          <li><time>약 21:20</time> 추가 검색에서 찾은 4개를 넣었다(R18–R21).
+            <ul>
+              <li>게이트 퍼스트에서 활성화 어닐 때문에 pFET 일함수가 미드갭 쪽으로 밀리는 문제(박사논문 배경 설명). 검증자가 별도 독립 출처 2곳도 찾았다.</li>
+              <li>수 nm 공간의 TMAH 이상 식각 거동(Nano Lett. 2024).</li>
+              <li>TiAlC의 N2/H2 플라즈마 식각과 TiN 대비 선택 식각.</li>
+            </ul>
+            모두 채택됐다.</li>
+          <li><time>약 21:40</time> astra 결과를 받았다. 모델 출력이므로 그대로 쓰지 않고, 주장 14개(R22–R35)로 장부에 적어 검증자 3개에 넘겼다.
+            <ul>
+              <li>1차 결과: 채택 7, 조건부 4, 보류 3.</li>
+              <li>"Choi 2013 리뷰가 Intel 32nm를 high-k last로 분류" — 원문 유료라 확인되지 않았다. 검증자가 찾은 imec 연구자 기고(2010)로 근거를 바꿨고, 재검증에서 Chipworks 분석이라는 독립 출처까지 확인돼 채택됐다.</li>
+              <li>"6 nm씩 양쪽 = 12 nm"는 원문 수치가 아니라 작성자 추론이라는 지적을 받았다. 원문 표현(총두께 약 6 nm, 간격 10 nm 미만)으로 고쳤다.</li>
+              <li>W ALE의 선택성 전환은 CH2F2/O2/Ar 조건의 결과라는 지적을 받아 문장에 넣었다.</li>
+              <li>TMAH 식각 속도 주장에서는 초록에 없는 "단일막 침지 시험"을 빼고 "미확인"으로 표시했다.</li>
+              <li>보류 3개(폴리 잔류와 젖음성, 1 nm ALD TaN 최적, Loubet 2017 본문 세부)는 원문을 열 수 없어 쓰지 않았다. Loubet은 IBM 공개 PDF로 다시 넘겼지만, 검증자가 PDF 글자를 추출하지 못해 보류로 남았다. 작성자가 추출한 문장을 검증자에게 넘기면 독립 검증이 아니게 되므로 넘기지 않았다.</li>
+            </ul>
+          </li>
+          <li><time>약 22:05</time> 최종 gate: 주장 35개 — <b>채택 32, 보류 3</b>(보류는 그래프에 쓰지 않음).</li>
+          <li><time>약 22:10</time> 새로 인용한 논문 26편의 요약을 "소자 · 게이트 공정" 영역에 썼다. 핵심 문장을 검증자 4개에 넘겼다.
+            <ul>
+              <li>1차 결과: 채택 24, 조건부 2. 조건부 2개는 누설 조건(100 nA/µm)과 100 rpm 조건이 빠졌다는 지적이었다.</li>
+              <li>조건을 넣어 재검증한 뒤 26편 모두 채택됐다.</li>
+              <li>레퍼런스 논문은 119편에서 145편이 됐다.</li>
+            </ul>
+          </li>
+          <li><time>약 22:12</time> 그래프 원본(<code>kb/graph/</code>)을 고쳤다.
+            <ul>
+              <li>새 노드 8개(GAA 영역): RMG 공정, 폴리 오픈 CMP, 금속 게이트 CMP, 금속 게이트 컷(CMG), 더미 폴리 잔류, 금속 플레이크 결함, TaN 식각 정지층, TiAlC.</li>
+              <li>관계 16개, 출처 27개를 추가했다.</li>
+              <li>기존 노드 보강: 더미 게이트 제거(가장 자세히: 건식·습식·혼합, TMAH 조건, 알칼리 비교, 나노 규모 거동), 게이트 금속 선택 제거·리세스(W 선택 식각, SiN 캡 CMP 선택비, TiN·W 원자층 식각), 일함수 금속(2nm 다중 Vt).</li>
+              <li>노드 274개, 관계 593개, 출처 553개가 됐다.</li>
+            </ul>
+          </li>
+          <li><time>약 22:14</time> 그 밖의 반영.
+            <ul>
+              <li>목차(<code>kb/pages.json</code>)에서 오래된 숫자를 고쳤다: 그래프 254→274개, 논문 요약 43→145편, 검증 현황 26→309개. RMG 검색어도 넣었다.</li>
+              <li>그래프 안내 문구와 검증 현황 설명에 RMG를 적었다.</li>
+              <li>build 결과: 검증 현황 309개(채택 243, 조건부 62, 보류 4). <code>build_site.py --check</code>, 링크 검사, 요약 연결 검사, OES 그래프 검사 모두 통과.</li>
+            </ul>
+          </li>
+          <li><time>22:18</time> 로컬 서버에서 스크린샷 3장을 찍었다. 논문 요약 페이지를 앵커 주소로 찍으면 빈 화면이 나와(#51과 같은 현상), RMG 논문만 보이게 한 캡처용 사본을 잠시 만들어 찍고 지웠다.</li>
+        </ol>
+      </section>
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 지식 그래프에 RMG 공정 흐름을 넣었다(폴리 오픈 CMP → 더미 게이트 제거 → 게이트 스택·금속 충진 → 금속 게이트 CMP → 리세스·SAC 캡 → 금속 게이트 컷). 식각 과제는 더미 폴리 제거를 중심으로 근거와 함께 연결했다.</p>
+        <ul>
+          <li><b>게이트 퍼스트 대 라스트</b>: 게이트 퍼스트는 열 예산 때문에 pFET 일함수가 밀린다. Intel 45nm는 high-k first, 32nm는 high-k last였다. IBM 제휴 연구진은 32nm 게이트 퍼스트를 발표했다.</li>
+          <li><b>더미 폴리 제거</b>
+            <ul>
+              <li>TMAH 70°C·5%에서 잔류를 허용하지 않음(imec).</li>
+              <li>SiO2·Si3N4·HfSiON 대비 고선택비로 약 70nm 트렌치를 엶.</li>
+              <li>FinFET에서는 부분 건식+습식이 통상이며, 약한 전건식 제거도 제시됨.</li>
+              <li>TMAH 1,744 대 NH4OH 217 Å/min.</li>
+              <li>수 nm 공간에서는 반응 억제·확률적 식각이 관찰됨.</li>
+            </ul>
+          </li>
+          <li><b>일함수 금속·리세스</b>
+            <ul>
+              <li>TaN 식각 정지층(APM 선택비 5.6 이상).</li>
+              <li>TiAlC의 N2/H2 식각.</li>
+              <li>W 선택 식각 리세스(14nm).</li>
+              <li>SiN 캡 CMP 선택비가 패턴 웨이퍼에서 30:1에서 3:1 미만으로 떨어짐.</li>
+              <li>TiN·W 원자층 식각.</li>
+            </ul>
+          </li>
+          <li><b>게이트 컷</b>: 금속 게이트 컷은 에피·수율 면에서 유리하다(전망). 게이트 컷 라스트로 기생 커패시턴스를 줄였다. 더미 폴리 컷은 일함수 금속을 채울 공간이 부족하다(시뮬레이션).</li>
+          <li><b>남은 한계</b>
+            <ul>
+              <li>대부분 초록 기준이다.</li>
+              <li>실제 양산 TiAl 리세스 레시피, W/TiN/TiAl 게이트 높이 균일도 수치, CPODE 전용 공정은 공개 근거를 찾지 못해 넣지 않았다.</li>
+              <li>GAA 시트 사이 일함수 금속 교체 세부(Loubet 2017 본문)는 보류다.</li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="../research/a20_etch_knowledge_graph.html#rmg">RMG 공정 노드 열기 →</a> · <a href="../research/a20_etch_knowledge_graph.html#s_dgremove">더미 게이트 제거 노드 →</a> · <a href="../research/claims_status.html">검증 현황(R01–R35)</a> · <a href="../research/papers.html">논문 요약: 소자 · 게이트 공정</a></p>
+        <p>그래프의 RMG 공정 노드와 연결(폴리 오픈 CMP·더미 게이트 제거·금속 게이트 CMP·리세스·게이트 컷·HKMG):</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261026_221832_rmg_node.png" alt="식각 지식 그래프의 RMG 공정 노드: 단계 노드들과 연결, 오른쪽 설명 패널">
+        <p>더미 게이트 제거 노드(가장 자세히 다룬 부분):</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261026_221832_rmg_dgremove.png" alt="식각 지식 그래프의 더미 게이트 제거 노드 설명">
+        <p>논문 요약 페이지의 새 RMG 논문(캡처용 사본에서 RMG 논문만 표시):</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261026_222036_rmg_papers.png" alt="레퍼런스 논문 요약의 소자·게이트 공정 영역: Suhard 2011, Young 2011 등 요약과 검증 상태">
+      </section>
+    </article>
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-15.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><a href="phase-14.html">14. OES 지식 구조화</a><a href="phase-15.html">15. 챔버 conditioning·aging OES</a><span class="cur" aria-current="page">16. RMG(대체 금속 게이트) 공정 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>

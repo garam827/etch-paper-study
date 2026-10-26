@@ -2102,5 +2102,113 @@
  "apc_ringwood10": {
   "title": "Ringwood 외, Estimation and Control in Semiconductor Etch: Practice and Possibilities (IEEE TSM 2010)",
   "url": "https://doi.org/10.1109/tsm.2009.2039250"
+ },
+ "rmg_hwang12": {
+  "title": "Hwang 외, Hybrid dry-wet removal of a dummy polysilicon gate in RMG (Solid State Phenomena 2012)",
+  "url": "https://doi.org/10.4028/www.scientific.net/ssp.187.57"
+ },
+ "rmg_kim16": {
+  "title": "Kim 외, Metal flake defect during RMG CMP (ECS JSS 2016)",
+  "url": "https://doi.org/10.1149/2.0311610jss"
+ },
+ "rmg_dysard10": {
+  "title": "Dysard 외, CMP solutions for HKMG integration (ECS Trans. 2010, 슬러리 회사)",
+  "url": "https://doi.org/10.1149/1.3489048"
+ },
+ "rmg_suhard11": {
+  "title": "Suhard 외, Wet Si removal process for RMG and sacrificial fin (ECS Trans. 2011, imec)",
+  "url": "https://doi.org/10.1149/1.3630826"
+ },
+ "rmg_young11": {
+  "title": "Young 외, Dummy poly-Si gate removal by wet chemical etching (ECS Trans. 2011)",
+  "url": "https://doi.org/10.1149/1.3567604"
+ },
+ "rmg_ji17": {
+  "title": "Ji 외, Dummy poly gate removal scheme at FinFET (ECS Trans. 2017, SMIC)",
+  "url": "https://doi.org/10.1149/07533.0015ecst"
+ },
+ "rmg_ji16": {
+  "title": "Ji 외, Dummy poly gate removal scheme at FinFET (ECS 학회 초록 2016, SMIC)",
+  "url": "https://doi.org/10.1149/ma2016-02/17/1501"
+ },
+ "rmg_togo14": {
+  "title": "Togo 외, Advanced RMG module for 14nm FinFETs (VLSI 2014, GlobalFoundries)",
+  "url": "https://doi.org/10.1109/vlsit.2014.6894392"
+ },
+ "rmg_mennell18": {
+  "title": "Mennell 외, TaN wet etch stop layer in multi-WF metal gate (JVST B 2018)",
+  "url": "https://doi.org/10.1116/1.5044633"
+ },
+ "rmg_ji20": {
+  "title": "Ji 외, The metal gate cut process development (ECS Trans. 2020, SMIC)",
+  "url": "https://doi.org/10.1149/09803.0107ecst"
+ },
+ "rmg_han17": {
+  "title": "Han 외, RIE effect on SiN CMP selectivity for SAC gate cap (ECS JSS 2017, GlobalFoundries)",
+  "url": "https://doi.org/10.1149/2.0021704jss"
+ },
+ "rmg_veloso14": {
+  "title": "Veloso 외, RMG/high-k last for planar and FinFET devices (ECS Trans. 2014, imec)",
+  "url": "https://doi.org/10.1149/06102.0225ecst"
+ },
+ "rmg_yamaguchi18": {
+  "title": "Yamaguchi, Metal/high-k pFET VT control (도쿄공대 박사논문 2018, 배경 설명)",
+  "url": "http://t2r2.star.titech.ac.jp/cgi-bin/publicationinfo.cgi?q_publication_content_number=CTT100770128"
+ },
+ "rmg_koo24": {
+  "title": "Koo 외, Abnormal silicon etching behaviors in nanometer-sized channels (Nano Lett. 2024, KAIST)",
+  "url": "https://doi.org/10.1021/acs.nanolett.4c00326"
+ },
+ "rmg_nguyen24": {
+  "title": "Nguyen 외, Nonhalogen dry etching of TiAlC by N2/H2 plasma (ACS AMI 2024)",
+  "url": "https://doi.org/10.1021/acsami.4c11025"
+ },
+ "rmg_nguyen25": {
+  "title": "Nguyen 외, Selective dry etching of TiAlC over TiN by N2/H2 plasma (Appl. Surf. Sci. 2025)",
+  "url": "https://doi.org/10.1016/j.apsusc.2025.162665"
+ },
+ "rmg_bao24": {
+  "title": "Bao 외, Multi-Vt by selective layer reductions for 2nm nanosheet (IEDM 2024, IBM·Rapidus)",
+  "url": "https://doi.org/10.1109/IEDM50854.2024.10873425"
+ },
+ "rmg_chen08": {
+  "title": "Chen 외, 32nm HKMG low power CMOS with single-metal/gate-first process (VLSI 2008, IBM 제휴)",
+  "url": "https://doi.org/10.1109/VLSIT.2008.4588573"
+ },
+ "rmg_cui13": {
+  "title": "Cui 외, TaN as wet etch stop layer in 22nm HKMG gate last integration (ECS Trans. 2013)",
+  "url": "https://doi.org/10.1149/05806.0111ecst"
+ },
+ "rmg_greene19": {
+  "title": "Greene 외, Gate-Cut-Last in RMG (VLSI 2019, IBM·GlobalFoundries)",
+  "url": "https://doi.org/10.23919/VLSIT.2019.8776493"
+ },
+ "rmg_hoffmann10": {
+  "title": "Hoffmann (imec), Integrating high-k/metal gates: gate-first or gate-last? (Solid State Technology 2010, 기고)",
+  "url": "https://sst.semiconductor-digest.com/2010/03/integrating-high-k/"
+ },
+ "rmg_packan09": {
+  "title": "Packan 외, 32nm logic with 2nd generation high-k + metal gate (IEDM 2009, Intel)",
+  "url": "https://doi.org/10.1109/IEDM.2009.5424253"
+ },
+ "rmg_shin22": {
+  "title": "Shin 외, Wet etching of dummy polysilicon in narrow pattern gap using alkaline solution (MSSP 2022)",
+  "url": "https://doi.org/10.1016/j.mssp.2022.106561"
+ },
+ "rmg_shinoda19": {
+  "title": "Shinoda 외, Thermal-cyclic ALE of TiN in CHF3/O2 downstream plasma (J. Phys. D 2019)",
+  "url": "https://doi.org/10.1088/1361-6463/ab3cf3"
+ },
+ "rmg_shinoda22": {
+  "title": "Shinoda 외, Thermal-cyclic ALE of W and its selectivity to TiN (JVST B 2022)",
+  "url": "https://doi.org/10.1116/6.0001660"
+ },
+ "rmg_xu10": {
+  "title": "Xu 외, HKMG aluminum CMP challenges and solutions (ECS Trans. 2010, Applied Materials)",
+  "url": "https://doi.org/10.1149/1.3489047"
+ },
+ "rmg_yang20": {
+  "title": "Yang 외, Key process approach for 5 nm logic flow (J. Microelectron. Manuf. 2020, 시뮬레이션)",
+  "url": "https://doi.org/10.33079/jomm.20030103"
  }
 }

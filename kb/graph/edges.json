@@ -3469,5 +3469,85 @@
   "from": "ewma",
   "to": "i_metro",
   "label": "계측 지연·노이즈 영향"
+ },
+ {
+  "from": "rmg",
+  "to": "hkmg",
+  "label": "형성"
+ },
+ {
+  "from": "rmg",
+  "to": "dummygate",
+  "label": "출발점"
+ },
+ {
+  "from": "rmg",
+  "to": "s_poc",
+  "label": "단계"
+ },
+ {
+  "from": "rmg",
+  "to": "s_dgremove",
+  "label": "단계"
+ },
+ {
+  "from": "rmg",
+  "to": "s_mgcmp",
+  "label": "단계"
+ },
+ {
+  "from": "rmg",
+  "to": "s_gaterecess",
+  "label": "단계"
+ },
+ {
+  "from": "rmg",
+  "to": "s_cmg",
+  "label": "단계"
+ },
+ {
+  "from": "s_poc",
+  "to": "s_dgremove",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_mgcmp",
+  "to": "s_gaterecess",
+  "label": "다음 단계"
+ },
+ {
+  "from": "s_dgremove",
+  "to": "i_polyres",
+  "label": "위험"
+ },
+ {
+  "from": "s_mgcmp",
+  "to": "i_metalflake",
+  "label": "위험"
+ },
+ {
+  "from": "s_cmg",
+  "to": "hkmg",
+  "label": "절단"
+ },
+ {
+  "from": "s_gaterecess",
+  "to": "tan_esl",
+  "label": "식각 정지"
+ },
+ {
+  "from": "tan_esl",
+  "to": "highk",
+  "label": "보호"
+ },
+ {
+  "from": "wfm",
+  "to": "tialc",
+  "label": "재료 예"
+ },
+ {
+  "from": "s_gaterecess",
+  "to": "tialc",
+  "label": "선택 식각(N2/H2 연구)"
  }
 ]
