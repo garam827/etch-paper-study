@@ -3392,6 +3392,389 @@
    ],
    "use": "식각 공정 기초 페이지·그래프 노드의 근거(#61).",
    "claim": "Arts 외(2022)는 고종횡비 컨택 홀 식각의 과제로 ARDE, 바닥 대전, 휨·보잉·트위스팅을 함께 다룬다."
+  },
+  {
+   "id": "seevinck1987",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Static-noise margin analysis of MOS SRAM cells",
+   "authors": "E. Seevinck, F. J. List, J. Lohstroh",
+   "year": 1987,
+   "venue": "IEEE JSSC 22, 748",
+   "doi": "10.1109/JSSC.1987.1052809",
+   "match": [
+    "10.1109/jssc.1987.1052809"
+   ],
+   "summary": "저항 부하형과 완전 CMOS SRAM 셀의 안정성을 해석과 시뮬레이션으로 분석했다. 정적 잡음 여유(SNM)를 소자 변수와 전원 전압의 함수로 나타내는 해석식을 유도하고, 쉬운 SNM 시뮬레이션 방법을 제시했다.",
+   "points": [
+    "SNM 정의의 고전 출처로 널리 인용된다."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Seevinck 외(1987)는 SRAM 셀의 정적 잡음 여유(SNM)를 소자 변수와 전원 전압의 함수로 나타내는 해석식을 유도했다."
+  },
+  {
+   "id": "grossar2006",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Read Stability and Write-Ability Analysis of SRAM Cells for Nanometer Technologies",
+   "authors": "E. Grossar 외 (imec)",
+   "year": 2006,
+   "venue": "IEEE JSSC 41, 2577",
+   "doi": "10.1109/JSSC.2006.883344",
+   "match": [
+    "10.1109/jssc.2006.883344"
+   ],
+   "summary": "다이 안 소자 변동 증가와 전원 전압 축소로 SRAM 셀의 읽기 안정성과 쓰기 능력이 주요 과제가 되었다고 보고, N-curve 기반 읽기 안정성 지표를 Seevinck SNM과 비교하고 새 쓰기 능력 지표를 제안했다.",
+   "points": [
+    "N-curve 지표는 전압 정보에 전류 정보를 더한다."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Grossar 외(2006)는 소자 변동과 전원 전압 축소로 SRAM 읽기 안정성·쓰기 능력이 주요 과제라고 보고, N-curve 지표를 SNM과 비교했다."
+  },
+  {
+   "id": "natarajan2008",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A 32nm logic technology featuring 2nd-generation high-k + metal-gate transistors, enhanced channel strain and 0.171μm² SRAM cell size in a 291Mb array",
+   "authors": "S. Natarajan 외 (Intel)",
+   "year": 2008,
+   "venue": "IEEE IEDM 2008",
+   "doi": "10.1109/IEDM.2008.4796777",
+   "match": [
+    "10.1109/iedm.2008.4796777"
+   ],
+   "summary": "Intel 32nm 로직 공정. 2세대 HKMG(EOT 9 Å), 193 nm 액침 노광, 4세대 변형 실리콘을 쓰고, 0.171 µm² 셀의 291 Mb SRAM 시험 배열로 수율·성능·신뢰성을 보였다.",
+   "points": [
+    "SRAM 시험 배열에는 19억 개가 넘는 트랜지스터가 있다(회사 발표)."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Natarajan 외(2008)는 Intel 32nm 공정에서 0.171 µm² 셀의 291 Mb SRAM 시험 배열을 보고했다."
+  },
+  {
+   "id": "jan2012",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "보도·초록",
+   "title": "A 22nm SoC platform technology featuring 3-D tri-gate and high-k/metal gate, optimized for ultra low power, high performance and high density SoC applications",
+   "authors": "C.-H. Jan 외 (Intel)",
+   "year": 2012,
+   "venue": "IEEE IEDM 2012",
+   "doi": "10.1109/IEDM.2012.6478969",
+   "match": [
+    "10.1109/iedm.2012.6478969"
+   ],
+   "summary": "Intel 22nm SoC 플랫폼. SRAM 셀을 고밀도·저누설 0.092 µm², 저전압 0.108 µm², 고성능 0.130 µm²로 구분해 발표했다(셀 면적은 사전 발표 보도로 확인).",
+   "points": [
+    "초록에는 380 Mb SRAM이 나오고 셀 면적은 본문·보도에 있다."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Jan 외(2012)는 Intel 22nm SoC 공정의 SRAM 셀을 고밀도 0.092, 저전압 0.108, 고성능 0.130 µm²로 구분해 발표했다."
+  },
+  {
+   "id": "karl2016",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "A 0.6 V 1.5 GHz 84 Mb SRAM in 14 nm FinFET CMOS Technology With Capacitive Charge-Sharing Write Assist Circuitry",
+   "authors": "E. Karl 외 (Intel)",
+   "year": 2016,
+   "venue": "IEEE JSSC 51, 222",
+   "doi": "10.1109/JSSC.2015.2461592",
+   "match": [
+    "10.1109/jssc.2015.2461592"
+   ],
+   "summary": "Intel 14nm FinFET SRAM 발표(ISSCC 2015)의 확장판. 고밀도 6T 셀 0.0500 µm²와 저전압 6T 셀 0.0588 µm²를 구분해 보고한다.",
+   "points": [
+    "쓰기 보조 회로로 저전압 동작을 개선한 설계를 다룬다."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Karl 외(2016)는 Intel 14nm FinFET에서 고밀도 6T 셀 0.0500 µm²와 저전압 6T 셀 0.0588 µm²를 보고했다."
+  },
+  {
+   "id": "intel10sram2019",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "A 23.6-Mb/mm² SRAM in 10-nm FinFET Technology With Pulsed-pMOS TVC and Stepped-WL for Low-Voltage Applications",
+   "authors": "Z. Guo 외 (Intel)",
+   "year": 2019,
+   "venue": "IEEE JSSC 54",
+   "doi": "10.1109/JSSC.2018.2861873",
+   "match": [
+    "10.1109/jssc.2018.2861873"
+   ],
+   "summary": "Intel 10nm FinFET SRAM. 고밀도 6T 셀 0.0312 µm²와 저전압 6T 셀 0.0367 µm²를 보고한다.",
+   "points": [
+    "저전압 동작을 위한 보조 회로를 다룬다(회사 발표)."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Intel 10nm SRAM 논문(JSSC 2019)은 고밀도 셀 0.0312 µm², 저전압 셀 0.0367 µm²를 보고했다."
+  },
+  {
+   "id": "intel4sram2022",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Energy-Efficient High Bandwidth 6T SRAM Design on Intel 4 CMOS Technology",
+   "authors": "Kim 외 (Intel)",
+   "year": 2022,
+   "venue": "VLSI Symposium 2022",
+   "doi": "10.1109/VLSITechnologyandCir46769.2022.9830148",
+   "match": [
+    "10.1109/vlsitechnologyandcir46769.2022.9830148"
+   ],
+   "summary": "Intel 4 공정의 고대역폭 6T SRAM 설계. 초록은 0.0300 µm² 고성능(고전류) 비트셀을 보고한다. 같은 공정의 고밀도 셀 0.0240 µm²는 분석 매체 보도로 전해진다.",
+   "points": [
+    "고밀도 값은 이 논문 초록이 아니라 2차 보도로 확인된다."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Intel 4 SRAM 논문(VLSI 2022) 초록은 0.0300 µm² 고성능 6T 비트셀을 보고했다."
+  },
+  {
+   "id": "intel18a2025",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A 0.021µm² High-Density SRAM in Intel 18A-RibbonFET Technology with PowerVia Backside Power Delivery",
+   "authors": "Wang 외 (Intel)",
+   "year": 2025,
+   "venue": "IEEE ISSCC 2025, 29.2",
+   "doi": "10.1109/ISSCC49661.2025.10904657",
+   "match": [
+    "10.1109/isscc49661.2025.10904657"
+   ],
+   "summary": "Intel 18A(GAA RibbonFET + PowerVia 후면 전력) 공정의 0.021 µm² 고밀도 SRAM. 초록 기준으로 PowerVia는 주변 회로에 적용되었다.",
+   "points": [
+    "회사 발표값."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Intel 18A SRAM 논문(ISSCC 2025)은 RibbonFET과 PowerVia를 쓴 0.021 µm² 고밀도 SRAM을 보고했다."
+  },
+  {
+   "id": "tsmcn7_2016",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A 7nm CMOS platform technology featuring 4th generation FinFET transistors with a 0.027um² high density 6-T SRAM cell for mobile SoC applications",
+   "authors": "S.-Y. Wu 외 (TSMC)",
+   "year": 2016,
+   "venue": "IEEE IEDM 2016",
+   "doi": "10.1109/IEDM.2016.7838333",
+   "match": [
+    "10.1109/iedm.2016.7838333"
+   ],
+   "summary": "TSMC 7nm 플랫폼. 4세대 FinFET과 0.027 µm² 고밀도 6T SRAM 셀을 보고하고 256 Mb 시험 칩으로 검증했다.",
+   "points": [
+    "회사 발표값."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Wu 외(2016)는 TSMC 7nm에서 0.027 µm² 고밀도 6T SRAM 셀을 보고했다."
+  },
+  {
+   "id": "yeap2019",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "5nm CMOS Production Technology Platform featuring full-fledged EUV, and High Mobility Channel FinFETs with densest 0.021µm² SRAM cells for Mobile SoC and High Performance Computing Applications",
+   "authors": "G. Yeap 외 (TSMC)",
+   "year": 2019,
+   "venue": "IEEE IEDM 2019",
+   "doi": "10.1109/IEDM19573.2019.8993577",
+   "match": [
+    "10.1109/iedm19573.2019.8993577"
+   ],
+   "summary": "TSMC 5nm 플랫폼. EUV를 전면 적용하고 고이동도 채널 FinFET과 0.021 µm² 고밀도 SRAM을 보고했다. 7nm 대비 로직 밀도 약 1.84배, 속도 15% 또는 전력 30% 개선.",
+   "points": [
+    "256 Mb HD/HC SRAM으로 신뢰성 인증을 통과했다(회사 발표)."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Yeap 외(2019)는 TSMC 5nm에서 0.021 µm² 고밀도 SRAM과 7nm 대비 약 1.84배 로직 밀도를 보고했다."
+  },
+  {
+   "id": "chang2022",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Critical Process Features Enabling Aggressive Contacted Gate Pitch Scaling for 3nm CMOS Technology and Beyond",
+   "authors": "C.-H. Chang 외 (TSMC)",
+   "year": 2022,
+   "venue": "IEEE IEDM 2022, 27.1",
+   "doi": "10.1109/IEDM45625.2022.10019565",
+   "match": [
+    "10.1109/iedm45625.2022.10019565"
+   ],
+   "summary": "45 nm contacted gate pitch를 가능하게 한 3nm 공정 요소(자기정렬 컨택 등). 0.0199 µm² 고밀도 SRAM 셀과 동작하는 HC/HD 256 Mb SRAM 매크로를 보고했다.",
+   "points": [
+    "게이트 피치 축소에 필요한 컨택·게이트 공정을 다룬다(본문 세부는 이번에 확인하지 못함)."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Chang 외(2022)는 45 nm contacted gate pitch의 3nm 공정에서 0.0199 µm² SRAM 셀과 HC/HD 256 Mb 매크로를 보고했다."
+  },
+  {
+   "id": "tsmcn2sram2025",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록·보도",
+   "title": "A 38.1Mb/mm² SRAM in a 2nm-CMOS-Nanosheet Technology for High-Density and Energy-Efficient Compute",
+   "authors": "Chang 외 (TSMC)",
+   "year": 2025,
+   "venue": "IEEE ISSCC 2025, 29.1",
+   "doi": "10.1109/ISSCC49661.2025.10904759",
+   "match": [
+    "10.1109/isscc49661.2025.10904759"
+   ],
+   "summary": "TSMC N2(GAA 나노시트) SRAM. 매크로 밀도 38.1 Mb/mm²를 보고했고, 고밀도 셀은 0.021 µm²로 전해진다(IEEE Spectrum 보도).",
+   "points": [
+    "셀 면적은 N5와 같고 매크로 수준에서 밀도를 높였다."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "TSMC N2 SRAM 논문(ISSCC 2025)은 38.1 Mb/mm² 매크로 밀도를 보고했고, 고밀도 셀은 0.021 µm²로 보도되었다."
+  },
+  {
+   "id": "yeap2024",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "2nm Platform Technology Featuring Energy-Efficient Nanosheet Transistors and Interconnects Co-Optimized with 3DIC for AI, HPC and Mobile SoC Applications",
+   "authors": "G. Yeap 외 (TSMC)",
+   "year": 2024,
+   "venue": "IEEE IEDM 2024",
+   "doi": "10.1109/IEDM50854.2024.10873475",
+   "match": [
+    "10.1109/iedm50854.2024.10873475"
+   ],
+   "summary": "TSMC N2 플랫폼. GAA 나노시트와 약 38 Mb/mm²의 가장 조밀한 SRAM 매크로를 보고했다. N3 대비 속도 15% 또는 전력 30% 개선, 칩 밀도 1.15배 이상.",
+   "points": [
+    "256 Mb HC/HD SRAM과 30억 게이트 넘는 로직 시험 칩으로 1000시간 HTOL 인증을 통과했다(회사 발표).",
+    "2025년 하반기 양산 예정으로 발표되었다."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Yeap 외(2024)는 TSMC N2에서 약 38 Mb/mm² SRAM 매크로와 N3 대비 1.15배 넘는 칩 밀도를 보고했다."
+  },
+  {
+   "id": "samsung7_2018",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "True 7nm Platform Technology featuring Smallest FinFET and Smallest SRAM cell by EUV, Special Constructs and 3rd Generation Single Diffusion Break",
+   "authors": "W. C. Jeong 외 (Samsung)",
+   "year": 2018,
+   "venue": "VLSI Symposium 2018",
+   "doi": "10.1109/VLSIT.2018.8510682",
+   "match": [
+    "10.1109/vlsit.2018.8510682"
+   ],
+   "summary": "Samsung 7nm EUV 플랫폼. 27 nm 핀 피치, 54 nm contacted poly pitch, 0.0262 µm² SRAM 셀의 256 Mbit SRAM을 보고했다.",
+   "points": [
+    "3세대 single diffusion break를 함께 소개한다(회사 발표)."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Jeong 외(2018)는 Samsung 7nm EUV 공정에서 27 nm 핀 피치, 54 nm 폴리 피치와 0.0262 µm² SRAM 셀을 보고했다."
+  },
+  {
+   "id": "samsung3gae2022",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "A 3-nm Gate-All-Around SRAM Featuring an Adaptive Dual-Bitline and an Adaptive Cell-Power Assist Circuit",
+   "authors": "T. Song 외 (Samsung)",
+   "year": 2022,
+   "venue": "IEEE JSSC 57",
+   "doi": "10.1109/JSSC.2021.3123077",
+   "match": [
+    "10.1109/jssc.2021.3123077"
+   ],
+   "summary": "Samsung 3nm GAA(3GAE) 256 Mb SRAM. 적응형 이중 비트라인으로 유효 비트라인 저항을 최대 62% 줄이고, 적응형 셀 전원 보조와 함께 Vmin을 230 mV 개선했다.",
+   "points": [
+    "나노시트 폭을 트랜지스터마다 다르게 고를 수 있다는 점은 학회판 보도로 확인된다.",
+    "회사 발표값."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Samsung 3nm GAA SRAM 논문(JSSC 2022)은 유효 비트라인 저항을 최대 62% 줄이고 Vmin을 230 mV 개선했다고 보고했다."
+  },
+  {
+   "id": "weckx2019",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Novel forksheet device architecture as ultimate logic scaling device towards 2nm",
+   "authors": "P. Weckx 외 (imec)",
+   "year": 2019,
+   "venue": "IEEE IEDM 2019",
+   "doi": "10.1109/IEDM19573.2019.8993635",
+   "match": [
+    "10.1109/iedm19573.2019.8993635"
+   ],
+   "summary": "nFET·pFET 사이에 절연 벽을 둔 포크시트 소자를 제안했다. GAA 나노시트 대비 같은 전력에서 주파수 10%↑ 또는 같은 주파수에서 전력 24%↓, 합친 면적 20% 축소, SRAM 비트셀 면적 30% 축소와 읽기 지연 개선을 보였다.",
+   "points": [
+    "설계·시뮬레이션 연구다."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Weckx 외(2019)는 포크시트 구조로 GAA 나노시트 대비 SRAM 비트셀 면적 30% 축소를 보였다(설계·시뮬레이션)."
+  },
+  {
+   "id": "liu2023",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "CFET SRAM DTCO, Interconnect Guideline, and Benchmark for CMOS Scaling",
+   "authors": "H.-H. Liu 외 (imec)",
+   "year": 2023,
+   "venue": "IEEE TED 70",
+   "doi": "10.1109/TED.2023.3235701",
+   "match": [
+    "10.1109/ted.2023.3235701"
+   ],
+   "summary": "순차·단일체 CFET의 6T SRAM 비트셀 설계를 A5·A3 예측 노드에서 평가했다. A5 CFET은 A14 나노시트 대비 최대 55%, A10 포크시트 대비 최대 40% 면적을 줄인다. A3에서 게이트 컷을 절연 벽으로 바꾸면 최대 17% 더 준다.",
+   "points": [
+    "면적을 공격적으로 줄이면 배선이 복잡해져 세대 간 성능·전력 이득이 제한된다고 지적하고 배선 지침을 제시한다."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Liu 외(2023)는 예측 노드 설계 연구에서 A5 CFET이 A14 나노시트 대비 최대 55%, A10 포크시트 대비 최대 40% 작은 6T SRAM 비트셀을 낼 수 있다고 평가했다(서로 다른 노드 간 비교)."
+  },
+  {
+   "id": "jouppi2017",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록·발표 자료",
+   "title": "In-Datacenter Performance Analysis of a Tensor Processing Unit",
+   "authors": "N. P. Jouppi 외 (Google)",
+   "year": 2017,
+   "venue": "ISCA 2017",
+   "doi": "10.1145/3079856.3080246",
+   "match": [
+    "10.1145/3079856.3080246"
+   ],
+   "summary": "Google 데이터센터 추론 가속기 TPU v1의 구조와 성능 분석. 중간 데이터를 담는 24 MiB 통합 버퍼가 다이 면적의 거의 3분의 1을 차지한다.",
+   "points": [
+    "면적 비율은 저자 발표 자료로 확인했다.",
+    "특정 설계의 특정 버퍼 값이다."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Jouppi 외(2017)는 TPU v1의 24 MiB 통합 버퍼가 다이 면적의 거의 3분의 1이라고 밝혔다."
+  },
+  {
+   "id": "power7edram2011",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "A 45 nm SOI Embedded DRAM Macro for the POWER Processor 32 MByte On-Chip L3 Cache",
+   "authors": "J. Barth 외 (IBM)",
+   "year": 2011,
+   "venue": "IEEE JSSC 46, 64",
+   "doi": "10.1109/JSSC.2010.2084470",
+   "match": [
+    "10.1109/jssc.2010.2084470"
+   ],
+   "summary": "IBM POWER7 프로세서의 32 MB 온칩 L3 캐시를 45nm SOI 내장 DRAM(eDRAM) 매크로로 구현했다. 1.35 ns 랜덤 접근, 1.7 ns 랜덤 사이클.",
+   "points": [
+    "SRAM 대신 커패시터 기반 DRAM 셀로 캐시 밀도를 높인 사례(회사 발표)."
+   ],
+   "use": "SRAM 페이지·그래프 노드의 근거(#62).",
+   "claim": "Barth 외(2011)는 POWER7의 32 MB L3를 45nm SOI eDRAM으로 구현하고 1.35 ns 랜덤 접근을 보고했다."
   }
  ]
 }

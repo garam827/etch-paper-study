@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRAM — 로직 칩의 온칩 메모리</title>
+<style>
+  :root {
+    --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb;
+    --accent:#2563eb; --etch:#dc2626; --etch-bg:#fef2f2;
+    --ok:#166534; --ok-bg:#dcfce7; --na:#4b5563; --na-bg:#f3f4f6;
+  }
+  * { box-sizing:border-box; }
+  html { color-scheme: light; }
+  body { margin:0; background:var(--bg); color:var(--ink); overflow-wrap:anywhere;
+    font:15px/1.7 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; }
+  .wrap { max-width:980px; margin:0 auto; padding:40px 16px 80px; }
+  h1 { font-size:28px; margin:0 0 6px; line-height:1.3; text-wrap:balance; }
+  h2 { font-size:21px; margin:48px 0 14px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  h3 { font-size:17px; margin:0 0 6px; }
+  p { max-width:78ch; }
+  a { color:var(--accent); }
+  .sub { color:var(--muted); margin:0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:12px 0; }
+  .card > :first-child { margin-top:0; } .card > :last-child { margin-bottom:0; }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:12px; }
+  .grid2 .card { margin:0; }
+  .tag { display:inline-block; font-size:12px; font-weight:600; padding:1px 8px; border-radius:999px; margin-right:4px; white-space:nowrap; }
+  .t-na { background:var(--na-bg); color:var(--na); }
+  .t-sec { background:#fef3c7; color:#92400e; }
+  table { border-collapse:collapse; width:100%; font-size:14px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#f3f6fb; white-space:nowrap; }
+  td.num { font-variant-numeric:tabular-nums; white-space:nowrap; text-align:right; }
+  .tbl { overflow-x:auto; border-radius:10px; }
+  .diagram { overflow-x:auto; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px; margin:12px 0; }
+  .diagram svg { display:block; min-width:640px; width:100%; height:auto; font-family:"Malgun Gothic",system-ui,sans-serif; }
+  .diagram figcaption { font-size:13px; color:var(--muted); margin-top:6px; }
+  .note { font-size:13px; color:var(--muted); }
+  .callout { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px 16px; margin:12px 0; }
+  .warn { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:12px 16px; margin:12px 0; }
+  .cid { font-size:12px; font-weight:700; font-family:Consolas,monospace; text-decoration:none; background:#eef2ff; color:#3730a3; padding:0 6px; border-radius:6px; white-space:nowrap; }
+  .toc { columns:2 260px; column-gap:28px; margin:0; padding-left:20px; }
+  ol.src { font-size:13px; padding-left:22px; }
+  ol.src li { margin-bottom:3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-27</p>
+  <h1>SRAM — 로직 칩의 온칩 메모리</h1>
+  <p class="sub">CPU·GPU·AI 칩 안에서 데이터를 바로 옆에 들고 있는 SRAM이 무엇이고, 공정 세대마다 셀이 얼마나 줄었으며, 식각·패터닝에서 왜 까다로운지를 정리한다.</p>
+
+  <div class="callout">
+    <b>읽는 법</b> — <span class="cid">S01</span> 같은 표시는 원문과 대조해 검증한 주장이다(<a href="claims_status.html#S01">검증 현황</a>). 셀 면적은 대부분 <b>회사 자체 발표값</b>이고, <span class="tag t-sec">2차 보도</span>는 분석 매체가 전한 값이다. <span class="tag t-na">일반 정의</span>는 교과서 수준의 설명이다. 근거는 대부분 논문 초록 수준이다.
+  </div>
+
+  <h2>목차</h2>
+  <ol class="toc">
+    <li><a href="#role">로직 칩에서 SRAM의 역할</a></li>
+    <li><a href="#cell">6T 셀 구조와 안정성</a></li>
+    <li><a href="#area">공정 세대별 셀 면적</a></li>
+    <li><a href="#etch">식각·패터닝 과제</a></li>
+    <li><a href="#future">다음 소자 구조와 SRAM</a></li>
+    <li><a href="#alt">보완책: 3D 적층 캐시·eDRAM</a></li>
+    <li><a href="#more">더 보기 · 출처</a></li>
+  </ol>
+
+  <h2 id="role">1. 로직 칩에서 SRAM의 역할</h2>
+  <div class="grid2">
+    <div class="card"><h3>무엇을 하나</h3><p>연산 장치 바로 옆에서 자주 쓰는 데이터를 잠시 들고 있는 칩 안 메모리다. CPU·GPU의 캐시(L1·L2·L3), 레지스터 파일, 각종 버퍼, AI 가속기의 온칩 버퍼가 대표적이다. 로직과 같은 트랜지스터로 만들어 별도 공정이 필요 없고, 빠르며, DRAM과 달리 리프레시가 필요 없다. 대신 비트당 트랜지스터가 6개라 면적이 커서, 큰 용량은 칩 밖 DRAM이 맡는다. <span class="tag t-na">일반 정의</span></p></div>
+    <div class="card"><h3>얼마나 차지하나</h3><p>설계마다 크게 다르다. 예를 들어 Google TPU v1은 중간 데이터를 담는 24 MiB 통합 버퍼가 다이 면적의 거의 3분의 1이었다 <a class="cid" href="claims_status.html#S23">S23</a>. 이것은 특정 설계의 특정 버퍼 값이다. 모든 CPU·GPU에 적용되는 "SRAM 면적 비율"은 이번 조사에서 공개 근거를 찾지 못해 싣지 않았다.</p></div>
+  </div>
+
+  <h2 id="cell">2. 6T 셀 구조와 안정성</h2>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 260" role="img" aria-label="6T SRAM 셀 회로 개념도">
+      <line x1="60" y1="30" x2="60" y2="240" stroke="#2563eb" stroke-width="3"/><text x="60" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">BL</text>
+      <line x1="640" y1="30" x2="640" y2="240" stroke="#2563eb" stroke-width="3"/><text x="640" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">BLB</text>
+      <line x1="40" y1="250" x2="660" y2="250" stroke="#7c3aed" stroke-width="3"/><text x="350" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#6d28d9" dy="-4">WL (워드라인)</text>
+      <rect x="95" y="115" width="70" height="36" rx="6" fill="#ede9fe" stroke="#7c3aed"/><text x="130" y="138" text-anchor="middle" font-size="12" font-weight="700">PG</text>
+      <rect x="535" y="115" width="70" height="36" rx="6" fill="#ede9fe" stroke="#7c3aed"/><text x="570" y="138" text-anchor="middle" font-size="12" font-weight="700">PG</text>
+      <line x1="60" y1="133" x2="95" y2="133" stroke="#374151" stroke-width="2"/><line x1="605" y1="133" x2="640" y2="133" stroke="#374151" stroke-width="2"/>
+      <line x1="130" y1="151" x2="130" y2="250" stroke="#7c3aed" stroke-dasharray="3 3"/><line x1="570" y1="151" x2="570" y2="250" stroke="#7c3aed" stroke-dasharray="3 3"/>
+      <rect x="230" y="40" width="80" height="36" rx="6" fill="#fef3c7" stroke="#d97706"/><text x="270" y="63" text-anchor="middle" font-size="12" font-weight="700">PU (P)</text>
+      <rect x="230" y="190" width="80" height="36" rx="6" fill="#dcfce7" stroke="#16a34a"/><text x="270" y="213" text-anchor="middle" font-size="12" font-weight="700">PD (N)</text>
+      <rect x="390" y="40" width="80" height="36" rx="6" fill="#fef3c7" stroke="#d97706"/><text x="430" y="63" text-anchor="middle" font-size="12" font-weight="700">PU (P)</text>
+      <rect x="390" y="190" width="80" height="36" rx="6" fill="#dcfce7" stroke="#16a34a"/><text x="430" y="213" text-anchor="middle" font-size="12" font-weight="700">PD (N)</text>
+      <line x1="270" y1="76" x2="270" y2="190" stroke="#374151" stroke-width="2"/><line x1="430" y1="76" x2="430" y2="190" stroke="#374151" stroke-width="2"/>
+      <circle cx="270" cy="133" r="5" fill="#dc2626"/><text x="250" y="128" text-anchor="end" font-size="12" font-weight="700" fill="#b91c1c">Q</text>
+      <circle cx="430" cy="133" r="5" fill="#dc2626"/><text x="450" y="128" font-size="12" font-weight="700" fill="#b91c1c">Q̅</text>
+      <line x1="165" y1="133" x2="270" y2="133" stroke="#374151" stroke-width="2"/><line x1="430" y1="133" x2="535" y2="133" stroke="#374151" stroke-width="2"/>
+      <path d="M270 133 C330 110 340 160 390 58" fill="none" stroke="#dc2626" stroke-width="1.6"/>
+      <path d="M430 133 C370 156 360 106 310 208" fill="none" stroke="#dc2626" stroke-width="1.6"/>
+      <text x="350" y="100" text-anchor="middle" font-size="11" fill="#b91c1c">교차 결합(서로의 게이트로)</text>
+      <text x="270" y="30" text-anchor="middle" font-size="11" fill="#6b7280">VDD</text><text x="430" y="30" text-anchor="middle" font-size="11" fill="#6b7280">VDD</text>
+    </svg>
+    <figcaption>개념도. 인버터 두 개(PU+PD)가 서로를 붙잡아 Q·Q̅에 0/1을 유지하고, 워드라인(WL)이 켜지면 패스게이트(PG)가 저장 노드를 비트라인(BL·BLB)에 연결해 읽고 쓴다.</figcaption>
+  </figure>
+  <div class="grid2">
+    <div class="card"><h3>읽기와 쓰기는 서로 반대를 원한다</h3><p>읽을 때는 비트라인에서 들어오는 전류가 '0' 노드를 끌어올려 상태를 뒤집지 않도록 풀다운이 패스게이트보다 충분히 강해야 한다. 쓸 때는 반대로 패스게이트가 풀업을 이겨 상태를 뒤집어야 한다. 그래서 세 트랜지스터의 세기 균형이 셀 설계의 핵심이다. <span class="tag t-na">일반 정의</span></p></div>
+    <div class="card"><h3>안정성을 재는 지표</h3><p>정적 잡음 여유(SNM)는 1987년에 소자 변수와 전원 전압의 함수로 해석식이 정리되었다 <a class="cid" href="claims_status.html#S02">S02</a>. 미세 공정에서는 다이 안 소자 변동이 커지고 전원 전압이 낮아져 읽기 안정성과 쓰기 능력이 주요 과제가 되었고, SNM을 보완하는 N-curve 지표도 쓰인다 <a class="cid" href="claims_status.html#S01">S01</a>.</p></div>
+    <div class="card"><h3>Vmin</h3><p>배열이 읽기·쓰기를 모두 실패 없이 해내는 가장 낮은 전원 전압. 셀 하나의 안정성이 아니라, 수억 개 셀 가운데 가장 약한 셀과 주변 회로가 정한다. 그래서 트랜지스터 특성의 <b>평균보다 산포(꼬리)</b>가 중요하다. <span class="tag t-na">일반 정의</span> Samsung 3nm GAA SRAM은 비트라인 저항을 낮추는 회로 보조 기법으로 Vmin을 230 mV 개선했다고 보고했다 <a class="cid" href="claims_status.html#S14">S14</a>.</p></div>
+  </div>
+
+  <h2 id="area">3. 공정 세대별 셀 면적</h2>
+  <p>SRAM 셀은 그 공정에서 허용하는 가장 촘촘한 규칙으로 그리기 때문에, 고밀도(HD) 셀 면적이 공정 세대의 대표 지표로 쓰인다. 아래는 회사가 학회에서 발표한 값이다. 같은 공정에도 용도별 셀(고밀도·저전압·고전류)이 여러 개 있다.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>회사 · 공정</th><th>발표</th><th>고밀도 셀 (µm²)</th><th>비고</th><th>근거</th></tr></thead>
+    <tbody>
+      <tr><td>Intel 45nm</td><td>IEDM 2007</td><td class="num">0.346</td><td>첫 HKMG 양산 공정</td><td><a class="cid" href="claims_status.html#S03">S03</a></td></tr>
+      <tr><td>Intel 32nm</td><td>IEDM 2008</td><td class="num">0.171</td><td>291 Mb 시험 배열</td><td><a class="cid" href="claims_status.html#S03">S03</a></td></tr>
+      <tr><td>Intel 22nm</td><td>IEDM 2012</td><td class="num">0.092</td><td>저전압 0.108 · 고성능 0.130</td><td><a class="cid" href="claims_status.html#S04">S04</a></td></tr>
+      <tr><td>Intel 14nm</td><td>JSSC 2016</td><td class="num">0.0500</td><td>저전압 0.0588(공정 논문 제목의 값)</td><td><a class="cid" href="claims_status.html#S05">S05</a></td></tr>
+      <tr><td>Intel 10nm</td><td>JSSC 2019</td><td class="num">0.0312</td><td>저전압 0.0367</td><td><a class="cid" href="claims_status.html#S06">S06</a></td></tr>
+      <tr><td>Intel 4</td><td>VLSI 2022</td><td class="num">0.0240</td><td><span class="tag t-sec">2차 보도</span> 논문 초록은 고성능 0.0300</td><td><a class="cid" href="claims_status.html#S07">S07</a></td></tr>
+      <tr><td>Intel 18A</td><td>ISSCC 2025</td><td class="num">0.021</td><td>GAA(RibbonFET), 후면 전력(PowerVia)은 주변 회로에 적용</td><td><a class="cid" href="claims_status.html#S08">S08</a></td></tr>
+      <tr><td>TSMC N7</td><td>IEDM 2016</td><td class="num">0.027</td><td></td><td><a class="cid" href="claims_status.html#S09">S09</a></td></tr>
+      <tr><td>TSMC N5</td><td>IEDM 2019</td><td class="num">0.021</td><td></td><td><a class="cid" href="claims_status.html#S09">S09</a></td></tr>
+      <tr><td>TSMC 3nm (초기)</td><td>IEDM 2022</td><td class="num">0.0199</td><td>45 nm 게이트 피치, 256 Mb 매크로</td><td><a class="cid" href="claims_status.html#S10">S10</a></td></tr>
+      <tr><td>TSMC N3E</td><td>IEDM 2022</td><td class="num">0.021</td><td><span class="tag t-sec">2차 보도</span> N5와 같음</td><td><a class="cid" href="claims_status.html#S10">S10</a></td></tr>
+      <tr><td>TSMC N2</td><td>ISSCC 2025</td><td class="num">0.021</td><td>GAA 나노시트, 매크로 38.1 Mb/mm²</td><td><a class="cid" href="claims_status.html#S11">S11</a></td></tr>
+      <tr><td>Samsung 7nm</td><td>VLSI 2018</td><td class="num">0.0262</td><td>EUV, 27 nm 핀 피치, 54 nm 폴리 피치</td><td><a class="cid" href="claims_status.html#S13">S13</a></td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn">
+    <b>축소 둔화</b> — 위 발표값으로 계산하면 TSMC 고밀도 셀은 N7→N5에서 약 22% 줄었지만, N5(0.021)→N3E(0.021, 2차 보도)→N2(0.021)는 같은 값이다. Intel 18A도 0.021이다. 셀 자체는 거의 멈췄고, N2는 대신 매크로 수준에서 약 38 Mb/mm²의 밀도와 N3 대비 1.15배 넘는 칩 밀도를 내세웠다 <a class="cid" href="claims_status.html#S11">S11</a>. <b>셀 면적과 매크로 밀도는 다른 지표</b>다(매크로에는 감지 증폭기·제어 회로가 들어간다). 계산은 이 페이지에서 한 것이다.
+  </div>
+  <p class="note">Samsung 5nm·3nm GAA의 고밀도 셀 절대 면적, Intel 7 전용 셀 값은 이번 조사에서 공개 1차 근거를 찾지 못해 싣지 않았다. N2를 0.0175 µm²로 전하는 2차 자료도 있지만 회사 발표(0.021)와 맞지 않아 쓰지 않았다.</p>
+
+  <h2 id="etch">4. 식각·패터닝 과제</h2>
+  <p>SRAM 배열은 칩에서 최소 피치 패턴이 가장 넓게, 가장 촘촘하게 반복되는 곳이다. 셀 하나에 게이트·핀(또는 시트)·컨택·국부 배선이 빽빽하게 들어가므로, 정렬 여유가 조금만 부족해도 단락이나 단선이 수억 번 반복될 수 있다. <span class="tag t-na">일반 정의</span></p>
+  <div class="grid2">
+    <div class="card"><h3>자기정렬 컨택(SAC)</h3><p>Intel은 22nm에서 컨택과 게이트 사이의 엄격한 정렬 요구를 없애려고 자기정렬 컨택을 도입했다 <a class="cid" href="claims_status.html#S15">S15</a>. 게이트 위를 절연 캡으로 덮고, 캡·스페이서 대비 선택비가 높은 컨택 식각으로 정렬이 조금 어긋나도 게이트에 닿지 않게 하는 방식이다(<a href="a20_etch_knowledge_graph.html#contact">그래프: 자기정렬 컨택</a>, <a href="a20_etch_knowledge_graph.html#s_gaterecess">게이트 금속 리세스·캡</a>).</p></div>
+    <div class="card"><h3>활성 게이트 위 컨택 · 셀 경계</h3><p>Intel 10nm은 고밀도를 위해 활성 게이트 바로 위에 컨택을 내리는 자기정렬 공정(COAG)과 셀 경계의 더미 게이트 제거를 도입했다 <a class="cid" href="claims_status.html#S16">S16</a>. 둘 다 식각 선택비와 절연 여유를 더 빠듯하게 만든다. 셀 경계에서 게이트를 끊는 공정은 <a href="a20_etch_knowledge_graph.html#s_cmg">금속 게이트 컷</a> 노드 참고.</p></div>
+    <div class="card"><h3>시트·핀 구성과 변동</h3><p>FinFET 셀은 핀 개수(정수)로 트랜지스터 세기를 맞춘다. GAA 나노시트에서는 풀업·패스게이트·풀다운마다 시트 폭을 다르게 고를 수 있다는 점이 다뤄졌다 <a class="cid" href="claims_status.html#S14">S14</a>. 시트 폭·두께가 고르지 않으면 세 트랜지스터의 균형이 흔들려 Vmin이 나빠지므로, 채널 릴리스·시트 형성 식각의 균일도가 SRAM에 직접 영향을 준다(<a href="a20_etch_knowledge_graph.html#s_release">채널 릴리스</a>). 마지막 문장은 위 근거들을 연결한 해석이다.</p></div>
+    <div class="card"><h3>후면 전력 공급</h3><p>Intel 18A SRAM은 GAA(RibbonFET) 공정에서 후면 전력 공급(PowerVia)을 함께 쓴 0.021 µm² 고밀도 SRAM을 보고했다 <a class="cid" href="claims_status.html#S08">S08</a>. 초록 기준으로 PowerVia는 셀 배열이 아니라 주변 회로에 적용되었다. 후면 전력은 전원 배선을 웨이퍼 뒷면으로 옮겨 앞면 배선 자원을 덜어 준다 <span class="tag t-na">일반 정의</span>. SRAM 셀 안에 전원 비아를 넣을 때의 면적 영향에 대한 수치는 원문을 열지 못해 싣지 않았다(검증 보류).</p></div>
+  </div>
+
+  <h2 id="future">5. 다음 소자 구조와 SRAM</h2>
+  <div class="grid2">
+    <div class="card"><h3>포크시트</h3><p>nFET와 pFET 시트 사이에 절연 벽을 세워 둘의 간격을 크게 줄이는 구조. imec 설계·시뮬레이션 연구는 GAA 나노시트 대비 SRAM 비트셀 면적 30% 축소와 읽기 지연 개선을 보였다 <a class="cid" href="claims_status.html#S19">S19</a>.</p></div>
+    <div class="card"><h3>CFET</h3><p>nFET와 pFET을 위아래로 쌓는 구조. 예측 노드 설계 연구는 A5 CFET이 A14 나노시트 대비 최대 55%, A10 포크시트 대비 최대 40% SRAM 비트셀 면적을 줄일 수 있고, A3에서 게이트 컷을 절연 벽으로 바꾸면 최대 17% 더 줄지만 배선이 복잡해진다고 평가했다 <a class="cid" href="claims_status.html#S20">S20</a>. 게이트 컷 식각이 셀 면적의 한 항목이라는 뜻이기도 하다.</p></div>
+  </div>
+
+  <h2 id="alt">6. 보완책: 3D 적층 캐시 · eDRAM</h2>
+  <div class="grid2">
+    <div class="card"><h3>3D 적층 캐시</h3><p>셀을 더 줄이는 대신 SRAM 칩을 위에 쌓는다. AMD는 7nm CPU 위에 SRAM 다이를 하이브리드 본딩으로 붙여 L3 캐시를 32 MB에서 96 MB로 늘리고 최대 2 TB/s 대역폭과 평균 15% 게임 성능 향상을 보고했다(회사 발표) <a class="cid" href="claims_status.html#S22">S22</a>. 본딩 공정은 <a href="a20_etch_knowledge_graph.html#hcb">HCB(하이브리드 Cu 본딩)</a> 노드 참고.</p></div>
+    <div class="card"><h3>eDRAM</h3><p>커패시터에 전하로 저장하는 DRAM 셀을 로직 칩 안에 넣는 방법. IBM POWER7은 45nm SOI에서 32 MB L3를 eDRAM으로 만들고 1.35 ns 랜덤 접근을 보고했다 <a class="cid" href="claims_status.html#S24">S24</a>. 별도 커패시터 공정과 리프레시가 필요하다. <span class="tag t-na">일반 정의</span></p></div>
+  </div>
+
+  <h2 id="more">7. 더 보기 · 출처</h2>
+  <ul>
+    <li>그래프에서 이어 보기: <a href="a20_etch_knowledge_graph.html#sram">SRAM 노드</a>, <a href="a20_etch_knowledge_graph.html#hkmg">HKMG 게이트</a>, <a href="a20_etch_knowledge_graph.html#rmg">RMG 공정</a></li>
+    <li>컨택·게이트 컷 식각의 기초: <a href="etch_process_basics.html">식각 공정 기초</a></li>
+    <li>실제 GAA 공정 흐름: <a href="tsmc_n2_a20_etch_report.html">A20 식각 보고서</a></li>
+  </ul>
+  <ol class="src">
+    <li>Seevinck, List, Lohstroh, Static-noise margin analysis of MOS SRAM cells, IEEE JSSC 22, 748 (1987) — <a href="https://doi.org/10.1109/JSSC.1987.1052809">doi:10.1109/JSSC.1987.1052809</a> <a class="psum" href="papers.html#seevinck1987" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Grossar 외, Read stability and write-ability analysis of SRAM cells for nanometer technologies, IEEE JSSC 41, 2577 (2006) — <a href="https://doi.org/10.1109/JSSC.2006.883344">doi:10.1109/JSSC.2006.883344</a> <a class="psum" href="papers.html#grossar2006" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Mistry 외, A 45nm logic technology with high-k+metal gate transistors…, IEDM 2007 — <a href="https://doi.org/10.1109/IEDM.2007.4418914">doi:10.1109/IEDM.2007.4418914</a> <a class="psum" href="papers.html#mistry2007" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Natarajan 외, A 32nm logic technology … 0.171μm² SRAM cell size in a 291Mb array, IEDM 2008 — <a href="https://doi.org/10.1109/IEDM.2008.4796777">doi:10.1109/IEDM.2008.4796777</a> <a class="psum" href="papers.html#natarajan2008" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Jan 외, A 22nm SoC platform technology featuring 3-D tri-gate and high-k/metal gate…, IEDM 2012 — <a href="https://doi.org/10.1109/IEDM.2012.6478969">doi:10.1109/IEDM.2012.6478969</a> <a class="psum" href="papers.html#jan2012" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Auth 외, A 22nm high performance and low-power CMOS technology featuring fully-depleted tri-gate transistors, self-aligned contacts…, VLSI 2012 — <a href="https://doi.org/10.1109/VLSIT.2012.6242496">doi:10.1109/VLSIT.2012.6242496</a> <a class="psum" href="papers.html#auth2012" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Natarajan 외, A 14nm logic technology … and a 0.0588 µm² SRAM cell size, IEDM 2014 — <a href="https://doi.org/10.1109/IEDM.2014.7046976">doi:10.1109/IEDM.2014.7046976</a> <a class="psum" href="papers.html#natarajan2014" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Karl 외, 14nm FinFET SRAM (JSSC 2016 확장판) — <a href="https://doi.org/10.1109/JSSC.2015.2461592">doi:10.1109/JSSC.2015.2461592</a> <a class="psum" href="papers.html#karl2016" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Auth 외, A 10nm high performance and low-power CMOS technology … contact over active gate…, IEDM 2017 — <a href="https://doi.org/10.1109/IEDM.2017.8268472">doi:10.1109/IEDM.2017.8268472</a> <a class="psum" href="papers.html#auth2017" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Intel 10nm 고밀도 SRAM, IEEE JSSC 2019 — <a href="https://doi.org/10.1109/JSSC.2018.2861873">doi:10.1109/JSSC.2018.2861873</a> <a class="psum" href="papers.html#intel10sram2019" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Energy-efficient high bandwidth 6T SRAM design on Intel 4 CMOS technology, VLSI 2022 — <a href="https://doi.org/10.1109/VLSITechnologyandCir46769.2022.9830148">doi:10.1109/VLSITechnologyandCir46769.2022.9830148</a> <a class="psum" href="papers.html#intel4sram2022" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a>; RealWorldTech, Intel 4 해설 — <a href="https://www.realworldtech.com/intel-4/6">realworldtech.com/intel-4/6</a></li>
+    <li>A 0.021µm² high-density SRAM in Intel 18A-RibbonFET technology with PowerVia…, ISSCC 2025 — <a href="https://doi.org/10.1109/ISSCC49661.2025.10904657">doi:10.1109/ISSCC49661.2025.10904657</a> <a class="psum" href="papers.html#intel18a2025" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Wu 외, A 7nm CMOS platform technology … 0.027um² high density 6-T SRAM cell, IEDM 2016 — <a href="https://doi.org/10.1109/IEDM.2016.7838333">doi:10.1109/IEDM.2016.7838333</a> <a class="psum" href="papers.html#tsmcn7_2016" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Yeap 외, 5nm CMOS production technology platform … densest 0.021µm² SRAM cells, IEDM 2019 — <a href="https://doi.org/10.1109/IEDM19573.2019.8993577">doi:10.1109/IEDM19573.2019.8993577</a> <a class="psum" href="papers.html#yeap2019" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Chang 외, Critical process features enabling aggressive contacted gate pitch scaling for 3nm CMOS technology, IEDM 2022 — <a href="https://doi.org/10.1109/IEDM45625.2022.10019565">doi:10.1109/IEDM45625.2022.10019565</a> <a class="psum" href="papers.html#chang2022" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a>; SemiWiki, IEDM 2022 TSMC 3nm — <a href="https://semiwiki.com/semiconductor-manufacturers/tsmc/322688-iedm-2022-tsmc-3nm/">semiwiki.com</a></li>
+    <li>A 38.1Mb/mm² SRAM in a 2nm-CMOS-nanosheet technology, ISSCC 2025 — <a href="https://doi.org/10.1109/ISSCC49661.2025.10904759">doi:10.1109/ISSCC49661.2025.10904759</a> <a class="psum" href="papers.html#tsmcn2sram2025" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a>; Yeap 외, 2nm platform technology…, IEDM 2024 — <a href="https://doi.org/10.1109/IEDM50854.2024.10873475">doi:10.1109/IEDM50854.2024.10873475</a> <a class="psum" href="papers.html#yeap2024" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>True 7nm platform technology featuring smallest FinFET and smallest SRAM cell by EUV…, VLSI 2018 — <a href="https://doi.org/10.1109/VLSIT.2018.8510682">doi:10.1109/VLSIT.2018.8510682</a> <a class="psum" href="papers.html#samsung7_2018" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>A 3-nm gate-all-around SRAM featuring an adaptive dual-bitline and an adaptive cell-power assist circuit, IEEE JSSC 2022 — <a href="https://doi.org/10.1109/JSSC.2021.3123077">doi:10.1109/JSSC.2021.3123077</a> <a class="psum" href="papers.html#samsung3gae2022" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Weckx 외, Novel forksheet device architecture as ultimate logic scaling device towards 2nm, IEDM 2019 — <a href="https://doi.org/10.1109/IEDM19573.2019.8993635">doi:10.1109/IEDM19573.2019.8993635</a> <a class="psum" href="papers.html#weckx2019" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Liu 외, CFET SRAM DTCO, interconnect guideline, and benchmark for CMOS scaling, IEEE TED 70 (2023) — <a href="https://doi.org/10.1109/TED.2023.3235701">doi:10.1109/TED.2023.3235701</a> <a class="psum" href="papers.html#liu2023" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Wuu 외, 3D V-Cache: the implementation of a hybrid-bonded 64MB stacked cache for a 7nm x86-64 CPU, ISSCC 2022 — <a href="https://doi.org/10.1109/ISSCC42614.2022.9731565">doi:10.1109/ISSCC42614.2022.9731565</a> <a class="psum" href="papers.html#wuu2022" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Jouppi 외, In-datacenter performance analysis of a tensor processing unit, ISCA 2017 — <a href="https://doi.org/10.1145/3079856.3080246">doi:10.1145/3079856.3080246</a> <a class="psum" href="papers.html#jouppi2017" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>A 45 nm SOI embedded DRAM macro for the POWER processor 32 MByte on-chip L3 cache, IEEE JSSC 2011 — <a href="https://doi.org/10.1109/JSSC.2010.2084470">doi:10.1109/JSSC.2010.2084470</a> <a class="psum" href="papers.html#power7edram2011" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+  </ol>
+</div>
+</body>
+</html>

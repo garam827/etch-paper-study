@@ -54,6 +54,7 @@
    "title": "GAA · A20 공정",
    "pages": [
     "research/tsmc_n2_a20_etch_report.html",
+    "research/sram_logic.html",
     "viz/inner_spacer_3d.html",
     "viz/channel_release_3d.html",
     "viz/bdi_3d.html"
@@ -64,7 +65,7 @@
   {
    "href": "research/papers.html",
    "title": "레퍼런스 논문 요약",
-   "desc": "보고서·지식 그래프·OES 표가 인용한 논문 166편을 영역별로 요약. 그래프 노드와 보고서의 논문 링크 옆 '요약'에서 바로 오고, 각 요약에서 쓰인 노드·페이지로 돌아갈 수 있다. 요약 핵심 문장은 독립 검증(채택 157·조건부 9).",
+   "desc": "보고서·지식 그래프·OES 표가 인용한 논문 185편을 영역별로 요약. 그래프 노드와 보고서의 논문 링크 옆 '요약'에서 바로 오고, 각 요약에서 쓰인 노드·페이지로 돌아갈 수 있다. 요약 핵심 문장은 독립 검증(채택 176·조건부 9).",
    "section": "kb",
    "tags": [
     "논문",
@@ -202,6 +203,17 @@
    "keywords": []
   },
   {
+   "href": "research/sram_logic.html",
+   "title": "SRAM — 로직 칩의 온칩 메모리",
+   "desc": "로직 칩 안의 SRAM이 하는 일(캐시·버퍼), 6T 셀 구조와 읽기·쓰기 안정성·Vmin, Intel·TSMC·Samsung의 공정 세대별 고밀도 셀 면적 표(N5 이후 0.021 µm²에서 정체), SRAM 배열의 식각·패터닝 과제(자기정렬 컨택·활성 게이트 위 컨택·셀 경계·시트 균일도·후면 전력), 포크시트·CFET, 3D 적층 캐시·eDRAM. 주장 24개 독립 검증(채택 20·보류 4).",
+   "section": "research",
+   "tags": ["SRAM", "셀 면적", "식각 과제"],
+   "etch_tag": "식각",
+   "date": "2026-10-27",
+   "go": "SRAM 보기 →",
+   "keywords": ["SRAM", "6T", "캐시", "cache", "비트셀", "bitcell", "Vmin", "SNM", "정적 잡음 여유", "셀 면적", "V-Cache", "3D 적층 캐시", "eDRAM", "포크시트", "forksheet", "CFET", "후면 전력", "PowerVia", "COAG"]
+  },
+  {
    "href": "research/dpt_qpt_report.html",
    "title": "DPT · QPT 멀티패터닝 보고서",
    "desc": "LELE·SADP·SAQP의 등장 배경, 도입 연표, 공정 단면도, 난제 15가지, 2023–2026 동향(High-NA·SMIC·DRAM·장비). 출처 71개.",
@@ -232,7 +244,7 @@
   {
    "href": "research/a20_etch_knowledge_graph.html",
    "title": "식각 지식 그래프 · 용어집",
-   "desc": "용어 282개와 관계 609개를 인터랙티브 그래프로 표현(DPT·QPT 멀티패터닝, 플라즈마 식각 원리, SNU PAL 질의응답 용어, 식각 기체·OES 파장·종말점 신호, HKMG·RMG(대체 금속 게이트) 공정, HCB 본딩, 공정 제어(APC), 식각 공정 기초(ARDE·보잉·트위스팅·Bosch·극저온 식각 등) 포함). 용어마다 근거 논문·출처를 펼쳐 볼 수 있고, 출처로도 검색된다. 영역 간 연결 강조·검토, 용어 검토(2026-10-08) 포함.",
+   "desc": "용어 290개와 관계 624개를 인터랙티브 그래프로 표현(DPT·QPT 멀티패터닝, 플라즈마 식각 원리, SNU PAL 질의응답 용어, 식각 기체·OES 파장·종말점 신호, HKMG·RMG(대체 금속 게이트) 공정, HCB 본딩, 공정 제어(APC), 식각 공정 기초(ARDE·보잉·트위스팅·Bosch·극저온 식각 등), SRAM(셀·셀 축소 둔화·포크시트·CFET·후면 전력·3D 적층 캐시) 포함). 용어마다 근거 논문·출처를 펼쳐 볼 수 있고, 출처로도 검색된다. 영역 간 연결 강조·검토, 용어 검토(2026-10-08) 포함.",
    "section": "kb",
    "tags": [
     "식각",
@@ -316,7 +328,7 @@
   {
    "href": "research/claims_status.html",
    "title": "핵심 주장 검증 현황",
-   "desc": "A20 보고서·지식 그래프·식각 공정 기초·OES 보완·논문 요약의 핵심 주장 356개를 독립 검증 에이전트가 원문과 다시 대조한 결과(채택 287·조건부 63·보류 6). 주장마다 채택·조건부 상태, 필요한 조건, 검토일, 확인한 출처.",
+   "desc": "A20 보고서·지식 그래프·식각 공정 기초·SRAM·OES 보완·논문 요약의 핵심 주장 399개를 독립 검증 에이전트가 원문과 다시 대조한 결과(채택 326·조건부 63·보류 10). 주장마다 채택·조건부 상태, 필요한 조건, 검토일, 확인한 출처.",
    "section": "method",
    "tags": [
     "검증",

@@ -1,0 +1,377 @@
+{
+ "topic": "로직 반도체 내장 SRAM — 셀·노드별 셀 면적·식각 과제",
+ "claims": [
+  {
+   "id": "S01",
+   "page": "sram",
+   "statement": "나노미터 CMOS에서 SRAM 셀의 읽기 안정성과 쓰기 능력은 다이 안 소자 변동 증가와 전원 전압 축소 때문에 주요 과제이며, Grossar 외(JSSC 2006)는 Seevinck의 정적 잡음 여유(SNM)와 함께 N-curve 기반 읽기 안정성·쓰기 능력 지표를 분석했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--1-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.2006.883344"
+   ]
+  },
+  {
+   "id": "S02",
+   "page": "sram",
+   "statement": "Seevinck 외(JSSC 1987)는 저항 부하형과 완전 CMOS SRAM 셀의 안정성을 분석하고, 정적 잡음 여유(SNM)를 소자 변수와 전원 전압의 함수로 나타내는 해석식을 유도했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--1-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.1987.1052809"
+   ]
+  },
+  {
+   "id": "S03",
+   "page": "sram",
+   "statement": "Intel은 45nm HKMG 공정(IEDM 2007)에서 0.346 µm² SRAM 셀을, 32nm 공정(IEDM 2008)에서 291 Mb 시험 배열의 0.171 µm² SRAM 셀을 보고했다(회사 발표).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--1-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2007.4418914",
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2008.4796777"
+   ]
+  },
+  {
+   "id": "S04",
+   "page": "sram",
+   "statement": "Intel 22nm SoC 플랫폼 발표(IEDM 2012)는 SRAM 셀을 고밀도 0.092 µm², 저전압 0.108 µm², 고성능 0.130 µm²로 구분해 보고했다(회사 발표).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--1-",
+   "checked": [
+    "https://siliconsemiconductor.net/article/76101/Intel_To_Present_22nm_Tri-Gate_Technology_For_SoC_Applications",
+    "https://sst.semiconductor-digest.com/chipworks_real_chips_blog/2012/12/11/intel-details-22nm-trigate-soc-process-at-iedm"
+   ]
+  },
+  {
+   "id": "S05",
+   "page": "sram",
+   "statement": "Intel 14nm 공정 논문(IEDM 2014)은 제목에 0.0588 µm² SRAM 셀을 내세웠고, 같은 공정의 SRAM 발표를 확장한 논문(Karl 외, JSSC 2016)은 고밀도 셀 0.0500 µm²와 저전압 셀 0.0588 µm²를 구분해 보고했다(회사 발표).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--6-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2014.7046976",
+    "https://api.openalex.org/works/doi:10.1109/JSSC.2015.2461592"
+   ]
+  },
+  {
+   "id": "S06",
+   "page": "sram",
+   "statement": "Intel 10nm SRAM 발표(JSSC 2019)는 고밀도 셀 0.0312 µm², 저전압 셀 0.0367 µm²를 보고했다(회사 발표).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--2-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.2018.2861873"
+   ]
+  },
+  {
+   "id": "S07",
+   "page": "sram",
+   "statement": "Intel 4 SRAM 논문(VLSI 2022) 초록은 0.0300 µm² 고성능(고전류) 비트셀을 보고했고, 분석 매체들은 같은 공정의 고밀도 셀을 0.0240 µm²로 전한다(고밀도 값은 2차 보도).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--6-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/VLSITechnologyandCir46769.2022.9830148",
+    "https://www.realworldtech.com/intel-4/6"
+   ]
+  },
+  {
+   "id": "S08",
+   "page": "sram",
+   "statement": "Intel 18A SRAM 발표(ISSCC 2025)는 RibbonFET(GAA)와 PowerVia(후면 전력 공급)를 적용한 0.021 µm² 고밀도 SRAM을 보고했다(회사 발표).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--2-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ISSCC49661.2025.10904657"
+   ]
+  },
+  {
+   "id": "S09",
+   "page": "sram",
+   "statement": "TSMC는 N7(IEDM 2016)에서 0.027 µm², N5(IEDM 2019)에서 0.021 µm² 고밀도 6T SRAM 셀을 보고했다(회사 발표).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--2-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2016.7838333",
+    "https://api.openalex.org/works/doi:10.1109/IEDM19573.2019.8993577"
+   ]
+  },
+  {
+   "id": "S10",
+   "page": "sram",
+   "statement": "TSMC 3nm 공정 논문(IEDM 2022 27.1, 45 nm contacted gate pitch)은 초록에서 0.0199 µm² SRAM 셀과 HC/HD 256 Mb SRAM 매크로를 보고했고, 분석 매체들은 3nm FinFlex(N3E)의 고밀도 셀을 N5와 같은 0.021 µm²로 전한다(N3E 값은 2차 보도).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--6-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM45625.2022.10019565",
+    "https://semiwiki.com/semiconductor-manufacturers/tsmc/322688-iedm-2022-tsmc-3nm/",
+    "https://fuse.wikichip.org/?p=7343"
+   ]
+  },
+  {
+   "id": "S11",
+   "page": "sram",
+   "statement": "TSMC는 N2 SRAM(ISSCC 2025)에서 0.021 µm² 고밀도 셀과 38.1 Mb/mm² 매크로 밀도를 보고했고, N2 공정 논문(IEDM 2024)은 약 38 Mb/mm²의 가장 조밀한 SRAM 매크로와 N3 대비 1.15배 넘는 칩 밀도를 보고했다(회사 발표).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--3-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ISSCC49661.2025.10904759",
+    "https://spectrum.ieee.org/sram-intel-tsmc",
+    "https://api.openalex.org/works/doi:10.1109/IEDM50854.2024.10873475"
+   ]
+  },
+  {
+   "id": "S12",
+   "page": "sram",
+   "statement": "TSMC 3nm FinFlex 논문(IEDM 2022 27.5)은 0.3 V에서 셀의 정적 안정성을 보였지만, 256 Mb 매크로의 전체 읽기·쓰기 동작은 0.5 V까지 보고했다(셀 안정성과 배열 동작 전압은 다른 지표).",
+   "risk": "medium",
+   "decision": "hold",
+   "reason": "근거 부족",
+   "verdict": "insufficient",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--3-",
+   "checked": []
+  },
+  {
+   "id": "S13",
+   "page": "sram",
+   "statement": "Samsung 7nm EUV 플랫폼 발표(VLSI 2018)는 27 nm 핀 피치, 54 nm 게이트 피치와 0.0262 µm² SRAM 셀의 256 Mbit SRAM을 보고했다(회사 발표).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--3-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/VLSIT.2018.8510682"
+   ]
+  },
+  {
+   "id": "S14",
+   "page": "sram",
+   "statement": "Samsung 3nm GAA(3GAE) 256 Mb SRAM 논문(JSSC 2022)은 나노시트 폭을 풀업·패스게이트·풀다운마다 다르게 고를 수 있음을 다루고, 적응형 이중 비트라인과 적응형 셀 전원 보조 기법으로 Vmin을 230 mV 개선하고 유효 비트라인 저항을 최대 62% 줄였다고 보고했다(회사 발표).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--3-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.2021.3123077",
+    "https://www.semiconductor-digest.com/?p=14183"
+   ]
+  },
+  {
+   "id": "S15",
+   "page": "sram",
+   "statement": "Intel 22nm 공정 발표(VLSI 2012)는 컨택과 게이트 사이의 엄격한 정렬 요구를 없애기 위해 자기정렬 컨택을 도입했다고 보고했다.",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--3-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/VLSIT.2012.6242496"
+   ]
+  },
+  {
+   "id": "S16",
+   "page": "sram",
+   "statement": "Intel 10nm 공정 발표(IEDM 2017)는 고밀도를 위해 활성 게이트 위 자기정렬 컨택(contact over active gate)과 셀 경계의 더미 게이트 제거를 도입했다고 보고했다.",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--4-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2017.8268472"
+   ]
+  },
+  {
+   "id": "S17",
+   "page": "sram",
+   "statement": "TSMC 3nm 논문(IEDM 2022 27.1)은 자기정렬 컨택 식각에서 게이트 금속 리세스가 부족하면 보호 절연막 공간이 모자라 게이트–컨택 누설·단락 위험이 커지고, 과도하면 게이트 금속이 손상되며, 리세스 깊이 변화가 Vth와 게이트 저항 변동에도 영향을 준다고 설명한다.",
+   "risk": "high",
+   "decision": "hold",
+   "reason": "근거 부족",
+   "verdict": "insufficient",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--4-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM45625.2022.10019565"
+   ]
+  },
+  {
+   "id": "S18",
+   "page": "sram",
+   "statement": "imec의 IEDM 2017 연구(Weckx 외)는 SRAM 셀 높이를 게이트 컷, 게이트 연장, 핀 피치, 소자 간 간격 규칙으로 분해하고, 폴리 게이트 컷·자기정렬 게이트 연장·금속 게이트 컷의 공정 순서와 필요한 끝단 여유를 비교했다(시뮬레이션·설계 연구).",
+   "risk": "medium",
+   "decision": "hold",
+   "reason": "근거 부족",
+   "verdict": "insufficient",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--4-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2017.8268430"
+   ]
+  },
+  {
+   "id": "S19",
+   "page": "sram",
+   "statement": "imec의 포크시트 소자 연구(Weckx 외, IEDM 2019)는 GAA 나노시트 대비 SRAM 비트셀 면적 30% 축소와 읽기 지연 개선을 보였다(설계·시뮬레이션 연구).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--4-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM19573.2019.8993635"
+   ]
+  },
+  {
+   "id": "S20",
+   "page": "sram",
+   "statement": "CFET SRAM 설계 연구(Liu 외, TED 2023)는 A5 CFET이 A14 나노시트 대비 최대 55%, A10 포크시트 대비 최대 40% SRAM 비트셀 면적 축소를 줄 수 있고, A3에서 게이트 컷을 절연 벽으로 바꾸면 추가로 최대 17% 줄지만 배선 복잡도가 커진다고 평가했다(예측 노드 DTCO).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--4-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/TED.2023.3235701"
+   ]
+  },
+  {
+   "id": "S21",
+   "page": "sram",
+   "statement": "Intel 4 기반 PowerVia SRAM 연구(ISSCC 2024)에서 비트셀 안에 VSS 후면 전력 비아를 넣으면 고밀도 셀이 0.0240에서 0.0270 µm²로, 고전류 셀이 0.0300에서 0.0330 µm²로 커져, 배열 둘레에서 전력을 공급하는 방식을 썼다(회사 발표).",
+   "risk": "high",
+   "decision": "hold",
+   "reason": "근거 부족",
+   "verdict": "insufficient",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--5-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ISSCC49657.2024.10454501",
+    "https://www.realworldtech.com/intel-4/6",
+    "https://fuse.wikichip.org/news/6720/a-look-at-intel-4-process-technology/4"
+   ]
+  },
+  {
+   "id": "S22",
+   "page": "sram",
+   "statement": "AMD는 7nm x86-64 CPU에 하이브리드 본딩으로 SRAM 다이를 쌓아 L3 캐시를 32 MB에서 96 MB로 늘리고 최대 2 TB/s 대역폭과 평균 15% 게임 성능 향상을 얻었다고 보고했다(ISSCC 2022, 회사 발표).",
+   "risk": "high",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--5-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ISSCC42614.2022.9731565"
+   ]
+  },
+  {
+   "id": "S23",
+   "page": "sram",
+   "statement": "Google TPU v1 논문(ISCA 2017)은 중간 데이터를 담는 24 MiB 통합 버퍼가 다이 면적의 거의 3분의 1이라고 밝혔다(특정 설계의 버퍼 면적).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--5-",
+   "checked": [
+    "https://pages.cs.wisc.edu/~markhill/restricted/isca17_tpu_slides.pdf",
+    "https://www.slideshare.net/slideshow/in-datacenter-performance-analysis-of-a-tensor-processing-unit/96836750",
+    "https://cloud.google.com/blog/products/ai-machine-learning/an-in-depth-look-at-googles-first-tensor-processing-unit-tpu"
+   ]
+  },
+  {
+   "id": "S24",
+   "page": "sram",
+   "statement": "IBM POWER7은 45nm SOI 공정의 32 MB 온칩 L3 캐시를 내장 DRAM(eDRAM)으로 구현했고, 1.35 ns 랜덤 접근과 1.7 ns 랜덤 사이클을 보고했다(JSSC 2011, 회사 발표).",
+   "risk": "medium",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "sram--5-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.2010.2084470"
+   ]
+  }
+ ]
+}

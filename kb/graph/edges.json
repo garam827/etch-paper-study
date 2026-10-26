@@ -3629,5 +3629,80 @@
   "from": "i_arde",
   "to": "i_twisting",
   "label": "고종횡비 식각의 과제"
+ },
+ {
+  "from": "sram",
+  "to": "gaa",
+  "label": "트랜지스터(핀·시트)로 구성"
+ },
+ {
+  "from": "sram",
+  "to": "contact",
+  "label": "자기정렬 컨택 사용"
+ },
+ {
+  "from": "sram",
+  "to": "coag",
+  "label": "밀도용 컨택 방식"
+ },
+ {
+  "from": "coag",
+  "to": "contact",
+  "label": "확장"
+ },
+ {
+  "from": "sram",
+  "to": "i_vmin",
+  "label": "핵심 과제"
+ },
+ {
+  "from": "sram",
+  "to": "i_sramscale",
+  "label": "핵심 과제"
+ },
+ {
+  "from": "i_sramscale",
+  "to": "forksheet",
+  "label": "해법 후보"
+ },
+ {
+  "from": "i_sramscale",
+  "to": "cfet",
+  "label": "해법 후보"
+ },
+ {
+  "from": "i_sramscale",
+  "to": "vcache",
+  "label": "보완(적층으로 용량)"
+ },
+ {
+  "from": "cfet",
+  "to": "s_cmg",
+  "label": "게이트 컷을 절연 벽으로 대체(연구)"
+ },
+ {
+  "from": "forksheet",
+  "to": "gaa",
+  "label": "나노시트 변형"
+ },
+ {
+  "from": "sram",
+  "to": "bspdn",
+  "label": "18A SRAM에 적용"
+ },
+ {
+  "from": "bspdn",
+  "to": "a16",
+  "label": "TSMC 적용 노드"
+ },
+ {
+  "from": "vcache",
+  "to": "hcb",
+  "label": "하이브리드 본딩"
+ },
+ {
+  "from": "i_vmin",
+  "to": "s_release",
+  "label": "시트 균일도 영향(해석)"
  }
 ]

@@ -2519,6 +2519,298 @@
    "checked": [
     "https://iopscience.iop.org/article/10.1088/1361-6595/ac95bc"
    ]
+  },
+  {
+   "id": "P-seevinck1987",
+   "page": "papers",
+   "statement": "Seevinck 외(1987)는 SRAM 셀의 정적 잡음 여유(SNM)를 소자 변수와 전원 전압의 함수로 나타내는 해석식을 유도했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.1987.1052809"
+   ]
+  },
+  {
+   "id": "P-grossar2006",
+   "page": "papers",
+   "statement": "Grossar 외(2006)는 소자 변동과 전원 전압 축소로 SRAM 읽기 안정성·쓰기 능력이 주요 과제라고 보고, N-curve 지표를 SNM과 비교했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.2006.883344"
+   ]
+  },
+  {
+   "id": "P-natarajan2008",
+   "page": "papers",
+   "statement": "Natarajan 외(2008)는 Intel 32nm 공정에서 0.171 µm² 셀의 291 Mb SRAM 시험 배열을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2008.4796777"
+   ]
+  },
+  {
+   "id": "P-jan2012",
+   "page": "papers",
+   "statement": "Jan 외(2012)는 Intel 22nm SoC 공정의 SRAM 셀을 고밀도 0.092, 저전압 0.108, 고성능 0.130 µm²로 구분해 발표했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://siliconsemiconductor.net/article/76101/Intel_To_Present_22nm_Tri-Gate_Technology_For_SoC_Applications",
+    "https://sst.semiconductor-digest.com/chipworks_real_chips_blog/2012/12/11/intel-details-22nm-trigate-soc-process-at-iedm"
+   ]
+  },
+  {
+   "id": "P-karl2016",
+   "page": "papers",
+   "statement": "Karl 외(2016)는 Intel 14nm FinFET에서 고밀도 6T 셀 0.0500 µm²와 저전압 6T 셀 0.0588 µm²를 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.2015.2461592"
+   ]
+  },
+  {
+   "id": "P-intel10sram2019",
+   "page": "papers",
+   "statement": "Intel 10nm SRAM 논문(JSSC 2019)은 고밀도 셀 0.0312 µm², 저전압 셀 0.0367 µm²를 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.2018.2861873"
+   ]
+  },
+  {
+   "id": "P-intel4sram2022",
+   "page": "papers",
+   "statement": "Intel 4 SRAM 논문(VLSI 2022) 초록은 0.0300 µm² 고성능 6T 비트셀을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/VLSITechnologyandCir46769.2022.9830148",
+    "https://www.realworldtech.com/intel-4/6"
+   ]
+  },
+  {
+   "id": "P-intel18a2025",
+   "page": "papers",
+   "statement": "Intel 18A SRAM 논문(ISSCC 2025)은 RibbonFET과 PowerVia를 쓴 0.021 µm² 고밀도 SRAM을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ISSCC49661.2025.10904657",
+    "https://marklapedus.substack.com/p/intel-tsmc-tout-sram-breakthroughs"
+   ]
+  },
+  {
+   "id": "P-tsmcn7_2016",
+   "page": "papers",
+   "statement": "Wu 외(2016)는 TSMC 7nm에서 0.027 µm² 고밀도 6T SRAM 셀을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2016.7838333"
+   ]
+  },
+  {
+   "id": "P-yeap2019",
+   "page": "papers",
+   "statement": "Yeap 외(2019)는 TSMC 5nm에서 0.021 µm² 고밀도 SRAM과 7nm 대비 약 1.84배 로직 밀도를 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM19573.2019.8993577"
+   ]
+  },
+  {
+   "id": "P-chang2022",
+   "page": "papers",
+   "statement": "Chang 외(2022)는 45 nm contacted gate pitch의 3nm 공정에서 0.0199 µm² SRAM 셀과 HC/HD 256 Mb 매크로를 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM45625.2022.10019565"
+   ]
+  },
+  {
+   "id": "P-tsmcn2sram2025",
+   "page": "papers",
+   "statement": "TSMC N2 SRAM 논문(ISSCC 2025)은 38.1 Mb/mm² 매크로 밀도를 보고했고, 고밀도 셀은 0.021 µm²로 보도되었다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/ISSCC49661.2025.10904759",
+    "https://marklapedus.substack.com/p/intel-tsmc-tout-sram-breakthroughs",
+    "https://spectrum.ieee.org/sram-intel-tsmc"
+   ]
+  },
+  {
+   "id": "P-yeap2024",
+   "page": "papers",
+   "statement": "Yeap 외(2024)는 TSMC N2에서 약 38 Mb/mm² SRAM 매크로와 N3 대비 1.15배 넘는 칩 밀도를 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM50854.2024.10873475"
+   ]
+  },
+  {
+   "id": "P-samsung7_2018",
+   "page": "papers",
+   "statement": "Jeong 외(2018)는 Samsung 7nm EUV 공정에서 27 nm 핀 피치, 54 nm 폴리 피치와 0.0262 µm² SRAM 셀을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/VLSIT.2018.8510682"
+   ]
+  },
+  {
+   "id": "P-samsung3gae2022",
+   "page": "papers",
+   "statement": "Samsung 3nm GAA SRAM 논문(JSSC 2022)은 유효 비트라인 저항을 최대 62% 줄이고 Vmin을 230 mV 개선했다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.2021.3123077"
+   ]
+  },
+  {
+   "id": "P-weckx2019",
+   "page": "papers",
+   "statement": "Weckx 외(2019)는 포크시트 구조로 GAA 나노시트 대비 SRAM 비트셀 면적 30% 축소를 보였다(설계·시뮬레이션).",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM19573.2019.8993635"
+   ]
+  },
+  {
+   "id": "P-liu2023",
+   "page": "papers",
+   "statement": "Liu 외(2023)는 예측 노드 설계 연구에서 A5 CFET이 A14 나노시트 대비 최대 55%, A10 포크시트 대비 최대 40% 작은 6T SRAM 비트셀을 낼 수 있다고 평가했다(서로 다른 노드 간 비교).",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/TED.2023.3235701"
+   ]
+  },
+  {
+   "id": "P-jouppi2017",
+   "page": "papers",
+   "statement": "Jouppi 외(2017)는 TPU v1의 24 MiB 통합 버퍼가 다이 면적의 거의 3분의 1이라고 밝혔다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://arxiv.org/abs/1704.04760",
+    "https://arxiv.org/pdf/1704.04760",
+    "https://www.cnblogs.com/bonelee/p/8317829.html"
+   ]
+  },
+  {
+   "id": "P-power7edram2011",
+   "page": "papers",
+   "statement": "Barth 외(2011)는 POWER7의 32 MB L3를 45nm SOI eDRAM으로 구현하고 1.35 ns 랜덤 접근을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-ra-m-",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/JSSC.2010.2084470"
+   ]
   }
  ]
 }

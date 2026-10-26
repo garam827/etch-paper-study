@@ -875,6 +875,117 @@
   "etch": "저항 증가·단락·에피 결함."
  },
  {
+  "id": "sram",
+  "name": "SRAM (6T 셀)",
+  "en": "Static RAM, 6-transistor cell",
+  "type": "structure",
+  "area": "gaa",
+  "desc": "로직 칩 안의 고속 메모리(캐시·레지스터 파일·버퍼). 인버터 두 개(풀업·풀다운)를 교차 결합해 값을 붙잡고 패스게이트 두 개로 읽고 쓰는 6T 셀이 표준. 로직과 같은 트랜지스터로 만들어 별도 공정이 필요 없지만 비트당 면적이 크다(일반 지식). 고밀도 셀 면적이 공정 세대의 대표 지표로 쓰인다. 면적 비중 예: Google TPU v1의 24 MiB 통합 버퍼가 다이의 거의 3분의 1(ISCA 2017).",
+  "etch": "최소 피치 패턴이 가장 촘촘하게 반복되는 영역. 자기정렬 컨택(Intel 22nm 도입), 활성 게이트 위 컨택과 셀 경계 더미 게이트 제거(Intel 10nm)처럼 밀도를 위한 공정이 식각 선택비·절연 여유를 빠듯하게 만든다. 셀 면적 표와 세부는 SRAM 페이지(research/sram_logic.html).",
+  "src": [
+   "sram_jouppi17",
+   "sram_auth12",
+   "sram_auth17"
+  ]
+ },
+ {
+  "id": "i_sramscale",
+  "name": "SRAM 셀 축소 둔화",
+  "en": "SRAM bitcell scaling slowdown",
+  "type": "issue",
+  "area": "gaa",
+  "desc": "회사 발표 고밀도 셀: Intel 0.346(45nm)→0.171(32nm)→0.092(22nm)→0.0500(14nm)→0.0312(10nm)→0.0240(Intel 4, 2차 보도)→0.021 µm²(18A). TSMC 0.027(N7)→0.021(N5)→0.0199(초기 3nm)→0.021(N3E, 2차 보도)→0.021(N2). Samsung 7nm 0.0262.",
+  "etch": "N5 이후 고밀도 셀이 0.021 µm² 근처에서 멈췄다. TSMC N2는 대신 매크로 밀도 약 38 Mb/mm²와 N3 대비 1.15배 넘는 칩 밀도를 내세웠다(셀 면적과 매크로 밀도는 다른 지표). 해법 후보로 포크시트·CFET 같은 소자 구조, 3D 적층 캐시가 거론된다.",
+  "src": [
+   "sram_natarajan08",
+   "sram_jan12",
+   "sram_karl16",
+   "sram_intel10",
+   "sram_intel4",
+   "sram_intel18a",
+   "sram_tsmcn7",
+   "sram_tsmcn5",
+   "sram_tsmcn3",
+   "sram_tsmcn2",
+   "sram_samsung7"
+  ]
+ },
+ {
+  "id": "i_vmin",
+  "name": "Vmin·읽기/쓰기 안정성",
+  "en": "SRAM Vmin, read stability, write-ability",
+  "type": "issue",
+  "area": "gaa",
+  "desc": "읽기에는 풀다운이 패스게이트보다 강해야 하고, 쓰기에는 패스게이트가 풀업을 이겨야 한다(일반 지식). 정적 잡음 여유(SNM)는 1987년에 소자 변수와 전원 전압의 함수로 정리되었고, 미세 공정에서는 소자 변동과 전원 전압 축소로 읽기 안정성·쓰기 능력이 주요 과제가 되어 N-curve 지표도 쓰인다(2006).",
+  "etch": "Vmin은 수억 개 셀 중 가장 약한 셀이 정하므로 트랜지스터 특성의 산포가 중요하다(일반 지식). Samsung 3nm GAA SRAM은 회로 보조로 Vmin을 230 mV 개선하고 유효 비트라인 저항을 최대 62% 줄였다고 보고했다. 시트 폭을 트랜지스터마다 다르게 고를 수 있다는 점도 다뤘다.",
+  "src": [
+   "sram_seevinck87",
+   "sram_grossar06",
+   "sram_samsung3"
+  ]
+ },
+ {
+  "id": "coag",
+  "name": "활성 게이트 위 컨택 (COAG)",
+  "en": "Contact over active gate",
+  "type": "structure",
+  "area": "gaa",
+  "desc": "게이트 컨택을 소자 바깥이 아니라 활성 영역 바로 위 게이트에 내리는 자기정렬 방식. Intel 10nm(IEDM 2017)이 셀 경계 더미 게이트 제거와 함께 고밀도를 위해 도입했다고 보고했다.",
+  "etch": "게이트 캡과 소스·드레인 컨택 사이 절연 여유가 더 빠듯해져, 캡·스페이서 대비 컨택 식각 선택비와 게이트 금속 리세스 깊이 제어가 중요해진다(일반 지식).",
+  "src": [
+   "sram_auth17"
+  ]
+ },
+ {
+  "id": "forksheet",
+  "name": "포크시트 (Forksheet)",
+  "en": "Forksheet FET",
+  "type": "structure",
+  "area": "gaa",
+  "desc": "nFET·pFET 나노시트 사이에 절연 벽을 세워 둘의 간격을 크게 줄이는 구조. imec 설계·시뮬레이션 연구(IEDM 2019)는 GAA 나노시트 대비 SRAM 비트셀 면적 30% 축소와 읽기 지연 개선을 보였다.",
+  "etch": "절연 벽 형성과 그 옆 시트 릴리스·게이트 형성 식각이 추가된다(일반 지식).",
+  "src": [
+   "sram_weckx19"
+  ]
+ },
+ {
+  "id": "cfet",
+  "name": "CFET",
+  "en": "Complementary FET (stacked nFET/pFET)",
+  "type": "structure",
+  "area": "gaa",
+  "desc": "nFET와 pFET을 위아래로 쌓는 구조. 예측 노드 설계 연구(TED 2023)는 A5 CFET이 A14 나노시트 대비 최대 55%, A10 포크시트 대비 최대 40% SRAM 비트셀 면적을 줄일 수 있다고 평가했다.",
+  "etch": "같은 연구에서 A3 CFET의 게이트 컷을 절연 벽으로 바꾸면 최대 17% 더 줄지만 배선 복잡도가 커진다. 게이트 컷 식각이 셀 면적의 한 항목이라는 뜻.",
+  "src": [
+   "sram_liu23"
+  ]
+ },
+ {
+  "id": "bspdn",
+  "name": "후면 전력 공급 (BSPDN)",
+  "en": "Backside power delivery network",
+  "type": "structure",
+  "area": "gaa",
+  "desc": "전원 배선을 웨이퍼 뒷면으로 옮겨 앞면 배선 자원을 덜어 주는 방식(일반 지식). Intel 18A SRAM(ISSCC 2025)은 RibbonFET(GAA) 공정에서 PowerVia를 함께 쓴 0.021 µm² 고밀도 SRAM을 보고했다(초록 기준 PowerVia는 주변 회로에 적용).",
+  "etch": "웨이퍼 후면 박막화와 후면 비아·금속 형성이 필요하다(일반 지식). SRAM 셀 안 전원 비아의 면적 영향 수치는 원문을 열지 못해 싣지 않았다.",
+  "src": [
+   "sram_intel18a"
+  ]
+ },
+ {
+  "id": "vcache",
+  "name": "3D 적층 캐시",
+  "en": "3D-stacked cache (e.g., V-Cache)",
+  "type": "structure",
+  "area": "beol",
+  "desc": "셀을 더 줄이는 대신 SRAM 다이를 로직 위에 쌓아 캐시 용량을 늘리는 방식. AMD는 7nm CPU에 SRAM 다이를 하이브리드 본딩으로 붙여 L3를 32 MB에서 96 MB로 늘리고 최대 2 TB/s 대역폭과 평균 15% 게임 성능 향상을 보고했다(ISSCC 2022, 회사 발표).",
+  "etch": "다른 보완책으로 eDRAM이 있다: IBM POWER7은 45nm SOI에서 32 MB L3를 eDRAM으로 구현하고 1.35 ns 랜덤 접근을 보고했다(JSSC 2011).",
+  "src": [
+   "sram_wuu22",
+   "sram_power7"
+  ]
+ },
+ {
   "id": "i_undercut",
   "name": "언더컷",
   "en": "Undercut",

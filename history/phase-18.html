@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>18단계 · SRAM 리서치</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>18단계 · SRAM 리서치</h1>
+    <p class="phase-desc">항목 #62 · 2026-10-27 01:22 ~ 02:05 · 로직 칩의 온칩 메모리 SRAM(셀·공정 세대별 셀 면적·식각 과제)을 조사해 학습 페이지와 그래프에 넣는다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-17.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><a href="phase-14.html">14. OES 지식 구조화</a><a href="phase-15.html">15. 챔버 conditioning·aging OES</a><a href="phase-16.html">16. RMG(대체 금속 게이트) 공정 리서치</a><a href="phase-17.html">17. 식각 공정 기초 보충</a><span class="cur" aria-current="page">18. SRAM 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+  <div class="timeline">
+    <!-- ===== 항목 #62 ===== -->
+    <article class="entry" id="e62">
+      <div class="entry-head">
+        <span class="no">#62</span>
+        <h2>SRAM 내용 추가 — 로직 칩의 온칩 메모리 페이지·그래프 노드</h2>
+        <time>2026-10-27 01:22</time>
+      </div>
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>SRAM 관련 내용 추가
+Logic 반도체에서 SRAM 역할을 뭘까?</blockquote>
+      </section>
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>두 가지 요청이다. 하나는 질문(로직 칩에서 SRAM의 역할)이고, 다른 하나는 사이트에 SRAM 내용을 추가하는 작업이다.</li>
+          <li>질문에는 채팅으로 먼저 답했다. 답한 내용은 다음과 같다. 수치는 검증 전이라고 밝혔다.
+            <ul>
+              <li>역할: 연산 장치 옆의 캐시·버퍼.</li>
+              <li>구조: 6T 셀.</li>
+              <li>로직 칩 안에 넣는 이유: 같은 공정으로 만들 수 있고 빠르다. 대신 면적이 크다.</li>
+              <li>공정 지표로서 셀 면적의 의미.</li>
+              <li>식각 관점: 최소 피치 반복 영역이고, 변동이 Vmin에 영향을 준다.</li>
+            </ul>
+          </li>
+          <li>그래프에는 SRAM 노드가 없었다. 공정 세대별 셀 면적, 셀 축소 둔화, SRAM 배열의 식각·패터닝 과제를 근거와 함께 넣는다.</li>
+        </ul>
+      </section>
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>01:22</time> 자문.
+            <ul>
+              <li><b>astra(high, 백그라운드)</b>: 6T 구조·Vmin, 용도와 면적 비중, Intel·TSMC·Samsung 세대별 셀 면적, 핀·시트 구성, 포크시트·CFET, 식각 과제(게이트 컷·SAC·후면 전력), 3D 적층 캐시·eDRAM을 물었다.</li>
+              <li><b>jev</b>
+                <ul>
+                  <li>형태: "별도 학습 페이지 + 그래프 노드"(0.81).</li>
+                  <li>가장 깊게 다룰 부분: "SRAM 배열의 식각·패터닝 과제"(0.89).</li>
+                  <li>순서: "SRAM 먼저, 사이트 구성 개선은 그 다음"(0.95).</li>
+                  <li>기록 단계: "17단계에 이어 붙임"(0.71, 신뢰도 0.56). 따르지 않았다. 17단계는 '식각 공정 기초 보충'이라 내용이 맞지 않고, 지금까지 리서치 주제(HCB·APC·RMG)마다 단계를 따로 만들어 왔기 때문이다. 새 18단계를 만들었다.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><time>01:25</time> OpenAlex로 1차 출처를 찾았다. 셀 면적이 제목·초록에 있는 회사 공정 논문을 모았고(Intel 32nm·14nm, TSMC N5·N2), 고전 안정성 논문(Seevinck 1987, Grossar 2006), AMD 3D V-Cache, imec 포크시트·CFET 연구도 찾았다.</li>
+          <li><time>01:35</time> astra 결과를 받았다. 셀 면적과 매크로 밀도를 구분하고, 확인하지 못한 값을 따로 표시해 두었다. 확인하지 못한 값은 Samsung 5·3nm 셀, Intel 7 전용 값, CPODE 세부, CPU 전체의 SRAM 면적 비율이다. 이를 바탕으로 장부 <code>ledger/sram.json</code>(비공개)에 주장 24개(S01–S24)를 적었다. lint 오류 0, DOI 27개 실재·제목 일치.</li>
+          <li><time>01:37</time> 검증자 5개에 blind 입력만 넘겼다. 1차 결과는 채택 17, 조건부 3, 보류 4였다.
+            <ul>
+              <li>보류 4개는 모두 유료 본문(§·Fig.)에만 있는 내용이었다.
+                <ul>
+                  <li>TSMC 3nm의 0.3 V 셀 안정성 대 0.5 V 배열 동작(S12).</li>
+                  <li>자기정렬 컨택의 게이트 금속 리세스 부족·과도의 영향(S17).</li>
+                  <li>셀 높이를 게이트 컷 규칙으로 분해한 imec 연구(S18).</li>
+                  <li>PowerVia를 셀 안에 넣을 때 셀이 커지는 수치(S21).</li>
+                </ul>
+                페이지와 그래프에는 쓰지 않았다.</li>
+              <li>조건부 3개는 고쳐서 재검증했다.
+                <ul>
+                  <li>S05 Intel 14nm: 확인되지 않은 핀 구성을 빼고, 셀 면적 근거를 JSSC 2016 확장판으로 바꿨다.</li>
+                  <li>S07 Intel 4: 초록이 직접 확인해 주는 0.0300 µm²(고성능)와 2차 보도로만 확인된 고밀도 0.0240 µm²를 나눠 적었다.</li>
+                  <li>S10 TSMC 3nm: 초록 값 0.0199 µm²와 2차 보도 값(N3E 0.021 µm²)을 나눠 적었다.</li>
+                </ul>
+                모두 채택됐다.</li>
+            </ul>
+          </li>
+          <li><time>01:45</time> 최종 gate: 주장 24개 — <b>채택 20, 보류 4</b>.</li>
+          <li><time>01:40–01:55</time> 새 페이지 <code>research/sram_logic.html</code>를 썼다.
+            <ul>
+              <li>구성: 역할, 6T 셀 회로 그림, 공정 세대별 고밀도 셀 면적 표(13행), 축소 둔화 설명, 식각·패터닝 과제, 포크시트·CFET, 3D 적층 캐시·eDRAM.</li>
+              <li>2차 보도로만 확인된 값에는 '2차 보도' 표시를 달았다.</li>
+              <li>보류 주장(S21)에 기대던 문장 하나를 일반 서술로 바꿨다.</li>
+              <li>Intel 18A의 PowerVia는 초록 기준으로 주변 회로에 적용되었다는 점을 검증자 지적대로 표와 본문에 밝혔다.</li>
+            </ul>
+          </li>
+          <li><time>01:50</time> 인용 논문 19편의 요약을 썼다. 1차 결과는 채택 17, 조건부 2였다.
+            <ul>
+              <li>CFET 요약(Liu 2023)은 서로 다른 노드 간 비교라는 조건이 빠졌다는 지적을 받았다. 조건을 넣어 재검증했다.</li>
+              <li>Intel 10nm 요약은 한 검증자가 "초록에 셀 면적이 없다"고 판정했다. 다른 검증자는 같은 초록에서 수치를 확인했다. 작성자가 OpenAlex 초록을 직접 열어 보니 첫 문장에 0.0312·0.0367 µm²가 있었다. 판정을 고치지 않고 그대로 기록한 뒤, 위치 표기를 "초록 1번째 문장"으로 구체화해 새 검증자에게 넘겼다. 확인이 나왔다.</li>
+              <li>최종 결과: 19편 모두 채택.</li>
+            </ul>
+          </li>
+          <li><time>01:52</time> 그래프에 노드 8개를 추가했다(GAA 영역 7, BEOL 1). 노드는 SRAM 6T 셀, SRAM 셀 축소 둔화, Vmin·읽기/쓰기 안정성, 활성 게이트 위 컨택(COAG), 포크시트, CFET, 후면 전력 공급(BSPDN), 3D 적층 캐시다. 기존 GAA·자기정렬 컨택·금속 게이트 컷·A16·HCB 노드와 관계 15개로 이었다.</li>
+          <li><time>01:55</time> 목차의 공정 리서치 섹션과 학습 경로 4단계(GAA)에 넣었다. 검증 현황에 "SRAM" 묶음을 만들고, 그래프 안내 문구와 목차 숫자를 갱신했다.</li>
+          <li><time>01:57</time> build 결과: 그래프 노드 290개·관계 624개, 논문 요약 185편, 검증 현황 399개(채택 326·조건부 63·보류 10). <code>--check</code>, 링크(37쪽 0건), 요약 연결, OES 그래프 검사 모두 통과.</li>
+        </ol>
+      </section>
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> SRAM 학습 페이지와 그래프 노드 8개를 추가했다.</p>
+        <ul>
+          <li><b>역할</b>: 로직 칩 안의 캐시·버퍼. 같은 공정으로 만들 수 있고 빠르지만 면적이 크다. 면적 비중 예로 TPU v1 통합 버퍼가 다이의 약 1/3이다.</li>
+          <li><b>셀 면적</b>: Intel 0.346 µm²(45nm)에서 0.021 µm²(18A)까지, TSMC 0.027 µm²(N7)에서 0.021 µm²(N2)까지 회사 발표값으로 정리했다. N5 이후 0.021 µm²에서 멈췄고, N2는 매크로 밀도(약 38 Mb/mm²)를 내세웠다. 셀 면적과 매크로 밀도는 다른 지표로 구분했다.</li>
+          <li><b>식각 과제</b>
+            <ul>
+              <li>자기정렬 컨택(Intel 22nm).</li>
+              <li>활성 게이트 위 컨택과 셀 경계 더미 게이트 제거(Intel 10nm).</li>
+              <li>GAA 시트 폭 선택과 균일도.</li>
+              <li>CFET 연구의 게이트 컷 → 절연 벽 대체.</li>
+            </ul>
+          </li>
+          <li><b>남은 한계</b>
+            <ul>
+              <li>근거는 대부분 초록·회사 발표다.</li>
+              <li>Samsung 5·3nm 셀 면적, Intel 7 전용 값, CPODE 세부는 공개 1차 근거가 없어 싣지 않았다.</li>
+              <li>CPU·GPU 전체의 SRAM 면적 비율도 같은 이유로 싣지 않았다.</li>
+              <li>유료 본문에만 있는 4개 내용(셀 안 PowerVia 면적, SAC 리세스 영향 등)은 보류다.</li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="../research/sram_logic.html">SRAM 페이지 열기 →</a> · <a href="../research/a20_etch_knowledge_graph.html#sram">그래프 SRAM 노드 →</a> · <a href="../research/claims_status.html#S01">검증 현황(S01–S24)</a></p>
+        <p>6T 셀 구조와 안정성(캡처용 사본에서 2장만 표시):</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261027_015552_sram_cell.png" alt="SRAM 페이지 2장: 6T 셀 회로 개념도와 읽기·쓰기 균형, SNM, Vmin 설명">
+        <p>공정 세대별 셀 면적 표와 식각·패터닝 과제(3–4장):</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261027_015552_sram_area_etch.png" alt="Intel·TSMC·Samsung 고밀도 SRAM 셀 면적 표, 축소 둔화 설명, 식각 과제 카드">
+        <p>그래프의 SRAM 노드와 연결:</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261027_015552_sram_node.png" alt="식각 지식 그래프의 SRAM(6T 셀) 노드와 셀 축소 둔화·Vmin·후면 전력·GAA 연결">
+      </section>
+    </article>
+  </div>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-17.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><a href="phase-14.html">14. OES 지식 구조화</a><a href="phase-15.html">15. 챔버 conditioning·aging OES</a><a href="phase-16.html">16. RMG(대체 금속 게이트) 공정 리서치</a><a href="phase-17.html">17. 식각 공정 기초 보충</a><span class="cur" aria-current="page">18. SRAM 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>

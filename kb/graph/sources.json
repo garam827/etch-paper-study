@@ -2282,5 +2282,89 @@
  "eb_tillocher21": {
   "title": "Tillocher 외, Comparison between Bosch and STiGer processes (Micromachines 2021)",
   "url": "https://doi.org/10.3390/mi12101143"
+ },
+ "sram_seevinck87": {
+  "title": "Seevinck 외, Static-noise margin analysis of MOS SRAM cells (JSSC 1987)",
+  "url": "https://doi.org/10.1109/JSSC.1987.1052809"
+ },
+ "sram_grossar06": {
+  "title": "Grossar 외, Read stability and write-ability analysis of SRAM cells (JSSC 2006)",
+  "url": "https://doi.org/10.1109/JSSC.2006.883344"
+ },
+ "sram_natarajan08": {
+  "title": "Natarajan 외, 32nm logic technology with 0.171µm² SRAM cell (IEDM 2008, Intel)",
+  "url": "https://doi.org/10.1109/IEDM.2008.4796777"
+ },
+ "sram_jan12": {
+  "title": "Jan 외, 22nm SoC platform technology (IEDM 2012, Intel)",
+  "url": "https://doi.org/10.1109/IEDM.2012.6478969"
+ },
+ "sram_auth12": {
+  "title": "Auth 외, 22nm tri-gate CMOS with self-aligned contacts (VLSI 2012, Intel)",
+  "url": "https://doi.org/10.1109/VLSIT.2012.6242496"
+ },
+ "sram_karl16": {
+  "title": "Karl 외, 84 Mb SRAM in 14 nm FinFET (JSSC 2016, Intel)",
+  "url": "https://doi.org/10.1109/JSSC.2015.2461592"
+ },
+ "sram_auth17": {
+  "title": "Auth 외, 10nm CMOS with contact over active gate (IEDM 2017, Intel)",
+  "url": "https://doi.org/10.1109/IEDM.2017.8268472"
+ },
+ "sram_intel10": {
+  "title": "Intel 10nm 23.6 Mb/mm² SRAM (JSSC 2019)",
+  "url": "https://doi.org/10.1109/JSSC.2018.2861873"
+ },
+ "sram_intel4": {
+  "title": "Intel 4 6T SRAM design (VLSI 2022)",
+  "url": "https://doi.org/10.1109/VLSITechnologyandCir46769.2022.9830148"
+ },
+ "sram_intel18a": {
+  "title": "0.021µm² HD SRAM in Intel 18A with PowerVia (ISSCC 2025)",
+  "url": "https://doi.org/10.1109/ISSCC49661.2025.10904657"
+ },
+ "sram_tsmcn7": {
+  "title": "Wu 외, 7nm platform with 0.027µm² HD SRAM (IEDM 2016, TSMC)",
+  "url": "https://doi.org/10.1109/IEDM.2016.7838333"
+ },
+ "sram_tsmcn5": {
+  "title": "Yeap 외, 5nm platform with 0.021µm² SRAM (IEDM 2019, TSMC)",
+  "url": "https://doi.org/10.1109/IEDM19573.2019.8993577"
+ },
+ "sram_tsmcn3": {
+  "title": "Chang 외, Contacted gate pitch scaling for 3nm (IEDM 2022, TSMC)",
+  "url": "https://doi.org/10.1109/IEDM45625.2022.10019565"
+ },
+ "sram_tsmcn2": {
+  "title": "38.1 Mb/mm² SRAM in 2nm nanosheet (ISSCC 2025, TSMC)",
+  "url": "https://doi.org/10.1109/ISSCC49661.2025.10904759"
+ },
+ "sram_samsung7": {
+  "title": "Jeong 외, Samsung 7nm EUV smallest SRAM cell (VLSI 2018)",
+  "url": "https://doi.org/10.1109/VLSIT.2018.8510682"
+ },
+ "sram_samsung3": {
+  "title": "Samsung 3nm GAA SRAM with adaptive dual-bitline (JSSC 2022)",
+  "url": "https://doi.org/10.1109/JSSC.2021.3123077"
+ },
+ "sram_weckx19": {
+  "title": "Weckx 외, Forksheet device architecture (IEDM 2019, imec)",
+  "url": "https://doi.org/10.1109/IEDM19573.2019.8993635"
+ },
+ "sram_liu23": {
+  "title": "Liu 외, CFET SRAM DTCO (TED 2023, imec)",
+  "url": "https://doi.org/10.1109/TED.2023.3235701"
+ },
+ "sram_wuu22": {
+  "title": "Wuu 외, 3D V-Cache hybrid-bonded stacked cache (ISSCC 2022, AMD)",
+  "url": "https://doi.org/10.1109/ISSCC42614.2022.9731565"
+ },
+ "sram_jouppi17": {
+  "title": "Jouppi 외, TPU v1 performance analysis (ISCA 2017, Google)",
+  "url": "https://doi.org/10.1145/3079856.3080246"
+ },
+ "sram_power7": {
+  "title": "45 nm SOI eDRAM for POWER7 32MB L3 (JSSC 2011, IBM)",
+  "url": "https://doi.org/10.1109/JSSC.2010.2084470"
  }
 }
