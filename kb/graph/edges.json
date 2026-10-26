@@ -3704,5 +3704,125 @@
   "from": "i_vmin",
   "to": "s_release",
   "label": "시트 균일도 영향(해석)"
+ },
+ {
+  "from": "strain_eng",
+  "to": "esige",
+  "label": "pMOS 압축 응력원"
+ },
+ {
+  "from": "strain_eng",
+  "to": "cesl",
+  "label": "라이너 응력원"
+ },
+ {
+  "from": "strain_eng",
+  "to": "dsl",
+  "label": "n/p 분리 라이너"
+ },
+ {
+  "from": "strain_eng",
+  "to": "smt",
+  "label": "nMOS 응력 기억"
+ },
+ {
+  "from": "strain_eng",
+  "to": "sic_sd",
+  "label": "nMOS 인장 S/D"
+ },
+ {
+  "from": "strain_eng",
+  "to": "i_strainrelax",
+  "label": "식각이 응력을 바꿈"
+ },
+ {
+  "from": "strain_eng",
+  "to": "stress_metro",
+  "label": "측정"
+ },
+ {
+  "from": "cesl",
+  "to": "s_contact",
+  "label": "컨택 식각이 뚫음"
+ },
+ {
+  "from": "dsl",
+  "to": "cesl",
+  "label": "CESL을 n/p로 나눈 것"
+ },
+ {
+  "from": "dsl",
+  "to": "i_lle",
+  "label": "경계 근접 이동도 저하"
+ },
+ {
+  "from": "dsl",
+  "to": "rmg",
+  "label": "게이트 라스트에서 라이너 리세스"
+ },
+ {
+  "from": "esige",
+  "to": "s_sdrecess",
+  "label": "리세스 모양·근접 거리가 응력 결정"
+ },
+ {
+  "from": "sic_sd",
+  "to": "s_sdrecess",
+  "label": "Si 리세스 뒤 에피"
+ },
+ {
+  "from": "i_strainrelax",
+  "to": "sti",
+  "label": "STI 근접 eSiGe 이완"
+ },
+ {
+  "from": "i_strainrelax",
+  "to": "s_release",
+  "label": "릴리스·선택 식각 깊이 불균일"
+ },
+ {
+  "from": "i_strainrelax",
+  "to": "innerspacer",
+  "label": "캐비티 형성 중 이완(FEA)"
+ },
+ {
+  "from": "i_strainrelax",
+  "to": "s_dgremove",
+  "label": "더미 게이트 제거는 압축 증가 가능(수치 보류)"
+ },
+ {
+  "from": "i_strainrelax",
+  "to": "sd",
+  "label": "S/D 에피 병합 불량 → 응력 반전(FEA)"
+ },
+ {
+  "from": "i_lle",
+  "to": "s_cmg",
+  "label": "게이트 컷 위치가 응력 변조"
+ },
+ {
+  "from": "i_lle",
+  "to": "sti",
+  "label": "STI 가장자리 응력"
+ },
+ {
+  "from": "i_wiggling",
+  "to": "hardmask",
+  "label": "마스크 응력·플라즈마 유도 응력"
+ },
+ {
+  "from": "i_wiggling",
+  "to": "i_collapse",
+  "label": "가는 패턴의 기계적 불안정"
+ },
+ {
+  "from": "i_warpage",
+  "to": "i_overlay",
+  "label": "오버레이 저하"
+ },
+ {
+  "from": "stress_metro",
+  "to": "superlattice",
+  "label": "나노시트 변형 지도"
  }
 ]

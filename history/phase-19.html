@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>19단계 · 응력 공학·식각 이슈 리서치</title>
+<style>
+  :root {
+    --bg: #f7f8fb; --card: #ffffff; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb;
+    --accent: #2563eb; --instr: #eef4ff; --instr-b: #2563eb;
+    --anal: #f2fbf5; --anal-b: #16a34a; --proc: #fff8ec; --proc-b: #d97706;
+    --res: #f6f2ff; --res-b: #7c3aed;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; }
+  header p { margin: 0; color: var(--muted); }
+  .timeline { position: relative; margin-top: 32px; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 6px; bottom: 0; width: 2px; background: var(--line); }
+  .entry { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+  .entry::before { content: ""; position: absolute; left: -26px; top: 24px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 14px; }
+  .entry-head .no { font-weight: 700; color: var(--accent); }
+  .entry-head h2 { margin: 0; font-size: 18px; }
+  .entry-head time { color: var(--muted); font-size: 13px; margin-left: auto; }
+  section.blk { border-left: 4px solid; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+  section.blk h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+  section.blk.instr { background: var(--instr); border-color: var(--instr-b); } .instr h3 { color: var(--instr-b); }
+  section.blk.anal { background: var(--anal);  border-color: var(--anal-b); }  .anal h3  { color: var(--anal-b); }
+  section.blk.proc { background: var(--proc);  border-color: var(--proc-b); }  .proc h3  { color: var(--proc-b); }
+  section.blk.res   { background: var(--res);   border-color: var(--res-b); }   .res h3   { color: var(--res-b); }
+  blockquote { margin: 0; white-space: pre-wrap; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  ol.steps li time { display: inline-block; min-width: 46px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  figure { margin: 12px 0 0; }
+  figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  .entry img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; display: block; margin: 8px 0; }
+  .entry { overflow-wrap: anywhere; }
+  figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
+  .tag.warn { background: #fef3c7; color: #92400e; }
+
+  .crumb { margin:0 0 6px; font-size:14px; }
+  .crumb a, .pager a { color:var(--accent); }
+  .pager { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:18px 0 6px; }
+  .pager a, .pager span { font-size:13px; text-decoration:none; border:1px solid var(--line); background:#fff; border-radius:8px; padding:4px 10px; color:var(--ink); }
+  .pager a:hover { border-color:var(--accent); color:var(--accent); }
+  .pager .cur { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .pager .dis { color:#c0c4cc; }
+  .pager .sep { border:none; background:none; padding:0 2px; color:var(--muted); }
+  .phase-desc { color:var(--muted); margin:6px 0 0; max-width:72ch; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="crumb"><a href="../index.html">← 목차</a> · <a href="../history.html">기록 첫 화면</a></p>
+    <h1>19단계 · 응력 공학·식각 이슈 리서치</h1>
+    <p class="phase-desc">항목 #64 · 2026-10-27 07:47 ~ 08:25 · 응력 공학(eSiGe·CESL·DSL·SMT 등)과 건식 식각이 만나는 공정 이슈를 조사해 학습 페이지와 그래프에 넣는다.</p>
+  </header>
+  <nav class="pager" aria-label="단계 이동"><a href="phase-18.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><a href="phase-14.html">14. OES 지식 구조화</a><a href="phase-15.html">15. 챔버 conditioning·aging OES</a><a href="phase-16.html">16. RMG(대체 금속 게이트) 공정 리서치</a><a href="phase-17.html">17. 식각 공정 기초 보충</a><a href="phase-18.html">18. SRAM 리서치</a><span class="cur" aria-current="page">19. 응력 공학·식각 이슈 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+
+    <!-- ===== 항목 #64 ===== -->
+    <article class="entry" id="e64">
+      <div class="entry-head">
+        <span class="no">#64</span>
+        <h2>응력 공학 × 건식 식각 — 주요 공정 이슈 조사·페이지·그래프 노드</h2>
+        <time>2026-10-27 07:47</time>
+      </div>
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>Stress Engineering과 Dry etching 관점에서 주요한 공정 이슈 조사</blockquote>
+      </section>
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>응력 공학(채널을 일부러 늘리거나 눌러 이동도를 높이는 기술)이 건식 식각과 만나는 공정 이슈를 조사한다.</li>
+          <li>세 갈래로 나눴다.
+            <ul>
+              <li>① 응력원을 만드는 식각: S/D 리세스, DSL 패터닝, 응력 라이너를 뚫는 컨택 식각.</li>
+              <li>② 식각이 응력을 바꾸는 경우: 핀 컷·STI·게이트 컷, GAA 리세스·내부 스페이서·채널 릴리스.</li>
+              <li>③ 막 응력이 패턴을 망가뜨리는 경우: 라인 위글링, 웨이퍼 휨.</li>
+            </ul>
+          </li>
+          <li>그래프에는 eSiGe·S/D 리세스·패턴 붕괴 노드만 있고 응력 공학 자체는 없었다. 지금까지처럼 검증 → 학습 페이지 + 그래프 노드로 넣는다.</li>
+        </ul>
+      </section>
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol class="steps">
+          <li><time>07:47</time> 자문.
+            <ul>
+              <li><b>astra(high, 백그라운드)</b>: 응력원의 역사(단축·2축, CESL, eSiGe, DSL, SMT, Si:C/Si:P, RMG, FinFET·GAA), 식각 이슈(리세스 모양·로딩·잔사, DSL 제거 식각·경계, CESL 컨택 식각, 핀 컷·STI 이완, 나노시트 리세스·릴리스, 하드마스크 위글링·웨이퍼 휨, 플라즈마 손상), 변형 측정, 정량값을 1차 출처와 함께 물었다. 확인하지 못한 일반화는 따로 표시하게 했다.</li>
+              <li><b>jev</b>
+                <ul>
+                  <li>형태: "별도 학습 페이지 + 그래프 노드"(0.96, 신뢰도 0.94).</li>
+                  <li>가장 깊게 다룰 부분: "응력원을 만드는 식각"(0.62, 신뢰도 0.49), "세 갈래 고르게"가 0.25. 페이지는 ①을 가장 길게 쓰고 ②·③도 함께 다뤘다.</li>
+                  <li>기록 단계: "18단계(SRAM 리서치)에 이어 붙임"(0.64, 신뢰도 0.28). 따르지 않았다. 응력 공학은 SRAM과 주제가 다르고, 리서치 주제마다 단계를 따로 만들어 왔기 때문이다(#60~#62와 같은 기준). 새 19단계를 만들었다.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><time>07:50</time> OpenAlex로 1차 출처 초록을 모았다. Intel 90nm(Thompson·Ghani), DSL(Yang 2004), SMT(Chen 2004), CESL 응력 전달, S/D 리세스 모양·근접 거리, 핀 컷 LLE, 나노시트 변형, TiN·탄소 하드마스크 위글링, 3D NAND 웨이퍼 휨, 변형 측정 논문이다.</li>
+          <li><time>08:00</time> 장부 <code>ledger/stress.json</code>(비공개)에 1차 주장 32개(T01–T32)를 적었다. lint 오류 0, DOI 27개 실재·제목 일치. 검증자 5개에 blind 입력만 넘겼다. 결과는 지지 30, 부분 지지 2였다.
+            <ul>
+              <li>T02: 정공·전자 이동도 수치가 서로 다른 응력원(SiGe S/D, 인장 SiN 캡)에서 나왔다는 점이 흐려져 있었다. 나눠 적었다.</li>
+              <li>T25: PVD TiN의 +0.1 GPa 고유 응력 값이 초록에 없다는 판정이었다. 값을 빼고 EUV 28nm 피치 조건을 넣었다.</li>
+            </ul>
+          </li>
+          <li><time>08:05</time> astra 결과를 받았다. 출처의 학회·연도를 바로잡은 점이 유용했다. Intel 90nm 발표는 IEDM 2002 → IEDM 2003 → TED 2004로 나뉘고, SMT는 IEDM이 아니라 VLSI 2004다. 일반화할 수 없는 주장도 따로 표시되어 있었다. 예: "GAA S/D 응력은 FinFET보다 항상 약하다", "재료 제거는 항상 응력을 줄인다", 보편적 CESL 최대 두께·NiSi 손상 임계 에너지. 이 결과에서 초록으로 확인할 수 있는 출처를 골라 주장 19개(T33–T51)를 더했다.
+            <ul>
+              <li>더한 주제: CESL 응력의 초기 보고(NEC 2000), DSL 경계 겹침과 수율, 핀 길이별 탄성 이완, STI·확산 단절·게이트 컷 LLE, 나노시트 공정 단계별 변형(FEA), 선택 식각 깊이 불균일과 시트 변형, HBr에 의한 ACL 위글링, 웨이퍼 휨과 CD 균일도, FIB 시편 이완, Si:C S/D, 컨택 SiN 라이너 고선택 식각(AVS 2010 학회 초록).</li>
+              <li>더미 게이트 제거 뒤 응력 증가 수치(Auth 2008 본문 그림)와 시그마 리세스 공정 세부(Qin 2017 본문)는 작성자도 2차 요약으로만 보았다. 그 사실을 근거 위치에 그대로 적었다.</li>
+            </ul>
+          </li>
+          <li><time>08:10</time> 2차 검증(검증자 4개, 새 주장 19개와 수정 2개).
+            <ul>
+              <li>T49(더미 게이트 제거 응력 수치)와 T50(시그마 리세스 세부)은 본문을 열 수 없어 '확인 불가'로 보류되었다. 페이지에는 수치 없이 "검증 보류"로만 적었다.</li>
+              <li>T34(DSL 스퍼터링 수율)는 초록에 없는 "무결함 수율" 표현을 지적받았다. T39(나노시트 FEA)는 조성·결함 없는 조건을 확인하지 못했다는 판정이었다. 둘 다 고쳐 재검증했고, 모두 지지를 받았다.</li>
+              <li>T48(Durfee 2021)은 "정밀하게 만든" 대상이 초록에서는 내부 스페이서뿐이라는 조건부 판정이었다. 페이지 문장에 그 조건을 넣었다.</li>
+            </ul>
+          </li>
+          <li><time>08:12</time> 최종 gate: 주장 51개 — <b>채택 48, 조건부 1, 보류 2</b>.</li>
+          <li><time>08:00–08:15</time> 새 페이지 <code>research/stress_etch.html</code>를 썼다.
+            <ul>
+              <li>구성: 응력 공학 기초(단축·2축), 응력원 지도 표, 세 갈래 개요, ① 응력원을 만드는 식각, ② 식각이 응력을 바꾸는 경우(GAA 단계별 변형 막대그림 포함), ③ 막 응력과 패턴, 변형 측정법, 식각 엔지니어 점검표.</li>
+              <li>그림 2개: pMOS eSiGe·nMOS 인장 질화막 단면 개념도, 나노시트 공정 단계별 변형 막대그림(FEA 값, 측정값 아님을 명시).</li>
+              <li>표시: 시뮬레이션·일반 정의·해석을 구분하는 표시를 달았다. astra가 찾았지만 장부로 검증하지 않은 내용(리세스 로딩·잔사·C/F 오염, DSL 제거 식각의 실리사이드 손상 특허)은 "검증하지 않았다"고 밝혔다.</li>
+            </ul>
+          </li>
+          <li><time>08:12</time> 그래프에 노드 10개를 추가했다. 응력 공학, CESL, DSL, SMT, Si:C·Si:P S/D, 식각에 의한 응력 이완, 응력 국부 배치 효과(LLE), 라인 위글링, 웨이퍼 휨, 변형 측정이다. 기존 eSiGe·S/D 리세스·STI·채널 릴리스·내부 스페이서·더미 게이트 제거·금속 게이트 컷·하드마스크·패턴 붕괴·오버레이 노드와 관계 24개로 이었다. eSiGe·S/D 리세스 노드 설명도 보강했다.</li>
+          <li><time>08:14</time> 인용 논문 42편의 요약을 썼다(1편은 기존 요약 재사용). 검증자 5개의 1차 결과는 채택 34, 부분 지지 8이었다.
+            <ul>
+              <li>지적은 모두 빠진 조건이었다. 예: Ghani 2003은 "대량 생산 램프 중", Denneulin은 "실리사이드 전 기준", Reboh 2019는 "10nm 설계 규칙", Chou 2024는 "결함 없는 에피"라는 조건이 빠져 있었다.</li>
+              <li>Rossoni 2025는 한 검증자가 "초록에 게이트 컷이 없다"고 했다. 그러나 초록 본문에 Gate Cuts가 있다. 판정은 그대로 기록하고, 위치를 "초록 5~7번째 문장"으로 구체화해 다시 넘겼다.</li>
+              <li>8개를 고쳐 재검증한 결과 모두 지지를 받았다. 최종: 42편 모두 채택.</li>
+            </ul>
+          </li>
+          <li><time>08:18</time> 연결과 build.
+            <ul>
+              <li>목차 공정 리서치 섹션, 학습 경로 4단계(GAA), 주제 바로가기에 연결했다(소자에 "응력 공학", 패터닝에 "라인 위글링").</li>
+              <li>검증 현황에 "응력 공학" 묶음을 만들고, 그래프 안내 문구와 목차 숫자를 갱신했다.</li>
+              <li>첫 build에서 논문 요약 생성기가 DOI 없는 학회 초록(AVS 2010)의 <code>url</code>을 찾지 못해 멈췄다. 항목에 <code>url</code>을 넣어 해결했다.</li>
+              <li>결과: 그래프 노드 300개·관계 648개, 논문 요약 227편(채택 218·조건부 9), 검증 현황 492개(채택 416·조건부 64·보류 12). <code>--check</code>, 링크(39쪽 0건), 요약 연결, OES 그래프 검사 모두 통과.</li>
+            </ul>
+          </li>
+          <li><time>08:22</time> 스크린샷. 첫 캡처에서 그림 글자가 겹친 곳 3군데를 고쳤다(리세스 설명과 게이트, 축 이름과 눈금, 인장 SiN 라벨). 그 뒤 다시 찍었다. 캡처용 사본은 지웠다.</li>
+        </ol>
+      </section>
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 응력 공학 × 건식 식각 학습 페이지와 그래프 노드 10개를 추가했다.</p>
+        <ul>
+          <li><b>① 응력원을 만드는 식각</b>
+            <ul>
+              <li>eSiGe 리세스는 깊이보다 모양·채널까지 거리·결정면 구성이 응력을 정한다. 여러 결정면 캐비티에서 응력이 90–220 MPa로 흩어졌다.</li>
+              <li>DSL 경계가 가까우면 이동도가 떨어지고, 경계 윗면을 다듬자 수율이 늘었다(IBM 보고).</li>
+              <li>게이트 라스트에서는 인장 라이너가 DHF에 깎인다.</li>
+              <li>CESL을 뚫는 컨택 식각의 선택비가 기판 손상을 좌우한다.</li>
+            </ul>
+          </li>
+          <li><b>② 식각이 응력을 바꾸는 경우</b>
+            <ul>
+              <li>핀 컷이 SiGe 핀 변형을 풀어 배치 효과(LLE)를 만든다.</li>
+              <li>STI·확산 단절·게이트 컷도 응력을 바꾼다.</li>
+              <li>나노시트는 리세스·내부 스페이서 단계에서 이완되었다가 S/D 에피로 다시 압축된다(FEA). 에피 사이 빈틈은 응력을 뒤집는다.</li>
+              <li>선택 식각 깊이가 고르지 않으면 시트별 변형도 고르지 않다.</li>
+            </ul>
+          </li>
+          <li><b>③ 막 응력과 패턴</b>: 플라즈마 노출이 TiN 하드마스크 압축 응력을 키워 위글링을 일으킨다. HBr은 탄소 마스크 표면을 수소화해 위글링을 늘린다. 3D NAND 웨이퍼 휨은 오버레이와 CD 균일도를 흔든다.</li>
+          <li><b>남은 한계</b>
+            <ul>
+              <li>근거는 대부분 초록 수준이다.</li>
+              <li>더미 게이트 제거 시 응력 증가 수치와 시그마 리세스 공정 세부는 보류했다.</li>
+              <li>리세스 로딩·잔사·오염, DSL 제거 식각의 실리사이드 손상은 장부로 검증하지 않았다.</li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="../research/stress_etch.html">응력 공학 페이지 열기 →</a> · <a href="../research/a20_etch_knowledge_graph.html#strain_eng">그래프 응력 공학 노드 →</a> · <a href="../research/claims_status.html#T01">검증 현황(T01–T51)</a></p>
+        <p>도입부와 응력원 지도(표·단면 개념도), 캡처용 사본에서 해당 부분만 표시:</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261027_082500_stress_map.png" alt="응력 공학 페이지 도입부, 응력원 지도 표, pMOS eSiGe·nMOS 인장 질화막 단면 개념도">
+        <p>GAA 나노시트 공정 단계별 변형 막대그림과 리세스·릴리스·선택 식각 카드:</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261027_082500_stress_gaa.png" alt="SiGe 나노시트 공정 단계별 채널 변형 막대그림(0.77, 0.21, 1.50%)과 설명 카드">
+        <p>그래프의 응력 공학 노드와 연결:</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261027_082500_stress_node.png" alt="식각 지식 그래프의 응력 공학 노드와 SMT·DSL·CESL·Si:C/Si:P·식각에 의한 응력 이완 연결">
+      </section>
+    </article>
+
+  <nav class="pager" aria-label="단계 이동"><a href="phase-18.html">← 이전 단계</a><span class="sep">|</span><a href="phase-1.html">1. 기록·자문 체계 구축</a><a href="phase-2.html">2. A20 식각 리서치</a><a href="phase-3.html">3. 공유·배포·보안</a><a href="phase-4.html">4. 학습 콘텐츠: 가이드·3D·질의응답</a><a href="phase-5.html">5. 기록 체계 개선</a><a href="phase-6.html">6. 용어·개념 학습</a><a href="phase-7.html">7. 패터닝 기술 리서치</a><a href="phase-8.html">8. 플라즈마 식각 기초 문헌 학습</a><a href="phase-9.html">9. 리서치 검증 체계 구축</a><a href="phase-10.html">10. OES 식각 화학 데이터 병합</a><a href="phase-11.html">11. 사이트 구조 재정비</a><a href="phase-12.html">12. 패키징·본딩 리서치</a><a href="phase-13.html">13. 공정 제어(APC) 리서치</a><a href="phase-14.html">14. OES 지식 구조화</a><a href="phase-15.html">15. 챔버 conditioning·aging OES</a><a href="phase-16.html">16. RMG(대체 금속 게이트) 공정 리서치</a><a href="phase-17.html">17. 식각 공정 기초 보충</a><a href="phase-18.html">18. SRAM 리서치</a><span class="cur" aria-current="page">19. 응력 공학·식각 이슈 리서치</span><span class="sep">|</span><span class="dis">다음 단계 →</span></nav>
+</div>
+</body>
+</html>

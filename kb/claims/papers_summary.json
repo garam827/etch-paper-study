@@ -2811,6 +2811,636 @@
    "checked": [
     "https://api.openalex.org/works/doi:10.1109/JSSC.2010.2084470"
    ]
+  },
+  {
+   "id": "P-thompson2004ted",
+   "page": "papers",
+   "statement": "Thompson 외(2004, IEEE TED)는 Intel 90nm에서 SiGe S/D와 인장 SiN 캡으로 pMOS 25%, nMOS 10% 포화 구동 전류 향상을 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/TED.2004.836648"
+   ]
+  },
+  {
+   "id": "P-ghani2003",
+   "page": "papers",
+   "statement": "Ghani 외(IEDM 2003, Intel 자체 발표)는 pMOS에 매립 에피 SiGe S/D, nMOS에 고인장 SiN 캡을 쓰는 90nm 변형 실리콘 기술이 300mm 웨이퍼에서 대량 생산으로 램프 중이라고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2003.1269442"
+   ]
+  },
+  {
+   "id": "P-thompson2004iedm",
+   "page": "papers",
+   "statement": "Thompson 외(IEDM 2004)는 웨이퍼 굽힘 실험과 모델로 n·pMOS 모두에서 단축 응력이 2축 응력보다 유리함을 보였다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2004.1419114"
+   ]
+  },
+  {
+   "id": "P-yang2004dsl",
+   "page": "papers",
+   "statement": "Yang 외(IEDM 2004)는 DSL로 nFET/pFET 유효 구동 전류를 15%/32% 높이고 SiGe 없이 정공 이동도를 60% 높였다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2004.1419385"
+   ]
+  },
+  {
+   "id": "P-chen2004smt",
+   "page": "papers",
+   "statement": "Chen 외(VLSI 2004)는 고인장 질화막 캡을 활성화 뒤 제거하는 SMT로 nMOS 구동 전류를 15% 넘게 높였다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/VLSIT.2004.1345390"
+   ]
+  },
+  {
+   "id": "P-auth2008",
+   "page": "papers",
+   "statement": "Auth 외(VLSI 2008)는 Intel 45nm의 핵심 특징으로 응력 강화 기법과 이중 금속 게이트·high-k의 통합을 들었다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/VLSIT.2008.4588589"
+   ]
+  },
+  {
+   "id": "P-denneulin2012",
+   "page": "papers",
+   "statement": "Denneulin 외(2012)는 암시야 전자 홀로그래피로, 실리사이드 전 pMOS에서 CESL과 eSiGe를 함께 쓴 채널 변형이 각 성분의 합과 같고 Ni 실리사이드 뒤에는 약간 줄지만 대체로 합산성이 유지된다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.4764045"
+   ]
+  },
+  {
+   "id": "P-cesl2007ted",
+   "page": "papers",
+   "statement": "IEEE TED 2007 논문은 기계 시뮬레이션으로 CESL 응력이 막의 여러 부분의 직접·간접 작용으로 채널에 전달된다고 설명했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/TED.2007.892026"
+   ]
+  },
+  {
+   "id": "P-finfetstress2013",
+   "page": "papers",
+   "statement": "ECS Trans. 2013은 TCAD로 핀이 병합된 좁은 피치에서 CESL이 매우 비효과적이 된다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/05009.0047ecst"
+   ]
+  },
+  {
+   "id": "P-lve2010ted",
+   "page": "papers",
+   "statement": "IEEE TED 2010은 DSL 경계 근접이 n·pMOS 모두의 채널 이동도를 크게 떨어뜨린다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/TED.2010.2066567"
+   ]
+  },
+  {
+   "id": "P-dsl2007vlsi",
+   "page": "papers",
+   "statement": "VLSI 2007 논문은 얇은 L자 측벽으로 DSL 응력 전달을 보완해 nFET 전도도를 10% 높였다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/VLSIT.2007.4339700"
+   ]
+  },
+  {
+   "id": "P-dslgl2013",
+   "page": "papers",
+   "statement": "ECS Trans. 2013은 인장 SiN 라이너를 N2 플라즈마로 처리해 더미 게이트 산화막 DHF 제거 때의 라이너 리세스를 없앴다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/05201.0677ecst"
+   ]
+  },
+  {
+   "id": "P-esige32_2008",
+   "page": "papers",
+   "statement": "JJAP 2008은 in situ 도핑 eSiGe의 이점을 살리려면 리세스 모양과 SiGe 근접 거리를 정밀 제어해야 한다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1143/JJAP.47.2564"
+   ]
+  },
+  {
+   "id": "P-nbd2013ecs",
+   "page": "papers",
+   "statement": "ECS Trans. 2013은 S/D 리세스 모양이 SiGe 근접 거리를 정해 채널 응력 전달에 결정적이라고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/05201.0033ecst"
+   ]
+  },
+  {
+   "id": "P-cavity2011jap",
+   "page": "papers",
+   "statement": "J. Appl. Phys. 2011은 설계를 달리한 시험 격자에서 방사광 X선 회절로 잰 eSiGe pFET 채널 응력이 90–220 MPa였고, 비선택 식각으로 생긴 여러 결정면 캐비티를 변동 요인 중 하나로 제시했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.3638051"
+   ]
+  },
+  {
+   "id": "P-metz2010",
+   "page": "papers",
+   "statement": "Metz 외(AVS 2010)는 컨택 홀 안 SiN:Si 선택비를 40:1 넘게 얻어 게이트 누설을 약 10배 줄였다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://avssymposium.org/AVS2010/Sessions/Schedule/20391"
+   ]
+  },
+  {
+   "id": "P-tsutsui2017",
+   "page": "papers",
+   "statement": "Tsutsui 외(VLSI 2017)는 SiGe pFinFET의 핀 컷 변형 이완이 LLE를 일으키며 두 완화 기법을 보였다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.23919/VLSIT.2017.7998215"
+   ]
+  },
+  {
+   "id": "P-allibert2014",
+   "page": "papers",
+   "statement": "Allibert 외(S3S 2014)는 고유 변형 핀의 채널 응력이 핀 길이와 높이에 좌우된다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/S3S.2014.7028189"
+   ]
+  },
+  {
+   "id": "P-arimura2018",
+   "page": "papers",
+   "statement": "Arimura 외(IEDM 2018)는 적층 변형 Ge 나노와이어 pFET이 변형 Ge FinFET보다 핀 컷·S/D 리세스 뒤 SRB 유도 변형을 더 잘 보존하며, 이는 희생 SiGe 층 덕분이라고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2018.8614712"
+   ]
+  },
+  {
+   "id": "P-scott1999",
+   "page": "papers",
+   "statement": "Scott 외(IEDM 1999)는 STI 가장자리 응력 때문에 nMOS 구동 전류가 배치에 따라 최대 13% 준다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.1999.824277"
+   ]
+  },
+  {
+   "id": "P-rossoni2025",
+   "page": "papers",
+   "statement": "Rossoni 외(2025)는 7nm FinFET에서 단일·이중 확산 단절과 핀 밖 금속 게이트 연장(게이트 컷 설계)에 따른 배치 민감도를, 전기 측정으로 보정한 3D TCAD로 응력 변화에 의해 설명했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/TED.2025.3561974"
+   ]
+  },
+  {
+   "id": "P-reboh2018apl",
+   "page": "papers",
+   "statement": "Reboh 외(2018)는 압축 SGOI 위 핀 패턴 Si/SiGe 다층에서 Si 층에 1.4 GPa 단축 응력이 생겼다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.5010997"
+   ]
+  },
+  {
+   "id": "P-reboh2019",
+   "page": "papers",
+   "statement": "Reboh 외(IEDM 2019)는 10nm 설계 규칙의 적층 GAA 나노시트 트랜지스터에서 채널 릴리스 뒤 −0.5%~−1% 압축 변형을 TEM으로 측정했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM19573.2019.8993524"
+   ]
+  },
+  {
+   "id": "P-eneman2020",
+   "page": "papers",
+   "statement": "ECS Trans. 2020은 시뮬레이션으로 나노시트의 채널 응력이 나노와이어보다 낮다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/09805.0253ecst"
+   ]
+  },
+  {
+   "id": "P-chou2024",
+   "page": "papers",
+   "statement": "Chou 외(2024)는 SiGe 나노시트 pFET 공정의 FEA에서 채널 변형이 S/D 리세스·내부 스페이서 단계에서 이완되고 결함 없는 Si0.6Ge0.4 S/D 재성장 뒤 커지며, 병합 에피 사이에 빈틈이 있으면 인장으로 바뀐다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/TED.2024.3383409"
+   ]
+  },
+  {
+   "id": "P-li2025aelm",
+   "page": "papers",
+   "statement": "Li 외(2025)는 SiGe 선택 식각 깊이 불균일로 Si 시트 변형이 불균일해진다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1002/aelm.202400943"
+   ]
+  },
+  {
+   "id": "P-chen2022trim",
+   "page": "papers",
+   "statement": "Chen 외(2022)는 최적화한 S/D 트리밍으로 3층 나노시트 7단 링 오실레이터의 지연이 같은 전력에서 최대 27.8% 개선된다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.3390/mi13071080"
+   ]
+  },
+  {
+   "id": "P-durfee2021sige",
+   "page": "papers",
+   "statement": "Durfee 외(2021)는 고선택 등방성 SiGe 건식 식각으로 내부 스페이서를 정밀하게 만들어 소자 변수를 개선했다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/10404.0217ecst"
+   ]
+  },
+  {
+   "id": "P-turnquist2023",
+   "page": "papers",
+   "statement": "Turnquist 외(SPIE 2023)는 플라즈마 노출로 TiN 하드마스크 압축 응력이 커져 저응력 막에서도 위글링이 생겼다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2661307"
+   ]
+  },
+  {
+   "id": "P-turnquist2025",
+   "page": "papers",
+   "statement": "Turnquist 외(2025)는 3D FEM으로 표면 거칠기가 위글링 변형 문턱을 높인다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1116/6.0004116"
+   ]
+  },
+  {
+   "id": "P-kofuji2015",
+   "page": "papers",
+   "statement": "Kofuji 외(2015)는 ACL 식각에 HBr을 더하면 표면 수소화로 응력이 커져 위글링이 는다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.7567/JJAP.54.06FH04"
+   ]
+  },
+  {
+   "id": "P-soc2012",
+   "page": "papers",
+   "statement": "SPIE 2012 논문은 SOC 하드마스크에 높은 식각 내성과 위글링 내성이 함께 요구된다고 썼다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.916128"
+   ]
+  },
+  {
+   "id": "P-huang2016",
+   "page": "papers",
+   "statement": "Huang 외(SPIE 2016)는 3D NAND 막 응력에 의한 웨이퍼 휨이 웨이퍼 내 CD 균일도를 바꾼다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/12.2216048"
+   ]
+  },
+  {
+   "id": "P-nandwarp2019",
+   "page": "papers",
+   "statement": "SST 2019는 CSL W에 의한 웨이퍼 휨이 열처리로 줄고 온도의 영향이 시간보다 크다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1088/1361-6641/aafccd"
+   ]
+  },
+  {
+   "id": "P-sip2018",
+   "page": "papers",
+   "statement": "ECS JSS 2018은 Si:P 에피의 인장 변형이 레이저 열처리 뒤 줄어든다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1149/2.0071805jss"
+   ]
+  },
+  {
+   "id": "P-ang2004",
+   "page": "papers",
+   "statement": "Ang 외(IEDM 2004)는 Si:C S/D로 50nm nMOS 구동 전류를 50% 높였다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2004.1419383"
+   ]
+  },
+  {
+   "id": "P-ito2000",
+   "page": "papers",
+   "statement": "Ito 외(IEDM 2000)는 CESL 내부 응력이 nMOS 성능을 최대 8% 낮추고 pMOS를 최대 7% 높인다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/IEDM.2000.904303"
+   ]
+  },
+  {
+   "id": "P-zhu2007dsl",
+   "page": "papers",
+   "statement": "Zhu 외(VLSI 2007)는 DSL 윗면 스퍼터링으로 SRAM·프로세서 수율을 높였다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1109/VLSIT.2007.4339684"
+   ]
+  },
+  {
+   "id": "P-clement2004",
+   "page": "papers",
+   "statement": "Clément 외(2004)는 FIB 시편 제작 중 응력 이완을 분석해 원래 응력을 구했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.1774275"
+   ]
+  },
+  {
+   "id": "P-murray2022",
+   "page": "papers",
+   "statement": "Murray 외(2022)는 방사광 X선 회절로 Si/SiGe 나노시트 변형의 두 메커니즘을 확인했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1038/s44172-022-00011-w"
+   ]
+  },
+  {
+   "id": "P-raman2022",
+   "page": "papers",
+   "statement": "JM3 2022는 인라인 라만으로 나노시트 조성·변형을 측정해 기준 측정과 잘 맞았다고 보고했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1117/1.JMM.21.2.021203"
+   ]
+  },
+  {
+   "id": "P-nbd2014apl",
+   "page": "papers",
+   "statement": "APL 2014는 NBD와 FEM으로 SiGe 응력원 핀의 변형 분포와 치수 영향을 분석했다.",
+   "risk": "low",
+   "decision": "adopt",
+   "reason": "독립 검증 지지",
+   "verdict": "supported",
+   "conditions": "",
+   "note": "",
+   "reviewed": "ps-s-tr-es",
+   "checked": [
+    "https://api.openalex.org/works/doi:10.1063/1.4893926"
+   ]
   }
  ]
 }

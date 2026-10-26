@@ -28,7 +28,8 @@
   15. 챔버 conditioning·aging OES (#59)
   16. RMG(대체 금속 게이트) 공정 리서치 (#60)
   17. 식각 공정 기초 보충 (#61)
-  18. SRAM 리서치 (#62–)
+  18. SRAM 리서치 (#62)
+  19. 응력 공학·식각 이슈 리서치 (#64–)
   - (비공개) SNU PAL 질의응답 지식화 (#40–#45) — 공개 단계 목록에 없음, `data/history_private/snupal_history.html`
 
 ### 새 항목 추가 방법

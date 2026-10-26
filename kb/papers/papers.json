@@ -3775,6 +3775,846 @@
    ],
    "use": "SRAM 페이지·그래프 노드의 근거(#62).",
    "claim": "Barth 외(2011)는 POWER7의 32 MB L3를 45nm SOI eDRAM으로 구현하고 1.35 ns 랜덤 접근을 보고했다."
+  },
+  {
+   "id": "thompson2004ted",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "A 90-nm logic technology featuring strained-silicon",
+   "authors": "S. E. Thompson 외 (Intel)",
+   "year": 2004,
+   "venue": "IEEE TED 51, 1790",
+   "doi": "10.1109/TED.2004.836648",
+   "match": [
+    "10.1109/ted.2004.836648"
+   ],
+   "summary": "Intel 90nm 로직 기술 논문. pMOS 소스/드레인에 선택 에피 SiGe를 넣어 채널 길이 방향 압축을, nMOS에는 인장 SiN 캡층으로 인장을 주어 포화 구동 전류를 각각 25%, 10% 높였다.",
+   "points": [
+    "압저항 계수로 볼 때 같은 pMOS 이동도 향상에 단축 압축은 SiGe 기판 2축 인장보다 약 5배 적은 변형으로 충분하다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Thompson 외(2004, IEEE TED)는 Intel 90nm에서 SiGe S/D와 인장 SiN 캡으로 pMOS 25%, nMOS 10% 포화 구동 전류 향상을 보고했다."
+  },
+  {
+   "id": "ghani2003",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A 90nm high volume manufacturing logic technology featuring novel 45nm gate length strained silicon CMOS transistors",
+   "authors": "T. Ghani 외 (Intel)",
+   "year": 2003,
+   "venue": "IEDM 2003",
+   "doi": "10.1109/IEDM.2003.1269442",
+   "match": [
+    "10.1109/iedm.2003.1269442"
+   ],
+   "summary": "매립 SiGe 소스/드레인(pMOS)과 고인장 SiN 캡층(nMOS)을 쓰는 45nm 게이트 길이 변형 실리콘 트랜지스터를 갖춘 Intel 90nm 기술이 300mm 웨이퍼 대량 생산에 들어간다고 발표했다.",
+   "points": [
+    "회사 자체 발표. 공정 세부는 Thompson 외(TED 2004)에 있다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Ghani 외(IEDM 2003, Intel 자체 발표)는 pMOS에 매립 에피 SiGe S/D, nMOS에 고인장 SiN 캡을 쓰는 90nm 변형 실리콘 기술이 300mm 웨이퍼에서 대량 생산으로 램프 중이라고 보고했다."
+  },
+  {
+   "id": "thompson2004iedm",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Key differences for process-induced uniaxial vs. substrate-induced biaxial stressed Si and Ge channel MOSFETs",
+   "authors": "S. E. Thompson 외",
+   "year": 2004,
+   "venue": "IEDM 2004",
+   "doi": "10.1109/IEDM.2004.1419114",
+   "match": [
+    "10.1109/iedm.2004.1419114"
+   ],
+   "summary": "웨이퍼 굽힘 실험과 물리 모델로 공정 유도 단축 응력이 기판 유도 2축 응력보다 n·pMOS 모두에서 유리함을 보였다.",
+   "points": [
+    "nMOS에서는 문턱 전압 이동이 더 작은 것이 단축 응력의 장점이다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Thompson 외(IEDM 2004)는 웨이퍼 굽힘 실험과 모델로 n·pMOS 모두에서 단축 응력이 2축 응력보다 유리함을 보였다."
+  },
+  {
+   "id": "yang2004dsl",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Dual stress liner for high performance sub-45nm gate length SOI CMOS manufacturing",
+   "authors": "H. S. Yang 외 (IBM 외)",
+   "year": 2004,
+   "venue": "IEDM 2004",
+   "doi": "10.1109/IEDM.2004.1419385",
+   "match": [
+    "10.1109/iedm.2004.1419385"
+   ],
+   "summary": "인장·압축 질화막 컨택 라이너를 한 CMOS 흐름에 함께 넣은 이중 응력 라이너(DSL)를 45nm 미만 게이트 길이 SOI CMOS에 적용했다. 유효 구동 전류가 nFET 15%, pFET 32% 늘었다.",
+   "points": [
+    "SiGe 없이 정공 이동도 60% 향상, 수율은 DSL 없는 비슷한 기술과 비슷했다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Yang 외(IEDM 2004)는 DSL로 nFET/pFET 유효 구동 전류를 15%/32% 높이고 SiGe 없이 정공 이동도를 60% 높였다고 보고했다."
+  },
+  {
+   "id": "chen2004smt",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Stress memorization technique (SMT) by selectively strained-nitride capping for sub-65nm high-performance strained-Si device application",
+   "authors": "C.-H. Chen 외",
+   "year": 2004,
+   "venue": "VLSI Technology 2004",
+   "doi": "10.1109/VLSIT.2004.1345390",
+   "match": [
+    "10.1109/vlsit.2004.1345390"
+   ],
+   "summary": "응력 기억 기법(SMT): 폴리 비정질화 주입 뒤 n+ 폴리 게이트 위에 고인장 질화막을 씌우고 활성화 열처리 뒤 막을 제거해도 채널 응력이 남는다.",
+   "points": [
+    "nMOS 구동 전류가 15% 넘게 향상되었고 pMOS 열화는 없었다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Chen 외(VLSI 2004)는 고인장 질화막 캡을 활성화 뒤 제거하는 SMT로 nMOS 구동 전류를 15% 넘게 높였다고 보고했다."
+  },
+  {
+   "id": "auth2008",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "45nm High-k + metal gate strain-enhanced transistors",
+   "authors": "C. Auth 외 (Intel)",
+   "year": 2008,
+   "venue": "VLSI Technology 2008",
+   "doi": "10.1109/VLSIT.2008.4588589",
+   "match": [
+    "10.1109/vlsit.2008.4588589"
+   ],
+   "summary": "Intel 45nm HKMG 트랜지스터의 두 핵심 특징으로 응력 강화 기법과 이중 금속 게이트·high-k의 통합, 193nm 건식 리소그래피의 45nm 피치 확장을 들었다.",
+   "points": [
+    "더미 게이트 제거 전후 응력 수치는 본문에만 있어 이 사이트에서는 검증 보류."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Auth 외(VLSI 2008)는 Intel 45nm의 핵심 특징으로 응력 강화 기법과 이중 금속 게이트·high-k의 통합을 들었다."
+  },
+  {
+   "id": "denneulin2012",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "The addition of strain in uniaxially strained transistors by both SiN contact etch stop layers and recessed SiGe sources and drains",
+   "authors": "T. Denneulin 외",
+   "year": 2012,
+   "venue": "J. Appl. Phys. 112, 094314",
+   "doi": "10.1063/1.4764045",
+   "match": [
+    "10.1063/1.4764045"
+   ],
+   "summary": "암시야 전자 홀로그래피로 pMOS 채널 변형을 지도화해, SiN CESL과 매립 SiGe 소스/드레인을 함께 쓸 때 변형이 각각의 합과 같음을 보였다.",
+   "points": [
+    "Ni 실리사이드 뒤에는 변형이 약간 줄지만 합산성은 대체로 유지된다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Denneulin 외(2012)는 암시야 전자 홀로그래피로, 실리사이드 전 pMOS에서 CESL과 eSiGe를 함께 쓴 채널 변형이 각 성분의 합과 같고 Ni 실리사이드 뒤에는 약간 줄지만 대체로 합산성이 유지된다고 보고했다."
+  },
+  {
+   "id": "cesl2007ted",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Method for Managing the Stress Due to the Strained Nitride Capping Layer in MOS Transistors",
+   "authors": "—",
+   "year": 2007,
+   "venue": "IEEE TED 54",
+   "doi": "10.1109/TED.2007.892026",
+   "match": [
+    "10.1109/ted.2007.892026"
+   ],
+   "summary": "기계 시뮬레이션으로 CESL(응력 질화막 캡)의 고유 응력이 막의 여러 부분의 직접·간접 작용으로 채널에 전달됨을 설명했다.",
+   "points": [
+    "작은 트랜지스터에서는 모서리 효과가 중요하며, CESL 활용 지침을 제시했다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "IEEE TED 2007 논문은 기계 시뮬레이션으로 CESL 응력이 막의 여러 부분의 직접·간접 작용으로 채널에 전달된다고 설명했다."
+  },
+  {
+   "id": "finfetstress2013",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Stress Techniques and Mobility Enhancement in FinFET Architectures",
+   "authors": "imec",
+   "year": 2013,
+   "venue": "ECS Trans. 50(9), 47",
+   "doi": "10.1149/05009.0047ecst",
+   "match": [
+    "10.1149/05009.0047ecst"
+   ],
+   "summary": "주로 TCAD로 n-FinFET의 응력 기법을 분석했다. 게이트 퍼스트에서 인장 CESL은 평면 소자보다 덜 효과적이고, 핀이 병합될 만큼 핀 피치가 좁으면 매우 비효과적이다.",
+   "points": [
+    "Si:C S/D 응력원은 효과적이며 평면 소자와 비슷한 폭 의존성을 보인다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "ECS Trans. 2013은 TCAD로 핀이 병합된 좁은 피치에서 CESL이 매우 비효과적이 된다고 보고했다."
+  },
+  {
+   "id": "lve2010ted",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Layout Variation Effects in Advanced MOSFETs: STI-Induced Embedded SiGe Strain Relaxation and Dual-Stress-Liner Boundary Proximity Effect",
+   "authors": "—",
+   "year": 2010,
+   "venue": "IEEE TED 57",
+   "doi": "10.1109/TED.2010.2066567",
+   "match": [
+    "10.1109/ted.2010.2066567"
+   ],
+   "summary": "배치 변동 효과 두 가지를 측정했다. STI가 매립 SiGe 변형을 이완시키는 정도는 eSiGe 프로파일에 좌우되고, DSL 경계가 가까우면 n·pMOS 모두 이동도가 크게 떨어진다.",
+   "points": [
+    "두 효과 모두 [110] 방향 채널 변형 감소로 나타났다(나노빔 회절·GPA 측정)."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "IEEE TED 2010은 DSL 경계 근접이 n·pMOS 모두의 채널 이동도를 크게 떨어뜨린다고 보고했다."
+  },
+  {
+   "id": "dsl2007vlsi",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Highly Efficient Stress Transfer Techniques in Dual Stress Liner CMOS Integration",
+   "authors": "—",
+   "year": 2007,
+   "venue": "VLSI Technology 2007",
+   "doi": "10.1109/VLSIT.2007.4339700",
+   "match": [
+    "10.1109/vlsit.2007.4339700"
+   ],
+   "summary": "게이트 피치 축소로 줄어드는 DSL 응력 전달을 얇은 L자 측벽(이중 일회용 측벽)으로 보완해 nFET 채널 전도도를 10% 높였다.",
+   "points": [
+    "pFET은 DSL 공정 중 응력 열화를 피하는 접착 강화 기법과 배치 최적화로 Ion을 23% 높였다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "VLSI 2007 논문은 얇은 L자 측벽으로 DSL 응력 전달을 보완해 nFET 전도도를 10% 높였다고 보고했다."
+  },
+  {
+   "id": "dslgl2013",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Integration Issue of Tensile SiN Liner for Dual Stress Liner(DSL) in Gate-Last High-k/Metal Gate(HKMG) Process Flow",
+   "authors": "—",
+   "year": 2013,
+   "venue": "ECS Trans. 52(1), 677",
+   "doi": "10.1149/05201.0677ecst",
+   "match": [
+    "10.1149/05201.0677ecst"
+   ],
+   "summary": "게이트 라스트 HKMG에 DSL을 통합할 때, 폴리 오픈 CMP 뒤 드러난 인장 SiN 라이너가 더미 게이트 산화막 DHF 제거 중 식각되어 게이트 옆에 리세스가 생기는 문제를 다뤘다.",
+   "points": [
+    "라이너를 N2 플라즈마로 처리해 DHF 식각 속도를 낮춰 리세스를 없앴다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "ECS Trans. 2013은 인장 SiN 라이너를 N2 플라즈마로 처리해 더미 게이트 산화막 DHF 제거 때의 라이너 리세스를 없앴다고 보고했다."
+  },
+  {
+   "id": "esige32_2008",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "In situ Doped Embedded-SiGe Source/Drain Technique for 32 nm Node p-Channel Metal–Oxide–Semiconductor Field-Effect Transistor",
+   "authors": "—",
+   "year": 2008,
+   "venue": "JJAP 47, 2564",
+   "doi": "10.1143/JJAP.47.2564",
+   "match": [
+    "10.1143/jjap.47.2564"
+   ],
+   "summary": "32nm 노드 pMOS에서 in situ 붕소 도핑 eSiGe S/D가 주입 방식보다 이동도·기생 저항 면에서 유리함을 보였다.",
+   "points": [
+    "리세스된 Si 모양과 SiGe의 채널 근접 거리를 정밀하게 제어해야 하며, 채널 응력은 소자가 작아질수록 커진다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "JJAP 2008은 in situ 도핑 eSiGe의 이점을 살리려면 리세스 모양과 SiGe 근접 거리를 정밀 제어해야 한다고 보고했다."
+  },
+  {
+   "id": "nbd2013ecs",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "A Comprehensive Study of SiGe Source/ Drain Local Stress by Nano Beam Diffraction",
+   "authors": "—",
+   "year": 2013,
+   "venue": "ECS Trans. 52(1), 33",
+   "doi": "10.1149/05201.0033ecst",
+   "match": [
+    "10.1149/05201.0033ecst"
+   ],
+   "summary": "TEM 나노빔 회절로 S/D SiGe가 채널에 주는 국부 응력을 활성 영역 폭, 리세스 모양·깊이, Ge·B 농도별로 측정했다.",
+   "points": [
+    "리세스 모양은 근접 거리를, 깊이는 SiGe 부피를 정해 채널 변형에 영향을 준다. 활성 폭이 좁으면 변형이 작다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "ECS Trans. 2013은 S/D 리세스 모양이 SiGe 근접 거리를 정해 채널 응력 전달에 결정적이라고 보고했다."
+  },
+  {
+   "id": "cavity2011jap",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Architecture of source-drain cavity of a p-channel field effect transistor for embedding with epitaxial SiGe for enhanced performance",
+   "authors": "—",
+   "year": 2011,
+   "venue": "J. Appl. Phys. 110",
+   "doi": "10.1063/1.3638051",
+   "match": [
+    "10.1063/1.3638051"
+   ],
+   "summary": "방사광 X선 회절로 eSiGe pFET 격자 구조의 채널 응력을 측정해, S/D 캐비티 구조와 응력 변동의 관계를 분석했다.",
+   "points": [
+    "비선택 식각으로 여러 결정면이 섞인 캐비티는 변동원이 되어 응력이 90–220 MPa, 추정 구동 전류 향상이 5–15%로 흩어졌다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "J. Appl. Phys. 2011은 설계를 달리한 시험 격자에서 방사광 X선 회절로 잰 eSiGe pFET 채널 응력이 90–220 MPa였고, 비선택 식각으로 생긴 여러 결정면 캐비티를 변동 요인 중 하나로 제시했다."
+  },
+  {
+   "id": "metz2010",
+   "area": "device",
+   "kind": "학회 초록",
+   "basis": "초록",
+   "title": "Ultra-high Selectivity Silicon Nitride Liner Etch: Mitigating Substrate Damage in Logic-based Contact Level Interconnects",
+   "authors": "A. Metz 외",
+   "year": 2010,
+   "venue": "AVS 57th Symposium, PS1-TuA10",
+   "match": [
+    "avssymposium.org/avs2010/sessions/schedule/20391"
+   ],
+   "summary": "28nm 이후 로직 컨택에서 SiN 라이너 식각의 기판 손상을 줄이는 초고선택 공정을 보고한 학회 초록. 홀 안 SiN:Si 선택비 40:1 이상을 얻었다.",
+   "points": [
+    "활성 Si 손실·리세스가 줄어 게이트 누설이 약 10배 줄었다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Metz 외(AVS 2010)는 컨택 홀 안 SiN:Si 선택비를 40:1 넘게 얻어 게이트 누설을 약 10배 줄였다고 보고했다.",
+   "url": "https://avssymposium.org/AVS2010/Sessions/Schedule/20391"
+  },
+  {
+   "id": "tsutsui2017",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "SiGe FinFET for practical logic libraries by mitigating local layout effect",
+   "authors": "G. Tsutsui 외",
+   "year": 2017,
+   "venue": "VLSI Technology 2017",
+   "doi": "10.23919/VLSIT.2017.7998215",
+   "match": [
+    "10.23919/vlsit.2017.7998215"
+   ],
+   "summary": "SiGe pFinFET에서 핀 컷 공정에 의한 채널 변형 이완이 국부 배치 효과(LLE)를 일으키는 문제를 분석하고, 이를 완화하는 두 기법을 보였다.",
+   "points": [
+    "10nm 규칙 SiGe CMOS FinFET 연구의 연장이다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Tsutsui 외(VLSI 2017)는 SiGe pFinFET의 핀 컷 변형 이완이 LLE를 일으키며 두 완화 기법을 보였다."
+  },
+  {
+   "id": "allibert2014",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Elastic relaxation in intrinsically-strained Fins: Simulations, physical and electrical characterization",
+   "authors": "F. Allibert 외",
+   "year": 2014,
+   "venue": "IEEE S3S 2014",
+   "doi": "10.1109/S3S.2014.7028189",
+   "match": [
+    "10.1109/s3s.2014.7028189"
+   ],
+   "summary": "고유 변형 재료로 핀을 만든 뒤의 탄성 이완을 시뮬레이션·나노빔 회절·sSOI FinFET 전류로 분석했다. 채널 응력은 핀 길이와 높이에 좌우된다.",
+   "points": [
+    "이중층 구조 핀은 길이 750nm 미만에서 크게 이완될 것으로 예상되었고, 단일층은 300nm까지 크게 이완되지 않았다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Allibert 외(S3S 2014)는 고유 변형 핀의 채널 응력이 핀 길이와 높이에 좌우된다고 보고했다."
+  },
+  {
+   "id": "arimura2018",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Advantage of NW structure in preservation of SRB-induced strain and investigation of off-state leakage in strained stacked Ge NW pFET",
+   "authors": "H. Arimura 외 (imec)",
+   "year": 2018,
+   "venue": "IEDM 2018",
+   "doi": "10.1109/IEDM.2018.8614712",
+   "match": [
+    "10.1109/iedm.2018.8614712"
+   ],
+   "summary": "변형 Ge 나노와이어 pFET이 Ge FinFET보다 핀 컷과 S/D 리세스를 거치며 SRB가 준 변형을 더 잘 보존함을 보였다.",
+   "points": [
+    "희생 SiGe 층 덕분이며, 희생층 Ge 농도를 낮추면 변형 손실이 더 준다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Arimura 외(IEDM 2018)는 적층 변형 Ge 나노와이어 pFET이 변형 Ge FinFET보다 핀 컷·S/D 리세스 뒤 SRB 유도 변형을 더 잘 보존하며, 이는 희생 SiGe 층 덕분이라고 보고했다."
+  },
+  {
+   "id": "scott1999",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "NMOS drive current reduction caused by transistor layout and trench isolation induced stress",
+   "authors": "G. Scott 외",
+   "year": 1999,
+   "venue": "IEDM 1999",
+   "doi": "10.1109/IEDM.1999.824277",
+   "match": [
+    "10.1109/iedm.1999.824277"
+   ],
+   "summary": "게이트 길이가 같은 nMOS도 게이트와 확산 영역의 겹침(배치)에 따라 구동 전류가 최대 13% 줄며, 원인이 트렌치 소자 분리 가장자리 응력에 의한 이동도 저하임을 보였다.",
+   "points": [
+    "pMOS는 영향을 받지 않았고, 응력은 좁은 폭 효과의 주요 원인이기도 하다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Scott 외(IEDM 1999)는 STI 가장자리 응력 때문에 nMOS 구동 전류가 배치에 따라 최대 13% 준다고 보고했다."
+  },
+  {
+   "id": "rossoni2025",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Stress-Related Local Layout Effects in FinFET Technology and Device Design Sensitivity",
+   "authors": "A. Rossoni 외",
+   "year": 2025,
+   "venue": "IEEE TED 72",
+   "doi": "10.1109/TED.2025.3561974",
+   "match": [
+    "10.1109/ted.2025.3561974"
+   ],
+   "summary": "7nm 실리콘 FinFET에서 확산 단절(단일·이중)과 핀 밖 금속 게이트 연장(게이트 컷)이 응력을 바꿔 생기는 국부 배치 효과를, 전기 측정으로 보정한 3D TCAD로 분석했다.",
+   "points": [
+    "보정 근거는 응력 직접 측정이 아니라 전기 특성 측정값이다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Rossoni 외(2025)는 7nm FinFET에서 단일·이중 확산 단절과 핀 밖 금속 게이트 연장(게이트 컷 설계)에 따른 배치 민감도를, 전기 측정으로 보정한 3D TCAD로 응력 변화에 의해 설명했다."
+  },
+  {
+   "id": "reboh2018apl",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Strain, stress, and mechanical relaxation in fin-patterned Si/SiGe multilayers for sub-7 nm nanosheet gate-all-around device technology",
+   "authors": "S. Reboh 외",
+   "year": 2018,
+   "venue": "Appl. Phys. Lett. 112, 051901",
+   "doi": "10.1063/1.5010997",
+   "match": [
+    "10.1063/1.5010997"
+   ],
+   "summary": "여러 기판 위에 핀 모양으로 패터닝한 Si/SiGe 다층의 변형을 TEM 변형 지도와 3D 모델로 분석했다.",
+   "points": [
+    "Ge 응축으로 만든 압축 SGOI 위에서는 계면 이완이 일어나 Si 층에 1.4 GPa 단축 응력이 생겼다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Reboh 외(2018)는 압축 SGOI 위 핀 패턴 Si/SiGe 다층에서 Si 층에 1.4 GPa 단축 응력이 생겼다고 보고했다."
+  },
+  {
+   "id": "reboh2019",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Imaging, Modeling and Engineering of Strain in Gate-All-Around Nanosheet Transitors",
+   "authors": "S. Reboh 외",
+   "year": 2019,
+   "venue": "IEDM 2019",
+   "doi": "10.1109/IEDM19573.2019.8993524",
+   "match": [
+    "10.1109/iedm19573.2019.8993524"
+   ],
+   "summary": "TEM과 수치 모델로 GAA 나노시트 공정 전반의 변형 변화를 추적했다. 10nm 설계 규칙에서 채널 릴리스 뒤 −0.5%~−1% 압축 변형을 측정했다.",
+   "points": [
+    "압축 응력 ILD 때문으로 추정했고, 게이트 스택·컨택 모듈로 압축을 인장으로 바꿀 수 있음을 보였다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Reboh 외(IEDM 2019)는 10nm 설계 규칙의 적층 GAA 나노시트 트랜지스터에서 채널 릴리스 뒤 −0.5%~−1% 압축 변형을 TEM으로 측정했다."
+  },
+  {
+   "id": "eneman2020",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "(Invited) Stress Simulations of Fins, Wires, and Nanosheets",
+   "authors": "G. Eneman 외 (imec)",
+   "year": 2020,
+   "venue": "ECS Trans. 98(5), 253",
+   "doi": "10.1149/09805.0253ecst",
+   "match": [
+    "10.1149/09805.0253ecst"
+   ],
+   "summary": "5nm 치수의 핀·나노와이어·나노시트 응력 시뮬레이션. 나노시트 응력은 S/D 에피 대 채널 부피 비가 작아 와이어보다 낮다.",
+   "points": [
+    "피치 축소는 응력을 줄이고(8nm→3nm 노드 치수에서 와이어 응력 약 35% 감소), 에피 성장면이 덜 합쳐지면 응력이 사라지거나 반전될 수 있다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "ECS Trans. 2020은 시뮬레이션으로 나노시트의 채널 응력이 나노와이어보다 낮다고 보고했다."
+  },
+  {
+   "id": "chou2024",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Strain Evolution in SiGe Nanosheet Transistor Process Flow",
+   "authors": "H.-C. Chou 외",
+   "year": 2024,
+   "venue": "IEEE TED 71",
+   "doi": "10.1109/TED.2024.3383409",
+   "match": [
+    "10.1109/ted.2024.3383409"
+   ],
+   "summary": "SiGe 나노시트 pFET 공정 단계별 채널 변형을 유한요소 해석으로 추적했다. 핀 형성 뒤 0.77% 이축 압축, S/D 리세스·내부 스페이서 캐비티 중 이완, SiGe S/D 재성장 뒤 1.50%.",
+   "points": [
+    "병합 에피 사이 빈틈이 있으면 압축이 완전히 풀리고 인장으로 바뀐다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Chou 외(2024)는 SiGe 나노시트 pFET 공정의 FEA에서 채널 변형이 S/D 리세스·내부 스페이서 단계에서 이완되고 결함 없는 Si0.6Ge0.4 S/D 재성장 뒤 커지며, 병합 에피 사이에 빈틈이 있으면 인장으로 바뀐다고 보고했다."
+  },
+  {
+   "id": "li2025aelm",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Direct Observation of Etching‐Induced Inhomogeneous Strain in Advanced Si/SiGe Stack for Gate‐All‐Around Transistor",
+   "authors": "L. Li 외",
+   "year": 2025,
+   "venue": "Adv. Electron. Mater. 11",
+   "doi": "10.1002/aelm.202400943",
+   "match": [
+    "10.1002/aelm.202400943"
+   ],
+   "summary": "Si/SiGe 적층의 이방성 식각과 SiGe 선택 등방성 식각에서 가로·세로 식각 속도 차이로 SiGe 식각 깊이가 고르지 않음을 보였다.",
+   "points": [
+    "STEM 변형 분석에서 맨 아래 시트가 가장 큰 변형을 받았고, TCAD에서 불균일 변형이 드레인 전류를 줄였다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Li 외(2025)는 SiGe 선택 식각 깊이 불균일로 Si 시트 변형이 불균일해진다고 보고했다."
+  },
+  {
+   "id": "chen2022trim",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Source/Drain Trimming Process to Improve Gate-All-Around Nanosheet Transistors Switching Performance and Enable More Stacks of Nanosheets",
+   "authors": "K. Chen 외",
+   "year": 2022,
+   "venue": "Micromachines 13, 1080",
+   "doi": "10.3390/mi13071080",
+   "match": [
+    "10.3390/mi13071080"
+   ],
+   "summary": "GAA 나노시트에서 에피 S/D 응력원의 채널 응력을 최대한 유지하면서 기생 RC를 줄이는 S/D 트리밍 공정을 제안했다.",
+   "points": [
+    "3층 나노시트 7단 링 오실레이터 지연이 같은 전력에서 최대 27.8% 개선되었다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Chen 외(2022)는 최적화한 S/D 트리밍으로 3층 나노시트 7단 링 오실레이터의 지연이 같은 전력에서 최대 27.8% 개선된다고 보고했다."
+  },
+  {
+   "id": "durfee2021sige",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Highly Selective SiGe Dry Etch Process for the Enablement of Stacked Nanosheet Gate-All-Around Transistors",
+   "authors": "C. Durfee 외",
+   "year": 2021,
+   "venue": "ECS Trans. 104(4), 217",
+   "doi": "10.1149/10404.0217ecst",
+   "match": [
+    "10.1149/10404.0217ecst"
+   ],
+   "summary": "적층 나노시트 GAA에서 내부 스페이서와 Si 채널 형성의 어려움을 정리하고, 고선택 등방성 SiGe 건식 식각으로 내부 스페이서를 정밀하게 만들었다.",
+   "points": [
+    "저항·구동 전류·상호컨덕턴스·문턱 전압·항복 전압·BTI·변동이 개선되었다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Durfee 외(2021)는 고선택 등방성 SiGe 건식 식각으로 내부 스페이서를 정밀하게 만들어 소자 변수를 개선했다고 보고했다."
+  },
+  {
+   "id": "turnquist2023",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Evaluation of TiN hardmask films to prevent line wiggling due to plasma-induced film stress",
+   "authors": "A. Turnquist 외",
+   "year": 2023,
+   "venue": "Proc. SPIE (Advanced Etch Technology XII)",
+   "doi": "10.1117/12.2661307",
+   "match": [
+    "10.1117/12.2661307"
+   ],
+   "summary": "28nm 피치 p-SiOCH 식각에서 TiN 하드마스크의 고유 응력과 플라즈마 유도 응력이 라인 위글링에 주는 영향을 비교했다.",
+   "points": [
+    "플라즈마 노출 뒤 모든 TiN 막의 압축 응력이 커져 고유 응력이 낮은 PVD TiN에서도 위글링이 생겼다. 표면 거칠기가 크면 위험이 줄었다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Turnquist 외(SPIE 2023)는 플라즈마 노출로 TiN 하드마스크 압축 응력이 커져 저응력 막에서도 위글링이 생겼다고 보고했다."
+  },
+  {
+   "id": "turnquist2025",
+   "area": "patterning",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Line wiggling due to plasma-induced film stress and prevention by surface roughness modification",
+   "authors": "A. Turnquist 외",
+   "year": 2025,
+   "venue": "JVST B 43",
+   "doi": "10.1116/6.0004116",
+   "match": [
+    "10.1116/6.0004116"
+   ],
+   "summary": "플라즈마 유도 막 응력이 라인 위글링을 일으키는 과정과, 하드마스크 표면 거칠기가 이를 막는 메커니즘을 실험과 3D 유한요소 해석으로 보였다.",
+   "points": [
+    "p-SiOCH 대 TiN 선택비를 높여 표면 손상을 줄이자 매끈한 TiN에서만 위글링이 나타났다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Turnquist 외(2025)는 3D FEM으로 표면 거칠기가 위글링 변형 문턱을 높인다고 보고했다."
+  },
+  {
+   "id": "kofuji2015",
+   "area": "patterning",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Mechanism of wiggling enhancement due to HBr gas addition during amorphous carbon etching",
+   "authors": "N. Kofuji 외",
+   "year": 2015,
+   "venue": "JJAP 54, 06FH04",
+   "doi": "10.7567/JJAP.54.06FH04",
+   "match": [
+    "10.7567/jjap.54.06fh04"
+   ],
+   "summary": "비정질 탄소막(ACL) 식각에 HBr을 더하면 CD 손실은 줄지만 표면 응력이 커져 위글링이 늘어나는 메커니즘을 분석했다.",
+   "points": [
+    "ATR-FTIR로 수소 라디칼에 의한 표면 수소화를 확인했고, 3D 비선형 FEM으로 응력 증가가 위글링에 충분함을 보였다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Kofuji 외(2015)는 ACL 식각에 HBr을 더하면 표면 수소화로 응력이 커져 위글링이 는다고 보고했다."
+  },
+  {
+   "id": "soc2012",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Spin-on-carbon-hardmask with high wiggling resistance",
+   "authors": "—",
+   "year": 2012,
+   "venue": "Proc. SPIE 8325",
+   "doi": "10.1117/12.916128",
+   "match": [
+    "10.1117/12.916128"
+   ],
+   "summary": "다층 마스크 공정에서 기판 식각이 미세 라인/스페이스에 위글링을 일으키므로, 스핀온 카본(SOC) 하드마스크에 식각 내성과 위글링 내성이 함께 필요함을 다뤘다.",
+   "points": [
+    "SOC 물성과 위글링 내성의 관계를 조사했다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "SPIE 2012 논문은 SOC 하드마스크에 높은 식각 내성과 위글링 내성이 함께 요구된다고 썼다."
+  },
+  {
+   "id": "huang2016",
+   "area": "patterning",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Within-wafer CD variation induced by wafer shape",
+   "authors": "C.-H. Huang 외",
+   "year": 2016,
+   "venue": "Proc. SPIE 9778",
+   "doi": "10.1117/12.2216048",
+   "match": [
+    "10.1117/12.2216048"
+   ],
+   "summary": "3D NAND 적층막의 잔류 응력이 웨이퍼 모양을 바꿔 생기는 웨이퍼 내 CD 균일도 변화를 분석했다. 인장은 오목, 압축은 볼록.",
+   "points": [
+    "CD 균일도는 볼록 +230 µm, 오목 0~−70 µm까지 평탄하고 그보다 오목하면 나빠졌다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Huang 외(SPIE 2016)는 3D NAND 막 응력에 의한 웨이퍼 휨이 웨이퍼 내 CD 균일도를 바꾼다고 보고했다."
+  },
+  {
+   "id": "nandwarp2019",
+   "area": "patterning",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Influence of rapid thermal annealing on the wafer warpage in 3D NAND flash memory",
+   "authors": "—",
+   "year": 2019,
+   "venue": "Semicond. Sci. Technol. 34",
+   "doi": "10.1088/1361-6641/aafccd",
+   "match": [
+    "10.1088/1361-6641/aafccd"
+   ],
+   "summary": "3D NAND 공통 소스 라인 텅스텐(CSL W)이 만드는 웨이퍼 휨이 증착 뒤 열처리 조건에 따라 줄어듦을 보였다.",
+   "points": [
+    "온도가 시간보다 영향이 커서 저열예산 스파이크 열처리를 제안했다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "SST 2019는 CSL W에 의한 웨이퍼 휨이 열처리로 줄고 온도의 영향이 시간보다 크다고 보고했다."
+  },
+  {
+   "id": "sip2018",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "On the Evolution of Strain and Electrical Properties in As-Grown and Annealed Si:P Epitaxial Films for Source-Drain Stressor Applications",
+   "authors": "S. K. Dhayalan 외",
+   "year": 2018,
+   "venue": "ECS JSS 7",
+   "doi": "10.1149/2.0071805jss",
+   "match": [
+    "10.1149/2.0071805jss"
+   ],
+   "summary": "n-FinFET S/D 응력원으로 쓰는 고농도 Si:P 에피의 변형과 전기 특성을 분석했다. 성장 직후 인장을 주지만 레이저 열처리로 전도도를 높이면 인장이 줄어든다.",
+   "points": [
+    "P 농도가 약 1E21 cm⁻³를 넘으면 전도도가 오히려 떨어진다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "ECS JSS 2018은 Si:P 에피의 인장 변형이 레이저 열처리 뒤 줄어든다고 보고했다."
+  },
+  {
+   "id": "ang2004",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Enhanced performance in 50 nm N-MOSFETs with silicon-carbon source/drain regions",
+   "authors": "K.-W. Ang 외",
+   "year": 2004,
+   "venue": "IEDM 2004",
+   "doi": "10.1109/IEDM.2004.1419383",
+   "match": [
+    "10.1109/iedm.2004.1419383"
+   ],
+   "summary": "Si 리세스 식각 뒤 탄소 1.3% Si:C를 S/D에 선택 에피로 채운 nMOS. 약 0.65% 격자 불일치로 채널에 가로 인장이 생긴다.",
+   "points": [
+    "게이트 길이 50nm에서 구동 전류가 50% 늘었다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Ang 외(IEDM 2004)는 Si:C S/D로 50nm nMOS 구동 전류를 50% 높였다고 보고했다."
+  },
+  {
+   "id": "ito2000",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Mechanical stress effect of etch-stop nitride and its impact on deep submicron transistor design",
+   "authors": "S. Ito 외 (NEC)",
+   "year": 2000,
+   "venue": "IEDM 2000",
+   "doi": "10.1109/IEDM.2000.904303",
+   "match": [
+    "10.1109/iedm.2000.904303"
+   ],
+   "summary": "PECVD 질화막 컨택 식각 정지층의 내부 응력이 짧은 채널 CMOS의 이동도를 바꿔 nMOS 성능을 최대 8% 떨어뜨리고 pMOS를 최대 7% 높일 수 있음을 보였다.",
+   "points": [
+    "응력 의존 이동도를 고려한 트랜지스터 모델이 필요하다고 했다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Ito 외(IEDM 2000)는 CESL 내부 응력이 nMOS 성능을 최대 8% 낮추고 pMOS를 최대 7% 높인다고 보고했다."
+  },
+  {
+   "id": "zhu2007dsl",
+   "area": "device",
+   "kind": "학회 논문",
+   "basis": "초록",
+   "title": "Improving Yields of High Performance 65 nm Chips with Sputtering Top Surface of Dual Stress Liner",
+   "authors": "H. Zhu 외 (IBM)",
+   "year": 2007,
+   "venue": "VLSI Technology 2007",
+   "doi": "10.1109/VLSIT.2007.4339684",
+   "match": [
+    "10.1109/vlsit.2007.4339684"
+   ],
+   "summary": "65nm SOI에서 DSL 경계가 만드는 복잡성을 줄이려고 DSL 윗면을 스퍼터링으로 다듬어 수율을 높였다.",
+   "points": [
+    "초록 기준 36 Mb SRAM 수율 25%, 듀얼 코어 33%, 싱글 코어 75% 증가(회사 보고)."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Zhu 외(VLSI 2007)는 DSL 윗면 스퍼터링으로 SRAM·프로세서 수율을 높였다고 보고했다."
+  },
+  {
+   "id": "clement2004",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Strain measurements by convergent-beam electron diffraction: The importance of stress relaxation in lamella preparations",
+   "authors": "L. Clément 외",
+   "year": 2004,
+   "venue": "Appl. Phys. Lett. 85, 651",
+   "doi": "10.1063/1.1774275",
+   "match": [
+    "10.1063/1.1774275"
+   ],
+   "summary": "nMOS의 NiSi 층이 만든 응력장을 CBED로 측정하면서, FIB 시편을 얇게 만들 때 응력이 풀려 원자면이 휘고 HOLZ 선이 넓어지는 현상을 분석했다.",
+   "points": [
+    "이 이완을 분석하면 원래 구조의 응력을 구할 수 있다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Clément 외(2004)는 FIB 시편 제작 중 응력 이완을 분석해 원래 응력을 구했다."
+  },
+  {
+   "id": "murray2022",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Mapping of the mechanical response in Si/SiGe nanosheet device geometries",
+   "authors": "C. E. Murray 외",
+   "year": 2022,
+   "venue": "Commun. Eng. 1",
+   "doi": "10.1038/s44172-022-00011-w",
+   "match": [
+    "10.1038/s44172-022-00011-w"
+   ],
+   "summary": "방사광 X선 회절로 GAA용 Si/SiGe 나노시트의 변형을 비파괴 나노 규모로 지도화했다.",
+   "points": [
+    "면내 탄성 이완과 면외 층상 변형이 경쟁하며, SiGe 층 변형이 모델 예측보다 컸다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "Murray 외(2022)는 방사광 X선 회절로 Si/SiGe 나노시트 변형의 두 메커니즘을 확인했다."
+  },
+  {
+   "id": "raman2022",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "In-line Raman spectroscopy for gate-all-around nanosheet device manufacturing",
+   "authors": "—",
+   "year": 2022,
+   "venue": "J. Micro/Nanopattern. Mater. Metrol. 21, 021203",
+   "doi": "10.1117/1.JMM.21.2.021203",
+   "match": [
+    "10.1117/1.jmm.21.2.021203"
+   ],
+   "summary": "GAA 나노시트 FEOL 공정 전반에서 Si·SiGe 시트의 조성과 변형을 인라인 라만 분광으로 측정했다.",
+   "points": [
+    "결과가 고분해능 X선 회절·세차 전자 회절 기준값과 잘 맞았다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "JM3 2022는 인라인 라만으로 나노시트 조성·변형을 측정해 기준 측정과 잘 맞았다고 보고했다."
+  },
+  {
+   "id": "nbd2014apl",
+   "area": "device",
+   "kind": "학술지 논문",
+   "basis": "초록",
+   "title": "Strain characterization of fin-shaped field effect transistors with SiGe stressors using nanobeam electron diffraction",
+   "authors": "—",
+   "year": 2014,
+   "venue": "Appl. Phys. Lett. 105",
+   "doi": "10.1063/1.4893926",
+   "match": [
+    "10.1063/1.4893926"
+   ],
+   "summary": "나노빔 전자 회절과 유한요소법으로 SiGe 응력원을 가진 핀 구조의 S/D·채널 변형 분포를 분석했다.",
+   "points": [
+    "응력원 두께와 핀 폭 같은 치수 요인의 영향을 다뤘다."
+   ],
+   "use": "응력 공학·건식 식각 페이지와 그래프 응력 노드의 근거(#64).",
+   "claim": "APL 2014는 NBD와 FEM으로 SiGe 응력원 핀의 변형 분포와 치수 영향을 분석했다."
   }
  ]
 }

@@ -2366,5 +2366,137 @@
  "sram_power7": {
   "title": "45 nm SOI eDRAM for POWER7 32MB L3 (JSSC 2011, IBM)",
   "url": "https://doi.org/10.1109/JSSC.2010.2084470"
+ },
+ "st_thompson04": {
+  "title": "A 90-nm logic technology featuring strained-silicon (IEEE TED 2004, Intel)",
+  "url": "https://doi.org/10.1109/TED.2004.836648"
+ },
+ "st_thompson04b": {
+  "title": "Key differences for process-induced uniaxial vs. substrate-induced biaxial stressed Si and Ge channel MOSFETs (IEDM 2004)",
+  "url": "https://doi.org/10.1109/IEDM.2004.1419114"
+ },
+ "st_yang04": {
+  "title": "Dual stress liner for high performance sub-45nm gate length SOI CMOS manufacturing (IEDM 2004)",
+  "url": "https://doi.org/10.1109/IEDM.2004.1419385"
+ },
+ "st_chen04": {
+  "title": "Stress memorization technique (SMT) by selectively strained-nitride capping (VLSI 2004)",
+  "url": "https://doi.org/10.1109/VLSIT.2004.1345390"
+ },
+ "st_ito00": {
+  "title": "Mechanical stress effect of etch-stop nitride (IEDM 2000, NEC)",
+  "url": "https://doi.org/10.1109/IEDM.2000.904303"
+ },
+ "st_ang04": {
+  "title": "Enhanced performance in 50 nm N-MOSFETs with silicon-carbon source/drain regions (IEDM 2004)",
+  "url": "https://doi.org/10.1109/IEDM.2004.1419383"
+ },
+ "st_sip18": {
+  "title": "Strain and electrical properties in as-grown and annealed Si:P epitaxial films (ECS JSS 2018)",
+  "url": "https://doi.org/10.1149/2.0071805jss"
+ },
+ "st_lve10": {
+  "title": "Layout variation effects: STI-induced eSiGe strain relaxation and DSL boundary proximity effect (IEEE TED 2010)",
+  "url": "https://doi.org/10.1109/TED.2010.2066567"
+ },
+ "st_zhu07": {
+  "title": "Improving yields of 65nm chips with sputtering top surface of dual stress liner (VLSI 2007, IBM)",
+  "url": "https://doi.org/10.1109/VLSIT.2007.4339684"
+ },
+ "st_dslgl13": {
+  "title": "Integration issue of tensile SiN liner for DSL in gate-last HKMG flow (ECS Trans. 2013)",
+  "url": "https://doi.org/10.1149/05201.0677ecst"
+ },
+ "st_dsl07": {
+  "title": "Highly efficient stress transfer techniques in DSL CMOS integration (VLSI 2007)",
+  "url": "https://doi.org/10.1109/VLSIT.2007.4339700"
+ },
+ "st_tsutsui17": {
+  "title": "SiGe FinFET for practical logic libraries by mitigating local layout effect (VLSI 2017)",
+  "url": "https://doi.org/10.23919/VLSIT.2017.7998215"
+ },
+ "st_allibert14": {
+  "title": "Elastic relaxation in intrinsically-strained fins (S3S 2014)",
+  "url": "https://doi.org/10.1109/S3S.2014.7028189"
+ },
+ "st_scott99": {
+  "title": "NMOS drive current reduction caused by layout and trench isolation induced stress (IEDM 1999)",
+  "url": "https://doi.org/10.1109/IEDM.1999.824277"
+ },
+ "st_rossoni25": {
+  "title": "Stress-related local layout effects in FinFET technology (IEEE TED 2025)",
+  "url": "https://doi.org/10.1109/TED.2025.3561974"
+ },
+ "st_arimura18": {
+  "title": "Preservation of SRB-induced strain in strained stacked Ge NW pFET (IEDM 2018, imec)",
+  "url": "https://doi.org/10.1109/IEDM.2018.8614712"
+ },
+ "st_chou24": {
+  "title": "Strain evolution in SiGe nanosheet transistor process flow (IEEE TED 2024)",
+  "url": "https://doi.org/10.1109/TED.2024.3383409"
+ },
+ "st_li25": {
+  "title": "Direct observation of etching-induced inhomogeneous strain in Si/SiGe stack for GAA (Adv. Electron. Mater. 2025)",
+  "url": "https://doi.org/10.1002/aelm.202400943"
+ },
+ "st_eneman20": {
+  "title": "Stress simulations of fins, wires, and nanosheets (ECS Trans. 2020)",
+  "url": "https://doi.org/10.1149/09805.0253ecst"
+ },
+ "st_reboh19": {
+  "title": "Imaging, modeling and engineering of strain in GAA nanosheet transistors (IEDM 2019)",
+  "url": "https://doi.org/10.1109/IEDM19573.2019.8993524"
+ },
+ "st_turnquist23": {
+  "title": "Evaluation of TiN hardmask films to prevent line wiggling due to plasma-induced film stress (SPIE 2023)",
+  "url": "https://doi.org/10.1117/12.2661307"
+ },
+ "st_turnquist25": {
+  "title": "Line wiggling due to plasma-induced film stress and prevention by surface roughness (JVST B 2025)",
+  "url": "https://doi.org/10.1116/6.0004116"
+ },
+ "st_kofuji15": {
+  "title": "Mechanism of wiggling enhancement due to HBr addition during amorphous carbon etching (JJAP 2015)",
+  "url": "https://doi.org/10.7567/JJAP.54.06FH04"
+ },
+ "st_huang16": {
+  "title": "Within-wafer CD variation induced by wafer shape (SPIE 2016)",
+  "url": "https://doi.org/10.1117/12.2216048"
+ },
+ "st_nandwarp19": {
+  "title": "Influence of RTA on wafer warpage in 3D NAND flash memory (SST 2019)",
+  "url": "https://doi.org/10.1088/1361-6641/aafccd"
+ },
+ "st_nbd13": {
+  "title": "A comprehensive study of SiGe S/D local stress by nano beam diffraction (ECS Trans. 2013)",
+  "url": "https://doi.org/10.1149/05201.0033ecst"
+ },
+ "st_cavity11": {
+  "title": "Architecture of S/D cavity of a pFET for embedding with epitaxial SiGe (J. Appl. Phys. 2011)",
+  "url": "https://doi.org/10.1063/1.3638051"
+ },
+ "st_esige32": {
+  "title": "In situ doped embedded-SiGe S/D technique for 32 nm node pMOSFET (JJAP 2008)",
+  "url": "https://doi.org/10.1143/JJAP.47.2564"
+ },
+ "st_clement04": {
+  "title": "Strain measurements by CBED: stress relaxation in lamella preparations (APL 2004)",
+  "url": "https://doi.org/10.1063/1.1774275"
+ },
+ "st_murray22": {
+  "title": "Mapping of the mechanical response in Si/SiGe nanosheet device geometries (Commun. Eng. 2022)",
+  "url": "https://doi.org/10.1038/s44172-022-00011-w"
+ },
+ "st_raman22": {
+  "title": "In-line Raman spectroscopy for GAA nanosheet device manufacturing (JM3 2022)",
+  "url": "https://doi.org/10.1117/1.JMM.21.2.021203"
+ },
+ "st_finfet13": {
+  "title": "Stress techniques and mobility enhancement in FinFET architectures (ECS Trans. 2013)",
+  "url": "https://doi.org/10.1149/05009.0047ecst"
+ },
+ "st_metz10": {
+  "title": "Ultra-high selectivity silicon nitride liner etch (AVS 2010 학회 초록 PS1-TuA10)",
+  "url": "https://avssymposium.org/AVS2010/Sessions/Schedule/20391"
  }
 }

@@ -371,7 +371,7 @@
   "type": "step",
   "area": "gaa",
   "desc": "게이트 양옆 스택을 깎아 S/D 자리를 만드는 단계 (E4).",
-  "etch": "모든 시트 끝단을 드러내는 이방성 식각.",
+  "etch": "모든 시트 끝단을 드러내는 이방성 식각. 리세스 모양은 S/D 에피 응력원과 채널의 거리를 정해 채널 응력을 바꾼다(응력 공학 노드).",
   "src": [
    "s29"
   ]
@@ -1245,7 +1245,7 @@
   "type": "structure",
   "area": "beol",
   "desc": "pMOS S/D에 SiGe를 채워 채널에 압축 응력을 주는 기술. eSD의 대표적인 예.",
-  "etch": "GAA에서는 '남겨야 할 S/D SiGe'. 희생 SiGe를 없애는 채널 릴리스·BDI 식각에서 보호해야 함.",
+  "etch": "GAA에서는 '남겨야 할 S/D SiGe'. 희생 SiGe를 없애는 채널 릴리스·BDI 식각에서 보호해야 함. 응력 크기는 S/D 리세스의 모양·깊이·채널까지 거리와 결정면 구성이 좌우한다(응력 공학 노드·페이지).",
   "src": [
    "p20120064686",
    "p20140367751"
@@ -4072,6 +4072,149 @@
   "src": [
    "apc_zhang07",
    "apc_lee19"
+  ]
+ },
+ {
+  "id": "strain_eng",
+  "name": "응력 공학 (strain engineering)",
+  "en": "Stress / strain engineering",
+  "type": "tool",
+  "area": "gaa",
+  "desc": "채널 결정을 일부러 늘리거나 눌러 전자·정공 이동도를 높이는 기술. 평면 Si에서는 nMOS에 인장, pMOS에 압축이 유리하다(일반 지식). Intel 90nm부터 소스/드레인·라이너로 채널 길이 방향만 미는 공정 유도 단축 응력이 주류가 되었고, 같은 pMOS 이동도 향상에 단축 압축은 2축 인장보다 약 5배 적은 변형으로 충분하다고 계산되었다(Thompson 2004).",
+  "etch": "식각은 응력원의 모양(S/D 리세스)을 정하고, 응력원을 붙잡던 구조(핀 끝·더미 게이트·희생층)를 걷어내 응력을 바꾸며, 마스크 막 응력 때문에 패턴이 휘기도 한다. 세부는 응력 공학 페이지(research/stress_etch.html).",
+  "src": [
+   "st_thompson04",
+   "st_thompson04b"
+  ]
+ },
+ {
+  "id": "cesl",
+  "name": "CESL (응력 질화막 라이너)",
+  "en": "Contact etch stop layer / stress liner",
+  "type": "structure",
+  "area": "gaa",
+  "desc": "트랜지스터를 덮는 PECVD 질화막. 원래 컨택 식각을 멈추는 층이지만 막의 내부 응력이 채널 이동도를 바꾼다. NEC(2000)는 막 응력에 따라 nMOS 최대 −8%, pMOS 최대 +7% 변화를 보고했고, Intel 90nm은 인장 SiN 캡으로 nMOS 구동 전류 10%·전자 이동도 20%를 높였다.",
+  "etch": "컨택 식각이 이 막을 뚫어야 한다(breakthrough). 28nm급 컨택에서 홀 안 SiN:Si 선택비 40:1 넘게 얻어 Si 리세스와 게이트 누설을 줄인 학회 보고가 있다. 피치가 좁아지면 라이너 효과가 줄고(FinFET 병합 핀에서는 매우 비효과적, TCAD), 두꺼운 라이너는 컨택 공간을 잡아먹는다(해석).",
+  "src": [
+   "st_ito00",
+   "st_thompson04",
+   "st_metz10",
+   "st_finfet13"
+  ]
+ },
+ {
+  "id": "dsl",
+  "name": "DSL (이중 응력 라이너)",
+  "en": "Dual stress liner",
+  "type": "structure",
+  "area": "gaa",
+  "desc": "nMOS 위에는 인장, pMOS 위에는 압축 질화막을 따로 남기는 방식. Yang 외(IEDM 2004, SOI)는 유효 구동 전류 n +15%/p +32%, SiGe 없이 정공 이동도 +60%, 비슷한 수율을 보고했다.",
+  "etch": "한쪽 라이너를 걷어내는 패터닝 식각이 필요하다. 경계가 가까우면 n·pMOS 이동도가 크게 떨어지고(2010), 겹친 경계 윗면을 스퍼터링으로 다듬자 IBM 65nm에서 SRAM 수율 25%·싱글 코어 75%가 늘었다(회사 보고, 2007). 게이트 라스트에서는 드러난 인장 라이너가 더미 게이트 산화막 DHF 제거 때 깎여 N2 플라즈마 처리로 막았다(2013).",
+  "src": [
+   "st_yang04",
+   "st_lve10",
+   "st_zhu07",
+   "st_dslgl13",
+   "st_dsl07"
+  ]
+ },
+ {
+  "id": "smt",
+  "name": "SMT (응력 기억 기법)",
+  "en": "Stress memorization technique",
+  "type": "tool",
+  "area": "gaa",
+  "desc": "폴리 비정질화 주입 뒤 n+ 폴리 게이트 위에 고인장 질화막을 씌우고, 활성화 열처리 뒤 막을 제거해도 채널 응력이 남게 하는 nMOS 기법. TSMC 계열 Chen 외(VLSI 2004)는 nMOS 구동 전류 15% 넘게 향상을 보고했다.",
+  "etch": "응력 캡 막을 증착했다가 식각으로 제거한다. 의도한 주입·재결정화이므로 우발적인 식각 손상이 응력을 좋게 한다는 근거로 쓰면 안 된다.",
+  "src": [
+   "st_chen04"
+  ]
+ },
+ {
+  "id": "sic_sd",
+  "name": "Si:C · Si:P S/D (nMOS 응력원)",
+  "en": "Embedded Si:C / Si:P source-drain",
+  "type": "material",
+  "area": "gaa",
+  "desc": "격자가 Si보다 작은 재료로 nMOS S/D를 채워 채널에 인장을 준다. Ang 외(IEDM 2004)는 탄소 1.3% Si:C로 약 0.65% 격자 불일치, 50nm 게이트에서 구동 전류 +50%를 보고했다. 고농도 Si:P는 성장 직후 인장을 주지만 레이저 열처리로 전도도를 높이면 인장 변형이 함께 준다(2018).",
+  "etch": "Si 리세스 식각 → 선택 에피. pMOS eSiGe와 같은 리세스 형상·표면 조건 문제가 있다.",
+  "src": [
+   "st_ang04",
+   "st_sip18"
+  ]
+ },
+ {
+  "id": "i_strainrelax",
+  "name": "식각에 의한 응력 이완",
+  "en": "Etch-induced strain relaxation",
+  "type": "issue",
+  "area": "gaa",
+  "desc": "채널을 붙잡던 재료를 식각으로 걷어내면 변형이 풀리거나 다시 분포하는 현상. SiGe pFinFET의 핀 컷 이완(2017), 고유 변형 핀의 길이 의존 탄성 이완(2014), 나노시트 S/D 리세스·내부 스페이서 캐비티 중 이완(FEA 2024)이 보고되었다. 희생 SiGe 층이 있는 Ge 나노와이어는 핀 컷·S/D 리세스 뒤 변형을 더 잘 보존했다(imec 2018).",
+  "etch": "컷 순서·위치, 리세스 깊이가 응력 보존을 좌우한다. 반대로 게이트 라스트의 더미 게이트 제거는 압축을 키울 수 있다고 알려져 있어(수치 검증 보류) '재료 제거 = 항상 응력 감소'는 아니다. 선택 식각 깊이가 시트마다 다르면 시트별 변형도 달라져 전류가 준다(2025). 병합 S/D 에피 사이 빈틈은 압축을 인장으로 뒤집는다(FEA).",
+  "src": [
+   "st_tsutsui17",
+   "st_allibert14",
+   "st_chou24",
+   "st_arimura18",
+   "st_li25",
+   "st_eneman20"
+  ]
+ },
+ {
+  "id": "i_lle",
+  "name": "응력 국부 배치 효과 (LLE)",
+  "en": "Stress-related local layout effect",
+  "type": "issue",
+  "area": "gaa",
+  "desc": "같은 크기의 트랜지스터라도 주변 배치(STI 거리, 확산 단절, 게이트 컷, DSL 경계)에 따라 채널 응력이 달라 전기 특성이 바뀌는 문제. nMOS는 STI 가장자리 응력으로 구동 전류가 최대 13% 줄었다(1999). 7nm FinFET에서는 단일·이중 확산 단절과 게이트 컷 위치가 응력을 바꾼다(보정된 TCAD, 2025).",
+  "etch": "핀 컷·게이트 컷·STI 식각의 위치와 순서를 바꾸면 LLE가 달라진다. 공정 변경 때 배치 시험 구조로 확인한다(해석).",
+  "src": [
+   "st_scott99",
+   "st_rossoni25",
+   "st_lve10",
+   "st_tsutsui17"
+  ]
+ },
+ {
+  "id": "i_wiggling",
+  "name": "라인 위글링",
+  "en": "Line wiggling",
+  "type": "issue",
+  "area": "pattern",
+  "desc": "가늘고 높은 라인 패턴이 마스크·막 응력 때문에 옆으로 구불구불해지는 변형. 28nm 피치 p-SiOCH 식각에서 TiN 하드마스크가 플라즈마에 노출되면 압축 응력이 커져 고유 응력이 낮은 막에서도 생겼다(SPIE 2023). 표면 거칠기가 크면 변형 문턱이 높아진다(JVST B 2025).",
+  "etch": "증착 직후가 아니라 식각 중 플라즈마 노출 뒤 응력을 봐야 한다. ACL 식각에 HBr을 더하면 CD 손실은 줄지만 표면 수소화로 응력이 커져 위글링이 는다(JJAP 2015).",
+  "src": [
+   "st_turnquist23",
+   "st_turnquist25",
+   "st_kofuji15"
+  ]
+ },
+ {
+  "id": "i_warpage",
+  "name": "웨이퍼 휨 (bow·warpage)",
+  "en": "Wafer bow / warpage",
+  "type": "issue",
+  "area": "pattern",
+  "desc": "두꺼운 고응력 막이 쌓여 웨이퍼가 오목(인장)·볼록(압축)하게 휘는 문제. 3D NAND에서 증착·식각 속도 불균일, 노광 척킹 오류, 오버레이 저하, 웨이퍼 내 CD 불균일로 이어진다(SPIE 2016).",
+  "etch": "휜 웨이퍼는 척 접촉과 온도 분포가 달라질 수 있다(해석). 공통 소스 라인 W가 만드는 휨은 열처리 온도로 크게 줄었다(SST 2019).",
+  "src": [
+   "st_huang16",
+   "st_nandwarp19"
+  ]
+ },
+ {
+  "id": "stress_metro",
+  "name": "변형 측정 (NBD·라만·X선)",
+  "en": "Strain metrology",
+  "type": "tool",
+  "area": "gaa",
+  "desc": "TEM 나노빔 회절·전자 홀로그래피는 단면 국부 변형을, 방사광 X선 나노 회절은 비파괴로 나노시트 변형을, 인라인 라만은 공정 중 조성·변형을 잰다.",
+  "etch": "식각 조건별 변형을 비교할 때 FIB 시편 제작 중 응력이 풀린다는 점(APL 2004)을 보정해야 한다. 전류 저하만으로 응력 손실이라고 판단하지 않는다(일반).",
+  "src": [
+   "st_nbd13",
+   "st_clement04",
+   "st_murray22",
+   "st_raman22"
   ]
  }
 ]

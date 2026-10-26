@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>응력 공학과 건식 식각 — 주요 공정 이슈</title>
+<style>
+  :root {
+    --bg:#f7f8fb; --card:#fff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb;
+    --accent:#2563eb; --etch:#dc2626; --etch-bg:#fef2f2;
+    --ok:#166534; --ok-bg:#dcfce7; --na:#4b5563; --na-bg:#f3f4f6;
+  }
+  * { box-sizing:border-box; }
+  html { color-scheme: light; }
+  body { margin:0; background:var(--bg); color:var(--ink); overflow-wrap:anywhere;
+    font:15px/1.7 "Pretendard","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif; }
+  .wrap { max-width:980px; margin:0 auto; padding:40px 16px 80px; }
+  h1 { font-size:28px; margin:0 0 6px; line-height:1.3; text-wrap:balance; }
+  h2 { font-size:21px; margin:48px 0 14px; padding-bottom:6px; border-bottom:2px solid var(--line); }
+  h3 { font-size:17px; margin:0 0 6px; }
+  p { max-width:78ch; }
+  a { color:var(--accent); }
+  .sub { color:var(--muted); margin:0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:12px 0; }
+  .card > :first-child { margin-top:0; } .card > :last-child { margin-bottom:0; }
+  .card.etch { border-left:4px solid var(--etch); }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:12px; }
+  .grid2 .card { margin:0; }
+  .tag { display:inline-block; font-size:12px; font-weight:600; padding:1px 8px; border-radius:999px; margin-right:4px; white-space:nowrap; }
+  .t-na { background:var(--na-bg); color:var(--na); }
+  .t-sim { background:#e0f2fe; color:#075985; }
+  .t-int { background:#fef3c7; color:#92400e; }
+  table { border-collapse:collapse; width:100%; font-size:14px; background:#fff; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#f3f6fb; white-space:nowrap; }
+  .tbl { overflow-x:auto; border-radius:10px; }
+  .diagram { overflow-x:auto; background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px; margin:12px 0; }
+  .diagram svg { display:block; min-width:640px; width:100%; height:auto; font-family:"Malgun Gothic",system-ui,sans-serif; }
+  .diagram figcaption { font-size:13px; color:var(--muted); margin-top:6px; }
+  .note { font-size:13px; color:var(--muted); }
+  .callout { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:12px 16px; margin:12px 0; }
+  .warn { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:12px 16px; margin:12px 0; }
+  .cid { font-size:12px; font-weight:700; font-family:Consolas,monospace; text-decoration:none; background:#eef2ff; color:#3730a3; padding:0 6px; border-radius:6px; white-space:nowrap; }
+  .toc { columns:2 260px; column-gap:28px; margin:0; padding-left:20px; }
+  .map { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; }
+  .map .card { margin:0; }
+  .map .num { font-size:26px; font-weight:800; color:var(--etch); line-height:1; }
+  ul.chk li { margin-bottom:4px; }
+  ol.src { font-size:13px; padding-left:22px; }
+  ol.src li { margin-bottom:3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="sub"><a href="../index.html">← 목차</a> · 반도체 식각 논문 스터디 · 2026-10-27</p>
+  <h1>응력 공학과 건식 식각 — 주요 공정 이슈</h1>
+  <p class="sub">트랜지스터 채널을 일부러 늘리거나 눌러 전류를 키우는 응력 공학(stress/strain engineering)이 식각과 만나는 지점을 정리한다. 식각은 응력원의 모양을 정하고, 응력원을 붙잡던 구조를 깎아 응력을 바꾸며, 마스크 막의 응력 때문에 패턴이 휘기도 한다.</p>
+
+  <div class="callout">
+    <b>읽는 법</b> — <span class="cid">T01</span> 같은 표시는 원문과 대조해 검증한 주장이다(<a href="claims_status.html#T01">검증 현황</a>). 근거는 대부분 논문 초록 수준이다. <span class="tag t-sim">시뮬레이션</span>은 측정이 아닌 계산 결과, <span class="tag t-na">일반 정의</span>는 교과서 수준의 설명, <span class="tag t-int">해석</span>은 여러 근거를 이 페이지에서 연결한 것이다. 수치는 논문마다 구조·기준 소자가 달라 서로 순위를 매기지 않는다.
+  </div>
+
+  <h2>목차</h2>
+  <ol class="toc">
+    <li><a href="#basics">응력 공학이란</a></li>
+    <li><a href="#stressors">응력원 지도</a></li>
+    <li><a href="#map">식각과 응력이 만나는 세 갈래</a></li>
+    <li><a href="#make">① 응력원을 만드는 식각</a></li>
+    <li><a href="#relax">② 식각이 응력을 바꾸는 경우</a></li>
+    <li><a href="#film">③ 막 응력이 패턴을 망가뜨리는 경우</a></li>
+    <li><a href="#metro">응력을 재는 방법</a></li>
+    <li><a href="#check">식각 엔지니어 점검표</a></li>
+    <li><a href="#more">더 보기 · 출처</a></li>
+  </ol>
+
+  <h2 id="basics">1. 응력 공학이란</h2>
+  <div class="grid2">
+    <div class="card"><h3>무엇을 하나</h3><p>실리콘 결정을 아주 조금(0.1~1% 수준) 늘리거나 누르면 전자·정공이 움직이기 쉬워진다. 그래서 채널 주변에 격자 크기가 다른 재료나 응력이 있는 막을 두어 채널을 변형시킨다. nMOS는 전류 방향으로 <b>인장</b>, pMOS는 <b>압축</b>이 유리한 것이 평면 Si 소자의 기본 규칙이다. <span class="tag t-na">일반 정의</span></p></div>
+    <div class="card"><h3>단축(uniaxial) 대 2축(biaxial)</h3><p>초기 연구는 이완된 SiGe 기판 위에 Si를 키워 면 전체를 늘리는 2축 방식이었다. Intel 90nm부터는 소스/드레인·라이너로 채널 길이 방향만 미는 <b>공정 유도 단축 응력</b>이 주류가 되었다. 같은 pMOS 이동도 향상을 얻는 데 단축 압축은 2축 인장보다 약 5배 적은 변형으로 충분하다고 계산되었고 <a class="cid" href="claims_status.html#T03">T03</a>, 웨이퍼 굽힘 실험에서도 n·pMOS 모두 단축이 유리했다 <a class="cid" href="claims_status.html#T05">T05</a>.</p></div>
+  </div>
+  <div class="warn"><b>식각 관점의 핵심</b> — 응력은 재료 하나가 아니라 <b>주변 구조 전체가 붙잡고 있는 힘의 균형</b>이다. 그래서 같은 SiGe·같은 질화막이라도 식각이 만든 모양(리세스 깊이·근접 거리)과, 식각이 걷어낸 구조(더미 게이트·핀 끝·희생층)에 따라 채널에 남는 응력이 달라진다. <span class="tag t-int">해석</span></div>
+
+  <h2 id="stressors">2. 응력원 지도</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>응력원</th><th>어디에 · 어떻게</th><th>보고된 효과(원문 조건)</th><th>식각과의 접점</th><th>근거</th></tr></thead>
+    <tbody>
+      <tr><td>매립 SiGe S/D (eSiGe)</td><td>pMOS S/D를 파내고 SiGe를 선택 에피로 채움 → 채널 길이 방향 압축</td><td>Intel 90nm: 포화 구동 전류 pMOS +25%, 정공 이동도 50% 넘게 향상</td><td>S/D 리세스 식각의 깊이·모양·근접 거리, 표면 상태</td><td><a class="cid" href="claims_status.html#T01">T01</a> <a class="cid" href="claims_status.html#T02">T02</a> <a class="cid" href="claims_status.html#T04">T04</a></td></tr>
+      <tr><td>인장 SiN 캡 · CESL</td><td>트랜지스터 위를 덮는 응력 질화막(원래 컨택 식각 정지층)</td><td>Intel 90nm nMOS: 구동 전류 +10%, 전자 이동도 +20%. NEC(2000): 막 응력에 따라 nMOS 최대 −8%, pMOS 최대 +7%</td><td>컨택 식각이 이 막을 뚫어야 함(선택비·하부 손상)</td><td><a class="cid" href="claims_status.html#T01">T01</a> <a class="cid" href="claims_status.html#T33">T33</a> <a class="cid" href="claims_status.html#T10">T10</a></td></tr>
+      <tr><td>이중 응력 라이너 (DSL)</td><td>nMOS 위 인장, pMOS 위 압축 질화막을 따로 남김</td><td>IBM 계열(2004, SOI): 유효 구동 전류 n +15% / p +32%, SiGe 없이 정공 이동도 +60%</td><td>한쪽 라이너를 걷어내는 패터닝 식각, n/p 경계 겹침</td><td><a class="cid" href="claims_status.html#T06">T06</a></td></tr>
+      <tr><td>응력 기억 기법 (SMT)</td><td>비정질화 주입 → 고인장 질화막 씌움 → 활성화 열처리 → 막 제거, 응력은 남음</td><td>TSMC(2004): nMOS 구동 전류 15% 넘게 향상</td><td>캡 막 제거 식각</td><td><a class="cid" href="claims_status.html#T07">T07</a></td></tr>
+      <tr><td>nMOS용 Si:C · Si:P S/D</td><td>격자가 작은 재료로 S/D를 채워 채널에 인장</td><td>Si:C(C 1.3%) 50nm 게이트에서 구동 전류 +50%. Si:P는 레이저 열처리 시 인장 변형 감소</td><td>Si 리세스 식각 뒤 선택 에피</td><td><a class="cid" href="claims_status.html#T47">T47</a> <a class="cid" href="claims_status.html#T30">T30</a></td></tr>
+      <tr><td>HKMG와 응력의 통합</td><td>게이트 라스트(RMG)에서 응력 강화 기법을 금속 게이트와 함께 씀</td><td>Intel 45nm의 핵심 특징으로 제시</td><td>더미 게이트 제거가 응력 분포를 바꿈(수치는 보류)</td><td><a class="cid" href="claims_status.html#T08">T08</a></td></tr>
+      <tr><td>FinFET·GAA S/D 에피</td><td>핀·시트 양끝 S/D 에피가 채널을 밂</td><td>나노시트는 나노와이어보다 응력이 낮게 계산됨(S/D 에피 대 채널 부피 비가 작음)</td><td>S/D 리세스·내부 스페이서·채널 릴리스</td><td><a class="cid" href="claims_status.html#T22">T22</a> <a class="cid" href="claims_status.html#T39">T39</a></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">"세계 최초" 같은 우선권은 확인하지 않았다(특허·비공개 개발까지 포함한 비교는 근거가 없음). 위 회사들의 값은 각자 자기 기준 소자와 비교한 자체 보고다.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 720 300" role="img" aria-label="평면 pMOS와 nMOS의 응력원 단면 개념도">
+      <rect x="0" y="0" width="720" height="300" fill="#fff"/>
+      <text x="180" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">pMOS — 매립 SiGe S/D (압축)</text>
+      <text x="540" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937">nMOS — 인장 질화막 (인장)</text>
+      <rect x="20" y="170" width="320" height="110" fill="#e5e7eb"/><text x="180" y="270" text-anchor="middle" font-size="12" fill="#4b5563">Si 기판</text>
+      <path d="M40 170 L40 225 Q40 240 60 240 L120 240 Q140 240 140 225 L140 170 Z" fill="#fde68a" stroke="#d97706"/>
+      <path d="M220 170 L220 225 Q220 240 240 240 L300 240 Q320 240 320 225 L320 170 Z" fill="#fde68a" stroke="#d97706"/>
+      <text x="90" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">SiGe</text>
+      <text x="270" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">SiGe</text>
+      <rect x="150" y="110" width="60" height="60" rx="3" fill="#c7d2fe" stroke="#4f46e5"/><text x="180" y="145" text-anchor="middle" font-size="12" font-weight="700" fill="#3730a3">게이트</text>
+      <rect x="140" y="110" width="10" height="60" fill="#d1d5db"/><rect x="210" y="110" width="10" height="60" fill="#d1d5db"/>
+      <line x1="146" y1="182" x2="168" y2="182" stroke="#dc2626" stroke-width="3" marker-end="url(#ar)"/>
+      <line x1="214" y1="182" x2="192" y2="182" stroke="#dc2626" stroke-width="3" marker-end="url(#ar)"/>
+      <text x="180" y="200" text-anchor="middle" font-size="11" fill="#b91c1c">채널 압축</text>
+      <path d="M45 160 L45 100" stroke="#dc2626" stroke-dasharray="3 3"/><text x="30" y="80" font-size="11" fill="#b91c1c">리세스 식각이 정함:</text>
+      <text x="30" y="95" font-size="11" fill="#b91c1c">깊이·모양·채널까지 거리</text>
+      <rect x="380" y="170" width="320" height="110" fill="#e5e7eb"/><text x="540" y="270" text-anchor="middle" font-size="12" fill="#4b5563">Si 기판</text>
+      <rect x="510" y="110" width="60" height="60" rx="3" fill="#c7d2fe" stroke="#4f46e5"/><text x="540" y="145" text-anchor="middle" font-size="12" font-weight="700" fill="#3730a3">게이트</text>
+      <rect x="500" y="110" width="10" height="60" fill="#d1d5db"/><rect x="570" y="110" width="10" height="60" fill="#d1d5db"/>
+      <path d="M380 166 L494 166 L494 104 L586 104 L586 166 L700 166" fill="none" stroke="#059669" stroke-width="8" stroke-linejoin="round" opacity=".75"/>
+      <text x="668" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#047857">인장 SiN</text>
+      <line x1="530" y1="182" x2="508" y2="182" stroke="#2563eb" stroke-width="3" marker-end="url(#arb)"/>
+      <line x1="550" y1="182" x2="572" y2="182" stroke="#2563eb" stroke-width="3" marker-end="url(#arb)"/>
+      <text x="540" y="200" text-anchor="middle" font-size="11" fill="#1d4ed8">채널 인장</text>
+      <rect x="610" y="104" width="10" height="66" fill="#fee2e2" stroke="#dc2626" stroke-dasharray="3 2"/>
+      <text x="700" y="80" text-anchor="end" font-size="11" fill="#b91c1c">컨택 식각이 이 막을 뚫음</text><line x1="615" y1="84" x2="615" y2="102" stroke="#dc2626" stroke-dasharray="2 2"/>
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+        <marker id="arb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/></marker>
+      </defs>
+    </svg>
+    <figcaption>개념도(비율 무시). 왼쪽: S/D 자리를 파내고 SiGe를 채우면 큰 격자가 채널을 양쪽에서 민다. 오른쪽: 인장 질화막이 게이트를 감싸 채널을 당긴다. 이 막은 원래 컨택 식각 정지층이라 나중에 컨택 식각이 뚫고 지나간다.</figcaption>
+  </figure>
+
+  <h2 id="map">3. 식각과 응력이 만나는 세 갈래</h2>
+  <div class="map">
+    <div class="card etch"><div class="num">①</div><h3>응력원을 만드는 식각</h3><p>S/D 리세스, DSL 패터닝, 응력 라이너를 뚫는 컨택 식각. 식각 결과(모양·선택비·잔사)가 응력원의 크기와 수율을 정한다.</p></div>
+    <div class="card etch"><div class="num">②</div><h3>식각이 응력을 바꾸는 경우</h3><p>핀 컷, STI, 확산 단절, 게이트 컷, 내부 스페이서, 채널 릴리스. 채널을 붙잡던 재료를 걷어내면 응력이 풀리거나 다시 분포한다.</p></div>
+    <div class="card etch"><div class="num">③</div><h3>막 응력이 패턴을 망가뜨리는 경우</h3><p>하드마스크 응력에 의한 라인 위글링, 두꺼운 고응력 적층의 웨이퍼 휨. 식각 중 플라즈마가 막 응력을 바꾸기도 한다.</p></div>
+  </div>
+
+  <h2 id="make">4. ① 응력원을 만드는 식각</h2>
+  <h3 style="margin-top:20px">4-1. eSiGe S/D 리세스 — 깊이보다 "모양과 거리"</h3>
+  <div class="grid2">
+    <div class="card"><h3>근접 거리가 응력 전달을 정한다</h3><p>TEM 나노빔 회절 측정에서, 리세스 <b>모양</b>은 SiGe와 채널 사이 거리를 정해 응력 전달에 결정적이었고, 리세스 <b>깊이</b>는 채워지는 SiGe 부피를 정해 채널 변형에 영향을 주었다. 활성 영역 폭이 좁으면 변형이 작았다 <a class="cid" href="claims_status.html#T16">T16</a>. 32nm급 연구도 리세스된 Si 모양과 SiGe 근접 거리를 정밀하게 제어해야 한다고 보고했다 <a class="cid" href="claims_status.html#T15">T15</a>.</p></div>
+    <div class="card"><h3>여러 결정면이 섞인 캐비티 = 변동원</h3><p>비선택 식각으로 여러 결정면을 가진 캐비티가 생기면 SiGe의 변형 이완 메커니즘이 흐트러져, 측정 응력이 90–220 MPa로 흩어지고 추정 구동 전류 향상도 5–15%로 흩어졌다 <a class="cid" href="claims_status.html#T17">T17</a>. 리세스의 <b>결정면 구성</b>이 응력 산포로 바로 이어진다는 사례다.</p></div>
+    <div class="card"><h3>시그마(Σ)형 리세스</h3><p>건식 식각 뒤 결정 방향에 따라 속도가 다른 습식 식각(예: TMAH)을 더해 다이아몬드 모양 캐비티를 만들고 SiGe 팁을 채널 쪽으로 가까이 가져가는 방식이 널리 연구되었다. <span class="tag t-na">일반 정의</span> 특정 논문의 공정 순서와 "처음 건식 프로파일이 팁 위치를 좌우한다"는 세부는 원문을 열지 못해 검증 보류로 두었다.</p></div>
+    <div class="card"><h3>응력은 합쳐진다, 실리사이드는 조금 줄인다</h3><p>CESL과 eSiGe를 함께 쓰면 채널 변형이 각각의 합과 같았고, Ni 실리사이드 뒤에는 약간 줄었지만 합산성은 대체로 유지되었다 <a class="cid" href="claims_status.html#T09">T09</a>. 여러 응력원을 쌓을 때 뒤 공정이 앞의 응력을 깎을 수 있음을 보여 준다.</p></div>
+  </div>
+  <p class="note">astra 조사에서 나온 리세스 깊이의 패턴 의존(로딩), 리세스 바닥의 RIE 손상·잔사가 선택 에피 품질을 떨어뜨리는 문제, 계면 C·F·O 오염은 이번에는 초록으로 근거를 확인하지 못해 표에 넣지 않았다. 특히 F가 검출되었다고 해서 식각 가스 잔류로 단정할 수는 없다(HF 전처리에서도 나옴). 로딩 일반론은 <a href="etch_process_basics.html">식각 공정 기초</a> 참고.</p>
+
+  <h3 style="margin-top:28px">4-2. DSL — 한쪽 라이너를 걷어내는 식각과 경계</h3>
+  <div class="grid2">
+    <div class="card"><h3>경계가 이동도를 깎는다</h3><p>DSL 경계(인장·압축 라이너가 만나는 곳)가 트랜지스터에 가까우면 n·pMOS 모두 채널 이동도가 크게 떨어졌고, 원인은 [110] 방향 채널 변형 감소였다 <a class="cid" href="claims_status.html#T12">T12</a>. 경계 위치는 리소그래피와 라이너 제거 식각이 함께 정한다. <span class="tag t-int">해석</span></p></div>
+    <div class="card"><h3>경계 겹침을 다듬어 수율 회복</h3><p>IBM 65nm SOI에서는 DSL 윗면을 스퍼터링으로 다듬어 경계의 복잡성을 줄였더니, 초록 기준으로 36 Mb SRAM 수율 25%, 듀얼 코어 33%, 싱글 코어 75%가 늘었다(회사 자체 보고) <a class="cid" href="claims_status.html#T34">T34</a>. 두 막이 겹쳐 국부적으로 두꺼워진 질화막은 뒤 컨택 식각에도 부담이다. <span class="tag t-int">해석</span></p></div>
+    <div class="card"><h3>피치가 좁아지면 라이너 효과가 준다</h3><p>게이트 피치가 줄면 DSL에서 채널로 가는 응력이 줄어, 얇은 L자 측벽으로 보완해 nFET 전도도를 10% 높이고, pFET은 DSL 공정 중 응력 열화를 피하는 접착 강화로 Ion을 23% 높인 사례가 있다 <a class="cid" href="claims_status.html#T13">T13</a>. FinFET에서 핀이 병합될 만큼 피치가 좁으면 CESL은 매우 비효과적이 된다 <span class="tag t-sim">시뮬레이션</span> <a class="cid" href="claims_status.html#T11">T11</a>.</p></div>
+    <div class="card"><h3>게이트 라스트에서 라이너가 깎인다</h3><p>게이트 라스트 HKMG에서는 폴리 오픈 CMP 뒤 드러난 인장 SiN 라이너가 더미 게이트 산화막 DHF 제거 중 식각되어 게이트 양옆에 리세스가 생겼다. 라이너를 N<sub>2</sub> 플라즈마로 처리해 DHF 식각 속도를 낮춰 해결했다 <a class="cid" href="claims_status.html#T14">T14</a>. 응력 막도 뒤 공정의 <b>식각 대상</b>이 된다는 사례다(<a href="a20_etch_knowledge_graph.html#rmg">그래프: RMG</a>).</p></div>
+  </div>
+
+  <h3 style="margin-top:28px">4-3. 응력 라이너를 뚫는 컨택 식각</h3>
+  <div class="card"><p>CESL은 이름 그대로 컨택 식각을 멈추는 막이면서 응력원이다. 컨택 식각은 산화막을 뚫고 이 질화막에서 멈춘 뒤, 마지막에 질화막을 뚫어(breakthrough) S/D 실리사이드에 닿아야 한다. 28nm급 로직 컨택에서 홀 안 SiN:Si 선택비를 40:1 넘게 얻어 활성 Si 리세스를 줄이고 게이트 누설을 약 10배 줄인 학회 보고가 있다 <a class="cid" href="claims_status.html#T51">T51</a>. 응력을 키우려고 라이너를 두껍게 하면 좁아진 게이트 사이 공간과 컨택 식각 부담이 같이 커진다. <span class="tag t-int">해석</span> 보편적인 "최적 CESL 두께"나 실리사이드 손상 임계 이온 에너지는 확인하지 못했다.</p></div>
+
+  <h2 id="relax">5. ② 식각이 응력을 바꾸는 경우</h2>
+  <div class="grid2">
+    <div class="card"><h3>핀 컷 → 변형 이완</h3><p>SiGe pFinFET에서는 핀 컷 공정이 채널 변형을 풀어, 같은 트랜지스터라도 주변 배치에 따라 성능이 달라지는 국부 배치 효과(LLE)가 생겼고, 이를 줄이는 두 기법이 제시되었다 <a class="cid" href="claims_status.html#T18">T18</a>. 고유 변형 재료로 만든 핀은 길이·높이에 따라 탄성 이완이 달라, 이중층 구조 핀은 길이 750nm 미만에서 크게 이완될 것으로 예상되었다 <a class="cid" href="claims_status.html#T35">T35</a>.</p></div>
+    <div class="card"><h3>희생층이 변형을 지켜 준다</h3><p>변형 Ge 나노와이어 pFET은 Ge FinFET보다 핀 컷과 S/D 리세스를 거치며 SRB가 준 변형을 더 잘 보존했고, 그 이유는 희생 SiGe 층이었다 <a class="cid" href="claims_status.html#T46">T46</a>. 무엇을 언제 자르느냐(컷 순서)가 응력 보존을 좌우한다. <span class="tag t-int">해석</span></p></div>
+    <div class="card"><h3>STI·확산 단절·게이트 컷</h3><p>게이트 길이가 같은 nMOS도 STI 가장자리 응력 때문에 배치에 따라 구동 전류가 최대 13% 줄었다(pMOS는 영향 없음) <a class="cid" href="claims_status.html#T37">T37</a>. STI는 eSiGe 변형도 이완시키며 그 정도는 eSiGe 프로파일에 크게 좌우된다 <a class="cid" href="claims_status.html#T12">T12</a>. 7nm FinFET에서는 확산 단절(단일·이중)과 게이트 컷 위치가 채널 응력을 바꿔 배치 민감도를 만든다 <span class="tag t-sim">보정된 TCAD</span> <a class="cid" href="claims_status.html#T36">T36</a>(<a href="a20_etch_knowledge_graph.html#s_cmg">그래프: 금속 게이트 컷</a>).</p></div>
+    <div class="card"><h3>더미 게이트 제거는 오히려 응력을 키울 수 있다</h3><p>게이트 라스트에서 더미 폴리를 걷어내면 채널을 누르던 게이트의 구속이 사라져, eSiGe가 주는 압축이 더 잘 전달된다는 설명이 널리 인용된다. Intel 45nm 논문은 응력 강화를 HKMG와 통합한 점을 핵심으로 들었지만 <a class="cid" href="claims_status.html#T08">T08</a>, 구체적 수치(약 0.8→1.2 GPa)는 본문 그림에만 있어 <b>검증 보류</b>다. "재료를 걷어내면 응력은 항상 준다"는 일반화는 성립하지 않는다는 점만 기억해 두자.</p></div>
+  </div>
+
+  <h3 style="margin-top:28px">5-1. GAA 나노시트 — 리세스·내부 스페이서·채널 릴리스</h3>
+  <figure class="diagram">
+    <svg viewBox="0 0 720 220" role="img" aria-label="SiGe 나노시트 공정 단계별 채널 변형 변화 막대그림">
+      <rect x="0" y="0" width="720" height="220" fill="#fff"/>
+      <line x1="60" y1="180" x2="700" y2="180" stroke="#9ca3af"/>
+      <text x="70" y="12" font-size="12" fill="#6b7280">압축 변형(%)</text>
+      <line x1="60" y1="180" x2="60" y2="30" stroke="#9ca3af"/>
+      <text x="52" y="184" text-anchor="end" font-size="11" fill="#6b7280">0</text>
+      <text x="52" y="130" text-anchor="end" font-size="11" fill="#6b7280">0.5</text><line x1="56" y1="126" x2="700" y2="126" stroke="#f3f4f6"/>
+      <text x="52" y="76" text-anchor="end" font-size="11" fill="#6b7280">1.0</text><line x1="56" y1="72" x2="700" y2="72" stroke="#f3f4f6"/>
+      <text x="52" y="22" text-anchor="end" font-size="11" fill="#6b7280">1.5</text><line x1="56" y1="18" x2="700" y2="18" stroke="#f3f4f6"/>
+      <rect x="110" y="97" width="90" height="83" fill="#93c5fd"/><text x="155" y="90" text-anchor="middle" font-size="12" font-weight="700">0.77</text>
+      <text x="155" y="198" text-anchor="middle" font-size="12">핀 형성 뒤</text><text x="155" y="213" text-anchor="middle" font-size="10" fill="#6b7280">(이축)</text>
+      <rect x="290" y="157" width="90" height="23" fill="#fca5a5"/><text x="335" y="150" text-anchor="middle" font-size="12" font-weight="700">0.21</text>
+      <text x="335" y="198" text-anchor="middle" font-size="12">S/D 리세스·내부 스페이서</text><text x="335" y="213" text-anchor="middle" font-size="10" fill="#6b7280">(전류 방향, 이완)</text>
+      <rect x="470" y="18" width="90" height="162" fill="#86efac"/><text x="515" y="34" text-anchor="middle" font-size="12" font-weight="700">1.50</text>
+      <text x="515" y="198" text-anchor="middle" font-size="12">SiGe S/D 재성장 뒤</text><text x="515" y="213" text-anchor="middle" font-size="10" fill="#6b7280">(결함 없는 에피)</text>
+      <text x="640" y="110" text-anchor="middle" font-size="11" fill="#b91c1c">에피 사이 빈틈 →</text>
+      <text x="640" y="126" text-anchor="middle" font-size="11" fill="#b91c1c">압축이 풀리고</text>
+      <text x="640" y="142" text-anchor="middle" font-size="11" fill="#b91c1c">인장으로 바뀜</text>
+    </svg>
+    <figcaption>Chou 외(IEEE TED 2024)의 유한요소 해석 값으로 그린 그림 <a class="cid" href="claims_status.html#T39">T39</a> <a class="cid" href="claims_status.html#T40">T40</a>. Si0.8Ge0.2 채널 pFET 공정 가정. 첫 막대는 이축 변형, 뒤 두 막대는 전류 방향 변형이라 같은 성분이 아니다. 측정값이 아니다.</figcaption>
+  </figure>
+  <div class="grid2">
+    <div class="card"><h3>리세스·캐비티가 풀고, 에피가 다시 민다</h3><p>위 해석에서 S/D 리세스와 내부 스페이서 캐비티 형성 중 채널 변형이 이완되었다가, S/D 재성장으로 다시 커졌다 <span class="tag t-sim">시뮬레이션</span> <a class="cid" href="claims_status.html#T39">T39</a>. 병합된 S/D 에피 사이에 빈틈이 있으면 압축이 완전히 풀리고 인장으로 바뀐다 <a class="cid" href="claims_status.html#T40">T40</a>. 다른 해석도 이웃 게이트의 에피 성장면이 완전히 합쳐지지 않으면 응력이 사라지거나 반대가 될 수 있다고 했다 <a class="cid" href="claims_status.html#T22">T22</a>.</p></div>
+    <div class="card"><h3>피치 축소는 응력을 깎는다</h3><p>게이트 길이 축소는 채널 응력을 키우지만 폴리 피치·핀/와이어 피치 축소는 응력을 줄이고, 8nm→3nm 노드 치수에서 나노와이어 응력이 약 35% 줄었다 <span class="tag t-sim">시뮬레이션</span> <a class="cid" href="claims_status.html#T23">T23</a>. S/D를 다듬어(트리밍) 기생 RC를 줄이면서 응력은 최대한 남기는 공정도 제안되었다 <a class="cid" href="claims_status.html#T42">T42</a>.</p></div>
+    <div class="card"><h3>채널 릴리스 뒤의 변형</h3><p>10nm 설계 규칙 GAA에서 채널 릴리스 뒤 −0.5%~−1%의 압축 변형이 측정되었고, 압축 응력 층간 절연막 때문으로 추정되었다 <a class="cid" href="claims_status.html#T20">T20</a>. 게이트 스택·컨택 모듈로 압축을 인장으로 바꿀 수도 있었다 <a class="cid" href="claims_status.html#T21">T21</a>. 떠 있는 시트는 S/D 응력으로 휘기도 하며, S/D 크기와 채널 길이를 맞춰 줄일 수 있다 <a class="cid" href="claims_status.html#T24">T24</a>(<a href="a20_etch_knowledge_graph.html#s_release">그래프: 채널 릴리스</a>).</p></div>
+    <div class="card"><h3>선택 식각이 고르지 않으면 변형도 고르지 않다</h3><p>Si/SiGe 적층의 이방성 식각과 SiGe 선택 등방성 식각에서 가로·세로 식각 속도 차이로 SiGe 식각 깊이가 고르지 않았고, Si 시트의 변형도 고르지 않아 맨 아래 시트가 가장 큰 변형을 받았으며, TCAD에서 이런 불균일이 드레인 전류를 줄였다 <a class="cid" href="claims_status.html#T41">T41</a>. 고선택 등방성 SiGe 건식 식각으로 내부 스페이서를 정밀하게 만들어(초록 기준, Si 채널 형성은 중요성만 언급) 저항·구동 전류·문턱 전압·변동 등을 개선한 보고도 있다 <a class="cid" href="claims_status.html#T48">T48</a>(<a href="a20_etch_knowledge_graph.html#innerspacer">그래프: 내부 스페이서</a>).</p></div>
+  </div>
+  <p>패터닝 자체도 변형을 다시 나눈다. 핀 모양으로 패터닝한 Si/SiGe 다층의 변형은 기판에 따라 달랐고, 압축 SGOI 기판 위에서는 반도체/절연막 계면을 따라 이완이 일어나 Si 층에 1.4 GPa의 단축 응력이 생겼다 <a class="cid" href="claims_status.html#T19">T19</a>.</p>
+  <p class="note">"GAA에서는 S/D 에피 응력이 FinFET보다 항상 약하다"는 일반화는 같은 조건에서 비교한 근거가 없어 쓰지 않는다. 위 시뮬레이션은 나노시트가 나노와이어보다 약하다는 비교다 <a class="cid" href="claims_status.html#T22">T22</a>.</p>
+
+  <h2 id="film">6. ③ 막 응력이 패턴을 망가뜨리는 경우</h2>
+  <div class="grid2">
+    <div class="card"><h3>라인 위글링 — 플라즈마가 마스크 응력을 바꾼다</h3><p>28nm 피치 p-SiOCH 식각에서 TiN 하드마스크가 플라즈마에 노출되면 모든 TiN 막의 압축 응력이 커져, 고유 응력이 낮은 PVD TiN에서도 라인이 구불구불해졌다 <a class="cid" href="claims_status.html#T25">T25</a>. 늘어난 응력은 막의 원래 응력과 상관이 없어, 막을 고를 때 <b>플라즈마 유도 응력</b>을 더 중시해야 한다 <a class="cid" href="claims_status.html#T26">T26</a>. 표면이 거칠면 변형 문턱이 높아져 위글링이 막혔다 <a class="cid" href="claims_status.html#T27">T27</a>.</p></div>
+    <div class="card"><h3>탄소 마스크와 HBr</h3><p>비정질 탄소막(ACL) 식각에 HBr을 더하면 CD 손실은 줄지만, 수소 라디칼이 ACL 표면을 수소화해 표면 응력이 커지고 위글링이 늘었다 <a class="cid" href="claims_status.html#T43">T43</a>. CD를 지키는 레시피 조정이 응력 쪽 문제를 만들 수 있다. 스핀온 카본 마스크에도 식각 내성과 위글링 내성이 함께 요구된다 <a class="cid" href="claims_status.html#T28">T28</a>(<a href="a20_etch_knowledge_graph.html#hardmask">그래프: 하드마스크</a>, <a href="a20_etch_knowledge_graph.html#i_collapse">패턴 붕괴</a>).</p></div>
+    <div class="card"><h3>웨이퍼 휨</h3><p>3D NAND처럼 막을 수십~수백 층 쌓으면 잔류 응력이 웨이퍼 모양을 바꾼다(인장은 오목, 압축은 볼록). 그 결과 증착·식각 속도 불균일, 노광 장비 척킹 오류, 오버레이 저하, 웨이퍼 내 CD 불균일이 생긴다. 보고된 조건에서 CD 균일도는 볼록 +230 µm, 오목 −70 µm까지는 평탄했다 <a class="cid" href="claims_status.html#T44">T44</a>. 공통 소스 라인 텅스텐이 만드는 휨은 증착 뒤 열처리로 줄었고, 온도가 시간보다 영향이 컸다 <a class="cid" href="claims_status.html#T29">T29</a>.</p></div>
+    <div class="card"><h3>식각 장비 입장에서</h3><p>휜 웨이퍼는 정전척에 고르게 붙지 않아 뒷면 냉각과 온도 분포가 달라질 수 있다. 위글링은 식각이 끝난 모양뿐 아니라 식각 <b>도중</b>의 높고 가는 중간 형상에서 시작될 수 있다. <span class="tag t-int">해석</span> 두 가지 모두 막 응력 관리(증착·열처리)와 식각 레시피를 함께 봐야 하는 문제다.</p></div>
+  </div>
+
+  <h2 id="metro">7. 응력을 재는 방법</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>방법</th><th>특징</th><th>주의</th><th>근거</th></tr></thead>
+    <tbody>
+      <tr><td>TEM 나노빔 회절(NBD) · 전자 홀로그래피</td><td>트랜지스터 단면의 국부 변형 지도. 유한요소 해석과 함께 써서 응력원 두께·핀 폭의 영향을 분리</td><td>FIB로 얇은 시편을 만들 때 응력이 풀린다. 이완을 보정해야 원래 응력을 구할 수 있다</td><td><a class="cid" href="claims_status.html#T32">T32</a> <a class="cid" href="claims_status.html#T09">T09</a> <a class="cid" href="claims_status.html#T45">T45</a></td></tr>
+      <tr><td>방사광 X선 나노 회절</td><td>시편 가공 없이 Si/SiGe 나노시트 변형을 비파괴로 지도화</td><td>면내 탄성 이완과 면외 층상 변형이 겹친다. SiGe 변형이 모델보다 컸다</td><td><a class="cid" href="claims_status.html#T38">T38</a></td></tr>
+      <tr><td>인라인 라만 분광</td><td>나노시트 FEOL 전 공정에서 조성·변형을 인라인 측정, 기준 측정과 잘 맞음</td><td>측정 영역이 넓어 개별 트랜지스터 값이 아니다 <span class="tag t-na">일반 정의</span></td><td><a class="cid" href="claims_status.html#T31">T31</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2 id="check">8. 식각 엔지니어 점검표</h2>
+  <div class="card">
+    <p>위 근거들을 식각 쪽 할 일로 옮긴 정리다. <span class="tag t-int">해석</span></p>
+    <ul class="chk">
+      <li><b>S/D 리세스</b>: 깊이 하나가 아니라 단면 모양(측면 리세스, 팁 위치, 결정면 구성)과 패턴 밀도별 차이를 함께 본다. 바닥 표면 상태(손상·잔사)는 에피 품질과 응력 크기에 같이 영향을 준다. <a class="cid" href="claims_status.html#T16">T16</a> <a class="cid" href="claims_status.html#T17">T17</a></li>
+      <li><b>응력 라이너</b>: 라이너 두께의 응력 이득과 컨택 바닥의 질화막 잔량, breakthrough 시간, 하부 실리사이드 손실을 한 표에서 본다. DSL 경계와 겹침 위치를 레이아웃과 같이 관리한다. <a class="cid" href="claims_status.html#T12">T12</a> <a class="cid" href="claims_status.html#T51">T51</a></li>
+      <li><b>컷 공정(핀·게이트·확산 단절)</b>: 컷 위치와 순서가 바뀌면 전기 특성이 배치에 따라 달라질 수 있다. 공정을 바꿀 때 LLE 시험 구조로 확인한다. <a class="cid" href="claims_status.html#T18">T18</a> <a class="cid" href="claims_status.html#T36">T36</a></li>
+      <li><b>GAA</b>: 시트별 식각 깊이 균일도가 곧 시트별 변형 균일도다. S/D 에피 병합 불량(빈틈)은 응력을 뒤집을 수 있다. <a class="cid" href="claims_status.html#T40">T40</a> <a class="cid" href="claims_status.html#T41">T41</a></li>
+      <li><b>마스크</b>: 하드마스크는 증착 직후 응력뿐 아니라 식각 중 플라즈마 노출 뒤 응력을 본다. 수소가 들어가는 첨가 가스는 탄소 마스크 응력을 바꿀 수 있다. <a class="cid" href="claims_status.html#T25">T25</a> <a class="cid" href="claims_status.html#T43">T43</a></li>
+      <li><b>전기적 저하 ≠ 응력 손실</b>: 전류가 줄었다고 곧 응력이 풀렸다고 볼 수 없다. 식각 손상(공핍·결함)과 기계적 이완은 따로 측정한다. <span class="tag t-na">일반 정의</span></li>
+    </ul>
+  </div>
+
+  <h2 id="more">9. 더 보기 · 출처</h2>
+  <p>관련 페이지: <a href="a20_etch_knowledge_graph.html#strain_eng">그래프: 응력 공학</a> · <a href="a20_etch_knowledge_graph.html#esige">eSiGe</a> · <a href="a20_etch_knowledge_graph.html#s_sdrecess">S/D 리세스</a> · <a href="etch_process_basics.html">식각 공정 기초</a> · <a href="sram_logic.html">SRAM</a> · <a href="claims_status.html#T01">검증 현황(T01–T51)</a></p>
+  <p class="note"><b>검증 보류</b>: Intel 45nm 더미 게이트 제거 전후 채널 응력 수치(본문 그림), 시그마 리세스 논문의 공정 세부(본문)는 원문을 열 수 없어 싣지 않았다. 리세스 로딩·잔사·C/F 오염, DSL 제거 식각의 실리사이드 손상(특허 기재), 정상 RIE 손상층의 응력값은 이번 조사에서 주장 장부로 검증하지 않았다.</p>
+  <ol class="src">
+    <li>S. E. Thompson 외, A 90-nm logic technology featuring strained-silicon, IEEE TED 2004 — <a href="https://doi.org/10.1109/TED.2004.836648">doi:10.1109/TED.2004.836648</a> <a class="psum" href="papers.html#thompson2004ted" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>T. Ghani 외, A 90nm high volume manufacturing logic technology featuring novel 45nm gate length strained silicon CMOS transistors, IEDM 2003 — <a href="https://doi.org/10.1109/IEDM.2003.1269442">doi:10.1109/IEDM.2003.1269442</a> <a class="psum" href="papers.html#ghani2003" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>S. E. Thompson 외, Key differences for process-induced uniaxial vs. substrate-induced biaxial stressed Si and Ge channel MOSFETs, IEDM 2004 — <a href="https://doi.org/10.1109/IEDM.2004.1419114">doi:10.1109/IEDM.2004.1419114</a> <a class="psum" href="papers.html#thompson2004iedm" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>H. S. Yang 외, Dual stress liner for high performance sub-45nm gate length SOI CMOS manufacturing, IEDM 2004 — <a href="https://doi.org/10.1109/IEDM.2004.1419385">doi:10.1109/IEDM.2004.1419385</a> <a class="psum" href="papers.html#yang2004dsl" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>C.-H. Chen 외, Stress memorization technique (SMT) by selectively strained-nitride capping, VLSI 2004 — <a href="https://doi.org/10.1109/VLSIT.2004.1345390">doi:10.1109/VLSIT.2004.1345390</a> <a class="psum" href="papers.html#chen2004smt" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>C. Auth 외, 45nm High-k + metal gate strain-enhanced transistors, VLSI 2008 — <a href="https://doi.org/10.1109/VLSIT.2008.4588589">doi:10.1109/VLSIT.2008.4588589</a> <a class="psum" href="papers.html#auth2008" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>S. Ito 외, Mechanical stress effect of etch-stop nitride and its impact on deep submicron transistor design, IEDM 2000 — <a href="https://doi.org/10.1109/IEDM.2000.904303">doi:10.1109/IEDM.2000.904303</a> <a class="psum" href="papers.html#ito2000" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>K.-W. Ang 외, Enhanced performance in 50 nm N-MOSFETs with silicon-carbon source/drain regions, IEDM 2004 — <a href="https://doi.org/10.1109/IEDM.2004.1419383">doi:10.1109/IEDM.2004.1419383</a> <a class="psum" href="papers.html#ang2004" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>On the evolution of strain and electrical properties in as-grown and annealed Si:P epitaxial films, ECS JSS 2018 — <a href="https://doi.org/10.1149/2.0071805jss">doi:10.1149/2.0071805jss</a> <a class="psum" href="papers.html#sip2018" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>T. Denneulin 외, The addition of strain in uniaxially strained transistors by both SiN CESL and recessed SiGe S/D, J. Appl. Phys. 2012 — <a href="https://doi.org/10.1063/1.4764045">doi:10.1063/1.4764045</a> <a class="psum" href="papers.html#denneulin2012" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Method for managing the stress due to the strained nitride capping layer in MOS transistors, IEEE TED 2007 — <a href="https://doi.org/10.1109/TED.2007.892026">doi:10.1109/TED.2007.892026</a> <a class="psum" href="papers.html#cesl2007ted" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Stress techniques and mobility enhancement in FinFET architectures, ECS Trans. 2013 — <a href="https://doi.org/10.1149/05009.0047ecst">doi:10.1149/05009.0047ecst</a> <a class="psum" href="papers.html#finfetstress2013" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Layout variation effects in advanced MOSFETs: STI-induced eSiGe strain relaxation and DSL boundary proximity effect, IEEE TED 2010 — <a href="https://doi.org/10.1109/TED.2010.2066567">doi:10.1109/TED.2010.2066567</a> <a class="psum" href="papers.html#lve2010ted" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Highly efficient stress transfer techniques in dual stress liner CMOS integration, VLSI 2007 — <a href="https://doi.org/10.1109/VLSIT.2007.4339700">doi:10.1109/VLSIT.2007.4339700</a> <a class="psum" href="papers.html#dsl2007vlsi" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>H. Zhu 외, Improving yields of high performance 65 nm chips with sputtering top surface of dual stress liner, VLSI 2007 — <a href="https://doi.org/10.1109/VLSIT.2007.4339684">doi:10.1109/VLSIT.2007.4339684</a> <a class="psum" href="papers.html#zhu2007dsl" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Integration issue of tensile SiN liner for DSL in gate-last HKMG process flow, ECS Trans. 2013 — <a href="https://doi.org/10.1149/05201.0677ecst">doi:10.1149/05201.0677ecst</a> <a class="psum" href="papers.html#dslgl2013" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>In situ doped embedded-SiGe source/drain technique for 32 nm node pMOSFET, JJAP 2008 — <a href="https://doi.org/10.1143/JJAP.47.2564">doi:10.1143/JJAP.47.2564</a> <a class="psum" href="papers.html#esige32_2008" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>A comprehensive study of SiGe source/drain local stress by nano beam diffraction, ECS Trans. 2013 — <a href="https://doi.org/10.1149/05201.0033ecst">doi:10.1149/05201.0033ecst</a> <a class="psum" href="papers.html#nbd2013ecs" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Architecture of source-drain cavity of a pFET for embedding with epitaxial SiGe, J. Appl. Phys. 2011 — <a href="https://doi.org/10.1063/1.3638051">doi:10.1063/1.3638051</a> <a class="psum" href="papers.html#cavity2011jap" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>A. Metz 외, Ultra-high selectivity silicon nitride liner etch, AVS 2010 학회 초록 — <a href="https://avssymposium.org/AVS2010/Sessions/Schedule/20391">AVS 2010 PS1-TuA10</a> <a class="psum" href="papers.html#metz2010" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>G. Tsutsui 외, SiGe FinFET for practical logic libraries by mitigating local layout effect, VLSI 2017 — <a href="https://doi.org/10.23919/VLSIT.2017.7998215">doi:10.23919/VLSIT.2017.7998215</a> <a class="psum" href="papers.html#tsutsui2017" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>F. Allibert 외, Elastic relaxation in intrinsically-strained fins, S3S 2014 — <a href="https://doi.org/10.1109/S3S.2014.7028189">doi:10.1109/S3S.2014.7028189</a> <a class="psum" href="papers.html#allibert2014" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>H. Arimura 외, Advantage of NW structure in preservation of SRB-induced strain, IEDM 2018 — <a href="https://doi.org/10.1109/IEDM.2018.8614712">doi:10.1109/IEDM.2018.8614712</a> <a class="psum" href="papers.html#arimura2018" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>G. Scott 외, NMOS drive current reduction caused by transistor layout and trench isolation induced stress, IEDM 1999 — <a href="https://doi.org/10.1109/IEDM.1999.824277">doi:10.1109/IEDM.1999.824277</a> <a class="psum" href="papers.html#scott1999" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>A. Rossoni 외, Stress-related local layout effects in FinFET technology, IEEE TED 2025 — <a href="https://doi.org/10.1109/TED.2025.3561974">doi:10.1109/TED.2025.3561974</a> <a class="psum" href="papers.html#rossoni2025" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>S. Reboh 외, Strain, stress, and mechanical relaxation in fin-patterned Si/SiGe multilayers, Appl. Phys. Lett. 2018 — <a href="https://doi.org/10.1063/1.5010997">doi:10.1063/1.5010997</a> <a class="psum" href="papers.html#reboh2018apl" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>S. Reboh 외, Imaging, modeling and engineering of strain in gate-all-around nanosheet transistors, IEDM 2019 — <a href="https://doi.org/10.1109/IEDM19573.2019.8993524">doi:10.1109/IEDM19573.2019.8993524</a> <a class="psum" href="papers.html#reboh2019" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Stress simulations of fins, wires, and nanosheets, ECS Trans. 2020 — <a href="https://doi.org/10.1149/09805.0253ecst">doi:10.1149/09805.0253ecst</a> <a class="psum" href="papers.html#eneman2020" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>H.-C. Chou 외, Strain evolution in SiGe nanosheet transistor process flow, IEEE TED 2024 — <a href="https://doi.org/10.1109/TED.2024.3383409">doi:10.1109/TED.2024.3383409</a> <a class="psum" href="papers.html#chou2024" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>J. Yang 외, Impact of stress and dimension on nanosheet deformation during channel release, Micromachines 2023 — <a href="https://doi.org/10.3390/mi14030611">doi:10.3390/mi14030611</a> <a class="psum" href="papers.html#yang2023a" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>L. Li 외, Direct observation of etching-induced inhomogeneous strain in advanced Si/SiGe stack, Adv. Electron. Mater. 2025 — <a href="https://doi.org/10.1002/aelm.202400943">doi:10.1002/aelm.202400943</a> <a class="psum" href="papers.html#li2025aelm" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>K. Chen 외, Source/drain trimming process to improve GAA nanosheet transistors, Micromachines 2022 — <a href="https://doi.org/10.3390/mi13071080">doi:10.3390/mi13071080</a> <a class="psum" href="papers.html#chen2022trim" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>C. Durfee 외, Highly selective SiGe dry etch process for stacked nanosheet GAA transistors, ECS Trans. 2021 — <a href="https://doi.org/10.1149/10404.0217ecst">doi:10.1149/10404.0217ecst</a> <a class="psum" href="papers.html#durfee2021sige" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>A. Turnquist 외, Evaluation of TiN hardmask films to prevent line wiggling due to plasma-induced film stress, SPIE 2023 — <a href="https://doi.org/10.1117/12.2661307">doi:10.1117/12.2661307</a> <a class="psum" href="papers.html#turnquist2023" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>A. Turnquist 외, Line wiggling due to plasma-induced film stress and prevention by surface roughness modification, JVST B 2025 — <a href="https://doi.org/10.1116/6.0004116">doi:10.1116/6.0004116</a> <a class="psum" href="papers.html#turnquist2025" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>N. Kofuji 외, Mechanism of wiggling enhancement due to HBr gas addition during amorphous carbon etching, JJAP 2015 — <a href="https://doi.org/10.7567/JJAP.54.06FH04">doi:10.7567/JJAP.54.06FH04</a> <a class="psum" href="papers.html#kofuji2015" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Spin-on-carbon-hardmask with high wiggling resistance, SPIE 2012 — <a href="https://doi.org/10.1117/12.916128">doi:10.1117/12.916128</a> <a class="psum" href="papers.html#soc2012" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>C.-H. Huang 외, Within-wafer CD variation induced by wafer shape, SPIE 2016 — <a href="https://doi.org/10.1117/12.2216048">doi:10.1117/12.2216048</a> <a class="psum" href="papers.html#huang2016" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Influence of rapid thermal annealing on the wafer warpage in 3D NAND flash memory, Semicond. Sci. Technol. 2019 — <a href="https://doi.org/10.1088/1361-6641/aafccd">doi:10.1088/1361-6641/aafccd</a> <a class="psum" href="papers.html#nandwarp2019" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>Strain characterization of FinFETs with SiGe stressors using nanobeam electron diffraction, Appl. Phys. Lett. 2014 — <a href="https://doi.org/10.1063/1.4893926">doi:10.1063/1.4893926</a> <a class="psum" href="papers.html#nbd2014apl" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>L. Clément 외, Strain measurements by CBED: the importance of stress relaxation in lamella preparations, Appl. Phys. Lett. 2004 — <a href="https://doi.org/10.1063/1.1774275">doi:10.1063/1.1774275</a> <a class="psum" href="papers.html#clement2004" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>C. E. Murray 외, Mapping of the mechanical response in Si/SiGe nanosheet device geometries, Commun. Eng. 2022 — <a href="https://doi.org/10.1038/s44172-022-00011-w">doi:10.1038/s44172-022-00011-w</a> <a class="psum" href="papers.html#murray2022" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+    <li>In-line Raman spectroscopy for gate-all-around nanosheet device manufacturing, J. Micro/Nanopattern. 2022 — <a href="https://doi.org/10.1117/1.JMM.21.2.021203">doi:10.1117/1.JMM.21.2.021203</a> <a class="psum" href="papers.html#raman2022" style="font-size:12px;font-weight:600;background:#eef2ff;border-radius:999px;padding:0 7px;text-decoration:none;white-space:nowrap">요약</a></li>
+  </ol>
+</div>
+</body>
+</html>
