@@ -75,7 +75,7 @@ python tools/paper_links.py oes       # OES 페이지에 반영 (oes_page.py도 
 
 | 원본 | 결과물 |
 |---|---|
-| `kb/pages.json`(영역·학습 경로·자료 목록) + `tools/templates/index.html` | `index.html` (검색 항목에 그래프 용어 포함) |
+| `kb/pages.json`(영역·학습 경로·자료 목록·`topics` 주제 바로가기·페이지별 `updated` 수정일) + `tools/templates/index.html` | `index.html` (검색 항목에 그래프 용어 포함) |
 | `kb/graph/nodes.json`(id·이름·영문·분류·영역·설명·식각 관계·출처 키), `edges.json`(관계·근거 글), `sources.json`(출처 키 → 제목·URL), `types.json`(분류·영역 이름) + `tools/templates/a20_etch_knowledge_graph.html` | `research/a20_etch_knowledge_graph.html` |
 | `kb/snupal/page.json`, `topics.json` | `research/snupal_qna_knowledge.html` |
 | `kb/claims/*.json` | `research/claims_status.html` |
@@ -98,3 +98,8 @@ python tools/oes_supplement_build.py <NIST 추출.json> ledger/oes_supplement.js
 ## 6. 이력 정리 (강제 푸시)
 
 사용자 승인 후에만. 먼저 `git bundle create data/backup/repo_before_<날짜>.bundle --all`로 백업하고, 시험 복제본에서 `git filter-repo`를 먼저 돌려 본다. filter-repo는 `origin` 원격을 지우므로 다시 연결한다. GitHub는 예전 커밋을 해시로 한동안 보여 줄 수 있다(완전 삭제는 GitHub 지원 요청).
+
+### 목차 관리 메모 (2026-10-27, #63)
+
+- 페이지 내용을 크게 고치면 `kb/pages.json`의 그 페이지에 `"updated": "YYYY-MM-DD"`를 적는다. 카드에 "수정 날짜"가 붙고 섹션 안 정렬이 최근 수정순이 된다.
+- `topics`는 첫 화면 "주제 바로가기"다. `[표시 이름, 그래프 노드 id]` 목록이며, 없는 노드 id를 적으면 build가 멈춘다.

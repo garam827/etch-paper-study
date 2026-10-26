@@ -43,6 +43,12 @@
   .path b { display:block; font-size:15.5px; }
   .path a { font-size:14px; margin-right:12px; color:var(--accent); text-decoration:none; }
   .path a:hover { text-decoration:underline; }
+  .topics { display:grid; gap:8px; }
+  .topics .tg { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; }
+  .topics .tg b { font-size:13px; color:var(--muted); min-width:110px; }
+  .topics a { font-size:14px; color:var(--accent); text-decoration:none; border:1px solid #dbe4ff; background:#f5f8ff; border-radius:999px; padding:1px 10px; }
+  .topics a:hover { border-color:var(--accent); }
+  .tag.upd { background:#ecfdf5; color:#047857; }
   .search { margin-top:24px; }
   .search input { width:100%; font:inherit; padding:10px 14px; border:1px solid #cbd5e1; border-radius:12px; background:#fff; }
   #results { list-style:none; padding:0; margin:8px 0 0; display:grid; gap:6px; }
@@ -73,6 +79,10 @@
   <p class="sdesc">원리에서 실제 공정으로. 단계마다 읽을거리와 3D 모형을 묶었습니다.</p>
   <ol class="path"><li><b>플라즈마 원리 · 식각 기초</b><a href="research/plasma_etch_principles.html">플라즈마 식각의 원리 — 교과서 지식 정리</a><a href="research/etch_process_basics.html">식각 공정 기초 — 지표·패턴 의존성·프로파일 결함</a><a href="research/snupal_qna_knowledge.html">플라즈마 질의응답 주제 해설</a></li><li><b>식각 화학 · OES</b><a href="research/oes_etch_chemistry.html">식각 화학 조합 · OES 기준 파장</a><a href="research/oes_knowledge_graph.html">OES 지식 그래프 · 근거 검색</a></li><li><b>멀티패터닝 (DPT · QPT)</b><a href="research/dpt_qpt_report.html">DPT · QPT 멀티패터닝 보고서</a><a href="viz/sadp_3d.html">SADP (자기정렬 이중 패터닝) — 3D</a><a href="viz/saqp_3d.html">SAQP (자기정렬 4중 패터닝) — 3D</a></li><li><b>GAA · A20 공정</b><a href="research/tsmc_n2_a20_etch_report.html">Apple A20 (TSMC 2nm) 식각 공정 보고서</a><a href="research/sram_logic.html">SRAM — 로직 칩의 온칩 메모리</a><a href="viz/inner_spacer_3d.html">SiGe 측면 리세스 · 내부 스페이서 에치백 — 3D</a><a href="viz/channel_release_3d.html">채널 릴리스 (SiGe 희생층 제거) — 3D</a><a href="viz/bdi_3d.html">BDI (하부 유전체 절연) — 3D</a></li></ol>
 
+  <h2 id="topics">주제 바로가기</h2>
+  <p class="sdesc">페이지 목록에 따로 없는 주제도 지식 그래프 노드로 바로 갑니다. 노드마다 설명·식각 관점·근거 논문이 있습니다.</p>
+  <div class="topics"><div class="tg"><b>소자 · 게이트</b><a href="research/a20_etch_knowledge_graph.html#gaa">GAA 나노시트</a><a href="research/a20_etch_knowledge_graph.html#s_release">채널 릴리스</a><a href="research/a20_etch_knowledge_graph.html#innerspacer">내부 스페이서</a><a href="research/a20_etch_knowledge_graph.html#rmg">RMG 공정</a><a href="research/a20_etch_knowledge_graph.html#hkmg">HKMG 게이트</a><a href="research/a20_etch_knowledge_graph.html#contact">자기정렬 컨택</a><a href="research/a20_etch_knowledge_graph.html#sram">SRAM</a></div><div class="tg"><b>패터닝</b><a href="research/a20_etch_knowledge_graph.html#sadp">SADP</a><a href="research/a20_etch_knowledge_graph.html#saqp">SAQP</a><a href="research/a20_etch_knowledge_graph.html#i_pitchwalk">피치 워킹</a><a href="research/a20_etch_knowledge_graph.html#euv">EUV</a></div><div class="tg"><b>식각 기초 · 결함</b><a href="research/a20_etch_knowledge_graph.html#i_arde">ARDE·RIE lag</a><a href="research/a20_etch_knowledge_graph.html#i_bowing">보잉·네킹</a><a href="research/a20_etch_knowledge_graph.html#i_twisting">트위스팅</a><a href="research/a20_etch_knowledge_graph.html#i_charging">대전 손상</a><a href="research/a20_etch_knowledge_graph.html#e_ale">ALE</a><a href="research/a20_etch_knowledge_graph.html#e_bosch">Bosch 공정</a></div><div class="tg"><b>진단 · 공정 제어</b><a href="research/a20_etch_knowledge_graph.html#endpoint">식각 종말점</a><a href="research/a20_etch_knowledge_graph.html#i_aging">챔버 벽 상태</a><a href="research/a20_etch_knowledge_graph.html#apc">APC</a><a href="research/a20_etch_knowledge_graph.html#ff_ctrl">피드포워드 제어</a></div><div class="tg"><b>패키징 · 3D</b><a href="research/a20_etch_knowledge_graph.html#hcb">HCB 하이브리드 본딩</a><a href="research/a20_etch_knowledge_graph.html#vcache">3D 적층 캐시</a></div></div>
+
   <h2 id="s-basics">기초 원리</h2>
   <p class="sdesc">플라즈마가 어떻게 식각을 하는지</p>
   <div class="list">
@@ -102,13 +112,13 @@
     <a class="item" href="research/dpt_qpt_report.html">
       <h3>DPT · QPT 멀티패터닝 보고서</h3>
       <p>LELE·SADP·SAQP의 등장 배경, 도입 연표, 공정 단면도, 난제 15가지, 2023–2026 동향(High-NA·SMIC·DRAM·장비). 출처 71개.</p>
-      <div class="tags"><span class="tag etch">식각</span><span class="tag">패터닝</span><span class="tag">2026-10-07</span></div>
+      <div class="tags"><span class="tag etch">식각</span><span class="tag">패터닝</span><span class="tag">2026-10-07</span><span class="tag upd">수정 2026-10-13</span></div>
       <span class="go">보고서 →</span>
     </a>
     <a class="item" href="research/tsmc_n2_a20_etch_report.html">
       <h3>Apple A20 (TSMC 2nm) 식각 공정 보고서</h3>
       <p>Wafer IN부터 출하까지 전·후공정 흐름을 식각 중심으로 정리. GAA 나노시트의 핵심 식각 단계, 단면 그림, 출처 32개.</p>
-      <div class="tags"><span class="tag etch">식각</span><span class="tag">GAA 나노시트</span><span class="tag">2026-10-05</span></div>
+      <div class="tags"><span class="tag etch">식각</span><span class="tag">GAA 나노시트</span><span class="tag">2026-10-05</span><span class="tag upd">수정 2026-10-13</span></div>
       <span class="go">보고서 →</span>
     </a>
   </div>
@@ -116,10 +126,22 @@
   <h2 id="s-kb">지식 베이스</h2>
   <p class="sdesc">용어·관계·화학종을 찾아보는 자료</p>
   <div class="list">
+    <a class="item" href="research/papers.html">
+      <h3>레퍼런스 논문 요약</h3>
+      <p>보고서·지식 그래프·OES 표가 인용한 논문 185편을 영역별로 요약. 그래프 노드와 보고서의 논문 링크 옆 &#x27;요약&#x27;에서 바로 오고, 각 요약에서 쓰인 노드·페이지로 돌아갈 수 있다. 요약 핵심 문장은 독립 검증(채택 176·조건부 9).</p>
+      <div class="tags"><span class="tag etch">논문</span><span class="tag">요약</span><span class="tag">출처</span><span class="tag">2026-10-13</span><span class="tag upd">수정 2026-10-27</span></div>
+      <span class="go">요약 보기 →</span>
+    </a>
+    <a class="item" href="research/a20_etch_knowledge_graph.html">
+      <h3>식각 지식 그래프 · 용어집</h3>
+      <p>용어 290개와 관계 624개를 인터랙티브 그래프로 표현(DPT·QPT 멀티패터닝, 플라즈마 식각 원리, SNU PAL 질의응답 용어, 식각 기체·OES 파장·종말점 신호, HKMG·RMG(대체 금속 게이트) 공정, HCB 본딩, 공정 제어(APC), 식각 공정 기초(ARDE·보잉·트위스팅·Bosch·극저온 식각 등), SRAM(셀·셀 축소 둔화·포크시트·CFET·후면 전력·3D 적층 캐시) 포함). 용어마다 근거 논문·출처를 펼쳐 볼 수 있고, 출처로도 검색된다. 영역 간 연결 강조·검토, 용어 검토(2026-10-08) 포함.</p>
+      <div class="tags"><span class="tag etch">식각</span><span class="tag">용어집</span><span class="tag">2026-10-05</span><span class="tag upd">수정 2026-10-27</span></div>
+      <span class="go">그래프 →</span>
+    </a>
     <a class="item" href="research/oes_knowledge_graph.html">
       <h3>OES 지식 그래프 · 근거 검색</h3>
       <p>OES 식각 화학 데이터를 막질 → 조합 → 화학종 → 방출선·밴드 → 용도(종말점·actinometry)로 잇는 지식 그래프(노드·관계마다 근거 수준·출처·검증 판정). 챔버 conditioning·시즈닝·aging 축(단계 → 벽 상태 → 재결합·방출 → 화학종 → 방출선, 감시 신호) 포함. 레시피 → 화학종·파장, 관측 피크 → 후보(± 허용오차), 근거 검색(RAG 검색 단계, 언어 모델 없음), 노드 탐색. graph.json·cards.jsonl 내려받기.</p>
-      <div class="tags"><span class="tag etch">식각</span><span class="tag">OES</span><span class="tag">지식 그래프</span><span class="tag">2026-10-15</span></div>
+      <div class="tags"><span class="tag etch">식각</span><span class="tag">OES</span><span class="tag">지식 그래프</span><span class="tag">2026-10-15</span><span class="tag upd">수정 2026-10-16</span></div>
       <span class="go">그래프 열기 →</span>
     </a>
     <a class="item" href="research/oes_etch_chemistry.html">
@@ -128,23 +150,11 @@
       <div class="tags"><span class="tag etch">식각</span><span class="tag">OES</span><span class="tag">출처 링크</span><span class="tag">2026-10-15</span></div>
       <span class="go">표 보기 →</span>
     </a>
-    <a class="item" href="research/papers.html">
-      <h3>레퍼런스 논문 요약</h3>
-      <p>보고서·지식 그래프·OES 표가 인용한 논문 185편을 영역별로 요약. 그래프 노드와 보고서의 논문 링크 옆 &#x27;요약&#x27;에서 바로 오고, 각 요약에서 쓰인 노드·페이지로 돌아갈 수 있다. 요약 핵심 문장은 독립 검증(채택 176·조건부 9).</p>
-      <div class="tags"><span class="tag etch">논문</span><span class="tag">요약</span><span class="tag">출처</span><span class="tag">2026-10-13</span></div>
-      <span class="go">요약 보기 →</span>
-    </a>
     <a class="item" href="research/snupal_qna_knowledge.html">
       <h3>플라즈마 질의응답 주제 해설</h3>
       <p>서울대 플라즈마 응용 연구실 질의응답 게시판의 연구실 답변이 반복해 설명하는 원리를 주제 9개·해설 54개로 종합하고, 용어 649개를 정리. 해설마다 근거 글 링크.</p>
       <div class="tags"><span class="tag etch">플라즈마</span><span class="tag">주제 해설</span><span class="tag">용어 사전</span><span class="tag">2026-10-13</span></div>
       <span class="go">해설 보기 →</span>
-    </a>
-    <a class="item" href="research/a20_etch_knowledge_graph.html">
-      <h3>식각 지식 그래프 · 용어집</h3>
-      <p>용어 290개와 관계 624개를 인터랙티브 그래프로 표현(DPT·QPT 멀티패터닝, 플라즈마 식각 원리, SNU PAL 질의응답 용어, 식각 기체·OES 파장·종말점 신호, HKMG·RMG(대체 금속 게이트) 공정, HCB 본딩, 공정 제어(APC), 식각 공정 기초(ARDE·보잉·트위스팅·Bosch·극저온 식각 등), SRAM(셀·셀 축소 둔화·포크시트·CFET·후면 전력·3D 적층 캐시) 포함). 용어마다 근거 논문·출처를 펼쳐 볼 수 있고, 출처로도 검색된다. 영역 간 연결 강조·검토, 용어 검토(2026-10-08) 포함.</p>
-      <div class="tags"><span class="tag etch">식각</span><span class="tag">용어집</span><span class="tag">2026-10-05</span></div>
-      <span class="go">그래프 →</span>
     </a>
   </div>
 
@@ -189,13 +199,13 @@
     <a class="item" href="research/claims_status.html">
       <h3>핵심 주장 검증 현황</h3>
       <p>A20 보고서·지식 그래프·식각 공정 기초·SRAM·OES 보완·논문 요약의 핵심 주장 399개를 독립 검증 에이전트가 원문과 다시 대조한 결과(채택 326·조건부 63·보류 10). 주장마다 채택·조건부 상태, 필요한 조건, 검토일, 확인한 출처.</p>
-      <div class="tags"><span class="tag">검증</span><span class="tag">주장 장부</span><span class="tag">2026-10-13</span></div>
+      <div class="tags"><span class="tag">검증</span><span class="tag">주장 장부</span><span class="tag">2026-10-13</span><span class="tag upd">수정 2026-10-27</span></div>
       <span class="go">현황 →</span>
     </a>
     <a class="item" href="research/semi_research_system.html">
       <h3>리서치 검증 체계 — 스킬·에이전트</h3>
       <p>반도체 지식·논문을 &quot;찾기 → 주장 장부 → 분리된 검증 → 규칙 채택&quot;으로 다루는 절차. 수집·검증 에이전트 역할과 권한, 출처 등급, 지난 실제 오류로 한 회귀 시험 결과.</p>
-      <div class="tags"><span class="tag">체계</span><span class="tag">검증</span><span class="tag">2026-10-09</span></div>
+      <div class="tags"><span class="tag">체계</span><span class="tag">검증</span><span class="tag">2026-10-09</span><span class="tag upd">수정 2026-10-10</span></div>
       <span class="go">체계 보기 →</span>
     </a>
     <a class="item" href="guide/agent_architecture.html">

@@ -39,6 +39,8 @@
   code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
   figure { margin: 12px 0 0; }
   figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  .entry img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; display: block; margin: 8px 0; }
+  .entry { overflow-wrap: anywhere; }
   figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
   .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
   .tag.warn { background: #fef3c7; color: #92400e; }
@@ -343,6 +345,83 @@
           <img loading="lazy" decoding="async" src="../history_img/20261013_115000_graph_summary_link.png" alt="그래프 요약 링크">
           <figcaption>history_img/20261013_115000_graph_summary_link.png — 지식 그래프 SAQP 노드: 논문 출처 옆 "요약" 링크</figcaption>
         </figure>
+      </section>
+    </article>
+    <!-- ===== 항목 #63 ===== -->
+    <article class="entry" id="e63">
+      <div class="entry-head">
+        <span class="no">#63</span>
+        <h2>사이트 전체 구성 검토 — 휴대폰 넘침 수정·주제 바로가기·수정 날짜</h2>
+        <time>2026-10-26 22:58</time>
+      </div>
+      <section class="blk instr">
+        <h3>지시 (원문)</h3>
+        <blockquote>그리고 web에서 전체 구성 개선할 것 있는지도 검토해줘.</blockquote>
+        <p>(#61과 같은 메시지의 두 번째 문장이다. 기초 보충(#61)을 먼저 하고, 사이에 SRAM 지시(#62)가 들어와 그 다음에 진행했다.)</p>
+      </section>
+      <section class="blk anal">
+        <h3>분석 (Claude의 정리)</h3>
+        <ul>
+          <li>공개 페이지 19개와 기록 페이지 18개를 대상으로 구조·링크·휴대폰 화면·첫 화면 탐색을 점검한다.</li>
+          <li>바로 고칠 수 있는 결함과 구성 개선 제안을 나누고, 어디까지 구현할지는 jev에게 묻는다.</li>
+        </ul>
+      </section>
+      <section class="blk proc">
+        <h3>과정</h3>
+        <ol>
+          <li><time>10-26 22:58</time> 자동 점검을 했다. 모든 페이지에 viewport 설정과 목차 링크가 있었고, 첫 화면에서 모두 연결되어 있었으며, 내부 링크 오류는 0건이었다.</li>
+          <li><time>23:00</time> 휴대폰 폭 점검. 처음에 헤드리스 Chrome을 폭 390 px 창으로 찍었더니 첫 화면 글자가 잘려 보였다. 확인해 보니 브라우저가 548 px로 그리고 있었다(창 최소 폭 때문). 실제 결함이 아니었다. 대신 375 px iframe 안에 각 페이지를 띄워 가로 넘침을 쟀다. 실제 결함 4가지를 찾았다.
+            <ul>
+              <li>기록 단계 페이지 전부: 본문 스크린샷에 최대 폭 지정이 없어 최대 1489 px까지 넘침.</li>
+              <li>안내 페이지: 코드 블록이 목록 칸을 765 px로 넓힘.</li>
+              <li>검증 현황(+44 px)·논문 요약(+15 px): 긴 낱말이 줄바꿈되지 않음.</li>
+            </ul>
+          </li>
+          <li><time>23:02</time> 구성 쪽 진단.
+            <ul>
+              <li>RMG·HKMG·APC·HCB·챔버 conditioning·ARDE 같은 주제가 지식 그래프 노드 안에만 있어 첫 화면에서 보이지 않는다.</li>
+              <li>카드 날짜가 처음 만든 날뿐이라 최근 갱신이 보이지 않는다.</li>
+              <li>카드 설명이 길고 숫자가 많다.</li>
+            </ul>
+          </li>
+          <li><time>23:03</time> <b>jev</b>
+            <ul>
+              <li>범위: "버그를 고치고, 구성 개선 중 '주제 바로가기'와 '수정 날짜'까지 구현, 나머지는 제안"(0.59, 신뢰도 0.38).</li>
+              <li>주제 바로가기가 학습자에게 도움이 되는가: 0.78.</li>
+              <li>기록 단계: 11단계에 이어 붙임(0.89).</li>
+              <li>순서: 기초 보충 먼저(0.89).</li>
+              <li>모두 따랐다. 사이에 SRAM 지시가 들어와 그것을 먼저 끝낸 뒤(#62) 이어서 구현했다.</li>
+            </ul>
+          </li>
+          <li><time>10-27 02:00</time> 휴대폰 넘침 수정.
+            <ul>
+              <li>기록 페이지 19개(첫 화면 포함)에 본문 이미지 최대 폭과 긴 낱말 줄바꿈 규칙을 넣었다.</li>
+              <li>안내 페이지는 목록 칸 최소 폭과 코드 블록 최대 폭을 지정했다.</li>
+              <li>검증 현황·논문 요약은 생성 도구(<code>build_site.py</code>, <code>papers_page.py</code>)에 줄바꿈 규칙을 넣었다.</li>
+              <li>다시 재니 25개 페이지가 모두 375 px 폭 안에 들어왔다(넘침 0).</li>
+            </ul>
+          </li>
+          <li><time>02:01</time> 첫 화면 개선.
+            <ul>
+              <li><code>kb/pages.json</code>에 <code>topics</code>(5묶음, 그래프 노드 23개)를 넣었다. 학습 경로 아래에 "주제 바로가기"를 만들어 각 노드로 바로 가게 했다. 없는 노드 id를 적으면 build가 멈추게 했다.</li>
+              <li>페이지마다 <code>updated</code>(최근 수정일)를 넣어 카드에 "수정 날짜" 표시를 달았다. 섹션 안 정렬도 최근 수정순으로 바꿨다.</li>
+              <li>사용법은 운영 문서(<code>docs/runbook.md</code> §4)에 적었다.</li>
+              <li>build, <code>--check</code>, 링크(38쪽 0건) 검사를 통과했다.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+      <section class="blk res">
+        <h3>결과 / 증거</h3>
+        <p><span class="tag">성공</span> 휴대폰 폭 넘침 4가지를 고쳤다(점검한 25개 페이지 모두 375 px 안). 첫 화면에 그래프 노드로 바로 가는 "주제 바로가기"를 만들고, 카드에 최근 수정 날짜를 표시했다.</p>
+        <p><b>구현하지 않은 제안</b>(jev 판단에 따라 제안으로 남김)</p>
+        <ul>
+          <li>첫 화면 카드 설명을 짧게 다듬기. 숫자는 각 페이지로 옮긴다.</li>
+          <li>지식 그래프가 커져(노드 290개) 처음 화면이 복잡하다. 영역별 기본 필터를 두는 방안.</li>
+          <li>3D 모형 페이지들에 같은 공정의 그래프 노드 링크 달기.</li>
+        </ul>
+        <p>새 첫 화면(학습 경로·주제 바로가기·카드):</p>
+        <img loading="lazy" decoding="async" src="../history_img/20261027_020230_site_topics.png" alt="사이트 첫 화면: 학습 경로 4단계, 주제 바로가기 5묶음, 기초 원리 카드">
       </section>
     </article>
 

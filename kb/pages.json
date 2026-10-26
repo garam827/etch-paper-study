@@ -74,6 +74,7 @@
    ],
    "etch_tag": "논문",
    "date": "2026-10-13",
+   "updated": "2026-10-27",
    "go": "요약 보기 →",
    "keywords": [
     "paper",
@@ -110,6 +111,7 @@
    ],
    "etch_tag": "식각",
    "date": "2026-10-15",
+   "updated": "2026-10-16",
    "go": "그래프 열기 →",
    "keywords": ["RAG", "GraphRAG", "종말점", "actinometry", "시즈닝", "챔버 conditioning", "aging", "재결합"]
   },
@@ -139,6 +141,7 @@
    ],
    "etch_tag": null,
    "date": "2026-10-09",
+   "updated": "2026-10-10",
    "go": "체계 보기 →",
    "keywords": []
   },
@@ -224,6 +227,7 @@
    ],
    "etch_tag": "식각",
    "date": "2026-10-07",
+   "updated": "2026-10-13",
    "go": "보고서 →",
    "keywords": []
   },
@@ -238,6 +242,7 @@
    ],
    "etch_tag": "식각",
    "date": "2026-10-05",
+   "updated": "2026-10-13",
    "go": "보고서 →",
    "keywords": []
   },
@@ -252,6 +257,7 @@
    ],
    "etch_tag": "식각",
    "date": "2026-10-05",
+   "updated": "2026-10-27",
    "go": "그래프 →",
    "keywords": ["RMG", "replacement metal gate", "대체 금속 게이트", "게이트 라스트", "더미 게이트 제거", "게이트 컷"]
   },
@@ -336,12 +342,132 @@
    ],
    "etch_tag": null,
    "date": "2026-10-13",
+   "updated": "2026-10-27",
    "go": "현황 →",
    "keywords": [
     "검증",
     "채택",
     "조건부",
     "claim"
+   ]
+  }
+ ],
+ "topics": [
+  {
+   "group": "소자 · 게이트",
+   "items": [
+    [
+     "GAA 나노시트",
+     "gaa"
+    ],
+    [
+     "채널 릴리스",
+     "s_release"
+    ],
+    [
+     "내부 스페이서",
+     "innerspacer"
+    ],
+    [
+     "RMG 공정",
+     "rmg"
+    ],
+    [
+     "HKMG 게이트",
+     "hkmg"
+    ],
+    [
+     "자기정렬 컨택",
+     "contact"
+    ],
+    [
+     "SRAM",
+     "sram"
+    ]
+   ]
+  },
+  {
+   "group": "패터닝",
+   "items": [
+    [
+     "SADP",
+     "sadp"
+    ],
+    [
+     "SAQP",
+     "saqp"
+    ],
+    [
+     "피치 워킹",
+     "i_pitchwalk"
+    ],
+    [
+     "EUV",
+     "euv"
+    ]
+   ]
+  },
+  {
+   "group": "식각 기초 · 결함",
+   "items": [
+    [
+     "ARDE·RIE lag",
+     "i_arde"
+    ],
+    [
+     "보잉·네킹",
+     "i_bowing"
+    ],
+    [
+     "트위스팅",
+     "i_twisting"
+    ],
+    [
+     "대전 손상",
+     "i_charging"
+    ],
+    [
+     "ALE",
+     "e_ale"
+    ],
+    [
+     "Bosch 공정",
+     "e_bosch"
+    ]
+   ]
+  },
+  {
+   "group": "진단 · 공정 제어",
+   "items": [
+    [
+     "식각 종말점",
+     "endpoint"
+    ],
+    [
+     "챔버 벽 상태",
+     "i_aging"
+    ],
+    [
+     "APC",
+     "apc"
+    ],
+    [
+     "피드포워드 제어",
+     "ff_ctrl"
+    ]
+   ]
+  },
+  {
+   "group": "패키징 · 3D",
+   "items": [
+    [
+     "HCB 하이브리드 본딩",
+     "hcb"
+    ],
+    [
+     "3D 적층 캐시",
+     "vcache"
+    ]
    ]
   }
  ]

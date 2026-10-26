@@ -100,17 +100,25 @@ def build_index():
     def item(p):
         tags = ([f'<span class="tag etch">{e(p["etch_tag"])}</span>'] if p.get("etch_tag") else []) + \
                [f'<span class="tag">{e(t)}</span>' for t in p["tags"] if t != p.get("etch_tag")] + \
-               ([f'<span class="tag">{p["date"]}</span>'] if p.get("date") else [])
+               ([f'<span class="tag">{p["date"]}</span>'] if p.get("date") else []) + \
+               ([f'<span class="tag upd">수정 {p["updated"]}</span>'] if p.get("updated") and p["updated"] != p.get("date") else [])
         return (f'    <a class="item" href="{e(p["href"])}">\n      <h3>{e(p["title"])}</h3>\n      <p>{e(p["desc"])}</p>\n'
                 f'      <div class="tags">{"".join(tags)}</div>\n      <span class="go">{e(p["go"])}</span>\n    </a>\n')
 
     secs = []
     for s in cfg["sections"]:
-        ps = sorted((p for p in cfg["pages"] if p["section"] == s["id"]), key=lambda p: p.get("date") or "", reverse=True)
+        ps = sorted((p for p in cfg["pages"] if p["section"] == s["id"]), key=lambda p: p.get("updated") or p.get("date") or "", reverse=True)
         secs.append(f'\n  <h2 id="s-{s["id"]}">{e(s["title"])}</h2>\n  <p class="sdesc">{e(s["desc"])}</p>\n  <div class="list">\n{"".join(item(p) for p in ps)}  </div>\n')
     toc = "".join(f'<a href="#s-{s["id"]}">{e(s["title"])}</a>' for s in cfg["sections"])
     path = "".join(f'<li><b>{e(s["title"])}</b>' + "".join(f'<a href="{e(h)}">{e(pages[h]["title"])}</a>' for h in s["pages"]) + "</li>"
                    for s in cfg["path"])
+    node_ids = {n["id"] for n in nodes}
+    bad_topics = [i[1] for g in cfg.get("topics", []) for i in g["items"] if i[1] not in node_ids]
+    if bad_topics:
+        raise SystemExit("주제 바로가기 노드 오류: " + ", ".join(bad_topics))
+    topics = "".join(f'<div class="tg"><b>{e(g["group"])}</b>' + "".join(
+        f'<a href="research/a20_etch_knowledge_graph.html#{e(i[1])}">{e(i[0])}</a>' for i in g["items"]) + "</div>"
+        for g in cfg.get("topics", []))
     idx = [{"t": p["title"], "u": p["href"], "c": "자료", "d": "", "p": 0,
             "k": " ".join([p["title"], p["desc"], *p["tags"], *p.get("keywords", [])]).lower()} for p in cfg["pages"]]
     idx += [{"t": f'{n["name"]} ({n["en"]})' if n["en"] and n["en"] != n["name"] else n["name"],
@@ -122,7 +130,7 @@ def build_index():
              "k": " ".join([p["title"], p["authors"], str(p["year"])]).lower()} for p in load("papers/papers.json")["papers"]]
     blob = json.dumps(idx, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page = (ROOT / "tools/templates/index.html").read_text(encoding="utf-8")
-    for k, v in {"__TOC__": toc, "__PATH__": path, "__SECTIONS__": "".join(secs).rstrip("\n"), "__INDEX__": blob}.items():
+    for k, v in {"__TOC__": toc, "__PATH__": path, "__TOPICS__": topics, "__SECTIONS__": "".join(secs).rstrip("\n"), "__INDEX__": blob}.items():
         page = page.replace(k, v)
     print(f"목차: 자료 {len(cfg['pages'])} · 영역 {len(cfg['sections'])} · 검색 항목 {len(idx)}")
     return page
@@ -173,7 +181,7 @@ def build_claims():
   .grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin:16px 0; }}
   .kpi {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px; }}
   .kpi b {{ display:block; font-size:22px; }} .kpi span {{ color:var(--muted); font-size:13px; }}
-  .cl {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 18px; margin:10px 0; scroll-margin-top:16px; }}
+  .cl {{ overflow-wrap:anywhere; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 18px; margin:10px 0; scroll-margin-top:16px; }}
   .cl:target {{ border-color:var(--accent); box-shadow:0 0 0 2px #bfdbfe; }}
   .h {{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-size:13px; }}
   .id {{ font-weight:700; font-family:ui-monospace,Consolas,monospace; }}

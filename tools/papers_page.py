@@ -109,7 +109,7 @@ def render():
   .nav small {{ color:var(--muted); }}
   input#q {{ width:100%; padding:9px 14px; border:1px solid var(--line); border-radius:10px; font:inherit; background:var(--card); }}
   .box {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 18px; font-size:14px; margin:14px 0; }}
-  .pp {{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:10px 0; scroll-margin-top:16px; }}
+  .pp {{ overflow-wrap:anywhere; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin:10px 0; scroll-margin-top:16px; }}
   .pp:target {{ border-color:var(--accent); box-shadow:0 0 0 2px #bfdbfe; }}
   .pp h3 {{ font-size:16px; margin:6px 0 2px; line-height:1.45; }}
   .pp h3 a {{ color:var(--ink); text-decoration:none; }} .pp h3 a:hover {{ color:var(--accent); text-decoration:underline; }}

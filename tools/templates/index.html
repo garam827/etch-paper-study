@@ -43,6 +43,12 @@
   .path b { display:block; font-size:15.5px; }
   .path a { font-size:14px; margin-right:12px; color:var(--accent); text-decoration:none; }
   .path a:hover { text-decoration:underline; }
+  .topics { display:grid; gap:8px; }
+  .topics .tg { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; }
+  .topics .tg b { font-size:13px; color:var(--muted); min-width:110px; }
+  .topics a { font-size:14px; color:var(--accent); text-decoration:none; border:1px solid #dbe4ff; background:#f5f8ff; border-radius:999px; padding:1px 10px; }
+  .topics a:hover { border-color:var(--accent); }
+  .tag.upd { background:#ecfdf5; color:#047857; }
   .search { margin-top:24px; }
   .search input { width:100%; font:inherit; padding:10px 14px; border:1px solid #cbd5e1; border-radius:12px; background:#fff; }
   #results { list-style:none; padding:0; margin:8px 0 0; display:grid; gap:6px; }
@@ -72,6 +78,10 @@
   <h2 id="path">처음이라면 — 학습 경로</h2>
   <p class="sdesc">원리에서 실제 공정으로. 단계마다 읽을거리와 3D 모형을 묶었습니다.</p>
   <ol class="path">__PATH__</ol>
+
+  <h2 id="topics">주제 바로가기</h2>
+  <p class="sdesc">페이지 목록에 따로 없는 주제도 지식 그래프 노드로 바로 갑니다. 노드마다 설명·식각 관점·근거 논문이 있습니다.</p>
+  <div class="topics">__TOPICS__</div>
 __SECTIONS__
 
   <h2>작업 방식</h2>

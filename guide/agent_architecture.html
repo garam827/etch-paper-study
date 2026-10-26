@@ -53,11 +53,11 @@
   .p-jev { background:var(--jev-bg); color:var(--jev); }
   .p-rec { background:var(--rec-bg); color:var(--rec); }
   .p-user { background:#f3f4f6; color:#374151; }
-  pre { background:var(--code-bg); border-radius:8px; padding:12px 14px; overflow-x:auto; font:13px/1.6 var(--mono); margin:8px 0; }
+  pre { max-width:100%; background:var(--code-bg); border-radius:8px; padding:12px 14px; overflow-x:auto; font:13px/1.6 var(--mono); margin:8px 0; }
   code { font-family:var(--mono); font-size:13px; background:var(--code-bg); padding:1px 5px; border-radius:4px; }
   pre code { background:none; padding:0; }
   ol.setup { padding-left:0; list-style:none; counter-reset:s; display:grid; gap:12px; margin:0; }
-  ol.setup > li { counter-increment:s; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px 14px 58px; position:relative; }
+  ol.setup > li { min-width:0; counter-increment:s; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px 14px 58px; position:relative; }
   ol.setup > li::before { content:counter(s); position:absolute; left:16px; top:14px; width:28px; height:28px; border-radius:50%;
     background:var(--ink); color:#fff; font-weight:700; display:grid; place-items:center; font-size:14px; }
   .timeline { display:grid; gap:0; }

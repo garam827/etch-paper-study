@@ -39,6 +39,8 @@
   code { background: #f1f3f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
   figure { margin: 12px 0 0; }
   figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; display: block; }
+  .entry img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; display: block; margin: 8px 0; }
+  .entry { overflow-wrap: anywhere; }
   figcaption { color: var(--muted); font-size: 13px; margin-top: 4px; }
   .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: #dcfce7; color: #166534; }
   .tag.warn { background: #fef3c7; color: #92400e; }
@@ -78,7 +80,7 @@
     <h1>반도체 식각 논문 스터디 — 작업 기록</h1>
     <p>모든 지시의 원문, Claude의 분석, 작업 과정, 성공 증거 스크린샷을 프로젝트 단계별로 나눠 기록합니다. 시간순이며, 민감정보는 기록하지 않습니다.</p>
   </header>
-  <section class="latest"><h2>최근 항목</h2><ul><li><a href="history/phase-18.html#e62"><b>#62</b> SRAM 내용 추가 — 로직 칩의 온칩 메모리 페이지·그래프 노드</a> <span class="ph-meta">2026-10-27 01:22</span></li><li><a href="history/phase-17.html#e61"><b>#61</b> 식각 공정 기초 보충 — 지표·패턴 의존성·프로파일 결함 페이지</a> <span class="ph-meta">2026-10-26 22:27</span></li><li><a href="history/phase-16.html#e60"><b>#60</b> RMG(대체 금속 게이트) 공정 조사·지식 그래프 추가</a> <span class="ph-meta">2026-10-26 20:26</span></li></ul></section>
+  <section class="latest"><h2>최근 항목</h2><ul><li><a href="history/phase-11.html#e63"><b>#63</b> 사이트 전체 구성 검토 — 휴대폰 넘침 수정·주제 바로가기·수정 날짜</a> <span class="ph-meta">2026-10-26 22:58</span></li><li><a href="history/phase-18.html#e62"><b>#62</b> SRAM 내용 추가 — 로직 칩의 온칩 메모리 페이지·그래프 노드</a> <span class="ph-meta">2026-10-27 01:22</span></li><li><a href="history/phase-17.html#e61"><b>#61</b> 식각 공정 기초 보충 — 지표·패턴 의존성·프로파일 결함 페이지</a> <span class="ph-meta">2026-10-26 22:27</span></li></ul></section>
   <div class="phases">
     <article class="phase">
       <div class="ph-head"><span class="ph-no">1</span><div><h2><a href="history/phase-1.html">기록·자문 체계 구축</a></h2>
@@ -142,9 +144,9 @@
     </article>
     <article class="phase">
       <div class="ph-head"><span class="ph-no">11</span><div><h2><a href="history/phase-11.html">사이트 구조 재정비</a></h2>
-      <p class="ph-meta">항목 #48–#51 (4개) · 2026-10-12 06:49 ~ 10-13 11:51</p></div></div>
+      <p class="ph-meta">항목 #48–#51, #63 (5개) · 2026-10-12 06:49 ~ 10-27 02:05</p></div></div>
       <p class="ph-desc">결과물 14개로 커진 사이트를 진단했다(최근순 목차, HTML에 박힌 데이터와 재현 불가한 갱신, 흩어진 용어, 부분적인 검증). astra·jev 자문을 거쳐 공개 범위 확정 → 재현 가능한 생성 경로 → 핵심 주장 검증 → 탐색 개선 → 운영의 5단계 계획을 세우고 실행했다: 그래프·목차를 kb/ 원본에서 생성, 핵심 주장 26개 재검증(채택 15·조건부 11), 영역별 목차·학습 경로·검색, 자동 점검(CI). 이어서 HKMG 노드의 출처를 논문 중심으로 바꾸고 설명 주장 10개를 검증했다(채택 5·조건부 5). 인용 논문 43편의 요약 페이지를 만들어 논문 링크마다 연결했다(요약 검증 채택 39·조건부 4).</p>
-      <ul class="ph-list"><li><a href="history/phase-11.html#e48">#48 프로젝트 전체 구성 검토 · 재정비 계획</a></li><li><a href="history/phase-11.html#e49">#49 재정비 계획 실행 — 원본 분리·핵심 주장 재검증·목차 개편·자동 점검</a></li><li><a href="history/phase-11.html#e50">#50 지식 그래프 HKMG 노드의 논문·출처 적절성 검토</a></li><li><a href="history/phase-11.html#e51">#51 레퍼런스 논문 요약 페이지와 "요약" 링크 연결</a></li></ul>
+      <ul class="ph-list"><li><a href="history/phase-11.html#e48">#48 프로젝트 전체 구성 검토 · 재정비 계획</a></li><li><a href="history/phase-11.html#e49">#49 재정비 계획 실행 — 원본 분리·핵심 주장 재검증·목차 개편·자동 점검</a></li><li><a href="history/phase-11.html#e50">#50 지식 그래프 HKMG 노드의 논문·출처 적절성 검토</a></li><li><a href="history/phase-11.html#e51">#51 레퍼런스 논문 요약 페이지와 "요약" 링크 연결</a></li><li><a href="history/phase-11.html#e63">#63 사이트 전체 구성 검토 — 휴대폰 넘침 수정·주제 바로가기·수정 날짜</a></li></ul>
     </article>
     <article class="phase">
       <div class="ph-head"><span class="ph-no">12</span><div><h2><a href="history/phase-12.html">패키징·본딩 리서치</a></h2>
